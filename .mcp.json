@@ -6,7 +6,12 @@
       "args": [
         "@playwright/mcp@latest",
         "--headless",
-        "--isolated"
+        "--isolated",
+        "--executable-path",
+        "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
+        "--ignore-https-errors",
+        "--caps",
+        "vision,pdf,devtools"
       ],
       "env": {}
     }
