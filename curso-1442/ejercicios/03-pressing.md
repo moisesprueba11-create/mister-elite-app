@@ -61,7 +61,7 @@ El 1-4-4-2 presiona arriba con sus 2 DC **orientando la salida rival** (curvando
 - **Desarrollo:** El rival intenta superar la presión y llegar a las mini-porterías. El equipo que presiona intenta robar y finalizar en la portería grande. Trabajo claro de robar arriba.
 - **Provocaciones:**
   - Gol del equipo que presiona en <8 segundos tras el robo = vale doble (premia finalizar la recuperación alta rápido).
-  - Si el rival supera la presión y llega a la mini-portería, el equipo de press hace una consecuencia física breve (sprint corto) que sube la intensidad del salto.
+  - Si el rival supera la presión y marca en una mini-portería, suma 2 puntos y reinicia con superioridad temporal (consecuencia de juego que castiga ceder el campo). Opcionalmente puede añadirse un sprint corto del equipo de press para elevar la intensidad del salto.
   - Activación del press solo cuando el portero rival juega corto (gatillo de inicio).
 - **Variantes:** reducir el tiempo de finalización; permitir al rival un comodín en salida; ampliar el espacio (más exigencia física).
 - **Coaching:** presionar en bloque, todos a una; señal común; no presionar en desorden; tras robar, atacar la portería de inmediato (la mejor cobertura es el siguiente robo + ataque rápido).

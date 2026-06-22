@@ -23,7 +23,7 @@ Al terminar el curso, el entrenador será capaz de:
 3. **Organizar la fase defensiva**: bloque (alto/medio/bajo), basculación, coberturas, pressing con gatillos y resolución del problema 2 vs 3 en el centro.
 4. **Construir la fase ofensiva**: salida de balón con superioridad, construcción con doble pivote, último tercio con doble amplitud y juego de los dos delanteros.
 5. **Entrenar las transiciones** y el balón parado propios del sistema.
-6. **Diseñar y dirigir sesiones** trasladando las 25 tareas del banco a microciclos coherentes.
+6. **Diseñar y dirigir sesiones** trasladando las 27 tareas del banco a microciclos coherentes.
 
 ---
 
@@ -57,6 +57,7 @@ El curso tiene tres capas que van de la idea a la ejecución:
 - [Bloque 4 — Juego de los dos delanteros y centros laterales (Tareas 14–18)](ejercicios/04-delanteros-centros.md)
 - [Bloque 5 — Transiciones (Tareas 19–22)](ejercicios/05-transiciones.md)
 - [Bloque 6 — Partido condicionado / juego real (Tareas 23–25)](ejercicios/06-partido-condicionado.md)
+- [Bloque 7 — Balón parado (Tareas 26–27)](ejercicios/07-balon-parado.md)
 
 ### Gráficos
 
@@ -74,8 +75,8 @@ Usamos abreviaturas en español. Esta nomenclatura es idéntica en módulos y ej
 | **LD** / **LI** | Lateral derecho / izquierdo | 2 / 5 | Defienden carril y se proyectan |
 | **DFC** | Defensa central (×2) | 3 / 4 | Uno stopper/agresivo, otro líbero/coberturas |
 | **MC** | Mediocentro / doble pivote (×2) | 6 / 8 | **6** ancla posicional, **8** box-to-box / llegador |
-| **MD** / **MI** | Medio derecho / izquierdo ("extremos") | 7 / 9 | Medios de banda con doble función ataque-defensa |
-| **DC** | Delantero centro (×2) | 10 / 11 | Uno referencia/pivote, otro móvil/de ruptura |
+| **MD** / **MI** | Medio derecho / izquierdo ("extremos") | 7 / 11 | Medios de banda con doble función ataque-defensa |
+| **DC** | Delantero centro (×2) | 9 / 10 | Uno referencia/pivote, otro móvil/de ruptura |
 
 - **"Extremos"** = siempre MD/MI (medios de banda), no extremos puros.
 - **"Doble pivote"** = los dos MC.

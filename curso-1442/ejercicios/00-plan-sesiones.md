@@ -1,6 +1,6 @@
 # Plan de sesiones — 2 microciclos ejemplo
 
-> Cómo encajar las 25 tareas del banco en una semana real. Se proponen **dos microciclos** con foco distinto. Las referencias entre corchetes apuntan a la ficha de cada tarea. Convención de posiciones y distancias en el [README](../README.md).
+> Cómo encajar las 27 tareas del banco en una semana real. Se proponen **dos microciclos** con foco distinto. Las referencias entre corchetes apuntan a la ficha de cada tarea. Convención de posiciones y distancias en el [README](../README.md).
 
 ## Cómo usar estos microciclos
 
@@ -21,7 +21,7 @@
 | **MD-4 (lun)** | Fase defensiva: bloque y basculación | [T5 basculación de las dos líneas](02-defensa.md) → [T6 distancia entre líneas](02-defensa.md) → [T7 8v8 bloque medio](02-defensa.md) | Media-alta |
 | **MD-3 (mar)** | Salida de balón / construcción | [T2 rondo de salida orientada](01-salida.md) → [T1 salida 4+2 vs 2](01-salida.md) → [T3 construcción dirigida](01-salida.md) | Alta |
 | **MD-2 (jue)** | Juego de los dos delanteros + centros | [T16 pared y descarga](04-delanteros-centros.md) → [T14 uno baja/uno rompe](04-delanteros-centros.md) → [T15 banda + centro lateral](04-delanteros-centros.md) | Alta |
-| **MD-1 (vie)** | Integración ligera + balón parado | [T4 salida 11v11 con zonas](01-salida.md) (volumen reducido) + ensayo de ABP a favor y en contra ([Módulo 04 §3](../modulos/04-transiciones-y-balon-parado.md)) | Baja |
+| **MD-1 (vie)** | Integración ligera + balón parado | [T4 salida 11v11 con zonas](01-salida.md) (volumen reducido) + ensayo de ABP a favor y en contra ([T26 córner ofensivo](07-balon-parado.md) y [T27 defensa mixta de córner](07-balon-parado.md)) | Baja |
 | **MD (sáb/dom)** | **Partido** | — | — |
 
 **Notas del microciclo A:**
@@ -40,7 +40,7 @@
 | **MD-4 (lun)** | Pressing y gatillos | [T10 press de los 2 delanteros](03-pressing.md) → [T11 gatillo del lateral](03-pressing.md) → [T12 press alto 8v8](03-pressing.md) | Media-alta |
 | **MD-3 (mar)** | Transiciones (ambos sentidos) | [T19 contrapresión 5 s](05-transiciones.md) → [T21 transición ofensiva por bandas](05-transiciones.md) → [T22 las cuatro transiciones](05-transiciones.md) | Alta |
 | **MD-2 (jue)** | Defensa del área + altura de bloque | [T8 defensa del centro lateral](02-defensa.md) → [T9 línea de 4 y fuera de juego](02-defensa.md) → [T13 cambio de altura por señal](03-pressing.md) | Alta |
-| **MD-1 (vie)** | Aplicación al rival (afinado) | [T25 partido aplicado al rival](06-partido-condicionado.md) (con paradas tácticas, volumen reducido) + repaso de ABP | Baja-media |
+| **MD-1 (vie)** | Aplicación al rival (afinado) | [T25 partido aplicado al rival](06-partido-condicionado.md) (con paradas tácticas, volumen reducido) + repaso de ABP ([T26](07-balon-parado.md) / [T27](07-balon-parado.md)) | Baja-media |
 | **MD (sáb/dom)** | **Partido** | — | — |
 
 **Notas del microciclo B:**
@@ -66,3 +66,4 @@ Para cerrar una fase o evaluar el aprendizaje, usar la [T23 — 11v11 con bonifi
 | 4. Dos delanteros y centros | T14–T18 | [04-delanteros-centros.md](04-delanteros-centros.md) |
 | 5. Transiciones | T19–T22 | [05-transiciones.md](05-transiciones.md) |
 | 6. Partido condicionado | T23–T25 | [06-partido-condicionado.md](06-partido-condicionado.md) |
+| 7. Balón parado | T26–T27 | [07-balon-parado.md](07-balon-parado.md) |

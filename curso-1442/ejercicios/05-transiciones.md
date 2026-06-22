@@ -8,7 +8,9 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
 
 ---
 
-## TAREA 19 — Contrapresión inmediata tras pérdida (5 segundos) (juego condicionado)
+## TAREA 19 — Contrapresión inmediata tras pérdida (ventana 3-5 s) (juego condicionado)
+
+> Nota: la teoría fija una **ventana de 3-5 segundos** para la contrapresión (módulos 02 §3.3 y 04 §2). Esta tarea trabaja el extremo de esa ventana fijando un **umbral de 5 s** como provocación; la variante de 3 s endurece la exigencia.
 
 - **Objetivo:** que el equipo presione de inmediato en el punto de la pérdida (los más cercanos saltan, el resto cierra líneas de pase) para recuperar arriba o ganar tiempo de repliegue.
 - **Tipo de tarea:** juego condicionado de transición.

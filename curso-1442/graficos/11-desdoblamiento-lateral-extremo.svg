@@ -36,7 +36,6 @@
       <rect x="210" y="72" width="80" height="30"/>
     </g>
     <line x1="40" y1="148" x2="460" y2="148" stroke="#c0392b" stroke-width="3" stroke-dasharray="4 6" opacity="0.9"/>
-    <text x="500" y="0"/>
     <text x="250" y="92" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">OVERLAP</text>
 
     <!-- Defensor rival que marca al extremo -->
@@ -111,18 +110,10 @@
 
   <!-- Leyenda -->
   <g>
-    <rect x="30" y="586" width="500" height="0" fill="none"/>
-    <rect x="350" y="556" width="0" height="0"/>
-  </g>
-  <g>
-    <rect x="370" y="48" width="0" height="0"/>
-  </g>
-  <g>
     <rect x="0" y="600" width="1000" height="40" fill="#1d3557"/>
+    <line x1="40" y1="620" x2="82" y2="620" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
     <line x1="40" y1="620" x2="78" y2="620" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-    <rect x="36" y="612" width="46" height="16" fill="#2f8235" opacity="0"/>
-    <line x1="120" y1="620" x2="158" y2="620" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-    <text x="168" y="624" fill="#ffffff" font-size="12">movimiento</text>
+    <text x="92" y="624" fill="#ffffff" font-size="12">movimiento</text>
     <line x1="290" y1="620" x2="328" y2="620" stroke="#ffd24a" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#arrowPass)"/>
     <text x="338" y="624" fill="#ffffff" font-size="12">pase</text>
     <line x1="420" y1="620" x2="458" y2="620" stroke="#c0392b" stroke-width="3" stroke-dasharray="4 6"/>
