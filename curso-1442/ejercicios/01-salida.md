@@ -16,6 +16,8 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
   - **Jugadores:** 7 atacan (POR + LD + DFC1 + DFC2 + LI + 1 MC) vs 2 DC presionadores + 2 comodines de banda neutrales (los MD/MI rivales que pueden saltar). Mínimo 9; ideal 11 con 2 MC rivales que cierran.
   - **Espacio:** medio campo de ancho completo (68 m) × 40 m de fondo desde portería.
   - **Material:** 1 portería grande con portero; 2 mini-porterías o "líneas de pase" a 40 m (zonas de progresión donde reciben los interiores); petos; balones repartidos en la portería.
+![Pizarra Tarea 1: salida 4+2 vs 2; el MC baja para crear 3 vs 2 ante los dos DC rivales, laterales abiertos en máxima anchura y cambio de orientación a la zona-meta del lado contrario](../graficos/tarea-01.svg)
+
 - **Desarrollo:** El equipo de construcción inicia siempre con balón en el POR. Los 2 DC presionan. Un MC baja para formar línea de 3 (DFC1 - MC - DFC2) o se sitúa entre líneas. Objetivo: progresar el balón controlado a una de las dos zonas de superación (representan a los interiores recibiendo en banda). Si los presionadores roban, finalizan a la portería grande.
 - **Provocaciones:**
   - Prohibido el pase largo del portero (obliga a construir).
@@ -35,8 +37,6 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
   - Portero como jugador-más: orienta y libera al lado débil.
 - **Duración / categoría:** 4 series de 4 min, 90 s de descanso (16–20 min). **A / S** (versión fácil válida para F sub-14).
 
-![DIAGRAMA: tarea 1 — salida 4+2 vs 2; el MC baja entre los centrales para crear 3 vs 2 ante los dos DC rivales, laterales abiertos y zonas-meta de superación a 40 m](../graficos/14-tarea-salida.svg)
-
 ---
 
 ## TAREA 2 — Rondo de salida orientada 3v1+2 (carriles)
@@ -47,6 +47,8 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
   - **Jugadores:** 6 (3 en línea de salida: DFC1-MC-DFC2 + 2 laterales en banda + 1 presionador); o 3v1 con 2 apoyos exteriores.
   - **Espacio:** 25×20 m dividido en 3 carriles verticales (cinta o conos).
   - **Material:** conos de carriles, petos, balones.
+![Pizarra Tarea 2: rondo 3v1+2 en 3 carriles; los 3 interiores conservan ante 1 presionador, el central fija con conducción y el balón sale al lateral del carril opuesto al que cierra el presionador](../graficos/tarea-02.svg)
+
 - **Desarrollo:** Los 3 interiores conservan ante 1 presionador. Los apoyos en carriles exteriores (laterales) son receptores fijos. El balón debe pasar de carril central a carril exterior y volver, simulando la apertura del juego. Cada 4 pases conseguidos, "salida liberada": el balón sale al lateral y se reinicia.
 - **Provocaciones:**
   - El presionador define qué lado cerrar; el equipo debe salir por el carril opuesto (lectura de orientación).
@@ -69,6 +71,8 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
   - **Jugadores:** bloque de construcción (POR + 4 + 2 MC) + 2 DC + 2 MD/MI rivales (10–11).
   - **Espacio:** 3/4 de campo a lo ancho completo.
   - **Material:** portería grande; 3 zonas-meta (banda derecha, banda izquierda, zona central entre líneas).
+![Pizarra Tarea 3: construcción dirigida con tres vías de salida (corta por dentro al MC, lateral abierto y MC atacando el espacio del delantero); se elige la zona-meta que el rival deja libre](../graficos/tarea-03.svg)
+
 - **Desarrollo:** El entrenador (o un servidor) condiciona la presión rival con una señal (presión al central derecho, al pivote o bloque medio). El equipo elige la salida correcta y conduce/pasa a la zona-meta libre. Reinicio constante desde el POR.
 - **Provocaciones:**
   - Cada secuencia debe resolverse por la vía que el rival deja libre; usar la vía cerrada = secuencia anulada (entrena lectura, no fórmula).
@@ -87,6 +91,8 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
   - **Jugadores:** 10–11 vs 10–11.
   - **Espacio:** campo completo, dividido en 3 zonas horizontales (defensa-medio-ataque) por líneas de cal.
   - **Material:** 2 porterías; balones en cada portería para reinicios rápidos.
+![Pizarra Tarea 4: partido condicionado 11v11 en 3 zonas horizontales; presión rival 2+2 en zona 1 y punto al superar la primera línea con pase progresivo controlado de zona 1 a zona 2](../graficos/tarea-04.svg)
+
 - **Desarrollo:** Partido normal, pero el equipo en posesión suma 1 punto cada vez que **supera la primera línea de presión con balón controlado** pasando de zona 1 a zona 2 mediante pase progresivo (no despeje). Gol vale 3.
 - **Provocaciones:**
   - El equipo sin balón solo puede presionar con 2 + 2 en zona 1 (replica la presión típica del 1-4-4-2 en salida).

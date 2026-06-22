@@ -16,6 +16,8 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
   - **Jugadores:** las 8 piezas defensivas (4 defensas + 4 medios) + 4–6 atacantes que circulan el balón sin finalizar.
   - **Espacio:** medio campo a lo ancho (68×45 m).
   - **Material:** cuerdas o gomas elásticas (opcional) uniendo a los 4 de cada línea para feedback visual de distancias; conos de carriles.
+![Pizarra Tarea 5: las dos líneas de 4 unidas por una cuerda imaginaria basculan hacia el balón; lado fuerte denso, lado débil pinzado al centro y atacantes circulando en U por delante del bloque](../graficos/tarea-05.svg)
+
 - **Desarrollo:** Un grupo de atacantes circula el balón en U (lateral-central-lateral) por delante del bloque. Las dos líneas basculan lateralmente según dónde está el balón, manteniéndose compactas. Sin robar al inicio: el foco es el movimiento sincronizado.
 - **Provocaciones:**
   - La cuerda/goma no puede destensarse (obliga a mantener distancias entre compañeros de línea).
@@ -28,8 +30,6 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
 - **Coaching:** mover el bloque "con un hilo invisible"; el lado débil cierra hacia dentro; nunca correr de forma individual hacia el balón rompiendo la línea; ojos en balón y referencias.
 - **Duración / categoría:** 4 series de 3 min, cambiando el lado de inicio (14 min). **F / A / S** (base imprescindible).
 
-![DIAGRAMA: tarea 5 — las dos líneas de 4 unidas por una cuerda imaginaria basculan hacia el balón; lado fuerte denso, lado débil cerrado al centro, atacantes circulando en U](../graficos/15-tarea-basculacion.svg)
-
 ---
 
 ## TAREA 6 — Distancia entre líneas: el espacio intermedio (situacional)
@@ -40,6 +40,8 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
   - **Jugadores:** línea de 4 defensas + 4 medios + 2 "enganches" rivales que buscan recibir entre líneas + 4 exteriores que dan el balón.
   - **Espacio:** 60×45 m.
   - **Material:** una franja central pintada (la "zona prohibida" entre líneas), ~10 m de fondo.
+![Pizarra Tarea 6: distancia entre líneas; los exteriores filtran a 2 enganches en la franja prohibida, la línea de medios tapa (MC) o la defensa sube coordinada manteniendo menos de 12 m entre líneas](../graficos/tarea-06.svg)
+
 - **Desarrollo:** Los exteriores circulan e intentan filtrar al jugador entre líneas dentro de la franja. La línea de medios achica hacia atrás o el MC más cercano bascula a tapar; los defensas suben coordinados para reducir esa franja.
 - **Provocaciones:**
   - Cada vez que un rival recibe **orientado** dentro de la franja = 2 puntos para atacantes (penaliza la línea rota).
@@ -59,6 +61,8 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
   - **Jugadores:** 8 defienden (4+4) vs 8–9 atacan.
   - **Espacio:** 60×60 m con 3 carriles verticales.
   - **Material:** conos de carriles; 2 mini-porterías para que el bloque defensivo contraataque.
+![Pizarra Tarea 7: 8v8 bloque medio 4+4 en 3 carriles; uno presiona y el resto bascula cerrando el lado fuerte para encerrar al rival en su carril (robo allí = 2 pts) y contraatacar a las mini-porterías](../graficos/tarea-07.svg)
+
 - **Desarrollo:** El equipo atacante intenta llegar a la línea de fondo del bloque defensivo. El bloque defiende manteniendo la forma 4+4 y basculando por carriles. Al robar, busca las mini-porterías (premia robo + salida).
 - **Provocaciones:**
   - El atacante no puede cambiar de carril con conducción más de una vez por posesión (favorece que el balón circule por fuera, donde el bloque quiere llevarlo).
@@ -78,6 +82,8 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
   - **Jugadores:** 4 defensas + 2 MC que repliegan + POR vs 2 DC + 2 bandas rivales que centran.
   - **Espacio:** zona de finalización (área grande + 25 m).
   - **Material:** portería grande; balones en las dos bandas; conos marcando primer palo / segundo palo / punto de penalti / frontal.
+![Pizarra Tarea 8: defensa del centro lateral; la línea de 4 ocupa primer palo, centro y segundo palo, un MC vigila la frontal para el rechace y el otro MC marca al que llega al segundo palo ante el centro rival](../graficos/tarea-08.svg)
+
 - **Desarrollo:** Balón en banda rival que llega al fondo y centra. La defensa de 4 ocupa: primer palo (lateral), centro del área (centrales 1 y 2); un MC vigila la frontal para el rechace y el otro MC marca al que llega al segundo palo.
 - **Provocaciones:**
   - Gol de rechace en frontal sin vigilancia = vale doble (penaliza no proteger la segunda jugada).
@@ -97,6 +103,8 @@ El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo 
   - **Jugadores:** 4 defensas + POR vs 4 atacantes (2 DC + 2 que llegan) + 1–2 pasadores.
   - **Espacio:** medio campo, anchura completa, con línea de fuera de juego de referencia pintada.
   - **Material:** línea pintada móvil (conos); banderines.
+![Pizarra Tarea 9: línea de 4 que sube al unísono como una persiana a la orden del central de referencia dejando a los atacantes en fuera de juego cuando el pasador busca el pase al espacio](../graficos/tarea-09.svg)
+
 - **Desarrollo:** Los pasadores buscan el pase al espacio a la espalda. La línea de 4 sube al unísono al señalar el central de referencia, dejando en fuera de juego, o baja temporizando si el balón va a la espalda con ventaja del atacante.
 - **Provocaciones:**
   - La línea debe subir/bajar "como una persiana": si un defensa queda 1 m descolocado y deja activo a un atacante = punto atacante.
