@@ -31,7 +31,7 @@ El 1-4-4-2 presiona arriba con sus 2 DC **orientando la salida rival** (curvando
 
 ## TAREA 11 — El gatillo del lateral: salto del MD/MI (situacional)
 
-- **Objetivo:** entrenar el gatillo de presión más típico del 1-4-4-2: cuando el balón va del central rival al lateral, el medio de banda salta a presionar y el bloque se desplaza y sube.
+- **Objetivo:** entrenar el gatillo de presión más típico del 1-4-4-2: cuando el balón va del central rival al lateral, el extremo salta a presionar y el bloque se desplaza y sube.
 - **Tipo de tarea:** situacional de bloque parcial.
 - **Organización:**
   - **Jugadores:** medio bloque (2 DC + MD + MI + 1 MC + 1 lateral del lado) vs línea de salida rival (2 centrales + 2 laterales + 1 pivote).

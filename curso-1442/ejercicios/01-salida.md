@@ -13,12 +13,12 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
 - **Objetivo (comportamiento 1-4-4-2):** construir desde atrás venciendo la presión de los 2 DC rivales mediante la bajada de un MC para crear el 3 vs 2 en primera línea y orientar la salida al lateral libre.
 - **Tipo de tarea:** juego de posición (posicional con orientación de portería).
 - **Organización:**
-  - **Jugadores:** 7 atacan (POR + LD + DFC1 + DFC2 + LI + 1 MC) vs 2 DC presionadores + 2 comodines de banda neutrales (los MD/MI rivales que pueden saltar). Mínimo 9; ideal 11 con 2 MC rivales que cierran.
+  - **Jugadores:** 7 atacan (POR + LD + DFC1 + DFC2 + LI + **2 MC**, el doble pivote) vs 2 DC presionadores + 2 comodines de banda neutrales (los MD/MI rivales que pueden saltar). Es el **4+2** (4 defensas + 2 medios) más el portero. Mínimo 9; ideal 11 con 2 MC rivales que cierran.
   - **Espacio:** medio campo de ancho completo (68 m) × 40 m de fondo desde portería.
   - **Material:** 1 portería grande con portero; 2 mini-porterías o "líneas de pase" a 40 m (zonas de progresión donde reciben los interiores); petos; balones repartidos en la portería.
 ![Pizarra Tarea 1: salida 4+2 vs 2; el MC baja para crear 3 vs 2 ante los dos DC rivales, laterales abiertos en máxima anchura y cambio de orientación a la zona-meta del lado contrario](../graficos/tarea-01.svg)
 
-- **Desarrollo:** El equipo de construcción inicia siempre con balón en el POR. Los 2 DC presionan. Un MC baja para formar línea de 3 (DFC1 - MC - DFC2) o se sitúa entre líneas. Objetivo: progresar el balón controlado a una de las dos zonas de superación (representan a los interiores recibiendo en banda). Si los presionadores roban, finalizan a la portería grande.
+- **Desarrollo:** El equipo de construcción inicia siempre con balón en el POR. Los 2 DC presionan. Un MC baja para formar línea de 3 (DFC1 - MC - DFC2) creando el 3 vs 2; el **segundo MC** se ofrece como pivote de apoyo por delante (entre líneas). Objetivo: progresar el balón controlado a una de las dos zonas de superación (representan a los interiores recibiendo en banda). Si los presionadores roban, finalizan a la portería grande.
 - **Provocaciones:**
   - Prohibido el pase largo del portero (obliga a construir).
   - Punto solo si la superación llega por el **lateral del lado contrario** al inicio de la presión (provoca el cambio de orientación).
