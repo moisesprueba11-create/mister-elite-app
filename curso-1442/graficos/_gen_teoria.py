@@ -257,29 +257,30 @@ def t11():
     p = Pitch(title="Línea de fuera de juego (la persiana)",
               subtitle="La defensa sube en bloque y deja a 2 atacantes pasados")
     # línea de cuatro subiendo (defensa propia, ataque hacia ARRIBA)
-    yL = 50
-    p.player(18, yL, "LI", team="own")
-    p.player(40, yL, "DFC", team="own")
-    p.player(60, yL, "DFC", team="own", role="central ordena")
-    p.player(82, yL, "LD", team="own")
+    yL = 52
     # línea horizontal trazo de fuera de juego (se dibuja primero, debajo de fichas)
     p.arrow(6, yL, 94, yL, kind="run", c="#ffd54a")
-    p.note(50, 55, "línea de fuera de juego", c="#fff5cc", size=9)
+    p.note(72, 57, "línea de fuera de juego", c="#fff5cc", size=9.5)
+    p.player(18, yL, "LI", team="own")
+    p.player(40, yL, "DFC", team="own")
+    p.player(60, yL, "DFC", team="own")
+    p.player(82, yL, "LD", team="own")
     # flecha persiana: toda la línea sube (hacia y↑ = hacia el rival)
     for xx in (18, 40, 60, 82):
-        p.arrow(xx, yL+3, xx, yL+11, kind="run", c="#7ee0ff")
-    p.note(50, 40, "↑ SUBEN JUNTOS (achique vertical)", c="#bfe8ff", size=10)
-    # atacantes rivales quedan A LA ESPALDA de la línea = pasados (y < 50,
+        p.arrow(xx, yL+3, xx, yL+12, kind="run", c="#7ee0ff")
+    p.note(50, 67, "↑ SUBEN JUNTOS (achique vertical)", c="#bfe8ff", size=10)
+    # atacantes rivales quedan A LA ESPALDA de la línea = pasados (y < línea,
     # lado del fondo propio, porque el rival ataca hacia ABAJO)
-    p.player(42, 44, "DC", team="rival")
-    p.note(42, 38, "FUERA DE JUEGO", c="#ffd0d0", size=9)
-    p.player(64, 46, "DC", team="rival")
-    p.note(64, 40, "FUERA DE JUEGO", c="#ffd0d0", size=9)
+    p.player(31, 41, "DC", team="rival")
+    p.note(31, 33, "FUERA DE JUEGO", c="#ffd0d0", size=9)
+    p.player(69, 41, "DC", team="rival")
+    p.note(69, 33, "FUERA DE JUEGO", c="#ffd0d0", size=9)
     # poseedor rival por delante de la línea (arriba) intentando filtrar
-    p.player(50, 70, "MC", team="rival", role="no puede dar el pase")
-    p.ball(50, 66)
-    # pase filtrado anulado: cruzaría la línea hacia los atacantes pasados
-    p.arrow(50, 62, 46, 49, kind="pass", c="#ff5252", label="pase anulado")
+    p.player(50, 75, "MC", team="rival", role="no puede dar el pase")
+    p.ball(50, 71)
+    # pase filtrado anulado: cruzaría la línea hacia un atacante pasado
+    p.arrow(50, 68, 36, 45, kind="pass", c="#ff5252")
+    p.note(54, 62, "pase anulado", c="#ff8a8a", size=9)
     p.legend(["pass", "run", "own", "rival"])
     save(p, "teoria-11-fuera-de-juego.svg")
 
