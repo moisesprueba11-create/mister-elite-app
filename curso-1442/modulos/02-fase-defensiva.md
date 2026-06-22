@@ -20,6 +20,8 @@ La fortaleza del sistema es la **organización en bloque** con referencias zonal
 
 **Delanteros (DC ×2).** Primera línea de presión. El **referencia** fija al central con balón, orienta y tapa el carril central o la línea al pivote rival. El **móvil** es el otro vértice de la presión y salta sobre el segundo central o el pivote según la trampa. Trabajo escalonado, no en paralelo: uno presiona y el otro cubre.
 
+![Pizarra: roles defensivos por posición en bloque medio 4-4-2, con la responsabilidad zonal de cada jugador rotulada](../graficos/teoria-06-roles-defensivos.svg)
+
 ---
 
 ## 2. Bloque alto, medio y bajo
@@ -44,7 +46,7 @@ Tres principios constantes del bloque: **compacidad** (poca distancia entre lín
 - **Objetivo:** cerrar los espacios interiores, defender el área, salir al contraataque con los dos puntas.
 - **Riesgo:** conceder balón y tiro exterior; presión sostenida sobre el área.
 
-![DIAGRAMA: las tres alturas del bloque (alto, medio, bajo) con la posición de la última línea y del primer presionador en cada caso](../graficos/03-bloques-altura.svg)
+![Pizarra: las tres alturas del bloque (alto, medio, bajo) con la última línea propia y el primer presionador y sus distancias de referencia en cada caso](../graficos/teoria-07-bloques-altura.svg)
 
 ---
 
@@ -59,12 +61,14 @@ La pareja es la primera línea de presión. Como son dos contra dos centrales + 
 - **Orientar a una banda:** atacar al central por su perfil exterior para empujar el balón a la banda elegida (la banda como "frontera"). Cuando el balón va al lateral, se activa la presión escalonada extremo + lateral + MC.
 - **Gatillos (triggers):** pase atrás al POR, control orientado hacia su portería, pase a un jugador de espaldas o mal perfilado, pase lento/aéreo, primer toque malo, **balón al lateral en banda**.
 
-![DIAGRAMA: presión de los dos DC con carrera curvada y uso de la sombra para tapar al pivote rival y orientar la salida a la banda](../graficos/04-pressing-delanteros-sombra.svg)
+![Pizarra: presión de los dos DC con carrera curvada y uso de la sombra (cover shadow) para tapar la línea al pivote rival y orientar la salida hacia la banda](../graficos/teoria-08-pressing-sombra.svg)
 
 ### 3.2 Trampas de presión
 
 - **Trampa de banda:** se deja "fácil" el pase al lateral rival; cuando llega, se cierran las salidas (extremo salta al lateral, MC y lateral propio tapan interior y línea, DC cierra el regreso). La banda y la línea de cal hacen de defensores extra.
 - **Trampa interior:** invitar el pase al pivote rival y saltar sobre él (segundo DC o MC por la espalda) para robar de cara a portería.
+
+![Pizarra: trampa de banda — se concede el pase al lateral rival (gatillo) y se cierran las salidas con el extremo saltando, el MC tapando el interior y el lateral cerrando la línea para ahogar el balón en banda](../graficos/teoria-10-trampa-banda.svg)
 
 ### 3.3 Presión tras pérdida (contrapressing)
 
@@ -79,7 +83,7 @@ La pareja es la primera línea de presión. Como son dos contra dos centrales + 
 
 Ambas líneas se desplazan **en bloque hacia el lado del balón** manteniendo la diagonal: el lado fuerte se densifica, el lado débil se cierra hacia el centro. El **lateral del lado débil** se mete junto a los centrales (defensa de 3 transitoria) y el **extremo del lado débil** pisa el carril central. Así se concede solo el cambio largo de orientación (el pase más lento, el más defendible). Si las líneas basculan a distinto ritmo, se abre el pasillo entre líneas.
 
-![DIAGRAMA: basculación de las dos líneas de cuatro con el balón en banda derecha; lado débil cerrado al centro (lateral a 3, extremo al carril central) y banda lejana concedida](../graficos/05-basculacion-bloque.svg)
+![Pizarra: basculación de las dos líneas de cuatro con el balón en banda derecha; el lateral del lado débil cierra a tres, el extremo pisa el carril central y se concede la banda lejana](../graficos/teoria-09-basculacion.svg)
 
 ### 4.2 Coberturas y permutas
 
@@ -101,13 +105,15 @@ Ambas líneas se desplazan **en bloque hacia el lado del balón** manteniendo la
 - **Achique vertical:** subir la línea defensiva tras despeje, pase atrás del rival o balón controlado lejos, para mantener las líneas juntas y dejar al rival a la espalda (fuera de juego). Detonante: balón "muerto" o jugado hacia atrás/lateralmente sin amenaza de profundidad.
 - **Línea de fuera de juego:** la línea de cuatro actúa en bloque, dirigida por el central de coberturas o el POR. **Subir juntos** cuando el poseedor no puede dar el pase a la espalda (mira abajo, está presionado, controla mal). El último hombre marca la línea; nadie regala el fuera de juego. Comunicación constante ("¡arriba!", "¡aguanta!"). En bloque alto, el fuera de juego + el POR-líbero hacen viable el riesgo del espacio a la espalda.
 
-![DIAGRAMA: línea de cuatro subiendo coordinada "como una persiana" para dejar a dos atacantes en fuera de juego, con el central de referencia ordenando](../graficos/06-fuera-de-juego.svg)
+![Pizarra: la línea de cuatro sube coordinada "como una persiana" (achique vertical) y deja a dos atacantes rivales en fuera de juego mientras el poseedor no puede dar el pase a la espalda](../graficos/teoria-11-fuera-de-juego.svg)
 
 ---
 
 ## 6. El problema clásico: inferioridad en el centro (2 vs 3)
 
 **El problema.** Ante rivales con tres en el centro (4-3-3, 4-1-4-1, 3-5-2, o un mediapunta que se suma), los dos MC quedan en inferioridad. El rival puede: (a) superar líneas con el hombre libre, (b) atraer a un MC y filtrar al espacio que deja, (c) usar al pivote libre para orientar.
+
+![Pizarra: el problema 2 vs 3 en el centro — tres mediocentros rivales (pivote libre y dos interiores) superan a los dos MC, con el hombre libre filtrando entre líneas](../graficos/teoria-12-problema-2v3.svg)
 
 **Repertorio de soluciones:**
 
@@ -120,7 +126,7 @@ Ambas líneas se desplazan **en bloque hacia el lado del balón** manteniendo la
 
 **La idea de fondo:** el 4-4-2 no necesita **ganar** la posesión del centro; necesita que **el centro no le haga daño**.
 
-![DIAGRAMA: solución del 2 vs 3 mediante el pellizco del extremo del lado débil hacia el carril central, formando un 3 funcional en el medio](../graficos/07-solucion-2v3.svg)
+![Pizarra: solución del 2 vs 3 — el extremo del lado débil pellizca hacia el carril central y forma un 3 funcional en el medio, concediendo la banda lejana](../graficos/teoria-13-solucion-2v3.svg)
 
 ---
 

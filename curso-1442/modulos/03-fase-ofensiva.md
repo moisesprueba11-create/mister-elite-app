@@ -14,7 +14,7 @@ El 1-4-4-2 sale habitualmente en **+1 sobre la primera presión** apoyándose en
 - **Portero como jugador de campo:** con POR hábil con pie, no baja ningún MC; el POR juega de tercer central virtual y los dos pivotes permanecen altos. Adelanta la estructura, pero exige POR solvente bajo presión.
 - **Laterales como primera salida (por fuera):** centrales abiertos y altos atraen a las puntas; el balón se libera al lateral, que recibe orientado con el extremo dándole profundidad o cayendo a apoyar.
 
-![DIAGRAMA: salida 3+2 con descenso del MC posicional entre los centrales, generando superioridad 3 contra 2 ante los dos delanteros rivales, laterales altos y abiertos](../graficos/08-salida-3mas2.svg)
+![Pizarra: salida 3+2 con el MC posicional (6) descendiendo entre los centrales para generar superioridad 3 contra 2 ante los dos delanteros rivales, con laterales altos y abiertos y el 8 libre entre líneas](../graficos/teoria-14-salida-3mas2.svg)
 
 ### 1.2 Superar la primera línea de presión
 
@@ -48,6 +48,8 @@ Cuando uno avanza, el otro cubre (**principio de balancín/relevos**): nunca sub
 - **Cambio de orientación:** ante bloque medio compacto, mover de banda a banda buscando el lado débil; el extremo lejano se queda alto y abierto.
 - **Apoyos en triángulo permanentes:** cada poseedor con mínimo dos líneas de pase. Lateral-extremo-pivote forman el triángulo de banda; central-pivote-delantero el triángulo interior.
 
+![Pizarra: mecanismo de tercer hombre — el central juega al pivote que recibe de espaldas y este descarga al tercer jugador que llega de cara, con el triángulo de banda formado](../graficos/teoria-15-tercer-hombre.svg)
+
 ---
 
 ## 3. Último tercio
@@ -70,7 +72,7 @@ La ventaja distintiva del sistema es la **pareja con movimientos coordinados y o
 - **Ataque a los medios espacios:** desmarque diagonal de ruptura al corredor que deja el lateral rival al subir.
 - **Coordinación con la línea rival:** el que rompe temporiza para no caer en fuera de juego (salir desde detrás del defensor, atacar el espacio en el momento del pase).
 
-![DIAGRAMA: automatismo de los dos delanteros — uno baja a recibir entre líneas (apoyo) mientras el otro ataca diagonal el espacio a la espalda de la defensa (ruptura), con la descarga al que rompe](../graficos/09-delanteros-apoyo-ruptura.svg)
+![Pizarra: automatismo de la dupla — un delantero baja a recibir entre líneas (apoyo) mientras el otro ataca en diagonal el espacio a la espalda de la defensa (ruptura), con la descarga al que rompe](../graficos/teoria-16-apoyo-ruptura.svg)
 
 ### 3.3 Llegada desde segunda línea
 
@@ -89,7 +91,7 @@ El sistema está diseñado para **poblar el área**. Reparto canónico de zonas 
 
 Esto da **3–4 atacantes en zona de remate** sin descomponer el equipo. Tipos de centro a entrenar: raso al primer palo, tenso a la zona de penalti y **centro atrás (cut-back)** desde línea de fondo a la frontal (la zona más rentable). El cut-back combina especialmente bien con el extremo que llega a fondo y el DC/MC que ataca la frontal.
 
-![DIAGRAMA: ataque del área en un centro desde banda derecha con ocupación de primer palo, punto de penalti, segundo palo y frontal por los dos DC, el extremo lejano y el MC llegador](../graficos/10-ataque-area-centro.svg)
+![Pizarra: ataque del área en un centro desde banda derecha con ocupación del primer palo y el punto de penalti por los dos DC, el segundo palo por el extremo lejano y la frontal por el MC llegador (cut-back)](../graficos/teoria-17-ataque-area.svg)
 
 ---
 
@@ -102,7 +104,7 @@ Esto da **3–4 atacantes en zona de remate** sin descomponer el equipo. Tipos d
 - **Combinaciones de banda en triángulo:** lateral-extremo-delantero generan pared + tercer hombre para llegar a fondo y centrar.
 - **Rotación de los puntas con el pivote llegador:** cuando un DC cae a recibir, el "8" ataca el espacio que ese DC libera.
 
-![DIAGRAMA: desdoblamiento lateral-extremo en sus dos variantes — overlap (extremo fija dentro, lateral sube por fuera) y underlap (extremo retiene fuera, lateral entra por dentro)](../graficos/11-desdoblamiento-lateral-extremo.svg)
+![Pizarra: desdoblamiento lateral-extremo en sus dos variantes — overlap (el extremo fija por dentro y el lateral sube por fuera) y underlap (el extremo retiene por fuera y el lateral entra por dentro)](../graficos/teoria-18-desdoblamiento.svg)
 
 ---
 

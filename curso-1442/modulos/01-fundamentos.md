@@ -15,13 +15,15 @@ El 1-4-4-2 es un **sistema de juego** organizado en tres líneas de jugadores de
 - **Línea de medios (4):** dos MC (doble pivote) y dos extremos (MD / MI).
 - **Línea de ataque (2):** dos DC con perfiles complementarios.
 
-![DIAGRAMA: formación base del 1-4-4-2 en disposición plana con las 11 posiciones rotuladas](../graficos/01-formacion-base.svg)
+![Pizarra: formación base del 1-4-4-2 plano con las 11 posiciones rotuladas (portero, doble línea de cuatro y dos puntas)](../graficos/teoria-01-formacion-base.svg)
 
 ### Cómo se lee el campo
 
 - **Carriles verticales (5):** lateral izq., interior izq. (medio espacio), central, interior der. (medio espacio), lateral der. Los **medios espacios** (entre lateral y central) son el punto que más explotan los rivales contra este sistema.
 - **Franjas horizontales (3):** zona defensiva, zona media (creación), zona ofensiva (finalización).
 - **Zona 14 / Maradona:** espacio interior por delante del área rival. El 4-4-2 plano no coloca a nadie fijo ahí (no hay mediapunta); la ocupa la llegada de un MC o la caída de un DC.
+
+![Pizarra: lectura del campo en 5 carriles verticales y 3 franjas horizontales, con los medios espacios y la zona 14 resaltados como puntos críticos](../graficos/teoria-02-carriles-franjas.svg)
 
 ---
 
@@ -30,6 +32,8 @@ El 1-4-4-2 es un **sistema de juego** organizado en tres líneas de jugadores de
 El 4-4-2 hereda del 4-4-2 británico y del 4-2-4 brasileño de 1958. Su formulación moderna como sistema de presión y bloque se asocia a cuatro referencias:
 
 - **Arrigo Sacchi (Milan, 1987–91):** padre del 4-4-2 moderno. Bloque compacto, presión alta, fuera de juego coordinado y zona pura. Su regla de compacidad (~25–30 m de la primera a la última línea) es el origen de la profundidad de bloque del curso.
+
+![Pizarra: compacidad del bloque — las tres líneas dentro de una distancia de 25-30 m de la primera a la última, con líneas cortas (8-12 m) entre sí para no conceder espacios interiores](../graficos/teoria-23-compacidad-distancias.svg)
 - **Alex Ferguson (Manchester United):** extremos puros, amplitud, transiciones rápidas y dos delanteros complementarios.
 - **Rafa Benítez (Valencia / Liverpool):** disciplina posicional, bloque medio-bajo, gran organización zonal.
 - **Diego Simeone (Atlético de Madrid, desde 2011):** resurgimiento contemporáneo del 4-4-2 como bloque medio-bajo de élite, transiciones y juego directo a dos puntas.
@@ -78,7 +82,9 @@ Los principios son las ideas rectoras que dan sentido a los movimientos.
 - **Debilidades:** renuncia a extremos → falta amplitud; las bandas quedan a cargo de los laterales (alto coste físico); vulnerable a los cambios de orientación.
 - **Cuándo usarlo:** para dominar el centro con laterales muy resistentes y un enganche de calidad; contra rivales sin extremos puros.
 
-![DIAGRAMA: comparativa lado a lado del 4-4-2 plano y el 4-4-2 en rombo](../graficos/02-variantes-plano-rombo.svg)
+![Pizarra: el 4-4-2 en rombo (diamante) con MCD, dos interiores y enganche ocupando la zona 14, y los laterales dando la amplitud](../graficos/teoria-05-variante-rombo.svg)
+
+![Pizarra: comparación del centro del campo plano (dos extremos + dos MC, amplitud) frente al rombo (cuatro jugadores en el eje, sin extremos)](../graficos/teoria-04-plano-vs-rombo.svg)
 
 ### 4.3 4-4-2 en línea vs. asimétrico
 
@@ -117,6 +123,8 @@ Los principios son las ideas rectoras que dan sentido a los movimientos.
 ---
 
 ## 6. Perfil idóneo por línea
+
+![Pizarra: perfiles complementarios por línea — los dos roles distintos en portería, defensa, mediocampo y ataque](../graficos/teoria-03-perfiles-por-linea.svg)
 
 - **POR:** buen juego de pies, lectura de la profundidad (portero-líbero), seguridad aérea y en el 1×1.
 - **DFC:** uno dominante en el duelo y el juego aéreo (defensa de área), otro rápido y con buena salida (cobertura de la profundidad y primer pase). Buena lectura del fuera de juego.

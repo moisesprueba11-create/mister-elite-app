@@ -14,7 +14,7 @@ El 1-4-4-2 es **el sistema de referencia del contragolpe moderno** (Atlético de
 - **Llegada de un MC (el "8")** como tercer hombre del contraataque; el "6" y los centrales sostienen el equilibrio.
 - **Tipos:** directo (3-4 pases, máxima velocidad al espacio) o indirecto/sostenido (asegurar y atacar con orden si no hay carril claro). Hace falta criterio para decidir cuándo lanzar y cuándo frenar.
 
-![DIAGRAMA: contraataque tras robo en zona media — primer pase vertical al delantero, un DC apoya y otro rompe a la espalda, extremo corriendo el carril y el MC "8" llegando de tercer hombre](../graficos/12-transicion-contraataque.svg)
+![Pizarra: contraataque tras robo en zona media — primer pase vertical al delantero que rompe a la espalda, el otro DC ofrece apoyo, el extremo corre el carril exterior y el MC "8" llega de tercer hombre](../graficos/teoria-19-contraataque.svg)
 
 ---
 
@@ -24,9 +24,11 @@ Dos modelos, viables y a menudo combinados:
 
 - **Repliegue organizado (modelo Simeone/Atlético):** tras la pérdida, prioridad a **recomponer el bloque medio-bajo en 4-4-2** rápido y compacto, frenar el balón y obligar al rival a atacar un muro de dos líneas de cuatro. Es el modelo más natural del sistema por la facilidad para formar las dos líneas.
 - **Contrapresión ("3-5 segundos"):** presión inmediata en el lugar de la pérdida con el más cercano + apoyos, buscando recuperar arriba antes de que el rival progrese. Funciona si la estructura ofensiva estaba compacta; el riesgo es el espacio a la espalda de los pivotes si se rompe la presión. (Misma regla descrita en el [Módulo 02 §3.3](02-fase-defensiva.md).)
+
+![Pizarra: contrapresión de 3-5 segundos tras la pérdida — los jugadores más cercanos saltan al balón mientras otros cierran las líneas de pase cortas para forzar la recuperación inmediata](../graficos/teoria-21-contrapresion.svg)
 - **Riesgo estructural a vigilar:** las pérdidas en construcción dejan a los dos centrales en inferioridad; de ahí la importancia del **resto defensivo** (un MC + centrales por detrás del balón) durante el ataque. La zona crítica al defender en transición es el **espacio entre líneas** y los **medios espacios**.
 
-![DIAGRAMA: tras la pérdida, repliegue ordenado recomponiendo las dos líneas de cuatro; el primer jugador ocupa el eje para frenar el balón central, los demás repliegan a su carril](../graficos/13-transicion-repliegue.svg)
+![Pizarra: tras la pérdida, repliegue ordenado recomponiendo las dos líneas de cuatro; el primer jugador ocupa el eje para frenar el balón central y los demás repliegan a su carril](../graficos/teoria-20-repliegue.svg)
 
 **Decisión "contrapresiono o replego":** colectiva y referida al primer defensor (el que ha perdido el balón). Si la estructura estaba compacta y hay apoyos cerca, contrapresión; si el equipo estaba estirado o el rival ya progresa, repliegue.
 
@@ -38,6 +40,8 @@ Dos modelos, viables y a menudo combinados:
 
 - **Aprovechar la masa de rematadores:** dos delanteros + central(es) ofensivos dan 4-5 cabezas. Combinar **marcaje al hombre y bloqueos** (cortinas para liberar al mejor rematador).
 - **Zonas:** rematadores al primer palo (prolongación), zona central (remate), segundo palo (rechace); un hombre a la frontal para el rechace y el equilibrio. Dejar **1-2 arriba** (uno de los puntas) para el contragolpe.
+
+![Pizarra: córner ofensivo — masa de rematadores ocupando primer palo, zona central, segundo palo y frontal, con un bloqueo (cortina) para liberar al rematador y un delantero arriba para el contragolpe](../graficos/teoria-22-corner-ofensivo.svg)
 
 ### 3.2 A favor — faltas y saques
 
