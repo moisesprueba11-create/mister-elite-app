@@ -2,7 +2,7 @@
 
 > Documento de investigación para el curso profesional sobre el sistema 1-4-4-2 (1 portero + 4 defensas + 4 centrocampistas + 2 delanteros).
 > Área: fase ofensiva (inicio, construcción, finalización) + transiciones + balón parado.
-> Referencia de numeración: POR (1) / LD (2) - DFC (3,4) - LI (5) / MD (6) - MC dobles pivotes (7,8) - MI (9) / DC dobles puntas (10,11). Se usa "pivote" para los dos centrocampistas interiores y "extremos" para los carrileros del 4 del medio (MD/MI).
+> Posiciones (convención única del curso, ver doc 01): **POR** (1) · **LD** (2) / **LI** (5) · **DFC** (3,4) · **MD** (7) / **MI** (9) = los "extremos" del 4 del medio · **MC** doble pivote (6 ancla, 8 box-to-box) · **DC** doble punta (10,11: referencia y móvil). "Pivote" = los dos MC interiores; "extremos" = los medios de banda MD/MI.
 
 ---
 
@@ -116,7 +116,7 @@ El 1-4-4-2 es **el sistema de referencia del contragolpe moderno** (Atlético de
 Dos modelos, ambos viables y a menudo combinados:
 
 - **Repliegue organizado (modelo Simeone/Atlético):** tras pérdida, prioridad a **recomponer el bloque medio-bajo en 4-4-2** rápido y compacto, frenar el balón y obligar al rival a atacar un muro de dos líneas de cuatro. Es el modelo más natural del sistema por la facilidad para formar las dos líneas.
-- **Contrapresión / pressing tras pérdida ("5 segundos"):** presión inmediata en el lugar de la pérdida con el jugador más cercano + apoyos, buscando recuperar arriba antes de que el rival progrese. Funciona si la estructura ofensiva estaba compacta; el riesgo es el espacio a la espalda de los pivotes si se rompe la presión.
+- **Contrapresión / pressing tras pérdida ("3-5 segundos"):** presión inmediata en el lugar de la pérdida con el jugador más cercano + apoyos, buscando recuperar arriba antes de que el rival progrese. Funciona si la estructura ofensiva estaba compacta; el riesgo es el espacio a la espalda de los pivotes si se rompe la presión. (Misma regla descrita en el doc 02 §3.3.)
 - **Riesgo estructural a vigilar:** las pérdidas en construcción dejan a los dos centrales en inferioridad ante la transición rival; de ahí la importancia del **resto defensivo** (un pivote + centrales por detrás del balón) durante la fase ofensiva. La zona crítica del 4-4-2 al defender en transición es el **espacio entre las dos líneas** y los **medios espacios** que ocupan los interiores rivales.
 
 ---
@@ -144,7 +144,7 @@ Dos modelos, ambos viables y a menudo combinados:
 2. **Construcción:** pivotes complementarios (uno ancla, uno llegador) con relevos; progresa con tercer hombre y recepción entre líneas del delantero que baja.
 3. **Último tercio:** doble amplitud + cambios de orientación; movimientos opuestos de los puntas (apoyo/ruptura); puebla el área con 3-4 rematadores en los centros y prioriza el cut-back.
 4. **Transición ofensiva:** vertical y rápida a los dos delanteros (uno apoya, otro rompe) + extremos al espacio; el "8" llega de tercero.
-5. **Transición defensiva:** repliegue compacto en 4-4-2 o contrapresión de 5 segundos; protege siempre el espacio entre líneas con el resto defensivo.
+5. **Transición defensiva:** repliegue compacto en 4-4-2 o contrapresión de 3-5 segundos; protege siempre el espacio entre líneas con el resto defensivo.
 6. **Balón parado:** explota la masa de rematadores con bloqueos; deja un punta arriba para equilibrio y contragolpe.
 
 ---

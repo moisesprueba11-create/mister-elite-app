@@ -4,6 +4,23 @@
 
 > **Nota sobre nomenclatura.** En la convención hispana/UEFA el sistema se nombra incluyendo al portero: **1-4-4-2** (1 portero + 4 defensas + 4 centrocampistas + 2 delanteros). En la convención anglosajona se omite el portero: **4-4-2**. A lo largo del curso usamos 1-4-4-2 y 4-4-2 de forma intercambiable, refiriéndonos siempre al mismo sistema.
 
+> **Convención de posiciones del curso (única para los 4 documentos).** Usamos abreviaturas en español:
+> - **POR** (portero, dorsal de referencia 1)
+> - **LD / LI** (lateral derecho / lateral izquierdo, 2 y 5)
+> - **DFC** (defensa central, 3 y 4)
+> - **MC** (mediocentro / doble pivote, 6 y 8): el **6** es el pivote posicional/ancla y el **8** el interior box-to-box/llegador.
+> - **MD / MI** (medio derecho / medio izquierdo = los "extremos" del 4 del medio, 7 y 9)
+> - **DC** (delantero centro, 10 y 11): el **DC referencia/pivote** (juego de espaldas) y el **DC móvil/de ruptura**.
+>
+> Cuando decimos "extremos" nos referimos siempre a MD/MI (medios de banda con doble función). Cuando decimos "doble pivote" nos referimos a los dos MC. Esta convención es idéntica en los documentos 02, 03 y 04.
+
+> **Distancias de referencia unificadas (válidas para todo el curso).** Para que las tareas del banco de ejercicios (doc 04) sean medibles, fijamos estos rangos como estándar:
+> - **Entre líneas (defensa–medios y medios–delanteros):** **8–12 m** en bloque compacto (se admite hasta 15 m en bloque alto, donde el campo se estira).
+> - **Profundidad total del bloque (de la última línea a los delanteros):** **25–35 m**.
+> - **Anchura entre jugadores de una misma línea:** **8–12 m** (más juntos del lado del balón).
+> - **Ancho ocupado por el bloque:** **~40–45 m** (se concede la banda lejana, se bascula).
+> Estos números son orientativos y ajustables al rival; lo importante es la **relación** (líneas juntas, bloque corto), no el centímetro exacto.
+
 ---
 
 ## 1. Definición y estructura del 1-4-4-2
@@ -21,7 +38,7 @@ El 1-4-4-2 es un **sistema de juego** (disposición inicial de los jugadores en 
 
 Para razonar posiciones, el campo se divide en:
 
-- **Carriles verticales (5):** lateral izquierdo, interior izquierdo, central, interior derecho, lateral derecho. En el 4-4-2 plano, en defensa los cuatro defensas cubren prioritariamente los carriles laterales e interiores y el medio-medio, y los dos mediocentros protegen los **carriles interiores** (la zona más peligrosa, eje central).
+- **Carriles verticales (5):** lateral izquierdo, interior izquierdo (medio espacio), central, interior derecho (medio espacio), lateral derecho. En el 4-4-2 plano: los dos DFC cubren el **carril central**, los dos laterales los **carriles laterales**, y los dos MC protegen el eje y los **medios espacios** (la zona más peligrosa, justo delante de los centrales). Los medios espacios entre lateral y central son el punto que más explotan los rivales contra este sistema.
 - **Franjas horizontales (3):** zona defensiva, zona media (de creación) y zona ofensiva (de finalización).
 - **Zona 14 (Zona Maradona):** el espacio interior justo por delante del área rival; el 4-4-2 plano tiende a ocuparla con la llegada de un mediocentro o la caída de un delantero, porque la estructura base no coloca a nadie fijo ahí (ausencia de mediapunta).
 
@@ -29,7 +46,7 @@ Para razonar posiciones, el campo se divide en:
 
 La eficacia defensiva del 1-4-4-2 depende de mantener el **bloque corto y junto**:
 
-- **Distancia entre líneas (vertical):** aproximadamente **10-15 m** entre defensa y medios, y similar entre medios y delanteros. El objetivo es un bloque comprimido de **30-35 m** de profundidad total (no más), que niega el espacio interior entre líneas.
+- **Distancia entre líneas (vertical):** **8-12 m** entre defensa y medios, y similar entre medios y delanteros (hasta ~15 m solo en bloque alto). El objetivo es un bloque comprimido de **25-35 m** de profundidad total (no más), que niega el espacio interior entre líneas.
 - **Distancia entre jugadores de una misma línea (horizontal):** **8-12 m** en zona, ajustando según dónde está el balón (más juntos del lado del balón).
 - **Basculación:** la línea de cuatro se desplaza en bloque hacia el lado del balón, dejando libre el lado lejano (que se cubre con la distancia y el tiempo de circulación del balón rival).
 - **Línea de fuera de juego:** los DFC fijan la altura del bloque; subir y bajar la línea de forma coordinada es el mecanismo clave para comprimir/descomprimir el campo.
@@ -44,7 +61,7 @@ El jugador del 4-4-2 se orienta por **referencias combinadas**: posición del ba
 
 El 4-4-2 hereda la evolución del **4-4-2 británico** y del **4-2-4 brasileño de 1958**, pero su formulación moderna como sistema de presión y bloque organizado se asocia sobre todo a:
 
-- **Arrigo Sacchi (Milan, 1987-1991):** referencia teórica del 4-4-2 moderno. Introdujo el **bloque compacto con presión alta, fuera de juego coordinado y defensa en zona pura**, priorizando los **espacios y los movimientos colectivos** por encima del marcaje individual. Su frase-guía: los 25-30 metros entre el primer y el último jugador. Es el padre del 4-4-2 como sistema de juego de autor.
+- **Arrigo Sacchi (Milan, 1987-1991):** referencia teórica del 4-4-2 moderno. Codificó el **bloque compacto con presión alta, fuera de juego coordinado y defensa en zona pura**, priorizando los **espacios y los movimientos colectivos** por encima del marcaje individual. Su regla histórica de compacidad: **~25-30 m** entre el primer y el último jugador (origen de la cifra de profundidad de bloque que el curso fija en 25-35 m). Es el padre del 4-4-2 como sistema de juego de autor.
 - **Alex Ferguson (Manchester United, años 90 y 2000):** 4-4-2 con **extremos puros y amplitud**, transiciones rápidas y dos delanteros complementarios; modelo de eficacia y verticalidad en la Premier League.
 - **Rafa Benítez (Valencia / Liverpool):** 4-4-2 muy disciplinado posicionalmente, bloque medio-bajo y excelente organización defensiva zonal.
 - **Diego Simeone (Atlético de Madrid, desde 2011):** **resurgimiento contemporáneo** del 4-4-2 como **bloque medio-bajo defensivo de élite**: dos líneas de cuatro extremadamente compactas y solidarias, defensa de los espacios interiores, transiciones y juego directo a dos puntas. Demuestra la vigencia competitiva del sistema frente a modelos de posesión.
@@ -124,7 +141,7 @@ Los principios son las **ideas rectoras** que dan sentido a los movimientos. Se 
 ### Enfrentamientos sistémicos
 
 - **vs 1-4-3-3:** el 4-3-3 suele ganar el **centro del campo (3 vs 2)** y fija a los laterales con sus extremos. El 4-4-2 lo neutraliza con **bloque compacto, presión a los pivotes con sus dos delanteros (orientando la salida) y un MC que sale a vigilar al medio interior rival**; ofensivamente ataca el **espacio a la espalda de los laterales** del 4-3-3 cuando se incorporan. Es un duelo clásico: posesión/superioridad central (4-3-3) contra solidez y transición (4-4-2).
-- **vs 1-3-5-2 / 3-4-2-1:** el rival de cinco en el medio y carrileros genera **amplitud y superioridad central**; el 4-4-2 sufre por fuera (carrileros contra laterales) y por dentro. Respuesta: replegar a bloque, que los extremos ayuden a los laterales sobre los carrileros y buscar el **2 vs 3 ofensivo contra sus tres centrales** atacando los pasillos entre central y carrilero.
+- **vs 1-3-5-2 / 3-4-2-1:** el rival de cinco en el medio y carrileros genera **amplitud y superioridad central**; el 4-4-2 sufre por fuera (carrileros contra laterales) y por dentro. Respuesta: replegar a bloque, que los extremos ayuden a los laterales sobre los carrileros y, en ataque, **atacar los pasillos entre central y carrilero** con los dos DC (aceptando el 2 vs 3 atrás del rival, pero obligando a sus centrales a defender el espacio que dejan los carrileros al subir).
 - **vs otro 1-4-4-2:** partido de **espejos**, muy físico y de duelos individuales; se decide por la **mejor pareja de delanteros, los duelos en banda y la calidad de las transiciones**, además de pequeños desequilibrios (asimetrías, caídas de un delantero).
 - **vs 1-4-2-3-1:** el mediapunta rival ataca el espacio entre los dos MC y la defensa (el punto débil del 4-4-2 plano). Respuesta: un MC referencia al mediapunta o se defiende muy compacto cerrando ese intervalo.
 

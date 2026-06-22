@@ -2,7 +2,8 @@
 
 > Módulo de la base de conocimiento para el curso profesional sobre el sistema 1-4-4-2.
 > Enfoque: funciones individuales por posición + organización defensiva colectiva.
-> Convenciones: campo dividido en tercios (defensivo / medio / ofensivo) y en carriles (carril central, dos carriles interiores/intervalos, dos carriles laterales). Las dos líneas de cuatro = línea defensiva (4 defensas) y línea de medios (4 centrocampistas).
+> Convenciones: campo dividido en tercios (defensivo / medio / ofensivo) y en carriles (carril central, dos carriles interiores/medios espacios, dos carriles laterales). Las dos líneas de cuatro = línea defensiva (4 defensas) y línea de medios (4 centrocampistas).
+> Posiciones (convención única del curso, ver doc 01): **POR** portero · **LD/LI** laterales · **DFC** centrales · **MC** doble pivote (6 ancla / 8 box-to-box) · **MD/MI** medios de banda ("extremos") · **DC** delanteros (referencia / móvil).
 
 ---
 
@@ -10,7 +11,7 @@
 
 El 1-4-4-2 es un sistema de **referencias zonales claras** y **simetría**: cada jugador tiene un compañero de su misma demarcación en el lado opuesto, lo que facilita la basculación y el reparto de coberturas. La fortaleza del sistema es la organización en bloque; su debilidad estructural es el centro del campo (ver punto 5).
 
-### 1.1 Portero (GK)
+### 1.1 Portero (POR)
 
 **Defensa:**
 - Última línea y **portero-líbero**: defiende el espacio a la espalda de la línea de cuatro cuando ésta sube. Altura de partida acorde a la altura del bloque (en bloque alto, sale a 18-25 m de su portería para barrer balones a la espalda).
@@ -22,7 +23,7 @@ El 1-4-4-2 es un sistema de **referencias zonales claras** y **simetría**: cada
 - Inicio de juego: primer pase. En 1-4-4-2 clásico el inicio limpio es complejo porque los dos puntas rivales pueden presionar a los dos centrales en igualdad; el portero genera el +1 (3 vs 2) bajando entre/al lado de los centrales o jugando a un lateral liberado.
 - Cambio de orientación y juego directo a los dos delanteros (recurso muy propio del sistema) o a las bandas para segundas jugadas.
 
-### 1.2 Laterales (LB / RB)
+### 1.2 Laterales (LD / LI)
 
 **Defensa:**
 - Defienden el carril lateral en 1×1 contra el extremo rival; **orientan el regate hacia fuera o hacia la cobertura interior** según plan.
@@ -36,7 +37,7 @@ El 1-4-4-2 es un sistema de **referencias zonales claras** y **simetría**: cada
 - Desdobles con el extremo (sociedades de banda: par-impar, dentro-fuera).
 - Centros desde zona de córner y desde tres cuartos.
 
-### 1.3 Centrales (CB × 2)
+### 1.3 Centrales (DFC × 2)
 
 **Defensa:**
 - Pareja de centrales con reparto de roles habitual: uno más **stopper/agresivo** (sale a achicar al delantero que recibe, gana duelos, anticipa) y otro más **líbero/coberturas** (lee, tapa la espalda, dirige la línea y el fuera de juego).
@@ -49,7 +50,7 @@ El 1-4-4-2 es un sistema de **referencias zonales claras** y **simetría**: cada
 - Salida de balón: primer pase, conducción para atraer y romper líneas, pase entre líneas al mediocentro o al delantero que cae.
 - En bloque alto, sostienen la línea adelantada para mantener al equipo junto.
 
-### 1.4 Doble pivote / interiores (dos mediocentros, CM × 2)
+### 1.4 Doble pivote / interiores (dos mediocentros, MC × 2)
 
 Es la posición **más crítica** del sistema. En el 4-4-2 los dos mediocentros suelen enfrentarse a tres del rival en el centro (mediocentro + dos interiores de un 4-3-3, o un trivote). Roles típicos:
 
@@ -67,7 +68,7 @@ Es la posición **más crítica** del sistema. En el 4-4-2 los dos mediocentros 
 - Recepción entre líneas, organización y circulación; uno baja a recibir (forma un 3 en salida) mientras el otro sostiene.
 - Cambios de orientación, último pase y llegada al área (el interior box-to-box).
 
-### 1.5 Extremos / medios de banda (LM / RM)
+### 1.5 Extremos / medios de banda (MD / MI)
 
 Son **medios de banda con doble función**, no extremos puros: el trabajo defensivo es innegociable en este sistema.
 
@@ -81,13 +82,13 @@ Son **medios de banda con doble función**, no extremos puros: el trabajo defens
 - Amplitud para estirar al rival, 1×1, centros, y diagonales hacia dentro buscando el remate (extremo a pierna cambiada) o el espacio para el lateral por fuera.
 - Asociación con lateral y delantero del lado.
 
-### 1.6 Dos delanteros (ST referencia + segundo punta)
+### 1.6 Dos delanteros (DC referencia + DC móvil/segundo punta)
 
-**Delantero referencia (9 / target):**
+**Delantero referencia (DC pivote / target):**
 - Defensa: primera presión, fija al central con balón, orienta y **tapa el carril central** o la línea de pase al pivote rival.
 - Ataque: juego de espaldas, fijar centrales, aguantar y descargar, ataque del primer palo y remate.
 
-**Segundo punta / delantero móvil (9.5):**
+**Segundo punta / delantero móvil (DC móvil):**
 - Defensa: el otro vértice de la presión de dos; salta sobre el segundo central o sobre el pivote rival según la trampa elegida.
 - Ataque: caer a recibir entre líneas, asociarse, segunda jugada, llegada desde atrás, ataque a la espalda de la defensa.
 
