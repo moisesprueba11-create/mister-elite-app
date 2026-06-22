@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" font-family="'Segoe UI', Arial, sans-serif">
   <defs>
     <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
     </marker>
-    <marker id="arrowProg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
     </marker>
     <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
@@ -12,135 +12,131 @@
     </linearGradient>
   </defs>
 
-  <!-- Cesped con franjas -->
-  <rect x="0" y="0" width="600" height="760" fill="#2e7d32"/>
+  <!-- Cesped con franjas (campo completo) -->
+  <rect x="0" y="0" width="600" height="860" fill="#2e7d32"/>
   <g fill="#2f8235">
     <rect x="20" y="60"  width="560" height="93" />
     <rect x="20" y="246" width="560" height="93" />
     <rect x="20" y="432" width="560" height="93" />
-    <rect x="20" y="618" width="560" height="102" />
+    <rect x="20" y="618" width="560" height="93" />
   </g>
 
-  <!-- =========================================================
-       ZONIFICACION: 3 carriles x 3 franjas
-       carriles: x 20-207 (banda izq), 207-393 (central), 393-580 (banda der)
-       franjas:  y 60-280 (ofensiva), 280-500 (media), 500-720 (defensiva)
-       ========================================================= -->
-
-  <!-- ZONAS DE BANDA resaltadas: "zonas de robo premiado" -->
-  <g>
-    <rect x="20"  y="60" width="187" height="660" fill="#ffd24a" fill-opacity="0.12"/>
-    <rect x="393" y="60" width="187" height="660" fill="#ffd24a" fill-opacity="0.12"/>
+  <!-- Carriles verticales (3 zonas: 2 bandas + central) - bandas sombreadas -->
+  <g fill="#ffd24a" fill-opacity="0.16">
+    <rect x="20" y="60" width="166" height="744"/>
+    <rect x="414" y="60" width="166" height="744"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="7 5">
+    <line x1="186" y1="60" x2="186" y2="804"/>
+    <line x1="414" y1="60" x2="414" y2="804"/>
   </g>
 
-  <!-- Lineas de carriles (verticales, marcadas) -->
-  <g stroke="#ffffff" stroke-width="2" stroke-dasharray="9 6" stroke-opacity="0.85">
-    <line x1="207" y1="60" x2="207" y2="720"/>
-    <line x1="393" y1="60" x2="393" y2="720"/>
-  </g>
-  <!-- Lineas de franjas (horizontales, marcadas) -->
-  <g stroke="#ffffff" stroke-width="2" stroke-dasharray="9 6" stroke-opacity="0.85">
-    <line x1="20" y1="280" x2="580" y2="280"/>
-    <line x1="20" y1="500" x2="580" y2="500"/>
+  <!-- Tercios horizontales (3) -->
+  <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="7 5">
+    <line x1="20" y1="308" x2="580" y2="308"/>
+    <line x1="20" y1="556" x2="580" y2="556"/>
   </g>
 
-  <!-- Lineas del campo (campo completo, porteria rival arriba) -->
+  <!-- Lineas del campo -->
   <g fill="none" stroke="#ffffff" stroke-width="2.5">
-    <rect x="20" y="60" width="560" height="660"/>
-    <line x1="20" y1="390" x2="580" y2="390"/>
-    <circle cx="300" cy="390" r="62"/>
+    <rect x="20" y="60" width="560" height="744"/>
+    <line x1="20" y1="432" x2="580" y2="432"/>
+    <circle cx="300" cy="432" r="62"/>
     <rect x="148" y="60" width="304" height="100"/>
     <rect x="232" y="60" width="136" height="40"/>
-    <rect x="148" y="620" width="304" height="100"/>
-    <rect x="232" y="680" width="136" height="40"/>
+    <rect x="148" y="704" width="304" height="100"/>
+    <rect x="232" y="764" width="136" height="40"/>
   </g>
   <g fill="#ffffff">
-    <circle cx="300" cy="390" r="3"/>
+    <circle cx="300" cy="432" r="3"/>
     <circle cx="300" cy="130" r="3"/>
-    <circle cx="300" cy="650" r="3"/>
+    <circle cx="300" cy="734" r="3"/>
   </g>
   <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
-  <path d="M252,620 A56,56 0 0 1 348,620" fill="none" stroke="#ffffff" stroke-width="2.5"/>
-
-  <!-- Etiquetas de carriles -->
-  <g fill="#1d3557" font-size="12.5" font-weight="700" text-anchor="middle">
-    <text x="113" y="78">banda izquierda</text>
-    <text x="300" y="78">carril central</text>
-    <text x="487" y="78">banda derecha</text>
-  </g>
-
-  <!-- Etiquetas de franjas -->
-  <g fill="#ffffff" font-size="12" font-weight="700" text-anchor="start" opacity="0.9">
-    <text x="26" y="176">franja ofensiva</text>
-    <text x="26" y="396">franja media</text>
-    <text x="26" y="612">franja defensiva</text>
-  </g>
-
-  <!-- ZONAS DE ROBO PREMIADO etiqueta -->
-  <g fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">
-    <text x="113" y="540">ROBO PREMIADO</text>
-    <text x="487" y="540">ROBO PREMIADO</text>
-  </g>
-  <!-- Estrellas de puntos en zonas de robo (defensiva-banda) -->
-  <g fill="#ffd24a">
-    <text x="113" y="566" font-size="20" text-anchor="middle">★ ★</text>
-    <text x="487" y="566" font-size="20" text-anchor="middle">★ ★</text>
-  </g>
+  <path d="M252,704 A56,56 0 0 1 348,704" fill="none" stroke="#ffffff" stroke-width="2.5"/>
 
   <!-- Titulo -->
   <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
-  <text x="300" y="29" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">Tarea: zonas y puntos (3 carriles x 3 franjas)</text>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 24 — Partido por zonas y puntos</text>
 
-  <!-- =========================================================
-       VIAS DE PROGRESION OFENSIVA (flechas amarillas)
-       desde la franja defensiva hacia la ofensiva por las bandas y centro
-       ========================================================= -->
-  <!-- progresion banda izquierda -->
-  <path d="M113,610 C100,500 100,360 113,250" fill="none" stroke="#ffd24a" stroke-width="3" marker-end="url(#arrowProg)"/>
-  <!-- progresion banda derecha -->
-  <path d="M487,610 C500,500 500,360 487,250" fill="none" stroke="#ffd24a" stroke-width="3" marker-end="url(#arrowProg)"/>
-  <!-- progresion central -->
-  <path d="M300,600 C300,500 300,360 300,250" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#arrowProg)"/>
-  <text x="300" y="430" fill="#ffd24a" font-size="10.5" font-weight="700" text-anchor="middle" transform="rotate(-90 300 430)">vía central</text>
+  <text x="560" y="430" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
 
-  <!-- ejemplo: cambio de orientacion entre carriles (movimiento, continuo) -->
-  <path d="M155,440 C230,420 300,420 360,438" fill="none" stroke="#1d3557" stroke-width="3" stroke-dasharray="2 0" marker-end="url(#arrowRun)"/>
-  <text x="260" y="412" fill="#1d3557" font-size="10.5" font-weight="700" text-anchor="middle">progresar por banda</text>
+  <!-- Etiquetas de carriles y tercios -->
+  <text x="103" y="60" fill="#ffffff" font-size="11" opacity="0.7" text-anchor="middle" dy="14">banda</text>
+  <text x="300" y="60" fill="#ffffff" font-size="11" opacity="0.7" text-anchor="middle" dy="14">central</text>
+  <text x="497" y="60" fill="#ffffff" font-size="11" opacity="0.7" text-anchor="middle" dy="14">banda</text>
 
-  <!-- =========================================================
-       Jugadores de referencia 1-4-4-2 ubicados en sus carriles
-       (azul) - franja media/defensiva
-       ========================================================= -->
-  <g font-size="13" font-weight="700" text-anchor="middle">
-    <!-- defensa -->
-    <circle cx="113" cy="630" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="113" y="635" fill="#fff">LD</text>
-    <circle cx="255" cy="645" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="255" y="650" fill="#fff">DFC</text>
-    <circle cx="345" cy="645" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="345" y="650" fill="#fff">DFC</text>
-    <circle cx="487" cy="630" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="487" y="635" fill="#fff">LI</text>
-    <!-- medios -->
-    <circle cx="113" cy="440" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="113" y="445" fill="#fff">MD</text>
-    <circle cx="260" cy="460" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="260" y="465" fill="#fff">MC</text>
-    <circle cx="340" cy="430" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="340" y="435" fill="#fff">MC</text>
-    <circle cx="487" cy="440" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="487" y="445" fill="#fff">MI</text>
-    <!-- delanteros -->
-    <circle cx="255" cy="240" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="255" y="245" fill="#fff">DC</text>
-    <circle cx="345" cy="240" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="345" y="245" fill="#fff">DC</text>
+  <!-- (a) Zona banda DEFENSIVA: robo en banda +1 (banda izquierda, tercio bajo) -->
+  <text x="103" y="640" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 103 640)">(a) robo en banda +1</text>
+  <!-- (b) Zona banda OFENSIVA: progresion premiada (banda derecha, tercio alto) -->
+  <text x="497" y="220" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 497 220)">(b) progresión por banda premiada</text>
+
+  <!-- Basculacion defensiva que orienta al rival a la banda (solidos) -->
+  <path d="M300,560 C250,565 200,575 160,600" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <path d="M360,520 C320,545 270,575 200,620" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <text x="250" y="540" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">basculación → orienta a la banda</text>
+
+  <!-- Ataque buscando amplitud (discontinuo hacia la banda alta) -->
+  <path d="M300,360 C380,330 440,300 490,250" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="400" y="345" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">buscar amplitud</text>
+
+  <!-- Balon (rival progresando) -->
+  <circle cx="300" cy="540" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+
+  <!-- Bloque 1-4-4-2 propio (azul) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- Portero -->
+    <polygon points="300,752 312,774 288,774" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="793" fill="#ffffff" font-size="12">POR</text>
+    <!-- Defensa (4) -->
+    <circle cx="120" cy="660" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="120" y="665" fill="#fff">LD</text>
+    <circle cx="240" cy="672" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="240" y="677" fill="#fff">DFC</text>
+    <circle cx="360" cy="672" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="677" fill="#fff">DFC</text>
+    <circle cx="480" cy="660" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="480" y="665" fill="#fff">LI</text>
+    <!-- Medios (4) -->
+    <circle cx="110" cy="490" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="110" y="495" fill="#fff">MD</text>
+    <circle cx="245" cy="510" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="245" y="515" fill="#fff">MC</text>
+    <circle cx="355" cy="510" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="355" y="515" fill="#fff">MC</text>
+    <circle cx="490" cy="490" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="490" y="495" fill="#fff">MI</text>
+    <!-- Delanteros (2) -->
+    <circle cx="245" cy="360" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="245" y="365" fill="#fff">DC</text>
+    <circle cx="360" cy="360" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="365" fill="#fff">DC</text>
   </g>
 
-  <!-- =========================================================
-       Leyenda
-       ========================================================= -->
+  <!-- Rivales (rojo) para contexto -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="300" cy="540" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="545" fill="#fff">MC'</text>
+    <circle cx="360" cy="500" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="505" fill="#fff">DC'</text>
+    <circle cx="160" cy="600" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="160" y="605" fill="#fff">MI'</text>
+  </g>
+
+  <!-- Llave de medida bloque < 35 m -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none">
+    <line x1="552" y1="360" x2="552" y2="672"/>
+    <line x1="548" y1="360" x2="556" y2="360"/>
+    <line x1="548" y1="672" x2="556" y2="672"/>
+  </g>
+  <text x="566" y="516" fill="#ffffff" font-size="11" transform="rotate(-90 566 516)" text-anchor="middle">bloque &lt; 35 m</text>
+
+  <!-- Etiquetas de puntuacion -->
+  <g font-size="12" font-weight="700" fill="#ffd24a" text-anchor="start">
+    <rect x="26" y="818" width="548" height="34" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1"/>
+    <text x="40" y="840" fill="#ffd24a">robo en banda +1</text>
+    <text x="240" y="840" fill="#ffd24a">bloque &lt; 35 m durante la fase = +1</text>
+  </g>
+
+  <!-- Mini-leyenda -->
   <g>
-    <rect x="330" y="600" width="250" height="108" rx="7" fill="#1d3557" fill-opacity="0.92" stroke="#ffffff" stroke-opacity="0.4"/>
-    <text x="342" y="622" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
-    <rect x="344" y="634" width="20" height="14" fill="#ffd24a" fill-opacity="0.4"/>
-    <text x="372" y="645" fill="#ffffff" font-size="11">zona banda = robo premiado ★</text>
-    <line x1="344" y1="666" x2="378" y2="666" stroke="#ffd24a" stroke-width="3" marker-end="url(#arrowProg)"/>
-    <text x="390" y="670" fill="#ffffff" font-size="11">vía de progresión ofensiva</text>
-    <line x1="344" y1="690" x2="378" y2="690" stroke="#1d3557" stroke-width="3" marker-end="url(#arrowRun)"/>
-    <text x="390" y="694" fill="#ffffff" font-size="11">continua = movimiento del balón</text>
+    <rect x="430" y="704" width="150" height="92" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1"/>
+    <text x="438" y="722" fill="#ffffff" font-size="11" font-weight="700">LEYENDA</text>
+    <line x1="438" y1="735" x2="468" y2="735" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+    <text x="474" y="739" fill="#ffffff" font-size="10">basculación</text>
+    <line x1="438" y1="755" x2="468" y2="755" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="474" y="759" fill="#ffffff" font-size="10">amplitud</text>
+    <rect x="436" y="770" width="14" height="10" fill="#ffd24a" fill-opacity="0.3" stroke="#ffd24a"/>
+    <text x="474" y="779" fill="#ffffff" font-size="10">zona de banda</text>
+    <circle cx="444" cy="788" r="6" fill="#1d6fb8" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="458" cy="788" r="6" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="474" y="792" fill="#ffffff" font-size="10">propio / rival</text>
   </g>
-
-  <!-- Sentido -->
-  <text x="566" y="712" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.8">ataque ↑</text>
 </svg>

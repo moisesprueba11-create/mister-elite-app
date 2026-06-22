@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" font-family="'Segoe UI', Arial, sans-serif">
   <defs>
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
     </marker>
-    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    <marker id="arrowY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
     </marker>
     <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff"/>
@@ -13,115 +13,121 @@
   </defs>
 
   <!-- Cesped con franjas -->
-  <rect x="0" y="0" width="600" height="860" fill="#2e7d32"/>
+  <rect x="0" y="0" width="600" height="720" fill="#2e7d32"/>
   <g fill="#2f8235">
-    <rect x="20" y="60"  width="560" height="93" />
-    <rect x="20" y="246" width="560" height="93" />
-    <rect x="20" y="432" width="560" height="93" />
-    <rect x="20" y="618" width="560" height="93" />
+    <rect x="20" y="70"  width="560" height="95" />
+    <rect x="20" y="260" width="560" height="95" />
+    <rect x="20" y="450" width="560" height="95" />
   </g>
 
   <!-- Carriles verticales (referencia) -->
   <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
-    <line x1="132" y1="60" x2="132" y2="804"/>
-    <line x1="244" y1="60" x2="244" y2="804"/>
-    <line x1="356" y1="60" x2="356" y2="804"/>
-    <line x1="468" y1="60" x2="468" y2="804"/>
+    <line x1="160" y1="70" x2="160" y2="640"/>
+    <line x1="300" y1="70" x2="300" y2="640"/>
+    <line x1="440" y1="70" x2="440" y2="640"/>
   </g>
 
-  <!-- Lineas del campo (perimetro) -->
+  <!-- Lineas del campo (MEDIO CAMPO, porteria propia abajo) -->
   <g fill="none" stroke="#ffffff" stroke-width="2.5">
-    <rect x="20" y="60" width="560" height="744"/>
-    <rect x="148" y="704" width="304" height="100"/>
-    <rect x="232" y="764" width="136" height="40"/>
+    <rect x="20" y="70" width="560" height="570"/>
+    <rect x="148" y="540" width="304" height="100"/>
+    <rect x="232" y="600" width="136" height="40"/>
   </g>
-  <g fill="#ffffff">
-    <circle cx="300" cy="734" r="3"/>
-  </g>
-  <path d="M252,704 A56,56 0 0 1 348,704" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M252,540 A56,56 0 0 1 348,540" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Porteria grande propia (abajo) -->
+  <rect x="262" y="632" width="76" height="10" fill="#ffffff" stroke="#1d3557" stroke-width="1"/>
 
-  <!-- ESPACIO ACOTADO DE LA TAREA (zona de trabajo) -->
-  <rect x="60" y="350" width="480" height="430" fill="#ffffff" fill-opacity="0.05" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="10 7" rx="8"/>
-  <text x="68" y="372" fill="#ffd24a" font-size="12" font-weight="700">Espacio de la tarea</text>
-
-  <!-- Linea de superacion a ~40 m -->
-  <line x1="60" y1="400" x2="540" y2="400" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 5" opacity="0.7"/>
-  <text x="540" y="394" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.85">línea de superación (~40 m)</text>
-
-  <!-- ZONAS-META de superacion -->
+  <!-- ZONAS-META de superacion (objetivo lejano ~40 m, una por banda) -->
   <g>
-    <rect x="60" y="350" width="180" height="50" fill="#ffd24a" fill-opacity="0.20" stroke="#ffd24a" stroke-width="2.5" rx="6"/>
-    <text x="150" y="380" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">ZONA-META</text>
-    <rect x="360" y="350" width="180" height="50" fill="#ffd24a" fill-opacity="0.20" stroke="#ffd24a" stroke-width="2.5" rx="6"/>
-    <text x="450" y="380" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">ZONA-META</text>
+    <rect x="30" y="82" width="120" height="74" fill="#ffd24a" fill-opacity="0.22" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="6 4" rx="6"/>
+    <text x="90" y="124" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">ZONA-META</text>
+    <rect x="450" y="82" width="120" height="74" fill="#ffd24a" fill-opacity="0.22" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="6 4" rx="6"/>
+    <text x="510" y="124" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">ZONA-META</text>
   </g>
+  <text x="300" y="100" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">zonas-meta de superación</text>
+
+  <!-- Dimensiones -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.9">
+    <line x1="20" y1="58" x2="580" y2="58"/>
+    <line x1="20" y1="54" x2="20" y2="62"/>
+    <line x1="580" y1="54" x2="580" y2="62"/>
+    <line x1="591" y1="70" x2="591" y2="640"/>
+    <line x1="587" y1="70" x2="595" y2="70"/>
+    <line x1="587" y1="640" x2="595" y2="640"/>
+  </g>
+  <text x="300" y="51" fill="#ffffff" font-size="12" text-anchor="middle">68 m</text>
+  <text x="589" y="355" fill="#ffffff" font-size="12" text-anchor="middle" transform="rotate(90 589 355)">40 m</text>
 
   <!-- Titulo -->
   <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
-  <text x="300" y="29" fill="#ffffff" font-size="19" font-weight="700" text-anchor="middle">Tarea: salida 4+2 vs 2 (crear 3 vs 2)</text>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 1 — Salida 4+2 vs 2</text>
 
-  <text x="560" y="430" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">progresión ↑</text>
-
-  <!-- Balon en el central derecho -->
-  <circle cx="356" cy="652" r="9" fill="url(#ball)" stroke="#1d3557" stroke-width="1.5"/>
-
-  <!-- Dos DC rivales -->
-  <g font-size="13" font-weight="700" text-anchor="middle">
-    <circle cx="245" cy="540" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="245" y="545" fill="#fff">DC</text>
-    <circle cx="360" cy="540" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="545" fill="#fff">DC</text>
+  <!-- Conos de banda (naranja) -->
+  <g fill="#e67e22" stroke="#ffffff" stroke-width="0.6">
+    <polygon points="30,360 38,374 22,374"/>
+    <polygon points="570,360 578,374 562,374"/>
+    <polygon points="30,250 38,264 22,264"/>
+    <polygon points="570,250 578,264 562,264"/>
   </g>
 
-  <!-- Jugadores propios: 4 atras + 2 (MC baja entre centrales) -->
-  <g font-size="15" font-weight="700" text-anchor="middle">
-    <!-- Portero -->
-    <polygon points="300,752 312,774 288,774" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
-    <text x="300" y="793" fill="#ffffff" font-size="13">POR (1)</text>
+  <!-- Cambio de orientacion premiado: salida por el lateral del lado contrario al press -->
+  <path d="M252,425 C150,360 92,260 92,162" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+  <text x="128" y="296" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">cambio de orientación</text>
+  <text x="128" y="310" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">premiado (LI libre)</text>
 
-    <!-- Laterales abiertos -->
-    <circle cx="80" cy="640" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="80" y="645" fill="#fff">LD</text>
-    <circle cx="520" cy="640" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="520" y="645" fill="#fff">LI</text>
+  <!-- MC baja entre centrales (carrera solida + flecha) -->
+  <path d="M300,360 L300,455" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Comodines neutrales de banda (grises) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="68" cy="300" r="18" fill="#888" stroke="#ffffff" stroke-width="2.5"/><text x="68" y="305" fill="#fff" font-size="11">com.</text>
+    <circle cx="532" cy="300" r="18" fill="#888" stroke="#ffffff" stroke-width="2.5"/><text x="532" y="305" fill="#fff" font-size="11">com.</text>
+  </g>
+  <text x="68" y="332" fill="#ffd24a" font-size="10" font-weight="700" text-anchor="middle">comodín</text>
+  <text x="532" y="332" fill="#ffd24a" font-size="10" font-weight="700" text-anchor="middle">comodín</text>
+
+  <!-- Delanteros rivales que presionan (2 DC') -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="250" cy="400" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="250" y="405" fill="#fff">DC'</text>
+    <circle cx="360" cy="400" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="405" fill="#fff">DC'</text>
+  </g>
+  <text x="305" y="380" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">2 que presionan</text>
+
+  <!-- Equipo de construccion propio (POR + LD + DFC1 + DFC2 + LI + 1 MC) -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <!-- Portero (triangulo) -->
+    <polygon points="300,592 312,614 288,614" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="632" fill="#ffffff" font-size="12">POR</text>
+
+    <!-- Laterales abiertos a las bandas -->
+    <circle cx="60" cy="500" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="60" y="505" fill="#fff">LD</text>
+    <circle cx="540" cy="500" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="540" y="505" fill="#fff">LI</text>
 
     <!-- Dos centrales -->
-    <circle cx="220" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="220" y="665" fill="#fff">DFC</text>
-    <circle cx="380" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="380" y="665" fill="#fff">DFC</text>
+    <circle cx="225" cy="505" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="225" y="510" fill="#fff" font-size="13">DFC1</text>
+    <circle cx="375" cy="505" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="375" y="510" fill="#fff" font-size="13">DFC2</text>
 
-    <!-- MC baja entre los centrales para el 3 vs 2 -->
-    <circle cx="300" cy="700" r="20" fill="#1d6fb8" stroke="#ffd24a" stroke-width="3"/><text x="300" y="705" fill="#fff">MC</text>
-
-    <!-- Segundo medio adelantado (el +2 que recibe entre lineas) -->
-    <circle cx="300" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="475" fill="#fff">MC</text>
+    <!-- MC que baja entre los centrales (posicion final del 3vs2) -->
+    <circle cx="300" cy="475" r="20" fill="#1d6fb8" stroke="#ffd24a" stroke-width="3"/><text x="300" y="480" fill="#fff">MC</text>
   </g>
 
-  <!-- MC baja entre centrales (continua=movimiento) -->
-  <path d="M300,640 L300,678" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-  <!-- Laterales se abren (continua=movimiento) -->
-  <path d="M120,635 L96,638" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M480,635 L504,638" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- Tag 3 vs 2 -->
+  <text x="300" y="540" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">3 vs 2  (DFC1 + MC + DFC2)</text>
 
-  <!-- Pase del central que progresa superando linea (discontinua=pase) -->
-  <path d="M376,640 L312,486" fill="none" stroke="#1d3557" stroke-width="3" stroke-dasharray="9 6" marker-end="url(#arrowPass)"/>
-  <!-- Conduccion para superar a zona-meta (ondulada=conduccion) -->
-  <path d="M300,452 q-20,-25 -10,-45 t-30,-45" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- Balon en el portero -->
+  <circle cx="300" cy="565" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
 
-  <!-- Tags rol -->
-  <g font-size="11" font-weight="700" fill="#ffd24a" text-anchor="middle">
-    <text x="300" y="730">MC baja: 3 vs 2</text>
-    <text x="300" y="445">recibe entre líneas</text>
-  </g>
-
-  <!-- Leyenda -->
+  <!-- Mini-leyenda -->
   <g>
-    <rect x="20" y="64" width="220" height="118" fill="#1d3557" fill-opacity="0.82" rx="6"/>
-    <text x="32" y="84" fill="#ffffff" font-size="13" font-weight="700">Leyenda</text>
-    <line x1="32" y1="100" x2="72" y2="100" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-    <text x="80" y="104" fill="#ffffff" font-size="11">Movimiento</text>
-    <path d="M32,120 q10,-6 20,0 t20,0" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
-    <text x="80" y="124" fill="#ffffff" font-size="11">Conducción</text>
-    <line x1="32" y1="140" x2="72" y2="140" stroke="#1d3557" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
-    <text x="80" y="144" fill="#ffffff" font-size="11">Pase</text>
-    <circle cx="40" cy="160" r="7" fill="#1d6fb8" stroke="#fff" stroke-width="1.5"/>
-    <text x="54" y="164" fill="#ffffff" font-size="11">Propio</text>
-    <circle cx="130" cy="160" r="7" fill="#c0392b" stroke="#fff" stroke-width="1.5"/>
-    <text x="144" y="164" fill="#ffffff" font-size="11">Rival</text>
+    <rect x="428" y="538" width="160" height="96" rx="6" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="438" y="556" fill="#ffffff" font-size="11" font-weight="700">Leyenda</text>
+    <line x1="438" y1="568" x2="468" y2="568" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="474" y="572" fill="#ffffff" font-size="10">carrera (sólida)</text>
+    <line x1="438" y1="586" x2="468" y2="586" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+    <text x="474" y="590" fill="#ffffff" font-size="10">pase / cambio</text>
+    <rect x="438" y="599" width="14" height="10" fill="#ffd24a" fill-opacity="0.22" stroke="#ffd24a" stroke-width="1"/>
+    <text x="474" y="608" fill="#ffffff" font-size="10">zona-meta</text>
+    <circle cx="445" cy="623" r="6" fill="#888" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="474" y="627" fill="#ffffff" font-size="10">comodín</text>
   </g>
 </svg>

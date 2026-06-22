@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" font-family="'Segoe UI', Arial, sans-serif">
   <defs>
     <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
-    </marker>
-    <marker id="arrowCover" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
     </marker>
     <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff"/>
@@ -15,109 +15,98 @@
   <!-- Cesped con franjas -->
   <rect x="0" y="0" width="600" height="560" fill="#2e7d32"/>
   <g fill="#2f8235">
-    <rect x="20" y="60"  width="560" height="93" />
-    <rect x="20" y="246" width="560" height="93" />
-    <rect x="20" y="432" width="560" height="88" />
+    <rect x="60" y="80"  width="480" height="92" />
+    <rect x="60" y="264" width="480" height="92" />
+    <rect x="60" y="448" width="480" height="32" />
   </g>
 
-  <!-- Carriles verticales (referencia) -->
-  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
-    <line x1="132" y1="60" x2="132" y2="520"/>
-    <line x1="244" y1="60" x2="244" y2="520"/>
-    <line x1="356" y1="60" x2="356" y2="520"/>
-    <line x1="468" y1="60" x2="468" y2="520"/>
-  </g>
-
-  <!-- Lineas del campo (zona media: campo abierto arriba y abajo) -->
+  <!-- Rectangulo de juego 45 x 40 m -->
   <g fill="none" stroke="#ffffff" stroke-width="2.5">
-    <rect x="20" y="60" width="560" height="460"/>
-    <line x1="20" y1="290" x2="580" y2="290"/>
-    <circle cx="300" cy="290" r="62"/>
+    <rect x="60" y="80" width="480" height="400"/>
+    <line x1="60" y1="280" x2="540" y2="280"/>
   </g>
-  <g fill="#ffffff">
-    <circle cx="300" cy="290" r="3"/>
+  <circle cx="300" cy="280" r="3" fill="#ffffff"/>
+
+  <!-- Dimensiones 45 x 40 m -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none">
+    <line x1="60" y1="494" x2="540" y2="494"/>
+    <line x1="60" y1="490" x2="60" y2="498"/>
+    <line x1="540" y1="490" x2="540" y2="498"/>
+    <line x1="46" y1="80" x2="46" y2="480"/>
+    <line x1="42" y1="80" x2="50" y2="80"/>
+    <line x1="42" y1="480" x2="50" y2="480"/>
   </g>
+  <text x="300" y="510" fill="#ffffff" font-size="12" text-anchor="middle">45 m</text>
+  <text x="36" y="280" fill="#ffffff" font-size="12" transform="rotate(-90 36 280)" text-anchor="middle">40 m</text>
+
+  <!-- Mini-porterias (4: 2 por equipo en cada fondo) -->
+  <g fill="none" stroke="#ffffff" stroke-width="3">
+    <!-- Fondo superior -->
+    <rect x="150" y="74" width="52" height="12"/>
+    <rect x="398" y="74" width="52" height="12"/>
+    <!-- Fondo inferior -->
+    <rect x="150" y="474" width="52" height="12"/>
+    <rect x="398" y="474" width="52" height="12"/>
+  </g>
+  <text x="300" y="64" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">4 mini-porterías (2 por equipo)</text>
 
   <!-- Titulo -->
   <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
-  <text x="300" y="29" fill="#ffffff" font-size="19" font-weight="700" text-anchor="middle">Tarea: contrapresión — saltar al balón (5 s)</text>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 19 — Contrapresión 5 segundos</text>
 
-  <!-- ZONA ACOTADA: radio de contrapresion alrededor del balon perdido -->
-  <circle cx="300" cy="300" r="120" fill="#c0392b" fill-opacity="0.10" stroke="#c0392b" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="300" y="188" fill="#ffd24a" font-size="11.5" font-weight="700" text-anchor="middle">zona de contrapresión inmediata</text>
-
-  <!-- RELOJ / CUENTA DE 5 SEGUNDOS -->
+  <!-- Reloj 5 s -->
   <g>
-    <circle cx="510" cy="470" r="34" fill="#1d3557" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="510" y="466" fill="#ffd24a" font-size="22" font-weight="700" text-anchor="middle">5"</text>
-    <text x="510" y="484" fill="#ffffff" font-size="9.5" font-weight="700" text-anchor="middle">recuperar</text>
-    <path d="M510,470 L510,446" stroke="#ffd24a" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M510,470 L527,478" stroke="#ffd24a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="500" cy="120" r="22" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <line x1="500" y1="120" x2="500" y2="104" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="500" y1="120" x2="512" y2="126" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="500" y="160" fill="#ffd24a" font-size="13" font-weight="700" text-anchor="middle">5 s</text>
   </g>
 
-  <!-- MOMENTO DE LA PERDIDA marcado -->
-  <text x="300" y="270" fill="#ffffff" font-size="11.5" font-weight="700" text-anchor="middle" opacity="0.95">¡PÉRDIDA!</text>
-
-  <!-- Balon perdido en el centro -->
+  <!-- Momento de la perdida (balon) -->
   <circle cx="300" cy="300" r="7" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
-  <circle cx="300" cy="300" r="1.8" fill="#1d3557"/>
+  <text x="300" y="332" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">pérdida</text>
 
-  <!-- Rival que recibe el balon (rojo) -->
-  <g font-size="13" font-weight="700" text-anchor="middle">
-    <circle cx="300" cy="320" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="300" y="325" fill="#ffffff">RIV'</text>
-    <!-- opciones de pase corto rival (a tapar) -->
-    <circle cx="180" cy="380" r="17" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="180" y="385" fill="#ffffff">R'</text>
-    <circle cx="420" cy="380" r="17" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="420" y="385" fill="#ffffff">R'</text>
-    <circle cx="300" cy="430" r="17" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="300" y="435" fill="#ffffff">R'</text>
-  </g>
+  <!-- 2-3 mas cercanos saltan al balon (solido convergente) -->
+  <path d="M232,250 C258,270 270,278 288,294" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <path d="M370,250 C344,270 330,278 312,294" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <path d="M300,378 C300,355 300,340 300,316" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <text x="300" y="404" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">2-3 más cercanos saltan al balón</text>
 
-  <!-- =========================================================
-       PROPIOS (azul): 3 mas cercanos SALTAN al balon
-       ========================================================= -->
+  <!-- El resto cierra lineas de pase cortas (solido posicionando sobre la linea) -->
+  <path d="M150,200 C175,210 190,216 210,224" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <path d="M455,200 C430,210 415,216 395,224" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <text x="135" y="190" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">cierran líneas de pase</text>
+
+  <!-- Jugadores propios (azules) - los que pierden y presionan -->
   <g font-size="14" font-weight="700" text-anchor="middle">
-    <circle cx="240" cy="240" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="240" y="245" fill="#fff">MC</text>
-    <circle cx="360" cy="240" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="360" y="245" fill="#fff">MD</text>
-    <circle cx="300" cy="200" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="300" y="205" fill="#fff">DC</text>
+    <circle cx="222" cy="240" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="222" y="245" fill="#fff">MC</text>
+    <circle cx="380" cy="240" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="380" y="245" fill="#fff">MD</text>
+    <circle cx="300" cy="392" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="397" fill="#fff">MC</text>
+    <circle cx="140" cy="190" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="140" y="195" fill="#fff">DFC</text>
+    <circle cx="465" cy="190" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="465" y="195" fill="#fff">DFC</text>
   </g>
 
-  <!-- 3 FLECHAS de salto al balon (continuo) -->
-  <path d="M252,258 C266,275 276,283 287,292" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
-  <path d="M348,258 C334,275 324,283 313,292" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
-  <path d="M300,222 L300,278" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
-  <text x="372" y="290" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">saltan al balón</text>
-
-  <!-- RESTO cierra lineas de pase cortas (azul mas lejano) -->
-  <g font-size="13" font-weight="700" text-anchor="middle">
-    <circle cx="120" cy="320" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="120" y="325" fill="#fff">LD</text>
-    <circle cx="480" cy="320" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="480" y="325" fill="#fff">LI</text>
-    <circle cx="240" cy="440" r="18" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
-    <text x="240" y="445" fill="#fff">DFC</text>
+  <!-- Jugadores rivales (rojos) - quienes reciben tras la perdida -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="300" cy="280" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="285" fill="#fff">MC'</text>
+    <circle cx="190" cy="320" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="190" y="325" fill="#fff">MC'</text>
+    <circle cx="420" cy="320" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="420" y="325" fill="#fff">DC'</text>
   </g>
 
-  <!-- LINEAS DISCONTINUAS: cierran lineas de pase cortas (blanco cobertura) -->
-  <path d="M137,335 C152,352 165,362 173,368" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" opacity="0.9" marker-end="url(#arrowCover)"/>
-  <path d="M463,335 C448,352 435,362 427,368" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" opacity="0.9" marker-end="url(#arrowCover)"/>
-  <path d="M255,430 C272,420 282,420 290,428" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" opacity="0.9" marker-end="url(#arrowCover)"/>
-  <text x="110" y="362" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle" opacity="0.9">cierra pase</text>
+  <!-- Nota primer defensor -->
+  <text x="300" y="540" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">el primer defensor es el que ha perdido el balón</text>
 
-  <!-- =========================================================
-       Leyenda
-       ========================================================= -->
+  <!-- Mini-leyenda -->
   <g>
-    <rect x="30" y="60" width="232" height="86" rx="7" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
-    <text x="42" y="82" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
-    <line x1="44" y1="102" x2="78" y2="102" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
-    <text x="90" y="106" fill="#ffffff" font-size="11.5">continua = salto al balón</text>
-    <line x1="44" y1="126" x2="78" y2="126" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#arrowCover)"/>
-    <text x="90" y="130" fill="#ffffff" font-size="11.5">discontinua = cierra línea de pase</text>
+    <rect x="60" y="358" width="150" height="100" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1"/>
+    <text x="68" y="376" fill="#ffffff" font-size="11" font-weight="700">LEYENDA</text>
+    <line x1="68" y1="389" x2="98" y2="389" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+    <text x="104" y="393" fill="#ffffff" font-size="10">presión / cierre</text>
+    <circle cx="76" cy="409" r="7" fill="#1d6fb8" stroke="#ffffff" stroke-width="2"/>
+    <text x="104" y="413" fill="#ffffff" font-size="10">propio</text>
+    <circle cx="76" cy="429" r="7" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="104" y="433" fill="#ffffff" font-size="10">rival</text>
+    <rect x="69" y="444" width="14" height="6" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <text x="104" y="451" fill="#ffffff" font-size="10">mini-portería</text>
   </g>
 </svg>
