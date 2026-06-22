@@ -39,10 +39,10 @@ def t01():
     p.player(62, 20, "DFC", team="own", role="4 · central der")
     p.player(85, 22, "LD", team="own", role="2 · lateral der")
     # medios (4): 7 extremo izq, 6 MCD, 8 MCO, 11 extremo der
-    p.player(13, 50, "MI", team="own", role="7 · extremo izq")
+    p.player(13, 50, "EI", team="own", role="7 · extremo izq")
     p.player(40, 44, "MC", team="own", role="6 · pivote")
     p.player(60, 44, "MC", team="own", role="8 · llegador")
-    p.player(87, 50, "MD", team="own", role="11 · extremo der")
+    p.player(87, 50, "ED", team="own", role="11 · extremo der")
     # delanteros (2) — rótulo DEBAJO (van muy arriba; encima tocaría el borde)
     p.player(40, 75, "DC", team="own", role="9 · referencia", role_below=True)
     p.player(60, 75, "DC", team="own", role="10 · 2º punta", role_below=True)
@@ -86,10 +86,10 @@ def t03():
     p.player(38, 20, "DFC", team="own", role="dominante aéreo")
     p.player(62, 20, "DFC", team="own", role="rápido + salida")
     p.player(85, 22, "LD", team="own", role="recorrido 1v1")
-    p.player(13, 50, "MI", team="own", role="amplitud+repliegue")
+    p.player(13, 50, "EI", team="own", role="amplitud+repliegue")
     p.player(40, 44, "MC", team="own", role="6 organizador")
     p.player(60, 44, "MC", team="own", role="8 box-to-box")
-    p.player(87, 50, "MD", team="own", role="amplitud+repliegue")
+    p.player(87, 50, "ED", team="own", role="amplitud+repliegue")
     p.player(40, 75, "DC", team="own", role="referencia/fija")
     p.player(60, 75, "DC", team="own", role="móvil/ruptura")
     save(p, "teoria-03-perfiles-por-linea.svg")
@@ -101,10 +101,10 @@ def t04():
               subtitle="Abajo línea de 4 (amplitud) · Arriba rombo (eje)")
     # PLANO en mitad inferior (medios) — jugadores propios en azul
     p.note(50, 44, "— PLANO (2 extremos + 2 MC) —", c="#bfe8ff", size=11)
-    p.player(13, 30, "MI", team="own")
+    p.player(13, 30, "EI", team="own")
     p.player(38, 27, "MC", team="own")
     p.player(62, 27, "MC", team="own")
-    p.player(87, 30, "MD", team="own")
+    p.player(87, 30, "ED", team="own")
     p.note(50, 14, "amplitud por bandas, 2 en el eje", c="#cfe", size=9)
     # ROMBO en mitad superior — misma estructura propia, comodín (neutral)
     p.note(50, 56, "— ROMBO (MCD · 2 INT · enganche) —", c="#ffd0a0", size=11)
@@ -150,10 +150,10 @@ def t06():
     p.player(38, 19, "DFC", team="own", role="stopper")
     p.player(62, 19, "DFC", team="own", role="coberturas")
     p.player(86, 22, "LD", team="own", role="1v1 + intervalo")
-    p.player(13, 44, "MI", team="own", role="ayuda lateral")
+    p.player(13, 44, "EI", team="own", role="ayuda lateral")
     p.player(40, 41, "MC", team="own", role="tapa entre líneas")
     p.player(60, 41, "MC", team="own", role="cae al pivote")
-    p.player(87, 44, "MD", team="own", role="ayuda lateral")
+    p.player(87, 44, "ED", team="own", role="ayuda lateral")
     p.player(42, 62, "DC", team="own", role="referencia presión")
     p.player(58, 62, "DC", team="own", role="2º vértice presión")
     save(p, "teoria-06-roles-defensivos.svg")
@@ -214,11 +214,11 @@ def t09():
     p.player(72, 20, "DFC", team="own")
     p.player(88, 24, "LD", team="own", role="sale al balón")
     # línea de medios basculada
-    p.player(45, 48, "MI", team="own")  # lado débil al carril central
+    p.player(45, 48, "EI", team="own")  # lado débil al carril central
     p.note(45, 38, "pisa centro", c="#fff5cc", size=9)
     p.player(60, 46, "MC", team="own")
     p.player(74, 46, "MC", team="own")
-    p.player(88, 50, "MD", team="own", role="aprieta banda")
+    p.player(88, 50, "ED", team="own", role="aprieta banda")
     # flechas de basculación (todo el bloque hacia la derecha)
     p.arrow(28, 42, 42, 42, kind="run", c="#7ee0ff", label="bascula")
     # banda lejana concedida (rótulo dentro del rectángulo, sin tocar la línea media)
@@ -239,7 +239,7 @@ def t10():
     p.arrow(50, 80, 68, 73, kind="pass")
     p.note(50, 71, "pase concedido", c="#ffd54a", size=9)  # césped libre
     # nuestros cierres
-    p.player(78, 56, "MD", team="own", role="salta al lateral")
+    p.player(78, 56, "ED", team="own", role="salta al lateral")
     p.player(58, 52, "MC", team="own", role="tapa interior")
     p.player(82, 38, "LD", team="own", role="cierra línea")
     p.player(60, 30, "DFC", team="own", role="cierra vuelta")
@@ -324,7 +324,7 @@ def t13():
     p.zone(24, 40, 70, 53, label="", c="#7ee0ff", fill_op=0.14)
     p.note(47, 41, "3 funcional en el medio", c="#bfe8ff", size=9.5)
     # extremo del lado débil (izquierda) pellizca al centro
-    p.player(34, 47, "MI", team="own")
+    p.player(34, 47, "EI", team="own")
     # carrera alargada y clara hacia el centro (rótulo bajo la ficha)
     p.arrow(15, 47, 31, 47, kind="run")
     p.note(24, 56, "MI entra al centro (pellizca)", c="#fff", size=9)
@@ -376,7 +376,7 @@ def t15():
     # triángulo de banda (se dibuja antes para quedar bajo flechas/fichas)
     p.zone(62, 48, 94, 86, label="", c="#ffd54a", fill_op=0.10)
     p.note(78, 50, "triángulo de banda", c="#fff", size=9)
-    p.player(86, 56, "MD", team="own")
+    p.player(86, 56, "ED", team="own")
     p.player(86, 80, "DC", team="own")
     # secuencia numerada del tercer hombre: 1 → 2 (descarga) → 3 (al liberado)
     p.arrow(40, 39, 49, 50, kind="pass", label="1")
@@ -411,12 +411,12 @@ def t17():
               subtitle="Centro desde banda derecha · poblar 3-4 zonas de remate",
               half="att")
     # extremo que centra desde banda derecha
-    p.player(90, 78, "MD", team="own", role="centra / cut-back")
+    p.player(90, 78, "ED", team="own", role="centra / cut-back")
     p.ball(90, 74)
     # zonas de remate
     p.player(62, 90, "DC", team="own", role="1er palo")
     p.player(50, 86, "DC", team="own", role="penalti")
-    p.player(35, 88, "MI", team="own", role="2º palo")
+    p.player(35, 88, "EI", team="own", role="2º palo")
     p.player(50, 70, "MC8", team="own", role="frontal/rechace")
     # trayectorias de centro (sin rótulo: las fichas ya están rotuladas)
     p.arrow(90, 76, 62, 88, kind="pass")
@@ -430,14 +430,14 @@ def t18():
     p = Pitch(title="Desdoblamiento lateral-extremo",
               subtitle="OVERLAP (izq) y UNDERLAP (der)")
     # OVERLAP lado izquierdo: extremo dentro, lateral por fuera
-    p.player(28, 55, "MI", team="own", role="pisa dentro")
+    p.player(28, 55, "EI", team="own", role="pisa dentro")
     p.player(12, 45, "LI", team="own", role="overlap")
     p.arrow(12, 47, 14, 72, kind="run", label="por fuera")
     p.arrow(28, 57, 30, 70, kind="drive")
     p.note(20, 88, "OVERLAP", c="#bfe8ff", size=11)
     p.ball(28, 51)
     # UNDERLAP lado derecho: extremo por fuera retiene, lateral por dentro
-    p.player(88, 55, "MD", team="own", role="retiene fuera")
+    p.player(88, 55, "ED", team="own", role="retiene fuera")
     p.player(72, 45, "LD", team="own", role="underlap")
     p.arrow(72, 47, 70, 72, kind="run", label="por dentro")
     p.arrow(88, 57, 88, 72, kind="drive")
@@ -465,7 +465,7 @@ def t19():
     # pase vertical
     p.arrow(50, 51, 61, 71, kind="pass", label="pase vertical")
     # extremo corre el carril
-    p.player(88, 58, "MD", team="own", role="corre carril")
+    p.player(88, 58, "ED", team="own", role="corre carril")
     p.arrow(88, 60, 88, 84, kind="run")
     # MC 8 llega de tercer hombre
     p.player(70, 56, "MC8", team="own")
@@ -485,8 +485,8 @@ def t20():
     p.arrow(50, 62, 50, 58, kind="block", label="frena central")
     # flechas de repliegue de cada jugador a su carril/línea
     # línea de medios reformándose
-    p.player(20, 50, "MI", team="own"); p.arrow(28, 60, 21, 52, kind="run")
-    p.player(80, 50, "MD", team="own"); p.arrow(72, 60, 79, 52, kind="run")
+    p.player(20, 50, "EI", team="own"); p.arrow(28, 60, 21, 52, kind="run")
+    p.player(80, 50, "ED", team="own"); p.arrow(72, 60, 79, 52, kind="run")
     p.player(38, 48, "MC", team="own"); p.arrow(44, 58, 39, 50, kind="run")
     # línea defensiva
     p.player(18, 30, "LI", team="own")
@@ -518,7 +518,7 @@ def t21():
     p.player(74, 58, "AP", team="rival")
     # cierre de líneas cortas: block sobre los APOYOS, no sobre el balón
     p.player(40, 48, "MC6", team="own", role="tapa apoyo")
-    p.player(72, 50, "MD", team="own", role="tapa apoyo")
+    p.player(72, 50, "ED", team="own", role="tapa apoyo")
     p.arrow(40, 50, 38, 56, kind="block")
     p.arrow(72, 52, 74, 56, kind="block")
     p.legend(["run", "block", "own", "rival", "zone"])
@@ -538,7 +538,7 @@ def t22():
     p.player(40, 93, "DFC", team="own", role="2º palo")
     p.player(50, 78, "MC8", team="own", role="frontal/rechace")
     # bloqueo (cortina) ejemplo
-    p.player(55, 86, "MI", team="own", role="bloqueo")
+    p.player(55, 86, "EI", team="own", role="bloqueo")
     p.arrow(95, 90, 52, 89, kind="pass", label="centro")
     # 1 arriba para contra
     p.player(50, 60, "DC", team="own", role="arriba (contra)")
@@ -553,10 +553,10 @@ def t23():
     p.player(42, 70, "DC", team="own")
     p.player(58, 70, "DC", team="own")
     # medios
-    p.player(15, 56, "MI", team="own")
+    p.player(15, 56, "EI", team="own")
     p.player(40, 53, "MC", team="own")
     p.player(60, 53, "MC", team="own")
-    p.player(85, 56, "MD", team="own")
+    p.player(85, 56, "ED", team="own")
     # defensa (última línea)
     p.player(18, 38, "LI", team="own")
     p.player(40, 36, "DFC", team="own")

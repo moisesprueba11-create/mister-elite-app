@@ -13,7 +13,7 @@ El balón parado decide partidos igualados y el 1-4-4-2 parte con ventaja a favo
 - **Objetivo:** ensayar el ataque de córner ocupando las cuatro zonas de remate (primer palo, zona central/penalti, segundo palo y rechace/frontal) y liberando al mejor rematador con un bloqueo/cortina, dejando siempre el equilibrio defensivo ante el contragolpe.
 - **Tipo de tarea:** analítica de ABP que progresa a situacional con oposición.
 - **Organización:**
-  - **Jugadores:** lanzador (MD o MI según perfil de golpeo) + 4-5 rematadores (los 2 DC, 1-2 DFC y el MC "8") + 1-2 jugadores en equilibrio defensivo (el MC "6" y un LD/LI); en la fase situacional, defensa rival.
+  - **Jugadores:** lanzador (ED o EI según perfil de golpeo) + 4-5 rematadores (los 2 DC, 1-2 DFC y el MC "8") + 1-2 jugadores en equilibrio defensivo (el MC "6" y un LD/LI); en la fase situacional, defensa rival.
   - **Espacio:** un área completa, con las cuatro zonas de remate marcadas con discos (primer palo, central/punto de penalti, segundo palo, frontal/rechace).
   - **Material:** balones en la esquina para repeticiones sin pausa; discos para señalar zonas; petos para diferenciar bloqueadores y rematadores.
 
@@ -41,7 +41,7 @@ El balón parado decide partidos igualados y el 1-4-4-2 parte con ventaja a favo
 
 ![Pizarra Tarea 27: defensa mixta de córner con marcaje zonal en la zona de remate, dos al hombre sobre los rematadores peligrosos, hombres en los postes y POR mandando; tras el despeje, salida de contragolpe por los dos DC dejados arriba](../graficos/tarea-27.svg)
 
-- **Desarrollo:** El rival lanza el córner. La defensa ocupa la zona, marca al hombre a los peligrosos y cubre los postes; el POR sale o achica según trayectoria. Al despejar, **el primer pase busca a uno de los 2 DC arriba** y el equipo sale en contra: uno apoya y el otro rompe al espacio, sumándose el MD/MI por banda. La acción termina con finalización o con el rival frenando el contraataque.
+- **Desarrollo:** El rival lanza el córner. La defensa ocupa la zona, marca al hombre a los peligrosos y cubre los postes; el POR sale o achica según trayectoria. Al despejar, **el primer pase busca a uno de los 2 DC arriba** y el equipo sale en contra: uno apoya y el otro rompe al espacio, sumándose el ED/EI por banda. La acción termina con finalización o con el rival frenando el contraataque.
 - **Provocaciones:**
   - Despeje fuera de la zona de peligro (más allá de la frontal) = válido; rechace que cae dentro del área = punto para el atacante: premia el despeje **lejos y orientado**.
   - Si tras despejar el balón llega a un DC en **menos de X segundos**, el contraataque vale doble: fuerza la transición inmediata a la salida arriba.

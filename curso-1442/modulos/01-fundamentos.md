@@ -12,7 +12,7 @@ El 1-4-4-2 es un **sistema de juego** organizado en tres líneas de jugadores de
 
 - **POR (1):** organizador del último tercio, primer iniciador de la salida y hombre libre detrás de la defensa.
 - **Línea defensiva (4):** dos DFC (centrales) y dos laterales (LD / LI).
-- **Línea de medios (4):** dos MC (doble pivote) y dos extremos (MD / MI).
+- **Línea de medios (4):** dos MC (doble pivote) y dos extremos (ED / EI).
 - **Línea de ataque (2):** dos DC con perfiles complementarios.
 
 ![Pizarra: formación base del 1-4-4-2 plano con las 11 posiciones rotuladas (portero, doble línea de cuatro y dos puntas)](../graficos/teoria-01-formacion-base.svg)
@@ -130,7 +130,7 @@ Los principios son las ideas rectoras que dan sentido a los movimientos.
 - **DFC:** uno dominante en el duelo y el juego aéreo (defensa de área), otro rápido y con buena salida (cobertura de la profundidad y primer pase). Buena lectura del fuera de juego.
 - **Laterales:** resistencia y recorrido; capacidad 1 vs 1 en banda; buen centro y/o llegada. Coordinación con el extremo de su lado.
 - **MC:** complementarios. Uno organizador/posicional (el **6**, ancla, primer pase, vigila el eje) y otro box-to-box (el **8**, recorrido, llegada al área). Gran cobertura mutua.
-- **Extremos (MD/MI):** doble función obligatoria. En ataque: amplitud, regate, centro o pisar por dentro. En defensa: replegar para ayudar al lateral y completar la línea de cuatro.
+- **Extremos (ED/EI):** doble función obligatoria. En ataque: amplitud, regate, centro o pisar por dentro. En defensa: replegar para ayudar al lateral y completar la línea de cuatro.
 - **DC:** pareja complementaria. Un **referencia/pivote** (físico, juego de espaldas, fija centrales) y un **móvil/de ruptura** (ataca el espacio, asocia, finaliza). En presión, son la primera línea defensiva que orienta la salida rival.
 
 ---

@@ -16,7 +16,7 @@ La fortaleza del sistema es la **organización en bloque** con referencias zonal
 
 **Doble pivote (MC ×2).** La posición más crítica. Protegen la zona delante de la defensa (tapar el pase entre líneas). **Reparto de marcaje:** uno presiona al hombre con balón, el otro vigila/cae sobre el pivote rival; **nunca salen los dos a la vez**. Basculan con los extremos y vigilan las llegadas de segunda línea.
 
-**Extremos (MD/MI).** Extremo derecho y extremo izquierdo con **obligación defensiva innegociable** (no son extremos puros de solo ataque). Ayudan al lateral formando 2×1 / 2×2 en banda y repliegan hasta su tercio para defender en línea de cuatro. Cierran el intervalo lateral-central y vigilan al lateral rival cuando sube. En bloque medio/bajo, el extremo del lado débil pisa el carril central.
+**Extremos (ED/EI).** Extremo derecho y extremo izquierdo con **obligación defensiva innegociable** (no son extremos puros de solo ataque). Ayudan al lateral formando 2×1 / 2×2 en banda y repliegan hasta su tercio para defender en línea de cuatro. Cierran el intervalo lateral-central y vigilan al lateral rival cuando sube. En bloque medio/bajo, el extremo del lado débil pisa el carril central.
 
 **Delanteros (DC ×2).** Primera línea de presión. El **referencia** fija al central con balón, orienta y tapa el carril central o la línea al pivote rival. El **móvil** es el otro vértice de la presión y salta sobre el segundo central o el pivote según la trampa. Trabajo escalonado, no en paralelo: uno presiona y el otro cubre.
 

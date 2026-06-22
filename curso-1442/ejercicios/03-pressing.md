@@ -2,7 +2,7 @@
 
 > Marco teórico: [Módulo 02 — Fase defensiva §3](../modulos/02-fase-defensiva.md). Convención de posiciones y distancias en el [README](../README.md).
 
-El 1-4-4-2 presiona arriba con sus 2 DC **orientando la salida rival** (curvando la carrera para tapar al pivote y obligar al pase al lateral, que es la señal de salto), y con los MD/MI **saltando al lateral** en cuanto llega el balón, mientras el bloque sube detrás. Estas tareas entrenan los gatillos (triggers) y las coberturas del press.
+El 1-4-4-2 presiona arriba con sus 2 DC **orientando la salida rival** (curvando la carrera para tapar al pivote y obligar al pase al lateral, que es la señal de salto), y con los ED/EI **saltando al lateral** en cuanto llega el balón, mientras el bloque sube detrás. Estas tareas entrenan los gatillos (triggers) y las coberturas del press.
 
 > **Cómo leer las fichas.** Objetivo · Organización · Desarrollo · Provocaciones · Variantes · Coaching · Duración / Categoría. Categorías: **F / A / S**. "Provocación" = regla artificial que penaliza lo incorrecto y premia lo deseado.
 
@@ -29,19 +29,19 @@ El 1-4-4-2 presiona arriba con sus 2 DC **orientando la salida rival** (curvando
 
 ---
 
-## TAREA 11 — El gatillo del lateral: salto del MD/MI (situacional)
+## TAREA 11 — El gatillo del lateral: salto del ED/EI (situacional)
 
 - **Objetivo:** entrenar el gatillo de presión más típico del 1-4-4-2: cuando el balón va del central rival al lateral, el extremo salta a presionar y el bloque se desplaza y sube.
 - **Tipo de tarea:** situacional de bloque parcial.
 - **Organización:**
-  - **Jugadores:** medio bloque (2 DC + MD + MI + 1 MC + 1 lateral del lado) vs línea de salida rival (2 centrales + 2 laterales + 1 pivote).
+  - **Jugadores:** medio bloque (2 DC + ED + EI + 1 MC + 1 lateral del lado) vs línea de salida rival (2 centrales + 2 laterales + 1 pivote).
   - **Espacio:** ancho completo × 45 m.
   - **Material:** zonas-meta en banda y centro.
-![Pizarra Tarea 11: gatillo del lateral; al pasar el balón del central al lateral rival el MD salta a presionar, el DC borra la vuelta al central, el MC tapa el interior y el lateral propio sube a vigilar al extremo](../graficos/tarea-11.svg)
+![Pizarra Tarea 11: gatillo del lateral; al pasar el balón del central al lateral rival el ED salta a presionar, el DC borra la vuelta al central, el MC tapa el interior y el lateral propio sube a vigilar al extremo](../graficos/tarea-11.svg)
 
-- **Desarrollo:** El rival circula entre centrales y laterales. En cuanto el balón llega al lateral rival, el MD/MI de ese lado salta a presionar agresivo; el delantero cierra la vuelta atrás al central; el MC bascula a tapar el interior; el lateral propio sube a vigilar al extremo rival.
+- **Desarrollo:** El rival circula entre centrales y laterales. En cuanto el balón llega al lateral rival, el ED/EI de ese lado salta a presionar agresivo; el delantero cierra la vuelta atrás al central; el MC bascula a tapar el interior; el lateral propio sube a vigilar al extremo rival.
 - **Provocaciones:**
-  - El MD/MI debe llegar al lateral rival antes de su segundo toque (gatillo veloz).
+  - El ED/EI debe llegar al lateral rival antes de su segundo toque (gatillo veloz).
   - Tras el salto, prohibido al rival jugar de vuelta al central libremente: si lo consigue 3 veces, gana posesión (obliga al delantero a cerrar la vuelta).
   - Robo en banda tras el salto = 2 puntos.
 - **Variantes:** un lado solo → ambos lados (el rival cambia de orientación y obliga a saltar al otro medio) → cambio de orientación largo que pone a prueba la basculación.

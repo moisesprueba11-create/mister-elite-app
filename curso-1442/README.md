@@ -77,13 +77,13 @@ Usamos abreviaturas en español. Esta nomenclatura es idéntica en módulos y ej
 | **DFC** | Central derecho | 4 | Stopper/agresivo o líbero/coberturas |
 | **DFC** | Central izquierdo | 5 | Stopper/agresivo o líbero/coberturas |
 | **MC** | Medio centro defensivo | 6 | Ancla posicional (pivote) |
-| **MI** | Extremo izquierdo | 7 | Extremo con doble función ataque-defensa |
+| **EI** | Extremo izquierdo | 7 | Extremo con doble función ataque-defensa |
 | **MC** | Medio centro ofensivo | 8 | Box-to-box / llegador |
 | **DC** | Delantero centro | 9 | Referencia / pivote |
 | **DC** | Segundo delantero / media punta | 10 | Móvil / de ruptura |
-| **MD** | Extremo derecho | 11 | Extremo con doble función ataque-defensa |
+| **ED** | Extremo derecho | 11 | Extremo con doble función ataque-defensa |
 
-- **"Extremos"** = MD (extremo derecho) y MI (extremo izquierdo), con obligación defensiva (no son extremos puros de solo ataque).
+- **"Extremos"** = ED (extremo derecho) y EI (extremo izquierdo), con obligación defensiva (no son extremos puros de solo ataque).
 - **"Doble pivote"** = los dos MC.
 - **"La pareja de delanteros"** = los dos DC con roles complementarios (referencia + móvil).
 

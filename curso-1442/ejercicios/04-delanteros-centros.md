@@ -34,7 +34,7 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
 - **Objetivo:** entrenar el centro desde banda y el ataque del área por los 2 DC + el medio que llega (primer palo / segundo palo / frontal).
 - **Tipo de tarea:** situacional ofensiva de finalización.
 - **Organización:**
-  - **Jugadores:** 2 bandas (MD/MI) + 1 lateral que apoya + 2 DC + 1 MC que llega vs 4 defensas + POR.
+  - **Jugadores:** 2 bandas (ED/EI) + 1 lateral que apoya + 2 DC + 1 MC que llega vs 4 defensas + POR.
   - **Espacio:** zona de finalización (área + 30 m), ambas bandas.
   - **Material:** portería; balones en banda; conos de zonas del área.
 
