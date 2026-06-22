@@ -25,8 +25,9 @@ El **1-5-3-2** es un sistema con **línea defensiva de 5** (3 centrales + 2 carr
 Es el concepto que hay que enseñar primero, porque de él depende todo lo demás:
 
 - **CON balón → 1-3-5-2 (en realidad 3-1-4-2 / 3-3-2-2):** los carrileros (2 y 3) **suben** y dan la
-  amplitud máxima. Atrás quedan **3 centrales**; el medio pasa a ser de 5 carriles ocupados (los 2 CAR
-  altos + los 3 MC). El equipo ataca como si tuviera tres defensas y cinco hombres por delante.
+  amplitud máxima. Atrás quedan **3 centrales**; en la zona media se forma una **línea de 5** (los 2 CAR
+  altos + los 3 MC) que ocupa los cinco carriles. El equipo ataca como si tuviera tres defensas y cinco
+  hombres por delante.
 - **SIN balón → 1-5-3-2:** los carrileros **bajan** a la línea, que se convierte en **5 defensas**.
   Quedan 3 medios por delante y las 2 puntas arriba. Bloque cerrado, sin huecos en banda.
 
@@ -41,10 +42,12 @@ entre jugadores** para que el rival no pueda jugar entre líneas.
 
 - **Bloque (largo equipo, del último defensa al delantero más alto):** ~30–35 m en bloque medio.
   Si se estira por encima de ~40 m aparecen los espacios entre líneas que matan al sistema.
-- **Distancia entre líneas (defensa–medio y medio–delanteras):** ~10–12 m cada una. El objetivo es que
-  el balón no quepa cómodo entre la línea de 5 y la de 3.
-- **Anchura de la línea de 3 centrales:** ~20–25 m (cada DFC lateral algo más abierto que el ancho del
-  área). Estrecha cuando el balón está lejos; se desliza al lado del balón.
+- **Distancia entre líneas (defensa–medio y medio–delanteras):** ~10–12 m cada una en bloque medio. El
+  objetivo es que el balón no quepa cómodo entre la línea de 5 y la de 3. (Rango por altura de bloque en
+  doc 02: 8–12 m en bloque bajo, 10–12 m en alto, hasta ~15 m en medio cuando se busca presionar arriba.)
+- **Anchura de la línea de 3 centrales:** ~8–10 m entre centrales adyacentes → la línea abarca ~18–22 m
+  (cada DFC lateral algo más abierto que el ancho del área). Estrecha cuando el balón está lejos; se
+  desliza al lado del balón.
 - **Anchura total con balón:** la dan los carrileros pegados a la cal (~64–68 m, todo el ancho).
 - **Altura del bloque:** flexible. Bloque alto (presión a partir de medio campo) tipo Gasperini;
   bloque medio-bajo replegado tipo Simeone/Conte defensivo. El sistema admite ambas.
@@ -61,9 +64,10 @@ entre jugadores** para que el rival no pueda jugar entre líneas.
   ya no es solo defender: añade contraataque eficaz y posesión, conservando el principio del hombre libre.
 - **Antonio Conte** es el gran revitalizador contemporáneo. Su **Juventus (2011–14)** se construyó sobre
   un 3-5-2 de bloque compacto (muro Barzagli–Bonucci–Chiellini), defendiendo como 5-3-2 y atacando con
-  versatilidad; ganó tres Scudetti seguidos. Luego repitió título con el **Inter**, ganó la Premier con
-  el **Chelsea** y llevó a **Italia** a semifinales de la Euro con el mismo molde. Su 3-5-2 demostró que
-  un sistema reputado "conservador" podía dominar y ser ofensivo.
+  versatilidad; ganó tres Scudetti seguidos. Luego repitió título con el **Inter** (Scudetto 2020-21),
+  ganó la Premier con el **Chelsea** (2016-17, con un giro al 3-4-3) y llevó a **Italia** a cuartos de la
+  Euro 2016, donde cayó con Alemania en penaltis, con un molde de tres centrales que asombró por su
+  organización. Su 3-5-2/3-4-3 demostró que un sistema reputado "conservador" podía dominar y ser ofensivo.
 - **Gian Piero Gasperini (Atalanta).** Versión vertical y agresiva: tres centrales con **marcaje al
   hombre** por todo el campo, presión altísima, transiciones eléctricas y centrales con libertad para
   sumarse al ataque. Para Gasperini, los **tres centrales responden a un criterio ofensivo** (tener
@@ -162,13 +166,15 @@ puntas (siempre hay un DFC libre para salir jugando) y el medio de 3 **gana al d
 el centro). Clave: aprovechar el hombre libre atrás y la superioridad interior. El 4-4-2 solo incomoda si
 sus puntas presionan en paralelo orientando la salida.
 
-**vs 1-4-2-3-1.** Sistema muy fuerte por el centro (mediapunta 10 rival entre líneas) pero **flojo de
-amplitud natural** (depende de sus laterales). El 5-3-2 debe **vigilar al 10 rival** (con el pivote o un
-central que sale) y **explotar las bandas** contra los laterales del 4-2-3-1, que no tienen ayuda de
-extremos puros. La batalla se decide en la media punta rival y en quién gana los carriles.
+**vs 1-4-2-3-1.** Sistema muy fuerte por el centro (mediapunta 10 rival entre líneas, protegido por el
+doble pivote). Su amplitud la dan los dos hombres de banda de la línea de 3 (que tienden a cerrarse a
+recibir) apoyados por los laterales que suben; si esos laterales no llegan, el ataque se estrecha. El
+5-3-2 debe **vigilar al 10 rival** (con el pivote 8 o un central que sale) y **explotar las bandas**: los
+carrileros propios atacan la espalda de los laterales del 4-2-3-1, que quedan en duelos de ida y vuelta
+sin extremo puro que les cubra. La batalla se decide en la media punta rival y en quién gana los carriles.
 
 > Patrón común para defender los carriles: el sistema **invita al rival a la banda** y ahí
-> **emboscaa** (carrilero + interior + central del lado). La superioridad de 3 centrales permite que un
+> **embosca** (carrilero + interior + central del lado). La superioridad de 3 centrales permite que un
 > central salte al carril sin desproteger el centro.
 
 ---

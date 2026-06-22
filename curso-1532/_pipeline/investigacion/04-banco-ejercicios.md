@@ -11,7 +11,7 @@
 - **Doble función del sistema:** con balón el equipo se transforma en un **1-3-5-2** (los carrileros suben y dan amplitud); sin balón vuelve al **1-5-3-2** (los carrileros bajan a formar la línea de 5). Pasar "de 3 a 5" y "de 5 a 3" es el latido del sistema y aparece en casi todas las tareas.
 - **Provocación = regla artificial** que penaliza el comportamiento incorrecto y premia el deseado. Es el corazón metodológico del banco.
 - **Categorías:** F = formativo (sub-12 a sub-16), A = amateur/juvenil-sénior aficionado, S = sénior/competición.
-- **Distancias estándar del curso (ver doc 02):** entre líneas 8–12 m; entre los 3 centrales 8–10 m; profundidad total del bloque 25–35 m; el carrilero, sin balón, cierra a la altura de la línea de centrales (forma el 5).
+- **Distancias estándar del curso (ver docs 01 y 02):** entre líneas 10–12 m de referencia (rango 8–15 m según altura del bloque); entre centrales adyacentes 8–10 m (la línea de 3 abarca ~18–22 m); profundidad total del bloque 30–35 m en bloque medio (puede comprimirse a ~25 m en bloque bajo); el carrilero, sin balón, cierra a la altura de la línea de centrales (forma el 5).
 
 ### Índice por bloques
 
@@ -422,21 +422,22 @@ El carrilero (CAR) es la pieza que define el 1-5-3-2. Debe resolver dos trabajos
 
 ## TAREA 18 — Circuito del carrilero: ida y vuelta con finalización (físico-técnico aplicado)
 
-- **Objetivo / comportamiento:** preparar específicamente la exigencia física y técnica del carrilero (recorrer la banda en ataque y defensa) mediante un circuito que reproduce la doble función con balón.
-- **Tipo de tarea:** circuito físico-técnico aplicado al rol.
+- **Objetivo / comportamiento:** preparar específicamente la exigencia física y técnica del carrilero (recorrer la banda en ataque y defensa) mediante un circuito que reproduce la doble función con duelo real, no contra conos.
+- **Tipo de tarea:** circuito físico-técnico aplicado al rol (intermitente específico de posición).
 - **Organización:**
-  - Jugadores: carrileros en estaciones (mínimo 2–4 carrileros rotando) + servidores + 1 rematador por estación.
-  - Espacio: banda completa (medio campo de longitud), con conos y zonas marcadas.
-  - Material: conos, vallas bajas (opcional), balones, portería, mini-portería defensiva.
-- **Descripción / desarrollo:** Circuito continuo por la banda: (1) el carrilero baja en repliegue a una zona "defensiva" y hace un gesto de 1v1/recuperación (cono o defensor pasivo); (2) al "recuperar", sprinta 40–50 m por la banda; (3) recibe en carrera el pase del servidor; (4) desborda un cono/defensor pasivo; (5) centra al rematador; (6) repliegue de nuevo al inicio. Cronometrado, simulando el esfuerzo real de un partido.
-- **Reglas y provocaciones:**
-  - El sprint de subida debe hacerse a intensidad máxima (control de tiempo): reproduce el desdoblamiento real.
-  - El centro debe llegar a la zona del rematador con calidad tras el esfuerzo (técnica bajo fatiga): centro fallado = repetición de la estación.
-  - Tiempo de repliegue limitado tras centrar (vuelve a defender): entrena la ida y vuelta sin pausa.
-- **Variantes y progresiones:** menos repeticiones/más descanso (formativo) → más volumen y menos descanso (acondicionamiento específico sénior) → añadir defensor activo en el 1v1 y en el desborde.
-- **Puntos clave de coaching:** ritmo de carrera del carrilero; técnica de centro bajo fatiga; gestionar el esfuerzo (cuándo esprintar a tope); este es el coste físico del rol —el jugador debe asumirlo—; calidad en la última acción aunque llegue cansado.
-- **Duración / series:** 6–8 repeticiones por carrilero, con descansos. 16–20 min.
-- **Categoría:** A / S (volumen ajustado en F).
+  - Jugadores: 2–4 carrileros rotando + 1 atacante de banda y 1 defensor de desborde (ambos **activos**, también rotan) + servidores + 1 rematador y 1 llegador interior por estación.
+  - Espacio: banda completa (medio campo de longitud × 20 m de ancho), con zonas de duelo defensivo (abajo) y de desborde/centro (arriba) marcadas con cal.
+  - Material: conos de zonas, balones, portería, mini-portería defensiva para el atacante de banda.
+- **Descripción / desarrollo:** Circuito continuo por la banda: (1) el carrilero defiende un **1v1 real** abajo contra el atacante de banda, orientándolo a línea de fondo o robando (gesto de la cara defensiva); (2) al recuperar/despejar, sprinta 40–50 m por su carril; (3) recibe en carrera el pase del servidor; (4) **encara y desborda a un defensor activo** (1v1 ofensivo); (5) centra al rematador con el interior llegando a la frontal; (6) repliegue inmediato a la zona defensiva de inicio. Cronometrado para simular el esfuerzo real del partido.
+- **Reglas y provocaciones (medibles):**
+  - Tramo de subida (zona defensiva → recepción) cronometrado: debe completarse en **≤ 8 s** a intensidad máxima; fuera de tiempo = repetición.
+  - En el 1v1 defensivo, mandar al atacante a línea de fondo o robar = válido; ser superado por dentro = penalización (repetir el tramo). Mide la cara defensiva, no solo correr.
+  - El centro tras el desborde debe caer en una de las 3 zonas marcadas (1er palo / 2º palo / frontal) **con el interior llegando**: centro a zona vacía o fallado = repetición (técnica bajo fatiga + ocupación).
+  - Repliegue tras centrar con tiempo límite (**≤ 7 s** a la zona defensiva): entrena ida y vuelta sin pausa.
+- **Variantes y progresiones:** oponentes a media intensidad y menos volumen (formativo) → oponentes activos y más densidad de repeticiones (acondicionamiento sénior) → añadir un segundo carrilero en paralelo en la otra banda para igualar la carga de los dos.
+- **Puntos clave de coaching:** ritmo de carrera del carrilero; resolver duelos reales arriba y abajo (no fintar a un cono); técnica de centro bajo fatiga; gestionar el esfuerzo (cuándo esprintar a tope); este es el coste físico del rol —el jugador debe asumirlo—; calidad en la última acción aunque llegue cansado.
+- **Duración / series:** 6–8 repeticiones por carrilero, con descansos completos entre series (ratio trabajo:descanso ~1:3). 16–20 min.
+- **Categoría:** A / S (volumen y oposición ajustados en F).
 
 ---
 
@@ -628,7 +629,7 @@ El 1-5-3-2 es sólido en transición defensiva si los carrileros bajan rápido a
 | 6. Transiciones (A-D y D-A) y partido condicionado | T23–T26 | 4 |
 | **TOTAL** | | **26** |
 
-**Por tipo de tarea:** analíticas / analítica de transformación (4: T5, T9, T10, T14), rondos/circuitos (3: T2, T18, T21), juegos de posición (3: T1, T17, T22), situacionales (10: T3, T6, T7, T8, T11, T15, T16, T19, T20, T23, T25 — predominio metodológico, coherente con el foco práctico), juegos condicionados (3: T4 parcial, T12, T13, T24), partidos condicionados (T4, T26).
+**Por tipo de tarea:** analíticas / analítica de transformación (4: T5, T9, T10, T14), rondos/circuitos (3: T2, T18, T21), juegos de posición (3: T1, T17, T22), situacionales (11: T3, T6, T7, T8, T11, T15, T16, T19, T20, T23, T25 — predominio metodológico, coherente con el foco práctico), juegos condicionados (4: T12, T13, T24 y, en parte, T4), partidos condicionados (2: T4, T26).
 
 **Peso especial en las piezas clave del sistema (según el encargo):**
 - **Carrileros:** bloque 4 completo (T14–T18, 5 tareas) + protagonismo en T2, T4, T11, T12, T13, T17, T23, T25, T26. La doble función (defender el carril 1v1 ↔ dar amplitud y centrar) se entrena de forma aislada (T14, T15), en transición (T16), en equilibrio entre los dos (T17) y con su coste físico real (T18).

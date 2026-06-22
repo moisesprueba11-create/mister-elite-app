@@ -47,13 +47,13 @@ Alturas orientativas (campo de 105 m, referenciadas a la **última línea defens
 | **Medio** | 30–40 m (propio medio campo) | Eje central, frontal del bloque | 12–15 m | ~35–40 m |
 | **Bajo** | 18–25 m (borde del área grande) | Borde del área, defensa de carriles | 8–12 m (muy junto) | Cerrado al ancho del área (~40 m) |
 
-- **Distancia entre líneas:** mantener **10–15 m** entre línea de 5, línea de 3 y los 2 DC. Si se estira por encima de 18 m, aparece el espacio que el 10 rival ataca → recortar.
+- **Distancia entre líneas:** referencia base **10–12 m** entre línea de 5, línea de 3 y los 2 DC; rango operativo 8–15 m según altura (8–12 m en bloque bajo, ~10–12 m en alto, hasta 15 m en medio cuando se presiona arriba). Si se estira por encima de ~15 m, aparece el espacio que el 10 rival ataca → recortar.
 - **Compacidad:** las tres líneas no deben superar **30–35 m de profundidad total** en bloque medio.
 
 ### Paso de línea de 3 a línea de 5
 - **Disparador:** el equipo pierde el balón o el rival progresa estable → los **dos carrileros bajan simultáneamente** al lado de los centrales.
 - **Resultado:** 5 defensas (CAR-DFC-DFC-DFC-CAR) + 3 medios por delante + 2 DC.
-- **Detalle clave:** los carrileros bajan **antes** de que el balón llegue a la banda; si llegan tarde, el extremo rival recibe ya encarado (situación que origina el 1v1 desventajoso). En bloque alto, el carrilero del lado fuerte **sube como gatillo de presión** (ver §3) y el resto bascula para no quedar con línea de 4.
+- **Detalle clave:** los carrileros bajan **antes** de que el balón llegue a la banda; si llegan tarde, el extremo rival recibe ya encarado (situación que origina el 1v1 desventajoso). En bloque alto, el carrilero del lado fuerte **sube como gatillo de presión** (ver §3): la línea pasa transitoriamente a 4 (3 DFC + el CAR del lado débil que pinza hacia dentro) y el interior de su lado baja a cubrirle la espalda, hasta que el carrilero recompone el 5.
 
 ---
 
@@ -69,7 +69,7 @@ Alturas orientativas (campo de 105 m, referenciadas a la **última línea defens
 - **Coberturas que se activan en cadena por ese lado:**
   - El **interior de ese lado (7 o 10)** baja a **cubrir la espalda del carrilero** (tapa el carril exterior).
   - El **central lateral (4 o 6)** se desliza a **cubrir al delantero** que pudiera caer al hueco del carrilero; **salta a marcar** si el punta se ofrece en banda.
-  - El **líbero (5)** y el central contrario **basculan** y cierran el centro; el carrilero del lado **débil entra a la línea** (de 5 pasa a 4 + 1 colchón).
+  - El **líbero (5)** y el central contrario **basculan** y cierran el centro; el carrilero del lado **débil pinza hacia dentro y entra a la línea**, que queda transitoriamente en 4 (3 DFC + ese CAR) mientras el carrilero del lado fuerte presiona arriba.
   - El **pivote (8)** cubre el carril central y la zona que deja el interior que bajó.
 - Si la presión se rompe (el rival escapa del salto), **repliegue inmediato** del carrilero y reconstrucción de la línea de 5.
 
