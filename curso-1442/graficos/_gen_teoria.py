@@ -32,20 +32,20 @@ def t01():
     p = Pitch(title="Formación base 1-4-4-2 (plano)",
               subtitle="Tres líneas + portero · doble línea de cuatro · dos puntas")
     # portero
-    p.player(50, 7, "POR", team="own", role="1")
-    # defensa (4)
-    p.player(15, 22, "LI", team="own", role="lateral")
-    p.player(38, 20, "DFC", team="own", role="central")
-    p.player(62, 20, "DFC", team="own", role="central")
-    p.player(85, 22, "LD", team="own", role="lateral")
-    # medios (4)
-    p.player(13, 50, "MI", team="own", role="extremo")
-    p.player(40, 44, "MC", team="own", role="pivote 6")
-    p.player(60, 44, "MC", team="own", role="pivote 8")
-    p.player(87, 50, "MD", team="own", role="extremo")
+    p.player(50, 7, "POR", team="own", role="1 · portero")
+    # defensa (4): 2 LD, 3 LI, 4 central der, 5 central izq
+    p.player(15, 22, "LI", team="own", role="3 · lateral izq")
+    p.player(38, 20, "DFC", team="own", role="5 · central izq")
+    p.player(62, 20, "DFC", team="own", role="4 · central der")
+    p.player(85, 22, "LD", team="own", role="2 · lateral der")
+    # medios (4): 7 extremo izq, 6 MCD, 8 MCO, 11 extremo der
+    p.player(13, 50, "MI", team="own", role="7 · extremo izq")
+    p.player(40, 44, "MC", team="own", role="6 · pivote")
+    p.player(60, 44, "MC", team="own", role="8 · llegador")
+    p.player(87, 50, "MD", team="own", role="11 · extremo der")
     # delanteros (2) — rótulo DEBAJO (van muy arriba; encima tocaría el borde)
-    p.player(40, 75, "DC", team="own", role="referencia", role_below=True)
-    p.player(60, 75, "DC", team="own", role="móvil", role_below=True)
+    p.player(40, 75, "DC", team="own", role="9 · referencia", role_below=True)
+    p.player(60, 75, "DC", team="own", role="10 · 2º punta", role_below=True)
     save(p, "teoria-01-formacion-base.svg")
 
 # --- teoria-02: carriles y franjas / lectura del campo ---

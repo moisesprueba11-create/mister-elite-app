@@ -57,16 +57,16 @@
     <!-- jugadores -->
     <g font-size="13" font-weight="800" fill="#fff" text-anchor="middle">
       <g><circle cx="397" cy="1012" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="397" y="1017">1</text></g>
-      <g><circle cx="200" cy="930" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="200" y="935">2</text></g>
-      <g><circle cx="330" cy="918" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="330" y="923">4</text></g>
+      <g><circle cx="200" cy="930" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="200" y="935">3</text></g>
+      <g><circle cx="330" cy="918" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="330" y="923">5</text></g>
       <g><circle cx="464" cy="918" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="464" y="923">4</text></g>
-      <g><circle cx="594" cy="930" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="594" y="935">3</text></g>
-      <g><circle cx="200" cy="790" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="200" y="795">4</text></g>
-      <g><circle cx="335" cy="775" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="335" y="780">4</text></g>
-      <g><circle cx="459" cy="775" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="459" y="780">4</text></g>
-      <g><circle cx="594" cy="790" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="594" y="795">4</text></g>
-      <g><circle cx="350" cy="640" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="350" y="645">2</text></g>
-      <g><circle cx="444" cy="640" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="444" y="645">2</text></g>
+      <g><circle cx="594" cy="930" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="594" y="935">2</text></g>
+      <g><circle cx="200" cy="790" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="200" y="795">7</text></g>
+      <g><circle cx="335" cy="775" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="335" y="780">6</text></g>
+      <g><circle cx="459" cy="775" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="459" y="780">8</text></g>
+      <g><circle cx="594" cy="790" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="594" y="795">11</text></g>
+      <g><circle cx="350" cy="640" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="350" y="645">9</text></g>
+      <g><circle cx="444" cy="640" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="444" y="645">10</text></g>
     </g>
   </g>
 

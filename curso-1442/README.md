@@ -69,14 +69,19 @@ El curso tiene tres capas que van de la idea a la ejecución:
 
 Usamos abreviaturas en español. Esta nomenclatura es idéntica en módulos y ejercicios.
 
-| Abreviatura | Posición | Dorsal de referencia | Matiz de rol |
+| Abreviatura | Posición | Dorsal | Matiz de rol |
 |---|---|---|---|
 | **POR** | Portero | 1 | Hombre libre / portero-líbero |
-| **LD** / **LI** | Lateral derecho / izquierdo | 2 / 5 | Defienden carril y se proyectan |
-| **DFC** | Defensa central (×2) | 3 / 4 | Uno stopper/agresivo, otro líbero/coberturas |
-| **MC** | Mediocentro / doble pivote (×2) | 6 / 8 | **6** ancla posicional, **8** box-to-box / llegador |
-| **MD** / **MI** | Medio derecho / izquierdo ("extremos") | 7 / 11 | Medios de banda con doble función ataque-defensa |
-| **DC** | Delantero centro (×2) | 9 / 10 | Uno referencia/pivote, otro móvil/de ruptura |
+| **LD** | Lateral derecho | 2 | Defiende carril y se proyecta |
+| **LI** | Lateral izquierdo | 3 | Defiende carril y se proyecta |
+| **DFC** | Central derecho | 4 | Stopper/agresivo o líbero/coberturas |
+| **DFC** | Central izquierdo | 5 | Stopper/agresivo o líbero/coberturas |
+| **MC** | Medio centro defensivo | 6 | Ancla posicional (pivote) |
+| **MI** | Extremo izquierdo | 7 | Medio de banda con doble función ataque-defensa |
+| **MC** | Medio centro ofensivo | 8 | Box-to-box / llegador |
+| **DC** | Delantero centro | 9 | Referencia / pivote |
+| **DC** | Segundo delantero / media punta | 10 | Móvil / de ruptura |
+| **MD** | Extremo derecho | 11 | Medio de banda con doble función ataque-defensa |
 
 - **"Extremos"** = siempre MD/MI (medios de banda), no extremos puros.
 - **"Doble pivote"** = los dos MC.
