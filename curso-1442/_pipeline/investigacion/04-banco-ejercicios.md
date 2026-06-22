@@ -7,7 +7,7 @@
 ## Cómo leer este banco
 
 - **Convención de espacios:** medidas reales en metros sobre campo de fútbol 11 (105×68). Las tareas reducidas indican la fracción de campo usada.
-- **Convención de jugadores:** se usa el lenguaje posicional del 1-4-4-2 — POR (portero), LD/LI (laterales), DFC1/DFC2 (centrales), MD/MI (interiores-bandas), MC1/MC2 (medios centro), DC1/DC2 (delanteros).
+- **Convención de jugadores (única del curso, ver doc 01):** POR (portero), LD/LI (laterales), DFC (centrales, 2), **MC** doble pivote (el "6" posicional/ancla y el "8" box-to-box/llegador), **MD/MI** medios de banda = los "extremos" del 4 del medio, DC (delanteros, 2: referencia y móvil). Cuando una tarea numera piezas iguales usa DFC1/DFC2, MC1/MC2, DC1/DC2 solo para distinguirlas dentro de la ficha.
 - **Provocación = regla artificial** que penaliza el comportamiento incorrecto y premia el deseado. Es el corazón metodológico del banco.
 - **Categorías:** F = formativo (sub-12 a sub-16), A = amateur/juvenil-sénior aficionado, S = sénior/competición.
 
@@ -124,7 +124,7 @@ En el 1-4-4-2 la salida limpia tiene un reto estructural: con dos delanteros riv
 
 # BLOQUE 2 — ORGANIZACIÓN Y BASCULACIÓN DEFENSIVA DE LAS DOS LÍNEAS DE 4
 
-El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo (basculación lateral) cerrando el lado del balón y dejando el lado débil cubierto por la distancia. Las claves: distancias entre líneas (≈10–12 m), entre jugadores (≈8–10 m), achique y desplazamiento como bloque, no individual. Estas tareas entrenan el movimiento de las dos líneas como una unidad.
+El 1-4-4-2 defiende con dos bloques compactos de 4 que se desplazan en paralelo (basculación lateral) cerrando el lado del balón y dejando el lado débil cubierto por la distancia. Las claves (distancias estándar del curso, doc 01): distancias entre líneas **8–12 m**, entre jugadores de una misma línea **8–12 m**, profundidad total del bloque **25–35 m**; achique y desplazamiento como bloque, no individual. Estas tareas entrenan el movimiento de las dos líneas como una unidad.
 
 ---
 
@@ -427,7 +427,7 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
 
 ---
 
-## TAREA 19 — Contrapresión inmediata tras pérdida (5 segundos) (juego condicionado)
+## TAREA 19 — Contrapresión inmediata tras pérdida (3–5 segundos) (juego condicionado)
 
 - **Objetivo / comportamiento:** que el equipo presione de inmediato en el punto de la pérdida (los más cercanos saltan, el resto cierra líneas de pase) para recuperar arriba o ganar tiempo de repliegue.
 - **Tipo de tarea:** juego condicionado de transición.

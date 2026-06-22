@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="860" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="93" />
+    <rect x="20" y="618" width="560" height="93" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="804"/>
+    <line x1="244" y1="60" x2="244" y2="804"/>
+    <line x1="356" y1="60" x2="356" y2="804"/>
+    <line x1="468" y1="60" x2="468" y2="804"/>
+  </g>
+  <!-- Franjas horizontales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="20" y1="308" x2="580" y2="308"/>
+    <line x1="20" y1="556" x2="580" y2="556"/>
+  </g>
+
+  <!-- Lineas del campo -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="744"/>
+    <line x1="20" y1="432" x2="580" y2="432"/>
+    <circle cx="300" cy="432" r="62"/>
+    <!-- Area grande superior (porteria rival) -->
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+    <!-- Area grande inferior (porteria propia) -->
+    <rect x="148" y="704" width="304" height="100"/>
+    <rect x="232" y="764" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="432" r="3"/>
+    <circle cx="300" cy="130" r="3"/>
+    <circle cx="300" cy="734" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M252,704 A56,56 0 0 1 348,704" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Formación base del 1-4-4-2 (disposición plana)</text>
+
+  <!-- Sentido de ataque -->
+  <text x="560" y="430" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
+
+  <!-- Jugadores propios -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <!-- Portero (triangulo) -->
+    <polygon points="300,752 312,774 288,774" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="793" fill="#ffffff" font-size="13">POR (1)</text>
+
+    <!-- Defensa (4) -->
+    <g>
+      <circle cx="110" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="110" y="665" fill="#fff">LD</text>
+      <circle cx="240" cy="676" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="240" y="681" fill="#fff">DFC</text>
+      <circle cx="360" cy="676" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="681" fill="#fff">DFC</text>
+      <circle cx="490" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="490" y="665" fill="#fff">LI</text>
+    </g>
+
+    <!-- Medios (4) -->
+    <g>
+      <circle cx="100" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="100" y="475" fill="#fff">MD</text>
+      <circle cx="240" cy="490" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="240" y="495" fill="#fff">MC</text>
+      <circle cx="360" cy="490" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="495" fill="#fff">MC</text>
+      <circle cx="500" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="500" y="475" fill="#fff">MI</text>
+    </g>
+
+    <!-- Delanteros (2) -->
+    <g>
+      <circle cx="240" cy="270" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="240" y="275" fill="#fff">DC</text>
+      <circle cx="360" cy="270" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="275" fill="#fff">DC</text>
+    </g>
+  </g>
+
+  <!-- Etiquetas de linea -->
+  <g fill="#ffffff" font-size="12" opacity="0.85" text-anchor="start">
+    <text x="26" y="276">Línea de ataque (2 DC)</text>
+    <text x="26" y="476">Línea de medios (2 MC + 2 extremos)</text>
+    <text x="26" y="666">Línea defensiva (2 DFC + 2 laterales)</text>
+  </g>
+</svg>

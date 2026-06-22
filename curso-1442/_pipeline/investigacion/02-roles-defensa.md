@@ -104,8 +104,8 @@ El bloque es la disposición compacta de las dos líneas de cuatro más los dela
 
 **Referencias de distancias (orientativas, ajustables al rival):**
 - **Distancia entre líneas (defensa–medios):** 8-12 m. Si se abre más, aparecen los espacios entre líneas que el 4-4-2 sufre.
-- **Distancia entre medios y delanteros:** 10-15 m.
-- **Distancia entre jugadores de una misma línea (amplitud):** ~8-10 m; el bloque cubre un ancho de ~40-45 m, no los 68 m del campo (se concede la banda lejana y se basculará).
+- **Distancia entre medios y delanteros:** 8-12 m (hasta ~15 m solo en bloque alto, donde el campo se estira).
+- **Distancia entre jugadores de una misma línea (amplitud):** ~8-12 m; el bloque cubre un ancho de ~40-45 m, no los 68 m del campo (se concede la banda lejana y se basculará).
 - **Compactación total del bloque (de la última línea a los delanteros):** ~25-35 m en bloque medio/bajo.
 
 ### 2.1 Bloque alto (presión arriba)
