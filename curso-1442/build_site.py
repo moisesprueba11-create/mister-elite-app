@@ -140,6 +140,7 @@ tr:nth-child(even) td{background:#faf9f6;}
 figure.diagrama{margin:1.5rem 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 figure.diagrama img{display:block;width:100%;height:auto;border-radius:6px;background:#2e7d32;}
 figure.diagrama figcaption{font-size:12.5px;color:var(--muted);margin-top:.6rem;font-style:italic;}
+img.hero{display:block;width:100%;height:auto;border-radius:12px;margin:0 0 2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);}
 .foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
 @media(max-width:880px){
  .side{position:fixed;left:0;top:0;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
@@ -173,6 +174,9 @@ def main():
         body = rewrite_links(body)
         body = figurify(body)
         prefix = prefix_for(out)
+        if out == "index.html":
+            body = (f'<img class="hero" src="{prefix}graficos/portada.svg" '
+                    f'alt="Curso 1-4-4-2 · MISTER ÉLITE">' + body)
         page = PAGE_TMPL.format(title=html.escape(title), prefix=prefix,
                                 nav=build_nav(out, prefix), body=body)
         out_path = os.path.join(SITE, out)

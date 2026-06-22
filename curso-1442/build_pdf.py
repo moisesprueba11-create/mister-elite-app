@@ -45,14 +45,11 @@ CSS = """
 @page{size:A4;margin:1.8cm 1.6cm;
  @bottom-center{content:"Sistema 1-4-4-2 · del concepto al campo";font-size:8pt;color:#999;}
  @bottom-right{content:counter(page);font-size:8pt;color:#999;}}
-@page:first{margin:0;}
+@page cover{margin:0;}
+.cover{page:cover;page-break-after:always;width:100%;height:100%;}
+.cover img{display:block;width:100%;height:100vh;object-fit:cover;}
 *{box-sizing:border-box;}
 body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a18;font-size:10.5pt;line-height:1.5;}
-.cover{height:297mm;background:#1a1a18;color:#fff;padding:6cm 3cm;page-break-after:always;}
-.cover .kicker{color:#1d6fb8;font-weight:700;letter-spacing:.2em;font-size:11pt;text-transform:uppercase;}
-.cover h1{font-size:34pt;line-height:1.1;margin:.4cm 0;border:none;color:#fff;}
-.cover .sub{font-size:13pt;color:#cfcfca;max-width:14cm;}
-.cover .meta{margin-top:3cm;font-size:10pt;color:#9a9a95;border-top:1px solid #333;padding-top:.6cm;}
 .doc{page-break-before:always;}
 h1{font-size:20pt;color:#1a1a18;border-bottom:3px solid #1d6fb8;padding-bottom:.15cm;margin:0 0 .4cm;}
 h2{font-size:14pt;margin:.7cm 0 .25cm;border-bottom:1px solid #ddd;padding-bottom:.1cm;}
@@ -75,12 +72,7 @@ figure.diag figcaption{font-size:8pt;color:#777;font-style:italic;margin-top:.1c
 
 def main():
     md = markdown.Markdown(extensions=["tables","fenced_code","sane_lists","attr_list"])
-    chunks = ['<div class="cover"><div class="kicker">Curso para entrenadores</div>'
-              '<h1>Sistema 1-4-4-2<br>del concepto al campo</h1>'
-              '<div class="sub">Poca teoría, mucha aplicación práctica. 4 módulos, 27 tareas de campo, '
-              'plan de microciclos y 23 pizarras tácticas.</div>'
-              '<div class="meta">Fundamentos · Fase defensiva · Fase ofensiva · Transiciones · '
-              'Balón parado · Banco de tareas · Plan de sesiones</div></div>']
+    chunks = [f'<div class="cover"><img src="file://{GRAF}/portada.svg"></div>']
     for src, _ in DOCS:
         p = os.path.join(ROOT, src)
         if not os.path.exists(p):

@@ -40,8 +40,8 @@ def t01():
     p.player(85, 22, "LD", team="own", role="lateral")
     # medios (4)
     p.player(13, 50, "MI", team="own", role="extremo")
-    p.player(40, 47, "MC", team="own", role="pivote 6")
-    p.player(60, 47, "MC", team="own", role="pivote 8")
+    p.player(40, 44, "MC", team="own", role="pivote 6")
+    p.player(60, 44, "MC", team="own", role="pivote 8")
     p.player(87, 50, "MD", team="own", role="extremo")
     # delanteros (2)
     p.player(40, 75, "DC", team="own", role="referencia")
@@ -87,8 +87,8 @@ def t03():
     p.player(62, 20, "DFC", team="own", role="rápido + salida")
     p.player(85, 22, "LD", team="own", role="recorrido 1v1")
     p.player(13, 50, "MI", team="own", role="amplitud+repliegue")
-    p.player(40, 47, "MC", team="own", role="6 organizador")
-    p.player(60, 47, "MC", team="own", role="8 box-to-box")
+    p.player(40, 44, "MC", team="own", role="6 organizador")
+    p.player(60, 44, "MC", team="own", role="8 box-to-box")
     p.player(87, 50, "MD", team="own", role="amplitud+repliegue")
     p.player(40, 75, "DC", team="own", role="referencia/fija")
     p.player(60, 75, "DC", team="own", role="móvil/ruptura")
@@ -99,21 +99,21 @@ def t04():
     # campo completo: mitad inferior = plano, mitad superior = rombo
     p = Pitch(title="Plano vs Rombo: el centro del campo",
               subtitle="Abajo línea de 4 (amplitud) · Arriba rombo (eje)")
-    # divisoria conceptual ya está la línea de medio campo
-    p.note(50, 48, "— PLANO (2 extremos + 2 MC) —", c="#bfe8ff", size=10)
-    p.note(50, 52, "— ROMBO (MCD-2 int-enganche) —", c="#ffd0a0", size=10)
-    # PLANO en mitad inferior (medios)
+    # PLANO en mitad inferior (medios) — jugadores propios en azul
+    p.note(50, 44, "— PLANO (2 extremos + 2 MC) —", c="#bfe8ff", size=11)
     p.player(13, 30, "MI", team="own")
     p.player(38, 27, "MC", team="own")
     p.player(62, 27, "MC", team="own")
     p.player(87, 30, "MD", team="own")
     p.note(50, 14, "amplitud por bandas, 2 en el eje", c="#cfe", size=9)
-    # ROMBO en mitad superior
-    p.player(50, 60, "MCD", team="rival")
-    p.player(33, 72, "INT", team="rival")
-    p.player(67, 72, "INT", team="rival")
-    p.player(50, 84, "ENG", team="rival", role="enganche (zona 14)")
-    p.note(50, 95, "4 en el eje, sin extremos", c="#fcd", size=9)
+    # ROMBO en mitad superior — misma estructura propia, comodín (neutral)
+    p.note(50, 56, "— ROMBO (MCD · 2 INT · enganche) —", c="#ffd0a0", size=11)
+    p.player(50, 62, "MCD", team="neutral")
+    p.player(33, 73, "INT", team="neutral")
+    p.player(67, 73, "INT", team="neutral")
+    p.player(50, 84, "ENG", team="neutral", role="enganche (zona 14)")
+    p.note(50, 95, "4 en el eje, sin extremos", c="#ffe1c0", size=9)
+    p.legend(["own", "neutral"])
     save(p, "teoria-04-plano-vs-rombo.svg")
 
 # --- teoria-05: variante en rombo (formación completa rombo) ---
@@ -171,12 +171,14 @@ def t07():
     # Bloque ALTO
     p.zone(2, 48, 98, 62, label="", c="#7ee0ff", fill_op=0.10)
     p.note(50, 55, "BLOQUE ALTO · última línea ~45-55 m", c="#bfe8ff", size=10)
-    # marcar primer presionador (DC) en cada altura a la izquierda y última línea a la derecha
-    p.player(20, 24, "DEF", team="own"); p.player(80, 24, "DC", team="rival")
-    p.player(20, 40, "DEF", team="own"); p.player(80, 40, "DC", team="rival")
-    p.player(20, 56, "DEF", team="own"); p.player(80, 56, "DC", team="rival")
+    # última línea propia (izq) y primer presionador propio (der): ambos son
+    # jugadores PROPIOS (azul). El primer presionador es delantero propio (DC).
+    p.player(20, 24, "DEF", team="own"); p.player(80, 24, "DC", team="own")
+    p.player(20, 40, "DEF", team="own"); p.player(80, 40, "DC", team="own")
+    p.player(20, 56, "DEF", team="own"); p.player(80, 56, "DC", team="own")
     p.note(20, 11, "última línea propia", c="#cfe", size=9)
-    p.note(80, 11, "primer presionador", c="#fcd", size=9)
+    p.note(80, 11, "primer presionador (DC)", c="#bfe8ff", size=9)
+    p.legend(["own"])
     save(p, "teoria-07-bloques-altura.svg")
 
 # --- teoria-08: pressing 2 DC con sombra ---
@@ -212,14 +214,16 @@ def t09():
     p.player(72, 20, "DFC", team="own")
     p.player(88, 24, "LD", team="own", role="sale al balón")
     # línea de medios basculada
-    p.player(45, 48, "MI", team="own", role="pisa centro")  # lado débil al carril central
+    p.player(45, 48, "MI", team="own")  # lado débil al carril central
+    p.note(45, 38, "pisa centro", c="#fff5cc", size=9)
     p.player(60, 46, "MC", team="own")
     p.player(74, 46, "MC", team="own")
     p.player(88, 50, "MD", team="own", role="aprieta banda")
     # flechas de basculación (todo el bloque hacia la derecha)
-    p.arrow(30, 35, 50, 35, kind="run", c="#7ee0ff", label="bascula")
-    # banda lejana concedida
-    p.zone(2, 30, 22, 70, label="banda lejana concedida", c="#ff5252", fill_op=0.10)
+    p.arrow(28, 42, 42, 42, kind="run", c="#7ee0ff", label="bascula")
+    # banda lejana concedida (rótulo dentro del rectángulo, sin tocar la línea media)
+    p.zone(2, 28, 22, 68, label="", c="#ff5252", fill_op=0.10)
+    mnote(p, 12, 50, "banda lejana\nconcedida", c="#ffd0d0", size=9)
     p.legend(["run", "own", "zone"])
     save(p, "teoria-09-basculacion.svg")
 
@@ -228,10 +232,12 @@ def t10():
     p = Pitch(title="Trampa de banda (gatillo: balón al lateral)",
               subtitle="Se concede el pase al lateral y se cierran las salidas")
     # rival
-    p.player(70, 72, "LAT", team="rival", role="recibe (gatillo)")
+    p.player(70, 72, "LAT", team="rival")
+    p.note(70, 64, "recibe (gatillo)", c="#ffd0d0", size=9)  # debajo del LAT
     p.player(50, 80, "DFC", team="rival")
     p.ball(70, 68)
-    p.arrow(50, 80, 70, 73, kind="pass", label="pase concedido")
+    p.arrow(50, 80, 68, 73, kind="pass")
+    p.note(50, 71, "pase concedido", c="#ffd54a", size=9)  # césped libre
     # nuestros cierres
     p.player(78, 56, "MD", team="own", role="salta al lateral")
     p.player(58, 52, "MC", team="own", role="tapa interior")
@@ -239,7 +245,7 @@ def t10():
     p.player(60, 30, "DFC", team="own", role="cierra vuelta")
     # flechas de presión escalonada
     p.arrow(78, 58, 72, 67, kind="run")
-    p.arrow(58, 54, 66, 62, kind="block")
+    p.arrow(58, 54, 64, 64, kind="block")
     p.arrow(82, 40, 76, 56, kind="run")
     # zona de robo
     p.zone(62, 58, 92, 78, label="ahogo en banda", c="#ffd54a", fill_op=0.14)
@@ -250,26 +256,31 @@ def t10():
 def t11():
     p = Pitch(title="Línea de fuera de juego (la persiana)",
               subtitle="La defensa sube en bloque y deja a 2 atacantes pasados")
-    # línea de cuatro subiendo
+    # línea de cuatro subiendo (defensa propia, ataque hacia ARRIBA)
     yL = 50
     p.player(18, yL, "LI", team="own")
     p.player(40, yL, "DFC", team="own")
     p.player(60, yL, "DFC", team="own", role="central ordena")
     p.player(82, yL, "LD", team="own")
-    # flecha persiana: toda la línea sube
+    # línea horizontal trazo de fuera de juego (se dibuja primero, debajo de fichas)
+    p.arrow(6, yL, 94, yL, kind="run", c="#ffd54a")
+    p.note(50, 55, "línea de fuera de juego", c="#fff5cc", size=9)
+    # flecha persiana: toda la línea sube (hacia y↑ = hacia el rival)
     for xx in (18, 40, 60, 82):
-        p.arrow(xx, yL+2, xx, yL+10, kind="run", c="#7ee0ff")
-    p.note(50, 46, "↑ SUBEN JUNTOS (achique vertical)", c="#bfe8ff", size=10)
-    # atacantes rivales quedan pasados (en fuera de juego)
-    p.player(42, 60, "DC", team="rival", role="FUERA DE JUEGO")
-    p.player(64, 62, "DC", team="rival", role="FUERA DE JUEGO")
-    # poseedor rival mirando abajo / presionado
-    p.player(50, 78, "MC", team="rival", role="no puede dar el pase")
-    p.ball(50, 74)
-    # línea horizontal trazo de fuera de juego
-    p.arrow(8, yL, 92, yL, kind="run", c="#ffd54a")
-    p.note(72, 53, "línea de fuera de juego", c="#fff5cc", size=9)
-    p.legend(["run", "own", "rival"])
+        p.arrow(xx, yL+3, xx, yL+11, kind="run", c="#7ee0ff")
+    p.note(50, 40, "↑ SUBEN JUNTOS (achique vertical)", c="#bfe8ff", size=10)
+    # atacantes rivales quedan A LA ESPALDA de la línea = pasados (y < 50,
+    # lado del fondo propio, porque el rival ataca hacia ABAJO)
+    p.player(42, 44, "DC", team="rival")
+    p.note(42, 38, "FUERA DE JUEGO", c="#ffd0d0", size=9)
+    p.player(64, 46, "DC", team="rival")
+    p.note(64, 40, "FUERA DE JUEGO", c="#ffd0d0", size=9)
+    # poseedor rival por delante de la línea (arriba) intentando filtrar
+    p.player(50, 70, "MC", team="rival", role="no puede dar el pase")
+    p.ball(50, 66)
+    # pase filtrado anulado: cruzaría la línea hacia los atacantes pasados
+    p.arrow(50, 62, 46, 49, kind="pass", c="#ff5252", label="pase anulado")
+    p.legend(["pass", "run", "own", "rival"])
     save(p, "teoria-11-fuera-de-juego.svg")
 
 # --- teoria-12: problema 2v3 en el centro ---
@@ -302,13 +313,16 @@ def t13():
     # nuestros 2 MC
     p.player(42, 46, "MC", team="own")
     p.player(60, 46, "MC", team="own")
+    # zona "3 funcional": etiqueta en la CABECERA (y=41) para no chocar con los MC
+    p.zone(24, 40, 70, 53, label="", c="#7ee0ff", fill_op=0.14)
+    p.note(47, 41, "3 funcional en el medio", c="#bfe8ff", size=9.5)
     # extremo del lado débil (izquierda) pellizca al centro
-    p.player(30, 48, "MI", team="own", role="pellizca dentro")
-    p.arrow(16, 48, 32, 48, kind="run", label="entra al centro")
-    # ahora 3 funcional
-    p.zone(26, 40, 70, 52, label="3 funcional en el medio", c="#7ee0ff", fill_op=0.14)
+    p.player(34, 47, "MI", team="own")
+    # carrera alargada y clara hacia el centro (rótulo bajo la ficha)
+    p.arrow(15, 47, 31, 47, kind="run")
+    p.note(24, 56, "MI entra al centro (pellizca)", c="#fff", size=9)
     # banda lejana concedida
-    p.zone(2, 40, 18, 70, label="banda concedida", c="#ffd54a", fill_op=0.08)
+    p.zone(2, 58, 18, 78, label="banda concedida", c="#ffd54a", fill_op=0.08)
     p.legend(["run", "own", "rival", "zone"])
     save(p, "teoria-13-solucion-2v3.svg")
 
@@ -346,17 +360,21 @@ def t14():
 def t15():
     p = Pitch(title="Tercer hombre y triángulos de pase",
               subtitle="Central → pivote de espaldas → liberado de cara")
-    p.player(40, 35, "DFC", team="own", role="1er pase")
-    p.player(50, 50, "MC6", team="own", role="recibe de espaldas")
-    p.player(66, 64, "MC8", team="own", role="3er hombre (de cara)")
+    p.player(40, 35, "DFC", team="own", role="inicia")
+    p.player(50, 52, "MC6", team="own")
+    p.note(50, 41, "recibe de espaldas", c="#fff5cc", size=9)
+    p.player(66, 64, "MC8", team="own")
+    p.note(74, 68, "3er hombre (de cara)", c="#fff5cc", size=9)
     p.ball(40, 39)
-    # secuencia
-    p.arrow(40, 38, 50, 48, kind="pass", label="1")
-    p.arrow(50, 52, 66, 64, kind="pass", label="2 (descarga)")
-    # triángulo de banda
-    p.player(85, 55, "MD", team="own")
-    p.player(85, 78, "DC", team="own")
-    p.zone(58, 50, 92, 84, label="triángulo de banda", c="#ffd54a", fill_op=0.10)
+    # triángulo de banda (se dibuja antes para quedar bajo flechas/fichas)
+    p.zone(58, 48, 94, 86, label="", c="#ffd54a", fill_op=0.10)
+    p.note(76, 50, "triángulo de banda", c="#fff", size=9)
+    p.player(86, 56, "MD", team="own")
+    p.player(86, 80, "DC", team="own")
+    # secuencia numerada del tercer hombre: 1 → 2 (descarga) → 3 (al liberado)
+    p.arrow(40, 39, 49, 50, kind="pass", label="1")
+    p.arrow(51, 54, 65, 63, kind="pass", label="2")
+    p.arrow(68, 65, 84, 56, kind="pass", label="3")
     p.legend(["pass", "own", "zone"])
     save(p, "teoria-15-tercer-hombre.svg")
 
@@ -370,7 +388,7 @@ def t16():
     p.player(65, 86, "DFC", team="rival")
     # DC que apoya (baja)
     p.player(42, 66, "DC", team="own", role="APOYO (baja al pie)")
-    p.arrow(42, 78, 42, 68, kind="run")
+    p.arrow(42, 74, 42, 68, kind="run")
     # DC que rompe (ataca espalda)
     p.player(60, 74, "DC", team="own", role="RUPTURA (a la espalda)")
     p.arrow(60, 76, 72, 92, kind="run", label="ataca espacio")
@@ -393,9 +411,9 @@ def t17():
     p.player(50, 86, "DC", team="own", role="penalti")
     p.player(35, 88, "MI", team="own", role="2º palo")
     p.player(50, 70, "MC8", team="own", role="frontal/rechace")
-    # trayectorias de centro
-    p.arrow(90, 76, 62, 88, kind="pass", label="1er palo")
-    p.arrow(90, 76, 50, 84, kind="pass", label="penalti")
+    # trayectorias de centro (sin rótulo: las fichas ya están rotuladas)
+    p.arrow(90, 76, 62, 88, kind="pass")
+    p.arrow(90, 76, 50, 84, kind="pass")
     p.arrow(90, 74, 50, 72, kind="pass", label="cut-back")
     p.legend(["pass", "own"])
     save(p, "teoria-17-ataque-area.svg")
@@ -429,20 +447,23 @@ def t19():
     p = Pitch(title="Transición ofensiva: contraataque vertical",
               subtitle="Robo en zona media · pase vertical a los dos puntas")
     # robo
-    p.player(50, 45, "MC", team="own", role="ROBO")
-    p.ball(50, 49)
+    p.player(50, 44, "MC", team="own")
+    p.note(38, 41, "ROBO", c="#fff5cc", size=9.5)  # césped libre a la izq
+    p.ball(50, 48)
     # DC apoyo y DC ruptura
-    p.player(44, 70, "DC", team="own", role="apoyo")
-    p.player(60, 72, "DC", team="own", role="ruptura")
-    p.arrow(60, 74, 70, 92, kind="run", label="a la espalda")
+    p.player(42, 70, "DC", team="own", role="apoyo")
+    p.player(62, 72, "DC", team="own")
+    p.note(62, 64, "ruptura", c="#fff5cc", size=9)  # debajo de la ficha
+    p.arrow(62, 74, 72, 92, kind="run", label="a la espalda")
     # pase vertical
-    p.arrow(50, 52, 60, 72, kind="pass", label="pase vertical")
+    p.arrow(50, 51, 61, 71, kind="pass", label="pase vertical")
     # extremo corre el carril
     p.player(88, 58, "MD", team="own", role="corre carril")
     p.arrow(88, 60, 88, 84, kind="run")
     # MC 8 llega de tercer hombre
-    p.player(52, 56, "MC8", team="own", role="3er hombre")
-    p.arrow(52, 58, 56, 76, kind="run")
+    p.player(70, 56, "MC8", team="own")
+    p.note(70, 48, "3er hombre", c="#fff5cc", size=9)
+    p.arrow(70, 58, 72, 76, kind="run")
     p.legend(["pass", "run", "own"])
     save(p, "teoria-19-contraataque.svg")
 
@@ -473,21 +494,26 @@ def t20():
 def t21():
     p = Pitch(title="Contrapresión (3-5 segundos)",
               subtitle="Salto inmediato al balón + cierre de líneas cortas")
+    # cuenta atrás (zona; etiqueta en la cabecera para no pisar fichas)
+    p.zone(34, 44, 78, 74, label="", c="#ff5252", fill_op=0.12)
+    p.note(56, 72, "3-5 s para robar", c="#ffd0d0", size=10)
     # punto de pérdida
-    p.player(55, 60, "RIVAL", team="rival", role="recupera")
+    p.player(55, 60, "RIVAL", team="rival")
+    p.note(55, 52, "recupera", c="#ffd0d0", size=9)  # debajo del rival, legible
     p.ball(55, 56)
-    # los más cercanos saltan
+    # los más cercanos saltan al balón
     p.player(48, 68, "DC", team="own", role="ataca balón")
     p.player(66, 66, "MC8", team="own", role="2º salto")
     p.arrow(48, 66, 53, 60, kind="run")
     p.arrow(66, 64, 59, 60, kind="run")
-    # cierre de líneas cortas
-    p.player(40, 50, "MC6", team="own", role="tapa apoyo")
-    p.player(72, 52, "MD", team="own", role="tapa apoyo")
-    p.arrow(40, 52, 48, 58, kind="block")
-    p.arrow(72, 54, 64, 58, kind="block")
-    # cuenta atrás
-    p.zone(38, 50, 74, 72, label="3-5 s para robar", c="#ff5252", fill_op=0.12)
+    # apoyos laterales del rival (líneas de pase que hay que cerrar)
+    p.player(38, 58, "AP", team="rival")
+    p.player(74, 58, "AP", team="rival")
+    # cierre de líneas cortas: block sobre los APOYOS, no sobre el balón
+    p.player(40, 48, "MC6", team="own", role="tapa apoyo")
+    p.player(72, 50, "MD", team="own", role="tapa apoyo")
+    p.arrow(40, 50, 38, 56, kind="block")
+    p.arrow(72, 52, 74, 56, kind="block")
     p.legend(["run", "block", "own", "rival", "zone"])
     save(p, "teoria-21-contrapresion.svg")
 
@@ -533,8 +559,8 @@ def t23():
     p._line(p.X(4), p.Y(70), p.X(4), p.Y(36), w=2, c="#ffd54a")
     p.note(7, 53, "25-30 m", c="#fff5cc", size=9)
     # distancia corta entre líneas resaltada
-    p.zone(10, 47, 90, 59, label="", c="#7ee0ff", fill_op=0.10)
-    p.note(50, 47, "líneas cortas (8-12 m entre sí)", c="#bfe8ff", size=9)
+    p.zone(10, 45, 90, 60, label="", c="#7ee0ff", fill_op=0.10)
+    p.note(50, 49, "líneas cortas (8-12 m entre sí)", c="#bfe8ff", size=9)
     # bloque compacto
     p.zone(8, 34, 92, 72, label="", c="#ffd54a", fill_op=0.06, dash="6 5")
     p.note(50, 30, "bloque compacto = pocos espacios interiores", c="#cfe", size=9)
