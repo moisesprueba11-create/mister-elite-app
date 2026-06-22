@@ -279,9 +279,9 @@ def tarea_18():
     # 3) 2ª jugada: elipse de caída del rechace, separada; rótulo en borde derecho
     p.zone(42, 56, 66, 66, ellipse=True, c="#7ee0ff", fill_op=0.14)
     p.note(80, 60, "2ª jugada", c="#7ee0ff")
-    p.arrow(28, 46, 48, 60, kind="run")   # MC llega a la 2ª jugada
-    p.arrow(54, 42, 58, 58, kind="run")
-    step(p, 40, 54, "3")
+    p.arrow(30, 47, 46, 58, kind="run")   # MC llega a la 2ª jugada
+    p.arrow(54, 42, 58, 56, kind="run")
+    step(p, 36, 52, "3")
     p.note(50, 90, "MC llegan antes que rivales · recuperar y finalizar <6 s")
     p.legend(["pass", "run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-18.svg"))
