@@ -25,7 +25,7 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
 - **Coaching:** comunicación y miradas entre la pareja; alternar roles (no siempre baja el mismo); timing de la ruptura (salir cuando el compañero recibe orientado); el que baja ofrece pie seguro.
 - **Duración / categoría:** 4 series de 4 min (16–18 min). **A / S** (patrón válido para F).
 
-![DIAGRAMA: tarea 14 — un DC baja a recibir entre líneas (apoyo) mientras el otro ataca diagonal el espacio a la espalda (ruptura); descarga/filtrado al que rompe y finalización](../graficos/18-tarea-delanteros.svg)
+![Pizarra Tarea 14: un DC baja a recibir entre líneas (apoyo) mientras el otro ataca el espacio a la espalda (ruptura); descarga o filtrado al que rompe y finalización](../graficos/tarea-14.svg)
 
 ---
 
@@ -37,6 +37,9 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
   - **Jugadores:** 2 bandas (MD/MI) + 1 lateral que apoya + 2 DC + 1 MC que llega vs 4 defensas + POR.
   - **Espacio:** zona de finalización (área + 30 m), ambas bandas.
   - **Material:** portería; balones en banda; conos de zonas del área.
+
+![Pizarra Tarea 15: combinación banda-lateral y centro lateral tenso con ocupación de los tres puntos del área (primer palo, segundo palo, frontal) por los 2 DC y el MC que llega](../graficos/tarea-15.svg)
+
 - **Desarrollo:** Combinación lateral-banda para llegar a fondo y centrar. Los 2 DC atacan primer y segundo palo; el MC ataca la frontal/rechace. Centro y remate. Defensa real opone.
 - **Provocaciones:**
   - Deben ocuparse SIEMPRE los tres puntos del área (primer palo, segundo palo, frontal): si falta uno, el gol no cuenta.
@@ -56,6 +59,9 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
   - **Jugadores:** grupos de 4 (1 DC que baja + 1 MC + 1 banda + 1 DC que ataca) + 1–2 defensas pasivos.
   - **Espacio:** 30×30 m frente a portería.
   - **Material:** portería; conos.
+
+![Pizarra Tarea 16: circuito de pared y descarga — el MC pasa al DC que baja, pared a un toque, el MC suelta a banda o al segundo DC en profundidad, centro y remate](../graficos/tarea-16.svg)
+
 - **Desarrollo:** MC con balón → pase al DC que baja → pared de primera → MC suelta a banda o al segundo DC en profundidad → centro/pase → remate. Circuito continuo desde ambos lados.
 - **Provocaciones:**
   - La pared debe ser a un toque (define el ritmo de asociación).
@@ -74,6 +80,9 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
   - **Jugadores:** 6v6 + 2 porteros (+ 2 comodines de banda fijos opcionales).
   - **Espacio:** 50×40 m con dos carriles de banda marcados (5 m a cada lado).
   - **Material:** 2 porterías grandes; conos de carriles.
+
+![Pizarra Tarea 17: 6v6+porteros en 50×40 con dos carriles de banda; el gol solo cuenta si la jugada pasa por un carril de banda y hay centro/pase desde banda antes del remate](../graficos/tarea-17.svg)
+
 - **Desarrollo:** Juego libre, pero el gol solo es válido si la jugada ha pasado por un carril de banda y ha habido un centro o pase desde banda antes del remate. Refuerza la vía lateral del sistema.
 - **Provocaciones:**
   - Gol sin pasar por banda = no vale.
@@ -93,6 +102,9 @@ La pareja de delanteros del 1-4-4-2 vive de la complementariedad: uno baja a rec
   - **Jugadores:** POR/defensa que envía + 2 DC (uno pelea, otro recoge) + 2 MC que llegan a la segunda jugada vs 2 centrales + 2 MC rivales.
   - **Espacio:** campo central, 50×50 m.
   - **Material:** portería; balones para reinicio rápido.
+
+![Pizarra Tarea 18: balón largo a la pareja de delanteros; un DC pelea/peina y el otro ataca el rechace, mientras los dos MC llegan veloces a la segunda jugada para recuperar y atacar](../graficos/tarea-18.svg)
+
 - **Desarrollo:** Balón largo a la pareja de delanteros. Un DC pelea/peina el balón, el otro DC ataca el rechace o la prolongación; los 2 MC llegan veloces a la segunda jugada. Quien recupere, ataca.
 - **Provocaciones:**
   - El delantero que recibe el balón largo debe protegerlo o peinarlo, nunca controlar de cara estático (realismo del duelo).

@@ -16,6 +16,9 @@ El cierre del proceso: tareas globales que integran todas las fases en formato p
   - **Jugadores:** 11v11 (o el máximo disponible).
   - **Espacio:** campo completo.
   - **Material:** 2 porterías; sistema de puntuación visible (pizarra).
+
+![Pizarra Tarea 23: partido 11v11 con zonas/acciones bonificadas — superar la presión por suelo (+1), gol con 3 atacantes en área (+2), patrón uno baja/uno rompe (+2), recuperar en press alto y finalizar <8 s (+2)](../graficos/tarea-23.svg)
+
 - **Desarrollo:** Partido real con un sistema de puntos que recompensa los patrones del sistema, no solo el gol.
 - **Provocaciones (puntuación):**
   - Superar la primera línea de presión por suelo: **+1**.
@@ -38,6 +41,9 @@ El cierre del proceso: tareas globales que integran todas las fases en formato p
   - **Jugadores:** 9v9 a 11v11.
   - **Espacio:** campo completo dividido en carriles (2 bandas + 1 central) y 3 franjas horizontales.
   - **Material:** conos/cal de carriles y franjas; 2 porterías.
+
+![Pizarra Tarea 24: campo zonificado en 3 carriles (2 bandas + central) y 3 franjas; las bandas resaltadas como zonas de robo premiado (+1) y vías de progresión ofensiva, el central penalizado](../graficos/tarea-24.svg)
+
 - **Desarrollo:** El campo está zonificado. El equipo en ataque gana puntos por progresar por bandas hacia el área; el equipo en defensa gana puntos por robar en banda (donde el bloque del 1-4-4-2 quiere encerrar) y por mantener la compacidad.
 - **Provocaciones:**
   - Robo en carril de banda: **+1** (premia haber orientado al rival a la banda).
@@ -46,8 +52,6 @@ El cierre del proceso: tareas globales que integran todas las fases en formato p
 - **Variantes:** énfasis defensivo (más puntos por robo) → énfasis ofensivo (más puntos por banda) → neutral competitivo.
 - **Coaching:** orientar el juego rival; encerrar en banda; compacidad permanente; usar la anchura en ataque y atacar el área con llegadas.
 - **Duración / categoría:** 2 partes de 12 min (26–30 min). **A / S**.
-
-![DIAGRAMA: tarea 24 — campo zonificado en 3 carriles (2 bandas + central) y 3 franjas; zonas de banda resaltadas como zonas de robo premiado y vías de progresión ofensiva](../graficos/21-tarea-zonas-puntos.svg)
 
 ---
 
@@ -59,6 +63,9 @@ El cierre del proceso: tareas globales que integran todas las fases en formato p
   - **Jugadores:** 11 (equipo, en 1-4-4-2) vs 11 (sparring instruido para jugar con la estructura del rival real).
   - **Espacio:** campo completo.
   - **Material:** 2 porterías; peto del sparring imitando al rival; pizarra.
+
+![Pizarra Tarea 25: el 1-4-4-2 frente a un sparring con salida de 3 y un 10 entre líneas; quién de los 2 DC salta a la salida, quién tapa el pivote y la bajada del MC a vigilar al 10](../graficos/tarea-25.svg)
+
 - **Desarrollo:** El equipo juega su 1-4-4-2; el sparring reproduce los patrones del próximo rival. Se trabaja específicamente cómo presiona el 1-4-4-2 esa salida, cómo defiende a su mediapunta entre líneas (con la bajada del MC o el achique de la línea) y cómo le ataca.
 - **Provocaciones:**
   - El sparring tiene "consignas obligatorias" del rival (p. ej. salida siempre de 3, buscar al 10 entre líneas): el equipo debe encontrar la respuesta del sistema.

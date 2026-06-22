@@ -10,6 +10,10 @@
 - Principio de progresión semanal: de **analítico/situacional** (lunes-martes) hacia **global/competitivo** (jueves-viernes), bajando carga el día previo al partido.
 - Una tarea repetida entre microciclos cambia de **variante** (más difícil) para progresar, no se repite idéntica.
 
+![Estructura del microciclo MD-4 a MD: progresión de analítico/situacional a global/competitivo con la carga modulada y bajando el día previo al partido](../graficos/sesion-1.svg)
+
+![Estructura interna de una sesión: activación, tarea foco analítica/situacional, tarea global de juego/partido condicionado y vuelta a la calma](../graficos/sesion-2.svg)
+
 ---
 
 ## Microciclo A — Implantación del sistema (semana base)

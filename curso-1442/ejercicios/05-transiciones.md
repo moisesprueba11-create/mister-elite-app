@@ -18,6 +18,9 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
   - **Jugadores:** 7v7 / 8v8.
   - **Espacio:** 45×40 m con 4 mini-porterías (2 por equipo).
   - **Material:** mini-porterías; balones para reinicios continuos.
+
+![Pizarra Tarea 19: momento de la pérdida; los 2-3 jugadores más cercanos saltan al balón mientras el resto cierra las líneas de pase cortas, con la cuenta de 5 segundos](../graficos/tarea-19.svg)
+
 - **Desarrollo:** Posesión con objetivo de marcar en mini-porterías. En el momento de la pérdida, el equipo que pierde tiene 5 segundos para recuperar mediante contrapresión; si no lo logra, se repliega.
 - **Provocaciones:**
   - Recuperar en <5 s tras perder = punto extra (premia la reacción inmediata).
@@ -26,8 +29,6 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
 - **Variantes:** 3 s (más exigente) → ampliar el espacio → premiar también el repliegue ordenado además de la contrapresión.
 - **Coaching:** reacción instantánea, no lamento; salta el más cercano; cerrar líneas de pase los demás; decisión rápida presionar/replegar; "el primer defensor es el que ha perdido el balón".
 - **Duración / categoría:** 4 series de 4 min (18 min). **A / S**.
-
-![DIAGRAMA: tarea 19 — momento de la pérdida; los 2-3 jugadores más cercanos saltan al balón mientras el resto cierra las líneas de pase cortas, con la cuenta de 5 segundos](../graficos/19-tarea-contrapresion.svg)
 
 ---
 
@@ -39,6 +40,9 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
   - **Jugadores:** 8 (futuro bloque defensivo) atacan una portería; al perder, deben replegar y defender la suya contra 6 que contraatacan.
   - **Espacio:** campo completo o 3/4.
   - **Material:** 2 porterías; balones.
+
+![Pizarra Tarea 20: tras el robo rival, el equipo de 8 repliega; el primero ocupa el eje para frenar el balón central y el resto reconstruye las dos líneas de 4 antes de que llegue el contraataque](../graficos/tarea-20.svg)
+
 - **Desarrollo:** El equipo de 8 ataca; en el momento del robo rival suena una señal y deben replegar ordenadamente para formar las dos líneas de 4 antes de que el contraataque llegue. El equipo de 6 intenta finalizar rápido aprovechando el desorden.
 - **Provocaciones:**
   - Si el rival finaliza antes de que el bloque esté formado (4+4 con líneas) = gol doble (castiga el repliegue lento).
@@ -58,6 +62,9 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
   - **Jugadores:** bloque que roba (4 defensas + 2 MC + 2 bandas + 2 DC) vs estructura rival; o versión reducida 6v6.
   - **Espacio:** campo completo o 3/4, con zonas de banda señaladas.
   - **Material:** 2 porterías.
+
+![Pizarra Tarea 21: tras el robo, primer pase vertical/a banda; el extremo corre el carril exterior, los dos DC atacan (uno apoyo, otro ruptura) y el ataque finaliza por banda en pocos segundos](../graficos/tarea-21.svg)
+
 - **Desarrollo:** Se provoca un robo (servidor o partido). Tras recuperar, el equipo tiene un número limitado de pases/segundos para finalizar, buscando el primer pase vertical o a banda y la ruptura de los delanteros.
 - **Provocaciones:**
   - Tras robar, máximo 6 segundos / 5 pases para finalizar (ataque rápido).
@@ -66,8 +73,6 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
 - **Variantes:** más tiempo/pases (control de la transición) → menos (transición pura) → escenario de superioridad tras robo (3v2 en campo abierto).
 - **Coaching:** primer pase de calidad y hacia adelante; los delanteros atacan el espacio de inmediato; aprovechar el desorden rival; saber decidir entre ataque rápido y posesión si no hay ventaja.
 - **Duración / categoría:** 12–16 transiciones (16–18 min). **A / S**.
-
-![DIAGRAMA: tarea 21 — tras el robo, primer pase vertical/a banda; el extremo corre el carril exterior, los dos DC atacan (uno apoyo, otro ruptura) y el ataque finaliza por banda en pocos segundos](../graficos/20-tarea-transicion-banda.svg)
 
 ---
 
@@ -79,6 +84,9 @@ El 1-4-4-2, con sus dos bloques, es fuerte en transición defensiva si reacciona
   - **Jugadores:** 8v8 + porteros.
   - **Espacio:** 60×50 m, dos porterías grandes.
   - **Material:** porteros; muchos balones en porterías para reinicios sin pausa.
+
+![Pizarra Tarea 22: partido continuo 8v8 con foco en el primer comportamiento tras cada cambio de posesión — contrapresión/repliegue al perder y ataque rápido al ganar, con reinicios inmediatos del portero](../graficos/tarea-22.svg)
+
 - **Desarrollo:** Partido continuo. El foco del entrenador es exclusivamente el primer comportamiento tras cada cambio de posesión: contrapresión o repliegue al perder; ataque rápido o consolidación al ganar. Reinicios inmediatos para maximizar transiciones.
 - **Provocaciones:**
   - Gol en los primeros 8 s tras un robo = doble (D-A).
