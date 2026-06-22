@@ -113,3 +113,47 @@ No hay defectos BLOQUEANTES. No hay defectos IMPORTANTES. Todos los hallazgos so
 Producto **publicable y de nivel profesional**. La cadena teoría→tarea→gráfico está completa y sin roturas; las 25 fichas tienen transferencia real al 1-4-4-2 con provocaciones bien diseñadas; los 21 diagramas existen, son coherentes y refuerzan el texto. Los cuatro defectos son menores y de pulido (un cambio de dos celdas de dorsales, una microincoherencia de cifra, un hueco opcional de ABP y un retoque de tono en una provocación). Ninguno bloquea la entrega.
 
 **Veredicto: PRODUCTO TOP — 9.4/10.**
+
+---
+
+## Re-evaluación tras correcciones
+
+> Fecha re-evaluación: 2026-06-22. Método: re-lectura de los archivos corregidos (`README.md`, `ejercicios/03-pressing.md`, `ejercicios/05-transiciones.md`, `ejercicios/00-plan-sesiones.md`, nueva ficha `ejercicios/07-balon-parado.md`); verificación automática 1:1 de los 23 placeholders de diagrama contra los 23 SVG; validación XML de los 23 SVG; comprobación de los enlaces internos `.md`; recuento de tareas (T1–T27) y de la cifra "27 tareas"; revisión de plantilla de las 2 nuevas fichas de ABP.
+
+### Estado de los 4 defectos menores
+
+**MENOR-1 — Numeración de dorsales — RESUELTO.**
+`README.md` (líneas 78-79): MD/MI = **7 / 11** y DC = **9 / 10**, asignación convencional. No hay otras citas de esos dorsales en el curso que requieran ajuste.
+
+**MENOR-2 — Título de la TAREA 19 — RESUELTO.**
+`ejercicios/05-transiciones.md` (línea 11): título cambiado a "Contrapresión inmediata tras pérdida (**ventana 3-5 s**)" con **nota aclaratoria** (línea 13) que enlaza la ventana teórica de 3-5 s (módulos 02 §3.3 y 04 §2) y explica que la tarea fija el umbral de 5 s como provocación, conservando la variante de 3 s. Las restantes menciones a "5 s" son el umbral deliberado de la tarea, conforme a la acción correctiva prevista.
+
+**MENOR-3 — Tarea específica de balón parado — RESUELTO.**
+Nueva ficha `ejercicios/07-balon-parado.md` con **TAREA 26** (córner ofensivo con bloqueos y zonas de remate) y **TAREA 27** (defensa mixta de córner + salida de contragolpe), cada una con su diagrama: `graficos/22-tarea-corner-ofensivo.svg` y `graficos/23-tarea-corner-defensivo.svg` (ambos SVG válidos, ~7.9–8.1 KB, viewBox correcto, cierre único). Recuento actualizado a **27 tareas** en `README.md` (línea 26) y `00-plan-sesiones.md` (línea 3); el índice del README añade el Bloque 7 (línea 60); el "Mapa rápido tarea→bloque" incluye la fila 7 (T26–T27); y MD-1 de **ambos** microciclos enlaza las nuevas fichas. Las dos fichas cumplen la plantilla del banco (Objetivo · Tipo · Organización [Jugadores/Espacio/Material] · Desarrollo · Provocaciones · Variantes fácil→difícil · Coaching · Duración/Categoría A/S) con provocaciones de lógica de juego bien calibradas (remate en movimiento, bloqueo obligatorio, equilibrio defensivo / despeje orientado y transición cronometrada a los 2 DC). Estándar equivalente al resto del banco.
+
+**MENOR-4 — Consecuencia física como castigo en la TAREA 12 — RESUELTO.**
+`ejercicios/03-pressing.md` (línea 64): el castigo físico se sustituye por una **consecuencia de juego** ("si el rival supera la presión y marca en mini-portería, suma 2 puntos y reinicia con superioridad temporal"); el sprint queda solo como opción de intensidad. Tono metodológico ahora homogéneo con el resto del banco.
+
+### Re-verificación global
+
+- **(a) Diagramas:** 23 placeholders ↔ 23 SVG, coincidencia 1:1, **0 enlaces rotos**; todos los archivos referenciados existen y ningún SVG queda huérfano. Los 23 SVG validan como XML bien formado (1 `<svg>` / 1 `</svg>` cada uno, viewBox presente).
+- **(b) Enlaces internos `.md`:** todos resuelven (README→módulos/ejercicios, ejercicios→módulos, plan→fichas, incluidas las nuevas a `07-balon-parado.md`). **0 rotos.**
+- **(c) Recuentos y terminología:** tareas consecutivas T1–T27 sin huecos; cifra "27 tareas" coherente en README, objetivos y plan; **no queda ninguna "25 tareas"**. Ventana de contrapresión homogénea (3-5 s en módulos, umbral de tarea documentado). Dorsales convencionales.
+- **(d) Calidad de las 2 nuevas fichas de ABP:** cumplen el estándar del banco (ver MENOR-3).
+
+### Nueva puntuación por criterio
+
+| # | Criterio | Antes | Ahora |
+|---|----------|-------|-------|
+| 1 | Propósito | 9.5 | 9.5 |
+| 2 | Contenido táctico | 9.5 | 9.5 |
+| 3 | Tareas + plan de sesiones | 9.5 | 9.7 (banco de ABP completado: 27 tareas) |
+| 4 | Integración de gráficos | 9.5 | 9.6 (23 diagramas vivos) |
+| 5 | Navegación y coherencia | 9.0 | 9.6 (dorsales, cifra y ventana resueltos) |
+| 6 | Acabado editorial | 9.5 | 9.6 (tono de provocaciones homogéneo) |
+
+### Puntuación global re-evaluada: **9.6 / 10**
+
+# ✅ PRODUCTO TOP (confirmado)
+
+Los 4 defectos menores están **RESUELTOS** y no se introdujeron regresiones: 0 diagramas rotos (23/23), 0 enlaces internos rotos, recuentos y terminología coherentes, y las nuevas fichas de balón parado igualan la calidad del banco. El curso sube de 9.4 a **9.6** y mantiene el veredicto de **PRODUCTO TOP**.
