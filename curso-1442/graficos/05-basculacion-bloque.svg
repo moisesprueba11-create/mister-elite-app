@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="860" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="93" />
+    <rect x="20" y="618" width="560" height="93" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="804"/>
+    <line x1="244" y1="60" x2="244" y2="804"/>
+    <line x1="356" y1="60" x2="356" y2="804"/>
+    <line x1="468" y1="60" x2="468" y2="804"/>
+  </g>
+  <!-- Franjas horizontales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="20" y1="308" x2="580" y2="308"/>
+    <line x1="20" y1="556" x2="580" y2="556"/>
+  </g>
+
+  <!-- Lineas del campo -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="744"/>
+    <line x1="20" y1="432" x2="580" y2="432"/>
+    <circle cx="300" cy="432" r="62"/>
+    <!-- Area grande superior (porteria rival) -->
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+    <!-- Area grande inferior (porteria propia) -->
+    <rect x="148" y="704" width="304" height="100"/>
+    <rect x="232" y="764" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="432" r="3"/>
+    <circle cx="300" cy="130" r="3"/>
+    <circle cx="300" cy="734" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M252,704 A56,56 0 0 1 348,704" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Zona sombreada: banda lejana concedida (lado debil = izquierda) -->
+  <polygon points="20,60 132,60 132,804 20,804" fill="#ffd166" fill-opacity="0.18" stroke="#ffd166" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="76" y="440" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 76 440)">banda lejana concedida</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Basculación con balón en banda derecha</text>
+
+  <!-- Sentido de ataque -->
+  <text x="560" y="430" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
+
+  <!-- Flechas de desplazamiento (bloque deslizando hacia la derecha) -->
+  <g stroke="#1d3557" stroke-width="3.5" fill="none" marker-end="url(#arrow)">
+    <!-- Bloque defensivo desliza a la derecha -->
+    <line x1="370" y1="676" x2="410" y2="676"/>
+    <line x1="450" y1="676" x2="485" y2="668"/>
+    <!-- Bloque medio desliza a la derecha -->
+    <line x1="370" y1="500" x2="410" y2="496"/>
+    <line x1="470" y1="490" x2="510" y2="478"/>
+    <!-- Delanteros bascular -->
+    <line x1="350" y1="280" x2="385" y2="276"/>
+  </g>
+  <!-- LI metiendose dentro (formando linea de 3) -->
+  <line x1="160" y1="660" x2="245" y2="688" stroke="#1d3557" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+  <!-- MI pellizcando al centro -->
+  <line x1="150" y1="470" x2="270" y2="500" stroke="#1d3557" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Jugadores rivales -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- Portador del balon en su banda izquierda = nuestra derecha -->
+    <circle cx="500" cy="560" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="500" y="565" fill="#fff">LD'</text>
+    <circle cx="430" cy="430" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="430" y="435" fill="#fff">MD'</text>
+    <circle cx="470" cy="300" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="470" y="305" fill="#fff">DC'</text>
+  </g>
+  <!-- Balon en posesion rival (banda derecha nuestra) -->
+  <circle cx="525" cy="568" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+
+  <!-- Jugadores propios (bloque basculado a la derecha) -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <!-- Portero (triangulo) desplazado al lado del balon -->
+    <polygon points="330,752 342,774 318,774" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="330" y="793" fill="#ffffff" font-size="13">POR</text>
+
+    <!-- Defensa: LI metido formando 3 + DFC DFC + LD en banda del balon -->
+    <g>
+      <circle cx="248" cy="690" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="248" y="695" fill="#fff">LI</text>
+      <circle cx="320" cy="688" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="320" y="693" fill="#fff">DFC</text>
+      <circle cx="410" cy="678" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="410" y="683" fill="#fff">DFC</text>
+      <circle cx="500" cy="666" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="500" y="671" fill="#fff">LD</text>
+    </g>
+
+    <!-- Medios: MI pellizcado al centro + 2 MC + MD en banda del balon -->
+    <g>
+      <circle cx="280" cy="500" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="280" y="505" fill="#fff">MI</text>
+      <circle cx="355" cy="494" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="355" y="499" fill="#fff">MC</text>
+      <circle cx="425" cy="490" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="425" y="495" fill="#fff">MC</text>
+      <circle cx="515" cy="476" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="515" y="481" fill="#fff">MD</text>
+    </g>
+
+    <!-- Delanteros desplazados al lado del balon -->
+    <g>
+      <circle cx="330" cy="280" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="330" y="285" fill="#fff">DC</text>
+      <circle cx="400" cy="276" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="400" y="281" fill="#fff">DC</text>
+    </g>
+  </g>
+
+  <!-- Mini-leyenda -->
+  <g>
+    <rect x="20" y="816" width="560" height="34" fill="#1d3557" fill-opacity="0.85"/>
+    <line x1="40" y1="833" x2="80" y2="833" stroke="#ffffff" stroke-width="3.5" marker-end="url(#arrow)"/>
+    <text x="92" y="838" fill="#ffffff" font-size="13" text-anchor="start">flecha continua = desplazamiento</text>
+    <rect x="340" y="824" width="22" height="16" fill="#ffd166" fill-opacity="0.4" stroke="#ffd166" stroke-width="1.5"/>
+    <text x="370" y="838" fill="#ffffff" font-size="13" text-anchor="start">zona sombreada = banda concedida</text>
+  </g>
+</svg>

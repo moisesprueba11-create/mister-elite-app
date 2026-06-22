@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <!-- arrowheads por tipo -->
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <marker id="arrowCond" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="560" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="88" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="520"/>
+    <line x1="244" y1="60" x2="244" y2="520"/>
+    <line x1="356" y1="60" x2="356" y2="520"/>
+    <line x1="468" y1="60" x2="468" y2="520"/>
+  </g>
+
+  <!-- Lineas del campo (medio campo: porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="460"/>
+    <line x1="20" y1="520" x2="580" y2="520"/>
+    <path d="M238,520 A62,62 0 0 1 362,520" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="130" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- ZONA ACOTADA: banda derecha rival (carril exterior donde se da el gatillo) -->
+  <rect x="468" y="160" width="112" height="200" fill="#ffd24a" fill-opacity="0.10" stroke="#ffd24a" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="524" y="178" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle" opacity="0.95">carril del gatillo</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea: gatillo en el lateral (salto coordinado)</text>
+
+  <!-- =========================================================
+       RIVAL (rojo) en salida — porteria arriba
+       central (con balon) -> lateral rival = gatillo
+       ========================================================= -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- central rival con balon -->
+    <circle cx="380" cy="200" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="205" fill="#ffffff">DFC'</text>
+    <!-- lateral rival (recibe el gatillo) -->
+    <circle cx="524" cy="250" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="524" y="255" fill="#ffffff">LD'</text>
+    <!-- extremo rival a vigilar -->
+    <circle cx="540" cy="380" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="540" y="385" fill="#ffffff">EXT'</text>
+  </g>
+
+  <!-- Balon en el central rival -->
+  <circle cx="400" cy="218" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+  <circle cx="400" cy="218" r="1.6" fill="#1d3557"/>
+
+  <!-- PASE GATILLO: central -> lateral (discontinuo amarillo) -->
+  <path d="M402,206 C440,222 478,232 502,242" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+
+  <!-- MOMENTO-GATILLO marcado -->
+  <circle cx="455" cy="226" r="15" fill="none" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <text x="455" y="200" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">¡GATILLO!</text>
+
+  <!-- =========================================================
+       PROPIOS (azul) — el salto coordinado
+       ========================================================= -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- MD (extremo derecho) salta al lateral rival -->
+    <circle cx="470" cy="350" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="470" y="355" fill="#fff">MD</text>
+    <!-- DC cierra la vuelta al central -->
+    <circle cx="320" cy="300" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="320" y="305" fill="#fff">DC</text>
+    <!-- MC tapa el interior -->
+    <circle cx="380" cy="350" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="355" fill="#fff">MC</text>
+    <!-- Lateral propio sube a vigilar al extremo rival -->
+    <circle cx="500" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="500" y="475" fill="#fff">LD</text>
+  </g>
+
+  <!-- FLECHA: MD salta al lateral rival (movimiento continuo) -->
+  <path d="M483,333 C500,308 510,288 518,270" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="525" y="320" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">salto</text>
+
+  <!-- FLECHA: DC cierra la vuelta al central rival (continuo) -->
+  <path d="M338,285 C352,260 360,238 368,218" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+
+  <!-- LINEA: MC tapa el interior (continuo) -->
+  <path d="M380,330 L380,250" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="356" y="285" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">tapa interior</text>
+
+  <!-- FLECHA: lateral propio sube a vigilar al extremo rival (continuo) -->
+  <path d="M510,452 C520,425 528,408 535,402" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="540" y="440" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">vigila EXT'</text>
+
+  <!-- =========================================================
+       Leyenda
+       ========================================================= -->
+  <g>
+    <rect x="30" y="396" width="246" height="106" rx="7" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="42" y="418" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
+    <line x1="44" y1="438" x2="78" y2="438" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+    <text x="90" y="442" fill="#ffffff" font-size="11.5">continua = movimiento / salto</text>
+    <line x1="44" y1="462" x2="78" y2="462" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="90" y="466" fill="#ffffff" font-size="11.5">discontinua = pase (gatillo)</text>
+    <circle cx="61" cy="486" r="9" fill="none" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <text x="90" y="490" fill="#ffffff" font-size="11.5">momento-gatillo</text>
+  </g>
+
+  <!-- Sentido -->
+  <text x="566" y="512" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.8">salida rival ↓</text>
+</svg>

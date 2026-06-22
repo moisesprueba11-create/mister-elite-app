@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowY" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="860" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="93" />
+    <rect x="20" y="618" width="560" height="93" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="804"/>
+    <line x1="244" y1="60" x2="244" y2="804"/>
+    <line x1="356" y1="60" x2="356" y2="804"/>
+    <line x1="468" y1="60" x2="468" y2="804"/>
+  </g>
+
+  <!-- Lineas del campo -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="744"/>
+    <line x1="20" y1="432" x2="580" y2="432"/>
+    <circle cx="300" cy="432" r="62"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+    <rect x="148" y="704" width="304" height="100"/>
+    <rect x="232" y="764" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="432" r="3"/>
+    <circle cx="300" cy="130" r="3"/>
+    <circle cx="300" cy="734" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M252,704 A56,56 0 0 1 348,704" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <text x="560" y="430" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
+
+  <!-- Oponentes en repliegue / fuera de posicion (rojo, dispersos) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="200" cy="360" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2"/><text x="200" y="365" fill="#fff">MC'</text>
+    <circle cx="410" cy="300" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2"/><text x="410" y="305" fill="#fff">DFC'</text>
+    <circle cx="340" cy="220" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2"/><text x="340" y="225" fill="#fff">DFC'</text>
+    <circle cx="470" cy="430" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2"/><text x="470" y="435" fill="#fff">DC'</text>
+  </g>
+
+  <!-- Punto de robo + balon -->
+  <circle cx="300" cy="500" r="6" fill="url(#ball)" stroke="#cccccc"/>
+  <text x="300" y="528" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">robo</text>
+
+  <!-- Recuperador MC "6" -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="300" cy="540" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="545" fill="#fff">MC</text>
+  </g>
+  <text x="335" y="555" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">"6"</text>
+
+  <!-- DC apoyo (baja a ofrecerse) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="230" cy="240" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="230" y="245" fill="#fff">DC</text>
+  </g>
+  <path d="M245,258 L290,470" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="268" y="380" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">apoyo</text>
+
+  <!-- DC ruptura (ataca el espacio a la espalda) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="370" cy="260" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="370" y="265" fill="#fff">DC</text>
+  </g>
+  <path d="M373,240 C385,180 390,130 395,90" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="412" y="160" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">ruptura</text>
+
+  <!-- Primer pase vertical (DASHED amarillo destacado) -->
+  <path d="M300,520 L368,285" fill="none" stroke="#ffd24a" stroke-width="3.5" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+
+  <!-- Extremo MD corre el carril exterior -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="90" cy="500" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="90" y="505" fill="#fff">MD</text>
+  </g>
+  <path d="M88,480 C78,360 80,230 100,120" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Extremo MI (referencia) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="510" cy="500" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="510" y="505" fill="#fff">MI</text>
+  </g>
+
+  <!-- MC "8" llega como tercer hombre -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="380" cy="560" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="380" y="565" fill="#fff">MC</text>
+  </g>
+  <text x="415" y="565" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">"8"</text>
+  <path d="M378,540 C375,440 350,360 330,300" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Resto defensivo / equilibrio: dos DFC + LD + LI atras -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="110" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="110" y="665" fill="#fff">LD</text>
+    <circle cx="240" cy="676" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="240" y="681" fill="#fff">DFC</text>
+    <circle cx="360" cy="676" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="360" y="681" fill="#fff">DFC</text>
+    <circle cx="490" cy="660" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="490" y="665" fill="#fff">LI</text>
+    <!-- Portero -->
+    <polygon points="300,752 312,774 288,774" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="793" fill="#ffffff" font-size="13">POR (1)</text>
+  </g>
+  <text x="300" y="700" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" opacity="0.9">resto defensivo / equilibrio</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Transición ofensiva: contraataque vertical tras robo</text>
+
+  <!-- Etiqueta clave -->
+  <text x="300" y="118" fill="#ffd24a" font-size="15" font-weight="700" text-anchor="middle">vertical y rápido</text>
+
+  <!-- Mini-leyenda -->
+  <g>
+    <rect x="32" y="556" width="176" height="78" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1" rx="4"/>
+    <text x="42" y="574" fill="#ffffff" font-size="11" font-weight="700">Leyenda</text>
+    <line x1="42" y1="590" x2="72" y2="590" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="78" y="594" fill="#ffffff" font-size="10">carrera / movimiento</text>
+    <line x1="42" y1="608" x2="72" y2="608" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+    <text x="78" y="612" fill="#ffffff" font-size="10">pase</text>
+    <circle cx="47" cy="624" r="6" fill="url(#ball)" stroke="#cccccc"/>
+    <text x="78" y="628" fill="#ffffff" font-size="10">balón</text>
+  </g>
+</svg>

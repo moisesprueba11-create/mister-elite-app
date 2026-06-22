@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <marker id="arrowShot" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="560" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="88" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="520"/>
+    <line x1="244" y1="60" x2="244" y2="520"/>
+    <line x1="356" y1="60" x2="356" y2="520"/>
+    <line x1="468" y1="60" x2="468" y2="520"/>
+  </g>
+
+  <!-- Lineas del campo (medio campo: porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="460"/>
+    <line x1="20" y1="520" x2="580" y2="520"/>
+    <path d="M238,520 A62,62 0 0 1 362,520" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="130" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- ZONA-META: espacio a la espalda de la defensa (ruptura) -->
+  <rect x="360" y="160" width="180" height="90" fill="#1d6fb8" fill-opacity="0.12" stroke="#1d6fb8" stroke-opacity="0.6" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="450" y="178" fill="#bfe0ff" font-size="11" font-weight="700" text-anchor="middle">espacio a la espalda</text>
+
+  <!-- ZONA entre lineas (apoyo) -->
+  <rect x="120" y="300" width="200" height="80" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="220" y="318" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" opacity="0.9">entre líneas (apoyo)</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="18.5" font-weight="700" text-anchor="middle">Tarea: delanteros — apoyo y ruptura + finalización</text>
+
+  <!-- =========================================================
+       LINEA DEFENSIVA RIVAL (rojo) que se supera
+       ========================================================= -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <circle cx="380" cy="250" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="255" fill="#ffffff">DFC'</text>
+    <circle cx="240" cy="250" r="18" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="240" y="255" fill="#ffffff">DFC'</text>
+    <!-- portero rival -->
+    <polygon points="300,86 312,66 288,66" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="104" fill="#ffffff" font-size="12">POR'</text>
+  </g>
+
+  <!-- =========================================================
+       DELANTEROS PROPIOS (azul)
+       ========================================================= -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- DC que BAJA a recibir (apoyo) -->
+    <circle cx="220" cy="340" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="220" y="345" fill="#fff">DC</text>
+    <!-- DC que ROMPE en diagonal -->
+    <circle cx="300" cy="340" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="300" y="345" fill="#fff">DC</text>
+    <!-- MC que sirve el balon -->
+    <circle cx="220" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="220" y="475" fill="#fff">MC</text>
+  </g>
+
+  <!-- Balon en el MC -->
+  <circle cx="240" cy="455" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+  <circle cx="240" cy="455" r="1.6" fill="#1d3557"/>
+
+  <!-- PASE: MC -> DC que baja (apoyo) discontinuo -->
+  <path d="M226,451 L221,362" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="180" y="408" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">1. al apoyo</text>
+
+  <!-- MOVIMIENTO RUPTURA: DC ataca diagonal el espacio a la espalda (continuo) -->
+  <path d="M312,323 C360,295 410,255 450,230" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="420" y="300" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">2. ruptura diagonal</text>
+
+  <!-- PASE FILTRADO: DC apoyo -> DC que rompe (descarga, discontinuo) -->
+  <path d="M239,332 C310,300 380,250 430,225" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="300" y="240" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">3. filtrado al que rompe</text>
+
+  <!-- FINALIZACION a porteria (blanco) -->
+  <path d="M452,212 C420,170 360,135 312,118" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowShot)"/>
+  <text x="390" y="150" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">4. finalización</text>
+
+  <!-- =========================================================
+       Leyenda
+       ========================================================= -->
+  <g>
+    <rect x="330" y="396" width="250" height="108" rx="7" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="342" y="418" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
+    <line x1="344" y1="438" x2="378" y2="438" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+    <text x="390" y="442" fill="#ffffff" font-size="11.5">continua = movimiento (ruptura)</text>
+    <line x1="344" y1="462" x2="378" y2="462" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="390" y="466" fill="#ffffff" font-size="11.5">discontinua = pase / filtrado</text>
+    <line x1="344" y1="486" x2="378" y2="486" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowShot)"/>
+    <text x="390" y="490" fill="#ffffff" font-size="11.5">blanca = finalización a portería</text>
+  </g>
+
+  <!-- Sentido -->
+  <text x="566" y="512" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.8">ataque ↑</text>
+</svg>

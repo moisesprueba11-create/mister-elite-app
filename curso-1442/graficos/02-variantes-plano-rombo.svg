@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo cesped -->
+  <rect x="0" y="0" width="900" height="700" fill="#2e7d32"/>
+
+  <!-- ===================== PANEL IZQUIERDO: PLANO ===================== -->
+  <!-- Franjas -->
+  <g fill="#2f8235">
+    <rect x="40" y="90"  width="380" height="70" />
+    <rect x="40" y="230" width="380" height="70" />
+    <rect x="40" y="370" width="380" height="70" />
+    <rect x="40" y="510" width="380" height="70" />
+  </g>
+  <!-- Lineas del campo -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="40" y="90" width="380" height="560"/>
+    <line x1="40" y1="370" x2="420" y2="370"/>
+    <circle cx="230" cy="370" r="48"/>
+    <!-- Area rival (arriba) -->
+    <rect x="135" y="90" width="190" height="70"/>
+    <rect x="190" y="90" width="80" height="28"/>
+    <!-- Area propia (abajo) -->
+    <rect x="135" y="580" width="190" height="70"/>
+    <rect x="190" y="622" width="80" height="28"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="230" cy="370" r="2.5"/>
+    <circle cx="230" cy="135" r="2.5"/>
+    <circle cx="230" cy="605" r="2.5"/>
+  </g>
+  <path d="M195,160 A45,45 0 0 0 265,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M195,580 A45,45 0 0 1 265,580" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Jugadores PLANO -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <!-- Portero -->
+    <polygon points="230,598 240,616 220,616" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="230" y="632" fill="#ffffff" font-size="11">POR</text>
+    <!-- Linea defensiva (4) -->
+    <circle cx="95"  cy="525" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="95"  y="530" fill="#fff">LD</text>
+    <circle cx="185" cy="535" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="185" y="540" fill="#fff" font-size="11">DFC</text>
+    <circle cx="275" cy="535" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="275" y="540" fill="#fff" font-size="11">DFC</text>
+    <circle cx="365" cy="525" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="365" y="530" fill="#fff">LI</text>
+    <!-- Linea de medios (4) -->
+    <circle cx="90"  cy="375" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="90"  y="380" fill="#fff">MD</text>
+    <circle cx="185" cy="385" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="185" y="390" fill="#fff">MC</text>
+    <circle cx="275" cy="385" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="275" y="390" fill="#fff">MC</text>
+    <circle cx="370" cy="375" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="370" y="380" fill="#fff">MI</text>
+    <!-- Delanteros (2) -->
+    <circle cx="185" cy="220" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="185" y="225" fill="#fff">DC</text>
+    <circle cx="275" cy="220" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="275" y="225" fill="#fff">DC</text>
+  </g>
+
+  <!-- Subtitulo panel izq -->
+  <rect x="40" y="60" width="380" height="26" fill="#1d3557"/>
+  <text x="230" y="78" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">4-4-2 PLANO (dos líneas de cuatro)</text>
+  <!-- Caption -->
+  <text x="230" y="675" fill="#ffffff" font-size="12" text-anchor="middle" opacity="0.92">Amplitud con extremos abiertos (MD/MI) — ataque por bandas</text>
+
+  <!-- ===================== DIVISOR ===================== -->
+  <line x1="450" y1="50" x2="450" y2="685" stroke="#ffffff" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="6 6"/>
+
+  <!-- ===================== PANEL DERECHO: ROMBO ===================== -->
+  <g fill="#2f8235">
+    <rect x="480" y="90"  width="380" height="70" />
+    <rect x="480" y="230" width="380" height="70" />
+    <rect x="480" y="370" width="380" height="70" />
+    <rect x="480" y="510" width="380" height="70" />
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="480" y="90" width="380" height="560"/>
+    <line x1="480" y1="370" x2="860" y2="370"/>
+    <circle cx="670" cy="370" r="48"/>
+    <rect x="575" y="90" width="190" height="70"/>
+    <rect x="630" y="90" width="80" height="28"/>
+    <rect x="575" y="580" width="190" height="70"/>
+    <rect x="630" y="622" width="80" height="28"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="670" cy="370" r="2.5"/>
+    <circle cx="670" cy="135" r="2.5"/>
+    <circle cx="670" cy="605" r="2.5"/>
+  </g>
+  <path d="M635,160 A45,45 0 0 0 705,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M635,580 A45,45 0 0 1 705,580" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Lineas tenues del rombo -->
+  <g stroke="#ffe28a" stroke-width="2" stroke-opacity="0.55" fill="none">
+    <polygon points="670,470 575,360 670,275 765,360"/>
+  </g>
+
+  <!-- Jugadores ROMBO -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <!-- Portero -->
+    <polygon points="670,598 680,616 660,616" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <text x="670" y="632" fill="#ffffff" font-size="11">POR</text>
+    <!-- Linea defensiva (4) -->
+    <circle cx="535" cy="525" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="535" y="530" fill="#fff">LD</text>
+    <circle cx="625" cy="535" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="625" y="540" fill="#fff" font-size="11">DFC</text>
+    <circle cx="715" cy="535" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="715" y="540" fill="#fff" font-size="11">DFC</text>
+    <circle cx="805" cy="525" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="805" y="530" fill="#fff">LI</text>
+    <!-- Rombo: MCD pivote -->
+    <circle cx="670" cy="470" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="670" y="475" fill="#fff" font-size="11">MCD</text>
+    <!-- Interiores -->
+    <circle cx="575" cy="360" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="575" y="365" fill="#fff" font-size="11">INT</text>
+    <circle cx="765" cy="360" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="765" y="365" fill="#fff" font-size="11">INT</text>
+    <!-- Mediapunta -->
+    <circle cx="670" cy="275" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="670" y="280" fill="#fff">MP</text>
+    <!-- Delanteros (2) -->
+    <circle cx="625" cy="165" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="625" y="170" fill="#fff">DC</text>
+    <circle cx="715" cy="165" r="16" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="715" y="170" fill="#fff">DC</text>
+  </g>
+
+  <!-- Subtitulo panel der -->
+  <rect x="480" y="60" width="380" height="26" fill="#1d3557"/>
+  <text x="670" y="78" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">4-4-2 ROMBO / DIAMANTE</text>
+  <!-- Caption -->
+  <text x="670" y="675" fill="#ffffff" font-size="12" text-anchor="middle" opacity="0.92">Superioridad central (MCD-INT-INT-MP), sin extremos puros</text>
+
+  <!-- ===================== TITULO ===================== -->
+  <rect x="0" y="0" width="900" height="44" fill="#1d3557"/>
+  <text x="450" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Variantes del 4-4-2: plano vs. rombo</text>
+</svg>

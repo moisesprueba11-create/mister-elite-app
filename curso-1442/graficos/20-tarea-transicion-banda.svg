@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <marker id="arrowShot" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas -->
+  <rect x="0" y="0" width="600" height="760" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="93" />
+    <rect x="20" y="618" width="560" height="102" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="720"/>
+    <line x1="244" y1="60" x2="244" y2="720"/>
+    <line x1="356" y1="60" x2="356" y2="720"/>
+    <line x1="468" y1="60" x2="468" y2="720"/>
+  </g>
+
+  <!-- Lineas del campo (campo completo, porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="660"/>
+    <line x1="20" y1="390" x2="580" y2="390"/>
+    <circle cx="300" cy="390" r="62"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+    <rect x="148" y="620" width="304" height="100"/>
+    <rect x="232" y="680" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="390" r="3"/>
+    <circle cx="300" cy="130" r="3"/>
+    <circle cx="300" cy="650" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M252,620 A56,56 0 0 1 348,620" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- CARRIL EXTERIOR resaltado (la banda por la que se ataca) -->
+  <rect x="468" y="160" width="112" height="460" fill="#1d6fb8" fill-opacity="0.10" stroke="#1d6fb8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="524" y="180" fill="#bfe0ff" font-size="11" font-weight="700" text-anchor="middle">carril exterior</text>
+
+  <!-- ZONA-META de finalizacion por banda -->
+  <rect x="452" y="160" width="128" height="110" fill="#ffd24a" fill-opacity="0.10" stroke="#ffd24a" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">Tarea: transición tras robo — ataque por banda</text>
+
+  <!-- MOMENTO DEL ROBO marcado (zona media) -->
+  <circle cx="240" cy="470" r="16" fill="none" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <text x="240" y="508" fill="#ffd24a" font-size="11.5" font-weight="700" text-anchor="middle">¡ROBO!</text>
+
+  <!-- CUENTA DE SEGUNDOS (pocos segundos) -->
+  <g>
+    <rect x="34" y="430" width="120" height="34" rx="6" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="94" y="453" fill="#ffd24a" font-size="13" font-weight="700" text-anchor="middle">&lt; 8 s a portería</text>
+  </g>
+
+  <!-- Balon en el robador (MC) -->
+  <circle cx="258" cy="455" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+  <circle cx="258" cy="455" r="1.6" fill="#1d3557"/>
+
+  <!-- =========================================================
+       PROPIOS (azul)
+       ========================================================= -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- MC robador -->
+    <circle cx="240" cy="470" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="240" y="475" fill="#fff">MC</text>
+    <!-- Extremo que corre el carril -->
+    <circle cx="500" cy="520" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="500" y="525" fill="#fff">MI</text>
+    <!-- DC apoyo -->
+    <circle cx="300" cy="320" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="300" y="325" fill="#fff">DC</text>
+    <!-- DC ruptura -->
+    <circle cx="380" cy="320" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="325" fill="#fff">DC</text>
+  </g>
+
+  <!-- Rival superado (rojo) -->
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <circle cx="380" cy="220" r="17" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="225" fill="#ffffff">DFC'</text>
+    <circle cx="260" cy="220" r="17" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="260" y="225" fill="#ffffff">DFC'</text>
+    <polygon points="300,86 312,66 288,66" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="300" y="104" fill="#ffffff" font-size="11">POR'</text>
+  </g>
+
+  <!-- 1. PRIMER PASE vertical/a banda: MC -> extremo (discontinuo) -->
+  <path d="M260,463 C360,470 440,490 480,506" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="380" y="500" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">1. pase a banda</text>
+
+  <!-- 2. EXTREMO corre el carril exterior (continuo) -->
+  <path d="M504,499 C512,420 516,340 518,278" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="552" y="400" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">2. corre carril</text>
+
+  <!-- 3a. DC apoyo (continuo, se ofrece corto) -->
+  <path d="M300,300 L300,250" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="270" y="278" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">apoyo</text>
+
+  <!-- 3b. DC ruptura al area (continuo, diagonal a primer palo) -->
+  <path d="M392,304 C420,260 440,210 452,178" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="430" y="250" fill="#1d3557" font-size="11" font-weight="700" text-anchor="middle">ruptura</text>
+
+  <!-- 4. FINALIZACION por banda: centro/disparo del extremo al area (blanco) -->
+  <path d="M515,268 C480,220 450,200 430,185" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowShot)"/>
+  <text x="478" y="240" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">3. finaliza</text>
+
+  <!-- =========================================================
+       Leyenda
+       ========================================================= -->
+  <g>
+    <rect x="34" y="600" width="252" height="108" rx="7" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="46" y="622" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
+    <line x1="48" y1="642" x2="82" y2="642" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+    <text x="94" y="646" fill="#ffffff" font-size="11.5">continua = carrera (corre carril)</text>
+    <line x1="48" y1="666" x2="82" y2="666" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="94" y="670" fill="#ffffff" font-size="11.5">discontinua = pase a banda</text>
+    <line x1="48" y1="690" x2="82" y2="690" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowShot)"/>
+    <text x="94" y="694" fill="#ffffff" font-size="11.5">blanca = finalización por banda</text>
+  </g>
+
+  <!-- Sentido -->
+  <text x="566" y="712" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.8">ataque ↑</text>
+</svg>
