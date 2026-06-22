@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Construye una versión HTML navegable del curso 1-4-4-2 a partir de los .md.
-Salida: curso-1442/site/  (abrir site/index.html)."""
+"""Construye una versión HTML navegable del curso 1-5-3-2 a partir de los .md.
+Salida: curso-1532/site/  (abrir site/index.html)."""
 import os, re, shutil, html
 import markdown
 
@@ -16,12 +16,11 @@ PAGES = [
     ("modulos/04-transiciones-y-balon-parado.md", "modulos/04-transiciones-y-balon-parado.html", "M04 · Transiciones y ABP", "Teoría"),
     ("ejercicios/00-plan-sesiones.md", "ejercicios/00-plan-sesiones.html", "Plan de sesiones", "Práctica"),
     ("ejercicios/01-salida.md", "ejercicios/01-salida.html", "B1 · Salida (T1–4)", "Práctica"),
-    ("ejercicios/02-defensa.md", "ejercicios/02-defensa.html", "B2 · Defensa (T5–9)", "Práctica"),
+    ("ejercicios/02-linea5.md", "ejercicios/02-linea5.html", "B2 · Línea de 5 (T5–9)", "Práctica"),
     ("ejercicios/03-pressing.md", "ejercicios/03-pressing.html", "B3 · Pressing (T10–13)", "Práctica"),
-    ("ejercicios/04-delanteros-centros.md", "ejercicios/04-delanteros-centros.html", "B4 · Delanteros y centros (T14–18)", "Práctica"),
-    ("ejercicios/05-transiciones.md", "ejercicios/05-transiciones.html", "B5 · Transiciones (T19–22)", "Práctica"),
-    ("ejercicios/06-partido-condicionado.md", "ejercicios/06-partido-condicionado.html", "B6 · Partido condicionado (T23–25)", "Práctica"),
-    ("ejercicios/07-balon-parado.md", "ejercicios/07-balon-parado.html", "B7 · Balón parado (T26–27)", "Práctica"),
+    ("ejercicios/04-carrileros.md", "ejercicios/04-carrileros.html", "B4 · Carrileros (T14–18)", "Práctica"),
+    ("ejercicios/05-delanteros-interiores.md", "ejercicios/05-delanteros-interiores.html", "B5 · Delanteros e interiores (T19–22)", "Práctica"),
+    ("ejercicios/06-transiciones-partido.md", "ejercicios/06-transiciones-partido.html", "B6 · Transiciones y partido (T23–26)", "Práctica"),
     ("graficos/PEDIDOS.md", "graficos/PEDIDOS.html", "Índice de diagramas", "Recursos"),
 ]
 
@@ -39,7 +38,7 @@ def build_nav(current_out, prefix):
             order.append(key)
         sections[key].append((out, title))
     parts = ['<nav class="side">']
-    parts.append(f'<a class="brand" href="{prefix}index.html">⚽ Curso 1-4-4-2</a>')
+    parts.append(f'<a class="brand" href="{prefix}index.html">⚽ Curso 1-5-3-2</a>')
     for sec in order:
         parts.append(f'<div class="sec-title">{html.escape(sec)}</div>')
         parts.append('<ul>')
@@ -83,7 +82,7 @@ PAGE_TMPL = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} · Curso 1-4-4-2</title>
+<title>{title} · Curso 1-5-3-2</title>
 <link rel="stylesheet" href="{prefix}assets/style.css">
 </head>
 <body>
@@ -93,7 +92,7 @@ PAGE_TMPL = """<!DOCTYPE html>
 <main class="content">
 <div class="content-inner">
 {body}
-<footer class="foot">Curso "Sistema 1-4-4-2: del concepto al campo" · poca teoría, mucha práctica</footer>
+<footer class="foot">Curso "Sistema 1-5-3-2: del concepto al campo" · poca teoría, mucha práctica</footer>
 </div>
 </main>
 </div>
@@ -176,7 +175,7 @@ def main():
         prefix = prefix_for(out)
         if out == "index.html":
             body = (f'<img class="hero" src="{prefix}graficos/portada.svg" '
-                    f'alt="Curso 1-4-4-2 · MISTER ÉLITE">' + body)
+                    f'alt="Curso 1-5-3-2 · MISTER ÉLITE">' + body)
         page = PAGE_TMPL.format(title=html.escape(title), prefix=prefix,
                                 nav=build_nav(out, prefix), body=body)
         out_path = os.path.join(SITE, out)

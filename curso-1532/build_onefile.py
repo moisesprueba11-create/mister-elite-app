@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-1442-completo.html"""
+"""Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-1532-completo.html"""
 import os, re, html
 import markdown
 
@@ -15,12 +15,11 @@ PAGES = [
     ("modulos/04-transiciones-y-balon-parado.md", "m04", "M04 · Transiciones y ABP", "Teoría"),
     ("ejercicios/00-plan-sesiones.md", "plan", "Plan de sesiones", "Práctica"),
     ("ejercicios/01-salida.md", "b1", "B1 · Salida (T1–4)", "Práctica"),
-    ("ejercicios/02-defensa.md", "b2", "B2 · Defensa (T5–9)", "Práctica"),
+    ("ejercicios/02-linea5.md", "b2", "B2 · Línea de 5 (T5–9)", "Práctica"),
     ("ejercicios/03-pressing.md", "b3", "B3 · Pressing (T10–13)", "Práctica"),
-    ("ejercicios/04-delanteros-centros.md", "b4", "B4 · Delanteros y centros (T14–18)", "Práctica"),
-    ("ejercicios/05-transiciones.md", "b5", "B5 · Transiciones (T19–22)", "Práctica"),
-    ("ejercicios/06-partido-condicionado.md", "b6", "B6 · Partido condicionado (T23–25)", "Práctica"),
-    ("ejercicios/07-balon-parado.md", "b7", "B7 · Balón parado (T26–27)", "Práctica"),
+    ("ejercicios/04-carrileros.md", "b4", "B4 · Carrileros (T14–18)", "Práctica"),
+    ("ejercicios/05-delanteros-interiores.md", "b5", "B5 · Delanteros e interiores (T19–22)", "Práctica"),
+    ("ejercicios/06-transiciones-partido.md", "b6", "B6 · Transiciones y partido (T23–26)", "Práctica"),
 ]
 
 def read_svg(name):
@@ -108,7 +107,7 @@ def main():
         secs.setdefault(sec, []);
         if sec not in order: order.append(sec)
         secs[sec].append((anc, title))
-    nav = ['<a class="brand" href="#inicio">⚽ Curso 1-4-4-2<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>']
+    nav = ['<a class="brand" href="#inicio">⚽ Curso 1-5-3-2<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>']
     for sec in order:
         nav.append(f'<div class="sec">{html.escape(sec)}</div>')
         for anc, title in secs[sec]:
@@ -130,17 +129,17 @@ def main():
         parts.append(f'<section id="{anc}">{body}</section>')
     doc = f"""<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso 1-4-4-2 · MISTER ÉLITE</title><style>{CSS}</style></head><body>
+<title>Curso 1-5-3-2 · MISTER ÉLITE</title><style>{CSS}</style></head><body>
 <button id="menu-btn">☰</button>
 <div class="layout"><nav class="side">{nav_html}</nav>
 <main class="content"><div class="inner">{''.join(parts)}
-<footer class="foot">Curso "Sistema 1-4-4-2: del concepto al campo" · MISTER ÉLITE — Moisés Díaz</footer>
+<footer class="foot">Curso "Sistema 1-5-3-2: del concepto al campo" · MISTER ÉLITE — Moisés Díaz</footer>
 </div></main></div>
 <script>const b=document.getElementById('menu-btn'),s=document.querySelector('.side');
 b.onclick=()=>s.classList.toggle('open');
 document.querySelectorAll('.side a').forEach(a=>a.onclick=()=>s.classList.remove('open'));</script>
 </body></html>"""
-    out = os.path.join(ROOT, "curso-1442-completo.html")
+    out = os.path.join(ROOT, "curso-1532-completo.html")
     open(out, "w", encoding="utf-8").write(doc)
     print("HTML único:", out, round(os.path.getsize(out)/1024), "KB")
 
