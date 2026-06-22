@@ -501,8 +501,8 @@ def tarea_27():
     p.player(50, 78, "REM", team="rival")
     # Lanzador en el córner
     p.player(95, 96, "LANZ", team="rival")
-    p.ball(95, 96)
-    p.arrow(93, 94, 58, 80, kind="pass")  # saque del córner a zona de remate
+    p.ball(89, 93)
+    p.arrow(91, 93, 58, 80, kind="pass")  # saque del córner a zona de remate
     # --- SALIDA AL CONTRAGOLPE (abajo) ---
     # 2 DC arriba (de los nuestros) preparados para la salida, bien separados.
     p.player(34, 52, "DC", team="own")

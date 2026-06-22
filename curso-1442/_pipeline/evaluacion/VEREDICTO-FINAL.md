@@ -1,64 +1,73 @@
-# VEREDICTO FINAL — "Sistema 1-4-4-2: del concepto al campo"
+# VEREDICTO FINAL — Curso "Sistema 1-4-4-2: del concepto al campo"
 
 **Producto:** MISTER ÉLITE — Moisés Díaz
 **Evaluador:** Evaluador final (criterio editorial exigente)
-**Fecha:** 2026-06-22
-**Método:** revisión del producto real (README, 4 módulos, las 8 fichas de ejercicios con sus 27 tareas, plan de sesiones), conteo y verificación de rutas de imagen, render a PNG e inspección visual de una muestra amplia de gráficos (portada + 6 diagramas de teoría + 10 pizarras de tareas, incluyendo las que antes fueron bloqueantes), y comprobación del PDF final.
+**Fecha:** 2026-06-22 — re-evaluación tras la "vuelta corta de legibilidad" (partía de 7.9/10)
+**Listón TOP:** global ≥ 8.5 y sin defectos bloqueantes.
+**Método:** render real a PNG con cairosvg (1100 px) e inspección visual de las 7 pizarras corregidas + 5 al azar (portada incluida); verificación automática 1:1 de enlaces a SVG y enlaces internos `.md`; comprobación de la portada como página 1 del PDF (PyMuPDF, 80 págs.).
 
 ---
 
-## VEREDICTO: **TOP** ✅ (publicable, nivel profesional de venta)
+## VEREDICTO: TOP (publicable, nivel profesional de venta)
 
-**Puntuación global: 9.1 / 10**
-
-| Dimensión | Nota | Comentario |
-|---|---|---|
-| Contenido (rigor, claridad, teoría/práctica) | 9.3 | Rigor táctico alto, terminología única y coherente, equilibrio teoría/práctica excelente |
-| Cobertura de imágenes | 10 | 27/27 tareas con pizarra; módulos bien ilustrados (23 diagramas); 0 rutas rotas |
-| Calidad gráfica | 9.0 | Pizarras legibles, profesionales, con leyenda, dirección de ataque y branding |
-| Coherencia texto–gráfico | 9.0 | Cada diagrama refleja con fidelidad lo descrito en su ficha/sección |
-| Diseño / marca | 9.0 | Portada atractiva; marca consistente en portada y pie de TODAS las pizarras |
+### Puntuación global: 9.0 / 10  (antes 7.9)
 
 No se detectan defectos bloqueantes. No requiere otra vuelta.
 
 ---
 
-## Evidencia de la evaluación
+## 1. Verificación visual de las pizarras corregidas — TODAS RESUELTAS
 
-### 1. Contenido
-- **README** completo y profesional: público objetivo, objetivos de aprendizaje, estructura en 3 capas, convención de posiciones (tabla), distancias de referencia, leyenda de símbolos y glosario. Fija un vocabulario único que se respeta en todo el curso.
-- **4 módulos** concisos y rigurosos (fundamentos, fase defensiva, fase ofensiva, transiciones+ABP). Cada uno cierra con **Ideas clave** y **Errores comunes**. Tratamiento serio del problema estructural 2 vs 3 con un repertorio de soluciones; contexto histórico bien dosificado (Sacchi, Ferguson, Benítez, Simeone).
-- **27 tareas** con ficha uniforme (Objetivo · Organización · Desarrollo · Provocaciones · Variantes · Coaching · Duración/Categoría) y categorías F/A/S. El concepto de "provocación" es el motor metodológico y está bien aplicado tarea a tarea. Detalle notable de coherencia interna: la T19 incluye una nota que reconcilia explícitamente la ventana "3–5 s" de la teoría con el umbral de 5 s de la tarea.
-- **Plan de sesiones** con 2 microciclos (MD-4→MD) totalmente cross-referenciados a las fichas, más mapa tarea→bloque. Cumple el encargo "poca teoría, mucha aplicación práctica".
+| Pizarra | Defecto bloqueante previo | Estado tras render PNG | Veredicto |
+|---|---|---|---|
+| `tarea-22` | etiquetas amontonadas sobre fichas | 4 cuadrantes separados (1 ATAQUE / 2 PIERDO→A-D / 3 DEFENSA / 4 ROBO→D-A), rótulos sobre césped libre, leyenda lateral | RESUELTO |
+| `tarea-27` | zona/hombre/poste solapados en el área | mini-leyenda lateral + labels (ZONA, POSTE, "2 al hombre") despejados; área legible | RESUELTO |
+| `teoria-12-problema-2v3` | "2 vs 3" y pivote solapando círculos | "2 vs 3" arriba-izda del recuadro; "pivote libre"/"el libre filtra" sin solape | RESUELTO |
+| `teoria-01-formacion-base` | etiquetas de rol cortadas/fuera | extremo·lateral·central·pivote 6/8·referencia·móvil, todas dentro del campo, nada cortado | RESUELTO |
+| `teoria-07-bloques-altura` | etiquetas de bloque/metros desbordadas | BLOQUE ALTO/MEDIO/BAJO con metros (~45-55/~30-40/~18-25 m) dentro de cada banda; roles al pie, dentro | RESUELTO |
+| `tarea-10` | sombra al pivote poco visible | cono de sombra gris sobre "pivote (a tapar)" claramente dibujado; carreras curvas rotuladas | RESUELTO |
+| `tarea-18` | 2ª jugada poco resaltada | elipse sombreada + rótulo "2ª jugada"; "balón largo / DC pelea-peina / DC recoge" claros | RESUELTO |
 
-### 2. Cobertura de imágenes
-- Conteo: `grep -cE '!\[' ejercicios/0[1-7]*.md modulos/*.md` → ejercicios 4/5/4/5/4/3/2 y módulos 6/8/5/4. Ninguna ficha ni módulo sin ilustración.
-- **27/27 tareas** referencian su pizarra `tarea-01..27.svg`; **23/23** diagramas de teoría referenciados; portada y 2 esquemas de sesión presentes.
-- **0 rutas rotas:** todas las referencias `../graficos/*.svg` resuelven a archivos existentes.
+Sin solapes de texto sobre fichas, legibles y coherentes con paleta y convención de flechas en las 7.
 
-### 3. Calidad y coherencia gráfica (muestra renderizada e inspeccionada)
-- Teoría: formación base, carriles/franjas, pressing+sombra, basculación, solución 2v3, apoyo/ruptura, desdoblamiento (overlap/underlap), córner ofensivo.
-- Tareas (incl. antes bloqueantes): 05, 06, 09, 10, 16, 18, 22, 24, 25, 27.
-- Todas: pitch legible, jugadores propio (azul) / rival (rojo) diferenciados, leyenda, flecha de ATAQUE, secuencias numeradas donde procede, zonas sombreadas (sombra, zona prohibida, zona-meta), y nota de coaching. Cada pizarra coincide con su texto.
-
-### 4. Portada y marca
-- Portada profesional: cabecera "MISTER ÉLITE · Academia de entrenadores · Moisés Díaz", título 1-4-4-2, subtítulo "del concepto al campo", reclamo "Poca teoría. Mucha aplicación práctica.", callouts (4 módulos, 27 tareas, +40 pizarras, 2 microciclos), pizarra de formación y pie con temario + marca.
-- Pie "MISTER ÉLITE · Moisés Díaz" presente en el 100% de las pizarras (teoría, tareas y sesiones).
-
-### 5. Producto final
-- `curso-1442.pdf` existe (80 páginas). Página 1 = portada. Cuerpo bien maquetado: títulos, listas, pizarras vectoriales con pie de figura y pie de página "Sistema 1-4-4-2 · del concepto al campo" con numeración. Los gráficos van como vector (0 imágenes raster embebidas), lo que da nitidez a cualquier escala.
+### Muestreo aleatorio (control de no-regresión)
+`portada`, `teoria-14-salida-3mas2`, `teoria-19-contraataque`, `tarea-15`, `teoria-22-corner-ofensivo`: render correcto, etiquetas dentro de campo, leyenda presente, paleta consistente. **Sin regresiones.**
 
 ---
 
-## Fortalezas destacadas
-1. **Coherencia integral**: una sola nomenclatura de posiciones y distancias atraviesa README, módulos, fichas y pizarras sin contradicciones; el plan de sesiones enhebra las 27 tareas en microciclos reales.
-2. **Valor práctico para el entrenador**: fichas accionables con provocaciones, variantes graduadas (fácil→difícil+), coaching points y categoría F/A/S; el "qué/por qué" (módulos) queda separado del "cómo" (fichas).
-3. **Paquete gráfico profesional y completo**: 50+ pizarras consistentes, legibles, marcadas y fieles al texto, sin rutas rotas y con un PDF final correcto desde la portada.
+## 2. Integridad técnica
+
+- **Enlaces a gráficos:** 52 referencias `.svg` en los `.md`, **0 rotas**; ningún SVG referenciado falta. Único SVG no referenciado: `portada.svg` (esperado: se usa en portada/PDF/sitio).
+- **Enlaces internos `.md`:** **0 rotos** (README↔módulos↔ejercicios↔plan).
+- **PDF:** `curso-1442.pdf`, 80 páginas; **página 1 = portada** (CURSO TÁCTICO PROFESIONAL · 1-4-4-2 · del concepto al campo · MISTER ÉLITE; callouts 4 módulos / 27 tareas / +40 pizarras / 2 microciclos).
 
 ---
 
-## Observaciones menores (NO bloqueantes, opcionales)
-- Considerar añadir 1–2 diagramas más al Módulo 03 (es el módulo con menos imágenes proporcionalmente: 5), p. ej. para "cut-back" y "tercer hombre en salida". No es necesario para publicar.
-- En algunas pizarras densas (p. ej. tarea-18, tarea-22) las etiquetas se acercan a los iconos; legibilidad correcta al tamaño del PDF, pero podría afinarse el espaciado en una futura iteración.
+## 3. Puntuación por dimensión
 
-**Conclusión:** producto TOP, listo para publicar y vender.
+| # | Dimensión | 7.9 previo | Ahora | Comentario |
+|---|-----------|-----------|-------|-----------|
+| 1 | Legibilidad de pizarras (texto sin solapes, dentro de campo) | 6.5 | 9.0 | Los 7 puntos bloqueantes resueltos; nitidez recuperada |
+| 2 | Corrección táctica de los diagramas | 9.0 | 9.0 | Sin cambios; sigue correcta |
+| 3 | Consistencia visual (paleta, flechas, título, leyenda) | 8.5 | 9.0 | Leyendas laterales homogéneas en las corregidas |
+| 4 | Integración texto↔gráfico (enlaces vivos) | 9.0 | 9.5 | 52/52 refs vivas, 0 rotas |
+| 5 | Navegación y coherencia (.md, recuentos) | 8.5 | 9.0 | 0 enlaces internos rotos, 27 tareas coherente |
+| 6 | Acabado / entregable (PDF, portada, marca) | 8.0 | 9.0 | Portada como pág. 1, 80 págs., pie de marca en todas las pizarras |
+
+### Global ponderado: 9.0 / 10
+
+---
+
+## 4. Observaciones MENORES (cosméticas, NO bloquean)
+
+- **MENOR-1 — glifo de balón sobre rótulo POR.** En varias pizarras el icono de balón en posesión se dibuja encima del texto "POR" (p. ej. `tarea-18`, `teoria-14`). Es la convención de "balón en juego" y es interpretable, pero superpone ligeramente el rótulo del portero. Pulido opcional: desplazar el balón ~6-8 px o bajar opacidad.
+- **MENOR-2 — etiquetas casi tocando una ficha.** Toques mínimos label↔chip sin solape real: `tarea-15` "1er palo" junto al DC; `teoria-01` "pivote 6" rozando la línea del círculo central. Legibles; reubicar 5-10 px las dejaría impecables.
+- **MENOR-3 — `tarea-27`, ficha rival "L/Z" arriba-dcha.** La etiqueta combinada "L/Z" queda algo apretada dentro de su ficha; separar lanzador y zona aclararía la lectura.
+
+Ninguna afecta a la comprensión táctica ni a la entrega.
+
+---
+
+## Conclusión
+
+Los 7 defectos de legibilidad marcados como bloqueantes en el 7.9/10 están **resueltos y verificados visualmente sobre PNG**; el muestreo no revela regresiones; los enlaces (gráficos e internos) están todos vivos; y el PDF abre con la portada como página 1. El curso sube de **7.9 a 9.0** y obtiene veredicto **PRODUCTO TOP — listo para publicar y vender.**
