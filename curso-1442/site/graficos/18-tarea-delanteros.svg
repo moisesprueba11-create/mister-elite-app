@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas (medio campo) -->
+  <rect x="0" y="0" width="600" height="600" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="80" />
+    <rect x="20" y="220" width="560" height="80" />
+    <rect x="20" y="380" width="560" height="80" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="207" y1="60" x2="207" y2="560"/>
+    <line x1="393" y1="60" x2="393" y2="560"/>
+  </g>
+
+  <!-- Lineas del campo (medio campo, porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="500"/>
+    <line x1="20" y1="560" x2="580" y2="560"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="130" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Dimensiones 45 x 45 m -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none">
+    <line x1="32" y1="60" x2="32" y2="560"/>
+    <line x1="28" y1="60" x2="36" y2="60"/>
+    <line x1="28" y1="560" x2="36" y2="560"/>
+    <line x1="20" y1="574" x2="580" y2="574"/>
+    <line x1="20" y1="570" x2="20" y2="578"/>
+    <line x1="580" y1="570" x2="580" y2="578"/>
+  </g>
+  <text x="48" y="315" fill="#ffffff" font-size="12" transform="rotate(-90 48 315)" text-anchor="middle">45 m</text>
+  <text x="300" y="590" fill="#ffffff" font-size="12" text-anchor="middle">45 m</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 14 — Uno baja / uno rompe</text>
+
+  <text x="560" y="540" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
+
+  <!-- Conos: linea defensiva rival -->
+  <g fill="#e67e22" stroke="#cf6610" stroke-width="1">
+    <polygon points="180,206 187,220 173,220"/>
+    <polygon points="260,206 267,220 253,220"/>
+    <polygon points="340,206 347,220 333,220"/>
+    <polygon points="420,206 427,220 413,220"/>
+  </g>
+  <text x="300" y="196" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">línea defensiva rival (conos)</text>
+
+  <!-- Porteria rival con GK (triangulo) -->
+  <polygon points="300,108 312,130 288,130" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+  <text x="300" y="100" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">POR'</text>
+
+  <!-- Servicio de los MC (pase discontinuo amarillo) -->
+  <path d="M210,505 C235,440 255,420 288,362" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+
+  <!-- Apoyo del DC que baja (solido) -->
+  <path d="M340,302 C332,330 320,345 308,358" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <!-- Ruptura del otro DC en diagonal (solido) -->
+  <path d="M256,302 C300,255 335,222 378,182" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <!-- Descarga / pase al hueco al DC que rompe (discontinuo amarillo) -->
+  <path d="M302,360 C332,300 352,258 380,200" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <!-- Remate a porteria (solido) -->
+  <path d="M386,176 C362,150 332,140 310,133" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+
+  <!-- Jugadores rivales (DFC' rojos) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="260" cy="213" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="260" y="218" fill="#fff">DFC'</text>
+    <circle cx="340" cy="213" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="340" y="218" fill="#fff">DFC'</text>
+  </g>
+
+  <!-- Jugadores propios (azules) -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <circle cx="210" cy="505" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="210" y="510" fill="#fff">MC</text>
+    <circle cx="390" cy="505" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="390" y="510" fill="#fff">MC</text>
+    <circle cx="340" cy="302" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="340" y="307" fill="#fff">DC</text>
+    <circle cx="256" cy="302" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="256" y="307" fill="#fff">DC</text>
+  </g>
+
+  <!-- Tags de rol -->
+  <g font-size="11" font-weight="700" fill="#ffd24a" text-anchor="middle">
+    <text x="372" y="336">apoyo (baja)</text>
+    <text x="220" y="336">ruptura (rompe)</text>
+    <text x="172" y="430">servicio</text>
+  </g>
+
+  <!-- Balon -->
+  <circle cx="210" cy="505" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+
+  <!-- Nota patron -->
+  <text x="300" y="540" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">gol válido solo con el patrón uno baja / uno rompe</text>
+
+  <!-- Mini-leyenda -->
+  <g>
+    <rect x="430" y="378" width="150" height="120" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1"/>
+    <text x="438" y="396" fill="#ffffff" font-size="11" font-weight="700">LEYENDA</text>
+    <line x1="438" y1="409" x2="468" y2="409" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+    <text x="474" y="413" fill="#ffffff" font-size="10">carrera (apoyo/ruptura)</text>
+    <line x1="438" y1="429" x2="468" y2="429" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="474" y="433" fill="#ffffff" font-size="10">pase</text>
+    <circle cx="446" cy="449" r="7" fill="#1d6fb8" stroke="#ffffff" stroke-width="2"/>
+    <text x="474" y="453" fill="#ffffff" font-size="10">propio</text>
+    <circle cx="446" cy="469" r="7" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="474" y="473" fill="#ffffff" font-size="10">rival</text>
+    <polygon points="446,484 452,495 440,495" fill="#e67e22"/>
+    <text x="474" y="493" fill="#ffffff" font-size="10">cono</text>
+  </g>
+</svg>

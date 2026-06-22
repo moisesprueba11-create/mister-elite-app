@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <!-- arrowheads por tipo -->
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <marker id="arrowCover" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas (medio campo: zona de salida rival) -->
+  <rect x="0" y="0" width="600" height="520" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="93" />
+    <rect x="20" y="246" width="560" height="93" />
+    <rect x="20" y="432" width="560" height="48" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="132" y1="60" x2="132" y2="480"/>
+    <line x1="244" y1="60" x2="244" y2="480"/>
+    <line x1="356" y1="60" x2="356" y2="480"/>
+    <line x1="468" y1="60" x2="468" y2="480"/>
+  </g>
+
+  <!-- Lineas del campo (medio campo superior: porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <!-- perimetro del medio campo -->
+    <rect x="20" y="60" width="560" height="420"/>
+    <!-- linea de medio campo (abajo) -->
+    <line x1="20" y1="480" x2="580" y2="480"/>
+    <!-- arco del circulo central (parte superior visible) -->
+    <path d="M238,480 A62,62 0 0 1 362,480" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <!-- Area grande superior (porteria rival) -->
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="300" cy="130" r="3"/>
+  </g>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Presión de los 2 DC: sombra y orientación a la banda</text>
+
+  <!-- =========================================================
+       SALIDA DEL RIVAL (rojo) — porteria arriba
+       - 2 DFC' abiertos al borde de su area
+       - 1 pivote MC' por delante
+       - portero (triangulo rojo)
+       Balon en el DFC' izquierdo.
+       ========================================================= -->
+
+  <!-- ZONA SOMBREADA (cover shadow): desde el DC cercano tapando
+       la linea de pase hacia el pivote MC'.
+       DC cercano en (250,300). Pivote MC' en (300,210).
+       Triangulo semitransparente oscuro. -->
+  <polygon points="250,300 268,196 332,196" fill="#10243a" fill-opacity="0.45" stroke="#10243a" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="300" y="252" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" opacity="0.92">sombra</text>
+
+  <!-- Rival: portero -->
+  <polygon points="300,86 312,66 288,66" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+  <text x="300" y="104" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">POR'</text>
+
+  <!-- Rival: 2 DFC' al borde del area -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- DFC' izquierdo (con balon) -->
+    <circle cx="200" cy="185" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="200" y="190" fill="#ffffff">DFC'</text>
+    <!-- DFC' derecho -->
+    <circle cx="400" cy="185" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="400" y="190" fill="#ffffff">DFC'</text>
+    <!-- Pivote MC' -->
+    <circle cx="300" cy="210" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="300" y="215" fill="#ffffff">MC'</text>
+  </g>
+
+  <!-- Balon en el DFC' izquierdo -->
+  <circle cx="222" cy="205" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+  <circle cx="222" cy="205" r="1.6" fill="#1d3557"/>
+
+  <!-- =========================================================
+       DELANTEROS PROPIOS (azul) presionando
+       ========================================================= -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- DC cercano (presiona al DFC' con balon) -->
+    <circle cx="250" cy="300" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="250" y="305" fill="#fff">DC</text>
+    <!-- DC segundo (vigila / salto al otro DFC' o pivote) -->
+    <circle cx="380" cy="300" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="380" y="305" fill="#fff">DC</text>
+  </g>
+
+  <!-- FLECHA CURVA = presion orientada del DC cercano hacia el DFC' con balon,
+       entrando por dentro para empujar el juego a la banda izquierda -->
+  <path d="M243,281 C236,250 218,232 206,210" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+
+  <!-- FLECHA DISCONTINUA = pase forzado a la banda (hacia la lateral izquierda) -->
+  <path d="M180,178 C140,168 100,170 70,182" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="92" y="158" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">pase forzado a banda</text>
+
+  <!-- LINEA DISCONTINUA DE COBERTURA = segundo DC vigila al otro DFC'/pivote -->
+  <path d="M376,281 C384,250 392,232 398,210" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" opacity="0.9" marker-end="url(#arrowCover)"/>
+
+  <!-- =========================================================
+       Mini-leyenda
+       ========================================================= -->
+  <g>
+    <rect x="338" y="356" width="244" height="106" rx="7" fill="#1d3557" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="350" y="378" fill="#ffffff" font-size="12.5" font-weight="700">Leyenda</text>
+    <!-- flecha curva = presion orientada -->
+    <path d="M352,398 C362,392 372,392 384,398" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+    <text x="398" y="402" fill="#ffffff" font-size="11.5">flecha curva = presión orientada</text>
+    <!-- zona sombreada = sombra -->
+    <rect x="350" y="412" width="34" height="14" fill="#10243a" fill-opacity="0.55"/>
+    <text x="398" y="423" fill="#ffffff" font-size="11.5">zona sombreada = sombra (tapa pivote)</text>
+    <!-- flecha discontinua = pase forzado a banda -->
+    <line x1="352" y1="442" x2="386" y2="442" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="398" y="446" fill="#ffffff" font-size="11.5">flecha discont. = pase forzado a banda</text>
+  </g>
+
+  <!-- Sentido de ataque rival (su salida va hacia abajo) / nuestra porteria queda abajo -->
+  <text x="566" y="474" fill="#ffffff" font-size="11" text-anchor="end" opacity="0.8">salida rival ↓</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1d3557"/>
+    </marker>
+    <marker id="arrowY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas (banda ancha) -->
+  <rect x="0" y="0" width="760" height="480" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="80"  width="720" height="100" />
+    <rect x="20" y="280" width="720" height="100" />
+  </g>
+
+  <!-- Carriles verticales (referencia) -->
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+    <line x1="170" y1="80" x2="170" y2="440"/>
+    <line x1="320" y1="80" x2="320" y2="440"/>
+    <line x1="440" y1="80" x2="440" y2="440"/>
+    <line x1="590" y1="80" x2="590" y2="440"/>
+  </g>
+
+  <!-- Rectangulo de banda ancha (todo el ancho x 35 m) -->
+  <rect x="20" y="80" width="720" height="360" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Dimensiones -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.9">
+    <line x1="20" y1="68" x2="740" y2="68"/>
+    <line x1="20" y1="64" x2="20" y2="72"/>
+    <line x1="740" y1="64" x2="740" y2="72"/>
+    <line x1="751" y1="80" x2="751" y2="440"/>
+    <line x1="747" y1="80" x2="755" y2="80"/>
+    <line x1="747" y1="440" x2="755" y2="440"/>
+  </g>
+  <text x="380" y="61" fill="#ffffff" font-size="12" text-anchor="middle">ancho completo (68 m)</text>
+  <text x="749" y="260" fill="#ffffff" font-size="12" text-anchor="middle" transform="rotate(90 749 260)">35 m</text>
+
+  <!-- ZONAS-META de banda (donde muere la salida rival) -->
+  <g>
+    <rect x="26" y="86" width="86" height="348" fill="#ffd24a" fill-opacity="0.20" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="6 4" rx="6"/>
+    <text x="69" y="260" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 69 260)">ZONA-META</text>
+    <rect x="648" y="86" width="86" height="348" fill="#ffd24a" fill-opacity="0.20" stroke="#ffd24a" stroke-width="2.5" stroke-dasharray="6 4" rx="6"/>
+    <text x="691" y="260" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 691 260)">ZONA-META</text>
+  </g>
+  <text x="380" y="425" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">la salida rival muere en banda</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="760" height="44" fill="#1d3557"/>
+  <text x="380" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 10 — Press de los 2 DC (sombra)</text>
+
+  <!-- Conos -->
+  <g fill="#e67e22" stroke="#ffffff" stroke-width="0.6">
+    <polygon points="320,440 328,454 312,454"/>
+    <polygon points="440,440 448,454 432,454"/>
+  </g>
+
+  <!-- Construccion rival: 2 centrales + pivote + POR (salida 3 + POR) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- POR rival (triangulo rojo) -->
+    <polygon points="380,118 392,140 368,140" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+    <text x="380" y="156" fill="#ffffff" font-size="12">POR'</text>
+    <!-- central con balon (derecha) -->
+    <circle cx="470" cy="200" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="470" y="205" fill="#fff">DFC'</text>
+    <!-- central libre (izquierda) -->
+    <circle cx="290" cy="200" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="290" y="205" fill="#fff">DFC'</text>
+    <!-- pivote -->
+    <circle cx="380" cy="280" r="20" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="380" y="285" fill="#fff">MC'</text>
+  </g>
+  <text x="380" y="312" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">pivote (en la sombra)</text>
+  <text x="290" y="172" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">central libre</text>
+  <!-- Balon en el central derecho -->
+  <circle cx="490" cy="216" r="6" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+
+  <!-- Cono de sombra (poligono semitransparente desde el DC tapando al pivote MC') -->
+  <polygon points="470,360 405,295 360,300 470,360" fill="#1d3557" fill-opacity="0.22" stroke="#1d3557" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="430" y="330" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">cover-shadow</text>
+
+  <!-- Nuestros 2 DC presionando -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <!-- DC1 con carrera curva que tapa la sombra al pivote y presiona al portador -->
+    <circle cx="470" cy="375" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="470" y="380" fill="#fff">DC</text>
+    <!-- DC2 cubre al central libre -->
+    <circle cx="300" cy="375" r="20" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="380" fill="#fff">DC</text>
+  </g>
+
+  <!-- DC1: carrera CURVA tapando sombra al pivote y llegando al portador (solida) -->
+  <path d="M468,355 C440,310 448,255 470,225" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <!-- DC2: cubre al central libre (solida) -->
+  <path d="M300,355 C296,300 294,255 292,225" fill="none" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <!-- Pase forzado a la banda (discontinuo amarillo) -->
+  <path d="M450,206 C360,180 200,180 120,230" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+  <text x="250" y="172" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">pase forzado a la banda</text>
+
+  <!-- Etiqueta clave -->
+  <text x="380" y="402" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">tapar con la carrera, no con la pierna</text>
+
+  <!-- Mini-leyenda -->
+  <g>
+    <rect x="540" y="86" width="196" height="92" rx="6" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="550" y="104" fill="#ffffff" font-size="11" font-weight="700">Leyenda</text>
+    <line x1="550" y1="116" x2="586" y2="116" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round"/>
+    <line x1="550" y1="116" x2="582" y2="116" stroke="#1d3557" stroke-width="3.5" marker-end="url(#arrow)"/>
+    <text x="588" y="120" fill="#ffffff" font-size="10">carrera de press</text>
+    <line x1="550" y1="134" x2="582" y2="134" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowY)"/>
+    <text x="588" y="138" fill="#ffffff" font-size="10">pase forzado</text>
+    <rect x="550" y="146" width="14" height="10" fill="#1d3557" fill-opacity="0.22" stroke="#1d3557" stroke-width="1"/>
+    <text x="588" y="155" fill="#ffffff" font-size="10">cover-shadow</text>
+    <circle cx="557" cy="170" r="6" fill="#c0392b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="588" y="174" fill="#ffffff" font-size="10">rival</text>
+  </g>
+</svg>

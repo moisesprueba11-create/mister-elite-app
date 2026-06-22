@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrowRun" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffd24a"/>
+    </marker>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cesped con franjas (3/4 de campo) -->
+  <rect x="0" y="0" width="600" height="760" fill="#2e7d32"/>
+  <g fill="#2f8235">
+    <rect x="20" y="60"  width="560" height="92" />
+    <rect x="20" y="244" width="560" height="92" />
+    <rect x="20" y="428" width="560" height="92" />
+    <rect x="20" y="612" width="560" height="92" />
+  </g>
+
+  <!-- Zonas de banda (carriles sombreados) -->
+  <g fill="#ffd24a" fill-opacity="0.16">
+    <rect x="20" y="60" width="110" height="644"/>
+    <rect x="470" y="60" width="110" height="644"/>
+  </g>
+  <g stroke="#ffd24a" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="6 5">
+    <line x1="130" y1="60" x2="130" y2="704"/>
+    <line x1="470" y1="60" x2="470" y2="704"/>
+  </g>
+
+  <!-- Lineas del campo (porteria rival arriba) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <rect x="20" y="60" width="560" height="644"/>
+    <rect x="148" y="60" width="304" height="100"/>
+    <rect x="232" y="60" width="136" height="40"/>
+    <line x1="20" y1="704" x2="580" y2="704"/>
+  </g>
+  <circle cx="300" cy="130" r="3" fill="#ffffff"/>
+  <path d="M252,160 A56,56 0 0 0 348,160" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Porteria rival con GK -->
+  <polygon points="300,108 312,130 288,130" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+  <text x="300" y="100" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">POR'</text>
+
+  <!-- Titulo -->
+  <rect x="0" y="0" width="600" height="44" fill="#1d3557"/>
+  <text x="300" y="29" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">Tarea 21 — Transición por banda</text>
+
+  <text x="560" y="690" fill="#ffffff" font-size="12" text-anchor="end" opacity="0.8">ataque ↑</text>
+
+  <!-- Etiquetas zonas de banda -->
+  <text x="75" y="400" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 75 400)">ZONA DE BANDA</text>
+  <text x="525" y="400" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 525 400)">ZONA DE BANDA</text>
+
+  <!-- Momento del robo (balon) -->
+  <circle cx="300" cy="600" r="7" fill="url(#ball)" stroke="#1d3557" stroke-width="1"/>
+  <text x="300" y="630" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">robo</text>
+
+  <!-- Primer pase vertical/banda hacia delante (discontinuo destacado) -->
+  <path d="M295,595 C260,540 220,500 150,440" fill="none" stroke="#ffd24a" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="205" y="500" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">1er pase vertical/banda</text>
+  <text x="300" y="660" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">prohibido pase atrás</text>
+
+  <!-- Extremo recorre el carril exterior (solido largo) -->
+  <path d="M120,430 C110,330 100,240 95,170" fill="none" stroke="#ffffff" stroke-width="3.5" marker-end="url(#arrowRun)"/>
+  <text x="92" y="290" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90 92 290)">extremo corre la banda</text>
+
+  <!-- Los 2 DC atacan (uno apoyo, uno ruptura - solidos opuestos) -->
+  <path d="M330,360 C320,330 310,310 300,288" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <path d="M270,360 C300,300 330,250 360,200" fill="none" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+  <text x="345" y="334" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">apoyo</text>
+  <text x="245" y="320" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">ruptura</text>
+
+  <!-- Finalizacion por banda (centro desde el extremo, discontinuo) -->
+  <path d="M100,165 C180,160 280,170 350,185" fill="none" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+  <text x="220" y="150" fill="#ffd24a" font-size="11" font-weight="700" text-anchor="middle">centro / finalización</text>
+
+  <!-- Jugadores rivales (rojos) para contexto -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="350" cy="560" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="350" y="565" fill="#fff">MC'</text>
+    <circle cx="250" cy="500" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="250" y="505" fill="#fff">MC'</text>
+    <circle cx="300" cy="220" r="19" fill="#c0392b" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="225" fill="#fff">DFC'</text>
+  </g>
+
+  <!-- Jugadores propios (azules) -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <!-- Jugador que roba / sirve -->
+    <circle cx="300" cy="612" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="300" y="617" fill="#fff">MC</text>
+    <!-- Extremo banda izquierda -->
+    <circle cx="120" cy="440" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="120" y="445" fill="#fff">MI</text>
+    <!-- Dos DC -->
+    <circle cx="330" cy="372" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="330" y="377" fill="#fff">DC</text>
+    <circle cx="270" cy="372" r="19" fill="#1d6fb8" stroke="#ffffff" stroke-width="2.5"/><text x="270" y="377" fill="#fff">DC</text>
+  </g>
+
+  <!-- Reloj max 6 s / 5 pases -->
+  <g>
+    <circle cx="520" cy="640" r="22" fill="#1d3557" stroke="#ffffff" stroke-width="2"/>
+    <line x1="520" y1="640" x2="520" y2="624" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="520" y1="640" x2="532" y2="646" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="520" y="680" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">máx 6 s</text>
+    <text x="520" y="694" fill="#ffd24a" font-size="12" font-weight="700" text-anchor="middle">5 pases</text>
+  </g>
+
+  <!-- Nota gol por banda doble -->
+  <text x="300" y="730" fill="#ffd24a" font-size="13" font-weight="700" text-anchor="middle">gol por banda = doble</text>
+
+  <!-- Mini-leyenda -->
+  <g>
+    <rect x="430" y="430" width="150" height="100" fill="#1d3557" fill-opacity="0.85" stroke="#ffffff" stroke-width="1"/>
+    <text x="438" y="448" fill="#ffffff" font-size="11" font-weight="700">LEYENDA</text>
+    <line x1="438" y1="461" x2="468" y2="461" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowRun)"/>
+    <text x="474" y="465" fill="#ffffff" font-size="10">carrera</text>
+    <line x1="438" y1="481" x2="468" y2="481" stroke="#ffd24a" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowPass)"/>
+    <text x="474" y="485" fill="#ffffff" font-size="10">pase</text>
+    <rect x="436" y="496" width="14" height="10" fill="#ffd24a" fill-opacity="0.3" stroke="#ffd24a"/>
+    <text x="474" y="505" fill="#ffffff" font-size="10">zona de banda</text>
+    <circle cx="444" cy="520" r="6" fill="#1d6fb8" stroke="#ffffff" stroke-width="2"/>
+    <text x="474" y="524" fill="#ffffff" font-size="10">propio / rival</text>
+    <circle cx="458" cy="520" r="6" fill="#c0392b" stroke="#ffffff" stroke-width="2"/>
+  </g>
+</svg>
