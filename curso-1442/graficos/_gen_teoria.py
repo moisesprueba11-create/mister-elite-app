@@ -387,22 +387,33 @@ def t15():
 
 # --- teoria-16: apoyo + ruptura de los delanteros ---
 def t16():
-    p = Pitch(title="Automatismo de la dupla: apoyo + ruptura",
-              subtitle="Uno baja a recibir, el otro ataca la espalda",
+    p = Pitch(title="Automatismo de la dupla: el apoyo arrastra, la ruptura ataca",
+              subtitle="El MC con balón encuentra al que rompe a la espalda del central que siguió al apoyo",
               half="att")
-    # línea defensiva rival arriba
-    p.player(35, 86, "DFC", team="rival")
-    p.player(65, 86, "DFC", team="rival")
-    # DC que apoya (baja)
-    p.player(42, 66, "DC", team="own", role="APOYO (baja al pie)")
-    p.arrow(42, 74, 42, 68, kind="run")
-    # DC que rompe (ataca espalda)
-    p.player(60, 74, "DC", team="own", role="RUPTURA (a la espalda)")
-    p.arrow(60, 76, 72, 92, kind="run", label="ataca espacio")
-    # descarga al que rompe
-    p.arrow(43, 68, 70, 90, kind="pass", label="descarga al que rompe")
-    p.ball(42, 70)
-    p.legend(["run", "pass", "own", "rival"])
+    # ESPACIO que se abre a la espalda del central que sigue al apoyo
+    p.zone(24, 83, 56, 96, label="espacio a la espalda", c="#7ee0ff", fill_op=0.20)
+    # central rival 1: marca al APOYO y SALE a seguirlo -> vacía su espalda
+    p.player(44, 74, "DFC", team="rival", role="sigue al apoyo")
+    p.arrow(45, 85, 44, 76, kind="run")          # sube siguiendo al apoyo
+    p.note(57, 78, "el central muerde y deja su espalda", c="#ff9e9e", size=9.5)
+    # central rival 2: marca al de RUPTURA, pero llega tarde al espacio
+    p.player(68, 87, "DFC", team="rival", role="su central (tarde)")
+    # MC con balón (el que asiste)
+    p.player(52, 55, "MC", team="own", role="MC con balón")
+    p.ball(52, 58)
+    # DC de APOYO: baja de cara y arrastra a su central
+    p.player(33, 68, "DC", team="own", role="APOYO: fija y arrastra", role_below=True)
+    p.arrow(33, 80, 33, 70, kind="run")
+    p.note(22, 74, "baja de cara", c="#ffffff", size=10)
+    # DC de RUPTURA: ataca el espacio a la espalda del central que subió
+    p.player(70, 76, "DC", team="own", role="RUPTURA", role_below=True)
+    p.arrow(68, 75, 47, 91, kind="run")
+    p.note(62, 86, "ataca la espalda", c="#ffffff", size=10)
+    # pase del MC al espacio (al que rompe), NO al pie del apoyo
+    p.arrow(52, 59, 46, 89, kind="pass")
+    p.note(63, 66, "pase al espacio", c="#ffd54a", size=10)
+    p.note(50, 50.5, "El apoyo no recibe: su función es FIJAR al central y VACIAR la zona", c="#fff5cc", size=10)
+    p.legend(["run", "pass", "own", "rival", "zone"])
     save(p, "teoria-16-apoyo-ruptura.svg")
 
 # --- teoria-17: ataque del área con dos puntas (centro) ---
