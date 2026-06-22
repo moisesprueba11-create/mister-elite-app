@@ -288,17 +288,23 @@ def t11():
 def t12():
     p = Pitch(title="El problema: inferioridad 2 vs 3 en el centro",
               subtitle="Tres mediocentros rivales superan a los dos MC")
+    # zona del problema (se dibuja primero, debajo de fichas/textos)
+    p.zone(26, 36, 74, 76, label="", c="#ff5252", fill_op=0.12)
+    # etiqueta "2 vs 3" en césped libre, esquina superior izq de la zona (sin tapar fichas)
+    p.note(36, 74, "2 vs 3", c="#ffd0d0", size=12, w=800)
     # nuestros 2 MC
     p.player(40, 45, "MC", team="own")
     p.player(60, 45, "MC", team="own")
     # 3 rivales en el centro
-    p.player(50, 60, "MCD", team="rival", role="pivote libre")
+    p.player(50, 61, "MCD", team="rival")
+    p.note(50, 67.5, "pivote libre", c="#ffd0d0", size=9.5)   # debajo del MCD
     p.player(33, 70, "INT", team="rival")
     p.player(67, 70, "INT", team="rival")
-    p.ball(50, 56)
-    # el hombre libre supera líneas
-    p.arrow(50, 60, 50, 38, kind="pass", label="hombre libre filtra")
-    p.zone(28, 38, 72, 74, label="2 vs 3", c="#ff5252", fill_op=0.12)
+    p.ball(43, 58)
+    # el hombre libre supera líneas (pase ligeramente desplazado del eje)
+    p.arrow(50, 58, 50, 38, kind="pass")
+    # rótulo del pase en césped libre, a la derecha del eje (no toca círculos)
+    p.note(67, 54, "el libre filtra", c="#ffd54a", size=9.5)
     p.legend(["pass", "own", "rival", "zone"])
     save(p, "teoria-12-problema-2v3.svg")
 
@@ -368,8 +374,8 @@ def t15():
     p.note(74, 68, "3er hombre (de cara)", c="#fff5cc", size=9)
     p.ball(40, 39)
     # triángulo de banda (se dibuja antes para quedar bajo flechas/fichas)
-    p.zone(58, 48, 94, 86, label="", c="#ffd54a", fill_op=0.10)
-    p.note(76, 50, "triángulo de banda", c="#fff", size=9)
+    p.zone(62, 48, 94, 86, label="", c="#ffd54a", fill_op=0.10)
+    p.note(78, 50, "triángulo de banda", c="#fff", size=9)
     p.player(86, 56, "MD", team="own")
     p.player(86, 80, "DC", team="own")
     # secuencia numerada del tercer hombre: 1 → 2 (descarga) → 3 (al liberado)
