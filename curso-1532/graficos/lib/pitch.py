@@ -124,7 +124,7 @@ class Pitch:
             self._rect(0, self.H - self.foot_h, self.W, self.foot_h, fill=PALETTE["dark"])
             self._text(self.W - 12, self.H - 8, "MISTER ÉLITE · Moisés Díaz",
                        size=10, c="#8aa0b6", w=700, anchor="end")
-            self._text(12, self.H - 8, "Sistema 1-4-4-2", size=10, c="#7f93a8", w=600, anchor="start")
+            self._text(12, self.H - 8, "Sistema 1-5-3-2", size=10, c="#7f93a8", w=600, anchor="start")
         # flecha de sentido de ataque
         self._attack_arrow()
 
