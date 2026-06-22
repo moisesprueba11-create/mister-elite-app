@@ -43,9 +43,9 @@ def t01():
     p.player(40, 44, "MC", team="own", role="pivote 6")
     p.player(60, 44, "MC", team="own", role="pivote 8")
     p.player(87, 50, "MD", team="own", role="extremo")
-    # delanteros (2)
-    p.player(40, 75, "DC", team="own", role="referencia")
-    p.player(60, 75, "DC", team="own", role="móvil")
+    # delanteros (2) — rótulo DEBAJO (van muy arriba; encima tocaría el borde)
+    p.player(40, 75, "DC", team="own", role="referencia", role_below=True)
+    p.player(60, 75, "DC", team="own", role="móvil", role_below=True)
     save(p, "teoria-01-formacion-base.svg")
 
 # --- teoria-02: carriles y franjas / lectura del campo ---

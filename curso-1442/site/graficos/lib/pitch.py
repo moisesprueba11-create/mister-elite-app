@@ -175,7 +175,7 @@ class Pitch:
                          f'fill="#ffffff" text-anchor="end" transform="rotate(-90 {x-6:.1f} {(y1+y2)/2:.1f})">ATAQUE</text></g>')
 
     # ----------------------------- ELEMENTOS -----------------------------
-    def player(self, x, y, label, team="own", role="", r=15, number=None):
+    def player(self, x, y, label, team="own", role="", r=15, number=None, role_below=False):
         cx, cy = self.X(x), self.Y(y)
         fill = {"own": PALETTE["own"], "rival": PALETTE["rival"], "neutral": PALETTE["neutral"]}[team]
         edge = {"own": PALETTE["own_edge"], "rival": PALETTE["rival_edge"], "neutral": PALETTE["neutral_edge"]}[team]
@@ -184,7 +184,10 @@ class Pitch:
                          f'<text x="{cx:.1f}" y="{cy+4:.1f}" font-family="Segoe UI,Arial" font-size="11.5" '
                          f'font-weight="800" fill="#fff" text-anchor="middle">{_esc(label)}</text></g>')
         if role:
-            self._text(cx, cy - r - 4, role, size=9.5, c="#fff5cc", w=600)
+            # role_below: coloca el rótulo DEBAJO de la ficha (para jugadores muy
+            # arriba, donde el texto encima se saldría del campo o tocaría el borde).
+            ry = cy + r + 12 if role_below else cy - r - 4
+            self._text(cx, ry, role, size=9.5, c="#fff5cc", w=600)
 
     def ball(self, x, y, r=6):
         cx, cy = self.X(x), self.Y(y)

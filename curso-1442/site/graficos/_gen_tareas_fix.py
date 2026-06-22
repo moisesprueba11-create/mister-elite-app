@@ -214,30 +214,30 @@ def tarea_16():
     p = Pitch(title="Tarea 16 — Pared y descarga del DC que baja",
               subtitle="MC + DC que baja + banda + DC que ataca · 30×30 m",
               half="att")
-    p.player(50, 92, "POR", team="rival")
-    p.player(50, 74, "def", team="rival")
-    p.note(50, 80, "pasivo", c="#fff5cc")
+    p.player(50, 96, "POR", team="rival")
+    p.player(50, 82, "def", team="rival")
+    p.note(50, 87, "pasivo", c="#fff5cc")
     # MC inicial con balón (rotulado; balón desplazado para no tapar la ficha)
-    p.player(30, 44, "MC", team="own")
-    p.note(22, 44, "inicio (MC)", c="#fff5cc")
-    p.ball(36, 44)
+    p.player(30, 58, "MC", team="own")
+    p.note(22, 58, "inicio (MC)", c="#fff5cc")
+    p.ball(36, 58)
     # DC que baja a recibir
-    p.player(45, 58, "DC", team="own")
-    p.note(45, 64, "DC baja", c="#fff5cc")
+    p.player(45, 70, "DC", team="own")
+    p.note(45, 76, "DC baja", c="#fff5cc")
     # segundo DC que ataca en profundidad
-    p.player(62, 64, "DC", team="own")
-    p.note(62, 70, "DC ataca", c="#fff5cc")
+    p.player(62, 76, "DC", team="own")
+    p.note(62, 82, "DC ataca", c="#fff5cc")
     # banda
-    p.player(82, 56, "BANDA", team="own")
+    p.player(82, 68, "BANDA", team="own")
     # secuencia: 1 pase MC->DC ; 2 pared DC->MC ; 3 MC suelta a 2º DC / banda
-    p.arrow(33, 47, 43, 56, kind="pass")          # 1 MC -> DC que baja
-    p.arrow(45, 61, 35, 50, kind="pass")          # 2 pared (vuelta al MC)
-    p.arrow(34, 46, 60, 62, kind="pass")          # 3 suelta al 2º DC en profundidad
-    p.arrow(33, 43, 79, 55, kind="pass")          # 3b a banda
-    step(p, 39, 52, "1")
-    step(p, 41, 48, "2")
-    step(p, 50, 50, "3")
-    p.note(50, 22, "Pared a un toque · suelta al 2º DC en profundidad o a banda → centro y remate")
+    p.arrow(33, 61, 43, 68, kind="pass")          # 1 MC -> DC que baja
+    p.arrow(45, 73, 35, 64, kind="pass")          # 2 pared (vuelta al MC)
+    p.arrow(34, 60, 60, 74, kind="pass")          # 3 suelta al 2º DC en profundidad
+    p.arrow(33, 57, 79, 67, kind="pass")          # 3b a banda
+    step(p, 38, 64, "1")
+    step(p, 39, 69, "2")
+    step(p, 52, 67, "3")
+    p.note(50, 53, "Pared a un toque · suelta al 2º DC en profundidad o a banda → centro y remate")
     p.legend(["pass", "own", "rival"])
     p.save(os.path.join(OUT, "tarea-16.svg"))
 
@@ -279,9 +279,9 @@ def tarea_18():
     # 3) 2ª jugada: elipse de caída del rechace, separada; rótulo en borde derecho
     p.zone(42, 56, 66, 66, ellipse=True, c="#7ee0ff", fill_op=0.14)
     p.note(80, 60, "2ª jugada", c="#7ee0ff")
-    p.arrow(28, 46, 48, 60, kind="run")   # MC llega a la 2ª jugada
-    p.arrow(54, 42, 58, 58, kind="run")
-    step(p, 40, 54, "3")
+    p.arrow(30, 47, 46, 58, kind="run")   # MC llega a la 2ª jugada
+    p.arrow(54, 42, 58, 56, kind="run")
+    step(p, 36, 52, "3")
     p.note(50, 90, "MC llegan antes que rivales · recuperar y finalizar <6 s")
     p.legend(["pass", "run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-18.svg"))
@@ -356,7 +356,7 @@ def tarea_22():
     p.player(62, 40, "DC", team="rival")
     p.player(30, 36, "DFC", team="rival")
     p.player(70, 70, "MD", team="rival")
-    p.ball(58, 55)
+    p.ball(63, 58)  # junto al MC propio sin taparlo
     # flechas cíclicas entre fases (transiciones), numeradas
     p.arrow(40, 78, 64, 78, kind="run")   # 1->2 pierdo
     p.arrow(78, 60, 78, 40, kind="run")   # 2->3 me organizo
@@ -382,8 +382,8 @@ def tarea_24():
     # Carriles de banda TINTADOS (zonas premiadas)
     p.zone(0, 0, 22, 100, c="#ffd54a", fill_op=0.18)
     p.zone(78, 0, 100, 100, c="#ffd54a", fill_op=0.18)
-    p.note(11, 50, "BANDA +1", c="#fff", size=11)
-    p.note(89, 50, "BANDA +1", c="#fff", size=11)
+    p.note(11, 88, "BANDA +1", c="#fff", size=11)
+    p.note(89, 88, "BANDA +1", c="#fff", size=11)
     # Carril central penalizado (tinte rojo tenue)
     p.zone(22, 0, 78, 100, c="#ff5252", fill_op=0.06)
     p.note(50, 50, "central (difícil)", c="#ffd9d9", size=10)
@@ -397,11 +397,11 @@ def tarea_24():
     p.player(50, 95, "POR", team="rival")
     # referencias propias (atacan por banda)
     p.player(90, 58, "MD", team="own")
-    p.player(10, 50, "MI", team="own")
+    p.player(11, 50, "MI", team="own")
     p.player(50, 40, "MC", team="own")
     p.player(35, 30, "DFC", team="own")
     p.player(65, 32, "LD", team="own")
-    p.ball(10, 50)
+    p.ball(16, 52)
     # rivales de referencia
     p.player(78, 60, "riv", team="rival")
     p.player(40, 62, "riv", team="rival")
@@ -479,7 +479,7 @@ def tarea_27():
     # invertimos visualmente colocando la portería defendida arriba para ver el área.
     # POR manda el área
     p.player(50, 95, "POR", team="own")
-    p.note(50, 89, "manda área", c="#fff5cc")
+    p.note(68, 95, "POR manda el área", c="#fff5cc", size=9.5)
     # Postes (1 en cada palo) — bien separados y etiquetados una vez
     p.player(40, 92, "POSTE", team="own")
     p.player(60, 92, "POSTE", team="own")
@@ -506,9 +506,12 @@ def tarea_27():
     p.note(38, 50, "salida arriba", c="#fff5cc")
     p.player(62, 54, "DC", team="own")
     p.note(62, 48, "salida arriba", c="#fff5cc")
-    # DESPEJE: una sola flecha clara, lejos y a banda, con destino a un DC
-    p.arrow(50, 79, 39, 58, kind="run")   # despeje orientado al DC izq
-    p.note(40, 66, "despeje a banda → DC", c="#ffffff", size=9.5)
+    # DESPEJE: una sola flecha clara, lejos y a banda por el lateral izq,
+    # esquivando el clúster central, con destino claro al DC izq.
+    p.arrow(46, 81, 22, 62, kind="run")   # despeje orientado al DC izq por fuera
+    p.arrow(22, 60, 36, 57, kind="pass")  # segunda fase: balón al DC
+    p.note(20, 70, "despeje lejos y a banda", c="#ffffff", size=9.5)
+    p.note(28, 56, "→ DC", c="#ffd54a", size=9.5)
     p.note(50, 42, "Al despejar, ya estamos atacando · despejar lejos y a banda")
     p.legend(["pass", "run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-27.svg"))
