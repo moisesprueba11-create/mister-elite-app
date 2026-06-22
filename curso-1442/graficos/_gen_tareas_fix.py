@@ -214,30 +214,30 @@ def tarea_16():
     p = Pitch(title="Tarea 16 — Pared y descarga del DC que baja",
               subtitle="MC + DC que baja + banda + DC que ataca · 30×30 m",
               half="att")
-    p.player(50, 92, "POR", team="rival")
-    p.player(50, 74, "def", team="rival")
-    p.note(50, 80, "pasivo", c="#fff5cc")
+    p.player(50, 96, "POR", team="rival")
+    p.player(50, 82, "def", team="rival")
+    p.note(50, 87, "pasivo", c="#fff5cc")
     # MC inicial con balón (rotulado; balón desplazado para no tapar la ficha)
-    p.player(30, 44, "MC", team="own")
-    p.note(22, 44, "inicio (MC)", c="#fff5cc")
-    p.ball(36, 44)
+    p.player(30, 58, "MC", team="own")
+    p.note(22, 58, "inicio (MC)", c="#fff5cc")
+    p.ball(36, 58)
     # DC que baja a recibir
-    p.player(45, 58, "DC", team="own")
-    p.note(45, 64, "DC baja", c="#fff5cc")
+    p.player(45, 70, "DC", team="own")
+    p.note(45, 76, "DC baja", c="#fff5cc")
     # segundo DC que ataca en profundidad
-    p.player(62, 64, "DC", team="own")
-    p.note(62, 70, "DC ataca", c="#fff5cc")
+    p.player(62, 76, "DC", team="own")
+    p.note(62, 82, "DC ataca", c="#fff5cc")
     # banda
-    p.player(82, 56, "BANDA", team="own")
+    p.player(82, 68, "BANDA", team="own")
     # secuencia: 1 pase MC->DC ; 2 pared DC->MC ; 3 MC suelta a 2º DC / banda
-    p.arrow(33, 47, 43, 56, kind="pass")          # 1 MC -> DC que baja
-    p.arrow(45, 61, 35, 50, kind="pass")          # 2 pared (vuelta al MC)
-    p.arrow(34, 46, 60, 62, kind="pass")          # 3 suelta al 2º DC en profundidad
-    p.arrow(33, 43, 79, 55, kind="pass")          # 3b a banda
-    step(p, 39, 52, "1")
-    step(p, 41, 48, "2")
-    step(p, 50, 50, "3")
-    p.note(50, 22, "Pared a un toque · suelta al 2º DC en profundidad o a banda → centro y remate")
+    p.arrow(33, 61, 43, 68, kind="pass")          # 1 MC -> DC que baja
+    p.arrow(45, 73, 35, 64, kind="pass")          # 2 pared (vuelta al MC)
+    p.arrow(34, 60, 60, 74, kind="pass")          # 3 suelta al 2º DC en profundidad
+    p.arrow(33, 57, 79, 67, kind="pass")          # 3b a banda
+    step(p, 38, 64, "1")
+    step(p, 39, 69, "2")
+    step(p, 52, 67, "3")
+    p.note(50, 53, "Pared a un toque · suelta al 2º DC en profundidad o a banda → centro y remate")
     p.legend(["pass", "own", "rival"])
     p.save(os.path.join(OUT, "tarea-16.svg"))
 
