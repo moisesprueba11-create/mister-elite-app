@@ -335,38 +335,45 @@ def tarea_22():
     # 1 Ataque (tengo balón) / 2 Transición A-D (pierdo) /
     # 3 Defensa (no tengo) / 4 Transición D-A (robo).
     p.zone(2, 50, 50, 98, c="#1565c0", fill_op=0.12)   # ataque propio (arriba izq)
-    p.note(26, 90, "1 ATAQUE", c="#9ec7ff", size=11)
+    p.note(26, 94, "1 · ATAQUE", c="#9ec7ff", size=12, w=800)
+    p.note(26, 89.5, "(tengo balón)", c="#9ec7ff", size=9)
     p.zone(50, 50, 98, 98, c="#ff5252", fill_op=0.12)  # A-D pierdo
-    p.note(74, 90, "2 PIERDO → A-D", c="#ffb0b0", size=11)
+    p.note(74, 94, "2 · TRANSICIÓN A-D", c="#ffb0b0", size=12, w=800)
+    p.note(74, 89.5, "pierdo → repliego", c="#ffb0b0", size=9)
     p.zone(50, 2, 98, 50, c="#c62828", fill_op=0.12)   # defensa
-    p.note(74, 10, "3 DEFENSA", c="#ffb0b0", size=11)
+    p.note(74, 7, "3 · DEFENSA", c="#ffb0b0", size=12, w=800)
+    p.note(74, 11.5, "(no tengo balón)", c="#ffb0b0", size=9)
     p.zone(2, 2, 50, 50, c="#7ee0ff", fill_op=0.12)    # D-A robo
-    p.note(26, 10, "4 ROBO → D-A", c="#bdeeff", size=11)
+    p.note(26, 7, "4 · TRANSICIÓN D-A", c="#bdeeff", size=12, w=800)
+    p.note(26, 11.5, "robo → ataco", c="#bdeeff", size=9)
     # POR de cada equipo
     p.player(50, 4, "POR", team="own")
     p.player(50, 96, "POR", team="rival")
-    # referencias clave propias rotuladas
-    p.player(30, 60, "DC", team="own")
-    p.player(58, 55, "MC", team="own")
-    p.player(18, 44, "MI", team="own")
-    p.player(72, 46, "MD", team="own")
-    p.player(46, 72, "DFC", team="own")
+    # referencias clave propias rotuladas (apartadas del centro, una por cuadrante)
+    p.player(26, 64, "DC", team="own")
+    p.player(62, 62, "MC", team="own")
+    p.player(15, 42, "MI", team="own")
+    p.player(75, 42, "MD", team="own")
+    p.player(38, 72, "DFC", team="own")
     # rivales (referencias)
-    p.player(40, 52, "MC", team="rival")
-    p.player(62, 40, "DC", team="rival")
-    p.player(30, 36, "DFC", team="rival")
-    p.player(70, 70, "MD", team="rival")
-    p.ball(63, 58)  # junto al MC propio sin taparlo
-    # flechas cíclicas entre fases (transiciones), numeradas
-    p.arrow(40, 78, 64, 78, kind="run")   # 1->2 pierdo
-    p.arrow(78, 60, 78, 40, kind="run")   # 2->3 me organizo
-    p.arrow(64, 22, 40, 22, kind="run")   # 3->4 robo
-    p.arrow(22, 40, 22, 60, kind="run")   # 4->1 ataco
-    step(p, 52, 78, "2")
-    step(p, 78, 50, "3")
-    step(p, 52, 22, "4")
-    step(p, 22, 50, "1")
-    p.note(50, 49, "A-D: recuperar <5 s = punto  ·  D-A: gol <8 s = doble", c="#fff5cc", size=9.5)
+    p.player(42, 58, "MC", team="rival")
+    p.player(66, 36, "DC", team="rival")
+    p.player(28, 32, "DFC", team="rival")
+    p.player(74, 68, "MD", team="rival")
+    p.ball(66, 64)  # junto al MC propio sin taparlo
+    # flechas cíclicas entre fases (transiciones), numeradas, apartadas del centro
+    p.arrow(40, 82, 60, 82, kind="run")   # 1->2 pierdo
+    p.arrow(84, 60, 84, 40, kind="run")   # 2->3 me organizo
+    p.arrow(60, 18, 40, 18, kind="run")   # 3->4 robo
+    p.arrow(16, 40, 16, 60, kind="run")   # 4->1 ataco
+    step(p, 50, 82, "2")
+    step(p, 84, 50, "3")
+    step(p, 50, 18, "4")
+    step(p, 16, 50, "1")
+    # regla de puntos: partida, cada mitad sobre césped libre de SU transición
+    # (no cruza el centro ni pisa fichas/círculo central)
+    p.note(76, 53, "recuperar <5 s = punto", c="#fff5cc", size=8.5)
+    p.note(24, 53, "gol <8 s = doble", c="#fff5cc", size=8.5)
     p.legend(["run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-22.svg"))
 

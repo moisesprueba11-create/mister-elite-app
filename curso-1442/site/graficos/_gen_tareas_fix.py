@@ -335,38 +335,45 @@ def tarea_22():
     # 1 Ataque (tengo balón) / 2 Transición A-D (pierdo) /
     # 3 Defensa (no tengo) / 4 Transición D-A (robo).
     p.zone(2, 50, 50, 98, c="#1565c0", fill_op=0.12)   # ataque propio (arriba izq)
-    p.note(26, 90, "1 ATAQUE", c="#9ec7ff", size=11)
+    p.note(26, 94, "1 · ATAQUE", c="#9ec7ff", size=12, w=800)
+    p.note(26, 89.5, "(tengo balón)", c="#9ec7ff", size=9)
     p.zone(50, 50, 98, 98, c="#ff5252", fill_op=0.12)  # A-D pierdo
-    p.note(74, 90, "2 PIERDO → A-D", c="#ffb0b0", size=11)
+    p.note(74, 94, "2 · TRANSICIÓN A-D", c="#ffb0b0", size=12, w=800)
+    p.note(74, 89.5, "pierdo → repliego", c="#ffb0b0", size=9)
     p.zone(50, 2, 98, 50, c="#c62828", fill_op=0.12)   # defensa
-    p.note(74, 10, "3 DEFENSA", c="#ffb0b0", size=11)
+    p.note(74, 7, "3 · DEFENSA", c="#ffb0b0", size=12, w=800)
+    p.note(74, 11.5, "(no tengo balón)", c="#ffb0b0", size=9)
     p.zone(2, 2, 50, 50, c="#7ee0ff", fill_op=0.12)    # D-A robo
-    p.note(26, 10, "4 ROBO → D-A", c="#bdeeff", size=11)
+    p.note(26, 7, "4 · TRANSICIÓN D-A", c="#bdeeff", size=12, w=800)
+    p.note(26, 11.5, "robo → ataco", c="#bdeeff", size=9)
     # POR de cada equipo
     p.player(50, 4, "POR", team="own")
     p.player(50, 96, "POR", team="rival")
-    # referencias clave propias rotuladas
-    p.player(30, 60, "DC", team="own")
-    p.player(58, 55, "MC", team="own")
-    p.player(18, 44, "MI", team="own")
-    p.player(72, 46, "MD", team="own")
-    p.player(46, 72, "DFC", team="own")
+    # referencias clave propias rotuladas (apartadas del centro, una por cuadrante)
+    p.player(26, 64, "DC", team="own")
+    p.player(62, 62, "MC", team="own")
+    p.player(15, 42, "MI", team="own")
+    p.player(75, 42, "MD", team="own")
+    p.player(38, 72, "DFC", team="own")
     # rivales (referencias)
-    p.player(40, 52, "MC", team="rival")
-    p.player(62, 40, "DC", team="rival")
-    p.player(30, 36, "DFC", team="rival")
-    p.player(70, 70, "MD", team="rival")
-    p.ball(63, 58)  # junto al MC propio sin taparlo
-    # flechas cíclicas entre fases (transiciones), numeradas
-    p.arrow(40, 78, 64, 78, kind="run")   # 1->2 pierdo
-    p.arrow(78, 60, 78, 40, kind="run")   # 2->3 me organizo
-    p.arrow(64, 22, 40, 22, kind="run")   # 3->4 robo
-    p.arrow(22, 40, 22, 60, kind="run")   # 4->1 ataco
-    step(p, 52, 78, "2")
-    step(p, 78, 50, "3")
-    step(p, 52, 22, "4")
-    step(p, 22, 50, "1")
-    p.note(50, 49, "A-D: recuperar <5 s = punto  ·  D-A: gol <8 s = doble", c="#fff5cc", size=9.5)
+    p.player(42, 58, "MC", team="rival")
+    p.player(66, 36, "DC", team="rival")
+    p.player(28, 32, "DFC", team="rival")
+    p.player(74, 68, "MD", team="rival")
+    p.ball(66, 64)  # junto al MC propio sin taparlo
+    # flechas cíclicas entre fases (transiciones), numeradas, apartadas del centro
+    p.arrow(40, 82, 60, 82, kind="run")   # 1->2 pierdo
+    p.arrow(84, 60, 84, 40, kind="run")   # 2->3 me organizo
+    p.arrow(60, 18, 40, 18, kind="run")   # 3->4 robo
+    p.arrow(16, 40, 16, 60, kind="run")   # 4->1 ataco
+    step(p, 50, 82, "2")
+    step(p, 84, 50, "3")
+    step(p, 50, 18, "4")
+    step(p, 16, 50, "1")
+    # regla de puntos: partida, cada mitad sobre césped libre de SU transición
+    # (no cruza el centro ni pisa fichas/círculo central)
+    p.note(76, 53, "recuperar <5 s = punto", c="#fff5cc", size=8.5)
+    p.note(24, 53, "gol <8 s = doble", c="#fff5cc", size=8.5)
     p.legend(["run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-22.svg"))
 
@@ -473,46 +480,48 @@ def tarea_25():
 # =====================================================================
 def tarea_27():
     p = Pitch(title="Tarea 27 — Defensa mixta de córner + contragolpe",
-              subtitle="zona + 2 al hombre + 2 postes + POR · 2 DC arriba",
-              half="att")  # foco en el área de ataque rival (que defendemos abajo)
-    # Trabajamos la portería propia abajo: usamos half='att' (y 50..100) e
-    # invertimos visualmente colocando la portería defendida arriba para ver el área.
+              subtitle="zona + 2 al hombre + 2 postes + POR · 2 DC arriba para la salida")
+    # Campo completo: defendemos el área de ARRIBA y salimos al contragolpe
+    # hacia abajo. Así hay sitio para área (y 80..96) y para los DC + despeje
+    # + rótulo de instrucción (y 30..62) sin que nada caiga fuera del lienzo.
+    # --- ÁREA QUE DEFENDEMOS (arriba) ---
     # POR manda el área
     p.player(50, 95, "POR", team="own")
-    p.note(68, 95, "POR manda el área", c="#fff5cc", size=9.5)
-    # Postes (1 en cada palo) — bien separados y etiquetados una vez
-    p.player(40, 92, "POSTE", team="own")
-    p.player(60, 92, "POSTE", team="own")
-    # ZONA: 3 en la zona de remate (primer palo + trayectoria central)
-    p.player(38, 82, "DEF", team="own")
-    p.player(50, 80, "DEF", team="own")
-    p.player(62, 82, "DEF", team="own")
-    p.zone(30, 76, 70, 88, c="#7ee0ff", fill_op=0.12)
-    p.note(50, 74, "ZONA (1er palo + trayectoria)", c="#7ee0ff", size=10)
-    # 2 AL HOMBRE sobre rematadores peligrosos (etiqueta única, separada)
-    p.player(43, 70, "H1", team="own")
-    p.player(57, 70, "H2", team="own")
-    p.note(50, 65.5, "2 al hombre (peligrosos)", c="#fff5cc", size=10)
-    # Rematadores rivales (peligrosos) — separados de las marcas
-    p.player(43, 76, "REM", team="rival")
-    p.player(57, 76, "REM", team="rival")
-    p.player(50, 86, "REM", team="rival")
+    p.note(50, 99, "POR manda", c="#fff5cc", size=9.5)
+    # Postes (1 en cada palo) — etiqueta única "POSTE" en la propia ficha
+    p.player(40, 91, "POSTE", team="own")
+    p.player(60, 91, "POSTE", team="own")
+    # ZONA: 3 en la zona de remate (1er palo + trayectoria central). Una sola
+    # etiqueta de función, situada a la izquierda de la zona (sin cruzar fichas).
+    p.zone(28, 80, 72, 90, c="#7ee0ff", fill_op=0.14)
+    p.player(38, 84, "DEF", team="own")
+    p.player(50, 84, "DEF", team="own")
+    p.player(62, 84, "DEF", team="own")
+    p.note(15, 85, "ZONA", c="#7ee0ff", size=11)
+    # 2 AL HOMBRE sobre rematadores peligrosos. Etiqueta única a la derecha.
+    p.player(44, 73, "H", team="own")
+    p.player(56, 73, "H", team="own")
+    p.note(82, 73, "AL HOMBRE", c="#fff5cc", size=11)
+    # Rematadores rivales (peligrosos) — separados de las marcas (delante de H)
+    p.player(44, 67, "REM", team="rival")
+    p.player(56, 67, "REM", team="rival")
+    p.player(50, 78, "REM", team="rival")
     # Lanzador en el córner
-    p.player(94, 96, "LANZ", team="rival")
-    p.ball(94, 96)
-    p.arrow(92, 95, 60, 84, kind="pass")  # saque
-    # 2 DC arriba para la salida de contragolpe (bien separados, abajo)
-    p.player(38, 56, "DC", team="own")
-    p.note(38, 50, "salida arriba", c="#fff5cc")
-    p.player(62, 54, "DC", team="own")
-    p.note(62, 48, "salida arriba", c="#fff5cc")
-    # DESPEJE: una sola flecha clara, lejos y a banda por el lateral izq,
-    # esquivando el clúster central, con destino claro al DC izq.
-    p.arrow(46, 81, 22, 62, kind="run")   # despeje orientado al DC izq por fuera
-    p.arrow(22, 60, 36, 57, kind="pass")  # segunda fase: balón al DC
-    p.note(20, 70, "despeje lejos y a banda", c="#ffffff", size=9.5)
-    p.note(28, 56, "→ DC", c="#ffd54a", size=9.5)
-    p.note(50, 42, "Al despejar, ya estamos atacando · despejar lejos y a banda")
+    p.player(95, 96, "LANZ", team="rival")
+    p.ball(89, 93)
+    p.arrow(91, 93, 58, 80, kind="pass")  # saque del córner a zona de remate
+    # --- SALIDA AL CONTRAGOLPE (abajo) ---
+    # 2 DC arriba (de los nuestros) preparados para la salida, bien separados.
+    p.player(34, 52, "DC", team="own")
+    p.note(34, 46, "salida", c="#fff5cc")
+    p.player(60, 50, "DC", team="own")
+    p.note(60, 44, "salida", c="#fff5cc")
+    # DESPEJE: una sola trayectoria clara, lejos y a banda por el lateral izq,
+    # esquivando el clúster central, con destino sobre la ficha del DC izq.
+    p.arrow(46, 82, 22, 60, kind="run")   # despeje orientado por fuera
+    p.arrow(22, 58, 33, 53, kind="pass")  # 2ª fase: balón al DC (punta sobre ficha)
+    p.note(16, 66, "despeje lejos y a banda", c="#ffffff", size=9.5)
+    p.note(50, 24, "Al despejar, ya estamos atacando · despejar lejos y a banda")
     p.legend(["pass", "run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-27.svg"))
 
