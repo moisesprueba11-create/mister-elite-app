@@ -382,8 +382,8 @@ def tarea_24():
     # Carriles de banda TINTADOS (zonas premiadas)
     p.zone(0, 0, 22, 100, c="#ffd54a", fill_op=0.18)
     p.zone(78, 0, 100, 100, c="#ffd54a", fill_op=0.18)
-    p.note(11, 50, "BANDA +1", c="#fff", size=11)
-    p.note(89, 50, "BANDA +1", c="#fff", size=11)
+    p.note(11, 88, "BANDA +1", c="#fff", size=11)
+    p.note(89, 88, "BANDA +1", c="#fff", size=11)
     # Carril central penalizado (tinte rojo tenue)
     p.zone(22, 0, 78, 100, c="#ff5252", fill_op=0.06)
     p.note(50, 50, "central (difícil)", c="#ffd9d9", size=10)
@@ -397,11 +397,11 @@ def tarea_24():
     p.player(50, 95, "POR", team="rival")
     # referencias propias (atacan por banda)
     p.player(90, 58, "MD", team="own")
-    p.player(10, 50, "MI", team="own")
+    p.player(11, 50, "MI", team="own")
     p.player(50, 40, "MC", team="own")
     p.player(35, 30, "DFC", team="own")
     p.player(65, 32, "LD", team="own")
-    p.ball(10, 50)
+    p.ball(16, 52)
     # rivales de referencia
     p.player(78, 60, "riv", team="rival")
     p.player(40, 62, "riv", team="rival")
@@ -479,7 +479,7 @@ def tarea_27():
     # invertimos visualmente colocando la portería defendida arriba para ver el área.
     # POR manda el área
     p.player(50, 95, "POR", team="own")
-    p.note(50, 89, "manda área", c="#fff5cc")
+    p.note(68, 95, "POR manda el área", c="#fff5cc", size=9.5)
     # Postes (1 en cada palo) — bien separados y etiquetados una vez
     p.player(40, 92, "POSTE", team="own")
     p.player(60, 92, "POSTE", team="own")
@@ -506,9 +506,12 @@ def tarea_27():
     p.note(38, 50, "salida arriba", c="#fff5cc")
     p.player(62, 54, "DC", team="own")
     p.note(62, 48, "salida arriba", c="#fff5cc")
-    # DESPEJE: una sola flecha clara, lejos y a banda, con destino a un DC
-    p.arrow(50, 79, 39, 58, kind="run")   # despeje orientado al DC izq
-    p.note(40, 66, "despeje a banda → DC", c="#ffffff", size=9.5)
+    # DESPEJE: una sola flecha clara, lejos y a banda por el lateral izq,
+    # esquivando el clúster central, con destino claro al DC izq.
+    p.arrow(46, 81, 22, 62, kind="run")   # despeje orientado al DC izq por fuera
+    p.arrow(22, 60, 36, 57, kind="pass")  # segunda fase: balón al DC
+    p.note(20, 70, "despeje lejos y a banda", c="#ffffff", size=9.5)
+    p.note(28, 56, "→ DC", c="#ffd54a", size=9.5)
     p.note(50, 42, "Al despejar, ya estamos atacando · despejar lejos y a banda")
     p.legend(["pass", "run", "own", "rival", "zone"])
     p.save(os.path.join(OUT, "tarea-27.svg"))
