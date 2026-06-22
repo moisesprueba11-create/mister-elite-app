@@ -105,10 +105,11 @@ def t01_distancias():
     # cota separacion centrales 8-12 m
     p._line(p.X(30), p.Y(33), p.X(70), p.Y(33), w=2, c="#7ee0ff", dash="5 4")
     p.note(50, 35, "8-12 m centrales")
-    # cota doble pivote 6-10 m
+    # cota doble pivote 6-10 m (texto reubicado a la izquierda, fuera del
+    # circulo central cx340/cy553/r57, para evitar el roce visual)
     p._line(p.X(42), p.Y(46), p.X(58), p.Y(52), w=2, c="#7ee0ff", dash="5 4")
-    p.note(40, 50, "6-10 m", anchor="end")
-    p.note(40, 53, "doble pivote", anchor="end")
+    p.note(31, 42, "doble pivote", anchor="end")
+    p.note(31, 45, "6-10 m", anchor="end")
     # entre lineas 10-15 m (vertical, lado izq)
     p._line(p.X(14), p.Y(28), p.X(14), p.Y(70), w=2, c="#7ee0ff", dash="5 4")
     p.note(18, 49, "10-15 m", anchor="start")
@@ -135,16 +136,18 @@ def t01_vs_433():
     p.player(88, 46, "2", role="CAR")
     p.player(40, 40, "8")
     p.player(62, 42, "10")
-    # RIVAL 4-3-3 (rojo) arriba, su ataque baja
+    # RIVAL 4-3-3 (rojo) arriba, su ataque baja.
+    # Se rotulan por ROL (no por dorsal) para que ningun numero tenga dos
+    # significados frente al equipo propio azul.
     # 1 punta presiona los 3 centrales
-    p.player(50, 36, "9", team="rival", role="punta", role_below=True)
+    p.player(50, 36, "DC", team="rival", role="punta", role_below=True)
     # 3 medios rivales
-    p.player(33, 54, "6", team="rival")
-    p.player(50, 62, "8", team="rival")
-    p.player(67, 54, "10", team="rival")
+    p.player(33, 54, "MC", team="rival")
+    p.player(50, 62, "MC", team="rival")
+    p.player(67, 54, "MC", team="rival")
     # laterales rivales (los que sufren el 2v1) — LD rival a su izq (nuestra der)
-    p.player(20, 60, "3", team="rival", role="LI rival", role_below=True)
-    p.player(80, 60, "2", team="rival", role="LD rival", role_below=True)
+    p.player(20, 60, "LI", team="rival", role="lateral", role_below=True)
+    p.player(80, 60, "LD", team="rival", role="lateral", role_below=True)
     # superioridad 3v1
     p.zone(22, 18, 78, 30, label="3 v 1", fill_op=0.12)
     # 2v1 en banda derecha (CAR 2 + ED) sobre el lateral rival
@@ -263,9 +266,10 @@ def t03_salida():
     p.player(90, 52, "2", role="CAR")
     # 10 entre lineas
     p.player(58, 56, "10", role="MC")
-    # rival: 2 puntas presionando (3v2)
-    p.player(40, 36, "9", team="rival")
-    p.player(60, 36, "9", team="rival")
+    # rival: 2 presores presionando (3v2). Se diferencian (D1/D2) para no
+    # repetir el mismo dorsal "9" en dos jugadores distintos.
+    p.player(40, 36, "D1", team="rival", role="presor", role_below=True)
+    p.player(60, 36, "D2", team="rival", role="presor", role_below=True)
     # lineas del rombo (POR-6-8-4 con 5)
     p.arrow(50, 12, 50, 19, kind="pass")
     p.arrow(50, 25, 50, 37, kind="pass")
@@ -367,10 +371,12 @@ def t04_transicion_def():
     # perdida arriba; rival con balon ataca hacia abajo (su sentido es hacia nuestro marco)
     p.ball(50, 64)
     p.player(50, 68, "R", team="rival", role="contra", role_below=True)
-    # 8 frena el contra
-    p.player(50, 54, "8", role="MC frena", role_below=True)
-    p.arrow(50, 52, 50, 62, kind="run")
-    p.arrow(50, 60, 50, 56, kind="block")
+    # doble pivote: 8 frena el contra, 10 repliega a su lado (bloque completo)
+    p.player(42, 54, "8", role="MC frena", role_below=True)
+    p.player(58, 53, "10", role="MC repliega")
+    p.arrow(44, 56, 49, 62, kind="run")
+    p.arrow(50, 60, 46, 56, kind="block")
+    p.arrow(58, 49, 56, 43, kind="run")
     # carrileros vuelan a reformar la linea de 5 (desde arriba a su sitio bajo)
     p.player(20, 40, "3", role="CAR vuela", role_below=True)
     p.player(80, 40, "2", role="CAR vuela", role_below=True)

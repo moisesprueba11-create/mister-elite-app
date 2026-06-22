@@ -167,8 +167,13 @@ class Pitch:
                              f'{cx+self.S(7):.1f},{yfront:.1f}" fill="none" stroke="{PALETTE["line"]}" stroke-width="{lw}"/>')
 
     def _attack_arrow(self):
+        # Centrado verticalmente sobre el AREA JUGABLE (no en coordenadas de campo),
+        # asi nunca invade la franja de pie ni el titulo, incluso en half="att"/"def"
+        # donde Y(44)/Y(56) extrapolarian fuera del cesped.
         x = self.X(96)
-        y1 = self.Y(44); y2 = self.Y(56)
+        ymid = self.y0 + self.play_h / 2
+        half_len = self.play_h * 0.06
+        y1 = ymid + half_len; y2 = ymid - half_len
         self.body.append(f'<g opacity="0.9"><line x1="{x:.1f}" y1="{y1:.1f}" x2="{x:.1f}" y2="{y2:.1f}" '
                          f'stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/>'
                          f'<text x="{x-6:.1f}" y="{(y1+y2)/2:.1f}" font-family="Segoe UI,Arial" font-size="9" '
