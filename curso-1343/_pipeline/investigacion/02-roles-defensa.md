@@ -8,7 +8,7 @@
 ## 1. Roles por demarcación — tareas defensivas y ofensivas separadas
 
 ### POR 1 — Portero-líbero, manda la línea de 3
-- **Defensiva:** es el organizador de la última línea. Manda la altura de los 3 DFC con la voz ("¡subir!" / "¡cae!"), cierra la espalda de la línea defendiendo el espacio entre línea y portería (posición adelantada, 14-18 m del marco cuando el bloque está medio/alto). Líbero-escoba ante balones a la espalda de los centrales y filtrados al área. Lectura del fuera de juego: tras el achique sube él también para no anular la trampa.
+- **Defensiva:** es el organizador de la última línea. Manda la altura de los 3 DFC con la voz ("¡subir!" / "¡cae!"), cierra la espalda de la línea defendiendo el espacio entre línea y portería (posición adelantada, 14-18 m del marco cuando el bloque está medio/alto). Líbero-escoba ante balones a la espalda de los centrales y filtrados al área. Lectura del fuera de juego: cuando la línea de 5 sube para dejar al rival en posición ilegal, él **acompaña la subida** como escoba adelantada para cubrir la espalda si el árbitro no señala o si llega un balón filtrado.
 - **Ofensiva:** primer iniciador. Da el +1 en salida (3 DFC + POR = rombo de 4 contra primera presión de 2). Recibe de los centrales, fija al delantero rival y rompe líneas con pase al pivote 8 o al carrilero 2/3 liberado en banda.
 
 ### DFC 5 — Central del medio / líbero organizador
@@ -40,7 +40,7 @@
 | Bloque | Altura de la 1.ª línea de presión | Estructura sin balón | Idea |
 |---|---|---|---|
 | **Alto** | Tridente presiona en campo rival (~últimos 30 m, línea def. ~40 m del propio marco) | Carrileros MUY arriba (2/3 saltan a banda), 1-3-2-5 → al perder, sigue siendo 3+2 | Robar arriba, fuera de juego adelantado |
-| **Medio** | Tridente presiona en el círculo central (~media cancha) | **1-5-2-3**: carrileros bajan → línea de 5 (2-4-5-6-3) + doble pivote 8/10 + tridente | Estructura por defecto. Compacto, espera el gatillo |
+| **Medio** | Tridente presiona en el círculo central (~media cancha) | **1-5-2-3**: carrileros bajan → línea de 5 (izq→der: 3-6-5-4-2) + doble pivote 8/10 + tridente | Estructura por defecto. Compacto, espera el gatillo |
 | **Bajo** | Repliegue, defender el área | **1-5-4-1**: extremos 7/11 bajan al lado de los carrileros → 5 atrás + 4 medios (7-8-10-11) + 9 arriba | Cerrar centro y área, resistir y transitar |
 
 **Mecánica del paso de 3 a 5:** sin balón, los carrileros 2 y 3 retroceden y se alinean con 4-5-6. La línea de 5 reparte el ancho: los 3 DFC ocupan el centro-área, los carrileros tapan los carriles exteriores. Para pasar a **1-5-4-1**, los extremos 7 y 11 caen sobre su carrilero formando una línea de 4 con el doble pivote (7-8-10-11), dejando al 9 de referencia para la transición. Reordenamiento por basculación, nunca por carrera frontal sin cobertura.

@@ -32,6 +32,8 @@ El 1-3-4-3 es un sistema de **tres líneas con cuatro alturas reales** una vez e
 - **Doble pivote (8/10)**: ~6-10 m entre ambos cuando juegan juntos; el 8 más bajo (delante de los centrales), el 10 más alto (línea de medios/entrelíneas).
 - **Tridente**: extremos en el ancho del campo o en los **medio-espacios** (half-spaces); el 9 entre centrales rivales. Cuanto más cierran los extremos hacia dentro, más amplitud aporta el carrilero (relación de intercambio carril/medio-espacio).
 
+> **Estándar único de distancias del curso** (rige en todos los documentos y pizarras): separación entre centrales **8-12 m**; doble pivote **6-10 m** entre ambos; **distancia entre líneas 10-15 m**; **bloque total compacto < 35-40 m**. Alturas de la línea defensiva: bloque alto **40-45 m** del propio marco · bloque medio **30-35 m** · bloque bajo **18-22 m**. POR-líbero adelantado **14-18 m** con bloque medio/alto.
+
 ### La idea fuerza: la MUTACIÓN
 
 El 1-3-4-3 es un sistema **dinámico, no posicional fijo**. Se reconfigura en cada fase:
@@ -40,7 +42,7 @@ El 1-3-4-3 es un sistema **dinámico, no posicional fijo**. Se reconfigura en ca
 |---|---|---|
 | **Con balón (ataque)** | Carrileros suben a la línea del tridente; el doble pivote sostiene; los 3 centrales se quedan | **1-3-2-5** — cinco atacantes (CAR 2 · ED 7 · DC 9 · EI 11 · CAR 3) dando **amplitud máxima** y fijando a la última línea rival |
 | **Sin balón (bloque medio/bajo)** | Carrileros bajan a la línea de centrales | **1-5-2-3** (presión escalonada) o **1-5-4-1** (repliegue cerrado: extremos bajan al medio) |
-| **Salida en presión alta rival** | Un central abre, carrileros bajan | Primera línea de **4-5** para superar la presión por fuera |
+| **Salida en presión alta rival** | Los centrales abren y los carrileros bajan a su altura | Primera línea de **5** (DFC 4-5-6 + CAR 2-3) + POR como +1 para superar la presión por fuera |
 
 Esa **respiración carril-amplitud / carril-línea de 5** es la columna vertebral del sistema. Todo el resto (perfiles, principios, variantes) se deriva de ella.
 
@@ -50,7 +52,7 @@ Esa **respiración carril-amplitud / carril-línea de 5** es la columna vertebra
 
 - **Raíces — Cruyff y el Fútbol Total (Michels/Ajax/Países Bajos, años 70).** Posiciones fluidas, todos atacan y defienden, el espacio como recurso central. El portero como "primer atacante", el delantero como "primer defensor". Cruyff, ya como técnico del **Dream Team del Barça**, construyó un **3-4-3 en rombo** con Koeman de líbero que pisaba el medio como organizador y Guardiola en la base bajando a la línea defensiva al perder el balón: el embrión conceptual del líbero/DFC 5 moderno.
 - **Bielsa.** Control del espacio, intercambios de posición e intensidad de presión hombre a hombre. Su uso de la defensa de tres (y la lógica "un central libre + marcas individuales arriba") inspira el componente de **presión a la espalda** del sistema actual.
-- **Conte (Chelsea 2016-17).** Caso paradigmático moderno. Llegó con un 4-2-4, encajaba demasiado, y **viró al 3-4-3** que ganó la Premier. Demostró que la defensa de 3 con carrileros podía ser dominante también en una liga de bloques de 4. Reactivó el sistema en el fútbol de élite.
+- **Conte (Chelsea 2016-17).** Caso paradigmático moderno. Empezó la temporada con **4-2-3-1** (no 4-2-4); tras dos derrotas (2-1 ante Liverpool y 3-0 ante Arsenal) **viró al 3-4-3**, estrenándolo con un 2-0 al Hull, y encadenó **13 victorias seguidas** en la Premier, camino del título. Su 3-4-3 con balón adoptaba a menudo forma de **3-4-2-1** (Hazard y Pedro/Willian como interiores tras Costa). Demostró que la defensa de 3 con carrileros podía dominar en una liga de bloques de 4 y reactivó el sistema en la élite.
 - **Tuchel.** Refinó el back three en transiciones y salidas (Chelsea campeón de Champions 2021 con líneas de 3/5 flexibles). Procede más de la escuela Rangnick (presión/transición) que del Fútbol Total, lo que aporta el matiz **vertical** al sistema.
 - **Gasperini / Atalanta.** La versión más reconocible y agresiva: 3-4-3 de altísimo tempo, posesión de riesgo, **marcajes individuales por todo el campo** y carrileros como armas ofensivas. Muta a 3-4-1-2 / 3-4-2-1 según el partido. Referencia obligada del enfoque ofensivo.
 - **De Zerbi / línea moderna de salida.** Aporta los principios de **construcción provocada** (atraer la presión para superarla) que encajan con la superioridad 3v2 de la primera fase del sistema.
@@ -85,7 +87,7 @@ Esa **respiración carril-amplitud / carril-línea de 5** es la columna vertebra
 | **Forma del frente** | **3-4-3 tridente puro** (ED 7 - DC 9 - EI 11) | **3-4-2-1** (dos mediapuntas tras el 9) | Tridente = más amplitud y profundidad; 3-4-2-1 = más densidad entre líneas y juego asociativo central (modelo Gasperini/Conte) |
 | **Línea de 3** | **Con líbero (DFC 5 organizador)** que sale conduciendo | **3 en línea** (reparto simétrico de marcas) | Líbero = más salida y superioridad limpia; 3 en línea = más marca individual y agresividad (Bielsa/Gasperini) |
 | **Rol de los extremos** | **Abiertos** (amplitud, 1v1 al lateral) | **Interiores / pisar dentro** liberando el carril al carrilero | Interiores generan el carril para el CAR y superioridad en medio-espacio; abiertos fijan al lateral rival |
-| **Doble pivote** | **8 + 10 simétrico** | **8 ancla + 10 liberado** (asciende a mediapunta) | Si el 10 sube, el sistema tiende al 3-4-2-1 / 1-3-1-... con un solo ancla |
+| **Doble pivote** | **8 + 10 simétrico** | **8 ancla + 10 liberado** (asciende a mediapunta) | Si el 10 sube, el sistema tiende al **3-4-2-1** (un solo pivote ancla, el 8, y el 10 como segundo mediapunta) |
 
 Estas variantes **no son sistemas distintos**: son ajustes de la misma estructura según rival y perfil de jugadores.
 
@@ -108,7 +110,7 @@ Estas variantes **no son sistemas distintos**: son ajustes de la misma estructur
 ### Enfrentamientos
 
 **vs 1-4-3-3.**
-- En salida, **3 centrales vs 1 punta = 3v1** (o 3v3 si el 4-3-3 presiona con extremos, lo que abre a sus carrileros). Ventaja clara de circulación.
+- En salida, **3 centrales vs 1 punta = 3v1** (o 3v3 si el 4-3-3 presiona con sus dos extremos saltando a los centrales laterales, pero entonces el **POR da el +1 → 4v3** y se abren a la espalda los laterales rivales). Ventaja clara de circulación.
 - Arriba, los **carrileros generan 2v1 contra los laterales** del 4-3-3 si los extremos rivales no repliegan.
 - Riesgo: los extremos del 4-3-3 atacan **la espalda del carrilero** cuando este sube.
 

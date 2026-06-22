@@ -14,8 +14,8 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 ## Tarea 1.1 — "Rombo de salida 3+1 contra primer presionador"
 - **Objetivo (comportamiento 1-3-4-3):** Generar y aprovechar la superioridad de la primera línea (DFC 4-5-6 + MC 8) frente al primer presionador rival; orientar al líbero 5 como organizador.
 - **Tipo:** Rondo posicional dirigido (mantenimiento con orientación).
-- **Organización:** 25×20 m. 4 jugadores en rombo = DFC 4, DFC 5, DFC 6 + MC 8 en el centro; 1 comodín portero 1 en una banda. Defensores: 2 ✕ (simulan ED+DC rivales). 2 mini-porterías ⬡ en la línea de fondo contraria. Balones junto a POR 1.
-- **Desarrollo:** Salida desde POR 1. Los 3 DFC se abren (4 y 6 a la altura del área, 5 entre ambos); MC 8 se ofrece como punto de apoyo interior. Hay que progresar el balón superando a los 2 ✕ y meterlo controlado en una de las 2 mini-porterías (= 3ª línea superada).
+- **Organización:** 25×20 m **orientado** (no cuadrado neutro): zona de inicio atrás con **POR 1 detrás de la línea de 3** (no en banda), DFC 4-5-6 abiertos por delante y MC 8 como vértice superior del rombo. Defensores: 2 ✕ (simulan punta + un interior/extremo que salta). 2 mini-porterías ⬡ en la línea de fondo contraria (una por carril exterior). Balones en POR 1.
+- **Desarrollo:** Salida desde POR 1. Los 3 DFC se abren (4 y 6 a la altura del área, 5 entre ambos); el POR da el +1 por detrás; MC 8 se ofrece como apoyo interior por delante. Hay que progresar superando a los 2 ✕ y meter el balón controlado en una mini-portería (= línea de presión superada hacia el carril libre).
 - **Reglas / Provocaciones (medibles):**
   - Máx. **2 toques** para DFC; MC 8 **libre** (premia recibir entre líneas).
   - Si el balón llega a una mini-portería **tras pasar por el pie del MC 8** = 2 puntos; directo de DFC a DFC = 1 punto (fuerza usar el pivote, no solo el lado).
@@ -24,10 +24,10 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 - **Coaching:** "Abre el 5 la línea", separación 4-6 amplia, cuerpo del DFC orientado al frente (medio giro), MC 8 perfil abierto para ver las dos bandas. Romper líneas con pase al pie del 8.
 - **Duración/series:** 4 series de 4 min, 90 s descanso. **Categoría: F.**
 
-## Tarea 1.2 — "Salida 3 centrales + pivote vs presión 1-3-3 rival"
-- **Objetivo:** Resolver la salida ante presión alta espejada; decidir entre conducción del DFC libre, pase al pivote o salto al carrilero.
+## Tarea 1.2 — "Salida 3 centrales + pivote vs presión espejada 3+2"
+- **Objetivo:** Resolver la salida ante presión alta espejada (3 arriba + 2 medios); decidir entre conducción del DFC libre, pase al pivote o salto al carrilero.
 - **Tipo:** Juego de posición direccional (situacional de salida).
-- **Organización:** Medio campo + 10 m. **Atacan 7:** POR 1, DFC 4-5-6, MC 8, CAR 2, CAR 3. **Defienden 5 ✕** en estructura de tridente + 2 medios. Portería grande ▭ defendida por portero rival simbólico (mini-portería ⬡ x2 en mediocampo como objetivo de progresión).
+- **Organización:** Medio campo + 10 m. **Atacan 7:** POR 1, DFC 4-5-6, MC 8, CAR 2, CAR 3. **Defienden 5 ✕** en estructura espejada de **tridente (3) + 2 medios** que marcan a los dos pivotes/carrileros. Portería grande ▭ defendida por portero rival simbólico; 2 mini-porterías ⬡ en mediocampo como objetivo de progresión.
 - **Desarrollo:** POR 1 inicia. Si el rival presiona con su DC al 5, se libera un DFC lateral (4 o 6) que **conduce** al espacio; los carrileros 2/3 se ofrecen altos por fuera para fijar al medio rival. Objetivo: superar la línea de presión y meter el balón controlado en mini-portería.
 - **Reglas / Provocaciones:**
   - Si presionan al 5, el balón **debe salir por conducción** del DFC libre al menos 5 m antes de pasar (entrena el "conducir para fijar").
@@ -81,10 +81,10 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 # BLOQUE 2 — Línea de 3 ↔ línea de 5 (bajada de carrileros, basculación, coberturas)
 
 ## Tarea 2.1 — "De 3 a 5: bajada del carrilero al lado del balón"
-- **Objetivo:** Automatizar la transformación defensiva: cuando el rival ataca una banda, el carrilero de ese lado baja y se forma la línea de 5; el carrilero opuesto cierra a falso central.
+- **Objetivo:** Automatizar la transformación defensiva: cuando el rival ataca una banda, el carrilero de ese lado baja y se forma la línea de 5; el carrilero opuesto (lado débil) se cierra hacia dentro como quinto defensor / falso central interior.
 - **Tipo:** Tarea analítica defensiva sin oposición → con oposición.
 - **Organización:** Ancho completo del campo, profundidad 30 m. Línea de A: DFC 4-5-6 + CAR 2 + CAR 3 (los 5). Entrenador con balón en banda dirige el lado de ataque. 3 ✕ atacantes (extremo + punta + interior) por turnos.
-- **Desarrollo:** El técnico mueve el balón de banda a banda; ante cada movimiento, el carrilero del lado baja a línea, los 3 DFC bascular y el carrilero lejano se mete como cuarto/falso central.
+- **Desarrollo:** El técnico mueve el balón de banda a banda; ante cada movimiento, el carrilero del lado baja a la línea, los 3 DFC basculan y el carrilero lejano se cierra hacia dentro como quinto defensor / falso central interior.
 - **Reglas / Provocaciones:**
   - La línea solo puede moverse **en bloque** (si un jugador rompe la distancia >5 m, se repite).
   - Al cambiar de banda, la línea de 5 debe estar formada en **≤3 s** (medible con conteo del técnico).
@@ -139,7 +139,7 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 ## Tarea 3.1 — "Gatillos del tridente: orientar la salida rival a una banda"
 - **Objetivo:** Que el tridente ED 7 · DC 9 · EI 11 presione orientando: el 9 tapa al pivote, el extremo del lado salta al central y empuja el balón a una banda-trampa.
 - **Tipo:** Tarea de pressing dirigido (defensa-ataque).
-- **Organización:** Medio campo + 15 m. B saca jugando con 4 atrás + pivote (espejo de salida 1-3-4-3). A presiona arriba con tridente 7-9-11 + MC 8 cubriendo el pivote. Bandas-trampa marcadas con conos ⬛.
+- **Organización:** Medio campo + 15 m. B saca jugando con **4 atrás + pivote** (modelo de salida rival más común, p. ej. 4-3-3 / 4-2-3-1). A presiona arriba con tridente 7-9-11 + MC 8 cubriendo el pivote rival. Bandas-trampa marcadas con conos ⬛.
 - **Desarrollo:** B inicia desde su portero. A activa el gatillo: el 9 curva su carrera tapando al pivote rival; el extremo del lado salta al central; el equipo orienta el balón a la banda-trampa para recuperar.
 - **Reglas / Provocaciones:**
   - A solo puede presionar **cuando el balón va de central a carrilero** rival (gatillo medible: salto del extremo en ese pase).
@@ -303,7 +303,7 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 ## Tarea 5.4 — "Tridente vs línea de 3 rival: ataque posicional a portería (S)"
 - **Objetivo:** Integrar el ataque del tridente con el 10 y los carrileros contra una defensa estructurada, en superioridad/igualdad cercana al partido.
 - **Tipo:** Juego específico ofensivo 8v6+POR.
-- **Organización:** 3/4 de campo, portería ▭ + POR 1. A: DC 9, ED 7, EI 11, MC 10, MC 8, CAR 2, CAR 3 + apoyo. B: línea de 3 DFC + 2 MC + portero. 2 mini-porterías ⬡ para B (contra-objetivo).
+- **Organización:** 3/4 de campo, portería ▭ + POR 1. A (8): DC 9, ED 7, EI 11, MC 10, MC 8, CAR 2, CAR 3 + 1 apoyo. B (6): línea de 3 DFC + 3 MC + portero. 2 mini-porterías ⬡ para B (contra-objetivo).
 - **Desarrollo:** A ataca posicionalmente buscando combinar tridente + 10 + carrileros para finalizar; B defiende como línea de 3/5 y, al robar, busca las mini-porterías (consecuencia).
 - **Reglas / Provocaciones:**
   - A debe finalizar en **<12 s** desde que entra en campo de B (ritmo de ataque).
@@ -381,4 +381,4 @@ Las 26 tareas están organizadas en **6 bloques**. Cada ficha sigue el formato e
 - **Bloque 5 — Tridente (9 + extremos + llegada 10/carrilero):** 4 tareas (5.1–5.4)
 - **Bloque 6 — Transiciones + partido condicionado aplicado:** 4 tareas (6.1–6.4)
 
-Distribución por categoría: **F** (Fundamentación) ×4 · **A** (Aplicación) ×13 · **S** (Específica/competitiva) ×9 — coherente con el foco en aplicación práctica.
+Distribución por categoría: **F** (Fundamentación) ×3 · **A** (Aplicación) ×14 · **S** (Específica/competitiva) ×9 — coherente con el foco en aplicación práctica (poca fundamentación, mucha aplicación y competición).

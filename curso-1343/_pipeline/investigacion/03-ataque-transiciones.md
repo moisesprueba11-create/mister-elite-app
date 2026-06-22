@@ -7,7 +7,7 @@
 
 ## 1. Inicio de juego (salida desde atrás)
 
-**Estructura base de salida: 3 centrales + pivote** → rombo/cuadrado de primera línea (4-5-6 + 8). Genera **superioridad numérica natural ante 1 o 2 puntas rivales**:
+**Estructura base de salida: 3 centrales + portero como +1, con el pivote 8 de apoyo por delante.** El rombo de primera línea lo forman **POR 1 + DFC 4-5-6** (4 jugadores), y el **MC 8** se ofrece como vértice superior por delante de los centrales. Genera **superioridad numérica natural ante 1 o 2 puntas rivales**:
 
 - **Vs 1 punta:** 3 centrales contra 1 → +2. El líbero **5 conduce** hacia el medio para fijar y romper la primera línea (al fijar a un mediocentro rival libera al 8 o al 10).
 - **Vs 2 puntas:** 3 contra 2 → +1. Salida limpia abriendo a los laterales 4 y 6; el **8 pivota** lateralmente para recibir en el costado del punta o **baja** entre/al lado de los centrales (salida en línea de 4 momentánea).
@@ -103,10 +103,10 @@
 
 ## 6. Balón parado (ABP ofensivo y defensivo)
 
-**Córners ofensivos** — aprovechar la **altura y número de los 3 centrales (4-5-6) + DC 9**:
-- 3-4 atacantes potentes al área (centrales + 9) con bloqueos y movimientos cruzados (1er palo / penalti / 2º palo).
-- **8** al borde del área para el rechace; **10** como segunda jugada.
-- **Vigilancias defensivas obligatorias:** 2 jugadores atrás (típicamente **5 + un carrilero o el 8**) para frenar la contra, dada la peligrosidad del repliegue tras córner.
+**Córners ofensivos** — aprovechar la **altura y número de los centrales + DC 9**:
+- **3-4 rematadores potentes al área**: los dos centrales laterales **DFC 4 y 6** + **DC 9** (+ **10** llegando), con bloqueos y movimientos cruzados (1er palo / penalti / 2º palo). El **9** suele atacar primer palo o penalti; los centrales, el segundo palo.
+- **8** al borde del área para el rechace y primer freno de la contra.
+- **Vigilancias defensivas obligatorias (resto de córner):** **DFC 5 (líbero) + los dos carrileros 2/3** atrás como mini-línea de 3, dada la peligrosidad de la contra tras córner. *(El 5 NO sube a rematar: es el ancla de seguridad; suben 4, 6 y 9.)*
 
 **Faltas laterales/cercanas:**
 - Lanzamiento al área con la altura de los centrales; opción de saque ensayado en corto (carrilero–extremo) para centro de mejor ángulo.
