@@ -164,7 +164,7 @@ def tarea_10():
     p.player(30, 70, "DFC", team="rival")
     p.player(70, 70, "DFC", team="rival")
     p.player(50, 56, "PIV", team="rival")
-    p.note(50, 49, "pivote (a tapar)", c="#fff5cc")
+    p.note(72, 50, "pivote (a tapar)", c="#fff5cc")
     p.ball(24, 67)  # balón al lado del DFC izq, sin tapar su rótulo
     # zonas-meta de banda (salida orientada a banda)
     p.zone(2, 60, 18, 80, c="#7ee0ff", fill_op=0.12, label="")
@@ -186,14 +186,21 @@ def tarea_10():
             p._text((X1+X2)/2, (Y1+Y2)/2, label, size=9.5, c=col, w=700)
     # DC1 corre curvando por detrás del pivote para presionar al DFC izq tapando la línea al pivote
     curve(p, 40, 46, 56, 52, 33, 66, label="")
-    p.note(42, 58, "curva: tapa al pivote", c="#ffffff")
-    # cono de sombra desde DC1 hacia el pivote
-    sx, sy = p.X(36), p.Y(48)
-    px1, py1 = p.X(43), p.Y(54); px2, py2 = p.X(57), p.Y(54)
-    p.body.append(f'<path d="M{sx:.1f},{sy:.1f} L{px1:.1f},{py1:.1f} L{px2:.1f},{py2:.1f} z" '
-                  f'fill="#15202b" fill-opacity="0.34" stroke="#15202b" stroke-opacity="0.5" '
-                  f'stroke-dasharray="4 4"/>')
-    p.note(50, 53.5, "sombra", c="#cfe0ee", size=9)
+    # línea de pase que se ANULA: DFC izq -> pivote (se dibuja primero, debajo).
+    # Discontinua y tenue: es la opción que el cono de sombra deja tapada.
+    p.arrow(31, 67, 47, 58, kind="pass", c="#ff8a8a")
+    # cono de SOMBRA del DC1: apex en el DC1 y se abre cubriendo al PIV y la
+    # línea de pase desde el DFC. Así se ve que la carrera del DC1 TAPA la
+    # línea al pivote (el rival no puede jugar ahí dentro).
+    ax, ay = p.X(38), p.Y(44)               # apex = DC1
+    bx1, by1 = p.X(40), p.Y(62)             # borde izq, pasado el PIV
+    bx2, by2 = p.X(60), p.Y(62)             # borde der, pasado el PIV
+    p.body.append(f'<path d="M{ax:.1f},{ay:.1f} L{bx1:.1f},{by1:.1f} L{bx2:.1f},{by2:.1f} z" '
+                  f'fill="#0b1118" fill-opacity="0.42" stroke="#cfe0ee" stroke-opacity="0.55" '
+                  f'stroke-width="1.4" stroke-dasharray="5 4"/>')
+    # rótulo del cono en césped libre, a la izquierda (no pisa fichas)
+    p.note(22, 56, "cono de sombra:", c="#cfe0ee", size=9.5, w=700)
+    p.note(22, 52, "tapa la línea al pivote", c="#cfe0ee", size=9.5, w=700)
     # DC2 salta curvando al central libre
     curve(p, 62, 46, 70, 56, 66, 66, label="")
     p.note(74, 58, "salta al central libre", c="#ffffff")
@@ -276,9 +283,13 @@ def tarea_18():
     # 2) peina/prolonga hacia el 2º DC (corto, arriba a la derecha)
     p.arrow(37, 75, 56, 68, kind="pass")
     step(p, 47, 72, "2")
-    # 3) 2ª jugada: elipse de caída del rechace, separada; rótulo en borde derecho
-    p.zone(42, 56, 66, 66, ellipse=True, c="#7ee0ff", fill_op=0.14)
-    p.note(80, 60, "2ª jugada", c="#7ee0ff")
+    # 3) 2ª jugada: elipse de caída del rechace, RESALTADA (foco de la tarea).
+    # Doble trazo + relleno más marcado para que destaque sobre el resto.
+    p.zone(40, 54, 68, 67, ellipse=True, c="#7ee0ff", fill_op=0.30)
+    p.zone(40, 54, 68, 67, ellipse=True, c="#7ee0ff", fill_op=0.0, dash="2 4")
+    # rótulo grande y en negrita, en banda libre a la derecha de la elipse
+    p.note(82, 62, "2ª JUGADA", c="#7ee0ff", size=12, w=800)
+    p.note(82, 57, "(cae el rechace)", c="#bfe8ff", size=9)
     p.arrow(30, 47, 46, 58, kind="run")   # MC llega a la 2ª jugada
     p.arrow(54, 42, 58, 56, kind="run")
     step(p, 36, 52, "3")
@@ -344,32 +355,33 @@ def tarea_22():
     p.note(74, 7, "3 · DEFENSA", c="#ffb0b0", size=12, w=800)
     p.note(74, 11.5, "(no tengo balón)", c="#ffb0b0", size=9)
     p.zone(2, 2, 50, 50, c="#7ee0ff", fill_op=0.12)    # D-A robo
-    p.note(26, 7, "4 · TRANSICIÓN D-A", c="#bdeeff", size=12, w=800)
-    p.note(26, 11.5, "robo → ataco", c="#bdeeff", size=9)
+    # cuadrante 4: etiqueta en la parte ALTA del cuadrante (la baja la ocupa la leyenda)
+    p.note(28, 44, "4 · TRANSICIÓN D-A", c="#bdeeff", size=12, w=800)
+    p.note(28, 39.5, "robo → ataco", c="#bdeeff", size=9)
     # POR de cada equipo
     p.player(50, 4, "POR", team="own")
     p.player(50, 96, "POR", team="rival")
     # referencias clave propias rotuladas (apartadas del centro, una por cuadrante)
     p.player(26, 64, "DC", team="own")
     p.player(62, 62, "MC", team="own")
-    p.player(15, 42, "MI", team="own")
+    p.player(24, 28, "MI", team="own")
     p.player(75, 42, "MD", team="own")
     p.player(38, 72, "DFC", team="own")
     # rivales (referencias)
     p.player(42, 58, "MC", team="rival")
     p.player(66, 36, "DC", team="rival")
-    p.player(28, 32, "DFC", team="rival")
+    p.player(40, 30, "DFC", team="rival")
     p.player(74, 68, "MD", team="rival")
     p.ball(66, 64)  # junto al MC propio sin taparlo
     # flechas cíclicas entre fases (transiciones), numeradas, apartadas del centro
     p.arrow(40, 82, 60, 82, kind="run")   # 1->2 pierdo
     p.arrow(84, 60, 84, 40, kind="run")   # 2->3 me organizo
     p.arrow(60, 18, 40, 18, kind="run")   # 3->4 robo
-    p.arrow(16, 40, 16, 60, kind="run")   # 4->1 ataco
+    p.arrow(14, 42, 14, 58, kind="run")   # 4->1 ataco (pegado a banda, libre)
     step(p, 50, 82, "2")
     step(p, 84, 50, "3")
     step(p, 50, 18, "4")
-    step(p, 16, 50, "1")
+    step(p, 14, 50, "1")
     # regla de puntos: partida, cada mitad sobre césped libre de SU transición
     # (no cruza el centro ni pisa fichas/círculo central)
     p.note(76, 53, "recuperar <5 s = punto", c="#fff5cc", size=8.5)
