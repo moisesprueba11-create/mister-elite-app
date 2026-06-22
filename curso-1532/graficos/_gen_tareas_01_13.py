@@ -64,23 +64,25 @@ def t02():
     # conos delimitando carriles
     for yy in (12, 30, 48, 66, 84):
         p.cone(30, yy); p.cone(35, yy); p.cone(65, yy); p.cone(70, yy)
-    # 3 centrales + pivote en carril central
-    p.player(43, 28, "6", team="own", role="DFC")
-    p.player(57, 28, "4", team="own", role="DFC")
-    p.player(50, 22, "5", team="own", role="líbero")
-    p.player(50, 50, "8", team="own", role="pivote")
-    # 2 DC dentro del central
-    p.player(45, 40, "DC", team="rival")
-    p.player(57, 42, "DC", team="rival")
+    # 3 centrales + pivote: RONDO COMPACTO 3+1 en el carril central (cuadro)
+    # los 3 DFC forman la base y el pivote remata el cuadro arriba
+    p.player(42, 38, "6", team="own", role="DFC")          # esquina inf-izq
+    p.player(58, 38, "4", team="own", role="DFC")          # esquina inf-der
+    p.player(50, 32, "5", team="own", role="")             # base centro
+    p.note(50, 27, "líbero (5)", c="#fff5cc")
+    p.player(50, 56, "8", team="own", role="pivote")       # vértice superior
+    # 2 DC rivales DENTRO del cuadro (los que persiguen el balón)
+    p.player(46, 47, "DC", team="rival")
+    p.player(55, 48, "DC", team="rival")
     # carrileros fijos exteriores
-    p.player(15, 45, "3", team="own", role="CAR")
-    p.player(85, 45, "2", team="own", role="CAR")
-    # balón y circulación centro <-> banda
-    p.ball(50, 24)
-    p.arrow(50, 26, 57, 30, kind="pass")          # centro->central
-    p.arrow(57, 30, 84, 44, kind="pass", label="abre a banda")  # central->carrilero
-    p.arrow(84, 49, 84, 70, kind="drive", label="salida liberada")
-    p.arrow(43, 30, 16, 45, kind="pass")          # alterna a izq
+    p.player(15, 47, "3", team="own", role="CAR")
+    p.player(85, 47, "2", team="own", role="CAR")
+    # balón y circulación dentro del rondo y apertura a banda
+    p.ball(46, 35)
+    p.arrow(44, 36, 56, 36, kind="pass")                   # base izq->der
+    p.arrow(58, 40, 84, 46, kind="pass", label="abre a banda")  # central->carrilero
+    p.arrow(85, 51, 85, 70, kind="drive", label="salida liberada")
+    p.arrow(50, 54, 50, 41, kind="pass")                   # pivote->base
     p.legend(["pass", "drive", "own", "rival"])
     save(p, 2)
 
@@ -100,7 +102,7 @@ def t03():
     p.player(28, 18, "6", team="own", role="DFC")
     p.player(50, 22, "5", team="own", role="líbero")
     p.player(72, 18, "4", team="own", role="DFC")
-    p.player(50, 36, "8", team="own", role="pivote")
+    p.player(42, 38, "8", team="own", role="pivote")
     p.player(64, 46, "7", team="own", role="INT")
     p.player(10, 40, "3", team="own", role="CAR")
     p.player(90, 40, "2", team="own", role="CAR")
@@ -115,8 +117,8 @@ def t03():
     # cuatro vías de salida (numeradas)
     p.arrow(28, 20, 13, 41, kind="pass", label="1")          # banda izq
     p.arrow(72, 20, 87, 41, kind="pass", label="2")          # banda der
-    p.arrow(50, 24, 53, 51, kind="pass", label="3")          # entrelíneas (al pivote/INT)
-    p.arrow(48, 38, 46, 70, kind="pass", label="4")          # profundidad (al delantero)
+    p.arrow(54, 24, 56, 52, kind="pass", label="3")          # entrelíneas (al INT)
+    p.arrow(44, 42, 47, 70, kind="pass", label="4")          # profundidad (al delantero)
     p.note(50, 14, "4 salidas: 1-2 bandas · 3 entrelíneas · 4 profundidad", c="#fff5cc")
     p.legend(["pass", "own", "rival", "zone"])
     save(p, 3)
@@ -212,7 +214,7 @@ def t06():
     p.arrow(78, 28, 80, 37, kind="run", label="sale al balón")
     # centrales en escalera diagonal cubriendo
     p.player(64, 24, "4", team="own", role="DFC")   # cubre contiguo
-    p.player(52, 20, "5", team="own", role="líbero") # reparte / hombre libre
+    p.player(52, 20, "5", team="own", role="") # reparte / hombre libre (rótulo aparte)
     p.player(40, 18, "6", team="own", role="DFC")
     # carrilero lado débil (izq=3) pinza HACIA DENTRO (no pegado a banda)
     p.player(30, 20, "3", team="own", role="CAR")
@@ -220,8 +222,9 @@ def t06():
     # pivote
     p.player(58, 34, "8", team="own", role="pivote")
     p.player(50, 6, "1", team="own", role="POR")
-    # hombre libre señalado
-    p.zone(44, 15, 60, 25, label="hombre libre (5)", ellipse=True)
+    # hombre libre señalado (rótulo encima de la elipse, sin pisar el dorsal 5)
+    p.zone(44, 14, 60, 24, label="", ellipse=True)
+    p.note(52, 28, "hombre libre (5)", c="#fff5cc")
     # coberturas en escalera (diagonales)
     p.arrow(64, 26, 70, 31, kind="run")
     p.arrow(52, 22, 60, 26, kind="run")
@@ -234,8 +237,9 @@ def t06():
 def t07():
     p = Pitch(title="Tarea 7 — Distancia línea de 5 ↔ medio de 3",
               subtitle="anular el entrelíneas: tapar la franja prohibida", half="def")
-    # franja entrelíneas pintada
-    p.zone(8, 30, 92, 40, label="franja prohibida (entrelíneas)")
+    # franja entrelíneas pintada (rótulo en el borde superior, libre de fichas)
+    p.zone(8, 30, 92, 40, label="")
+    p.note(50, 38.5, "franja prohibida (entrelíneas)", c="#fff5cc")
     # línea de 5
     p.player(15, 22, "3", team="own", role="CAR")
     p.player(33, 22, "6", team="own", role="DFC")
@@ -247,9 +251,9 @@ def t07():
     p.player(35, 47, "10", team="own", role="INT")
     p.player(65, 47, "7", team="own", role="INT")
     p.player(50, 6, "1", team="own", role="POR")
-    # 2 enganches rivales en la franja
-    p.player(40, 35, "10R", team="rival")
-    p.player(62, 35, "10R", team="rival")
+    # 2 enganches rivales en la franja (algo más bajos, sin pisar el rótulo)
+    p.player(38, 33, "10R", team="rival")
+    p.player(64, 33, "10R", team="rival")
     # 2 DC y exteriores que sirven
     p.player(30, 60, "DC", team="rival")
     p.player(70, 60, "DC", team="rival")
@@ -269,29 +273,30 @@ def t07():
 def t08():
     p = Pitch(title="Tarea 8 — Defender el centro lateral con 5",
               subtitle="ocupar los puntos del área ante el centro", half="att")
-    # campo de ataque -> portería arriba (defendemos arriba) -> mejor usar half def con porteria propia
-    # usamos half='att' donde y=100 es portería que defendemos; recolocamos.
-    # balón en banda der que centra (y alta, x alta)
-    p.player(90, 90, "B", team="rival")           # hombre de banda que centra
-    p.ball(90, 90)
-    p.arrow(90, 88, 55, 78, kind="pass", label="centro")
-    # carrilero del lado salta al que centra
-    p.player(84, 84, "2", team="own", role="CAR")
-    p.arrow(84, 85, 89, 89, kind="run", label="salta")
-    # 3 centrales repartiendo primer palo / centro / segundo palo
-    p.player(42, 82, "6", team="own", role="1er palo")
-    p.player(52, 80, "5", team="own", role="centro")
-    p.player(62, 80, "4", team="own", role="2º palo")
-    # carrilero contrario cierra 2º palo
-    p.player(30, 82, "3", team="own", role="CAR")
-    p.arrow(18, 80, 28, 81, kind="run", label="cierra 2º palo")
-    # interior vigila frontal de rechace
-    p.player(50, 66, "8", team="own", role="frontal")
-    p.zone(40, 62, 60, 70, label="frontal rechace", ellipse=True)
-    # atacantes al área
-    p.player(48, 80, "DC", team="rival")
-    p.player(58, 78, "DC", team="rival")
-    p.player(50, 70, "MC", team="rival")          # llega de 2ª linea
+    # half='att': portería propia ARRIBA (y=100). Gran área: y≈83.5..100; área
+    # pequeña: y≈94.5..100; media luna (arco) en y≈83.5. Hay que OCUPAR el área.
+    # balón en banda der que centra (alto, junto al área)
+    p.player(92, 90, "B", team="rival")           # hombre de banda que centra
+    p.ball(92, 90)
+    p.arrow(91, 92, 55, 95, kind="pass", label="centro")
+    # carrilero del lado salta al que centra (cerca de banda, dentro del campo)
+    p.player(83, 86, "2", team="own", role="CAR", role_below=True)
+    p.arrow(85, 87, 90, 89, kind="run", label="salta")
+    # 3 centrales ocupando los palos DENTRO del área grande/pequeña
+    p.player(40, 94, "6", team="own", role="1er palo", role_below=True)
+    p.player(50, 95, "5", team="own", role="centro", role_below=True)
+    p.player(60, 93, "4", team="own", role="2º palo", role_below=True)
+    # carrilero contrario cierra el 2º palo lejano (dentro del área, lado izq)
+    p.player(28, 92, "3", team="own", role="CAR", role_below=True)
+    p.arrow(15, 86, 24, 90, kind="run", label="cierra 2º palo")
+    # interior vigila el frontal del área (media luna) para el rechace
+    p.player(50, 80, "8", team="own")
+    p.note(50, 76, "frontal · 8 (rechace)", c="#fff5cc")
+    p.zone(34, 76, 66, 84, label="", ellipse=True)
+    # atacantes que atacan el centro dentro del área
+    p.player(46, 92, "DC", team="rival")
+    p.player(57, 90, "DC", team="rival")
+    p.player(50, 85, "MC", team="rival")          # llega de 2ª línea a la frontal
     p.legend(["pass", "run", "own", "rival", "zone"])
     save(p, 8)
 
