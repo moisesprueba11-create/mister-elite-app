@@ -65,7 +65,7 @@
   <g transform="translate(64,300)">
     <text x="0" y="0" font-size="17" font-weight="700" fill="#7fd0ff" letter-spacing="6">CURSO DE METODOLOGÍA</text>
     <text x="0" y="80" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="0">RONDOS</text>
-    <text x="0" y="138" font-size="31" font-weight="800" fill="#f7c948">el corazón del entrenamiento</text>
+    <text x="0" y="138" font-size="25" font-weight="800" fill="#f7c948">el corazón del entrenamiento</text>
     <line x1="4" y1="166" x2="120" y2="166" stroke="#f7c948" stroke-width="4"/>
     <text x="0" y="206" font-size="18" font-weight="500" fill="#cdd9e5">Un poco de teoría. 50 rondos para el campo.</text>
   </g>
