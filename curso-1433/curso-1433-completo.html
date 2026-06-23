@@ -1,0 +1,1199 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso 1-4-3-3 · MISTER ÉLITE</title><style>
+:root{--bg:#f5f4f0;--ink:#1a1a18;--dark:#15202b;--muted:#6b6b66;--line:#e3e1da;--accent:#1d6fb8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.layout{display:flex;}
+.side{width:280px;flex-shrink:0;background:var(--dark);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.4rem 0;}
+.side .brand{display:block;font-size:17px;font-weight:800;color:#fff;text-decoration:none;padding:0 1.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:.4rem;}
+.side .brand small{display:block;font-size:11px;font-weight:600;color:#f7c948;letter-spacing:1px;margin-top:2px;}
+.side .sec{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);padding:.9rem 1.4rem .3rem;}
+.side a.nav{display:block;padding:.45rem 1.4rem;color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;border-left:3px solid transparent;}
+.side a.nav:hover{color:#fff;background:rgba(255,255,255,.06);}
+.content{flex:1;min-width:0;display:flex;justify-content:center;}
+.inner{max-width:840px;width:100%;padding:2.4rem 2rem 5rem;}
+section{scroll-margin-top:1rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:2.5rem;}
+section:first-of-type{border-top:none;margin-top:0;}
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:50;background:var(--dark);color:#fff;border:none;font-size:20px;width:42px;height:42px;border-radius:8px;cursor:pointer;}
+img.hero{display:block;width:100%;height:auto;border-radius:12px;margin:0 0 2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+h1{font-size:30px;line-height:1.2;margin:.2rem 0 1rem;letter-spacing:-.02em;}
+h2{font-size:22px;margin:1.8rem 0 .7rem;padding-bottom:.3rem;border-bottom:2px solid var(--line);}
+h3{font-size:17px;margin:1.3rem 0 .4rem;}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:1rem 0 .3rem;}
+p{margin:.55rem 0;} ul,ol{margin:.4rem 0 .8rem 1.4rem;} li{margin:.2rem 0;}
+a{color:var(--accent);} strong{color:#111;}
+code{background:#ecebe6;padding:.1em .35em;border-radius:4px;font-size:.9em;}
+blockquote{border-left:4px solid var(--accent);background:#eef4fa;padding:.7rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;color:#33485c;}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:14px;display:block;overflow-x:auto;}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;}
+th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6;}
+figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.7rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
+figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+@media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
+ .side.open{transform:translateX(0);} #menu-btn{display:block;} .inner{padding:4rem 1.1rem 3rem;} h1{font-size:24px;}}
+</style></head><body>
+<button id="menu-btn">☰</button>
+<div class="layout"><nav class="side"><a class="brand" href="#inicio">⚽ Curso 1-4-3-3<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>
+<div class="sec">Curso</div>
+<a class="nav" href="#inicio">Inicio</a>
+<div class="sec">Teoría</div>
+<a class="nav" href="#m01">M01 · Fundamentos</a>
+<a class="nav" href="#m02">M02 · Fase defensiva</a>
+<a class="nav" href="#m03">M03 · Fase ofensiva</a>
+<a class="nav" href="#m04">M04 · Transiciones y ABP</a>
+<div class="sec">Práctica</div>
+<a class="nav" href="#plan">Plan de sesiones</a>
+<a class="nav" href="#b1">B1 · Salida con pivote (T1–5)</a>
+<a class="nav" href="#b2">B2 · Mediocampo de 3 (T6–9)</a>
+<a class="nav" href="#b3">B3 · Pressing del tridente (T10–13)</a>
+<a class="nav" href="#b4">B4 · Tridente y amplitud (T14–18)</a>
+<a class="nav" href="#b5">B5 · Llegada y finalización (T19–22)</a>
+<a class="nav" href="#b6">B6 · Transiciones y partido (T23–26)</a></nav>
+<main class="content"><div class="inner"><section id="inicio"><div class="hero"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" font-family="Segoe UI,Arial,sans-serif">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#0c1b2a"/><stop offset="0.55" stop-color="#0f2438"/><stop offset="1" stop-color="#08131f"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c948"/><stop offset="1" stop-color="#e0a526"/></linearGradient>
+ <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6"><stop offset="0" stop-color="#1d6fb8" stop-opacity="0.35"/><stop offset="1" stop-color="#1d6fb8" stop-opacity="0"/></radialGradient>
+ <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f7c948"/></marker>
+</defs>
+<rect width="794" height="1123" fill="url(#bg)"/><rect width="794" height="1123" fill="url(#glow)"/>
+<g opacity="0.16" stroke="#ffffff" stroke-width="2" fill="none">
+ <rect x="120" y="470" width="554" height="600"/><line x1="120" y1="770" x2="674" y2="770"/>
+ <circle cx="397" cy="770" r="74"/><circle cx="397" cy="770" r="3" fill="#fff"/>
+ <rect x="277" y="470" width="240" height="92"/><rect x="337" y="470" width="120" height="36"/>
+ <rect x="277" y="978" width="240" height="92"/><rect x="337" y="1034" width="120" height="36"/>
+</g>
+<g opacity="0.92"><line x1="165" y1="928" x2="397" y2="1012" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="320" y1="928" x2="397" y2="1012" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="474" y1="928" x2="397" y2="1012" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="629" y1="928" x2="397" y2="1012" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="165" y1="770" x2="165" y2="928" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="397" y1="770" x2="474" y2="928" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="629" y1="770" x2="629" y2="928" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="165" y1="612" x2="165" y2="770" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="397" y1="612" x2="397" y2="770" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="629" y1="612" x2="629" y2="770" stroke="#f7c948" stroke-width="1.6" opacity="0.45" stroke-dasharray="5 5"/>
+<line x1="165" y1="590" x2="165" y2="520" stroke="#f7c948" stroke-width="2.4" marker-end="url(#ar)" opacity="0.85"/>
+<line x1="397" y1="590" x2="397" y2="520" stroke="#f7c948" stroke-width="2.4" marker-end="url(#ar)" opacity="0.85"/>
+<line x1="629" y1="590" x2="629" y2="520" stroke="#f7c948" stroke-width="2.4" marker-end="url(#ar)" opacity="0.85"/>
+<g><circle cx="165" cy="928" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="165" y="933" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text></g>
+<g><circle cx="320" cy="928" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="320" y="933" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">5</text></g>
+<g><circle cx="474" cy="928" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="474" y="933" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text></g>
+<g><circle cx="629" cy="928" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="629" y="933" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text></g>
+<g><circle cx="165" cy="770" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="165" y="775" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">10</text></g>
+<g><circle cx="397" cy="770" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="397" y="775" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">6</text></g>
+<g><circle cx="629" cy="770" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="629" y="775" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">8</text></g>
+<g><circle cx="165" cy="612" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="165" y="617" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">11</text></g>
+<g><circle cx="397" cy="612" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="397" y="617" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">9</text></g>
+<g><circle cx="629" cy="612" r="18" fill="#c62828" stroke="#f7c948" stroke-width="2.5"/><text x="629" y="617" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">7</text></g>
+<g><circle cx="397" cy="1012" r="17" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/><text x="397" y="1017" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text></g></g>
+<rect x="0" y="0" width="794" height="8" fill="url(#gold)"/>
+<g transform="translate(64,92)"><rect width="46" height="46" rx="10" fill="url(#gold)"/>
+ <text x="23" y="32" font-size="28" font-weight="900" fill="#0c1b2a" text-anchor="middle">ME</text>
+ <text x="62" y="22" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="3">MISTER ÉLITE</text>
+ <text x="62" y="41" font-size="12.5" font-weight="600" fill="#f7c948" letter-spacing="2">ACADEMIA DE ENTRENADORES · MOISÉS DÍAZ</text></g>
+<g transform="translate(64,300)">
+ <text x="0" y="0" font-size="17" font-weight="700" fill="#7fd0ff" letter-spacing="6">CURSO TÁCTICO PROFESIONAL</text>
+ <text x="0" y="78" font-size="92" font-weight="900" fill="#ffffff" letter-spacing="-2">1-4-3-3</text>
+ <text x="0" y="136" font-size="33" font-weight="800" fill="#f7c948">del concepto al campo</text>
+ <line x1="4" y1="166" x2="120" y2="166" stroke="#f7c948" stroke-width="4"/>
+ <text x="0" y="206" font-size="18" font-weight="500" fill="#cdd9e5">Poca teoría. Mucha aplicación práctica.</text></g>
+<g><g transform="translate(470,318)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">4</text><text x="18" y="68" font-size="12" fill="#cdd9e5">módulos de teoría</text></g><g transform="translate(632,318)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">26</text><text x="18" y="68" font-size="12" fill="#cdd9e5">tareas de campo</text></g><g transform="translate(470,414)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">+40</text><text x="18" y="68" font-size="12" fill="#cdd9e5">pizarras tácticas</text></g><g transform="translate(632,414)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">2</text><text x="18" y="68" font-size="12" fill="#cdd9e5">microciclos modelo</text></g></g>
+<rect x="0" y="1080" width="794" height="43" fill="#08131f"/>
+<text x="64" y="1107" font-size="13" font-weight="600" fill="#8aa0b6">Salida · Pivote · Interiores · Tridente · Presión · Transiciones</text>
+<text x="730" y="1107" font-size="13" font-weight="800" fill="#f7c948" text-anchor="end">MISTER ÉLITE</text>
+<rect x="0" y="1115" width="794" height="8" fill="url(#gold)"/>
+</svg></div><h1>Sistema 1-4-3-3: del concepto al campo</h1>
+<p><strong>Curso táctico — MISTER ÉLITE — Moisés Díaz</strong></p>
+<blockquote>
+<p>Filosofía del curso: <strong>poca teoría, mucha aplicación práctica.</strong> Cuatro módulos breves para entender el sistema y un banco de <strong>26 tareas de campo</strong> para entrenarlo. Cada tarea y cada concepto teórico clave llevan su pizarra.</p>
+</blockquote>
+<hr />
+<h2>A quién va dirigido</h2>
+<p>Entrenadores de fútbol formativo, amateur y senior que quieren implantar el <strong>1-4-3-3</strong> (línea de 4 + mediocampo de 3 + tridente con extremos reales) con criterio moderno: salida construida, presión orientada del tridente, amplitud por bandas y transformación a estructuras de ataque/repliegue. No exige material especial: conos, petos, mini-porterías y balones.</p>
+<h2>Objetivos del curso</h2>
+<ol>
+<li>Entender la <strong>estructura</strong> del 1-4-3-3 y sus transformaciones con balón (1-3-2-5 / 1-2-3-5) y sin balón (1-4-5-1 / 1-4-1-4-1).</li>
+<li>Dominar los <strong>roles</strong> por demarcación en las cuatro fases del juego.</li>
+<li>Aplicar la <strong>presión orientada del tridente</strong> con gatillos claros y coberturas.</li>
+<li>Resolver la <strong>salida</strong> ante 1 y 2 puntas (rombo y salida en 3).</li>
+<li>Explotar la <strong>amplitud del tridente</strong> y la llegada de los interiores al área.</li>
+<li>Decidir bien la <strong>transición</strong> (contrapressing vs repliegue) en 3-5 s.</li>
+<li>Llevar todo al campo con <strong>26 tareas medibles</strong> y un plan de sesiones de ejemplo.</li>
+</ol>
+<h2>Cómo está organizado</h2>
+<ul>
+<li><strong>Módulos de teoría</strong> (<code>modulos/</code>): concisos, cada uno termina con <em>Ideas clave</em> y <em>Errores comunes</em>.</li>
+<li><strong>Ejercicios</strong> (<code>ejercicios/</code>): un archivo por bloque del banco, con fichas uniformes (Objetivo · Organización · Desarrollo · Provocaciones · Variantes · Coaching · Duración/Categoría) + un plan de 2 microciclos.</li>
+<li><strong>Gráficos</strong> (<code>graficos/</code>): una pizarra por tarea (<code>tarea-01..26.svg</code>) y diagramas de teoría (<code>teoria-NN-slug.svg</code>). Índice en <code>graficos/PEDIDOS.md</code>.</li>
+</ul>
+<h2>Índice</h2>
+<h3>Teoría</h3>
+<ul>
+<li><a href="#m01">Módulo 01 · Fundamentos y estructura</a></li>
+<li><a href="#m02">Módulo 02 · Fase defensiva</a></li>
+<li><a href="#m03">Módulo 03 · Fase ofensiva</a></li>
+<li><a href="#m04">Módulo 04 · Transiciones y balón parado</a></li>
+</ul>
+<h3>Práctica</h3>
+<ul>
+<li><a href="#plan">Plan de sesiones (2 microciclos)</a></li>
+<li><a href="#b1">Bloque 1 · Salida con 2 centrales + pivote (T1–T5)</a></li>
+<li><a href="#b2">Bloque 2 · Mediocampo de 3 (T6–T9)</a></li>
+<li><a href="#b3">Bloque 3 · Pressing del tridente + gatillos (T10–T13)</a></li>
+<li><a href="#b4">Bloque 4 · Tridente y amplitud (T14–T18)</a></li>
+<li><a href="#b5">Bloque 5 · Llegada e interiorización / finalización (T19–T22)</a></li>
+<li><a href="#b6">Bloque 6 · Transiciones + partido condicionado (T23–T26)</a></li>
+</ul>
+<h3>Recursos</h3>
+<ul>
+<li>Índice de diagramas (PEDIDOS)</li>
+</ul>
+<hr />
+<h2>Convención de dorsales y posiciones</h2>
+<p>Estructura: <strong>portero + 4 defensas (2 centrales + 2 laterales) + mediocampo de 3 (1 pivote + 2 interiores) + tridente (2 extremos + 1 delantero).</strong> Esta nomenclatura es <strong>única</strong> en todo el curso (módulos, ejercicios y pizarras).</p>
+<table>
+<thead>
+<tr>
+<th>Dorsal</th>
+<th>Posición</th>
+<th>Abrev.</th>
+<th>Matiz de rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Portero</td>
+<td>POR</td>
+<td>Portero-líbero, inicia el juego, cobertura a la espalda de la defensa</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lateral derecho</td>
+<td>LD</td>
+<td>Defiende el carril derecho y se proyecta dando amplitud</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Lateral izquierdo</td>
+<td>LI</td>
+<td>Defiende el carril izquierdo y se proyecta dando amplitud</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Central derecho</td>
+<td>DFC</td>
+<td>Marca/cobertura; saca el balón por su lado</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Central izquierdo</td>
+<td>DFC</td>
+<td>Marca/cobertura; saca el balón por su lado</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Mediocentro (pivote)</td>
+<td>MC</td>
+<td>Ancla del mediocampo, protege a la defensa, primera salida y equilibrio</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Interior derecho</td>
+<td>MC</td>
+<td>Box-to-box: recibe entre líneas, conduce y llega al área</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Interior izquierdo</td>
+<td>MC</td>
+<td>El más creativo: juega entre líneas, asocia y asiste</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Extremo derecho</td>
+<td>ED</td>
+<td>Amplitud y desborde o pisar por dentro; ayuda al lateral en defensa</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Delantero centro</td>
+<td>DC</td>
+<td>Referencia ofensiva: fija a los centrales, apoya y ataca el área</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Extremo izquierdo</td>
+<td>EI</td>
+<td>Amplitud y desborde o pisar por dentro; ayuda al lateral en defensa</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notas de nomenclatura:</strong> los laterales (LD/LI) dan la amplitud en ataque para que los extremos pisen por dentro. El mediocampo de 3 se orienta con <strong>vértice abajo ▽</strong> (un pivote: 6 solo) o <strong>vértice arriba △</strong> (doble pivote 6+8 y enganche 10). El <strong>6 nunca abandona el eje sin cobertura</strong>. Defensivamente repliega a <strong>1-4-5-1 / 1-4-1-4-1</strong>; con balón se transforma a <strong>1-3-2-5 / 1-2-3-5</strong>. Usamos <strong>EI/ED</strong> (nunca "MI/MD"). En el plan de sesiones, <code>MD</code> = <em>matchday</em> (MD-4 … MD), nunca posición.</p>
+<hr />
+<h2>Distancias de referencia (estándar único del curso)</h2>
+<ul>
+<li><strong>Distancia entre líneas (vertical, línea a línea): 10–12 m</strong> — techo de referencia (defensa↔medio y medio↔ataque). Si se supera, aparece el espacio entre líneas que el sistema quiere proteger.</li>
+<li><strong>Compactación vertical del bloque (primera a última línea): &lt; 30–35 m.</strong></li>
+<li><strong>Anchura con balón:</strong> extremos pegados a la cal → <strong>ancho máximo de campo</strong> para estirar a la defensa rival.</li>
+<li><strong>Triángulo del medio (interior–pivote–interior):</strong> lados de <strong>8–12 m</strong>.</li>
+</ul>
+<hr />
+<h2>Leyenda de símbolos de las pizarras</h2>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Círculo azul con dorsal</td>
+<td>Jugador propio (own)</td>
+</tr>
+<tr>
+<td>Círculo rojo con dorsal</td>
+<td>Jugador rival</td>
+</tr>
+<tr>
+<td>Círculo naranja</td>
+<td>Jugador neutral / comodín</td>
+</tr>
+<tr>
+<td>Círculo blanco pequeño</td>
+<td>Balón</td>
+</tr>
+<tr>
+<td>Flecha amarilla discontinua</td>
+<td>Pase</td>
+</tr>
+<tr>
+<td>Flecha blanca</td>
+<td>Desplazamiento / carrera sin balón (run)</td>
+</tr>
+<tr>
+<td>Flecha blanca ondulada</td>
+<td>Conducción / regate (dribble)</td>
+</tr>
+<tr>
+<td>Flecha celeste</td>
+<td>Conducción de progresión (drive)</td>
+</tr>
+<tr>
+<td>Línea roja</td>
+<td>Bloqueo / corte real (block)</td>
+</tr>
+<tr>
+<td>Zona sombreada amarilla</td>
+<td>Zona de referencia (carril, trampa, área de trabajo)</td>
+</tr>
+<tr>
+<td>Números 1-2-3</td>
+<td>Orden de la secuencia</td>
+</tr>
+</tbody>
+</table>
+<p>Pie de marca <strong>MISTER ÉLITE — Moisés Díaz</strong> en cada pizarra.</p>
+<hr />
+<h2>Glosario</h2>
+<ul>
+<li><strong>Pivote (6):</strong> mediocentro ancla por delante de la defensa; bisagra entre fases.</li>
+<li><strong>Interiores (8/10):</strong> mediocentros de los medio-espacios; reciben entre líneas y llegan al área.</li>
+<li><strong>Tridente:</strong> los tres de arriba (ED 7 · DC 9 · EI 11).</li>
+<li><strong>Medio-espacio / semiespacio:</strong> carril intermedio entre banda y centro.</li>
+<li><strong>Cinco carriles:</strong> banda izq · semiespacio izq · centro · semiespacio der · banda der.</li>
+<li><strong>Vértice abajo (▽):</strong> un pivote (6 solo, interiores adelantados).</li>
+<li><strong>Vértice arriba (△):</strong> doble pivote (6+8) + enganche (10); el "4-3-3 falso".</li>
+<li><strong>1-3-2-5 / 1-2-3-5:</strong> estructuras de ataque con cinco hombres en la última línea.</li>
+<li><strong>1-4-5-1 / 1-4-1-4-1:</strong> estructuras de repliegue (extremos a la línea de medios).</li>
+<li><strong>Gatillo (trigger):</strong> señal visual que dispara la presión (p. ej. balón al lateral rival).</li>
+<li><strong>Contrapressing:</strong> presión inmediata tras la pérdida (ventana de 3-5 s).</li>
+<li><strong>Basculación:</strong> desplazamiento del bloque hacia el lado del balón.</li>
+<li><strong>Tercer hombre:</strong> A juega a B (presionado) y B descarga a C que llega libre.</li>
+<li><strong>Desdoble (overlap):</strong> el lateral sobrepasa al extremo por fuera; <strong>underlap</strong> = por dentro.</li>
+<li><strong>Salida lavolpiana:</strong> salida en 3 con el pivote bajando entre los centrales.</li>
+<li><strong>xG:</strong> goles esperados (calidad de ocasión).</li>
+<li><strong>MD (matchday):</strong> referencia temporal del microciclo respecto al partido (MD-4 … MD).</li>
+<li><strong>Categoría de carga:</strong> <strong>F</strong> = fundamentación · <strong>A</strong> = activación/específica · <strong>S</strong> = subprincipio competitivo.</li>
+</ul></section><section id="m01"><h1>Módulo 01 · Fundamentos y estructura del 1-4-3-3</h1>
+<blockquote>
+<p>Nomenclatura del curso: POR 1 · LD 2 · LI 3 · DFC 4/5 · pivote 6 · interiores 8/10 · ED 7 · DC 9 · EI 11. Línea de 4 (2 DFC + LD/LI). Mediocampo de 3 = 1 pivote + 2 interiores. Tridente = 2 extremos + 1 delantero. <strong>SÍ hay extremos.</strong></p>
+</blockquote>
+<p>El 1-4-3-3 reparte 11 jugadores en cuatro bloques: portero, línea de cuatro, triángulo de tres en el medio y tridente arriba. Su seña de identidad es <strong>ocupar los cinco carriles</strong> y mantener tres alturas escalonadas: eso da líneas de pase cortas en diagonal y permite progresar por dentro o por fuera.</p>
+<hr />
+<h2>1. Estructura base y alturas de referencia</h2>
+<ul>
+<li><strong>Línea defensiva (4):</strong> DFC 4 y 5 por dentro, LD 2 y LI 3 abriendo el campo. Altura de partida en posesión propia: 25–35 m desde portería; con bloque alto, sobre el círculo central.</li>
+<li><strong>Mediocampo (3):</strong> pivote 6 por delante de los centrales (35–45 m); interiores 8/10 en los medio-espacios, 10–12 m por delante del 6.</li>
+<li><strong>Tridente (3):</strong> ED 7 y EI 11 pegados a la cal (amplitud máxima), DC 9 como referencia central fijando a los DFC rivales.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-01-estructura-base.svg]</em></figure></p>
+<h3>Distancias de referencia (estándar único — idea fuerza, no dogma)</h3>
+<ul>
+<li><strong>Entre líneas (vertical): 10–12 m</strong> (techo de referencia, defensa↔medio y medio↔ataque). Más cerca = más control y rondos; si se supera, aparece el espacio entre líneas que el sistema quiere proteger.</li>
+<li><strong>Compactación vertical del bloque: &lt; 30–35 m.</strong></li>
+<li><strong>Anchura con balón:</strong> extremos en banda → ancho máximo de campo.</li>
+<li><strong>Triángulo interior–pivote–interior:</strong> lados de <strong>8–12 m</strong>.</li>
+</ul>
+<h2>2. Los cinco carriles</h2>
+<p>Regla de oro de ocupación: <strong>nunca dos jugadores en el mismo carril a la misma altura</strong>; máximo <strong>2 por columna vertical</strong> y <strong>3 por línea horizontal</strong>. Los extremos sostienen la anchura máxima; cuando un extremo pisa por dentro, el lateral de ese lado da la amplitud (y viceversa).</p>
+<p><figure class="diag"><em>[falta teoria-02-cinco-carriles.svg]</em></figure></p>
+<h2>3. Orientación del triángulo del medio (clave del sistema)</h2>
+<blockquote>
+<p>Convención: el <strong>vértice</strong> es el jugador solitario; los otros dos forman la base. El triángulo se nombra por dónde queda ese vértice respecto a la portería rival.</p>
+</blockquote>
+<ul>
+<li><strong>Vértice abajo ▽ (un pivote):</strong> 6 solo por delante de la defensa (vértice atrasado), 8 y 10 más adelantados formando la base alta. Da dos interiores llegadores y un medio más ofensivo; deja al 6 más expuesto.</li>
+<li><strong>Vértice arriba △ (doble pivote + enganche):</strong> 6 y 8 forman el doble pivote (base atrasada), 10 como enganche entre líneas (vértice adelantado). Más solidez y dos jugadores de equilibrio; emparenta con el 1-4-2-3-1. Es el <strong>"4-3-3 falso"</strong>.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-03-triangulo-vertices.svg]</em></figure></p>
+<h2>4. Transformación con balón (1-3-2-5 / 1-2-3-5)</h2>
+<blockquote>
+<p>Notación coherente: el "1" es el portero. La última línea SIEMPRE ocupa los <strong>cinco carriles</strong> (ED + EI en banda, 8 + 10 en medio-espacios, 9 en eje).</p>
+</blockquote>
+<ul>
+<li><strong>1-3-2-5 (la más usada):</strong> línea de <strong>3 atrás = 2 DFC + un tercer hombre</strong> (el <strong>pivote 6 que baja</strong> entre los centrales, o un <strong>lateral que invierte</strong> hacia dentro). Por delante, <strong>doble pivote</strong> con los dos restantes de ese trío (p. ej. 6 + interior, o lateral invertido + 6). Arriba, los cinco.</li>
+<li><strong>1-2-3-5:</strong> los <strong>dos DFC</strong> quedan de salida (línea de 2); el medio de 3 lo forman <strong>6 + dos laterales invertidos</strong> (o 6 + interior + lateral). Más agresiva; exige cobertura del 6. Variante de laterales invertidos asociada a Guardiola.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-04-transformacion-1325.svg]</em></figure></p>
+<h2>5. Repliegue sin balón (1-4-5-1 / 1-4-1-4-1)</h2>
+<ul>
+<li><strong>1-4-5-1:</strong> los extremos 7 y 11 bajan a la línea de medios → cinco en el medio + 9 como única referencia arriba. Bloque medio/bajo que cierra el centro; ideal contra equipos de banda.</li>
+<li><strong>1-4-1-4-1:</strong> el 6 anclado por delante de la defensa y 8-10-7-11 en la línea de cuatro medios. Útil para defender por delante del área.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-05-repliegue-1451.svg]</em></figure></p>
+<h2>6. Variantes y perfiles</h2>
+<table>
+<thead>
+<tr>
+<th>Eje</th>
+<th>Opción A</th>
+<th>Opción B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pivote</strong></td>
+<td>Un pivote (▽): más ataque, más riesgo al lado del 6.</td>
+<td>Doble pivote + enganche (△): el "4-3-3 falso", más control.</td>
+</tr>
+<tr>
+<td><strong>Interiores</strong></td>
+<td>Dos llegadores (box-to-box) en alternancia.</td>
+<td>Uno posicional (sostén) + uno llegador: equilibrio en transición.</td>
+</tr>
+<tr>
+<td><strong>Extremos</strong></td>
+<td>Abiertos a pie natural: desbordan por fuera y centran.</td>
+<td>A pie cambiado (interiores): cortan dentro a rematar; el lateral da la amplitud (modelo Klopp).</td>
+</tr>
+<tr>
+<td><strong>Delantero</strong></td>
+<td>9 referencia: fija centrales, juego de espaldas, remate.</td>
+<td>Falso 9 / asociativo: baja a generar superioridad y libera los carriles para los extremos.</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>4-3-3 ↔ 4-2-3-1</strong> es un continuo: con el 10 muy adelantado y 6+8 fijos, el 4-3-3 △ "es" un 4-2-3-1.</p>
+<p><figure class="diag"><em>[falta teoria-06-variantes-extremos.svg]</em></figure></p>
+<h3>Perfiles idóneos por línea</h3>
+<ul>
+<li><strong>POR 1:</strong> portero-líbero; inicia con los pies, cubre la espalda de la línea alta.</li>
+<li><strong>DFC 4/5:</strong> centrales que <strong>sacan el balón</strong> con criterio (pase y conducción para romper presión), fuertes en duelo. Uno preferiblemente zurdo (5) para equilibrar la salida.</li>
+<li><strong>LD/LI 2/3:</strong> laterales con <strong>recorrido</strong> (subir y bajar 90'), capaces de dar amplitud por fuera o <strong>invertir</strong> hacia dentro. Buen centro y 1v1 defensivo.</li>
+<li><strong>Pivote 6:</strong> <strong>ancla</strong> posicional, lectura de coberturas, orientación para girar, primera salida limpia. No abandona el eje.</li>
+<li><strong>Interior 8:</strong> <strong>box-to-box</strong>: recibe entre líneas, conduce, llega al área y ayuda en el repliegue.</li>
+<li><strong>Interior 10:</strong> <strong>creativo/posicional</strong>: juega entre líneas, asocia, asiste y administra el ritmo.</li>
+<li><strong>ED 7 / EI 11:</strong> <strong>verticales y desequilibrantes</strong> en el 1v1; a pie natural para desborde y centro, a pie cambiado para remate por dentro. Ayudan al lateral en defensa.</li>
+<li><strong>DC 9:</strong> <strong>referencia</strong> (fija centrales, juego de espaldas, remate) o <strong>asociativo / falso 9</strong> (baja a generar superioridad).</li>
+</ul>
+<h2>7. Ventajas, desventajas y enfrentamientos</h2>
+<p><strong>Ventajas:</strong> superioridad en el medio (3) frente a sistemas de dos centrales puros; amplitud natural del tridente; plasticidad para mutar a 1-3-2-5/1-2-3-5 con balón y a 1-4-5-1/1-4-1-4-1 sin balón; triángulos por todo el campo.</p>
+<p><strong>Desventajas:</strong> el <strong>espacio al lado del 6</strong> aislado es vulnerable a overloads; la <strong>espalda de los laterales</strong> proyectados queda expuesta al contraataque; exige perfiles muy específicos.</p>
+<p><strong>Enfrentamientos:</strong>
+- <strong>vs 1-4-4-2:</strong> 3v2 en el medio → controlas el centro y sacas a un interior libre entre líneas; cuida las dos puntas atacando la espalda de los laterales.
+- <strong>vs 1-4-2-3-1:</strong> medio igualado; gana el duelo de pivotes y ataca al 10 rival cuando defiende.
+- <strong>vs 1-3-5-2:</strong> el rival iguala/supera en el centro; explota la <strong>amplitud del tridente</strong> (extremos atacan a los carrileros y la espalda de los centrales laterales del 3). Riesgo: sus dos puntas fijan a tus DFC y el espacio al lado del 6.</p>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El 1-4-3-3 vive de <strong>ocupar los cinco carriles</strong> con tres alturas escalonadas y triángulos cortos.</li>
+<li>Es la <strong>misma plantilla</strong> que muta a <strong>1-3-2-5/1-2-3-5</strong> con balón y a <strong>1-4-5-1/1-4-1-4-1</strong> sin balón.</li>
+<li>La orientación del triángulo (▽ un pivote / △ doble pivote + enganche) define cuán ofensivo o controlador es el medio.</li>
+<li>El <strong>6 es innegociable</strong>: no abandona el eje sin cobertura.</li>
+<li>Distancia entre líneas <strong>10–12 m</strong>; bloque vertical <strong>&lt; 30–35 m</strong>.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Confundir el sistema con un 4-4-2 sin extremos: aquí <strong>hay extremos</strong> (7 y 11), que dan la anchura.</li>
+<li>Subir los dos interiores a la vez y dejar al 6 en 1v1 (regla: uno arriba, uno abajo).</li>
+<li>Amontonar extremo y lateral en el mismo carril (rompe la regla de los cinco carriles).</li>
+<li>Estirar el bloque más de 30–35 m y regalar el espacio entre líneas.</li>
+<li>Usar la salida en 3 bajando los dos laterales y el pivote a la vez: el equipo se alarga y se expone.</li>
+</ul></section><section id="m02"><h1>Módulo 02 · Fase defensiva del 1-4-3-3</h1>
+<blockquote>
+<p>Nomenclatura: POR 1 · LD 2 · LI 3 · DFC 4/5 · pivote 6 · interiores 8/10 · ED 7 · DC 9 · EI 11.</p>
+</blockquote>
+<p>El 1-4-3-3 defiende con <strong>tres líneas horizontales</strong> que, al replegar, se convierten en <strong>dos líneas cerradas</strong> (1-4-5-1 / 1-4-1-4-1) bajando los extremos 7 y 11. Es un sistema de <strong>densidad central</strong> (medio de 3 + 9) y <strong>presión orientada</strong>. Sus dos talones de Aquiles: el <strong>espacio a la espalda de los laterales</strong> y el <strong>1v1 del pivote 6</strong> cuando los interiores abandonan el eje.</p>
+<hr />
+<h2>1. Roles defensivos por demarcación</h2>
+<ul>
+<li><strong>POR 1:</strong> defiende el espacio a la espalda de la línea de 4 (segunda barrida) con bloque alto/medio; manda el achique y el fuera de juego con la voz; 1v1 si se filtra la espalda de los laterales.</li>
+<li><strong>DFC 4 y 5:</strong> pareja de <strong>marca/cobertura</strong> (uno sale al 9 rival, el otro cae en diagonal); defienden el centro y la zona de remate; coordinan achique y fuera de juego con el POR. El del lado fuerte sigue al delantero, el del lado débil vigila el segundo atacante y el balón filtrado.</li>
+<li><strong>LD 2 / LI 3:</strong> <strong>1v1 contra el extremo rival</strong> (defender de costado, orientar a la línea); vigilan el intervalo lateral-central; saltan al lateral rival como gatillo cuando el tridente bascula; repliegan a la línea de 4 cerrada (el lado débil cierra a "tercer central").</li>
+<li><strong>MC 6:</strong> <strong>tapa el espacio entre líneas</strong> (en la sombra del 9 rival); <strong>cobertura permanente</strong> de la defensa (si un lateral salta o un central se rompe, baja a tapar como tercer central temporal); ancla del contrapressing. No abandona el eje sin relevo de un interior.</li>
+<li><strong>MC 8 / 10:</strong> <strong>doble esfuerzo</strong> (saltan al pivote/central rival arriba y basculan atrás a defender el ancho); cierran carril interior y semiespacio; <strong>relevan al 6</strong> si este sale; al replegar forman la línea de 5.</li>
+<li><strong>Tridente 7-9-11:</strong> el <strong>9</strong> es primer presor y <strong>orienta</strong> la salida tapando el pase al pivote rival; los <strong>extremos</strong> parten cerrando el interior y <strong>saltan al lateral</strong> (gatillo). Al perder la posición alta, <strong>bajan a la línea de medios</strong> (1-4-5-1) y ayudan al lateral. Primer eslabón del contrapressing.</li>
+</ul>
+<hr />
+<h2>2. Bloques: alto / medio / bajo</h2>
+<table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Línea de 4</th>
+<th>Primera línea de presión</th>
+<th>Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alto</strong></td>
+<td>~40-50 m</td>
+<td>~60-75 m (campo rival)</td>
+<td>Robar arriba, achicar el campo; exige fuera de juego y POR-líbero.</td>
+</tr>
+<tr>
+<td><strong>Medio</strong></td>
+<td>~30-40 m</td>
+<td>~50-60 m (centro del campo)</td>
+<td>Replegado pero activo; invita a la salida y activa gatillos al pasar el medio. <strong>Bloque por defecto del 4-3-3.</strong></td>
+</tr>
+<tr>
+<td><strong>Bajo</strong></td>
+<td>~18-25 m (borde del área)</td>
+<td>9 adelantado; resto muy junto, ~30-40 m</td>
+<td>Defender el área y la profundidad, salir al contragolpe. Entre líneas ≤ 10-12 m.</td>
+</tr>
+</tbody>
+</table>
+<p><figure class="diag"><em>[falta teoria-07-bloques.svg]</em></figure></p>
+<h3>Repliegue a 1-4-5-1 / 1-4-1-4-1</h3>
+<p>Cuando no hay opción de robo arriba, los extremos 7 y 11 <strong>bajan a la línea de medios</strong>:
+- <strong>1-4-1-4-1:</strong> el 6 queda como único pivote por delante de la defensa; 8-7 y 10-11 forman la línea de 4 medios. Protege el centro y filtra al área.
+- <strong>1-4-5-1:</strong> los cinco medios juntos en un bloque plano; el 9 queda arriba como salida.
+- <strong>Regla:</strong> nunca repliegan ambos extremos a la vez si solo hay un foco de balón; primero baja el del lado fuerte; el del lado débil cierra el carril central.</p>
+<hr />
+<h2>3. Pressing y contrapressing</h2>
+<h3>Presión alta del tridente — gatillos</h3>
+<p>Estructura: el <strong>9</strong> presiona a la pareja de centrales; los <strong>extremos 7/11</strong> cubren a los laterales rivales; el <strong>6</strong> vigila al pivote contrario; los <strong>interiores 8/10</strong> vigilan a los interiores rivales (emparejamiento casi hombre a hombre con coberturas escalonadas).</p>
+<ol>
+<li><strong>9 orienta:</strong> el 9 ataca a un central tapando con su cuerpo el pase al pivote rival → cierra un lado (presión <strong>orientada</strong>, no frontal).</li>
+<li><strong>Extremo salta al lateral:</strong> cuando el central juega a su lateral, el extremo de ese lado salta a presionar; señal de "lado fuerte".</li>
+<li><strong>Interior salta al pivote:</strong> si el balón llega al pivote rival, el interior del lado del balón salta; el <strong>6 cubre</strong> el hueco.</li>
+<li><strong>Pase a presión:</strong> cualquier pase lento, atrás o de espaldas → todo el bloque aprieta una línea.</li>
+</ol>
+<p><strong>Coberturas durante la presión:</strong> cuando el extremo salta al lateral, el <strong>lateral propio</strong> sube un peldaño a vigilar al extremo rival y el <strong>interior</strong> cubre por dentro. Cuando el interior salta al pivote, el <strong>6 baja al eje</strong> y el otro interior estrecha. El <strong>lado débil bascula hacia dentro</strong> (extremo + interior + lateral cerrados) dejando el flanco lejano como "zona trampa".</p>
+<p><figure class="diag"><em>[falta teoria-08-pressing-gatillos.svg]</em></figure></p>
+<h3>Contrapressing (presión tras pérdida)</h3>
+<ul>
+<li><strong>5 segundos:</strong> los más cercanos (tridente + interior) cierran al portador y las líneas de pase cortas; el resto sube para comprimir.</li>
+<li>El <strong>6</strong> orienta la reacción y tapa el pase de salida al centro; los <strong>interiores</strong> saltan a los apoyos próximos.</li>
+<li>La <strong>línea de 4 sube</strong> sincronizada (no se repliega: presiona) para dejar al rival en fuera de juego.</li>
+<li>Si no se recupera en la ventana → <strong>falta táctica</strong> o repliegue ordenado al bloque medio.</li>
+</ul>
+<hr />
+<h2>4. Basculación</h2>
+<p><strong>Mediocampo de 3:</strong> bascula en bloque hacia el lado del balón formando un triángulo móvil. El interior del lado del balón sale/presiona; el <strong>6 se desliza</strong> al carril central-lado del balón; el interior del lado débil se estrecha hacia el centro (no se queda en su banda). Distancias internas cortas (8-12 m).</p>
+<p><strong>Línea de 4:</strong> bascula en diagonal (escalera). El lateral del lado del balón sube; los dos centrales se deslizan (uno marca, otro cubre); el <strong>lateral del lado débil cierra hacia dentro</strong> casi como tercer central.</p>
+<p><strong>Sincronía:</strong> ambas líneas se mueven juntas; nunca se separan más de <strong>10-12 m</strong> (si no, aparece el espacio entre líneas).</p>
+<p><figure class="diag"><em>[falta teoria-09-basculacion.svg]</em></figure></p>
+<hr />
+<h2>5. Espalda de los laterales — el punto débil y sus soluciones</h2>
+<p>El espacio a la espalda del lateral que sube y el 1v1 del 6 son las dos zonas a proteger:</p>
+<ol>
+<li><strong>Cobertura escalonada del lado contrario:</strong> cuando un lateral sube, el central de ese lado ensancha, el interior del lado débil vigila la espalda y el lateral contrario cierra a tercer central (defensa en 3+1 al perder).</li>
+<li><strong>Subida alterna de interiores:</strong> regla "<strong>un interior arriba, un interior abajo</strong>" — solo uno llega al área; el otro queda al lado del 6.</li>
+<li><strong>Pivote que cae a tercer central</strong> en salida y, al perder, <strong>repliegue del 6</strong> a proteger la espalda del lateral subido.</li>
+<li><strong>Repliegue inmediato del extremo</strong> sobre su lateral (regla del 1-4-5-1): gatillo = pérdida o rival superando la primera línea.</li>
+<li><strong>Falta táctica / temporización</strong> del 6 o del interior en el carril central tras la pérdida.</li>
+<li><strong>Bloque medio por defecto</strong> (no alto permanente) contra rivales verticales con extremos rápidos.</li>
+</ol>
+<p><figure class="diag"><em>[falta teoria-10-espalda-laterales.svg]</em></figure></p>
+<hr />
+<h2>6. Achique, fuera de juego y defensa de carriles</h2>
+<ul>
+<li><strong>Achique:</strong> cuando el balón va atrás/de costado, <strong>toda la línea sube</strong> con la presión; cuando el rival progresa o juega largo, <strong>cae junta y compacta</strong> (bloque &lt; 30-35 m).</li>
+<li><strong>Fuera de juego:</strong> trampa coordinada por el central del lado del balón con voz; subida en bloque al pase atrás/lateral. Requiere <strong>línea recta</strong> y <strong>POR-líbero</strong>. No abusar contra equipos que atacan la profundidad con timing.</li>
+<li><strong>Defensa de carriles:</strong> densidad central (cierra los 3 carriles interiores con el medio de 3 + 9) e <strong>invita por fuera</strong>; al llegar el balón a banda, salta el extremo/lateral y se cierra el semiespacio.</li>
+<li><strong>Defensa del centro:</strong> prioridad absoluta — el eje (6 + centrales + 9) protege la zona de remate. El pase interior solo se concede como "trampa" para robar en la siguiente acción.</li>
+</ul>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El 1-4-3-3 defiende por <strong>densidad central</strong> e invita por fuera; presión <strong>orientada</strong>, no frontal.</li>
+<li>Gatillos: <strong>extremo→lateral</strong>, <strong>interior→pivote</strong>, <strong>9 orienta</strong>; cada salto lleva su cobertura.</li>
+<li>Repliegue a <strong>1-4-5-1 / 1-4-1-4-1</strong> con los extremos bajando.</li>
+<li>Proteger siempre <strong>la espalda del lateral</strong> y el <strong>1v1 del 6</strong> (subida alterna de interiores).</li>
+<li>Líneas a ≤ <strong>10-12 m</strong>; reacción al perder en la ventana de <strong>5 s</strong> o repliegue/falta.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Presionar de frente sin orientar: el rival cambia de banda y rompe la presión.</li>
+<li>Saltar 8 y 10 al pivote a la vez y dejar el eje abierto.</li>
+<li>Que los extremos no bajen a tiempo: el lateral defiende 2v1.</li>
+<li>Línea de fuera de juego rota (escalera) que regala la espalda.</li>
+<li>Mantener bloque alto permanente contra extremos rápidos en vez del bloque medio por defecto.</li>
+</ul></section><section id="m03"><h1>Módulo 03 · Fase ofensiva del 1-4-3-3</h1>
+<blockquote>
+<p>Nomenclatura: línea de 4 (LD 2 / LI 3 + DFC 4 y 5); mediocampo de 3 (pivote 6 + interiores 8/10); tridente (ED 7 · DC 9 · EI 11). <strong>El 6 nunca abandona el eje sin cobertura.</strong></p>
+</blockquote>
+<hr />
+<h2>1. Inicio de juego — superar la primera presión</h2>
+<p>Objetivo: sacar el balón jugado, atraer la presión y, al superarla, generar superioridad por delante del balón. Dos estructuras base según cómo presione el rival.</p>
+<h3>A) Salida en 2 (rombo con el portero)</h3>
+<ul>
+<li><strong>Estructura:</strong> DFC 4 + DFC 5 abiertos a la anchura del área, pivote 6 entre líneas por delante de los centrales, POR 1 como vértice bajo del rombo. Laterales 2/3 altos, pegados a la cal.</li>
+<li><strong>Cuándo:</strong> rival que presiona con <strong>1 punta</strong> o con un 9 que no llega a tapar a los dos centrales.</li>
+<li><strong>Mecánica:</strong> el central libre <strong>conduce hacia dentro</strong> para atraer y romper la primera línea. El 6 se ofrece en el eje; si lo marcan al hombre, <strong>rotación</strong>: el 6 se descuelga y un interior baja a recibir.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-11-salida-rombo.svg]</em></figure></p>
+<h3>B) Salida en 3 — "salida lavolpiana"</h3>
+<ul>
+<li><strong>Estructura:</strong> el pivote 6 <strong>baja entre los dos DFC</strong> → línea de 3 (5-6-4). Los laterales 2/3 <strong>suben</strong> a la altura del medio; los interiores se elevan y el tridente fija la última línea.</li>
+<li><strong>Cuándo:</strong> rival que presiona con <strong>2 puntas</strong>. Genera <strong>3 vs 2</strong> en primera fase y libera a un central para conducir.</li>
+<li><strong>Corrección:</strong> solo baja <strong>un</strong> lateral o <strong>el</strong> pivote, no ambos a la vez (si no, el equipo se alarga y se expone).</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-12-salida-en-3.svg]</em></figure></p>
+<p><strong>Puntos de superación:</strong> (1) crear siempre <strong>+1</strong> sobre el número de presionadores; (2) <strong>central que conduce</strong> para fijar y liberar; (3) <strong>tercer hombre</strong> (el presionado descarga al libre); (4) si todo se cierra, <strong>bola a la espalda</strong> hacia el espacio del extremo/9.</p>
+<hr />
+<h2>2. Construcción en zona media — pivote e interiores</h2>
+<p>Superada la primera línea, el objetivo es <strong>progresar entre líneas</strong> y transformar la estructura para ocupar los cinco carriles.</p>
+<ul>
+<li><strong>Pivote 6:</strong> se ofrece de cara, orienta el juego, da el pase entre líneas o lo limpia al lateral. Es la <strong>bisagra</strong> entre fases.</li>
+<li><strong>Interiores 8/10 entre líneas:</strong> se posicionan en los <strong>intervalos</strong> entre el medio y la defensa rival, perfilados para jugar de cara. El 10 (asociativo) suele caer al carril interior izquierdo; el 8 (box-to-box) alterna recibir y atacar el espacio.</li>
+<li><strong>Recepción entre líneas:</strong> uno baja a recibir (atrae al medio rival) y el otro <strong>ataca el espacio</strong> que deja → <strong>profundidad alterna</strong> (uno pie, uno espacio). Nunca los dos en el mismo plano.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-13-entre-lineas.svg]</em></figure></p>
+<h3>Transformación 1-3-2-5 / 1-2-3-5</h3>
+<ul>
+<li><strong>1-3-2-5:</strong> línea de <strong>3 atrás = 2 DFC + un tercer hombre</strong> (el 6 que baja o un lateral que invierte); <strong>doble pivote</strong> con los dos restantes; <strong>5 en la última línea</strong> (7 y 11 en banda, 8/10 en medio-espacios, 9 en eje, laterales dando amplitud o entrando por dentro).</li>
+<li><strong>1-2-3-5:</strong> 2 DFC atrás, 6 + 2 interiores (o 6 + interior + lateral invertido) en el medio, 5 arriba. Más agresiva.</li>
+<li><strong>Regla de oro:</strong> máximo <strong>3 por línea</strong> y <strong>2 por carril</strong>. Cuando el extremo pisa por dentro, el lateral da la amplitud (y viceversa).</li>
+</ul>
+<hr />
+<h2>3. Último tercio — generación y finalización</h2>
+<ul>
+<li><strong>Extremos (7/11):</strong> fijan a los laterales rivales contra la cal, generan <strong>1 vs 1</strong> para desbordar o atraen para liberar el carril interior.</li>
+<li><strong>Laterales (2/3):</strong> <strong>desdoble por fuera</strong> (overlap) cuando el extremo está por dentro, o <strong>juego por dentro</strong> (underlap / falso lateral) cuando el extremo mantiene la banda.</li>
+<li><strong>Delantero 9:</strong> doble función — <strong>apoyo</strong> (cae a recibir de espaldas) y <strong>ruptura</strong> (ataca la profundidad fijando a los centrales). Su movimiento de fijar centrales libera la llegada de los interiores.</li>
+<li><strong>Interiores (8/10):</strong> llegan <strong>desde atrás</strong> en segunda línea, atacando el punto de penalti y la frontal (mayor xG por sorpresa).</li>
+<li><strong>Extremos a pie cambiado:</strong> conducen hacia dentro y rematan; el lateral que desdobla aporta amplitud y centro.</li>
+</ul>
+<h3>Ataque del área (referencias de centro)</h3>
+<p>Tres alturas obligatorias al centro lateral:
+1. <strong>Primer palo</strong> → DC 9 (ataque tenso/desvío).
+2. <strong>Punto de penalti</strong> → interior que llega (8 o 10).
+3. <strong>Segundo palo</strong> → el extremo del lado contrario (11 o 7).
+4. <strong>Rechace en la frontal</strong> → pivote 6 o interior restante (remate de segunda jugada y equilibrio).</p>
+<p><figure class="diag"><em>[falta teoria-14-ataque-area.svg]</em></figure></p>
+<hr />
+<h2>4. Automatismos colectivos</h2>
+<ul>
+<li><strong>Pared (uno-dos):</strong> interior/9 que descarga de primeras y devuelve al espacio. Clave para superar al medio que presiona.</li>
+<li><strong>Tercer hombre:</strong> A pasa a B (de espaldas/presionado), B descarga a C que llega de cara al espacio. Patrón típico: <strong>6 → 9 (apoyo) → 8/10 llegando</strong> entre líneas.</li>
+<li><strong>Tercio de banda (extremo-lateral-interior):</strong> triángulo en el carril lateral con pared, sobreposición o tercer hombre. La superioridad <strong>3 vs 2</strong> es el detonante del desborde.</li>
+<li><strong>Llegada desde atrás:</strong> interiores y laterales aparecen en el último instante para no ser referenciados; el 9 y los extremos fijan, los de segunda línea finalizan.</li>
+</ul>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li><strong>Siempre +1 en la salida</strong>; salida lavolpiana solo contra 2 puntas y bajando <strong>uno</strong>, no todos.</li>
+<li><strong>Anchura y profundidad simultáneas</strong>: extremos al máximo y 9 amenazando la espalda abren los intervalos de los interiores.</li>
+<li><strong>Regla de carriles</strong>: 2 por carril / 3 por línea; extremo dentro → lateral fuera.</li>
+<li><strong>El pivote 6 es la bisagra</strong>; recepción entre líneas <strong>perfilada</strong> (uno baja, otro rompe).</li>
+<li><strong>Tres alturas al centro + frontal</strong>: nunca centrar a un solo rematador.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Sacar largo sin necesidad teniendo +1 en la salida.</li>
+<li>Bajar los dos laterales y el pivote a la vez en la salida en 3.</li>
+<li>Dos interiores recibiendo en el mismo plano (sin profundidad alterna).</li>
+<li>Solapar extremo y lateral en el mismo carril.</li>
+<li>Centrar con el área vacía o con un único rematador; llegar antes que el balón.</li>
+<li>Proyectar a todos y no dejar resto defensivo (6 + 2 DFC + 1 lateral).</li>
+</ul></section><section id="m04"><h1>Módulo 04 · Transiciones y balón parado del 1-4-3-3</h1>
+<blockquote>
+<p>Nomenclatura: POR 1 · LD 2 · LI 3 · DFC 4/5 · pivote 6 · interiores 8/10 · ED 7 · DC 9 · EI 11.</p>
+</blockquote>
+<p>Las transiciones deciden partidos. El 1-4-3-3 está entre las mejores estructuras para ellas por su <strong>densidad central y triángulos cortos</strong> (mucha gente cerca del balón al ganarlo o perderlo). La clave es <strong>decidir bien en 3-5 segundos</strong>.</p>
+<hr />
+<h2>1. Transición ofensiva (tras recuperar)</h2>
+<ul>
+<li><strong>Verticalidad inmediata:</strong> primer pase hacia delante para atacar la <strong>defensa rival desorganizada</strong> antes de que se reordene.</li>
+<li><strong>Salidas de contraataque:</strong> el <strong>tridente (7-9-11)</strong> corre los espacios — el 9 ataca la profundidad central, los extremos los pasillos exteriores. Los <strong>interiores (8/10)</strong> acompañan como segunda oleada y como apoyo si el contra se frena.</li>
+<li><strong>Regla de equilibrio:</strong> 3-4 jugadores se proyectan; el <strong>6 + 2 centrales + 1 lateral</strong> quedan como <strong>resto defensivo</strong> por si se pierde.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-15-transicion-ofensiva.svg]</em></figure></p>
+<hr />
+<h2>2. Transición defensiva (tras perder)</h2>
+<p>Dos respuestas según zona de pérdida y número de jugadores adelantados:</p>
+<ul>
+<li><strong>Contrapressing inmediato (gegenpressing):</strong> si se pierde en campo rival con muchos efectivos arriba, <strong>presión de los 3-4 más cercanos</strong> durante los primeros segundos para recuperar o forzar pase malo. El <strong>6 cubre el carril central</strong> evitando el pase de progresión.</li>
+<li><strong>Repliegue a 1-4-5-1:</strong> si no hay opción de robo inmediato, <strong>los extremos 7/11 bajan</strong> a la línea de medios (1-4-5-1 / 1-4-1-4-1), el <strong>6 frena el balón en el eje</strong> y la línea de 4 se reordena compacta. Prioridad: <strong>tapar el centro</strong> y obligar a jugar por fuera.</li>
+<li><strong>Disparador de elección:</strong> posición del balón + jugadores por detrás del balón. Pérdida alta con cobertura → <strong>presiono</strong>; pérdida con desequilibrio numérico → <strong>repliego</strong>.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-16-contra-vs-repliegue.svg]</em></figure></p>
+<hr />
+<h2>3. Balón parado</h2>
+<h3>Ofensivo</h3>
+<ul>
+<li><strong>Córners:</strong> rematadores altos (DFC 4/5, DC 9) con <strong>movimientos cruzados</strong> (bloqueos legales); uno al primer palo (desvío), otro al segundo; <strong>arrastre</strong> al primer palo para liberar el penalti. <strong>Resto en la frontal</strong> (interior/extremo) para el rechace y <strong>dos atrás</strong> (6 + lateral) como seguro de transición.</li>
+<li><strong>Faltas laterales:</strong> mismo principio de centro que el juego abierto (primer palo / penalti / segundo palo).</li>
+<li><strong>Faltas directas frontales:</strong> lanzador zurdo/diestro según el palo; muro de 4-5; acecho al rechace.</li>
+<li><strong>Saques de banda en campo rival:</strong> triángulos de apoyo en el tercio de banda (extremo-lateral-interior) para mantener posesión y evitar la pérdida que genera transición.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-17-corner-ofensivo.svg]</em></figure></p>
+<h3>Defensivo</h3>
+<ul>
+<li><strong>Sistema mixto:</strong> zona en el primer palo + marca al hombre a los rematadores.</li>
+<li>El <strong>6</strong> defiende la frontal / rechace.</li>
+<li><strong>Dos arriba</strong> (9 + extremo) como referencia de contra al despejar.</li>
+</ul>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li><strong>Decidir la transición en 3-5 s:</strong> cobertura presente → contrapressing; desequilibrio → repliegue a 1-4-5-1.</li>
+<li>En transición ofensiva, <strong>primer pase vertical</strong> y el <strong>tridente</strong> ataca de inmediato; conserva el resto defensivo.</li>
+<li>El <strong>6</strong> es el primer freno en transición defensiva: tapa el centro, no persigue.</li>
+<li>En ABP ofensivo, <strong>ocupar tres alturas</strong> + frontal y dejar <strong>dos atrás</strong> de seguro.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Jugar hacia atrás tras robar y perder la ventaja de la transición.</li>
+<li>Proyectar a todos sin resto defensivo y morir en la contra rival.</li>
+<li>Que el 6 salte a presionar en la transición defensiva en vez de tapar el centro.</li>
+<li>Contrapressing mal elegido (presionar en desventaja numérica dejando espacios atrás).</li>
+<li>Atacar el córner sin seguro de transición (6 + lateral): contras letales tras el despeje.</li>
+</ul></section><section id="plan"><h1>Plan de sesiones · 2 microciclos de ejemplo (1-4-3-3)</h1>
+<blockquote>
+<p><code>MD</code> = <em>matchday</em> (día de partido). MD-4, MD-3… indican días <strong>antes</strong> del partido, no posiciones. Carga: <strong>F</strong> fundamentación · <strong>A</strong> activación/específica · <strong>S</strong> subprincipio competitivo. Las tareas se citan por su número global (T1–T26) y su código de banco (T1.1, etc.).</p>
+</blockquote>
+<p>Estos dos microciclos ordenan las 26 tareas en una semana competitiva tipo (un partido por semana, MD-4 a MD-1 + MD). Ajusta volúmenes a tu categoría. Cada día combina una tarea principal con apoyos.</p>
+<hr />
+<h2>Microciclo 1 — Foco: salida + presión del tridente</h2>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Objetivo del día</th>
+<th>Tareas</th>
+<th>Carga</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MD-4</strong> (fuerza/aprendizaje)</td>
+<td>Fundamentar la salida con pivote y la ocupación de carriles</td>
+<td>T1 (T1.1) · T6 (T2.1)</td>
+<td>F</td>
+</tr>
+<tr>
+<td><strong>MD-3</strong> (intensidad/duelos)</td>
+<td>Presión orientada del tridente y sus gatillos</td>
+<td>T10 (T3.1) · T2 (T1.2)</td>
+<td>S/A</td>
+</tr>
+<tr>
+<td><strong>MD-2</strong> (específico)</td>
+<td>Salida competida + recibir entre líneas</td>
+<td>T4 (T1.4) · T8 (T2.3)</td>
+<td>S/F</td>
+</tr>
+<tr>
+<td><strong>MD-1</strong> (activación)</td>
+<td>Contrapressing y decisión rápida, volumen bajo</td>
+<td>T12 (T3.3) · rondo libre</td>
+<td>S</td>
+</tr>
+<tr>
+<td><strong>MD</strong></td>
+<td>Partido</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Idea del microciclo:</strong> lunes-martes (MD-4/-3) cargan el patrón de salida y de presión con tareas S; el resto baja volumen manteniendo la transferencia (recepción entre líneas, contrapressing corto) para llegar fresco al partido.</p>
+<hr />
+<h2>Microciclo 2 — Foco: amplitud del tridente + llegada y finalización</h2>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Objetivo del día</th>
+<th>Tareas</th>
+<th>Carga</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MD-4</strong> (fuerza/aprendizaje)</td>
+<td>1v1 del extremo y sociedad de banda</td>
+<td>T14 (T4.1) · T15 (T4.2)</td>
+<td>A/S</td>
+</tr>
+<tr>
+<td><strong>MD-3</strong> (intensidad/duelos)</td>
+<td>Transformación a 1-3-2-5 y cambio de orientación</td>
+<td>T9 (T2.4) · T16 (T4.3)</td>
+<td>S</td>
+</tr>
+<tr>
+<td><strong>MD-2</strong> (específico)</td>
+<td>Llegada de interiores y fábrica de centros</td>
+<td>T20 (T5.2) · T17 (T4.4)</td>
+<td>S/A</td>
+</tr>
+<tr>
+<td><strong>MD-1</strong> (activación)</td>
+<td>Finalización integrada en 8 s, volumen bajo</td>
+<td>T22 (T5.4) · T23 (T6.1)</td>
+<td>S/A</td>
+</tr>
+<tr>
+<td><strong>MD</strong></td>
+<td>Partido (cierre: T26 / T6.4 como ensayo global)</td>
+<td>T26 (T6.4)</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Idea del microciclo:</strong> se construye la fase ofensiva de fuera hacia dentro — primero la amplitud y el 1v1 (MD-4), después la transformación y el cambio de orientación (MD-3), luego la llegada al área y los centros (MD-2), y se integra todo en finalización rápida antes del partido.</p>
+<hr />
+<h2>Notas de aplicación</h2>
+<ul>
+<li><strong>Equilibrio de carga del banco:</strong> F = 4 · A = 8 · S = 14. Distribuye las S en MD-4/-3 (lejos del partido) y reserva activaciones (A/F) para MD-1.</li>
+<li><strong>Repite cada microciclo 2-3 semanas</strong> antes de rotar el foco; el aprendizaje táctico necesita repetición espaciada.</li>
+<li><strong>Congela y corrige:</strong> en las tareas de categoría S (sobre todo T13/T3.4 y T26/T6.4), para el juego para corregir posición y decisión, no solo el resultado.</li>
+<li><strong>Conecta con el partido:</strong> cada provocación de las tareas premia un comportamiento del modelo (salida superada, desborde, robo arriba). Refuérzalo también en el discurso de vestuario.</li>
+</ul></section><section id="b1"><h1>Bloque 1 · Salida con 2 centrales + pivote (T1–T5)</h1>
+<blockquote>
+<p>Superar la primera presión con estructura: rombo de salida, salida en 3 (lavolpiana), uso del portero como +1 y anchura del tridente. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T1 — Rombo de salida: el pivote pivota</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> construir el primer rombo de salida POR 1 + DFC 4-5 + pivote 6; que el 6 reciba de perfil entre los puntas rivales y oriente la salida hacia el lado libre.</li>
+<li><strong>Tipo:</strong> Analítica + posicional (4v2).</li>
+<li><strong>Organización:</strong> Medio campo de portería a línea de medios, 40×30 m. Jugadores: <strong>1</strong> (POR), <strong>4</strong> y <strong>5</strong> (centrales abiertos a la altura del área), <strong>6</strong> (pivote) frente a 2 atacantes neutros con peto que presionan. 2 mini-porterías en banda a la altura del medio campo (representan a los laterales/lado libre). Balones en portería, 4 conos para marcar la zona del pivote.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-01.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El POR 1 inicia. Los centrales 4-5 abren al ancho del área, el 6 se ofrece en el eje. Circulación 1-4-5-6 buscando que el 6 reciba de cara o que, si le marcan, libere al central del lado contrario para progresar a la mini-portería. Objetivo: superar a los 2 presionadores y conducir/pasar más allá de la línea de medios.</li>
+<li><strong>Provocaciones (medibles):</strong> salida superada = punto cuando el balón cruza la línea de medios controlado tras pasar por <strong>3 jugadores distintos</strong>. El 6 solo recibe <strong>dentro de su zona de conos</strong>. Máx. <strong>2 toques</strong> centrales; 6 libre. Si los 2 puntas roban → +1 para ellos y reinicio.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> presionadores pasivos al 70%; <em>(media)</em> el 6 no puede recibir de espaldas (obliga a perfil abierto); <em>(difícil)</em> 4v3 añadiendo un mediapunta que vigila al 6 → obliga a salir en 3 por fuera con los centrales.</li>
+<li><strong>Coaching:</strong> orientación corporal del 6 (recibir abierto, ver las dos bandas); altura y separación de centrales para abrir líneas de pase; timing del apoyo del pivote tras el primer toque del POR.</li>
+<li><strong>Duración/Categoría:</strong> 4 series × 4 min, 90 s descanso. <strong>F.</strong></li>
+</ul>
+<hr />
+<h2>T2 — Salida en 3: el pivote baja entre centrales (1-3-2)</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar la salida en 3 con el 6 cayendo entre los centrales (línea de 3 atrás) para que los laterales 2-3 suban y se rompa la primera línea de presión rival.</li>
+<li><strong>Tipo:</strong> Situacional S&gt;D (7v5).</li>
+<li><strong>Organización:</strong> 3/4 de campo, 60×45 m. <strong>1, 4, 5, 6, 2, 3</strong> + un interior <strong>8</strong>. Rivales: 5 con peto (2 puntas + 1 mediapunta + 2 interiores que vigilan). 1 portería grande defendida + 3 puertas a la altura de la línea de medios para puntuar la progresión.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-02.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Ante presión a 2 centrales, el <strong>6 desciende</strong> entre 4 y 5 formando línea de 3; los laterales <strong>2-3 ganan altura</strong> por fuera. La salida progresa hasta superar la línea de medios atravesando una de las 3 puertas en conducción o pase.</li>
+<li><strong>Provocaciones (medibles):</strong> punto si se atraviesa una puerta tras la bajada del 6 (verificable). El 6 debe descender <strong>antes</strong> de que el POR ejecute (gatillo: 2º punta rival presiona a un central). Prohibido pase largo del POR. Rival recupera → transición a portería en <strong>6 s</strong>.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> sin mediapunta rival (5v4); <em>(media)</em> obligar a que el lateral receptor juegue a 1 toque hacia el interior 8; <em>(difícil)</em> añadir 6º rival presionando al lateral → obliga a alternar salida en 3 con pivote alto.</li>
+<li><strong>Coaching:</strong> lectura del gatillo para bajar; los centrales abren al recibir al 6 (no quedarse juntos); el lateral receptor cara al juego.</li>
+<li><strong>Duración/Categoría:</strong> 4 series × 5 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T3 — 4v4+3 de construcción: romper la presión al hombre</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> resolver presión hombre a hombre en zona de inicio usando al portero como +1 y el desmarque de ruptura del 6 o de un interior que baja a apoyar (rotación 6↔8).</li>
+<li><strong>Tipo:</strong> Rondo posicional de construcción (4v4 + 3 comodines).</li>
+<li><strong>Organización:</strong> Cuadro 30×25 m dividido en 2 mitades. Equipo poseedor: <strong>4, 5, 6, 8</strong>. Comodines: <strong>1</strong> (POR, fija detrás) + <strong>2</strong> y <strong>3</strong> en las bandas (no defendibles). Rival: 4 que presionan al hombre. Conos.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-03.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Construcción 4v4 con apoyos. Cuando el rival marca al hombre, el equipo busca al POR para generar superioridad o provoca que el 6/8 atraiga y deje libre al compañero (3er hombre). Objetivo: 8 pases o cambio de mitad controlado.</li>
+<li><strong>Provocaciones (medibles):</strong> punto por <strong>completar pase del POR a un jugador desmarcado de ruptura</strong> y mantener. Marcaje obligatorio al hombre en campo propio. Cambio de banda 2↔3 = 2 puntos. Pérdida → 30 s sin balón.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> comodines de banda juegan libres a 1 toque; <em>(media)</em> limitar a 6 segundos para superar la primera mitad; <em>(difícil)</em> el rival puede presionar al POR (5º hombre) → fuerza salida rápida en 3.</li>
+<li><strong>Coaching:</strong> cuándo usar al portero; desmarque de ruptura vs apoyo; fijar para liberar (el que recibe la presión no es siempre el que sale jugando).</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T4 — Salida con extremos fijando: anchura máxima desde atrás</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> que en la salida los extremos 7-11 den anchura máxima y profundidad para estirar al rival, abriendo el carril interior para que el 6 reciba o para la conducción del central.</li>
+<li><strong>Tipo:</strong> Situacional S&gt;D (9v7) en campo completo a lo ancho.</li>
+<li><strong>Organización:</strong> Campo entero o 3/4, ancho completo. <strong>1, 4, 5, 6, 2, 3, 8, 7, 11.</strong> Rival: 7 (bloque medio 1-4-3 que presiona en zona de inicio). 2 porterías grandes.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-04.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Salida con centrales abiertos, 6 de referencia; <strong>7 y 11 pegados a banda al máximo</strong> (pie en la cal). El objetivo es progresar por dentro porque la anchura de los extremos arrastra a los laterales rivales. Conexión central/6 → interior → cambio de orientación al extremo en 1v1.</li>
+<li><strong>Provocaciones (medibles):</strong> los extremos no pueden separarse de la banda más de 3 m hasta superar el medio campo (zona marcada con conos). Punto por superar la línea de medios + 2 puntos si se finaliza tras desborde de extremo. El balón debe pasar por el carril interior antes del cambio a banda.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> rival pasivo en la primera línea; <em>(media)</em> prohibir el pase directo a extremo hasta 3 pases; <em>(difícil)</em> el rival defiende con 8 (1-4-4) cerrando el interior → obliga a usar al portero y al 6 bajando.</li>
+<li><strong>Coaching:</strong> disciplina de banda de los extremos; el 6 lee si recibe o se aparta para abrir línea al central; timing del cambio de orientación.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 6 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T5 — Salida bajo presión total con porterías invertidas</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> competir la salida 1-4-3-3 contra pressing alto real, decidiendo entre salir corto en rombo/3 o saltar la presión, manteniendo estructura.</li>
+<li><strong>Tipo:</strong> Partido condicionado de construcción (8v8) en campo reducido.</li>
+<li><strong>Organización:</strong> 3/4 de campo, 65×50 m. Equipo A en 1-4-3-3 parcial: <strong>1, 4, 5, 2, 3, 6, 8, 10</strong>. Equipo B presiona alto con tridente. 2 porterías grandes + 2 mini-porterías en la línea de medios del equipo que sale ("salida superada").</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-05.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Partido normal, pero el equipo A puntúa también superando la presión. Se evalúa el patrón: rombo, salida en 3, o uso del 9/punta saltado solo si está justificado.</li>
+<li><strong>Provocaciones (medibles):</strong> gol en mini-portería (salida superada limpia con ≥4 pases) = 1; gol en portería grande = 3. Equipo A obligado a iniciar <strong>siempre</strong> desde el POR con saque corto. Si pierden en su tercio → gol rival vale doble.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> B presiona solo con 2 puntas; <em>(media)</em> prohibir el balón largo de A; <em>(difícil)</em> B presiona 5 jugadores y marca al 6 (obliga rotaciones).</li>
+<li><strong>Coaching:</strong> decisión salir vs saltar; mantener la estructura aun bajo presión; valentía del POR y centrales.</li>
+<li><strong>Duración/Categoría:</strong> 3 × 8 min con cambio de roles. <strong>S.</strong></li>
+</ul></section><section id="b2"><h1>Bloque 2 · Mediocampo de 3 (T6–T9)</h1>
+<blockquote>
+<p>Relación pivote-interiores, juego entre líneas, ocupación de carriles y transformación a 1-3-2-5. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T6 — Rondo de los carriles: ocupar los 5 pasillos</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> que el mediocampo de 3 (6-8-10) reparta los carriles y reciba entre líneas, fundamentando la transformación hacia 1-3-2-5 (interiores subiendo a media-punta).</li>
+<li><strong>Tipo:</strong> Juego de posición 6v3 sobre cuadrícula de carriles.</li>
+<li><strong>Organización:</strong> 36×24 m dividido en <strong>5 carriles verticales</strong> con conos. Poseedores: <strong>6, 8, 10, 2, 3</strong> + 1 apoyo (<strong>4</strong>). Defensores: 3 con peto.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-06.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Mantener posesión respetando que el 6 ocupe el carril central, 8 y 10 los interiores y 2-3 los exteriores. Cada interior debe <strong>recibir entre líneas</strong> (en carril interior, de espaldas o de perfil) para sumar.</li>
+<li><strong>Provocaciones (medibles):</strong> punto cada vez que el 8 o el 10 reciba en carril interior y gire de cara. No puede haber 2 poseedores en el mismo carril (penaliza con pérdida). 10 pases = +1. Verificable por conos.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> 6v3 con 2 toques libres; <em>(media)</em> obligar a que tras recepción entrelíneas haya pase de progresión; <em>(difícil)</em> 6v4 → fuerza precisión y movilidad del 3.</li>
+<li><strong>Coaching:</strong> escalonamiento (no jugar a la misma altura); cuerpo abierto del interior; el 6 como salida segura y referencia de los carriles.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min. <strong>F.</strong></li>
+</ul>
+<hr />
+<h2>T7 — Pivote-interiores: la rotación del triángulo (▽ a △)</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar la relación pivote-interiores alternando triángulo con vértice abajo (6 solo) y vértice arriba (doble pivote 6+8, enganche 10), según la presión.</li>
+<li><strong>Tipo:</strong> Juego de posición 7v5 con zonas.</li>
+<li><strong>Organización:</strong> 50×40 m, 3 franjas horizontales (zona baja, media, alta). <strong>4, 5, 6, 8, 10, 2, 3</strong> vs 5 (2 puntas + 3 medios). 3 puertas en la franja alta.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-07.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Según dónde presione el rival, el medio rota: si presionan al 6, el <strong>8 baja</strong> (doble pivote) y el <strong>10 se va arriba</strong> entre líneas (vértice arriba); si dejan libre al 6, vértice abajo clásico. Objetivo: progresar a la franja alta y meter el balón en una puerta.</li>
+<li><strong>Provocaciones (medibles):</strong> punto por puerta superada con el 10 habiendo recibido entre líneas previamente. La rotación debe ejecutarse en <strong>≤3 s</strong> tras el gatillo de presión al 6. Solo 1 jugador del medio puede estar en franja baja a la vez (obliga a escalonar).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> rotaciones guiadas por señal del míster; <em>(media)</em> libre lectura; <em>(difícil)</em> rival manda 2 al 6 → obliga a usar al lateral como salida.</li>
+<li><strong>Coaching:</strong> lectura del gatillo; sincronía bajada del 8 con subida del 10; el 6 nunca abandona el eje sin cobertura.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T8 — Recibir entre líneas y girar: el interior como bisagra</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> que 8 y 10 reciban a la espalda del medio rival, protejan el balón y giren de cara para encarar o filtrar al tridente.</li>
+<li><strong>Tipo:</strong> Situacional analítica 3+1 con oposición (recepción orientada).</li>
+<li><strong>Organización:</strong> Pasillo de 25×20 m. Servidor <strong>4/5</strong> detrás, <strong>8</strong> o <strong>10</strong> en zona central con un defensor a su espalda, <strong>9</strong> y <strong>7</strong> como receptores en profundidad. 2 mini-porterías al fondo.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-08.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El central pasa al interior entre líneas; este controla orientado evitando al marcador y conecta con 9 (apoyo) o filtra a la profundidad del 7. Repetir alternando 8 (banda derecha) y 10 (banda izquierda).</li>
+<li><strong>Provocaciones (medibles):</strong> punto por girar de cara y dar pase de progresión en <strong>≤2 toques</strong>. Si el defensor toca el balón en la recepción → 0. Control orientado obligatorio (no jugar de espaldas hacia atrás).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> defensor pasivo; <em>(media)</em> defensor activo al 80%; <em>(difícil)</em> 2 defensores (uno cierra el giro) → obliga a usar el apoyo de 3er hombre.</li>
+<li><strong>Coaching:</strong> check de hombro antes de recibir; primer toque al espacio libre; perfil de recepción según de dónde venga el balón.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min (alternando interiores). <strong>F.</strong></li>
+</ul>
+<hr />
+<h2>T9 — Transformación a 1-3-2-5 en fase de progresión</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> materializar la estructura de ataque 1-3-2-5: 3 atrás (2 DFC + un lateral o el 6), 2 interiores como enlace y 5 arriba (extremos abiertos + interiores/9 ocupando el área).</li>
+<li><strong>Tipo:</strong> Juego de posición 10v8 en campo grande.</li>
+<li><strong>Organización:</strong> 3/4 de campo a lo ancho completo. <strong>1, 4, 5, 2, 3, 6, 8, 10, 7, 11</strong> (+9 si hay número). Rival en bloque medio 1-4-4-1. 1 portería grande + 3 puertas en el último tercio.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-09.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El equipo construye y se transforma a 1-3-2-5: línea de <strong>3 atrás = 4 + 5 + un tercer hombre</strong> (el <strong>6 que baja</strong> o un <strong>lateral que invierte</strong>); <strong>doble pivote</strong> con los dos restantes de ese trío (p. ej. 6 + 8, o lateral invertido + 6); arriba, <strong>5 ocupando los 5 carriles</strong> (7 y 11 en banda, 8/10 en medio-espacios, 9 en eje). Objetivo: meter el balón en una puerta del último tercio con la estructura desplegada.</li>
+<li><strong>Provocaciones (medibles):</strong> punto solo si en el momento del pase a puerta hay <strong>5 jugadores en la última línea ocupando ≥4 carriles</strong> (verificable por conos). Cambio de orientación obligatorio antes de finalizar. Pérdida → contra rival vale doble.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> rival pasivo, foco en ocupar carriles; <em>(media)</em> exigir velocidad de circulación; <em>(difícil)</em> rival sube a 1-4-3-3 y presiona → obliga a transformar bajo presión.</li>
+<li><strong>Coaching:</strong> quién baja y quién sube (automatismos); ocupar los 5 carriles sin amontonarse; los interiores como pulmón entre las dos estructuras.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 6 min. <strong>S.</strong></li>
+</ul></section><section id="b3"><h1>Bloque 3 · Pressing del tridente + gatillos y contrapressing (T10–T13)</h1>
+<blockquote>
+<p>Presión alta orientada con gatillos (extremo→lateral, interior→pivote, 9 orienta), coberturas y contrapressing de 5 s. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T10 — Gatillos del tridente: el extremo salta al lateral</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar el gatillo principal de presión alta: el extremo (7/11) salta al lateral rival mientras el 9 orienta cerrando al pivote y el otro extremo bascula.</li>
+<li><strong>Tipo:</strong> Situacional defensiva D&gt;S (presión sobre salida rival).</li>
+<li><strong>Organización:</strong> Medio campo 50×45 m. Equipo presionante: <strong>9, 7, 11, 8, 10, 6</strong> (tridente + medio). Equipo que sale: POR + 4 defensas + pivote (6 atacantes neutros). 1 portería grande + 2 mini-porterías al fondo del presionante para premiar robos.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-10.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El equipo rival inicia. <strong>Gatillo:</strong> cuando el balón va al lateral, el extremo de ese lado salta a presionar de fuera hacia dentro; el 9 cierra la línea al pivote; el interior de ese lado sube al lateral si el extremo es superado. Robo → finalizar rápido.</li>
+<li><strong>Provocaciones (medibles):</strong> el extremo debe llegar al lateral en <strong>≤1,5 s</strong> desde que recibe (medible). Robo en campo rival + gol = 3 puntos; el rival puntúa si supera la presión y mete en mini-portería. Presión siempre orientada a banda (prohibido dejar el centro abierto).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> salida rival lenta y guiada; <em>(media)</em> a ritmo real; <em>(difícil)</em> el rival añade un mediocentro que cae → obliga a saltar del interior.</li>
+<li><strong>Coaching:</strong> curva de carrera del extremo (tapar la línea interior); coordinación 9-extremo; señal verbal para activar; basculación del extremo lejano.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T11 — Presión orientada y el interior salta al pivote</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> segundo gatillo del bloque: el interior (8/10) salta al pivote rival cuando el balón entra al medio, manteniendo el 6 la cobertura central.</li>
+<li><strong>Tipo:</strong> Juego de posición defensivo 8v8 con zona de presión.</li>
+<li><strong>Organización:</strong> 60×45 m. Equipo presionante en 1-4-3-3 (parcial: 4 def + 6, 8, 10 + 9). Rival construye en 1-4-3-3. Líneas marcadas para definir la zona alta de presión.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-11.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Presión alta; cuando el rival mete al pivote, el <strong>interior cercano salta</strong> y el <strong>6 cubre por detrás</strong> al jugador liberado; el resto bascula al lado del balón. Si no hay opción de robo limpio, se contiene y se repliega ordenado.</li>
+<li><strong>Provocaciones (medibles):</strong> el interior salta al pivote solo si el 6 puede cubrir (verificable: el 6 no debe quedar a más de 8 m). Robo en zona alta = 2 puntos; cada vez que el rival juega entre líneas por mal salto → punto rival. Prohibido saltar 8 y 10 a la vez (deja hueco).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> sin tridente rival (más fácil cubrir); <em>(media)</em> real; <em>(difícil)</em> rival con doble pivote → obliga a coordinar saltos alternos.</li>
+<li><strong>Coaching:</strong> decisión de saltar (con cobertura sí, sin cobertura no); el 6 como red de seguridad; cierre de la espalda del interior que sube.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T12 — Contrapressing 5 segundos con el 6 como ancla</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar la reacción inmediata a la pérdida (contrapressing) con los roles del sistema: el portador más cercano y los dos siguientes (tridente/interior) cierran al balón y las líneas de pase, mientras el <strong>6 tapa el carril central</strong> (pase de progresión) y orienta la reacción al lado del balón.</li>
+<li><strong>Tipo:</strong> Juego en espacio reducido (JER) 7v7 con roles fijos y regla de 5 s.</li>
+<li><strong>Organización:</strong> 45×40 m. Equipo en foco con roles asignados: 7-9-11 (tridente) + 8/10 (interiores) + 6 (ancla) + 1 fijo de salida. 4 mini-porterías: 2 en la línea de fondo rival (premian robo arriba) y 2 en bandas a media altura. Zona central de 8 m marcada con conos = "carril del 6".</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-12.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Juego dirigido a posesión; <strong>al perder, 5 s de presión inmediata de los 3 más cercanos</strong> mientras el <strong>6 NO salta</strong>: se queda tapando el carril central marcado para impedir el pase de progresión interior. Recuperación arriba → atacar mini-portería de fondo.</li>
+<li><strong>Provocaciones (medibles):</strong> recuperación en <strong>≤5 s</strong> = 2 puntos (cronometrado). Punto válido <strong>solo si en el momento del robo el 6 estaba dentro del carril central</strong> marcado. Si el rival juega un pase limpio por ese carril durante la presión → punto rival (penaliza al 6 por saltar). Gol tras robo arriba = doble.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> 6 s y rival a 1 toque obligado tras robar; <em>(media)</em> 5 s a ritmo real; <em>(difícil)</em> 4 s + mínimo 3 presores y prohibido que el 6 abandone su carril.</li>
+<li><strong>Coaching:</strong> los 3 más cercanos cierran balón + líneas; el 6 es la red que tapa el centro (no persigue); postura preventiva del resto antes de perder; orientar la presión al lado donde se pierde.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T13 — Bloque alto vs bloque alto: partido de presión</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> competir el pressing alto del 1-4-3-3 completo con todos los gatillos integrados (extremo→lateral, interior→pivote, 9→cierre) y la trampa de banda.</li>
+<li><strong>Tipo:</strong> Partido condicionado 10v10 (o 9v9) campo grande.</li>
+<li><strong>Organización:</strong> 3/4 de campo. Ambos equipos en 1-4-3-3. 2 porterías grandes con portero.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-13.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Partido. El equipo en foco debe presionar alto y orientado a banda creando la trampa (extremo cierra hacia dentro, lateral sube, interior aprieta). Robo arriba → finalizar.</li>
+<li><strong>Provocaciones (medibles):</strong> gol tras robo en campo contrario = 2 goles; gol en jugada normal = 1. La presión debe activarse en <strong>≤2 s</strong> tras el gatillo definido en pizarra. Si el rival supera la línea de medios con pase interior limpio → falta defensiva (se anota).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> presión a partir del medio campo; <em>(media)</em> presión alta a la salida; <em>(difícil)</em> presión al portero rival con marca al hombre en toda la primera línea.</li>
+<li><strong>Coaching:</strong> señales de activación; sincronía de la línea; momento de abortar y replegar a 1-4-5-1; comunicación.</li>
+<li><strong>Duración/Categoría:</strong> 3 × 8 min. <strong>S.</strong></li>
+</ul></section><section id="b4"><h1>Bloque 4 · Tridente y amplitud (T14–T18)</h1>
+<blockquote>
+<p>1v1 del extremo, sociedad de banda (extremo-lateral-interior), cambio de orientación al lado débil, centros y la rotación extremo-dentro / lateral-fuera. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T14 — 1v1 del extremo: desborde y pie cambiado</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> que el extremo (7 a pierna cambiada por dentro / 11 igual) resuelva el 1v1 contra el lateral, alternando desborde por fuera para centrar y conducción hacia dentro para disparar/asociar.</li>
+<li><strong>Tipo:</strong> Analítica situacional 1v1 + finalización.</li>
+<li><strong>Organización:</strong> Carril de banda 25×18 m por lado. <strong>7</strong> (der) y <strong>11</strong> (izq) parten desde banda con balón; un lateral rival defiende. 1 portería con POR + zona de centro marcada.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-14.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Servicio al extremo, que ataca el 1v1. Dos salidas: <strong>por fuera</strong> → centro raso/al área; <strong>por dentro (pie cambiado)</strong> → disparo o pase. Alternar lado y receptor (9 entra a rematar).</li>
+<li><strong>Provocaciones (medibles):</strong> punto por superar al lateral con <strong>≤2 contactos</strong> de regate + acción útil (centro al área marcada o disparo a portería). Pie cambiado debe finalizar por dentro; pie natural por fuera. Verificable por zona.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> lateral pasivo, foco técnico; <em>(media)</em> lateral activo; <em>(difícil)</em> lateral + cobertura del central → obliga a decidir desborde vs asociación con el interior.</li>
+<li><strong>Coaching:</strong> primer apoyo orientado a la portería; cambio de ritmo; uso del cuerpo; lectura de la cadera del defensor.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min (alternando bandas). <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T15 — Sociedad extremo-lateral-interior por el tercio de banda</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> automatizar la relación por la banda derecha (7-2-8) e izquierda (11-3-10): pared, sobreposición (overlap), tercer hombre y desmarque de ruptura para progresar y centrar.</li>
+<li><strong>Tipo:</strong> Situacional S&gt;D por carril de banda (3v2 / 3v3).</li>
+<li><strong>Organización:</strong> Carril de 30×24 m. Banda derecha: <strong>7, 2, 8</strong> vs 2-3 defensores (lateral + interior + ayuda). Banda izquierda análoga con <strong>11, 3, 10</strong>. 1 portería con POR + zona de remate con un punta (9).</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-15.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El trío de banda combina para llegar al fondo: extremo fija, lateral hace overlap por fuera o underlap por dentro, interior aparece de tercer hombre. Finaliza con centro o pase atrás.</li>
+<li><strong>Provocaciones (medibles):</strong> punto por llegar a la línea de fondo y centrar/pasar atrás tras <strong>≥1 combinación de 2 jugadores</strong> (pared o sobreposición real). El interior debe tocar el balón antes del centro en el 50% de las acciones (provocación de tercer hombre).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> 3v2; <em>(media)</em> 3v3; <em>(difícil)</em> 3v3 + central de cobertura → obliga a variar el patrón (overlap vs underlap).</li>
+<li><strong>Coaching:</strong> timing de la sobreposición; el extremo fija al lateral antes de soltar; comunicación lateral-extremo (fuera/dentro); ataque del espacio del interior.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T16 — Cambio de orientación y extremo en aislamiento (1v1 al lado débil)</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> usar el cambio de orientación largo para encontrar al extremo del lado débil aislado en 1v1 con campo para encarar — patrón clave de generación del 1-4-3-3.</li>
+<li><strong>Tipo:</strong> Juego de posición 9v8 con cambio obligatorio.</li>
+<li><strong>Organización:</strong> Campo a lo ancho completo, 65×60 m. <strong>4, 5, 6, 2, 3, 8, 10, 7, 11.</strong> Rival en bloque que se desplaza al balón. Carriles de banda marcados como "zona de aislamiento". 2 porterías.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-16.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El equipo atrae al rival a un lado y ejecuta cambio de orientación para que el <strong>extremo del lado contrario reciba aislado</strong> y ataque el 1v1, con el lateral acompañando.</li>
+<li><strong>Provocaciones (medibles):</strong> punto por cambio de orientación que llega al extremo del lado débil con <strong>espacio (defensor a ≥3 m)</strong> y desencadena 1v1. Gol tras desborde del extremo aislado = doble. El cambio debe darse tras ≥5 pases del mismo lado (provoca atraer primero).</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> cambio con pase aéreo permitido y rival pasivo; <em>(media)</em> real; <em>(difícil)</em> limitar tiempo en posesión a 8 s antes del cambio.</li>
+<li><strong>Coaching:</strong> atraer para liberar; calidad del pase de cambio (al pie lejano del extremo); el extremo lejano se mantiene abierto y alto esperando.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T17 — Fábrica de centros: ataque de los 3 puntos del área</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar el centro desde banda (tras desborde del extremo/lateral) y el ataque coordinado del área por el tridente + interior: primer palo (9), segundo palo (extremo lejano 11/7), zona de penalti (interior 8/10) y rechace al borde (6).</li>
+<li><strong>Tipo:</strong> Tarea integrada de centros y remates con oposición parcial.</li>
+<li><strong>Organización:</strong> Último tercio, área completa. Centradores por banda (<strong>7/2</strong> der, <strong>11/3</strong> izq). Rematadores: <strong>9, 8, 10</strong> + extremo lejano. Defensa: 2-3 centrales rivales + POR. Conos marcando 1er palo / 2º palo / penalti / borde.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-17.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Secuencia de centro desde una banda; los atacantes atacan los 4 puntos con timing escalonado. Alternar banda y tipo de centro (raso, tenso, atrás).</li>
+<li><strong>Provocaciones (medibles):</strong> gol válido solo si los <strong>4 puntos están ocupados</strong> en el momento del centro (verificable por conos/observación). Centro raso al primer palo = remate a 1 toque obligatorio. Punto extra por gol del extremo lejano al segundo palo.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> sin defensa central; <em>(media)</em> 2 centrales; <em>(difícil)</em> defensa completa + presión al centrador.</li>
+<li><strong>Coaching:</strong> timing de ataque del área (no llegar antes que el balón); ocupar los espacios, no amontonarse; el 6 al borde para el rechace; tipo de centro según la posición del defensa.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T18 — Extremo que pisa por dentro y lateral que da la amplitud</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar la rotación moderna del 1-4-3-3: el extremo a pie cambiado pisa el carril interior (entre líneas) y el lateral asume la amplitud y la profundidad por fuera.</li>
+<li><strong>Tipo:</strong> Juego de posición 8v8 con zonas de carril.</li>
+<li><strong>Organización:</strong> 60×50 m con 5 carriles. Foco banda derecha: <strong>7</strong> pisa interior, <strong>2</strong> sube por fuera, <strong>8</strong> y <strong>6</strong> detrás; análogo izquierda con 11-3-10. Rival en bloque medio. 1 portería + 3 puertas.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-18.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Cuando el extremo recibe entre líneas en el carril interior, el lateral ataca el espacio exterior dejado libre. Se busca filtrar al lateral en profundidad o que el extremo (de cara) combine y dispare.</li>
+<li><strong>Provocaciones (medibles):</strong> punto si el lateral recibe en profundidad por fuera tras el extremo haber pisado dentro (verificable por carriles). Prohibido extremo y lateral en el mismo carril a la vez. El extremo debe recibir de cara para puntuar.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> sin oposición en el carril; <em>(media)</em> real; <em>(difícil)</em> el rival cierra el interior → obliga a alternar (extremo abre y lateral entra por dentro, underlap).</li>
+<li><strong>Coaching:</strong> coordinación extremo-lateral (uno dentro, otro fuera, nunca ambos igual); el interior cubre la espalda del lateral; el 6 vigila la transición.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>S.</strong></li>
+</ul></section><section id="b5"><h1>Bloque 5 · Llegada e interiorización / finalización (T19–T22)</h1>
+<blockquote>
+<p>El 9 (apoyo y ruptura), la llegada de los interiores desde segunda línea, el tercer hombre en el último tercio y la finalización integrada. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T19 — El 9 fija y descuelga: apoyo y ruptura</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> que el 9 use los dos movimientos clave: venir al apoyo para fijar/soltar al tercer hombre, y atacar la profundidad a la espalda de los centrales, coordinado con la llegada de los interiores.</li>
+<li><strong>Tipo:</strong> Situacional analítica 4v2+POR.</li>
+<li><strong>Organización:</strong> Último tercio, 40×40 m. <strong>9</strong> + <strong>8</strong> + <strong>10</strong> + un servidor (<strong>6</strong> o central). 2 centrales rivales + POR. Portería grande.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-19.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> El 6 conduce; el <strong>9 elige</strong>: apoyo (recibe, descarga al interior que llega) o ruptura (ataca la espalda para recibir filtrado). Los interiores 8/10 llegan desde segunda línea para rematar o recibir el descuento.</li>
+<li><strong>Provocaciones (medibles):</strong> punto por gol tras descuento del 9 a interior que llega (apoyo) <strong>o</strong> por gol del 9 en ruptura tras filtrado. El 9 no puede rematar dos secuencias seguidas en el mismo rol (obliga a alternar apoyo/ruptura). Remate en ≤3 s desde la última recepción.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> centrales pasivos; <em>(media)</em> activos; <em>(difícil)</em> 3 centrales → obliga a mejor timing y desmarque.</li>
+<li><strong>Coaching:</strong> timing del desmarque del 9 respecto al portador; señales (cuándo pie / cuándo espalda); llegada de los interiores desde atrás (segunda línea, difícil de marcar).</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T20 — Llegada de los interiores al área desde segunda línea</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> automatizar la llegada de 8 y 10 al área (box-to-box) sincronizada con el centro o el pase del extremo/9, atacando la frontal y el segundo palo.</li>
+<li><strong>Tipo:</strong> Tarea integrada de ataque posicional + finalización (situación de 6-8 atacantes).</li>
+<li><strong>Organización:</strong> Último tercio completo. Atacan: <strong>7, 9, 11, 8, 10</strong> (+ lateral que centra). Defienden: 4 defensas + POR. Conos en frontal y segundo palo.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-20.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Ataque que termina por banda; los <strong>interiores llegan desde atrás</strong> al área: uno a la frontal (rechace/disparo), otro al corazón del área. Alternar quién llega (8/10) según el lado del ataque.</li>
+<li><strong>Provocaciones (medibles):</strong> gol válido solo si <strong>al menos un interior remata o dispara dentro del área</strong> habiendo entrado desde fuera del área en los últimos 2 s (verificable). Disparo de primera desde la frontal del interior = doble.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> defensa pasiva; <em>(media)</em> real; <em>(difícil)</em> añadir que un interior debe quedar de equilibrio (no llegan los dos) → entrena la decisión de quién sube.</li>
+<li><strong>Coaching:</strong> timing (llegar lanzado, no esperar en el área); lectura de la trayectoria del centro; el otro interior cubre por si transición; ataque de espacios libres.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T21 — Combinación de tercer hombre en el último tercio</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> romper bloques replegados con la combinación de tercer hombre entre 9, interior y extremo, para finalizar dentro del área frente a defensa cerrada.</li>
+<li><strong>Tipo:</strong> Juego de posición ofensivo 7v6 en zona de finalización.</li>
+<li><strong>Organización:</strong> 45×40 m en el último tercio. Atacan <strong>9, 7, 11, 8, 10</strong> + 2 apoyos (6, lateral). Defienden 5-6 en bloque bajo + POR. 1 portería.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-21.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Frente a bloque bajo, generar el tercer hombre: el portador juega al 9 (apoyo de espaldas) que descarga al interior, que filtra al extremo / al desmarque de ruptura. Finalizar dentro del área.</li>
+<li><strong>Provocaciones (medibles):</strong> gol válido solo tras <strong>secuencia de 3 jugadores en ≤4 toques totales</strong> (combinación de tercer hombre verificable). Pase de espaldas del 9 obligatorio en el 50% de las jugadas. Disparo desde fuera del área no puntúa.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> bloque pasivo; <em>(media)</em> activo; <em>(difícil)</em> reducir toques a 3 totales y meter presión tras pérdida.</li>
+<li><strong>Coaching:</strong> apoyo-descarga-profundidad (los 3 tiempos); el que da el primer pase ataca el espacio; velocidad de ejecución para que el bloque no recomponga.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 3 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T22 — Finalización integrada: del 6 al gol en 8 segundos</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> integrar la fase ofensiva completa (salida del 6 → progresión interiores → amplitud extremos → llegada al área) en una secuencia rápida con finalización, comprimiendo el patrón del 1-4-3-3.</li>
+<li><strong>Tipo:</strong> Tarea integrada / oleadas (waves) con oposición decreciente.</li>
+<li><strong>Organización:</strong> Campo de 70×60 m. Equipo completo en 1-4-3-3 (11 o 9). Defensa rival en bloque medio. 1 portería con POR; el ataque parte desde 3/4 de campo.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-22.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Oleada que arranca con el 6; debe encadenar progresión interior, dar amplitud al extremo, centro o pase interior, y llegada de interiores/9 al área. Cronometrado.</li>
+<li><strong>Provocaciones (medibles):</strong> finalizar en <strong>≤8 s</strong> desde el primer toque del 6 = válido; gol = punto. Debe pasar el balón por <strong>un interior y un extremo</strong> antes del remate (verificable). Si tardan &gt;8 s, la jugada no cuenta.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> sin defensa; <em>(media)</em> 4 defensas + POR; <em>(difícil)</em> bloque de 6 + límite de 6 s.</li>
+<li><strong>Coaching:</strong> velocidad de decisión; encadenar fases sin pausa; ocupar el área a tiempo; finalizar con criterio (no precipitar).</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min (oleadas continuas). <strong>S.</strong></li>
+</ul></section><section id="b6"><h1>Bloque 6 · Transiciones + partido condicionado (T23–T26)</h1>
+<blockquote>
+<p>Repliegue a 1-4-5-1, transición ofensiva tras robo, decisión contrapressing vs repliegue y partido condicionado global. Dorsales según la convención del curso.</p>
+</blockquote>
+<hr />
+<h2>T23 — Repliegue ordenado a 1-4-5-1: los extremos bajan</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar el repliegue defensivo del 1-4-3-3 a 1-4-5-1 / 1-4-1-4-1: cuando no hay presión, los extremos 7-11 bajan a la línea de 5 medios y el 9 queda de referencia.</li>
+<li><strong>Tipo:</strong> Situacional defensiva D&gt;S (transición defensiva tras pérdida sin contrapressing posible).</li>
+<li><strong>Organización:</strong> Campo a lo ancho, 70×60 m. Equipo en foco: 11 o 9 jugadores en 1-4-3-3. Rival con balón ataca posicionalmente. 2 porterías.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-23.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Tras pérdida sin opción de robo inmediato, el equipo <strong>repliega</strong>: extremos a la línea de medios (1-4-5-1), interiores y pivote forman la línea de 5, defensa de 4 compacta. Recuperar la forma y defender el bloque medio.</li>
+<li><strong>Provocaciones (medibles):</strong> el bloque debe estar formado (4-5-1 con extremos en línea de medios) en <strong>≤6 s</strong> tras la pérdida (verificable). Si el rival progresa por dentro mientras se repliega → punto rival. Distancia entre líneas ≤12 m.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> repliegue guiado y rival lento; <em>(media)</em> real; <em>(difícil)</em> el rival ataca rápido la transición → obliga a frenar primero (un jugador) y replegar el resto.</li>
+<li><strong>Coaching:</strong> quién frena y quién recupera la posición; los extremos bajan disciplinados; compactar líneas; comunicación para reorganizar.</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>A.</strong></li>
+</ul>
+<hr />
+<h2>T24 — Transición ofensiva: del robo al tridente en 3 pases</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> explotar la transición defensa-ataque del 1-4-3-3 tras robar, aprovechando que el tridente queda alto: pase rápido al 9/extremo y ataque de la espalda con interiores.</li>
+<li><strong>Tipo:</strong> Situacional D-A / contraataque 6v6 con porterías.</li>
+<li><strong>Organización:</strong> Campo medio-largo, 60×50 m. 6v6 con porteros. Estructura: al robar, los 3 de arriba (tridente) buscan profundidad.</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-24.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Juego de presión; <strong>al robar, transición rápida</strong>: primer pase vertical al 9 (apoyo) o al extremo (profundidad), llegada de un interior. Finalizar antes de que el rival se reorganice.</li>
+<li><strong>Provocaciones (medibles):</strong> gol en transición con <strong>≤3 pases y en ≤7 s</strong> desde el robo = doble. El primer pase tras robar debe ir hacia delante (vertical). Si se juega hacia atrás tras robar → la jugada no puntúa en transición.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> superioridad para el que roba (6v5); <em>(media)</em> 6v6; <em>(difícil)</em> obligar a finalizar en ≤5 s.</li>
+<li><strong>Coaching:</strong> primer pase vertical y limpio; el tridente ataca la profundidad de inmediato; decisión rápida conducir vs pasar; sostener el equilibrio por si fallo.</li>
+<li><strong>Duración/Categoría:</strong> 5 × 4 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T25 — Contrapressing vs repliegue: decisión de transición</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> entrenar la decisión colectiva tras la pérdida entre contrapressing (recuperar arriba) y repliegue ordenado a 1-4-5-1, según la posición del balón y el número de jugadores por delante.</li>
+<li><strong>Tipo:</strong> Juego en espacio reducido (JER) 8v8 con doble condición.</li>
+<li><strong>Organización:</strong> 55×45 m, 2 porterías grandes + 2 mini-porterías en banda. Línea central marcada que divide "zona de contrapressing" (campo rival) de "zona de repliegue" (campo propio).</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-25.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Juego libre; <strong>si se pierde en campo rival → contrapressing 5 s; si se pierde en campo propio → repliegue inmediato a bloque</strong>. El equipo debe leer correctamente qué hacer según dónde y cómo pierde.</li>
+<li><strong>Provocaciones (medibles):</strong> decisión correcta (contrapressing arriba / repliegue abajo) verificada por el míster = punto de equipo. Recuperación arriba en ≤5 s = doble. Repliegue formado en ≤6 s evita el punto rival. Decisión errónea (presionar mal abajo dejando espacios) = punto rival.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> zonas amplias y señal del míster; <em>(media)</em> lectura libre; <em>(difícil)</em> añadir comodín al equipo rival en transición (les da superioridad).</li>
+<li><strong>Coaching:</strong> leer el momento (¿tengo gente delante del balón? presiono; ¿estoy superado? repliego); liderazgo y comunicación del 6 organizando; coherencia colectiva (todos la misma decisión).</li>
+<li><strong>Duración/Categoría:</strong> 4 × 5 min. <strong>S.</strong></li>
+</ul>
+<hr />
+<h2>T26 — Partido condicionado global 1-4-3-3</h2>
+<ul>
+<li><strong>Objetivo (1-4-3-3):</strong> integrar y competir todos los principios del sistema (salida con pivote, mediocampo de 3, presión del tridente, amplitud de extremos, llegada, transiciones) en un partido con reglas que premian el modelo.</li>
+<li><strong>Tipo:</strong> Partido condicionado 11v11 (o 9v9 / 10v10) campo completo.</li>
+<li><strong>Organización:</strong> Campo completo. Ambos equipos en 1-4-3-3 con dorsales reales (1-2-3-4-5-6-8-10-7-9-11). 2 porterías con porteros. Conos para zonas de bonificación (salida superada, último tercio).</li>
+</ul>
+<p><figure class="diag"><em>[falta tarea-26.svg]</em></figure></p>
+<ul>
+<li><strong>Desarrollo:</strong> Partido dirigido. El míster congela jugadas para corregir el patrón del 1-4-3-3 en sus 4 fases. Se compite con marcador.</li>
+<li><strong>Provocaciones (medibles):</strong> gol tras <strong>salida construida desde el POR superando la 1ª presión</strong> = doble. Gol tras <strong>desborde de extremo o llegada de interior</strong> = doble. Gol tras <strong>robo en presión alta</strong> = triple. Iniciar siempre desde el portero; balón fuera → saque rápido manteniendo el sistema.</li>
+<li><strong>Variantes:</strong> <em>(fácil)</em> condiciones de 1 sola fase por bloque; <em>(media)</em> todas las bonificaciones activas; <em>(difícil)</em> superioridad numérica al rival y/o porterías pequeñas extra para premiar la amplitud.</li>
+<li><strong>Coaching:</strong> congelar para corregir posición y decisión; conectar lo entrenado con el partido real; refuerzo de los comportamientos clave del sistema; liderazgo del 6 y del 9.</li>
+<li><strong>Duración/Categoría:</strong> 3 × 10 min (o 2 × 15). <strong>S.</strong></li>
+</ul></section>
+<footer class="foot">Curso "Sistema 1-4-3-3: del concepto al campo" · MISTER ÉLITE — Moisés Díaz</footer>
+</div></main></div>
+<script>const b=document.getElementById('menu-btn'),s=document.querySelector('.side');
+b.onclick=()=>s.classList.toggle('open');
+document.querySelectorAll('.side a').forEach(a=>a.onclick=()=>s.classList.remove('open'));</script>
+</body></html>

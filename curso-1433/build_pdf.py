@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera un PDF unico del curso 1-4-4-2 (textos + pizarras) -> curso-1442.pdf"""
+"""Genera un PDF unico del curso 1-4-3-3 (textos + pizarras) -> curso-1433.pdf"""
 import os, re, html
 import markdown
 from weasyprint import HTML
@@ -14,13 +14,12 @@ DOCS = [
     ("modulos/03-fase-ofensiva.md", "MÓDULO 03 · Fase ofensiva"),
     ("modulos/04-transiciones-y-balon-parado.md", "MÓDULO 04 · Transiciones y balón parado"),
     ("ejercicios/00-plan-sesiones.md", "PLAN DE SESIONES"),
-    ("ejercicios/01-salida.md", "BLOQUE 1 · Salida de balón"),
-    ("ejercicios/02-defensa.md", "BLOQUE 2 · Organización defensiva"),
-    ("ejercicios/03-pressing.md", "BLOQUE 3 · Pressing"),
-    ("ejercicios/04-delanteros-centros.md", "BLOQUE 4 · Delanteros y centros"),
-    ("ejercicios/05-transiciones.md", "BLOQUE 5 · Transiciones"),
-    ("ejercicios/06-partido-condicionado.md", "BLOQUE 6 · Partido condicionado"),
-    ("ejercicios/07-balon-parado.md", "BLOQUE 7 · Balón parado"),
+    ("ejercicios/01-salida.md", "BLOQUE 1 · Salida con 2 centrales + pivote"),
+    ("ejercicios/02-medio-de-3.md", "BLOQUE 2 · Mediocampo de 3"),
+    ("ejercicios/03-pressing.md", "BLOQUE 3 · Pressing del tridente + gatillos"),
+    ("ejercicios/04-tridente-amplitud.md", "BLOQUE 4 · Tridente y amplitud"),
+    ("ejercicios/05-llegada-finalizacion.md", "BLOQUE 5 · Llegada y finalización"),
+    ("ejercicios/06-transiciones-partido.md", "BLOQUE 6 · Transiciones + partido condicionado"),
 ]
 
 def fix_imgs(body):
@@ -43,7 +42,7 @@ def strip_md_links(body):
 
 CSS = """
 @page{size:A4;margin:1.8cm 1.6cm;
- @bottom-center{content:"Sistema 1-4-4-2 · del concepto al campo";font-size:8pt;color:#999;}
+ @bottom-center{content:"Sistema 1-4-3-3 · del concepto al campo · MISTER ÉLITE — Moisés Díaz";font-size:8pt;color:#999;}
  @bottom-right{content:counter(page);font-size:8pt;color:#999;}}
 @page cover{margin:0;}
 .cover{page:cover;page-break-after:always;width:100%;height:100%;}
@@ -83,7 +82,7 @@ def main():
         chunks.append(f'<div class="doc">{body}</div>')
     doc = (f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'
            f'<style>{CSS}</style></head><body>{"".join(chunks)}</body></html>')
-    out = os.path.join(ROOT, "curso-1442.pdf")
+    out = os.path.join(ROOT, "curso-1433.pdf")
     HTML(string=doc, base_url=ROOT).write_pdf(out)
     print("PDF generado:", out, os.path.getsize(out), "bytes")
 
