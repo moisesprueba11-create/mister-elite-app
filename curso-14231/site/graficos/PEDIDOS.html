@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Índice de diagramas · Curso 1-4-2-3-1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="../index.html">⚽ Curso 1-4-2-3-1</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a href="../modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="../modulos/02-fase-defensiva.html">M02 · Fase defensiva</a></li>
+<li><a href="../modulos/03-fase-ofensiva.html">M03 · Fase ofensiva</a></li>
+<li><a href="../modulos/04-transiciones-y-balon-parado.html">M04 · Transiciones y ABP</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a href="../ejercicios/00-plan-sesiones.html">Plan de sesiones</a></li>
+<li><a href="../ejercicios/01-salida.html">B1 · Salida (T1–4)</a></li>
+<li><a href="../ejercicios/02-doble-pivote.html">B2 · Doble pivote (T5–9)</a></li>
+<li><a href="../ejercicios/03-pressing.html">B3 · Pressing 9+10 (T10–13)</a></li>
+<li><a href="../ejercicios/04-mediapunta.html">B4 · Mediapunta / zona 14 (T14–18)</a></li>
+<li><a href="../ejercicios/05-extremos-laterales.html">B5 · Extremos y laterales (T19–22)</a></li>
+<li><a href="../ejercicios/06-transiciones-partido.html">B6 · Transiciones y partido (T23–26)</a></li>
+</ul>
+<div class="sec-title">Recursos</div>
+<ul>
+<li><a class="active" href="../graficos/PEDIDOS.html">Índice de diagramas</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<h1>Índice de diagramas (PEDIDOS) — Curso 1-4-2-3-1</h1>
+<blockquote>
+<p>Lista de todas las pizarras a generar con el motor <code>pitch.py</code>. Convención de coordenadas: x 0..100 (izq→der), y 0..100 (fondo propio abajo → portería rival arriba); <strong>se ataca hacia arriba</strong>. Dorsales según <code>_pipeline/CONVENCION.md</code>. Cada pizarra lleva al pie la marca <strong>MISTER ÉLITE — Moisés Díaz</strong>.
+Leyenda de símbolos: ver <a href="../README.html">README</a>.</p>
+</blockquote>
+<p><strong>Totales:</strong> 17 diagramas de teoría (<code>teoria-01..17</code>) + 26 de tareas (<code>tarea-01..26</code>) = <strong>43 pizarras</strong>. Cada una de las 26 tareas tiene <strong>exactamente un</strong> diagrama.</p>
+<hr />
+<h2>Diagramas de teoría</h2>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Dónde se usa</th>
+<th>Qué debe mostrar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>teoria-01-estructura.svg</code></td>
+<td>M01 §1</td>
+<td>Formación base 1-4-2-3-1 con todos los dorsales por línea: POR 1; línea de 4 (3-5-4-2); doble pivote 6-8 escalonado; trivote 11-10-7; punta 9.</td>
+</tr>
+<tr>
+<td><code>teoria-02-mutacion.svg</code></td>
+<td>M01 §2</td>
+<td>La doble mutación: a la izquierda 1-4-4-2 sin balón (extremos 7/11 bajan a la línea de medios, 10 sube con el 9); a la derecha 1-2-3-5 con balón (laterales altos, el 6 baja entre centrales, frente de cinco). Flechas de movimiento de cada pieza.</td>
+</tr>
+<tr>
+<td><code>teoria-03-zona14.svg</code></td>
+<td>M01 §3</td>
+<td>El 10 recibiendo entre líneas en la zona 14 (medio de cara), con el 9 a la espalda de la defensa rival y los extremos 7/11 en amplitud como opciones. Pase interior al 10 punteado.</td>
+</tr>
+<tr>
+<td><code>teoria-04-variantes-extremos.svg</code></td>
+<td>M01 §4</td>
+<td>Dos variantes de extremo lado a lado: a) abierto pegado a banda atacando la espalda del lateral; b) pisando por dentro con el lateral desdoblando por fuera (2v1).</td>
+</tr>
+<tr>
+<td><code>teoria-05-vs-433.svg</code></td>
+<td>M01 §5</td>
+<td>Enfrentamiento vs 1-4-3-3: doble pivote propio (2) frente a trivote rival (3); el 10 propio atacando el espacio entre el pivote y los centrales rivales.</td>
+</tr>
+<tr>
+<td><code>teoria-06-perfiles.svg</code></td>
+<td>M01 §6</td>
+<td>Mapa de perfiles: formación base con una etiqueta breve de rol junto a cada línea (sin texto sobre las fichas).</td>
+</tr>
+<tr>
+<td><code>teoria-07-mutacion-defensiva.svg</code></td>
+<td>M02 §2</td>
+<td>Secuencia (1-2-3) de cómo el 1-4-2-3-1 se convierte en 1-4-4-2 sin balón: extremos 7/11 bajan, 10 sube, dos líneas de 4 compactas a 10-12 m.</td>
+</tr>
+<tr>
+<td><code>teoria-08-bloques.svg</code></td>
+<td>M02 §3</td>
+<td>Los tres bloques (alto, medio, bajo) marcando la altura de la primera línea de presión de cada uno sobre el campo.</td>
+</tr>
+<tr>
+<td><code>teoria-09-pressing-gatillos.svg</code></td>
+<td>M02 §4</td>
+<td>Pressing de la dupla 9+10: el 9 con carrera curva cerrando el pase entre centrales; gatillo "pase al lateral → salta el extremo 7" con coberturas en cadena (lateral sube, pivote desliza).</td>
+</tr>
+<tr>
+<td><code>teoria-10-basculacion.svg</code></td>
+<td>M02 §5</td>
+<td>Las dos líneas de 4 basculadas hacia el lado del balón; el extremo y el lateral lejanos pellizcando por dentro; el 6 referenciando al 10 rival.</td>
+</tr>
+<tr>
+<td><code>teoria-11-salida-base.svg</code></td>
+<td>M03 §1</td>
+<td>Estructura base de salida: centrales 4/5 abiertos, POR 1 como +1, doble pivote 6/8 escalonado, laterales 2/3 subiendo a dar amplitud. Superioridad 3v1/3v2.</td>
+</tr>
+<tr>
+<td><code>teoria-12-salida-en-3.svg</code></td>
+<td>M03 §1</td>
+<td>Salida en 3: el 6 baja entre los centrales (línea 5-6-4), laterales altos, el 8 de pivote único receptor y el 10 bajando a ofrecer apoyo interior.</td>
+</tr>
+<tr>
+<td><code>teoria-13-1235.svg</code></td>
+<td>M03 §2</td>
+<td>Sistema estirado a 1-2-3-5: dos centrales + el 6 de resto; el 8 y el 10 en los interiores; frente de cinco arriba ocupando los cinco carriles.</td>
+</tr>
+<tr>
+<td><code>teoria-14-ataque-area.svg</code></td>
+<td>M03 §3</td>
+<td>Ataque del área en un centro: 9 al primer palo, 10 al punto de penalti, extremo lejano al segundo palo, 8 al borde del área, 6 + central de resto.</td>
+</tr>
+<tr>
+<td><code>teoria-15-transicion-of.svg</code></td>
+<td>M04 §1</td>
+<td>Transición ofensiva: primer pase vertical al 9 a la espalda de la defensa, extremos 7/11 corriendo los carriles exteriores, 8 de segunda oleada, 6 de equilibrio.</td>
+</tr>
+<tr>
+<td><code>teoria-16-repliegue.svg</code></td>
+<td>M04 §2</td>
+<td>Repliegue a 1-4-4-2 tras pérdida: extremos bajan, doble pivote frena el balón en el centro, dos líneas de 4 compactas, 9 y 10 arriba.</td>
+</tr>
+<tr>
+<td><code>teoria-17-corner-of.svg</code></td>
+<td>M04 §3</td>
+<td>Córner ofensivo: ocupación del área (9 primer palo, central que sube al penalti, 8/10 segundo palo), un jugador al borde para el rechace y resto anti-contra (6 + lateral + central).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Diagramas de tareas (uno por tarea)</h2>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Tarea</th>
+<th>Qué debe mostrar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tarea-01.svg</code></td>
+<td>T1.1 Rombo de salida</td>
+<td>Rondo 4v2 (26x20 m): POR, DFC 4/5 abiertos y el 6 entre los presionadores 9+10 en pareja; mini-porterías al fondo.</td>
+</tr>
+<tr>
+<td><code>tarea-02.svg</code></td>
+<td>T1.2 Salida 4+2 vs presión de 4</td>
+<td>Medio campo: azules 6+POR (4 def + 6/8 escalonados) vs 4 presionadores rojos; 3 puertas-meta en el medio campo (central vale doble).</td>
+</tr>
+<tr>
+<td><code>tarea-03.svg</code></td>
+<td>T1.3 Tercer hombre DFC-6-8</td>
+<td>Secuencia numerada 1-2-3: DFC conduce → pasa al 6 (de espaldas, marcado) → el 6 deja al 8 que aparece desde atrás → 8 conduce.</td>
+</tr>
+<tr>
+<td><code>tarea-04.svg</code></td>
+<td>T1.4 Construcción 7v7 (3 franjas)</td>
+<td>Campo 60x50 en 3 franjas horizontales; azules 7+POR saliendo desde la franja 1; flecha de pase atrás tachada una vez el balón llega a los pivotes.</td>
+</tr>
+<tr>
+<td><code>tarea-05.svg</code></td>
+<td>T2.1 "Subo-bajo" alturas del pivote</td>
+<td>Espacio 40x40 con tres pasillos de altura; 6 y 8 en pasillos distintos; pase al 10 en el pasillo alto con un pivote dando cobertura en el bajo.</td>
+</tr>
+<tr>
+<td><code>tarea-06.svg</code></td>
+<td>T2.2 El 6 tapón del 10 rival</td>
+<td>El 6 a caballo entre el balón y el 10 rival entre líneas, cerrando el pase interior con el cuerpo; centrales y portería detrás.</td>
+</tr>
+<tr>
+<td><code>tarea-07.svg</code></td>
+<td>T2.3 Mutación a 1-4-4-2 a la pérdida</td>
+<td>Momento de pérdida: 7 y 11 bajando (flechas) junto a 6 y 8 para formar la línea de 4 medios; 9 y 10 emparejándose arriba.</td>
+</tr>
+<tr>
+<td><code>tarea-08.svg</code></td>
+<td>T2.4 "Uno presiona, otro cubre"</td>
+<td>Corredor central: uno de los pivotes salta al receptor rival, el otro 3-4 m por detrás y por dentro en diagonal de cobertura.</td>
+</tr>
+<tr>
+<td><code>tarea-09.svg</code></td>
+<td>T2.5 Rondo 5v2 con salida a banda</td>
+<td>Rondo 18x18 con 4 comodines de banda (2,3,7,11); el último pase interior lo da un pivote orientado que abre a la banda; 6 y 8 en pasillos distintos.</td>
+</tr>
+<tr>
+<td><code>tarea-10.svg</code></td>
+<td>T3.1 Curva de presión 9+10</td>
+<td>El 9 con trayectoria curva cerrando el pase entre los 2 centrales rivales; el 10 vigilando al pivote y saltando al 2º central; mini-porterías al medio campo.</td>
+</tr>
+<tr>
+<td><code>tarea-11.svg</code></td>
+<td>T3.2 Gatillos: salto extremo/lateral</td>
+<td>El rival pasa a su lateral (gatillo); salta el extremo azul; el lateral sube a su par; el pivote cubre la espalda; la línea desliza.</td>
+</tr>
+<tr>
+<td><code>tarea-12.svg</code></td>
+<td>T3.3 Trampa de presión a banda</td>
+<td>Foco en banda: el 9 orienta el juego a la banda; extremo + lateral + pivote encierran al rival contra la línea de cal; cambio de orientación prohibido (medio campo dividido).</td>
+</tr>
+<tr>
+<td><code>tarea-13.svg</code></td>
+<td>T3.4 Presionar o replegar</td>
+<td>Dos opciones tras pérdida: a) rival con control malo → 9+10 contrapresionan; b) rival limpio → repliegue a 1-4-4-2, extremos bajan.</td>
+</tr>
+<tr>
+<td><code>tarea-14.svg</code></td>
+<td>T4.1 Recepción orientada del 10</td>
+<td>El 10 perfilado medio de cara entre el marcador (a su espalda) y la línea; recibe del pivote, gira y finaliza o asiste al 9; portería con POR.</td>
+</tr>
+<tr>
+<td><code>tarea-15.svg</code></td>
+<td>T4.2 "Encontrar al 10" 6v6+1</td>
+<td>Campo 40x36 con una franja central entre líneas de 8 m; el 10 comodín dentro; pase interior punteado que llega a la franja (vale doble).</td>
+</tr>
+<tr>
+<td><code>tarea-16.svg</code></td>
+<td>T4.3 Triángulos 10-9-extremos</td>
+<td>Último tercio 4v3+POR: el 10 conduce a zona 14 y combina (pared con el 9 / descarga al extremo / filtra a la ruptura del 9).</td>
+</tr>
+<tr>
+<td><code>tarea-17.svg</code></td>
+<td>T4.4 Llegada del 10 al área</td>
+<td>Centro desde banda con desdoblamiento; 9 al primer palo, 10 llegando con tiempo al penalti (desde fuera del área), 8 al rechace del borde.</td>
+</tr>
+<tr>
+<td><code>tarea-18.svg</code></td>
+<td>T4.5 Posesión con 10 hombre libre</td>
+<td>Posesión 8v6: flecha de progresión que obligatoriamente pasa por el 10 entre líneas; si lo marcan, un extremo entra a su espacio (rotación).</td>
+</tr>
+<tr>
+<td><code>tarea-19.svg</code></td>
+<td>T5.1 Desdoblamiento lateral-extremo</td>
+<td>Carril lateral: el extremo fija por dentro y el lateral aparece por fuera para llegar a fondo y centrar; 2v1 sobre el lateral rival.</td>
+</tr>
+<tr>
+<td><code>tarea-20.svg</code></td>
+<td>T5.2 Amplitud máxima, 3 palos</td>
+<td>Centro lateral con ocupación de los 3 palos: 9 primer palo, 10 penalti, extremo lejano entrando al segundo palo; defensa de 4 + POR.</td>
+</tr>
+<tr>
+<td><code>tarea-21.svg</code></td>
+<td>T5.3 Amplitud abre el interior</td>
+<td>Campo con dos pasillos exteriores de 6 m; al menos un extremo pisando el pasillo para fijar al lateral rival; el 10 / 8 recibiendo por dentro.</td>
+</tr>
+<tr>
+<td><code>tarea-22.svg</code></td>
+<td>T5.4 Ataque del área con tercer hombre</td>
+<td>Último tercio 6v5+POR: combinación de tercer hombre (pase-pared-pase a un tercero en movimiento) y llegada escalonada del 10/8.</td>
+</tr>
+<tr>
+<td><code>tarea-23.svg</code></td>
+<td>T6.1 Transición A-D (repliegue)</td>
+<td>Tras la pérdida: 7 y 11 bajan, el doble pivote frena el balón, se forman las dos líneas de 4; el rival no puede progresar entre ellas hasta formarse.</td>
+</tr>
+<tr>
+<td><code>tarea-24.svg</code></td>
+<td>T6.2 Transición D-A</td>
+<td>Al recuperar en bloque 1-4-4-2: primer pase vertical al 9 (apoyo) o al 10 (entre líneas); extremos 7/11 volviendo a la altura de ataque.</td>
+</tr>
+<tr>
+<td><code>tarea-25.svg</code></td>
+<td>T6.3 Doble transición A-D-A</td>
+<td>Ciclo en flechas: ataque (1-4-2-3-1) → pérdida → repliegue (1-4-4-2) → recuperación → ataque rápido; mini-porterías de contra.</td>
+</tr>
+<tr>
+<td><code>tarea-26.svg</code></td>
+<td>T6.4 Partido condicionado 11v11</td>
+<td>Campo completo con ambos equipos en 1-4-2-3-1; resaltar las zonas que premian las condiciones (pase por el 10, salida limpia, robo de la dupla 9+10).</td>
+</tr>
+</tbody>
+</table>
+<footer class="foot">Curso "Sistema 1-4-2-3-1: del concepto al campo" · MISTER ÉLITE — Moisés Díaz · poca teoría, mucha práctica</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>
