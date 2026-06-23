@@ -19,7 +19,9 @@ Uso típico:
 PALETTE = dict(
     grass1="#2f8a3e", grass2="#2b8139", line="#ffffff",
     own="#1565c0", own_edge="#0d3c75", rival="#c62828", rival_edge="#7f1414",
+    own2="#26c6da", own2_edge="#00838f",      # 2.º equipo poseedor (azul-cian claro)
     neutral="#f5a623", neutral_edge="#9c6510",
+    keeper_ring="#ffd54a",                     # anillo distintivo de portero
     ball="#fafafa", ball_edge="#222",
     pass_c="#ffd54a", run_c="#ffffff", dribble_c="#ffffff", drive_c="#7ee0ff",
     block_c="#ff5252", zone_c="#ffd54a", text="#ffffff", dark="#15202b",
@@ -193,9 +195,17 @@ class Pitch:
     # ----------------------------- ELEMENTOS -----------------------------
     def player(self, x, y, label, team="own", role="", r=15, number=None, role_below=False):
         cx, cy = self.X(x), self.Y(y)
-        fill = {"own": PALETTE["own"], "rival": PALETTE["rival"], "neutral": PALETTE["neutral"]}[team]
-        edge = {"own": PALETTE["own_edge"], "rival": PALETTE["rival_edge"], "neutral": PALETTE["neutral_edge"]}[team]
-        self.body.append(f'<g><circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r}" fill="{fill}" '
+        fill = {"own": PALETTE["own"], "own2": PALETTE["own2"],
+                "rival": PALETTE["rival"], "neutral": PALETTE["neutral"]}[team]
+        edge = {"own": PALETTE["own_edge"], "own2": PALETTE["own2_edge"],
+                "rival": PALETTE["rival_edge"], "neutral": PALETTE["neutral_edge"]}[team]
+        is_keeper = (role == "portero")
+        ring = ""
+        if is_keeper:
+            # anillo dorado exterior para distinguir al portero de un defensor del mismo color
+            ring = (f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r+4:.1f}" fill="none" '
+                    f'stroke="{PALETTE["keeper_ring"]}" stroke-width="2.6"/>')
+        self.body.append(f'<g>{ring}<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r}" fill="{fill}" '
                          f'stroke="{edge}" stroke-width="2.5"/>'
                          f'<text x="{cx:.1f}" y="{cy+4:.1f}" font-family="Segoe UI,Arial" font-size="11.5" '
                          f'font-weight="800" fill="#fff" text-anchor="middle">{_esc(label)}</text></g>')
@@ -275,8 +285,10 @@ class Pitch:
                   "dribble": ("regate", PALETTE["dribble_c"], False),
                   "block": ("bloqueo/corte", PALETTE["block_c"], False),
                   "own": ("propio", PALETTE["own"], None),
+                  "own2": ("equipo B", PALETTE["own2"], None),
                   "rival": ("rival", PALETTE["rival"], None),
                   "neutral": ("comodín", PALETTE["neutral"], None),
+                  "keeper": ("portero", PALETTE["rival"], "ring"),
                   "zone": ("zona", PALETTE["zone_c"], None)}
         items = [i for i in self._legend if i in labels]
         bw, rowh = 168, 17
@@ -291,7 +303,11 @@ class Pitch:
         for it in items:
             txt, col, dashed = labels[it]
             lx = bx + 12
-            if it in ("own", "rival", "neutral", "zone"):
+            if it == "keeper":
+                out.append(f'<circle cx="{lx+5}" cy="{yy-3}" r="6.5" fill="none" '
+                           f'stroke="{PALETTE["keeper_ring"]}" stroke-width="2"/>'
+                           f'<circle cx="{lx+5}" cy="{yy-3}" r="4.5" fill="{col}"/>')
+            elif it in ("own", "own2", "rival", "neutral", "zone"):
                 out.append(f'<circle cx="{lx+5}" cy="{yy-3}" r="6" fill="{col}"/>')
             else:
                 d = ' stroke-dasharray="6 4"' if dashed else ""

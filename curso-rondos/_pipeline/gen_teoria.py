@@ -45,7 +45,8 @@ GOLD = "#f7c948"
 # ======================================================================
 def t01():
     p = Pitch(title="Qué es un rondo — el cerco",
-              subtitle="4v1 · poseedores en el perímetro, recuperador acosado en el centro", half=None)
+              subtitle="4v1 · poseedores en el perímetro, recuperador acosado en el centro", half=None,
+              attack_arrow=False)
     # cuadro
     cx = [22, 78, 78, 22]; cy = [72, 72, 32, 32]
     for x, y in zip(cx, cy):
@@ -64,7 +65,7 @@ def t01():
     p.arrow(72, 34, 28, 34, kind="pass")
     p.arrow(24, 37, 24, 67, kind="pass")
     p.note(50, 26, "Superioridad estable + espacio reducido + posiciones fijas + oposición real")
-    p.legend(["pass", "own", "rival", "zone"])
+    p.legend(["pass", "own", "rival"])
     p.save(f"{G}/teoria-01-definicion.svg")
 
 # ======================================================================
@@ -72,7 +73,8 @@ def t01():
 # ======================================================================
 def t02():
     p = Pitch(title="Continuo de especificidad",
-              subtitle="cada peldaño gana realismo y pierde control aislado del estímulo", half=None)
+              subtitle="cada peldaño gana realismo y pierde control aislado del estímulo", half=None,
+              attack_arrow=False)
     steps = [
         ("RONDO", "sin dirección", PALETTE["own"]),
         ("RONDO\nDIRECCIONAL", "+ sentido", "#1f7ab8"),
@@ -84,8 +86,8 @@ def t02():
     x0, x1 = 8, 92
     bw = 14.5
     gap = (x1 - x0 - bw) / (n - 1)
-    # banda guía
-    panel(p, 5, 78, 95, 22, fill="#0c1b2a", op=0.35, stroke="#2a3a4a", sw=1)
+    # banda guía (opaca para que las líneas del campo no atraviesen los paneles)
+    panel(p, 5, 78, 95, 22, fill="#0c1b2a", op=0.92, stroke="#2a3a4a", sw=1)
     yc = 56
     for i, (name, sub, col) in enumerate(steps):
         xL = x0 + i * gap
@@ -112,20 +114,23 @@ def t02():
 # ======================================================================
 def t03():
     p = Pitch(title="Los cinco tipos de beneficio",
-              subtitle="el rondo entrena todas estas dimensiones a la vez", half=None)
-    # rondo central (mini)
+              subtitle="el rondo entrena todas estas dimensiones a la vez", half=None,
+              attack_arrow=False)
+    # rondo central (mini): 3 poseedores azules + 1 comodín ámbar en perímetro + 1 rojo al centro
     cxc, cyc = 50, 50
     panel(p, 38, 62, 62, 38, fill="#1f7a36", op=0.30, stroke="#ffffff", sw=1.5)
-    for dx, dy in [(-8, 8), (8, 8), (8, -8), (-8, -8)]:
-        p.player(cxc + dx, cyc + dy, "P", team="own", r=9)
+    corners = [(-8, 8, "own"), (8, 8, "own"), (8, -8, "own"), (-8, -8, "neutral")]
+    for dx, dy, tm in corners:
+        p.player(cxc + dx, cyc + dy, "P" if tm == "own" else "C", team=tm, r=9)
     p.player(cxc, cyc, "D", team="rival", r=9)
-    # 5 bloques alrededor
+    # 5 bloques alrededor — todos en un único tono neutro de marca (no chocan con las fichas)
+    BLK = "#24506f"
     blocks = [
-        ("TÉCNICO", "control orientado · pase · 1-2 toques", 50, 86, PALETTE["own"]),
-        ("TÁCTICO", "apoyos · triángulos · defensa en inferioridad", 17, 64, "#1f7ab8"),
-        ("COGNITIVO-PERCEPTIVO", "escaneo · decisión bajo presión", 83, 64, PALETTE["neutral"]),
-        ("FÍSICO-CONDICIONAL", "intermitente · RSA · agilidad", 17, 30, "#d77a1e"),
-        ("SOCIOEMOCIONAL", "competir · comunicar · gestionar el error", 83, 30, PALETTE["rival"]),
+        ("TÉCNICO", "control orientado · pase · 1-2 toques", 50, 86, BLK),
+        ("TÁCTICO", "apoyos · triángulos · defensa en inferioridad", 17, 64, BLK),
+        ("COGNITIVO-PERCEPTIVO", "escaneo · decisión bajo presión", 83, 64, BLK),
+        ("FÍSICO-CONDICIONAL", "intermitente · RSA · agilidad", 17, 30, BLK),
+        ("SOCIOEMOCIONAL", "competir · comunicar · gestionar el error", 83, 30, BLK),
     ]
     for name, sub, bx, by, col in blocks:
         chip(p, bx - 16, by + 6, bx + 16, by - 6, col, op=0.9, stroke="#ffffff", sw=1.4)
@@ -145,7 +150,8 @@ def t03():
 # ======================================================================
 def t04():
     p = Pitch(title="El panel de mandos",
-              subtitle="seis variables de diseño · toca una cada vez", half=None)
+              subtitle="seis variables de diseño · toca una cada vez", half=None,
+              attack_arrow=False)
     panel(p, 5, 87, 95, 15, fill="#0c1b2a", op=0.45, stroke="#2a3a4a", sw=1)
     # color de marca unificado para todos los diales (azul de marca, sin rojo)
     DIAL = "#3f6f9e"
@@ -202,7 +208,8 @@ def t04():
 # ======================================================================
 def t05():
     p = Pitch(title="Relaciones numéricas",
-              subtitle="la misma idea, distinta superioridad", half=None)
+              subtitle="la misma idea, distinta superioridad", half=None,
+              attack_arrow=False)
     # 4 cuadrantes
     def cage(cx, cy, hw, poss, defs, name, sup):
         # marco
@@ -238,7 +245,8 @@ def t05():
 # ======================================================================
 def t06():
     p = Pitch(title="Cómo progresar un rondo",
-              subtitle="subir exigencia de forma graduada y medible", half=None)
+              subtitle="subir exigencia de forma graduada y medible", half=None,
+              attack_arrow=False)
     # zona de reto sombreada (banda horizontal)
     p.zone(8, 47, 92, 67, label="", c="#6fe08a", fill_op=0.16)
     txt(p, 50, 70.5, "ZONA DE RETO · ≈ 60–75 % de éxito", size=11, c="#bff0c8", w=800)
@@ -268,7 +276,10 @@ def t06():
     p.body[-1] = p.body[-1].replace('>EXIGENCIA<', f' transform="rotate(-90 {p.X(5.5):.1f} {p.Y(50):.1f})">EXIGENCIA<')
     bigarrow(p, 8, 14, 92, 14, c="#9fb3c8", w=3, mk="ah_run")
     txt(p, 50, 11, "PROGRESIÓN  →", size=9.5, c="#cfe0ee", w=700)
-    p.note(50, 84, "Si el balón no circula: agranda el espacio o libera toques (regresar es legítimo)", size=9.2)
+    # rótulo sobre banda limpia para que no se cruce con el arco del área
+    chip(p, 8, 87, 92, 81, "#15202b", op=0.95, stroke=GOLD, sw=1.4, rx=8)
+    txt(p, 50, 83.6, "Si el balón no circula: agranda el espacio o libera toques (regresar es legítimo)",
+        size=9.2, c="#fff5cc", w=600)
     p.save(f"{G}/teoria-06-progresion.svg")
 
 # ======================================================================
@@ -276,7 +287,8 @@ def t06():
 # ======================================================================
 def t07():
     p = Pitch(title="Coachear el rondo — el freeze",
-              subtitle="congelar la imagen y preguntar por la línea no vista", half=None)
+              subtitle="congelar la imagen y preguntar por la línea no vista", half=None,
+              attack_arrow=False)
     # cuadro de rondo
     for x, y in [(24, 68), (76, 68), (76, 34), (24, 34)]:
         p.cone(x, y)
@@ -315,7 +327,8 @@ def t07():
 # ======================================================================
 def t08():
     p = Pitch(title="La cadena de transferencia",
-              subtitle="rondo → juego de posición → partido condicionado → competición", half=None)
+              subtitle="rondo → juego de posición → partido condicionado → competición", half=None,
+              attack_arrow=False)
     steps = [
         ("RONDO", "el principio puro", PALETTE["own"], 80),
         ("JUEGO DE\nPOSICIÓN", "+ porterías / dirección", PALETTE["neutral"], 67),
@@ -349,15 +362,16 @@ def t08():
 # ======================================================================
 def t09():
     p = Pitch(title="Las 7 familias y sus principios",
-              subtitle="elige la familia por el principio del modelo que toque", half=None)
+              subtitle="elige la familia por el principio del modelo que toque", half=None,
+              attack_arrow=False)
     fams = [
         ("1 · Iniciación / mantenimiento", "conservación, apoyos, 1.er toque", "Posesión segura", PALETTE["own"]),
         ("2 · Presión y recuperación", "presión tras pérdida, coberturas", "Transición defensiva", PALETTE["rival"]),
         ("3 · Posicional / orientación", "cambio de orientación, escaneo", "Cambiar el punto de juego", "#1f7ab8"),
         ("4 · Líneas y comodines", "progresión, tercer hombre, entre líneas", "Romper líneas / progresar", PALETTE["neutral"]),
         ("5 · Finalización", "última pasada, llegada, definición", "Convertir en gol", "#d77a1e"),
-        ("6 · Competitivos / condicionados", "dos fases con marcador, decisión", "Lo más cercano al partido", "#8e44ad"),
-        ("7 · Lúdicos / calentamiento", "activación, ritmo, cohesión", "Preparar cuerpo y ojo", "#2e9e6b"),
+        ("6 · Competitivos / condicionados", "dos fases con marcador, decisión", "Lo más cercano al partido", "#b8923a"),
+        ("7 · Lúdicos / calentamiento", "activación, ritmo, cohesión", "Preparar cuerpo y ojo", "#5d6b78"),
     ]
     yt, yb = 84, 12
     n = len(fams)
@@ -387,7 +401,8 @@ def t09():
 # ======================================================================
 def t10():
     p = Pitch(title="El rondo en el microciclo (MD)",
-              subtitle="el principio es constante; el tipo de rondo cambia según el día", half=None)
+              subtitle="el principio es constante; el tipo de rondo cambia según el día", half=None,
+              attack_arrow=False)
     days = [
         ("MD+2", "Recuperación", 22, "Lúdico 7v2", "F7/1"),
         ("MD-4", "Fuerza", 68, "Reducido, presión", "F1/2"),
@@ -422,8 +437,8 @@ def t10():
         chip(p, x - 6, 38, x + 6, 33, col, op=0.92, stroke="#ffffff", sw=1.3, rx=5)
         txt(p, x, 34.8, d, size=9.2, c="#fff", w=800)
         txt(p, x, 30.5, foco, size=7.6, c="#cfe0ee", w=700)
-        # caja de rondo recomendado
-        panel(p, x - 7, 27, x + 7, 16, fill="#10202e", op=0.6, stroke="#2a3a4a", sw=1, rx=5)
+        # caja de rondo recomendado — fondo más claro para contraste de los chips
+        panel(p, x - 7, 27, x + 7, 16, fill="#22303d", op=0.96, stroke="#46586a", sw=1, rx=5)
         # texto envuelto simple
         words = rec.split()
         # partir en 2 líneas
@@ -431,9 +446,9 @@ def t10():
             l1 = words[0]; l2 = " ".join(words[1:])
         else:
             l1 = rec; l2 = ""
-        txt(p, x, 24, l1, size=7.4, c="#dfe9f2", w=600)
+        txt(p, x, 24, l1, size=7.4, c="#ffffff", w=700)
         if l2:
-            txt(p, x, 20.5, l2, size=7.4, c="#dfe9f2", w=600)
+            txt(p, x, 20.5, l2, size=7.4, c="#ffffff", w=700)
         txt(p, x, 17.5, fam, size=8, c=GOLD, w=800)
     txt(p, 50, 12, "El rondo de MD-1 es el termómetro de frescura del equipo", size=9.5, c="#cfe0ee", w=700)
     p.save(f"{G}/teoria-10-microciclo.svg")
