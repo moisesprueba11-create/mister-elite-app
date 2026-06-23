@@ -124,7 +124,7 @@ class Pitch:
             self._rect(0, self.H - self.foot_h, self.W, self.foot_h, fill=PALETTE["dark"])
             self._text(self.W - 12, self.H - 8, "MISTER ÉLITE · Moisés Díaz",
                        size=10, c="#8aa0b6", w=700, anchor="end")
-            self._text(12, self.H - 8, "Sistema 1-4-4-2", size=10, c="#7f93a8", w=600, anchor="start")
+            self._text(12, self.H - 8, "Sistema 1-4-3-3", size=10, c="#7f93a8", w=600, anchor="start")
         # flecha de sentido de ataque
         self._attack_arrow()
 
@@ -168,7 +168,20 @@ class Pitch:
 
     def _attack_arrow(self):
         x = self.X(96)
-        y1 = self.Y(44); y2 = self.Y(56)
+        # La flecha debe quedar SIEMPRE dentro del área jugable, sin importar `half`.
+        # En mitad de ataque (50..100) o defensa (0..50) los valores fijos 44/56
+        # se extrapolan fuera del campo, así que centramos la flecha en el rango
+        # visible y la mantenemos con un pequeño margen interior.
+        if self.half == "att":
+            lo, hi = 56.0, 62.0      # dentro de 50..100
+        elif self.half == "def":
+            lo, hi = 38.0, 44.0      # dentro de 0..50
+        else:
+            lo, hi = 44.0, 56.0
+        # asegurar que las coordenadas SVG caen dentro del área jugable
+        ytop, ybot = self.y0, self.y0 + self.play_h
+        y1 = min(max(self.Y(lo), ytop + 4), ybot - 4)
+        y2 = min(max(self.Y(hi), ytop + 4), ybot - 4)
         self.body.append(f'<g opacity="0.9"><line x1="{x:.1f}" y1="{y1:.1f}" x2="{x:.1f}" y2="{y2:.1f}" '
                          f'stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/>'
                          f'<text x="{x-6:.1f}" y="{(y1+y2)/2:.1f}" font-family="Segoe UI,Arial" font-size="9" '
