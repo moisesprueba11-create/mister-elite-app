@@ -538,7 +538,7 @@ Los rojos roban; cada robo resta 2 puntos al marcador azul. Se acumula por serie
 
 **Organización:** **7 v 2 (+1 comodín)** en cuadro de **16 x 16 m**. Conos de **4 colores** en las esquinas. El entrenador da señales (gritando un color o levantando un peto de color). Material: 8 conos perimetrales + 4 conos/petos de color, petos, balón.
 
-**Desarrollo:** rondo de conservación con **señal cognitiva**: el entrenador grita un color y el equipo debe **reaccionar** según el código pactado, sin perder el balón:
+**Desarrollo:** rondo de conservación con **señal cognitiva**. Los colores aquí son los **conos de esquina** (no los petos): el entrenador grita un color de cono y el equipo debe **reaccionar** según el código pactado, sin perder el balón:
 - Color **rojo** → el siguiente pase debe ir hacia la esquina de ese color.
 - Color **verde** → todos cambian de posición girando en sentido horario.
 - Color **azul** → siguiente pase a 1 toque.
@@ -680,5 +680,7 @@ Es el broche de la sesión: alta participación, risas y calidad técnica bajo p
 | 6 — Competitivos y condicionados | 36, 37, 38, 39, 40, 41, 42, 43 | 8 |
 | 7 — Lúdicos y de calentamiento | 44, 45, 46, 47, 48, 49, 50 | 7 |
 | **TOTAL** | **26–50** | **25** |
-</content>
-</invoke>
+
+---
+
+*MISTER ÉLITE — Moisés Díaz*

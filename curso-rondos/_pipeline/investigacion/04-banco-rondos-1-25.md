@@ -102,7 +102,7 @@ Cobertura de este documento: Rondos **1 a 25**, en cuatro familias.
 
 **Organización:**
 - Relación: **5 v 2** (5 azules en pentágono, 2 rojos dentro).
-- Espacio: **pentágono / cuadrado de 9×9 m** (5 conos formando pentágono).
+- Espacio: **pentágono inscrito en ~9×9 m** (5 conos formando el pentágono; los 5 azules se sitúan sobre los conos).
 - Material: 1 balón, 5 conos, petos (5 azul, 2 rojo).
 
 **Desarrollo:**
@@ -237,39 +237,39 @@ Cobertura de este documento: Rondos **1 a 25**, en cuatro familias.
 
 ---
 
-## Rondo 7 — "Rondo de dos jaulas" (2×(3v1) con pase de conexión)
+## Rondo 7 — "El tercer hombre" (6v2 con devolución prohibida)
 
 **Objetivo:**
-- *Técnico:* pase corto de mantenimiento + pase largo de conexión entre zonas.
-- *Táctico:* mantener para luego cambiar de zona; primera noción de cambio de juego.
-- *Cognitivo:* decidir cuándo conservar y cuándo saltar a la otra jaula.
+- *Técnico:* control orientado y pase encadenado a dos toques; calidad del pase que salta una posición.
+- *Táctico:* automatizar el **tercer hombre** — el que recibe la pared no es quien la inició; circular el balón en vez de devolverlo.
+- *Cognitivo:* anticipar al receptor libre (el "tercer hombre") antes de recibir.
 
 **Organización:**
-- Relación: **dos cuadros de 3 v 1** separados por un pasillo de **5 m**.
-- Espacio: dos cuadrados de **6×6 m** con un pasillo central neutro de 5 m entre ellos.
-- Material: 1 balón, 8 conos, petos (6 azul, 2 rojo).
+- Relación: **6 v 2** (6 azules en hexágono sobre los conos, 2 rojos dentro).
+- Espacio: **cuadro de 12×12 m** (6 conos repartidos en el perímetro formando hexágono).
+- Material: 1 balón, 6 conos, petos (6 azul, 2 rojo).
 
 **Desarrollo:**
-1. En cada cuadro un 3v1. Tras **3 pases** dentro de un cuadro, un azul debe **enviar el balón al otro cuadro** (pase de conexión por encima/cruzando el pasillo).
-2. El equipo que recibe en el otro cuadro conserva y repite el ciclo.
-3. Los defensores no pueden salir de su cuadro: presionan dentro y anticipan el pase de conexión.
+1. Los 6 azules conservan; los 2 rojos presionan en pareja.
+2. **Prohibido devolver el pase al jugador que te lo dio**: el balón debe seguir circulando hacia un tercero, lo que obliga a que el apoyo y el tercer hombre se ofrezcan a la vez.
+3. La secuencia tipo es A→B (pared), B→C libre (tercer hombre), sin pasar B de vuelta a A.
 
-**Reglas / Provocaciones:**
-- Mínimo **3 pases** antes de conectar a la otra jaula (obliga a mantener).
-- **+2 puntos** por conexión limpia entre jaulas; **+1** por cada bloque de 3 pases mantenido.
-- Pase de conexión **raso** (no balón aéreo) → exige precisión.
+**Reglas / Provocaciones (medibles):**
+- **Prohibido el pase de devolución** al último pasador (si ocurre, balón a los rojos = punto rojo).
+- Azules **a 2 toques**.
+- **+1 punto** por cada 6 pases consecutivos respetando la no-devolución; **+1 extra** por cada secuencia clara de tercer hombre (pared + jugador libre).
 
-**Variantes:**
-- *Fácil:* pasillo de 3 m, conexión libre tras 2 pases.
-- *Medio:* pasillo 5 m, mínimo 3 pases.
-- *Difícil:* pasillo 7 m + el defensor que pierde puede **perseguir** el pase y entrar en la jaula contraria.
+**Variantes (fácil → difícil):**
+- *Fácil:* 7v2, 14×14, toques libres (solo la regla de no devolver).
+- *Medio:* 6v2, 12×12, 2 toques.
+- *Difícil:* 6v2 en 10×10 + un toque en la pared (el apoyo descarga de primeras al tercer hombre).
 
 **Puntos de coaching:**
-- "Mantén con calma; el cambio de jaula se busca, no se fuerza."
-- "El pase largo de conexión: cabeza arriba, superficie firme, raso y tenso."
-- Preparar la recepción en la jaula que recibe (alguien debe estar orientado para controlar).
+- "Si no puedes devolver, ya debes saber dónde está el tercer hombre antes de recibir."
+- "El apoyo se ofrece para descargar, no para tener el balón: pasa y libera."
+- Escaneo previo: el tercer hombre se localiza con la cabeza, no con la suerte.
 
-**Duración / series:** 4 series de 3 min. Rotar defensores por tiempo.
+**Duración / series:** 4 series de 3 min, 60 s descanso. Rotar la pareja defensora por tiempo o por robo.
 
 ---
 
@@ -671,7 +671,7 @@ Cobertura de este documento: Rondos **1 a 25**, en cuatro familias.
 
 ---
 
-## Rondo 19 — "Rondo de posición 4+3v3" (estructura del juego de posición)
+## Rondo 19 — "Rondo de posición 4v3 (+3 comodines)" (estructura del juego de posición)
 
 **Objetivo:**
 - *Táctico:* reproducir una **estructura posicional** (no solo conservar): apoyos fijos por dentro y por fuera, jugar el tercer hombre.
