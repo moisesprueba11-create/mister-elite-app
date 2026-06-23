@@ -20,38 +20,41 @@ def r35():
     p = Pitch(title="Rondo 35 — Conservar · Progresar · Finalizar",
               subtitle="4v2 → pasillo +1 comodín → 2v1+portero · 3 zonas ~45 m · finalización",
               half="att")
-    # Zona 1 (conservación, abajo) y2 ~ 55-68 ; Zona 2 (progresión) 70-80 ; Zona 3 (finalización) 82-96
-    # Zona 1 conservación
-    p.zone(22, 55, 78, 68, label="ZONA 1 · conservar (4v2)")
+    # Zona 1 (conservación, abajo) ; Zona 2 (progresión) ; Zona 3 (finalización)
+    # Rótulos de zona ANCLADOS al borde inferior de cada banda (fuera de las fichas).
+    p.zone(22, 55, 78, 68)
     box(p, 22, 55, 78, 68)
-    # Zona 2 progresión (pasillo)
-    p.zone(30, 70, 70, 79, label="ZONA 2 · progresar")
+    p.note(50, 56.5, "ZONA 1 · conservar (4v2)", size=9.5, c="#fff5cc")
+    p.zone(30, 70, 70, 79)
     box(p, 30, 70, 70, 79)
-    # Zona 3 finalización
-    p.zone(28, 82, 72, 95, label="ZONA 3 · finalizar (2v1 + portero)")
+    p.note(50, 71, "ZONA 2 · progresar", size=9.5, c="#fff5cc")
+    p.zone(28, 82, 72, 95)
     box(p, 28, 82, 72, 95)
+    p.note(50, 83, "ZONA 3 · finalizar (2v1 + portero)", size=9.5, c="#fff5cc")
 
-    # Zona 1: 4 azules + 2 rojos
-    p.player(28, 58, "P", team="own"); p.player(72, 58, "P", team="own")
-    p.player(28, 66, "P", team="own"); p.player(72, 66, "P", team="own")
-    p.player(45, 62, "D", team="rival"); p.player(58, 63, "D", team="rival")
-    p.ball(28, 58)
-    # pases zona 1
-    p.arrow(28, 58, 72, 58, kind="pass", label="1")
-    p.arrow(72, 58, 72, 66, kind="pass", label="2")
-    # Zona 2: comodín
-    p.player(50, 75, "C", team="neutral", role="comodín")
-    p.arrow(72, 66, 50, 75, kind="pass", label="3 progresa")
+    # Zona 1: 4 azules + 2 rojos (fichas bajadas para no tapar el rótulo de zona)
+    p.player(30, 60, "P", team="own"); p.player(70, 60, "P", team="own")
+    p.player(30, 66, "P", team="own"); p.player(70, 66, "P", team="own")
+    p.player(45, 63, "D", team="rival"); p.player(58, 64, "D", team="rival")
+    p.ball(30, 60)
+    # pases zona 1 (números anclados en zona vacía)
+    p.arrow(30, 60, 70, 60, kind="pass"); p.note(50, 59, "1", c="#ffd54a", size=11)
+    p.arrow(70, 60, 70, 66, kind="pass"); p.note(73, 63, "2", c="#ffd54a", size=11)
+    # Zona 2: comodín (rótulo del comodín a la izquierda, fuera de la flecha)
+    p.player(45, 75, "C", team="neutral")
+    p.note(38, 75, "comodín", size=9, c="#fff5cc", anchor="end")
+    p.arrow(70, 66, 45, 75, kind="pass"); p.note(60, 72, "3", c="#ffd54a", size=11)
     # Zona 3: 2 azules vs 1 rojo + portero
-    p.player(40, 87, "P", team="own"); p.player(60, 88, "P", team="own")
+    p.player(38, 87, "P", team="own"); p.player(62, 88, "P", team="own")
     p.player(50, 90, "D", team="rival")
     p.player(50, 97, "POR", team="rival", role="portero", role_below=True)
     p.goalmini(50, 99)
-    p.arrow(50, 75, 40, 87, kind="pass", label="4")
-    p.arrow(40, 87, 60, 88, kind="pass", label="5")
-    p.arrow(60, 88, 50, 98, kind="drive", label="gol")
-    p.note(50, 51, "5 pases mín. en Z1 · resolver 2v1 en ≤5 s · secuencia completa = 3 pts")
-    p.legend(["own", "rival", "neutral", "pass", "drive", "zone"])
+    p.arrow(45, 75, 38, 87, kind="pass"); p.note(36, 81, "4", c="#ffd54a", size=11)
+    p.arrow(38, 87, 62, 88, kind="pass"); p.note(50, 86, "5", c="#ffd54a", size=11)
+    p.arrow(62, 88, 52, 95, kind="drive"); p.note(62, 92, "gol", c="#7ee0ff", size=10)
+    # consigna anclada al borde DERECHO (leyenda ocupa abajo-izq) para no solaparla
+    p.note(96, 52.5, "5 pases mín. Z1 · 2v1 ≤5 s · secuencia = 3 pts", size=9, anchor="end")
+    p.legend(["own", "rival", "neutral", "keeper", "pass", "drive"])
     p.save(f"{OUT}/rondo-35.svg")
 
 
@@ -67,20 +70,21 @@ def r36():
     # Equipo A (azul own) 4 jugadores perímetro
     p.player(28, 34, "A", team="own"); p.player(50, 31, "A", team="own")
     p.player(28, 66, "A", team="own"); p.player(40, 50, "A", team="own")
-    # Equipo B (otro poseedor) -> usamos neutral ámbar como segundo equipo poseedor
-    p.player(72, 34, "B", team="neutral"); p.player(72, 66, "B", team="neutral")
-    p.player(50, 69, "B", team="neutral"); p.player(60, 50, "B", team="neutral")
+    # Equipo B (2.º poseedor) -> azul-cian claro (own2), NO comodín
+    p.player(72, 34, "B", team="own2"); p.player(72, 66, "B", team="own2")
+    p.player(50, 69, "B", team="own2"); p.player(60, 50, "B", team="own2")
     # Equipo rojo (4 presionan)
     p.player(44, 40, "D", team="rival"); p.player(56, 40, "D", team="rival")
     p.player(44, 60, "D", team="rival"); p.player(56, 60, "D", team="rival")
     p.ball(28, 34)
-    p.arrow(28, 34, 40, 50, kind="pass", label="1")
-    p.arrow(40, 50, 60, 50, kind="pass", label="2")
-    p.arrow(60, 50, 72, 66, kind="pass", label="3")
+    # secuencia separada de las fichas (rótulos anclados fuera del centro)
+    p.arrow(28, 34, 40, 50, kind="pass"); p.note(33, 43, "1", c="#ffd54a", size=11)
+    p.arrow(40, 50, 60, 50, kind="pass"); p.note(50, 46, "2", c="#ffd54a", size=11)
+    p.arrow(60, 50, 72, 66, kind="pass"); p.note(67, 60, "3", c="#ffd54a", size=11)
     # marcador
     p.note(50, 22, "MARCADOR   A: 0   B: 0   ·   10 pases (A+B) = 1 pto para ambos")
-    p.note(50, 78, "Quien provoca la pérdida pasa a presionar · máx. 3 toques")
-    p.legend(["own", "neutral", "rival", "pass"])
+    p.note(50, 78, "Equipo B = azul claro (NO comodín) · quien pierde el balón pasa a presionar · máx. 3 toques")
+    p.legend(["own", "own2", "rival", "pass"])
     p.save(f"{OUT}/rondo-36.svg")
 
 
@@ -104,9 +108,13 @@ def r37():
     p.player(45, 55, "D", team="rival"); p.player(58, 50, "D", team="rival")
     p.player(50, 42, "D", team="rival")
     p.ball(28, 66)
-    p.arrow(28, 66, 42, 70, kind="pass", label="0 mismo cuarto")
-    p.arrow(42, 70, 72, 66, kind="pass", label="1 cambia cuarto")
-    p.arrow(72, 66, 28, 34, kind="pass", label="3 diagonal")
+    # flechas SIN rótulo encima; los valores se colocan en zonas vacías de cada cuarto
+    p.arrow(28, 66, 42, 70, kind="pass")
+    p.arrow(42, 70, 72, 66, kind="pass")
+    p.arrow(72, 66, 28, 34, kind="pass")
+    p.note(34, 62, "0 mismo cuarto", size=9, c="#ffd54a")
+    p.note(58, 67, "1 cambia cuarto", size=9, c="#ffd54a")
+    p.note(42, 42, "3 diagonal", size=9, c="#ffd54a")
     p.note(50, 21, "Pase recibido y controlado · diagonal a cuarto opuesto = 3 ptos · robo rojo = -2")
     p.legend(["own", "rival", "pass", "zone"])
     p.save(f"{OUT}/rondo-37.svg")
@@ -152,14 +160,15 @@ def r39():
     p.player(50, 70, "P", team="own"); p.player(26, 60, "P", team="own")
     p.player(74, 60, "P", team="own"); p.player(26, 40, "P", team="own")
     p.player(74, 40, "P", team="own"); p.player(50, 30, "P", team="own")
-    # comodín interior
-    p.player(40, 50, "C", team="neutral", role="+1 toque")
+    # comodín interior (desplazado del círculo central; rótulo "+1 toque" a la izquierda)
+    p.player(36, 52, "C", team="neutral")
+    p.note(29, 52, "+1 toque", size=9, c="#fff5cc", anchor="end")
     # 2 rojos
     p.player(54, 54, "D", team="rival"); p.player(60, 46, "D", team="rival")
     p.ball(50, 70)
     p.arrow(50, 70, 26, 60, kind="pass", label="1")
-    p.arrow(26, 60, 40, 50, kind="pass", label="2")
-    p.arrow(40, 50, 74, 40, kind="pass", label="3")
+    p.arrow(26, 60, 36, 52, kind="pass", label="2")
+    p.arrow(36, 52, 74, 40, kind="pass", label="3")
     # cartel escalera
     p.note(50, 22, "ESCALERA:  min1 libre  ·  min2 ≤3  ·  min3 ≤2  ·  min4 = 1 toque")
     p.note(50, 78, "8 pases = 1 pto · comodín juega un toque por encima de la condición")
@@ -183,11 +192,12 @@ def r40():
     # 3 rojos formando una línea (bloque)
     p.player(40, 52, "D", team="rival"); p.player(52, 50, "D", team="rival")
     p.player(64, 52, "D", team="rival")
-    # comodín de premio en banda
-    p.player(82, 50, "C", team="neutral", role="premio 15 s")
+    # comodín de premio dentro del campo (no pegado al borde); rótulo debajo
+    p.player(80, 46, "C", team="neutral", role="premio 15 s", role_below=True)
     p.ball(26, 58)
-    # pase interior que rompe línea (entre 2 rojos)
-    p.arrow(26, 58, 70, 32, kind="pass", label="rompe línea → activa premio")
+    # pase interior que rompe línea (entre 2 rojos) — rótulo en caja blanca, alto contraste
+    p.arrow(26, 58, 70, 32, kind="pass")
+    p.note(40, 44, "rompe línea → activa premio", size=9.5, c="#ffffff", anchor="start")
     p.note(50, 22, "Pase interior entre 2 rojos (controlado) = comodín 15 s · renueva si repite")
     p.note(50, 78, "Cada robo rojo desactiva el comodín · medir % tiempo activo")
     p.legend(["own", "rival", "neutral", "pass"])
@@ -206,18 +216,19 @@ def r41():
     # Equipo A (own) 3
     p.player(50, 68, "A", team="own"); p.player(28, 56, "A", team="own")
     p.player(28, 40, "A", team="own")
-    # Equipo B (neutral ámbar = segundo poseedor) 3
-    p.player(72, 56, "B", team="neutral"); p.player(72, 40, "B", team="neutral")
-    p.player(50, 32, "B", team="neutral")
+    # Equipo B (2.º poseedor) = azul-cian claro (own2), NO comodín
+    p.player(72, 56, "B", team="own2"); p.player(72, 40, "B", team="own2")
+    p.player(50, 32, "B", team="own2")
     # Equipo rojo presiona 3
     p.player(46, 52, "D", team="rival"); p.player(58, 52, "D", team="rival")
     p.player(52, 44, "D", team="rival")
     p.ball(50, 68)
-    p.arrow(50, 68, 72, 56, kind="pass", label="1")
+    # "1" anclado junto a su flecha (zona vacía), "2" separado
+    p.arrow(50, 68, 72, 56, kind="pass"); p.note(64, 65, "1", c="#ffd54a", size=11)
     p.arrow(72, 56, 28, 40, kind="pass", label="2")
-    p.note(50, 24, "Quien PIERDE el balón baja a presionar · el que presionaba sube")
+    p.note(50, 24, "Equipo B = azul claro (NO comodín) · quien PIERDE el balón baja a presionar")
     p.note(50, 76, "Cronómetro de tiempo en posesión · 12 pases = +30 s · gana quien más acumula")
-    p.legend(["own", "neutral", "rival", "pass"])
+    p.legend(["own", "own2", "rival", "pass"])
     p.save(f"{OUT}/rondo-41.svg")
 
 
@@ -230,9 +241,9 @@ def r42():
               half="att")
     box(p, 20, 54, 80, 94)
     p.zone(20, 54, 80, 94)
-    # 2 mini-porterías en el fondo (arriba)
-    p.goalmini(38, 95); p.goalmini(62, 95)
-    p.note(38, 97, "mini-portería", size=8); p.note(62, 97, "mini-portería", size=8)
+    # 2 mini-porterías en el fondo (arriba); rótulo único centrado para no cruzar conducciones
+    p.goalmini(34, 95); p.goalmini(66, 95)
+    p.note(50, 96, "2 mini-porterías", size=8.5)
     # 6 azules
     p.player(30, 60, "P", team="own"); p.player(70, 60, "P", team="own")
     p.player(28, 75, "P", team="own"); p.player(72, 75, "P", team="own")
@@ -243,7 +254,8 @@ def r42():
     p.ball(30, 60)
     p.arrow(30, 60, 28, 75, kind="pass", label="1")
     p.arrow(28, 75, 45, 84, kind="pass", label="2 (cambio orient.)")
-    p.arrow(45, 84, 38, 95, kind="drive", label="¿arriesga?")
+    # conducción que apunta a la mini-portería izq. SIN cruzar su rótulo (queda a la izq.)
+    p.arrow(45, 84, 34, 92, kind="drive"); p.note(40, 88, "¿arriesga?", c="#7ee0ff", size=9.5, anchor="end")
     p.note(50, 57, "8 pases=1 pto · gol=+3 · fallo/robo=pierdes lo acumulado · tras 1 cambio orient.")
     p.legend(["own", "rival", "pass", "drive", "zone"])
     p.save(f"{OUT}/rondo-42.svg")

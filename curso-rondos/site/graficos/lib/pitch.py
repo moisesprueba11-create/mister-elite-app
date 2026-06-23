@@ -19,19 +19,23 @@ Uso típico:
 PALETTE = dict(
     grass1="#2f8a3e", grass2="#2b8139", line="#ffffff",
     own="#1565c0", own_edge="#0d3c75", rival="#c62828", rival_edge="#7f1414",
+    own2="#26c6da", own2_edge="#00838f",      # 2.º equipo poseedor (azul-cian claro)
     neutral="#f5a623", neutral_edge="#9c6510",
+    keeper_ring="#ffd54a",                     # anillo distintivo de portero
     ball="#fafafa", ball_edge="#222",
     pass_c="#ffd54a", run_c="#ffffff", dribble_c="#ffffff", drive_c="#7ee0ff",
     block_c="#ff5252", zone_c="#ffd54a", text="#ffffff", dark="#15202b",
 )
 
 class Pitch:
-    def __init__(self, title="", half=None, width=680, brand=True, subtitle=""):
-        """half: None=campo completo; 'att'=mitad de ataque; 'def'=mitad defensiva."""
+    def __init__(self, title="", half=None, width=680, brand=True, subtitle="", attack_arrow=True):
+        """half: None=campo completo; 'att'=mitad de ataque; 'def'=mitad defensiva.
+        attack_arrow=False para infografías conceptuales (oculta la flecha ATAQUE)."""
         self.half = half
         self.title = title
         self.subtitle = subtitle
         self.brand = brand
+        self.attack_arrow = attack_arrow
         self.W = width
         self.M = 26                       # margen lateral
         self.title_h = 50 if title else 0
@@ -126,7 +130,8 @@ class Pitch:
                        size=10, c="#8aa0b6", w=700, anchor="end")
             self._text(12, self.H - 8, "Rondos · MISTER ÉLITE", size=10, c="#7f93a8", w=600, anchor="start")
         # flecha de sentido de ataque
-        self._attack_arrow()
+        if self.attack_arrow:
+            self._attack_arrow()
 
     def _penalty_area(self, top, lw):
         gx0, gw = self.x0, self.play_w
@@ -168,7 +173,20 @@ class Pitch:
 
     def _attack_arrow(self):
         x = self.X(96)
-        y1 = self.Y(44); y2 = self.Y(56)
+        # La flecha debe quedar SIEMPRE dentro del área jugable, sin importar `half`.
+        # En mitad de ataque (50..100) o defensa (0..50) los valores fijos 44/56
+        # se extrapolan fuera del campo, así que centramos la flecha en el rango
+        # visible y la mantenemos con un pequeño margen interior.
+        if self.half == "att":
+            lo, hi = 56.0, 62.0      # dentro de 50..100
+        elif self.half == "def":
+            lo, hi = 38.0, 44.0      # dentro de 0..50
+        else:
+            lo, hi = 44.0, 56.0
+        # asegurar que las coordenadas SVG caen dentro del área jugable
+        ytop, ybot = self.y0, self.y0 + self.play_h
+        y1 = min(max(self.Y(lo), ytop + 4), ybot - 4)
+        y2 = min(max(self.Y(hi), ytop + 4), ybot - 4)
         self.body.append(f'<g opacity="0.9"><line x1="{x:.1f}" y1="{y1:.1f}" x2="{x:.1f}" y2="{y2:.1f}" '
                          f'stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/>'
                          f'<text x="{x-6:.1f}" y="{(y1+y2)/2:.1f}" font-family="Segoe UI,Arial" font-size="9" '
@@ -177,9 +195,17 @@ class Pitch:
     # ----------------------------- ELEMENTOS -----------------------------
     def player(self, x, y, label, team="own", role="", r=15, number=None, role_below=False):
         cx, cy = self.X(x), self.Y(y)
-        fill = {"own": PALETTE["own"], "rival": PALETTE["rival"], "neutral": PALETTE["neutral"]}[team]
-        edge = {"own": PALETTE["own_edge"], "rival": PALETTE["rival_edge"], "neutral": PALETTE["neutral_edge"]}[team]
-        self.body.append(f'<g><circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r}" fill="{fill}" '
+        fill = {"own": PALETTE["own"], "own2": PALETTE["own2"],
+                "rival": PALETTE["rival"], "neutral": PALETTE["neutral"]}[team]
+        edge = {"own": PALETTE["own_edge"], "own2": PALETTE["own2_edge"],
+                "rival": PALETTE["rival_edge"], "neutral": PALETTE["neutral_edge"]}[team]
+        is_keeper = (role == "portero")
+        ring = ""
+        if is_keeper:
+            # anillo dorado exterior para distinguir al portero de un defensor del mismo color
+            ring = (f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r+4:.1f}" fill="none" '
+                    f'stroke="{PALETTE["keeper_ring"]}" stroke-width="2.6"/>')
+        self.body.append(f'<g>{ring}<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r}" fill="{fill}" '
                          f'stroke="{edge}" stroke-width="2.5"/>'
                          f'<text x="{cx:.1f}" y="{cy+4:.1f}" font-family="Segoe UI,Arial" font-size="11.5" '
                          f'font-weight="800" fill="#fff" text-anchor="middle">{_esc(label)}</text></g>')
@@ -259,8 +285,10 @@ class Pitch:
                   "dribble": ("regate", PALETTE["dribble_c"], False),
                   "block": ("bloqueo/corte", PALETTE["block_c"], False),
                   "own": ("propio", PALETTE["own"], None),
+                  "own2": ("equipo B", PALETTE["own2"], None),
                   "rival": ("rival", PALETTE["rival"], None),
                   "neutral": ("comodín", PALETTE["neutral"], None),
+                  "keeper": ("portero", PALETTE["rival"], "ring"),
                   "zone": ("zona", PALETTE["zone_c"], None)}
         items = [i for i in self._legend if i in labels]
         bw, rowh = 168, 17
@@ -275,7 +303,11 @@ class Pitch:
         for it in items:
             txt, col, dashed = labels[it]
             lx = bx + 12
-            if it in ("own", "rival", "neutral", "zone"):
+            if it == "keeper":
+                out.append(f'<circle cx="{lx+5}" cy="{yy-3}" r="6.5" fill="none" '
+                           f'stroke="{PALETTE["keeper_ring"]}" stroke-width="2"/>'
+                           f'<circle cx="{lx+5}" cy="{yy-3}" r="4.5" fill="{col}"/>')
+            elif it in ("own", "own2", "rival", "neutral", "zone"):
                 out.append(f'<circle cx="{lx+5}" cy="{yy-3}" r="6" fill="{col}"/>')
             else:
                 d = ' stroke-dasharray="6 4"' if dashed else ""
