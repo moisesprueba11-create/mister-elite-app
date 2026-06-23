@@ -146,33 +146,35 @@ def t03():
 def t04():
     p = Pitch(title="El panel de mandos",
               subtitle="seis variables de diseño · toca una cada vez", half=None)
-    panel(p, 6, 82, 94, 21, fill="#0c1b2a", op=0.45, stroke="#2a3a4a", sw=1)
+    panel(p, 5, 87, 95, 15, fill="#0c1b2a", op=0.45, stroke="#2a3a4a", sw=1)
+    # color de marca unificado para todos los diales (azul de marca, sin rojo)
+    DIAL = "#3f6f9e"
     vars_ = [
-        ("RELACIÓN\nNUMÉRICA", "4v1 · 5v2 · 6v3", PALETTE["own"]),
-        ("ESPACIO\n/ FORMA", "tamaño · cuadro/círculo", "#1f7ab8"),
-        ("Nº DE\nTOQUES", "libre → 3 → 2 → 1", PALETTE["neutral"]),
-        ("COMODINES", "interior · banda · puerta", "#d77a1e"),
-        ("REGLAS /\nPROVOCACIONES", "premios · prohibiciones", PALETTE["rival"]),
-        ("OBJETIVO", "mantener · progresar · presionar", GOLD),
+        ("RELACIÓN\nNUMÉRICA", "4v1 · 5v2 · 6v3 · 7v2"),
+        ("ESPACIO\n/ FORMA", "tamaño · cuadro / círculo"),
+        ("Nº DE\nTOQUES", "libre → 3 → 2 → 1"),
+        ("COMODINES", "interior · banda · puerta"),
+        ("REGLAS /\nPROVOCACIONES", "premios · prohibiciones"),
+        ("OBJETIVO", "mantener · progresar · presionar"),
     ]
-    # 3 columnas x 2 filas
+    # rejilla 3 columnas x 2 filas; cada celda: dial arriba, nombre debajo, sublabel debajo
     cols = 3
     xs = [22, 50, 78]
-    ys = [66, 43]
-    for i, (name, sub, col) in enumerate(vars_):
+    dial_y = [74, 44]                 # centro del dial por fila
+    R = 6.8
+    rr = (R / 100.0) * p.play_w
+    for i, (name, sub) in enumerate(vars_):
         cxx = xs[i % cols]
-        cyy = ys[i // cols]
-        # dial: círculo con aguja
-        R = 8.0
-        CX, CY = p.X(cxx), p.Y(cyy + 4)
-        rr = (R / 100.0) * p.play_w
+        dy = dial_y[i // cols]
+        CX, CY = p.X(cxx), p.Y(dy)
+        # dial
         p.body.append(f'<circle cx="{CX:.1f}" cy="{CY:.1f}" r="{rr:.1f}" fill="#10202e" '
-                      f'stroke="{col}" stroke-width="3"/>')
-        p.body.append(f'<circle cx="{CX:.1f}" cy="{CY:.1f}" r="{rr*0.18:.1f}" fill="{col}"/>')
-        # aguja
+                      f'stroke="{DIAL}" stroke-width="3"/>')
+        p.body.append(f'<circle cx="{CX:.1f}" cy="{CY:.1f}" r="{rr*0.18:.1f}" fill="{DIAL}"/>')
+        # aguja (ámbar de marca como acento)
         a = math.radians(140 - i * 35)
-        nx = CX + rr * 0.74 * math.cos(a)
-        ny = CY - rr * 0.74 * math.sin(a)
+        nx = CX + rr * 0.72 * math.cos(a)
+        ny = CY - rr * 0.72 * math.sin(a)
         p.body.append(f'<line x1="{CX:.1f}" y1="{CY:.1f}" x2="{nx:.1f}" y2="{ny:.1f}" '
                       f'stroke="{GOLD}" stroke-width="2.6" stroke-linecap="round"/>')
         # ticks
@@ -182,15 +184,17 @@ def t04():
             x2 = CX + rr * 1.05 * math.cos(ta); y2 = CY - rr * 1.05 * math.sin(ta)
             p.body.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
                           f'stroke="#7f93a8" stroke-width="1.4"/>')
+        # nombre (1-2 líneas) anclado BAJO el dial
         lines = name.split("\n")
-        ly = cyy - 6.5
+        ly = dy - R - 4.5
         for ln in lines:
-            txt(p, cxx, ly, ln, size=9.6, c="#fff", w=800)
-            ly -= 5.5
-        txt(p, cxx, ly - 0.5, sub, size=7.6, c="#cfe0ee", w=600)
+            txt(p, cxx, ly, ln, size=9.4, c="#fff", w=800)
+            ly -= 5.4
+        # sublabel anclado bajo el nombre, dentro de la celda
+        txt(p, cxx, ly - 0.5, sub, size=7.4, c="#cfe0ee", w=600)
     # banda inferior con la regla de oro, separada de los diales
-    chip(p, 14, 29, 86, 21, "#1c2c3a", op=0.95, stroke=GOLD, sw=1.6, rx=8)
-    txt(p, 50, 24.6, "OBJETIVO → VARIABLES, nunca al revés", size=11.5, c=GOLD, w=800)
+    chip(p, 14, 23, 86, 16, "#1c2c3a", op=0.95, stroke=GOLD, sw=1.6, rx=8)
+    txt(p, 50, 20.2, "OBJETIVO → VARIABLES, nunca al revés", size=11.5, c=GOLD, w=800)
     p.save(f"{G}/teoria-04-variables-diseno.svg")
 
 # ======================================================================
@@ -219,14 +223,14 @@ def t05():
                 p.player(x, cy, "D", team="rival", r=7)
         txt(p, cx, cy + hw * 1.02 + 2.5, name, size=11.5, c="#fff", w=800)
         txt(p, cx, cy - hw * 1.02 - 1.5, sup, size=10, c=GOLD, w=800)
-    cage(28, 70, 12, 4, 1, "4 v 1", "+3")
-    cage(72, 70, 12, 5, 2, "5 v 2", "+3")
-    cage(28, 28, 12, 4, 2, "4 v 2", "+2")
-    cage(72, 28, 12, 3, 1, "3 v 1", "+2")
+    cage(28, 71, 11.5, 4, 1, "4 v 1", "+3")
+    cage(72, 71, 11.5, 5, 2, "5 v 2", "+3")
+    cage(28, 31, 11.5, 6, 3, "6 v 3", "+3")
+    cage(72, 31, 11.5, 7, 2, "7 v 2", "+5")
     # divisores sutiles
-    p._line(p.X(50), p.Y(88), p.X(50), p.Y(12), w=1.2, c="#2a3a4a", dash="5 6", opacity=0.7)
-    p._line(p.X(8), p.Y(50), p.X(92), p.Y(50), w=1.2, c="#2a3a4a", dash="5 6", opacity=0.7)
-    p.legend(["own", "rival"])
+    p._line(p.X(50), p.Y(88), p.X(50), p.Y(15), w=1.2, c="#2a3a4a", dash="5 6", opacity=0.7)
+    p._line(p.X(8), p.Y(51), p.X(92), p.Y(51), w=1.2, c="#2a3a4a", dash="5 6", opacity=0.7)
+    p.note(50, 9, "misma idea, superioridad creciente: +3 · +3 · +3 · +5", size=10)
     p.save(f"{G}/teoria-05-relaciones-numericas.svg")
 
 # ======================================================================
