@@ -1,0 +1,2346 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rondos: el corazón del entrenamiento · MISTER ÉLITE</title><style>
+:root{--bg:#f5f4f0;--ink:#1a1a18;--dark:#15202b;--muted:#6b6b66;--line:#e3e1da;--accent:#1d6fb8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.layout{display:flex;}
+.side{width:280px;flex-shrink:0;background:var(--dark);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.4rem 0;}
+.side .brand{display:block;font-size:17px;font-weight:800;color:#fff;text-decoration:none;padding:0 1.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:.4rem;}
+.side .brand small{display:block;font-size:11px;font-weight:600;color:#f7c948;letter-spacing:1px;margin-top:2px;}
+.side .sec{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);padding:.9rem 1.4rem .3rem;}
+.side a.nav{display:block;padding:.45rem 1.4rem;color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;border-left:3px solid transparent;}
+.side a.nav:hover{color:#fff;background:rgba(255,255,255,.06);}
+.content{flex:1;min-width:0;display:flex;justify-content:center;}
+.inner{max-width:840px;width:100%;padding:2.4rem 2rem 5rem;}
+section{scroll-margin-top:1rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:2.5rem;}
+section:first-of-type{border-top:none;margin-top:0;}
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:50;background:var(--dark);color:#fff;border:none;font-size:20px;width:42px;height:42px;border-radius:8px;cursor:pointer;}
+img.hero{display:block;width:100%;height:auto;border-radius:12px;margin:0 0 2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+h1{font-size:30px;line-height:1.2;margin:.2rem 0 1rem;letter-spacing:-.02em;}
+h2{font-size:22px;margin:1.8rem 0 .7rem;padding-bottom:.3rem;border-bottom:2px solid var(--line);}
+h3{font-size:17px;margin:1.3rem 0 .4rem;}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:1rem 0 .3rem;}
+p{margin:.55rem 0;} ul,ol{margin:.4rem 0 .8rem 1.4rem;} li{margin:.2rem 0;}
+a{color:var(--accent);} strong{color:#111;}
+code{background:#ecebe6;padding:.1em .35em;border-radius:4px;font-size:.9em;}
+blockquote{border-left:4px solid var(--accent);background:#eef4fa;padding:.7rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;color:#33485c;}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:14px;display:block;overflow-x:auto;}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;}
+th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6;}
+figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.7rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
+figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+@media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
+ .side.open{transform:translateX(0);} #menu-btn{display:block;} .inner{padding:4rem 1.1rem 3rem;} h1{font-size:24px;}}
+</style></head><body>
+<button id="menu-btn">☰</button>
+<div class="layout"><nav class="side"><a class="brand" href="#inicio">⚽ Rondos<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>
+<div class="sec">Curso</div>
+<a class="nav" href="#inicio">Inicio</a>
+<div class="sec">Teoría</div>
+<a class="nav" href="#m01">M01 · Fundamentos</a>
+<a class="nav" href="#m02">M02 · Metodología y diseño</a>
+<a class="nav" href="#m03">M03 · Del rondo al juego</a>
+<div class="sec">Práctica</div>
+<a class="nav" href="#plan">Plan de sesiones</a>
+<a class="nav" href="#f1">F1 · Iniciación (R1–7)</a>
+<a class="nav" href="#f2">F2 · Presión (R8–14)</a>
+<a class="nav" href="#f3">F3 · Posicionales (R15–21)</a>
+<a class="nav" href="#f4">F4 · Líneas y comodines (R22–28)</a>
+<a class="nav" href="#f5">F5 · Finalización (R29–35)</a>
+<a class="nav" href="#f6">F6 · Competitivos (R36–43)</a>
+<a class="nav" href="#f7">F7 · Lúdicos (R44–50)</a></nav>
+<main class="content"><div class="inner"><section id="inicio"><div class="hero"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#0c1b2a"/><stop offset="0.55" stop-color="#0f2438"/><stop offset="1" stop-color="#08131f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7c948"/><stop offset="1" stop-color="#e0a526"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.46" r="0.6">
+      <stop offset="0" stop-color="#1d6fb8" stop-opacity="0.35"/><stop offset="1" stop-color="#1d6fb8" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f7c948"/>
+    </marker>
+  </defs>
+  <rect width="794" height="1123" fill="url(#bg)"/>
+  <rect width="794" height="1123" fill="url(#glow)"/>
+
+  <!-- Cuadro de rondo de fondo (sutil) -->
+  <rect x="190" y="600" width="414" height="414" rx="16" fill="#1f7a36" fill-opacity="0.18" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="9 7"/>
+
+  <!-- RONDO: poseedores (azul) alrededor, defensores (rojo) en el medio, pases -->
+  <g>
+    <!-- líneas de pase (perímetro) -->
+    <g stroke="#f7c948" stroke-width="2.4" stroke-dasharray="7 6" opacity="0.8" marker-end="url(#ar)" fill="none">
+      <line x1="270" y1="660" x2="500" y2="640"/>
+      <line x1="540" y1="675" x2="560" y2="880"/>
+      <line x1="545" y1="930" x2="320" y2="955"/>
+      <line x1="250" y1="930" x2="235" y2="710"/>
+    </g>
+    <!-- defensores en el centro -->
+    <g font-size="0">
+      <circle cx="372" cy="800" r="20" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/>
+      <circle cx="430" cy="820" r="20" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/>
+    </g>
+    <!-- poseedores en el perímetro -->
+    <g>
+      <circle cx="245" cy="675" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="400" cy="628" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="552" cy="668" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="568" cy="905" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="400" cy="966" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="232" cy="900" r="19" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+    </g>
+    <!-- balón -->
+    <circle cx="263" cy="668" r="8" fill="#fafafa" stroke="#222" stroke-width="1.4"/>
+    <path d="M263,660 l4,5.6 l-6.4,0 z" fill="#222"/>
+    <!-- conos en esquinas del cuadro -->
+    <g fill="#ff9800" stroke="#7a4f00" stroke-width="1">
+      <path d="M190,600 l5,11 l-10,0 z"/><path d="M604,600 l5,11 l-10,0 z"/>
+      <path d="M190,1014 l5,11 l-10,0 z"/><path d="M604,1014 l5,11 l-10,0 z"/>
+    </g>
+  </g>
+
+  <!-- Banda de marca -->
+  <rect x="0" y="0" width="794" height="8" fill="url(#gold)"/>
+  <g transform="translate(64,92)">
+    <rect x="0" y="0" width="46" height="46" rx="10" fill="url(#gold)"/>
+    <text x="23" y="32" font-size="28" font-weight="900" fill="#0c1b2a" text-anchor="middle">ME</text>
+    <text x="62" y="22" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="3">MISTER ÉLITE</text>
+    <text x="62" y="41" font-size="12.5" font-weight="600" fill="#f7c948" letter-spacing="2">ACADEMIA DE ENTRENADORES · MOISÉS DÍAZ</text>
+  </g>
+
+  <!-- Titular -->
+  <g transform="translate(64,300)">
+    <text x="0" y="0" font-size="17" font-weight="700" fill="#7fd0ff" letter-spacing="6">CURSO DE METODOLOGÍA</text>
+    <text x="0" y="80" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="0">RONDOS</text>
+    <text x="0" y="138" font-size="25" font-weight="800" fill="#f7c948">el corazón del entrenamiento</text>
+    <line x1="4" y1="166" x2="120" y2="166" stroke="#f7c948" stroke-width="4"/>
+    <text x="0" y="206" font-size="18" font-weight="500" fill="#cdd9e5">Un poco de teoría. 50 rondos para el campo.</text>
+  </g>
+
+  <!-- Tarjetas -->
+  <g font-family="Segoe UI,Arial">
+    <g transform="translate(470,318)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">50</text><text x="18" y="68" font-size="12" fill="#cdd9e5">rondos de campo</text></g>
+    <g transform="translate(632,318)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">3</text><text x="18" y="68" font-size="12" fill="#cdd9e5">módulos de teoría</text></g>
+    <g transform="translate(470,414)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="36" font-weight="900" fill="#f7c948">7</text><text x="18" y="68" font-size="12" fill="#cdd9e5">familias de rondo</text></g>
+    <g transform="translate(632,414)"><rect width="150" height="84" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="46" font-size="34" font-weight="900" fill="#f7c948">+50</text><text x="18" y="68" font-size="12" fill="#cdd9e5">pizarras tácticas</text></g>
+  </g>
+
+  <!-- Pie -->
+  <rect x="0" y="1080" width="794" height="43" fill="#08131f"/>
+  <text x="64" y="1107" font-size="13" font-weight="600" fill="#8aa0b6">Mantenimiento · Presión · Orientación · Finalización · Competición</text>
+  <text x="730" y="1107" font-size="13" font-weight="800" fill="#f7c948" text-anchor="end">MISTER ÉLITE</text>
+  <rect x="0" y="1115" width="794" height="8" fill="url(#gold)"/>
+</svg></div><h1>Rondos: el corazón del entrenamiento</h1>
+<h3>Curso de metodología · MISTER ÉLITE — Moisés Díaz</h3>
+<blockquote>
+<p><strong>Poca teoría, mucha aplicación práctica.</strong> Una primera parte de fundamentos y diseño, y luego <strong>50 rondos</strong> listos para llevar al campo, cada uno con su pizarra, sus medidas exactas, sus provocaciones medibles y su coaching.</p>
+</blockquote>
+<hr />
+<h2>¿A quién va dirigido?</h2>
+<p>A entrenadores y preparadores de cualquier categoría que quieran <strong>dominar el rondo como herramienta de entrenamiento</strong>: entenderlo, diseñarlo, progresarlo, dirigirlo y conectarlo con el modelo de juego. No es un curso de un sistema concreto (1-4-3-3, 1-4-4-2…), sino de <strong>metodología transversal</strong> que sirve a cualquier estilo, posesional o de transición.</p>
+<h2>Objetivos del curso</h2>
+<ul>
+<li>Comprender <strong>qué es</strong> un rondo y por qué es la <strong>tarea reina</strong> del entrenamiento (especificidad, densidad, regulabilidad).</li>
+<li>Manejar el <strong>panel de mandos</strong> de seis variables para diseñar rondos a medida de cada objetivo.</li>
+<li>Saber <strong>progresar</strong> un rondo (fácil → difícil) y <strong>coachearlo</strong> con criterio (feedback, freeze, intensidad).</li>
+<li>Conectar el rondo con la <strong>cadena de transferencia</strong> hacia el juego de posición y el partido.</li>
+<li>Disponer de un <strong>banco de 50 rondos</strong> ejecutables, repartidos en 7 familias, y de un <strong>plan de sesiones</strong> para integrarlos en el microciclo.</li>
+</ul>
+<h2>Cómo está organizado</h2>
+<p>El curso tiene <strong>3 módulos de teoría</strong> (concisos) y <strong>8 archivos de práctica</strong> (los 50 rondos en 7 familias + el plan de sesiones).</p>
+<h3>Teoría — <code>modulos/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#m01">01 · Fundamentos</a></td>
+<td>Qué es un rondo, origen (tradición neerlandesa + La Masia), por qué es la tarea reina, los tipos de beneficio.</td>
+</tr>
+<tr>
+<td><a href="#m02">02 · Metodología y diseño</a></td>
+<td>Las 6 variables de diseño, cómo progresar y cómo coachear un rondo, carga y ubicación.</td>
+</tr>
+<tr>
+<td><a href="#m03">03 · Del rondo al juego</a></td>
+<td>La cadena de transferencia, qué entrena cada familia, encadenar en sesión y microciclo.</td>
+</tr>
+</tbody>
+</table>
+<h3>Práctica — <code>ejercicios/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Familia</th>
+<th>Rondos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#plan">00 · Plan de sesiones</a></td>
+<td>Integración en 2 microciclos (MD)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="#f1">01 · Iniciación y mantenimiento</a></td>
+<td>Familia 1 (base técnica)</td>
+<td>Rondos 1–7</td>
+</tr>
+<tr>
+<td><a href="#f2">02 · Presión y recuperación</a></td>
+<td>Familia 2 (foco defensivo)</td>
+<td>Rondos 8–14</td>
+</tr>
+<tr>
+<td><a href="#f3">03 · Posicionales y de orientación</a></td>
+<td>Familia 3 (cambio de orientación)</td>
+<td>Rondos 15–21</td>
+</tr>
+<tr>
+<td><a href="#f4">04 · Con líneas y comodines</a></td>
+<td>Familia 4 (progresión/dirección)</td>
+<td>Rondos 22–28</td>
+</tr>
+<tr>
+<td><a href="#f5">05 · Finalización</a></td>
+<td>Familia 5 (porterías/portero)</td>
+<td>Rondos 29–35</td>
+</tr>
+<tr>
+<td><a href="#f6">06 · Competitivos y condicionados</a></td>
+<td>Familia 6 (situacionales)</td>
+<td>Rondos 36–43</td>
+</tr>
+<tr>
+<td><a href="#f7">07 · Lúdicos y de calentamiento</a></td>
+<td>Familia 7 (activación)</td>
+<td>Rondos 44–50</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Recorrido sugerido:</strong> lee los 3 módulos en orden, luego elige la familia según el principio que quieras entrenar esa semana y apóyate en el <a href="#plan">plan de sesiones</a> para encajar los rondos en el microciclo.</p>
+</blockquote>
+<hr />
+<h2>Leyenda de la notación</h2>
+<p>Todas las pizarras del curso usan <strong>una notación única</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Representación</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Poseedores</strong></td>
+<td>Fichas <strong>AZULES</strong></td>
+<td>Los que conservan el balón (perímetro del rondo).</td>
+</tr>
+<tr>
+<td><strong>Defensores / recuperadores</strong></td>
+<td>Fichas <strong>ROJAS</strong></td>
+<td>Los del medio que presionan y roban.</td>
+</tr>
+<tr>
+<td><strong>Comodines / apoyos</strong></td>
+<td>Fichas <strong>ÁMBAR</strong></td>
+<td>Neutrales: juegan siempre <strong>con quien tiene el balón</strong>.</td>
+</tr>
+<tr>
+<td><strong>Espacio del rondo</strong></td>
+<td>Cuadro/rectángulo/círculo con <strong>conos</strong></td>
+<td>Área delimitada; a veces sombreada para marcar zonas.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Flechas:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Flecha</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amarilla discontinua</td>
+<td><strong>Pase</strong></td>
+</tr>
+<tr>
+<td>Azul</td>
+<td><strong>Conducción</strong></td>
+</tr>
+<tr>
+<td>Blanca</td>
+<td><strong>Desmarque / apoyo</strong></td>
+</tr>
+<tr>
+<td>La del defensor que entra</td>
+<td><strong>Presión / recuperación</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Las secuencias se numeran <strong>1-2-3</strong> para leer el orden de las acciones. El título de cada pizarra sigue el formato "Rondo N — Nombre", con la organización en el subtítulo ("X v Y (+Z comodines) · medidas").</p>
+<hr />
+<h2>Glosario breve</h2>
+<ul>
+<li><strong>Rondo:</strong> tarea de mantenimiento–recuperación del balón en superioridad numérica, en espacio reducido y con posiciones de partida fijadas.</li>
+<li><strong>Relación numérica:</strong> ratio poseedores v defensores (4v1, 5v2, 6v3…). Fija la dificultad estructural.</li>
+<li><strong>Comodín:</strong> jugador neutral (ámbar) que juega con quien posee; crea superioridad y fija dónde circula el balón.</li>
+<li><strong>Provocación:</strong> regla que fuerza un comportamiento sin pedirlo verbalmente (p. ej. "prohibido devolver el pase").</li>
+<li><strong>Tercer hombre:</strong> quien recibe la pared no es quien la inició; el balón circula a un tercero libre.</li>
+<li><strong>Cambio de orientación:</strong> trasladar el balón al lado contrario a la presión para jugar por el espacio libre.</li>
+<li><strong>Zona de reto:</strong> nivel de exigencia en el que el equipo conserva ≈ 60–75 % de las series (ni aburre ni colapsa).</li>
+<li><strong>Freeze:</strong> congelar el juego un instante para señalar una imagen concreta (línea de pase no vista) y reanudar.</li>
+<li><strong>Transferencia:</strong> que lo entrenado en el rondo aparezca resuelto en el partido.</li>
+<li><strong>Juego de posición:</strong> rondo con zonas, dirección y posiciones reconocibles; el escalón siguiente al rondo.</li>
+<li><strong>MD (matchday):</strong> día de partido. MD-4, MD-3… son los días previos; estructuran la carga del microciclo.</li>
+<li><strong>RSA (Repeated Sprint Ability):</strong> capacidad de repetir esfuerzos cortos de alta intensidad con recuperación incompleta.</li>
+</ul>
+<hr />
+<h2>Recursos</h2>
+<ul>
+<li><strong>Diagramas:</strong> índice de pizarras solicitadas — 50 rondos + diagramas de teoría.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · "Rondos: el corazón del entrenamiento"</em></p></section><section id="m01"><h1>Módulo 01 · Fundamentos de los rondos</h1>
+<blockquote>
+<p>Poca teoría, mucha práctica. Este módulo te da lo justo para entender <strong>qué es</strong> un rondo, <strong>de dónde viene</strong> y <strong>por qué</strong> es la tarea reina. A partir del módulo 02 ya estamos diseñando; del 04 en adelante, ejecutando los 50 rondos.</p>
+</blockquote>
+<hr />
+<h2>1. Qué es un rondo (definición operativa)</h2>
+<p>Un rondo es una <strong>tarea jugada de mantenimiento–recuperación del balón en superioridad numérica</strong>, dentro de un <strong>espacio reducido y delimitado</strong>, con <strong>posiciones de partida fijadas</strong> (poseedores normalmente en el perímetro, recuperadores en el centro), donde un grupo conserva la posesión y otro, en inferioridad, intenta robarla.</p>
+<p>Cuatro rasgos lo definen y lo distinguen de cualquier otra tarea:</p>
+<ol>
+<li><strong>Superioridad numérica estable para el poseedor</strong> (4v1, 5v2, 6v3…). La ventaja es estructural y permanente, no coyuntural.</li>
+<li><strong>Espacio reducido y delimitado</strong> (cuadrado, rectángulo, círculo o rombo con conos), que comprime el tiempo y el espacio de decisión.</li>
+<li><strong>Posiciones de partida pre-fijadas</strong>: los poseedores ocupan el contorno; el o los recuperadores, el interior. De ahí el característico "cerco" alrededor del que roba.</li>
+<li><strong>Doble objetivo simultáneo y opuesto</strong>: un equipo <strong>conserva</strong> y el otro <strong>recupera</strong>. Hay oposición real; no es una rueda de pases.</li>
+</ol>
+<p><figure class="diag"><em>[falta teoria-01-definicion.svg]</em></figure></p>
+<blockquote>
+<p><strong>Origen del nombre.</strong> En España se le llamó <em>torello</em> ("torito"), porque el del centro persigue el balón como un toro al capote; en el mundo anglosajón, <em>piggy in the middle</em>. "Rondo" (de <em>redondo</em>, jugar en círculo) se impuso después.</p>
+</blockquote>
+<h3>Diferencias con tareas vecinas</h3>
+<p>El rondo se confunde a menudo con el <strong>juego de posición</strong> y con el <strong>partido reducido (SSG)</strong>. No son lo mismo:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th><strong>Rondo</strong></th>
+<th><strong>Juego de posición</strong></th>
+<th><strong>Partido reducido (SSG)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naturaleza</td>
+<td>Tarea / herramienta</td>
+<td>Tarea <strong>y</strong> concepto del modelo de juego</td>
+<td>Forma reducida del partido</td>
+</tr>
+<tr>
+<td>Relación numérica</td>
+<td>Superioridad estable (4v1, 5v2…)</td>
+<td>Superioridades zonales (3v2, 4v3) por zonas</td>
+<td>Tiende a la igualdad</td>
+</tr>
+<tr>
+<td>Estructura del espacio</td>
+<td>Un solo espacio, posiciones fijas</td>
+<td>Espacio <strong>sectorizado</strong> por zonas/pasillos</td>
+<td>Campo con porterías, estructura de partido</td>
+</tr>
+<tr>
+<td>Dirección del juego</td>
+<td>Habitualmente <strong>sin dirección</strong></td>
+<td>Direccional o semidireccional</td>
+<td><strong>Direccional</strong>: hay portería</td>
+</tr>
+<tr>
+<td>Objetivo dominante</td>
+<td>Conservar y recuperar</td>
+<td>Ocupar el espacio para progresar</td>
+<td>Competir cercano al partido (con gol)</td>
+</tr>
+<tr>
+<td>Especificidad</td>
+<td>Media (sin porterías)</td>
+<td>Alta (dirección, zonas, fases)</td>
+<td>Muy alta (es el partido en pequeño)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves para no confundirlos:</strong></p>
+<ul>
+<li>El <strong>rondo</strong> es la <strong>célula básica</strong>: máximo control del entrenador, pocas variables, mucha repetición de fundamentos en superioridad.</li>
+<li>El <strong>juego de posición</strong> añade <strong>dirección y sectorización</strong>: ya no se conserva por conservar, sino para <strong>progresar ocupando bien el espacio</strong>. El rondo es su puerta de entrada.</li>
+<li>El <strong>partido reducido</strong> añade <strong>finalización, porterías e igualdad</strong>: máxima transferencia, menor control del entrenador.</li>
+</ul>
+<p>Conviene verlo como un <strong>continuo de especificidad</strong>: cada peldaño gana realismo y pierde control aislado del estímulo.</p>
+<p><figure class="diag"><em>[falta teoria-02-continuo-especificidad.svg]</em></figure></p>
+<hr />
+<h2>2. Origen e historia (la versión honesta)</h2>
+<ul>
+<li><strong>Tradición neerlandesa y Total Football.</strong> El rondo es inseparable del <em>Totaalvoetbal</em> del Ajax y la selección neerlandesa de los 70 (Rinus Michels, con Johan Cruyff como referencia). El fútbol total exige recibir, orientarse y pasar bajo presión en espacios pequeños: el rondo es su laboratorio.</li>
+<li><strong>Laureano Ruiz en Barcelona.</strong> Un matiz a menudo omitido: el rondo como herramienta sistemática de formación en La Masia se asocia al técnico cántabro <strong>Laureano Ruiz</strong>, responsable del fútbol base del FC Barcelona desde comienzos de los 70 (y del primer equipo en 1976). Es decir, el rondo estaba en Barcelona <strong>antes</strong> del Cruyff entrenador.</li>
+<li><strong>Cruyff y la universalización.</strong> Cruyff, síntesis de la escuela neerlandesa y la española, lo convirtió en seña de identidad al volver como entrenador del Barça en <strong>1988</strong> (el "Dream Team"), llevándolo al entrenamiento diario y a la rutina previa al partido.</li>
+<li><strong>La Masia y Guardiola.</strong> La generación formada en esa cultura (Guardiola incluido) heredó el rondo como gramática básica. Con <strong>Pep Guardiola</strong> (2008–2012) y su éxito global, las imágenes del rondo dieron la vuelta al mundo: hoy es patrimonio común de cualquier estilo.</li>
+</ul>
+<blockquote>
+<p><em>"Todo lo que ocurre en un partido, excepto el remate, lo puedes hacer en un rondo."</em> — Johan Cruyff</p>
+</blockquote>
+<p><strong>Cronología en una frase:</strong> ejercicios de mantenimiento en círculo ya existían en los 50–60; en los <strong>70</strong> confluyen dos focos (neerlandés y catalán); Cruyff lo institucionaliza (1988–96); Guardiola lo universaliza (2008→). Lo correcto es presentarlo como <strong>tradición compartida</strong>, sin una paternidad única no documentable.</p>
+<hr />
+<h2>3. Por qué es la "tarea reina": el principio de especificidad</h2>
+<p>El jugador <strong>se adapta a aquello que entrena de forma parecida a como compite</strong>. Por eso el entrenamiento moderno prefiere tareas jugadas frente a ejercicios analíticos: una rueda de pases sin oposición mejora el gesto, pero no la <strong>lectura</strong> ni la <strong>decisión</strong> que el partido exige.</p>
+<p>El rondo cumple la especificidad mejor que casi cualquier tarea simple:</p>
+<ol>
+<li><strong>Hay balón, oposición y compañeros</strong> → se percibe, decide y ejecuta con adversario, no en el vacío.</li>
+<li><strong>El espacio reducido comprime tiempo y distancias</strong> → obliga a percibir antes y decidir más rápido; luego el partido "parece más lento".</li>
+<li><strong>Densidad de acciones altísima</strong> → decenas de controles, pases, apoyos y presiones por jugador en pocos minutos.</li>
+<li><strong>Integra todas las dimensiones a la vez</strong> (técnica, táctica, cognitiva, condicional, emocional), como en la competición.</li>
+<li><strong>Es infinitamente regulable</strong>: cambiando número, espacio, toques, comodines y reglas, el mismo formato sirve para objetivos opuestos.</li>
+</ol>
+<p>Esa combinación de <strong>alta especificidad + alta densidad + máxima regulabilidad</strong> es lo que lo hace <em>tarea reina</em>.</p>
+<blockquote>
+<p>Matiz: el rondo es reina, <strong>no monarca absoluta</strong>. En su forma básica no tiene dirección ni finalización. Por eso necesita progresar hacia rondos direccionales, juego de posición y partido reducido para cerrar la transferencia (módulo 03).</p>
+</blockquote>
+<hr />
+<h2>4. Los tipos de beneficio</h2>
+<p>El rondo entrena todas estas dimensiones <strong>a la vez</strong>. Las separamos solo para describirlas.</p>
+<p><figure class="diag"><em>[falta teoria-03-tipos-beneficio.svg]</em></figure></p>
+<h3>4.1 Técnico</h3>
+<p>Control orientado y primer toque útil; calidad, peso y timing del pase; uso de todas las superficies y ambas piernas; protección y conducción breve para fijar; ritmo de circulación a uno o dos toques.</p>
+<h3>4.2 Táctico</h3>
+<p>Apoyos y ángulos que abren línea de pase; triángulos y rombos permanentes (siempre dos opciones); ampliación del espacio y búsqueda del hombre libre; orientación corporal y cambio de orientación; y, para los del centro, <strong>presión tras pérdida y defensa en inferioridad</strong> (el lado defensivo del rondo, muy infravalorado).</p>
+<h3>4.3 Cognitivo-perceptivo</h3>
+<p>Toma de decisiones bajo presión temporal; <strong>escaneo / visión periférica</strong> (mirar antes de recibir); anticipación de la presión y del compañero; atención sostenida; reconocimiento de patrones (localizar al hombre libre, la línea abierta).</p>
+<h3>4.4 Físico-condicional</h3>
+<p>Acciones intermitentes de alta intensidad (sobre todo para el recuperador); cambios de ritmo y agilidad en espacio corto; <strong>RSA</strong> (capacidad de repetir esfuerzos cortos); carga regulable con el tamaño del espacio, la relación numérica y el tiempo en el centro.</p>
+<h3>4.5 Socioemocional</h3>
+<p>Tensión competitiva del marcador implícito; cohesión y comunicación; gestión del error y del "castigo" simbólico de quedar en el centro; liderazgo y autoexigencia entre iguales.</p>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El rondo = <strong>superioridad estable + espacio reducido + posiciones fijas + oposición real</strong>. Sin oposición y sin reglas, no es un rondo: es una rueda de pases.</li>
+<li>No es lo mismo que el juego de posición (añade dirección y zonas) ni que el partido reducido (añade porterías e igualdad). Son <strong>peldaños de un continuo de especificidad</strong>.</li>
+<li>Es <strong>tradición compartida</strong> (neerlandesa + catalana), consolidada en los 70, popularizada por Cruyff y universalizada por Guardiola. Sin paternidad única.</li>
+<li>Es la <strong>tarea reina</strong> por especificidad + densidad + regulabilidad, pero <strong>no monarca absoluta</strong>: necesita progresar para llegar al gol.</li>
+<li>Entrena <strong>cinco dimensiones a la vez</strong>; el jugador del centro entrena la <strong>defensa en inferioridad</strong>, no pierde el tiempo.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li><strong>Tratarlo solo como calentamiento.</strong> Es un uso legítimo, pero reduccionista: bien diseñado, es tarea principal (conservación, presión, RSA, decisión).</li>
+<li><strong>Confundirlo con "jugar al toro" sin objetivo.</strong> Sin objetivo, reglas ni feedback, degenera en pasarse el balón.</li>
+<li><strong>Creer que solo sirve a equipos posesionales.</strong> Su fase defensiva (presión, robo en inferioridad) es oro para equipos de transición.</li>
+<li><strong>Pensar que no transfiere por no tener porterías.</strong> La transferencia se construye <strong>progresando</strong> (módulo 03), no descartando la herramienta.</li>
+<li><strong>Verlo como ejercicio "solo técnico".</strong> Su mayor virtud es integrar técnica, táctica, cognición y condición a la vez.</li>
+<li><strong>"Cuanto más rato, mejor".</strong> La calidad cae con la fatiga: <strong>series cortas e intensas con foco</strong>, no rondos eternos.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m02"><h1>Módulo 02 · Metodología y diseño del rondo</h1>
+<blockquote>
+<p>El rondo no es un juego que "sale bien o mal": es una <strong>tarea diseñada</strong>. El entrenador no improvisa, manipula variables para provocar exactamente el comportamiento que quiere entrenar. Cambiar una sola variable cambia el estímulo. Este módulo es el panel de mandos.</p>
+</blockquote>
+<hr />
+<h2>1. Las variables de diseño (el panel de mandos)</h2>
+<p>Toda tarea de rondo se construye combinando <strong>seis variables</strong>. Modificar una altera la carga cognitiva, técnica, defensiva o física. Regla maestra: <strong>se toca una variable cada vez</strong> para saber qué causó el cambio.</p>
+<p><figure class="diag"><em>[falta teoria-04-variables-diseno.svg]</em></figure></p>
+<h3>1.1 Relación numérica (poseedores v defensores)</h3>
+<p>Fija la <strong>dificultad estructural</strong>. Se lee como ratio de superioridad: cuantos más poseedores por defensor, más fácil conservar.</p>
+<table>
+<thead>
+<tr>
+<th>Relación</th>
+<th>Superioridad</th>
+<th>Estímulo dominante</th>
+<th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4v1 / 5v1</strong></td>
+<td>+3 / +4</td>
+<td>Confort, ritmo, primer toque</td>
+<td>Iniciación, calentamiento, técnica pura</td>
+</tr>
+<tr>
+<td><strong>4v2 / 5v2</strong></td>
+<td>+2 / +3</td>
+<td>El clásico: líneas de pase y "tercer hombre"</td>
+<td>Mantenimiento y circulación</td>
+</tr>
+<tr>
+<td><strong>3v1</strong></td>
+<td>+2</td>
+<td>Triángulo permanente, apoyo constante</td>
+<td>Base técnica con poco espacio</td>
+</tr>
+<tr>
+<td><strong>6v3 / 7v3</strong></td>
+<td>+3 / +4</td>
+<td>Muchas líneas, exige levantar la cabeza</td>
+<td>Posicional, escaneo</td>
+</tr>
+<tr>
+<td><strong>7v2</strong></td>
+<td>+5</td>
+<td>Superioridad enorme: foco en <strong>calidad</strong> del pase</td>
+<td>Calentamiento de élite, ritmo alto</td>
+</tr>
+<tr>
+<td><strong>Igualdad + comodines</strong></td>
+<td>≈ par</td>
+<td>Tensión real, parecido a partido</td>
+<td>Competitivo, transferencia</td>
+</tr>
+</tbody>
+</table>
+<p><figure class="diag"><em>[falta teoria-05-relaciones-numericas.svg]</em></figure></p>
+<p><strong>Principio:</strong> a menor superioridad → más velocidad, más errores, más fatiga del defensor → más realista pero menos tiempo para el detalle técnico. A mayor superioridad → laboratorio limpio para pulir el gesto.</p>
+<h3>1.2 Espacio y forma</h3>
+<p>El espacio regula <strong>tiempo y distancias</strong>. Es la segunda palanca de dificultad.</p>
+<ul>
+<li><strong>Tamaño</strong>: grande = más tiempo y pases largos (más fácil); pequeño = todo más rápido, primer toque y orientación obligatorios (más difícil). <strong>Reducir el espacio es la forma nº 1 de subir exigencia sin tocar jugadores.</strong></li>
+<li><strong>Forma</strong>:</li>
+<li><strong>Cuadrado</strong> → simetría, líneas equidistantes, mantenimiento puro.</li>
+<li><strong>Rectángulo</strong> → genera un sentido (largo/ancho); base para orientar y cambiar de orientación.</li>
+<li><strong>Círculo</strong> → sin esquinas, apoyos infinitos, ideal para 1–2 toques (iniciación).</li>
+<li><strong>Dividido en zonas / pasillos</strong> → introduce <strong>dirección y prohibiciones</strong> ("cambiar de zona obligatorio"): aquí nace el juego de posición.</li>
+</ul>
+<h3>1.3 Número de toques</h3>
+<p>Ataja directamente la <strong>velocidad de pensamiento y la calidad técnica</strong>.</p>
+<ul>
+<li><strong>Libre</strong> → confort, noveles, primeras repeticiones.</li>
+<li><strong>3 toques</strong> → control–perfil–pase; transición a la exigencia.</li>
+<li><strong>2 toques</strong> → estándar de mantenimiento: obliga al <strong>primer toque orientado</strong>.</li>
+<li><strong>1 toque</strong> → máxima exigencia cognitiva: obliga a <strong>escanear antes de recibir</strong>. No introducir hasta dominar el de 2.</li>
+<li><strong>Condicionado / mixto</strong> → "comodín a 1 toque, resto libre"; individualiza la carga.</li>
+</ul>
+<h3>1.4 Comodines (apoyos neutrales, fichas ámbar)</h3>
+<p>Juegan siempre con quien posee. Crean superioridad artificial y, sobre todo, <strong>fijan dónde queremos que circule el balón</strong>. Su ubicación es la enseñanza.</p>
+<ul>
+<li><strong>Interiores</strong> → enseñan a jugar <strong>entre líneas</strong> y el rol de pivote.</li>
+<li><strong>Exteriores / perimetrales</strong> → amplían el campo, dan salida segura.</li>
+<li><strong>De banda</strong> → fuerzan el <strong>cambio de orientación</strong> y la amplitud.</li>
+<li><strong>Comodín "puerta"</strong> entre zonas → premia la <strong>progresión</strong> (solo se usa para avanzar de zona).</li>
+</ul>
+<p>Variar sus toques (p. ej. a 1) lo convierte en pared/relé, no en refugio.</p>
+<h3>1.5 Reglas y provocaciones</h3>
+<p>Las <strong>provocaciones</strong> fuerzan un comportamiento sin pedirlo verbalmente. Es la herramienta más fina: no se explica el principio, se <strong>provoca</strong> que aparezca.</p>
+<ul>
+<li>"Pase al jugador enfrente del defensor que presiona" → juega la línea que abre el rival.</li>
+<li>"Vale doble el pase de primeras tras recibir entre líneas" → premia el pase interior.</li>
+<li>"Si el balón cambia de zona, suma punto" → provoca el cambio de orientación.</li>
+<li>"Prohibido devolver al que te la dio" → obliga al <strong>tercer hombre</strong>.</li>
+<li>"3 toques seguidos del que roba = gol del defensor" → exige juego colectivo también al recuperar.</li>
+</ul>
+<h3>1.6 Objetivo de la tarea (la intención táctica)</h3>
+<p>Da <strong>sentido</strong> a todas las demás variables. Antes de medir nada, define qué entrenas:</p>
+<ul>
+<li><strong>Mantener</strong> → conservar bajo presión (4v2, 5v2).</li>
+<li><strong>Progresar</strong> → avanzar con dirección (zonas, comodín-puerta).</li>
+<li><strong>Orientar</strong> → cambiar el punto de juego, escanear (rectángulo, comodines de banda).</li>
+<li><strong>Presionar / recuperar</strong> → foco en el defensor: robar y transición.</li>
+</ul>
+<blockquote>
+<p><strong>Regla de oro: objetivo → variables, nunca al revés.</strong> Primero decides el principio a entrenar; luego eliges relación, espacio, toques, comodines y provocaciones que lo hagan aparecer de forma inevitable.</p>
+</blockquote>
+<hr />
+<h2>2. Cómo progresar un rondo (fácil → difícil)</h2>
+<p>Progresar = subir exigencia de forma <strong>graduada y medible</strong>, manteniendo la tasa de éxito en una "zona de reto" (orientativo: los poseedores conservan en torno al <strong>60–75 %</strong> de las series). Palancas, de menor a mayor coste de explicar:</p>
+<p><figure class="diag"><em>[falta teoria-06-progresion.svg]</em></figure></p>
+<ol>
+<li><strong>Reducir el espacio</strong> → la palanca más limpia: misma tarea, menos tiempo.</li>
+<li><strong>Limitar los toques</strong> (libre → 3 → 2 → 1) → exige primer toque orientado y escaneo.</li>
+<li><strong>Añadir un defensor</strong> (4v1 → 4v2 → 5v3…) → presión real y fatiga.</li>
+<li><strong>Exigir orientación / dirección</strong> → de "mantener" a "jugar al lado libre" o "progresar de zona".</li>
+<li><strong>Premiar comportamientos</strong> (puntos dobles, condiciones) → afina el detalle sin endurecer la mecánica.</li>
+</ol>
+<p><strong>Ejemplo de progresión real (misma familia, 4 escalones):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Escalón</th>
+<th>Diseño</th>
+<th>Qué añade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5v2 · cuadro 12×12 · libres</td>
+<td>Circular cómodo, leer las dos sombras del defensor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5v2 · 10×10 · 3 toques</td>
+<td>Menos espacio + control orientado</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4v2 · 10×10 · 2 toques</td>
+<td>Menos superioridad, primer toque obligado</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4v2 · 9×9 · 2 toques + "doble el pase interior entre los dos defensores"</td>
+<td>Provocación táctica: jugar la línea que rompe</td>
+</tr>
+</tbody>
+</table>
+<p>Regresar es igual de legítimo: si el balón no circula, <strong>agranda el espacio o libera toques</strong> antes que repetir instrucciones.</p>
+<hr />
+<h2>3. Cómo coachear un rondo</h2>
+<p>El rondo es alta densidad de repeticiones; el entrenador es <strong>gestor del estímulo</strong>, no espectador.</p>
+<h3>3.1 Feedback: cuándo y cómo</h3>
+<ul>
+<li><strong>Cuándo</strong>: prioriza el feedback <strong>en frío</strong> (entre series). Interviene "en caliente" solo para un error que se fija y repite. Regla práctica: <strong>observa 2–3 vueltas antes de hablar</strong>.</li>
+<li><strong>Cómo</strong>:</li>
+<li><strong>Preguntar antes que decir</strong> ("¿tenías al hombre libre detrás del defensor?") → desarrolla el escaneo.</li>
+<li><strong>Congelar (freeze)</strong> una imagen concreta cuando la enseñanza es posicional: parar, señalar la línea no vista, reanudar. Breve.</li>
+<li><strong>Demostrar</strong> el gesto cuando el fallo es de ejecución.</li>
+<li>Dosis: <strong>poco y concreto</strong>. Un foco por serie.</li>
+</ul>
+<p><figure class="diag"><em>[falta teoria-07-coaching-freeze.svg]</em></figure></p>
+<h3>3.2 Momentos de intervención</h3>
+<ul>
+<li><strong>Antes</strong>: objetivo en una frase ("hoy: primer toque hacia donde voy a jugar").</li>
+<li><strong>Durante</strong>: solo correcciones puntuales y de intensidad; mantener el ritmo.</li>
+<li><strong>Pausas</strong>: el grueso del coaching. Pregunta, congela, reajusta una variable.</li>
+<li><strong>Cierre</strong>: 30" de conexión con el partido ("esto es la salida presionada del domingo").</li>
+</ul>
+<h3>3.3 Detalles técnicos a corregir (la checklist del ojo)</h3>
+<ul>
+<li><strong>Perfil / orientación corporal</strong>: recibir <strong>medio girado</strong>, viendo la siguiente línea de pase.</li>
+<li><strong>Primer toque orientado</strong>: el control ya direcciona hacia donde se va a jugar.</li>
+<li><strong>Escaneo (head-check)</strong>: mirar <strong>antes</strong> de recibir. Es la causa raíz de la mayoría de pérdidas.</li>
+<li><strong>Calidad y peso del pase</strong>: al pie correcto, raso, <strong>firme</strong> (un pase blando lo intercepta el defensor).</li>
+<li><strong>Cuerpo y apoyos</strong>: ofrecerse en línea de pase, proteger con el cuerpo, <strong>moverse tras pasar</strong> (pasar y apoyar, no pasar y mirar).</li>
+</ul>
+<h3>3.4 Gestión de la intensidad</h3>
+<ul>
+<li>El rondo decae solo: <strong>series cortas e intensas</strong> con descanso claro.</li>
+<li>Controlar la carga del <strong>defensor</strong> (es quien más corre): rotarlo con frecuencia para que la presión sea real.</li>
+<li>Distinguir el rondo de <strong>activación</strong> (media, técnico, riesgo bajo) del <strong>competitivo</strong> (alta, con marcador) y ubicarlos en consecuencia.</li>
+</ul>
+<hr />
+<h2>4. Errores comunes, carga y ubicación</h2>
+<h3>4.1 Errores de diseño</h3>
+<ul>
+<li><strong>No definir el objetivo</strong> → un rondo "bonito" que no entrena nada.</li>
+<li><strong>Relación mal calibrada</strong> → demasiada superioridad (aburre) o demasiado poca (no circula).</li>
+<li><strong>Espacio inadecuado</strong> → grande mata la exigencia técnica; pequeño con noveles colapsa la tarea.</li>
+<li><strong>Demasiadas reglas a la vez</strong> → satura el cognitivo. <strong>Una</strong> provocación clave.</li>
+<li><strong>Comodines mal ubicados</strong> → se colocan <strong>donde quieres que ocurra el juego</strong>, o sobran.</li>
+</ul>
+<h3>4.2 Errores al dirigir</h3>
+<ul>
+<li><strong>Hablar demasiado / parar constantemente</strong> → mata el ritmo y la densidad.</li>
+<li><strong>Corregir solo la ejecución y nunca la decisión</strong> → mejora el gesto, no el jugador.</li>
+<li><strong>No rotar al defensor</strong> → presión falsa y carga injusta.</li>
+<li><strong>No conectar con el partido</strong> → el jugador lo hace "porque toca".</li>
+<li><strong>Tolerar baja intensidad</strong> o <strong>alargar hasta la fatiga técnica</strong>.</li>
+</ul>
+<h3>4.3 Carga y ubicación en la sesión</h3>
+<ul>
+<li><strong>Calentamiento / activación</strong>: alta superioridad (5v2, 7v2), técnicos, riesgo bajo, intensidad creciente.</li>
+<li><strong>Parte principal</strong>: rondos con objetivo táctico (orientación, progresión, presión) y, si procede, marcador.</li>
+<li><strong>Según el día del microciclo (MD)</strong>: ajustar la carga a la proximidad del partido (se desarrolla en el módulo 03).</li>
+<li><strong>Como herramienta</strong>: el rondo puede abrir, vertebrar o servir de transición entre bloques. No es solo "el calentamiento".</li>
+</ul>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li><strong>Seis variables</strong>: relación numérica, espacio/forma, toques, comodines, reglas/provocaciones y objetivo. Toca <strong>una cada vez</strong>.</li>
+<li><strong>Objetivo → variables, nunca al revés.</strong> Primero el principio; luego el diseño que lo provoca.</li>
+<li><strong>Reducir el espacio</strong> es la palanca más limpia para subir exigencia; <strong>liberar toques o agrandar</strong> la mejor para bajarla.</li>
+<li>Mantén la <strong>zona de reto</strong> (≈60–75 % de éxito): ni aburre ni colapsa.</li>
+<li>Coaching: <strong>observa 2–3 vueltas</strong>, feedback <strong>en frío</strong>, pregunta y congela, <strong>un foco por serie</strong>.</li>
+<li><strong>Rota al defensor</strong>: es quien recibe el estímulo condicional y quien hace real la presión.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Diseñar sin objetivo, o cambiar varias variables a la vez (no sabrás qué causó el cambio).</li>
+<li>Relación numérica o espacio mal calibrados respecto a la zona de reto.</li>
+<li>Amontonar reglas y saturar el cognitivo.</li>
+<li>Comodines decorativos que no refuerzan el principio.</li>
+<li>Hablar de más, corregir solo la ejecución, no rotar al defensor y no conectar con el partido.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m03"><h1>Módulo 03 · Del rondo al juego: la transferencia</h1>
+<blockquote>
+<p>Un rondo que no se parece a nada del partido es un ejercicio físico-técnico, no de entrenamiento del juego. La metodología moderna exige que cada tarea <strong>transfiera</strong>: que el jugador resuelva en el partido lo que ha repetido en la pizarra. Este módulo conecta el rondo con el modelo de juego.</p>
+</blockquote>
+<hr />
+<h2>1. La cadena de transferencia</h2>
+<p>El rondo es el primer escalón de una progresión que aumenta <strong>realismo y especificidad</strong> sin perder el principio que se entrena. Cada escalón añade una capa de la realidad del partido.</p>
+<pre><code>RONDO  →  JUEGO DE POSICIÓN  →  PARTIDO CONDICIONADO  →  COMPETICIÓN
+(principio)  (+ porterías/dirección)  (+ reglas del modelo)   (+ rival real)
+</code></pre>
+<p><figure class="diag"><em>[falta teoria-08-cadena-transferencia.svg]</em></figure></p>
+<table>
+<thead>
+<tr>
+<th>Escalón</th>
+<th>Qué es</th>
+<th>Qué añade</th>
+<th>Qué entrena</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Rondo</strong></td>
+<td>Espacio cerrado, conservar/recuperar, sin dirección</td>
+<td>El <strong>principio puro</strong>: superioridad, líneas de pase, primer toque, escaneo</td>
+<td>El gesto y la decisión básica, alta densidad</td>
+</tr>
+<tr>
+<td><strong>2. Juego de posición</strong></td>
+<td>Rondo con <strong>zonas, dirección y posiciones</strong> reconocibles</td>
+<td><strong>Orientación del campo</strong>, ocupación, relaciones por puestos</td>
+<td>Jugar posicionado: ataque organizado, salida</td>
+</tr>
+<tr>
+<td><strong>3. Partido condicionado</strong></td>
+<td>Juego real con reglas que provocan el comportamiento</td>
+<td><strong>Oposición real con objetivo</strong>, transiciones, finalización</td>
+<td>El principio dentro del caos del partido</td>
+</tr>
+<tr>
+<td><strong>4. Competición</strong></td>
+<td>El partido o el amistoso</td>
+<td><strong>El rival real</strong>, marcador, contexto emocional</td>
+<td>Integrar todo bajo presión de competición</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lectura clave:</strong> se sube de escalón cuando el principio aparece con solvencia en el anterior. El rondo <strong>aísla</strong>; el juego de posición <strong>orienta</strong>; el partido condicionado <strong>integra</strong>; la competición <strong>valida</strong>. Saltarse escalones (rondo → partido) deja un hueco de transferencia: el jugador conserva en círculo pero no sabe progresar hacia una portería.</p>
+<hr />
+<h2>2. Qué principios entrena cada familia de rondos</h2>
+<p>Cada una de las <strong>7 familias</strong> del curso ataca un bloque de principios del juego. Esto permite <strong>elegir la familia según el principio del modelo</strong> que quieras entrenar esa semana.</p>
+<p><figure class="diag"><em>[falta teoria-09-familias-principios.svg]</em></figure></p>
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Principios que entrena</th>
+<th>Conexión con el partido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Iniciación / mantenimiento</strong></td>
+<td>Conservación, apoyos, líneas de pase, primer toque, paciencia</td>
+<td>Posesión segura, construcción tranquila</td>
+</tr>
+<tr>
+<td><strong>2. Presión y recuperación</strong></td>
+<td>Presión tras pérdida, coberturas, intensidad defensiva, recuperación colectiva</td>
+<td><strong>Transición defensiva</strong>, presión alta, robo y contra</td>
+</tr>
+<tr>
+<td><strong>3. Posicional / orientación</strong></td>
+<td>Cambio de orientación, escaneo, jugar al lado libre, atraer-y-girar</td>
+<td>Cambiar el punto de juego, salida bajo presión</td>
+</tr>
+<tr>
+<td><strong>4. Con líneas y comodines</strong></td>
+<td><strong>Progresión</strong>, superación de líneas, tercer hombre, juego entre líneas</td>
+<td>Avanzar el balón, romper líneas, juego interior</td>
+</tr>
+<tr>
+<td><strong>5. Finalización</strong></td>
+<td>Última pasada, llegada, definición, ataque del espacio</td>
+<td>Convertir la posesión en <strong>gol</strong></td>
+</tr>
+<tr>
+<td><strong>6. Competitivos / condicionados</strong></td>
+<td>Las dos fases con marcador, decisión bajo presión, transiciones</td>
+<td>Lo más cercano al partido: tensión real</td>
+</tr>
+<tr>
+<td><strong>7. Lúdicos / calentamiento</strong></td>
+<td>Activación neuromuscular, ritmo, técnica bajo fatiga ligera, cohesión</td>
+<td>Preparar el cuerpo y el "ojo"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Síntesis: las familias 1 y 3 construyen la <strong>fase ofensiva con balón</strong>; la 2 la <strong>transición y defensa</strong>; la 4 la <strong>progresión</strong>; la 5 cierra con <strong>finalización</strong>; la 6 lo <strong>integra</strong> y la 7 lo <strong>activa</strong>.</p>
+</blockquote>
+<hr />
+<h2>3. Cómo encadenar rondos: sesión y microciclo</h2>
+<h3>3.1 Dentro de una sesión</h3>
+<p>El rondo no va suelto: se encadena con la progresión de transferencia para dar <strong>hilo conductor</strong> a la sesión (un solo principio por sesión, atacado a creciente especificidad):</p>
+<ol>
+<li><strong>Activación</strong> → rondo lúdico/mantenimiento de alta superioridad (familia 7 o 1).</li>
+<li><strong>Rondo del principio del día</strong> → la familia que corresponda al objetivo (p. ej. orientación, familia 3).</li>
+<li><strong>Juego de posición</strong> → el mismo principio con dirección y posiciones (escalón 2).</li>
+<li><strong>Partido condicionado</strong> → el mismo principio en juego real (escalón 3).</li>
+</ol>
+<p>Todo orbita el <strong>mismo principio</strong>: el jugador lo ve nacer en el rondo y lo resuelve en el partido.</p>
+<h3>3.2 A lo largo del microciclo (MD = matchday)</h3>
+<p>El microciclo semanal (periodización táctica) distribuye la <strong>carga</strong> y el <strong>foco táctico</strong> según la distancia al partido. El rondo se adapta a cada día: cambia su exigencia física, su densidad y la familia elegida.</p>
+<p><figure class="diag"><em>[falta teoria-10-microciclo.svg]</em></figure></p>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Foco</th>
+<th>Carga</th>
+<th>Tipo de rondo recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MD+1 / MD+2</strong></td>
+<td>Recuperación / descarga</td>
+<td>Baja</td>
+<td>Lúdicos, alta superioridad (7v2), sin desgaste (familia 7/1)</td>
+</tr>
+<tr>
+<td><strong>MD-4 (fuerza)</strong></td>
+<td>Acciones cortas, muchos cambios de dirección</td>
+<td>Alta (tensión)</td>
+<td>Pequeños y rápidos, 1–2 toques, espacios reducidos, presión (familia 1/2)</td>
+</tr>
+<tr>
+<td><strong>MD-3 (duración)</strong></td>
+<td>Mayor volumen, más espacio</td>
+<td>Alta (volumen)</td>
+<td>Grandes, posicionales y de progresión, juego de posición (familia 3/4)</td>
+</tr>
+<tr>
+<td><strong>MD-2 (velocidad)</strong></td>
+<td>Acciones rápidas, finalización, transiciones</td>
+<td>Media-alta</td>
+<td>Competitivos cortos, finalización (familia 5/6)</td>
+</tr>
+<tr>
+<td><strong>MD-1 (activación)</strong></td>
+<td>Frescura, ritmo, confianza</td>
+<td>Baja</td>
+<td>Corto de mantenimiento a alta superioridad, técnico (familia 1/7)</td>
+</tr>
+<tr>
+<td><strong>MD (partido)</strong></td>
+<td>Competición</td>
+<td>—</td>
+<td>Rondo de calentamiento pre-partido (familia 7)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Principios para encadenar el microciclo:</strong></p>
+<ul>
+<li><strong>Especificidad creciente y luego decreciente</strong>: la semana sube de exigencia desde MD+2 hasta el pico (MD-4/MD-3) y desciende hacia MD-1 para llegar fresco.</li>
+<li><strong>El principio táctico se entrena toda la semana</strong>, pero el <strong>tipo de rondo</strong> cambia para repartir la carga.</li>
+<li><strong>El rondo como termómetro</strong>: si en MD-1 el balón circula limpio y rápido, el equipo llega bien; si se atasca, hay fatiga residual.</li>
+</ul>
+<blockquote>
+<p>Conclusión: el rondo deja de ser "el calentamiento" para ser una herramienta <strong>modulable</strong> que, bien elegida y ubicada, entrena el modelo de juego de lunes a domingo y conecta cada repetición con lo que pasará el día del partido.</p>
+</blockquote>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>La transferencia es una <strong>cadena</strong>: rondo → juego de posición → partido condicionado → competición. Cada peldaño añade realismo.</li>
+<li>El rondo <strong>aísla</strong> el principio; sube de escalón cuando aparece con solvencia. No saltes del rondo al partido directamente.</li>
+<li>Cada una de las <strong>7 familias</strong> entrena un bloque concreto de principios: elige la familia por el principio del modelo que toque esa semana.</li>
+<li>Dentro de la sesión, encadena todo <strong>en torno a un único principio</strong>.</li>
+<li>En el microciclo, <strong>el principio es constante; el tipo de rondo cambia</strong> según el día (MD) para repartir la carga.</li>
+<li>Usa el rondo de MD-1 como <strong>termómetro</strong> de frescura del equipo.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li>Quedarse en el rondo básico sin progresar: se conserva en círculo pero no se sabe progresar a portería.</li>
+<li>Saltar de escalón sin que el principio esté consolidado (transferencia con huecos).</li>
+<li>Elegir la familia por gusto y no por el principio del modelo de la semana.</li>
+<li>Mezclar principios distintos en la misma sesión (se pierde el hilo conductor).</li>
+<li>Usar siempre el mismo tipo de rondo todos los días del microciclo, sin modular la carga según el MD.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="plan"><h1>Plan de sesiones · Integrar los rondos en el microciclo</h1>
+<blockquote>
+<p>Cómo llevar los 50 rondos al día a día. Aquí tienes <strong>dos microciclos completos</strong> (MD = matchday, día de partido) que encadenan los rondos del curso con su progresión de transferencia. Recuerda la regla del módulo 03: <strong>el principio táctico es constante toda la semana; el tipo de rondo cambia</strong> para repartir la carga.</p>
+</blockquote>
+<hr />
+<h2>1. Cómo leer estos planes</h2>
+<ul>
+<li><strong>MD</strong> = día de partido. <strong>MD-4, MD-3, MD-2, MD-1</strong> = días previos; <strong>MD+1/+2</strong> = días posteriores (recuperación).</li>
+<li>Cada día propone: <strong>rondo de activación</strong> (familia 7/1) → <strong>rondo del principio</strong> (la familia del foco) → <strong>transferencia</strong> (juego de posición y/o partido condicionado).</li>
+<li>La carga sigue la curva de la periodización táctica: sube hasta el pico (MD-4 / MD-3) y baja hacia MD-1.</li>
+<li>Los números entre paréntesis (<strong>R8</strong>, <strong>R24</strong>…) remiten a la ficha del rondo en los archivos de <code>ejercicios/</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Foco</th>
+<th>Carga</th>
+<th>Familia de rondo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD+1/+2</td>
+<td>Recuperación / descarga</td>
+<td>Baja</td>
+<td>7 / 1</td>
+</tr>
+<tr>
+<td>MD-4 (fuerza)</td>
+<td>Acciones cortas, cambios de dirección</td>
+<td>Alta (tensión)</td>
+<td>1 / 2</td>
+</tr>
+<tr>
+<td>MD-3 (duración)</td>
+<td>Volumen, juego de posición amplio</td>
+<td>Alta (volumen)</td>
+<td>3 / 4</td>
+</tr>
+<tr>
+<td>MD-2 (velocidad)</td>
+<td>Acciones rápidas, finalización</td>
+<td>Media-alta</td>
+<td>5 / 6</td>
+</tr>
+<tr>
+<td>MD-1 (activación)</td>
+<td>Frescura, ritmo, confianza</td>
+<td>Baja</td>
+<td>1 / 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Microciclo A — semana de partido único (foco: salida y progresión con balón)</h2>
+<p><strong>Principio de la semana:</strong> construir desde atrás y progresar superando líneas. Familias protagonistas: <strong>1, 3 y 4</strong>.</p>
+<h3>MD-4 · Fuerza (acciones cortas e intensas)</h3>
+<ul>
+<li><strong>Activación:</strong> R44 <em>El manín / burro clásico</em> — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R8 <em>Recupera en 6 segundos</em> + R3 <em>Cinco contra dos</em> a espacio reducido — circulación rápida y primer toque bajo presión. ~20 min.</li>
+<li><strong>Transferencia:</strong> juego de posición 6v6+3 en espacio corto; partido condicionado a 2 toques.</li>
+<li><em>Carga:</em> alta-tensión, espacios pequeños, 1–2 toques.</li>
+</ul>
+<h3>MD-3 · Duración (volumen, espacios amplios)</h3>
+<ul>
+<li><strong>Activación:</strong> R45 <em>Rondo multibalón</em> — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R16 <em>Rondo en tres zonas</em> + R24 <em>Líneas y porterías de conducción</em> — progresión por franjas. ~22 min.</li>
+<li><strong>Transferencia:</strong> juego de posición 4-3-3 amplio; partido condicionado 8v8 con zonas de progresión.</li>
+<li><em>Carga:</em> alta-volumen, campo grande, más carrera.</li>
+</ul>
+<h3>MD-2 · Velocidad (rápido, hacia el gol)</h3>
+<ul>
+<li><strong>Activación:</strong> R49 <em>Rondo reloj</em> — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R22 <em>Direccional con dos líneas</em> + R29 <em>Rondo y disparo a portería</em> — progresar y finalizar rápido. ~18 min.</li>
+<li><strong>Transferencia:</strong> partido condicionado con transiciones cortas y finalización.</li>
+<li><em>Carga:</em> media-alta, acciones explosivas y breves.</li>
+</ul>
+<h3>MD-1 · Activación (frescura)</h3>
+<ul>
+<li><strong>Activación + principio:</strong> R1 <em>El clásico abierto</em> a alta superioridad (7v2) y R46 <em>Rondo de colores</em> — técnico, vistoso, sin desgaste. ~15 min.</li>
+<li><strong>Transferencia:</strong> ensayo de salida de balón sin oposición real, ABP.</li>
+<li><em>Carga:</em> baja. Balón limpio = buen termómetro de frescura.</li>
+</ul>
+<h3>MD · Partido</h3>
+<ul>
+<li><strong>Calentamiento pre-partido:</strong> R50 <em>Gran rondo final (olla)</em> o R44, en versión corta y de alta superioridad. Activar cuerpo y "ojo".</li>
+</ul>
+<h3>MD+1/+2 · Recuperación</h3>
+<ul>
+<li>Rondos lúdicos de alta superioridad (<strong>R47</strong>, <strong>R48</strong>) a baja intensidad para los que jugaron; trabajo compensatorio.</li>
+</ul>
+<hr />
+<h2>3. Microciclo B — semana con foco defensivo (presión y transición)</h2>
+<p><strong>Principio de la semana:</strong> presión tras pérdida y recuperación colectiva. Familias protagonistas: <strong>2, 6 y 5</strong>.</p>
+<h3>MD-4 · Fuerza</h3>
+<ul>
+<li><strong>Activación:</strong> R44 — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R9 <em>Los dos cazadores</em> + R13 <em>Presión con límite de toques inverso</em> — coordinación de presión y robo en el control. ~20 min.</li>
+<li><strong>Transferencia:</strong> juego de posición con equipo que presiona; partido condicionado "robar arriba puntúa doble".</li>
+<li><em>Carga:</em> alta-tensión.</li>
+</ul>
+<h3>MD-3 · Duración</h3>
+<ul>
+<li><strong>Activación:</strong> R45 — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R11 <em>Rondo con segunda presión (6v3)</em> + R43 <em>Presión a contrarreloj</em> — basculación e intensidad sostenida en campo grande. ~22 min.</li>
+<li><strong>Transferencia:</strong> partido condicionado 10v10 con presión alta y ventana de recuperación de 6 s.</li>
+<li><em>Carga:</em> alta-volumen.</li>
+</ul>
+<h3>MD-2 · Velocidad</h3>
+<ul>
+<li><strong>Activación:</strong> R49 — 8 min.</li>
+<li><strong>Rondo del principio:</strong> R12 <em>Roba y juega</em> + R30 <em>Recupera y finaliza</em> — transición rápida del robo al remate. ~18 min.</li>
+<li><strong>Transferencia:</strong> partido condicionado con contraataque tras recuperación.</li>
+<li><em>Carga:</em> media-alta.</li>
+</ul>
+<h3>MD-1 · Activación</h3>
+<ul>
+<li><strong>Activación + principio:</strong> R5 <em>Rondo circular</em> a alta superioridad + R46 <em>Rondo de colores</em>. Técnico y fresco. ~15 min.</li>
+<li><strong>Transferencia:</strong> repaso de gatillos de presión sin desgaste; ABP defensivo.</li>
+<li><em>Carga:</em> baja.</li>
+</ul>
+<h3>MD · Partido</h3>
+<ul>
+<li><strong>Calentamiento:</strong> R50 o R44 en versión corta.</li>
+</ul>
+<h3>MD+1/+2 · Recuperación</h3>
+<ul>
+<li><strong>R47</strong>, <strong>R48</strong> a baja intensidad; cohesión y descarga.</li>
+</ul>
+<hr />
+<h2>4. Reglas de oro para integrar rondos</h2>
+<ol>
+<li><strong>Un principio por sesión.</strong> Todo (activación, rondo, juego de posición, partido) orbita la misma idea.</li>
+<li><strong>El rondo abre y conecta.</strong> Activa al inicio y prepara la transferencia que viene después.</li>
+<li><strong>Progresa siempre hacia el partido.</strong> Rondo → juego de posición → partido condicionado (módulo 03). No te quedes solo en el rondo.</li>
+<li><strong>Modula la carga por el día (MD).</strong> Mismo principio, distinto tipo de rondo según la distancia al partido.</li>
+<li><strong>Rota al defensor y vigila la intensidad.</strong> Series cortas, descanso claro, calidad por encima de duración.</li>
+<li><strong>Usa el rondo como termómetro.</strong> Si en MD-1 el balón circula limpio, el equipo llega bien.</li>
+</ol>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f1"><h1>Familia 1 · Iniciación y mantenimiento (Rondos 1–7)</h1>
+<blockquote>
+<p><strong>Base técnica:</strong> calidad de pase, orientación del primer apoyo, fijar para pasar, ofrecer línea de pase. Foco en el <strong>POSEEDOR</strong>.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores/recuperadores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio delimitado con conos. Flechas: pase (amarillo discontinuo), conducción (azul), desmarque (blanco), presión (la del defensor).</p>
+</blockquote>
+<hr />
+<h2>Rondo 1 — "El clásico abierto" (4v1)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> precisión y peso del pase raso, superficie de contacto (interior), control orientado del receptor.
+- <em>Táctico:</em> concepto de apoyo y triángulo permanente; pasar la línea del defensor.
+- <em>Cognitivo:</em> escaneo previo a recibir (¿de qué lado viene la presión?).</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 1</strong> (4 azules en las esquinas, 1 rojo dentro).
+- Espacio: <strong>cuadrado de 6×6 m</strong> — conos en las 4 esquinas, los azules sobre los conos.
+- Material: 1 balón, 4 conos, 4 petos azules, 1 peto rojo.</p>
+<p><figure class="diag"><em>[falta rondo-01.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 4 azules conservan el balón rondando al rojo. Posiciones fijas en las esquinas al inicio.
+2. El defensor presiona para robar o forzar la salida del balón del cuadrado.
+3. Quien recibe orienta el control al lado libre y busca al compañero que el defensor "deja".</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Toques libres</strong> la 1.ª serie; <strong>máximo 2 toques</strong> la 2.ª.
+- El defensor cambia cuando roba, saca el balón del cuadro o el azul da más toques de los permitidos.
+- Reto de equipo: <strong>10 pases seguidos = 1 punto</strong>; el defensor reinicia el contador al robar.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> cuadro 7×7, toques libres, defensor pasivo (50 %).
+- <em>Medio:</em> 6×6, máximo 2 toques.
+- <em>Difícil:</em> <strong>a 1 toque</strong> y el cuadro se reduce a <strong>5×5</strong>.</p>
+<p><strong>Coaching</strong>
+- "Recibe de perfil, nunca de frente al balón."
+- "Fija al defensor con tu cuerpo antes de pasar; oblígale a comprometerse a un lado."
+- Pase <strong>al pie del lado contrario</strong> a la presión.</p>
+<p><strong>Duración / series:</strong> 3 series de 3 min, 45–60 s de descanso. Rotar el defensor en cada robo.</p>
+<hr />
+<h2>Rondo 2 — "Rondo con jugador interior" (4v1 + 1 comodín central)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> pase entre líneas y control de espaldas del jugador interior.
+- <em>Táctico:</em> uso del hombre libre entre el defensor y la línea de pase; jugar el "tercer hombre".
+- <em>Cognitivo:</em> leer cuándo el interior está disponible (defensor de espaldas a él).</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 1 + 1 comodín</strong> (4 azules en esquinas, 1 ámbar dentro junto al rojo).
+- Espacio: <strong>cuadrado de 8×8 m</strong>, conos en esquinas.
+- Material: 1 balón, 4 conos, petos (4 azul, 1 ámbar, 1 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-02.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 4 azules exteriores rondan; el comodín ámbar se mueve <strong>dentro</strong> del cuadro buscando línea de pase.
+2. Cuando el interior recibe, devuelve de primeras o gira para cambiar el sentido del balón (pared interior).
+3. El defensor debe elegir: tapar el interior o presionar la línea exterior.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+1 punto</strong> cada vez que el balón pasa por el comodín interior y vuelve al exterior sin pérdida.
+- Exteriores <strong>a 2 toques</strong>; el comodín interior <strong>siempre a 1 toque</strong>.
+- El interior no puede recibir dos veces seguidas → fuerza variar el juego.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> interior libre de toques, 9×9.
+- <em>Medio:</em> interior a 1 toque, 8×8.
+- <em>Difícil:</em> <strong>dos comodines interiores</strong> alternándose; solo puntúa si el balón entra por uno y sale por el lado opuesto.</p>
+<p><strong>Coaching</strong>
+- "Busca al interior cuando el defensor le da la espalda."
+- Comodín: "ofrécete en el carril que el defensor no ve."
+- Jugar el <strong>tercer hombre</strong>: el que da la pared no es quien finaliza.</p>
+<p><strong>Duración / series:</strong> 3×3 min. Rotar comodín cada serie.</p>
+<hr />
+<h2>Rondo 3 — "Cinco contra dos" (5v2)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> velocidad de circulación, primer toque hacia adelante.
+- <em>Táctico:</em> mantener anchura y profundidad para tener siempre <strong>dos líneas de pase</strong>; superar a dos presionadores.
+- <em>Cognitivo:</em> decidir entre pase corto seguro o pase que salta a un defensor.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2</strong> (5 azules en pentágono, 2 rojos dentro).
+- Espacio: <strong>pentágono inscrito en ~9×9 m</strong> (5 conos formando el pentágono; los azules sobre los conos).
+- Material: 1 balón, 5 conos, petos (5 azul, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-03.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 5 azules conservan; los 2 rojos presionan coordinados.
+2. El poseedor asegura <strong>siempre 2 opciones</strong> (el de al lado y el que salta una posición).
+3. Si los dos defensores se juntan en un lado, abrir al contrario.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Máximo <strong>2 toques</strong>.
+- <strong>+1 punto</strong> por cada pase que "salte" entre los dos defensores (pase interior).
+- Si los azules completan <strong>8 pases</strong>, los defensores hacen 5 abdominales al cambiar.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 10×10, toques libres.
+- <em>Medio:</em> 9×9, 2 toques.
+- <em>Difícil:</em> <strong>1 toque</strong> y prohibido devolver al que te la dio → fuerza circular.</p>
+<p><strong>Coaching</strong>
+- "Abre el cuerpo para ver los dos lados antes de recibir."
+- "Si te cierran un lado, el otro está libre: cámbialo rápido."
+- Mantener distancias: ni tan cerca (roban a dos) ni tan lejos (pase impreciso).</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar la pareja de defensores.</p>
+<hr />
+<h2>Rondo 4 — "Triángulo dinámico" (3v1 con relevos)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> pase y control en movimiento (no en posición fija).
+- <em>Táctico:</em> sostener el triángulo aunque los apoyos roten; movilidad de los apoyos.
+- <em>Cognitivo:</em> coordinación del que pasa y del que se desmarca para rehacer el triángulo.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>3 v 1</strong> con <strong>2 azules en espera</strong> que entran por relevo.
+- Espacio: <strong>triángulo de 8 m de lado</strong> (3 conos), zona de espera fuera.
+- Material: 1 balón, 3 conos, petos (5 azul total, 1 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-04.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Tres azules forman triángulo y rondan al rojo, pero <strong>tras pasar, el pasador se desplaza</strong> a un nuevo vértice y un azul de espera ocupa el hueco.
+2. El triángulo "viaja": no es estático.
+3. El defensor persigue el balón intentando robar en la transición de posiciones.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Obligatorio moverse tras pasar</strong>; quien se queda quieto, su equipo pierde el punto del pase.
+- A <strong>2 toques</strong>.
+- <strong>+1 punto</strong> por cada 6 pases manteniendo el triángulo en movimiento.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> triángulo fijo, sin relevos.
+- <em>Medio:</em> con relevos de los de espera.
+- <em>Difícil:</em> triángulo de 6 m + defensor al 100 % + <strong>1 toque</strong> en las paredes.</p>
+<p><strong>Coaching</strong>
+- "Pasa y muévete: el balón descansa, tú no."
+- "Reconstruye el triángulo siempre: amplitud y un apoyo por detrás."
+- Timing del desmarque: salir cuando el compañero recibe, no antes.</p>
+<p><strong>Duración / series:</strong> 4 series de 2,5 min. Rotar defensor por robo.</p>
+<hr />
+<h2>Rondo 5 — "Rondo circular" (7v1–2 en círculo)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> pase de primera en superficie reducida, calidad bajo orientación 360°.
+- <em>Táctico:</em> romper la simetría del círculo cambiando ritmo y dirección del balón.
+- <em>Cognitivo:</em> percepción periférica total (apoyos a izquierda y derecha).</p>
+<p><strong>Organización</strong>
+- Relación: <strong>7 v 1</strong> o <strong>7 v 2</strong> (azules en círculo, rojos dentro).
+- Espacio: <strong>círculo de 10 m de diámetro</strong> (8 conos marcando el perímetro).
+- Material: 1 balón, 8 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-05.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules en círculo conservan; el balón puede circular en ambos sentidos.
+2. Para batir al defensor se cambia de sentido o se salta por dentro a un compañero alejado.
+3. El defensor cierra un sentido; los azules juegan por el otro.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>A 1 toque</strong> (objetivo del círculo: ritmo).
+- Prohibido pasar al de al lado <strong>dos veces seguidas en el mismo sentido</strong> → obliga a cambiar el sentido.
+- <strong>+1 punto</strong> por cada pase "por dentro" del círculo que salta al defensor.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> círculo 12 m, 2 toques, 1 defensor.
+- <em>Medio:</em> 10 m, 1 toque, 1 defensor.
+- <em>Difícil:</em> <strong>2 defensores</strong> y permitido jugar por dentro del círculo.</p>
+<p><strong>Coaching</strong>
+- "Cabeza arriba: tienes apoyos a los dos lados, decide antes de que llegue el balón."
+- "Cambia el sentido para descolocar al del medio."
+- Pase tenso y al pie (la distancia es corta: precisión, no fuerza).</p>
+<p><strong>Duración / series:</strong> 3×3 min. Rotar defensor(es) por robo o por tiempo.</p>
+<hr />
+<h2>Rondo 6 — "Cuatro contra dos con apoyos en banda" (4v2 + 2 comodines)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> pase exterior–interior y descarga; control orientado hacia el apoyo.
+- <em>Táctico:</em> uso de apoyos fijos para mantener cuando los 2 defensores aprietan; superioridad por fuera.
+- <em>Cognitivo:</em> identificar el apoyo libre cuando el centro está cerrado.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2 + 2 comodines</strong> (4 azules dentro, 2 ámbar fijos en lados opuestos, 2 rojos dentro).
+- Espacio: <strong>rectángulo de 12×10 m</strong>; comodines en las dos líneas largas.
+- Material: 1 balón, 4 conos, petos (4 azul, 2 ámbar, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-06.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 4 azules conservan con ayuda de los 2 comodines de banda (a 1 toque, no entran al campo).
+2. Si los rojos cierran el interior, se sale por un comodín y se vuelve a entrar (apoyo–descarga).
+3. Los comodines mantienen anchura permanente.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Comodines <strong>a 1 toque</strong> y sin moverse del lado asignado.
+- <strong>+1 punto</strong> por la secuencia <em>interior → comodín → interior distinto</em> (no devolver al que se la dio).
+- 6 pases = punto extra.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 14×11, comodines a 2 toques.
+- <em>Medio:</em> 12×10, comodín a 1 toque.
+- <em>Difícil:</em> solo <strong>1 comodín</strong> disponible y defensores al 100 %.</p>
+<p><strong>Coaching</strong>
+- "El comodín es la válvula de escape: úsalo y vuelve a entrar."
+- "No devuelvas al que te la dio; cambia el punto de juego."
+- Apoyo de banda siempre con el cuerpo abierto al campo.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar comodines cada serie.</p>
+<hr />
+<h2>Rondo 7 — "El tercer hombre" (6v2 con devolución prohibida)</h2>
+<p><strong>Objetivo</strong>
+- <em>Técnico:</em> control orientado y pase encadenado a dos toques; calidad del pase que salta una posición.
+- <em>Táctico:</em> automatizar el <strong>tercer hombre</strong> — quien recibe la pared no es quien la inició; circular en vez de devolver.
+- <em>Cognitivo:</em> anticipar al receptor libre (el "tercer hombre") antes de recibir.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 2</strong> (6 azules en hexágono sobre los conos, 2 rojos dentro).
+- Espacio: <strong>cuadro de 12×12 m</strong> (6 conos repartidos en el perímetro formando hexágono).
+- Material: 1 balón, 6 conos, petos (6 azul, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-07.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 6 azules conservan; los 2 rojos presionan en pareja.
+2. <strong>Prohibido devolver el pase al jugador que te lo dio</strong>: el balón sigue hacia un tercero, lo que obliga a que el apoyo y el tercer hombre se ofrezcan a la vez.
+3. Secuencia tipo: A→B (pared), B→C libre (tercer hombre), sin B de vuelta a A.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Prohibido el pase de devolución</strong> al último pasador (si ocurre, balón a los rojos = punto rojo).
+- Azules <strong>a 2 toques</strong>.
+- <strong>+1 punto</strong> por cada 6 pases respetando la no-devolución; <strong>+1 extra</strong> por secuencia clara de tercer hombre.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 7v2, 14×14, toques libres (solo la regla de no devolver).
+- <em>Medio:</em> 6v2, 12×12, 2 toques.
+- <em>Difícil:</em> 6v2 en 10×10 + un toque en la pared (el apoyo descarga de primeras al tercer hombre).</p>
+<p><strong>Coaching</strong>
+- "Si no puedes devolver, ya debes saber dónde está el tercer hombre antes de recibir."
+- "El apoyo se ofrece para descargar, no para tener el balón: pasa y libera."
+- Escaneo previo: el tercer hombre se localiza con la cabeza, no con la suerte.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 60 s descanso. Rotar la pareja defensora por tiempo o por robo.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f2"><h1>Familia 2 · Presión y recuperación (Rondos 8–14)</h1>
+<blockquote>
+<p><strong>Foco en el DEFENSOR/RECUPERADOR:</strong> presión tras pérdida, recuperar en X segundos, coordinación de presionadores, orientar la presión, transición ofensiva-defensiva.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores/recuperadores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 8 — "Recupera en 6 segundos" (4v2, cronometrado)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico (defensivo):</em> presión inmediata tras pérdida (contrapresión); reducir el tiempo de recuperación.
+- <em>Cognitivo:</em> leer el momento de saltar a robar.
+- <em>Físico:</em> esfuerzo explosivo corto.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2</strong>.
+- Espacio: <strong>cuadrado de 10×10 m</strong>.
+- Material: 1 balón, 4 conos, petos, <strong>cronómetro/silbato</strong>.</p>
+<p><figure class="diag"><em>[falta rondo-08.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 4 azules conservan; los 2 rojos defienden.
+2. Cuando los rojos roban (o sale el balón), se <strong>cronometran 6 segundos</strong>: deben recuperar tras una nueva pérdida simulada en ese tiempo, o se mide cuánto tardan de media.
+3. Énfasis en saltar juntos, no esperar.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Meta: <strong>recuperar en menos de 6 s</strong>. Se registra el tiempo de cada recuperación.
+- Recuperar bajo el umbral <strong>3 veces seguidas</strong> = ganan la serie.
+- Azules <strong>a 2 toques</strong> (les obliga a ser rápidos y abre ventana de presión).</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 11×11, umbral 8 s.
+- <em>Medio:</em> 10×10, umbral 6 s.
+- <em>Difícil:</em> 9×9, umbral 4 s, azules a toque libre.</p>
+<p><strong>Coaching</strong>
+- "Presión a la primera, no a la segunda: el momento es cuando el balón viaja."
+- "Uno presiona al balón, el otro cierra el pase de seguridad."
+- Postura del defensor: orientar al rival hacia donde queremos robar.</p>
+<p><strong>Duración / series:</strong> 5 series de 2 min (alta intensidad). Rotar parejas cada serie.</p>
+<hr />
+<h2>Rondo 9 — "Los dos cazadores" (5v2, coordinación de pareja)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> coordinación de los <strong>dos defensores</strong> (uno al balón, otro a la cobertura/intercepción).
+- <em>Cognitivo:</em> comunicación y gatillo de presión compartido.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2</strong>.
+- Espacio: <strong>cuadrado de 9×9 m</strong>.
+- Material: 1 balón, 4 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-09.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Cinco azules conservan; los <strong>dos rojos actúan como pareja</strong>: nunca van los dos al balón.
+2. El "presionador" sale al poseedor orientándolo a un lado; el "interceptor" se coloca en la línea de pase de ese lado.
+3. Al cambiar el balón de lado, los roles <strong>se intercambian</strong>.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Prohibido</strong> que los dos rojos vayan al mismo poseedor (si lo hacen, +1 gratis para los azules).
+- Recuperación <strong>por intercepción</strong> = <strong>+2</strong>; robo directo = +1.
+- Azules a 2 toques.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 10×10, sin obligación de roles.
+- <em>Medio:</em> 9×9, roles obligatorios.
+- <em>Difícil:</em> 8×8, azules a 1 toque → la pareja debe anticipar más.</p>
+<p><strong>Coaching</strong>
+- "Uno aprieta, otro tapa. Nunca los dos al balón."
+- "Orienta el pase con tu carrera y tu compañero intercepta."
+- Hablar: "¡voy!" / "¡tapo!".</p>
+<p><strong>Duración / series:</strong> 4×3 min. Parejas fijas una serie para que se entiendan.</p>
+<hr />
+<h2>Rondo 10 — "Presión que orienta" (4v2 con zona-trampa)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>orientar la presión</strong> hacia un lado predeterminado (la "trampa"); guiar al rival.
+- <em>Cognitivo:</em> reconocer la zona-trampa y conducir al rival hacia ella.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2</strong>.
+- Espacio: <strong>rectángulo 12×8 m</strong> dividido en dos mitades (una sombreada = zona-trampa).
+- Material: 1 balón, 6 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-10.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los rojos <strong>fuerzan</strong> que el balón llegue a la <strong>zona-trampa</strong> y roban allí.
+2. La presión no es "ir a por el balón" sino cerrar salidas para empujar el juego a la trampa.
+3. Los azules conservan evitando la zona marcada.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Robo en la zona-trampa = <strong>+3</strong>; robo fuera = +1.
+- 8 pases sin entrar en la trampa = +1 azul.
+- El presionador cierra <strong>el lado fuerte</strong> con su cuerpo.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> zona-trampa grande (60 % del campo).
+- <em>Medio:</em> zona-trampa = una mitad.
+- <em>Difícil:</em> zona-trampa pequeña (una esquina) → presión muy precisa.</p>
+<p><strong>Coaching</strong>
+- "No persigas el balón, condúcelo. Cierra un lado para abrir el que tú quieres."
+- "El cuerpo del defensor es una pared: orienta con él."
+- El segundo defensor cubre la salida de la trampa.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Cambiar el lado de la trampa entre series.</p>
+<hr />
+<h2>Rondo 11 — "Rondo con segunda presión" (6v3 en cadena)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> presión escalonada con <strong>tres defensores</strong>: 1.º al balón, 2.º a la línea de pase, 3.º cobertura.
+- <em>Cognitivo:</em> basculación del bloque de 3 según el lado del balón.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 3</strong>.
+- Espacio: <strong>cuadrado de 12×12 m</strong>.
+- Material: 1 balón, 4 conos, petos (6 azul, 3 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-11.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Seis azules conservan; los tres rojos <strong>basculan en bloque</strong> hacia el lado del balón.
+2. El más cercano presiona; los otros dos <strong>achican</strong> y cierran líneas del lado fuerte.
+3. Al cambiar el balón de lado, todo el bloque se desplaza.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Los 3 defensores a <strong>menos de 5 m</strong> entre el más cercano y el siguiente (bloque compacto).
+- Recuperación tras basculación correcta = <strong>+2</strong>.
+- Azules: 2 cambios de lado sin pérdida = +1.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 14×14, sin obligación de compactar.
+- <em>Medio:</em> 12×12, bloque compacto obligatorio.
+- <em>Difícil:</em> 10×10 → basculación más exigente.</p>
+<p><strong>Coaching</strong>
+- "Bloque corto: si te separas, abres un pasillo."
+- "Bascula al lado del balón, deja el lejano."
+- Ajustar <strong>distancias</strong> continuamente, nunca quietos.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min. Rotar el trío defensor.</p>
+<hr />
+<h2>Rondo 12 — "Roba y juega" (4v2 con transición premiada)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>transición ofensiva tras robar</strong> — el equipo defensor, al recuperar, busca un objetivo.
+- <em>Cognitivo:</em> cambio inmediato de mentalidad defensa→ataque.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2</strong>, con <strong>2 mini-porterías de conos</strong> en lados opuestos.
+- Espacio: <strong>cuadrado 12×12 m</strong> con una puerta de conos (2 m) en cada lado largo.
+- Material: 1 balón, 8 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-12.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan (rondo normal 4v2).
+2. Cuando los <strong>rojos roban</strong>, tienen <strong>8 segundos</strong> para conducir el balón por cualquiera de las dos puertas.
+3. Si lo logran, suman; si no, devuelven y se reinicia.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Robar <strong>+1</strong>; conducir por una puerta en ≤8 s tras robar <strong>+2 adicional</strong>.
+- Los azules, al perder, hacen <strong>contrapresión</strong> para impedir la puerta.
+- Toques libres para los azules (foco en la fase defensiva-transición).</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> sin límite de tiempo para la puerta.
+- <em>Medio:</em> 8 s para la puerta.
+- <em>Difícil:</em> 5 s + 3 puertas.</p>
+<p><strong>Coaching</strong>
+- "Robar no es el final: la primera decisión tras el robo gana el ejercicio."
+- "Al perder, los dos primeros segundos son para frenar, no para lamentarse."
+- Antes de robar, mirar <strong>dónde está la puerta libre</strong>.</p>
+<p><strong>Duración / series:</strong> 5×2,5 min. Alta exigencia de transición.</p>
+<hr />
+<h2>Rondo 13 — "Presión con límite de toques inverso" (5v2)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> presionar para <strong>forzar el error técnico</strong> del poseedor restringiendo su tiempo.
+- <em>Cognitivo:</em> el defensor cronometra mentalmente el toque del rival y salta en el control malo.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2</strong>.
+- Espacio: <strong>cuadrado 9×9 m</strong>.
+- Material: 1 balón, 4 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-13.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules juegan <strong>obligatoriamente a 1 toque</strong> (condición que les presiona).
+2. Los rojos saltan <strong>anticipando</strong> el control de primera; buscan el balón que rebota mal.
+3. El defensor presiona al <strong>receptor</strong>, no al pasador.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Azules <strong>a 1 toque obligado</strong>; 2 toques = balón a los defensores (punto rojo).
+- Recuperación por <strong>anticipación al control</strong> = +2.
+- 10 pases a 1 toque encadenados = +1 azul.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> azules a 2 toques.
+- <em>Medio:</em> 1 toque obligado.
+- <em>Difícil:</em> 1 toque obligado + cuadro 8×8.</p>
+<p><strong>Coaching</strong>
+- "Presiona al que va a recibir, no al que pasa: roba en el control."
+- "Si el rival está obligado a 1 toque, su error está cerca: aprieta."
+- Arrancar la presión cuando el balón sale del pie del pasador.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar pareja defensora.</p>
+<hr />
+<h2>Rondo 14 — "Defensa numéricamente igualada" (3v3 de mantenimiento defensivo)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> defender <strong>sin superioridad ofensiva del rival</strong> (igualdad); marcaje, cobertura y robo en 3v3.
+- <em>Cognitivo:</em> asignar marcas y leer el desmarque.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>3 v 3</strong> (un equipo conserva, el otro recupera; al robar, <strong>se invierten los roles</strong>).
+- Espacio: <strong>cuadrado 14×14 m</strong> (más amplio por la igualdad).
+- Material: 1 balón, 4 conos, petos de dos colores.</p>
+<p><figure class="diag"><em>[falta rondo-14.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Tres conservan, tres recuperan; en igualdad no hay rondo "cómodo".
+2. Al robar, el equipo que recupera <strong>da 3 pases</strong> para "ganar" la posesión y entonces cambian los roles formalmente.
+3. Cada defensor tiene una marca de referencia con coberturas.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Recuperar + <strong>3 pases de consolidación</strong> = posesión ganada (+1) y cambio de rol.
+- 6 pases mantenidos = +1.
+- Prohibido el marcaje doble a un mismo poseedor.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 4v3 (vuelve la superioridad para el que conserva).
+- <em>Medio:</em> 3v3, consolidación de 3 pases.
+- <em>Difícil:</em> 3v3 en 12×12 + 2 toques al conservar.</p>
+<p><strong>Coaching</strong>
+- "En igualdad defiende tu zona y comunica las marcas."
+- "Tras robar, asegura antes de atacar: 3 pases para respirar."
+- Cobertura: nunca dos defensores al mismo hombre.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min. Descanso 1 min (esfuerzo alto por la igualdad).</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f3"><h1>Familia 3 · Posicionales y de orientación (Rondos 15–21)</h1>
+<blockquote>
+<p><strong>Cambio de orientación, rondo por zonas, jugar al comodín del lado contrario, romper líneas, juego de posición con sentido.</strong></p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 15 — "Cambia de orientación" (6v2 con dos comodines de banda)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>cambio de orientación</strong>: mantener en un lado para atacar el contrario; encontrar al comodín del lado lejano.
+- <em>Cognitivo:</em> identificar el lado débil (donde no está la presión).</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 2 + 2 comodines</strong> (4 azules dentro, 2 ámbar fijos en bandas opuestas, 2 rojos).
+- Espacio: <strong>rectángulo 16×10 m</strong>; comodines en las dos líneas largas (lado A y lado B).
+- Material: 1 balón, 4 conos, petos.</p>
+<p><figure class="diag"><em>[falta rondo-15.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan atrayendo a los dos rojos a un lado.
+2. El objetivo es <strong>cambiar el balón al comodín del lado contrario</strong> a la presión.
+3. El comodín devuelve y se reinicia desde el nuevo lado.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por cada cambio de orientación completado de un comodín al opuesto.
+- Para validar, <strong>3 pases previos</strong> en el lado de la presión (atraer primero).
+- Comodines a 2 toques, fijos en su banda.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 18×10, cambio libre.
+- <em>Medio:</em> 16×10, atraer 3 pases antes de cambiar.
+- <em>Difícil:</em> 14×10 + cambio <strong>directo</strong> de un comodín al otro puntúa doble.</p>
+<p><strong>Coaching</strong>
+- "Atrae a un lado para abrir el otro: el cambio nace de fijar primero."
+- "Mira al lado lejano antes de recibir; el cambio ya debe estar decidido."
+- Pase de cambio firme y al pie del comodín libre.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar comodines.</p>
+<hr />
+<h2>Rondo 16 — "Rondo en tres zonas" (posición por carriles)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>juego por carriles</strong>, ocupar racionalmente el espacio; progresar de zona en zona.
+- <em>Cognitivo:</em> reconocer en qué carril hay superioridad.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 3</strong> repartidos por zonas.
+- Espacio: <strong>rectángulo 18×12 m dividido en 3 carriles verticales</strong> de 6 m.
+- Material: 1 balón, conos de 3 colores para los carriles, petos.</p>
+<p><figure class="diag"><em>[falta rondo-16.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Dos azules por carril (uno por zona mínimo), un rojo por carril.
+2. El balón debe <strong>circular pasando por los tres carriles</strong>; no se salta ninguno.
+3. Se busca el carril con superioridad para progresar.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+1</strong> cada vez que el balón recorre los <strong>3 carriles</strong> sin perderlo.
+- Prohibido tener <strong>más de 2 azules en el mismo carril</strong>.
+- Defensores no cambian de carril salvo coberturas pactadas.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> carriles anchos (7 m), se permite saltar un carril.
+- <em>Medio:</em> 6 m, paso obligado por los 3 carriles.
+- <em>Difícil:</em> defensores libres de carril + 2 toques.</p>
+<p><strong>Coaching</strong>
+- "Ocupa tu carril; no te amontones donde está el balón."
+- "Progresa carril a carril: paciencia para encontrar el lado fuerte."
+- Recibir orientado hacia el carril de avance.</p>
+<p><strong>Duración / series:</strong> 4×3,5 min. Rotar tríos.</p>
+<hr />
+<h2>Rondo 17 — "Comodín del lado contrario" (4v2 + 2 comodines móviles)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> jugar <strong>siempre al comodín opuesto al balón</strong>; cambiar el punto de juego con apoyos móviles.
+- <em>Cognitivo:</em> localizar el comodín libre que se reposiciona constantemente.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2 + 2 comodines móviles</strong>.
+- Espacio: <strong>cuadrado 12×12 m</strong>; los 2 comodines se mueven <strong>por todo el perímetro</strong>.
+- Material: 1 balón, 4 conos, petos (4 azul, 2 ámbar, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-17.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan dentro; los comodines se reposicionan por el perímetro buscando estar <strong>siempre en el lado opuesto al balón</strong>.
+2. La regla obliga a buscar al comodín lejano de la presión.
+3. Los comodines coordinan para no estar los dos en el mismo lado.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Solo puntúa</strong> el pase al comodín del <strong>lado contrario</strong> al balón (+2).
+- Comodines a 1 toque.
+- Pase al comodín cercano (lado del balón) = no puntúa.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> comodines fijos en lados opuestos.
+- <em>Medio:</em> comodines móviles por el perímetro.
+- <em>Difícil:</em> 1 solo comodín móvil + defensores al 100 %.</p>
+<p><strong>Coaching</strong>
+- "El balón rápido al lado donde no hay presión."
+- Comodín: "lee dónde está el balón y colócate enfrente."
+- Antes de recibir, saber ya en qué lado está el comodín libre.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar comodines.</p>
+<hr />
+<h2>Rondo 18 — "Rompe líneas" (5v2 con defensores escalonados)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>pase que rompe línea</strong> (vertical, entre los defensores); valorar el pase interior sobre el horizontal.
+- <em>Cognitivo:</em> ver el momento exacto en que se abre el carril vertical.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2 + 1 interior</strong> (4 azules en perímetro, 1 azul interior, 2 rojos escalonados).
+- Espacio: <strong>cuadrado 12×12 m</strong>, con una <strong>línea media</strong> marcada (un defensor por delante y otro por detrás).
+- Material: 1 balón, conos, cinta para la línea media, petos.</p>
+<p><figure class="diag"><em>[falta rondo-18.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules circulan en su lado; el objetivo es <strong>encontrar al azul interior por detrás de la línea defensiva</strong>.
+2. El pase que "rompe la línea" vale más que el de mantenimiento.
+3. El interior recibe entre líneas y devuelve o gira.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por cada pase que llega al interior <strong>rompiendo la línea</strong> (superando al primer defensor).
+- Pase horizontal de mantenimiento: 0 puntos (solo prepara).
+- El interior no recibe dos veces seguidas.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> defensores en una sola línea, interior libre.
+- <em>Medio:</em> defensores escalonados, romper línea puntúa.
+- <em>Difícil:</em> dos interiores y el pase debe llegar al segundo (rompe <strong>dos</strong> líneas).</p>
+<p><strong>Coaching</strong>
+- "El pase que rompe líneas es el que progresa: priorízalo sobre el seguro."
+- "Espera a que el carril vertical se abra; no fuerces el balón a un cuerpo."
+- Interior: ofrecerse en el ángulo ciego del defensor.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar defensores e interior.</p>
+<hr />
+<h2>Rondo 19 — "Rondo de posición 4v3 (+3 comodines)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> reproducir una <strong>estructura posicional</strong> (no solo conservar): apoyos fijos por dentro y por fuera, jugar el tercer hombre.
+- <em>Cognitivo:</em> leer la estructura completa y elegir la línea de progresión.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 3 + 3 comodines</strong> (4 azules interiores, 3 comodines perimetrales fijos en posiciones de estructura, 3 rojos).
+- Espacio: <strong>cuadrado 14×14 m</strong>; comodines en 3 lados, estructura tipo "rombo + apoyos".
+- Material: 1 balón, 4 conos, petos (4 azul, 3 ámbar, 3 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-19.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Estructura de juego de posición: interiores generan superioridad, comodines dan amplitud y apoyo.
+2. Se busca el <strong>tercer hombre</strong>: A juega con B (apoyo), B descarga a C que aparece libre.
+3. Los 3 rojos defienden la estructura.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+2</strong> por cada acción del "tercer hombre" (pase–pared–jugador libre).
+- Mantener la estructura: si dos interiores se juntan en la misma zona, pierden el punto.
+- Comodines a 1 toque.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 4+3 v 2 (más superioridad).
+- <em>Medio:</em> 4+3 v 3.
+- <em>Difícil:</em> 4+3 v 4 (igualdad casi total, estructura bajo presión real).</p>
+<p><strong>Coaching</strong>
+- "El tercer hombre: el que recibe la pared no es el que la devuelve."
+- "Mantén la forma; los apoyos no se mueven de su posición de estructura."
+- Pensar en líneas de pase, no en jugadores: jugar el espacio.</p>
+<p><strong>Duración / series:</strong> 4×4 min. Rotar tríos defensores.</p>
+<hr />
+<h2>Rondo 20 — "Doble cuadro con cambio obligado" (orientación entre zonas)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> mantener en una zona para <strong>cambiar a la zona opuesta</strong> superando a la presión; orientación de zona a zona.
+- <em>Cognitivo:</em> decisión de cuándo cambiar de zona.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 4</strong> en dos cuadros con <strong>3 defensores activos</strong> que pueden cruzar.
+- Espacio: <strong>dos cuadrados de 8×8 m</strong> adosados (rectángulo 16×8 dividido en dos).
+- Material: 1 balón, 6 conos, petos (6 azul, 4 rojo; 3 defienden, 1 espera relevo).</p>
+<p><figure class="diag"><em>[falta rondo-20.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan en una zona; deben <strong>trasladar el balón a la otra</strong> con un pase que cruce la línea divisoria.
+2. Los defensores presionan en la zona activa; al cambiar el balón, <strong>dos defensores cruzan</strong> a la nueva zona.
+3. La ventaja: quien cambia rápido juega antes de que llegue la presión.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+2</strong> por cada traslado limpio de zona; <strong>doble</strong> si se juega en la nueva zona antes de que lleguen los 2 defensores.
+- Mínimo <strong>3 pases</strong> en la zona antes de cambiar.
+- El traslado debe ser <strong>raso</strong>.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> línea divisoria libre, 1 defensor cruza.
+- <em>Medio:</em> 2 defensores cruzan tras el cambio.
+- <em>Difícil:</em> zonas de 7×7 + cambio directo a un apoyo de la otra zona.</p>
+<p><strong>Coaching</strong>
+- "Atrae en una zona, juega en la otra: el espacio libre está donde no está la presión."
+- "Cambia y juega rápido: tu ventaja dura 2 segundos."
+- Preparar siempre un receptor orientado en la zona de destino.</p>
+<p><strong>Duración / series:</strong> 4×3,5 min. Rotar defensores.</p>
+<hr />
+<h2>Rondo 21 — "Rondo orientado con porterías de pase" (5v2 + objetivos)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> dar <strong>dirección/sentido</strong> al rondo: progresar hacia unos "objetivos" en vez de conservar sin más.
+- <em>Cognitivo:</em> elegir el objetivo correcto según la presión.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2</strong> con <strong>2 jugadores-objetivo (comodines) en dos lados (frente/fondo)</strong>.
+- Espacio: <strong>rectángulo 14×10 m</strong>; comodines-objetivo en las dos líneas cortas.
+- Material: 1 balón, 4 conos, petos (5 azul, 2 ámbar objetivo, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-21.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan en el medio; el objetivo es <strong>conectar de un comodín-objetivo al otro</strong> (de fondo a fondo) = progresión completa.
+2. La direccionalidad convierte el rondo en juego de progresión.
+3. Los 2 rojos cortan la línea de progresión.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por conectar objetivo–objetivo en una misma posesión.
+- No vale conectar dos veces seguidas al mismo objetivo (obliga a progresar).
+- Objetivos a 1 toque.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> objetivos a 2 toques, sin límite de tiempo.
+- <em>Medio:</em> conexión fondo-a-fondo puntúa.
+- <em>Difícil:</em> conexión fondo-a-fondo en <strong>menos de 5 pases</strong>.</p>
+<p><strong>Coaching</strong>
+- "El rondo ya tiene portería: el objetivo de enfrente es tu progreso."
+- "No te apoyes siempre atrás; busca avanzar al objetivo lejano."
+- Cuerpo orientado a portería/objetivo desde la recepción.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar objetivos y defensores.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f4"><h1>Familia 4 · Con líneas y comodines — progresión y dirección (Rondos 22–28)</h1>
+<blockquote>
+<p><strong>Rondos con dirección/progresión real y comodines exteriores que dan el sentido del juego.</strong> Puente hacia el juego de posición direccional.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 22 — "Rondo direccional con dos líneas" (4v2 progresivo)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> progresar de una <strong>línea de partida</strong> a una <strong>línea de meta</strong> superando a dos defensores; dirección clara.
+- <em>Cognitivo:</em> decidir entre conservar o progresar según la presión.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2 + 2 comodines exteriores</strong> (uno tras cada línea).
+- Espacio: <strong>rectángulo 16×12 m</strong> con <strong>línea de partida</strong> y <strong>línea de meta</strong> marcadas.
+- Material: 1 balón, 6 conos, petos (4 azul, 2 ámbar, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-22.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules salen desde el comodín de la línea de partida y deben <strong>progresar</strong> hasta el comodín de la línea de meta.
+2. Los 2 rojos defienden el avance.
+3. Los comodines exteriores apoyan salida y llegada (a 1 toque).</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por llegar de comodín de partida a comodín de meta.
+- Si pierden, <strong>vuelven a empezar</strong> desde la línea de partida.
+- Progresión en <strong>menos de 8 s</strong> = punto extra.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 18×12, comodines a 2 toques.
+- <em>Medio:</em> 16×12, progresión normal.
+- <em>Difícil:</em> 14×12 + 4v3.</p>
+<p><strong>Coaching</strong>
+- "El rondo tiene una dirección: no es conservar, es llegar."
+- "Usa los comodines de salida para fijar y progresar limpio."
+- Orientación del primer control hacia la meta, no hacia atrás.</p>
+<p><strong>Duración / series:</strong> 4×3 min. Rotar defensores.</p>
+<hr />
+<h2>Rondo 23 — "Salida en superioridad con comodines de banda" (3v2 + bandas + objetivo)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> <strong>salida de balón</strong> desde atrás bajo presión, usando las bandas para progresar (transferencia a la primera fase de construcción).
+- <em>Cognitivo:</em> elegir la banda libre para salir.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>3 v 2 + 2 comodines de banda + 1 comodín-objetivo</strong> delante.
+- Espacio: <strong>rectángulo 18×14 m</strong>; 2 comodines en bandas, 1 comodín-objetivo en la línea de meta.
+- Material: 1 balón, 6 conos, petos (3 azul, 2 ámbar banda, 1 ámbar objetivo, 2 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-23.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 3 azules inician la salida en superioridad sobre los 2 rojos.
+2. Progresan apoyándose en bandas y buscan <strong>conectar con el comodín-objetivo</strong> avanzado.
+3. Los rojos presionan la salida intentando robar en la primera línea.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por conectar con el comodín-objetivo tras pasar por <strong>al menos una banda</strong>.
+- Salir <strong>jugado</strong>: balón directo al objetivo sin pasar por banda = no puntúa.
+- Robo de rojos en la primera línea = <strong>+2 rojos</strong>.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 4v2, bandas a 2 toques.
+- <em>Medio:</em> 3v2.
+- <em>Difícil:</em> 3v3 (igualdad).</p>
+<p><strong>Coaching</strong>
+- "Sal jugando: la banda libre es tu salida, no el pelotazo."
+- "Fija al presionador y abre a la banda contraria."
+- Comodín-objetivo: ofrecerse cuando la salida ya superó la presión.</p>
+<p><strong>Duración / series:</strong> 4×3,5 min. Rotar defensores y objetivo.</p>
+<hr />
+<h2>Rondo 24 — "Rondo con líneas y porterías de conducción" (5v3 progresivo)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> progresar por líneas conduciendo o pasando a través de <strong>puertas de conducción</strong>; combinar conservar y avanzar.
+- <em>Cognitivo:</em> leer si conviene conducir el espacio libre o pasar.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 3 + 2 comodines exteriores</strong>.
+- Espacio: <strong>rectángulo 20×14 m dividido en 3 franjas</strong> (atrás–medio–meta); 2 <strong>puertas de conducción</strong> (2 m) en la franja media.
+- Material: 1 balón, conos (incl. 2 puertas), petos (5 azul, 2 ámbar, 3 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-24.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules conservan en la franja de atrás y deben <strong>progresar a la franja de meta</strong>.
+2. Para avanzar entre franjas, <strong>conducen por una puerta</strong> o pasan a un compañero ya situado en la franja avanzada.
+3. Los 3 rojos defienden el avance por franjas.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+2</strong> por avanzar de franja conduciendo por una puerta; <strong>+1</strong> por avanzar mediante pase.
+- Llegar a la franja de meta y conectar con un comodín = <strong>+3</strong>.
+- No volver a la franja de atrás dos veces seguidas.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 5v2, puertas anchas (3 m).
+- <em>Medio:</em> 5v3, puertas de 2 m.
+- <em>Difícil:</em> 5v4 + progresar en menos de 10 s.</p>
+<p><strong>Coaching</strong>
+- "Si tienes espacio, condúcelo; si no, pásalo: las dos progresan."
+- "La puerta de conducción es una invitación a atacar el espacio."
+- Apoyos en la franja siguiente preparados para recibir entre líneas.</p>
+<p><strong>Duración / series:</strong> 4×3,5 min. Rotar el trío defensor.</p>
+<hr />
+<h2>Rondo 25 — "Posesión direccional con comodines en las cuatro esquinas" (6v4 + 4 comodines)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> combinar <strong>cambio de orientación + progresión direccional</strong> con comodines en las 4 esquinas; síntesis de la familia.
+- <em>Cognitivo:</em> gestionar muchas opciones (4 comodines) y elegir la que progresa.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 4 + 4 comodines</strong> (uno por esquina, ámbar).
+- Espacio: <strong>cuadrado 18×18 m</strong>; <strong>dos esquinas de un lado = "meta"</strong>, dos del otro = "salida".
+- Material: 1 balón, 4 conos, petos (6 azul, 4 ámbar, 4 rojo).</p>
+<p><figure class="diag"><em>[falta rondo-25.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 6 azules conservan en superioridad con apoyo de las 4 esquinas; los 4 rojos presionan.
+2. El objetivo es <strong>progresar de las esquinas de salida a las de meta</strong>, pudiendo cambiar de orientación para encontrar el lado libre.
+3. Combina conservación, cambio de orientación y progresión direccional.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>+3</strong> por conectar una esquina de salida con una de meta en la misma posesión.
+- <strong>+2</strong> adicional si en esa posesión hubo un <strong>cambio de orientación</strong> antes de progresar.
+- Comodines de esquina a 1 toque, fijos.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 6v3, comodines a 2 toques.
+- <em>Medio:</em> 6v4.
+- <em>Difícil:</em> 6v5 + 2 toques a los azules interiores.</p>
+<p><strong>Coaching</strong>
+- "Tienes cuatro apoyos: el bueno es el que está libre y te hace progresar."
+- "Cambia de orientación para abrir, luego progresa a la meta."
+- Cabeza arriba: cuatro esquinas = mucha información, prioriza la que avanza.</p>
+<p><strong>Duración / series:</strong> 4 series de 4 min. Rotar comodines y defensores. Ideal como cierre de bloque.</p>
+<hr />
+<h2>Rondo 26 — "Tres pasillos, tres velocidades"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> progresión orientada con cambio de ritmo; reconocer cuándo conservar y cuándo acelerar al saltar de zona.
+- <em>Cognitivo:</em> toma de decisiones sobre la dirección de juego.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 3 (+2 comodines)</strong>.
+- Espacio: <strong>rectángulo 30×20 m dividido en 3 pasillos horizontales</strong> de 10 m (líneas de conos que cruzan el ancho).
+- Material: 12 conos (delimitar + 2 líneas internas), petos de 3 colores, balones en el pasillo de salida.</p>
+<p><figure class="diag"><em>[falta rondo-26.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Se inicia en el pasillo 1 (salida). Objetivo: <strong>mínimo 3 pases por pasillo</strong> y luego progresar al siguiente cruzando la línea con pase filtrado o conducción.
+2. Los comodines ámbar de banda apoyan, pero solo devuelven hacia el pasillo del balón o el siguiente (nunca dos zonas atrás).
+3. Balón controlado al pasillo 3 = <strong>1 punto</strong>, reinicio desde el 1. Si los rojos roban e intentan sacarlo del rectángulo, rota un rojo por el azul que perdió.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Para puntuar hay que <strong>tocar los 3 pasillos</strong> en orden ascendente.
+- Máx. <strong>2 toques</strong> en pasillo central y final; libres en el de salida.
+- Prohibido el pase que retroceda <strong>más de un pasillo</strong> (penaliza con pérdida).
+- Bonus: progresar de pasillo 1 a 3 en <strong>menos de 8 s</strong> vale doble.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 7v2, toques libres, comodines también en pasillos.
+- <em>Medio:</em> la descrita (6v3 + 2).
+- <em>Difícil:</em> 5v4; prohibido que dos azules ocupen el mismo pasillo más de 3 s.</p>
+<p><strong>Coaching</strong>
+- Orientar el primer control hacia la línea a superar; el hombre del pasillo de destino se ofrece ANTES del pase; cabeza arriba para leer qué pasillo está libre de rojos; acelerar el ritmo justo en el salto de zona.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 90 s de descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 27 — "Comodín de profundidad y descarga"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> progresión con apoyo en punta; jugar de cara y de espaldas; el comodín como referencia para fijar y descargar (pared / tercer hombre).</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 3 (+1 comodín de profundidad +1 comodín de apoyo)</strong>.
+- Espacio: <strong>rectángulo 24×18 m</strong> con una <strong>línea de meta</strong> al fondo. Comodín de profundidad <strong>fijo en los últimos 4 m</strong>; comodín de apoyo <strong>móvil</strong>.
+- Material: 10 conos, petos 3 colores, balones en la partida opuesta a la profundidad.</p>
+<p><figure class="diag"><em>[falta rondo-27.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules circulan para <strong>encontrar al comodín de profundidad de espaldas</strong>.
+2. El comodín de profundidad recibe, aguanta o devuelve de primeras al comodín de apoyo o a un azul que ataca el espacio (tercer hombre).
+3. <strong>Se puntúa</strong> cuando, tras tocar el comodín de profundidad, un azul recibe el balón controlado <strong>por detrás de la línea de profundidad</strong>.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- El comodín de profundidad juega a <strong>1 toque</strong>.
+- El punto solo vale si <strong>el pase a profundidad</strong> lo da un azul, no el comodín de apoyo.
+- Si los rojos roban y conservan 4 pases entre ellos = 1 punto rojo.
+- Combo bonus: pared con el comodín de profundidad = punto doble.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> comodín de profundidad a 2 toques y puede recibir de cara.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> añadir 1 rojo (5v4) que vigila exclusivamente al comodín de profundidad.</p>
+<p><strong>Coaching</strong>
+- El comodín de profundidad fija al rojo con el cuerpo antes de descargar; el tercer hombre arranca cuando el balón viaja hacia el pivote, no después; la descarga busca al jugador <strong>orientado</strong> hacia la profundidad.</p>
+<p><strong>Duración / series:</strong> 5 series de 2:30, 75 s descanso. Total ~17 min.</p>
+<hr />
+<h2>Rondo 28 — "Rondo de transición entre dos cuadros"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> transición entre zonas y cambio de orientación largo; encadenar conservación en una zona y progresión a otra con apoyo de comodín-puente.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>dos cuadros 4 v 2</strong> unidos por un <strong>pasillo neutral de 6 m</strong> con <strong>1 comodín-puente ámbar</strong> dentro.
+- Espacio: cada cuadro <strong>15×15 m</strong>, separados por el pasillo (total ~36 m de largo).
+- Material: 12 conos (2 cuadros + pasillo), 1 peto ámbar, petos. Balón empieza en el cuadro A.</p>
+<p><figure class="diag"><em>[falta rondo-28.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 4 azules del cuadro A conservan ante sus 2 rojos.
+2. Tras <strong>mínimo 5 pases</strong>, deben <strong>cambiar de cuadro</strong> pasando por el comodín-puente (o con pase directo que cruce el pasillo).
+3. Cuando el balón entra en el cuadro B, ese equipo conserva otros 5 pases y devuelve. <strong>Punto</strong> por cada transición A↔B con los 5 pases previos. El comodín-puente no puede ser presionado dentro del pasillo (zona segura), pero juega a <strong>1 toque</strong>.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Hay que dar los <strong>5 pases</strong> en el cuadro antes de cruzar.
+- El cambio de cuadro <strong>debe ir orientado</strong>: el receptor en B juega de cara, no de espaldas.
+- Si los rojos de un cuadro roban e intentan sacar el balón del cuadro = 1 punto rojo y rotan.
+- 2 transiciones seguidas sin pérdida = punto extra.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> pasillo más ancho, comodín a 2 toques, solo 3 pases exigidos.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> prohibido pasar por el comodín una de cada dos transiciones (obliga al cambio directo por encima de la presión).</p>
+<p><strong>Coaching</strong>
+- Preparar el cuerpo para recibir orientado hacia el cuadro destino; el comodín-puente como acelerador, no como freno; el equipo que recibe se abre al ancho del cuadro ANTES de que llegue el balón.</p>
+<p><strong>Duración / series:</strong> 4 series de 3:30, 90 s descanso. Total ~20 min.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f5"><h1>Familia 5 · Finalización — del rondo al remate (Rondos 29–35)</h1>
+<blockquote>
+<p><strong>Convertir la posesión en gol:</strong> última pasada, llegada, definición, ataque del espacio tras la superioridad. Porterías y/o portero.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 29 — "Rondo y disparo a portería"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> del mantenimiento al remate; finalizar tras una secuencia de conservación; activar la concentración para rematar después de circular.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 2 (+1 comodín)</strong> en cuadro de <strong>15×15 m</strong> situado <strong>a 18 m de una portería reglamentaria con portero</strong>, centrado frente a ella.
+- Material: 8 conos, 1 portería + portero, balones repartidos en el cuadro y de reserva.</p>
+<p><figure class="diag"><em>[falta rondo-29.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Rondo normal 5v2 + comodín.
+2. A la señal del entrenador (o tras <strong>8 pases</strong>), el azul con balón <strong>conduce fuera del cuadro hacia la portería y remata</strong> en los siguientes 4 segundos.
+3. Tras rematar, el cuadro se reordena con un balón nuevo y sigue el rondo hasta la siguiente señal. Portería frontal a 18 m; el portero juega.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- El remate en <strong>≤ 4 s</strong> desde que el balón sale del cuadro.
+- Solo cuenta gol si antes hubo <strong>mínimo 8 pases</strong> o la señal.
+- 1 punto gol, 0 si para el portero, <strong>–1 si el remate sale fuera</strong> (penaliza la precipitación).
+- Bonus: gol a primer toque tras recibir fuera del cuadro = doble.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> remate sin oposición, balón parado a la salida.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 1 rojo del cuadro sale a perseguir al rematador (presión por detrás).</p>
+<p><strong>Coaching</strong>
+- Levantar la cabeza al salir del cuadro para fijar al portero; primer apoyo orientado hacia portería; golpeo con decisión, sin frenar la conducción.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min (rotando los 2 rojos), 90 s descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 30 — "Recupera y finaliza" (transición ofensiva al remate)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> finalizar tras robar; transición defensa-ataque inmediata; los recuperadores se convierten en rematadores.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 4</strong> en zona de <strong>25×20 m</strong> con <strong>dos mini-porterías (1,5 m, sin portero)</strong> en la línea de fondo del lado de los azules.
+- Material: 10 conos, 2 mini-porterías, petos, balones.</p>
+<p><figure class="diag"><em>[falta rondo-30.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los 6 azules mantienen la posesión.
+2. Cuando los <strong>4 rojos roban</strong>, tienen <strong>6 segundos</strong> para finalizar en una de las dos mini-porterías.
+3. Tras gol o pérdida fuera, balón nuevo a los azules.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Gol rojo válido solo en <strong>≤ 6 s</strong> desde el robo.
+- Azules: <strong>1 punto por cada 10 pases</strong> consecutivos sin pérdida.
+- Si los azules recuperan antes del gol, anulan la acción y reinician su cuenta.
+- Cada gol rojo = <strong>2 puntos</strong>.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> mini-porterías más anchas (2,5 m), 8 s.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 4 s; los azules pueden volver a robar.</p>
+<p><strong>Coaching</strong>
+- Rojos: primer pase tras el robo siempre hacia la portería; reconocer al compañero mejor orientado. Azules: presión inmediata tras pérdida para evitar el gol.</p>
+<p><strong>Duración / series:</strong> 5 series de 2:30, 75 s descanso. Total ~17 min.</p>
+<hr />
+<h2>Rondo 31 — "Rondo a cuatro mini-porterías"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> orientación + finalización multidireccional; decidir hacia qué portería atacar según la presión; cambio de orientación que termina en gol.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 3 (+1 comodín)</strong> en cuadro de <strong>18×18 m</strong> con <strong>una mini-portería (2 m, sin portero) en el centro de cada lado</strong>.
+- Material: 8 conos, 4 mini-porterías, petos, balones.</p>
+<p><figure class="diag"><em>[falta rondo-31.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules circulan (con apoyo del comodín) buscando hueco para <strong>pasar el balón a través de cualquier mini-portería</strong> a un compañero al otro lado (gol = pase que cruza y es controlado por un azul).
+2. Hay 4 porterías: siempre hay una desprotegida. Atraer a los rojos a un lado y finalizar por el contrario.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Gol = balón cruza la mini-portería <strong>a ras de suelo</strong> y lo recibe un azul al otro lado.
+- No marcar <strong>dos veces seguidas por la misma portería</strong>.
+- Mínimo <strong>5 pases</strong> antes de finalizar.
+- El comodín no marca, solo asiste.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 6v2 + comodín, sin límite de pases previos.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 5v4; gol doble si se finaliza ≤ 2 s tras un cambio de orientación de banda a banda.</p>
+<p><strong>Coaching</strong>
+- Mirar la portería contraria a la presión antes de recibir; fijar al rojo en un lado y abrir al libre; pase de gol al pie del compañero, no a la portería vacía sin receptor.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 90 s descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 32 — "Pivote y llegada" (remate de segunda línea)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> finalización de llegada desde segunda línea tras descarga del pivote; timing de la incorporación al remate.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 v 2 (+1 comodín-pivote)</strong> en cuadro de <strong>16×16 m</strong> pegado a una <strong>zona de remate de 12 m</strong> que da a <strong>portería con portero</strong>.
+- Material: 8 conos, 1 portería + portero, balones.</p>
+<p><figure class="diag"><em>[falta rondo-32.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Rondo 4v2 con apoyo del pivote ámbar.
+2. Cuando el pivote recibe orientado, <strong>descarga atrás/lateral</strong> y <strong>un azul de segunda línea</strong> entra en la zona de remate para <strong>finalizar de primeras o tras un control</strong>.
+3. Clave: el rematador no arranca hasta que el pivote toca el balón. Portería frontal con portero a 12 m.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- El remate lo hace un azul que <strong>estaba dentro del cuadro</strong> y llega corriendo (no el pivote).
+- Solo válido si hubo <strong>descarga del pivote</strong> en la jugada.
+- Remate en <strong>≤ 2 toques</strong> dentro de la zona.
+- Gol = 1; gol de primeras = 2.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> sin portero, zona de remate más cerca.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 1 rojo persigue al rematador hasta la zona.</p>
+<p><strong>Coaching</strong>
+- El pivote juega de cara cuando puede; de espaldas descarga al primer toque; el rematador lee el momento del pase y ataca el espacio, no el balón; golpeo cruzado lejos del portero.</p>
+<p><strong>Duración / series:</strong> 5 series de 2:30, 75 s descanso. Total ~17 min.</p>
+<hr />
+<h2>Rondo 33 — "Rondo dinámico con dos porteros" (finalización a dos lados)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> finalización bidireccional con portero real; cambiar el sentido del ataque tras conservar; remate ajustado bajo presión.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 3</strong> en zona de <strong>30×20 m</strong> con <strong>portería + portero en cada fondo</strong>.
+- Material: 8 conos, 2 porterías, 2 porteros, petos, balones.</p>
+<p><figure class="diag"><em>[falta rondo-33.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Los azules mantienen la posesión en el espacio central.
+2. Tras <strong>6 pases</strong>, quedan <strong>habilitados</strong> para atacar <strong>cualquiera de las dos porterías</strong>, eligiendo la menos protegida.
+3. Tras el remate, balón nuevo del entrenador y vuelta a la conservación. Los rojos, si roban, finalizan en cualquier portería sin requisito de pases.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Azules: <strong>6 pases</strong> habilitan el remate; remate antes = anulado.
+- Solo <strong>1 remate por posesión</strong>; si falla, vuelven a conservar.
+- Rojos finalizan libres tras robo.
+- Gol = 1; gol a la portería que NO se atacaba al inicio (cambio de sentido) = 2.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 7v2, 4 pases para habilitar.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 6v4, 8 pases y rematar en ≤ 5 s tras habilitarse.</p>
+<p><strong>Coaching</strong>
+- Leer dónde están los rojos para elegir portería; el cambio de orientación largo abre la portería opuesta; finalizar al primer hueco, sin sobreelaborar.</p>
+<p><strong>Duración / series:</strong> 4 series de 4 min, 90 s descanso. Total ~22 min.</p>
+<hr />
+<h2>Rondo 34 — "Rondo 1 toque + remate exterior"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> circulación a un toque y disparo de media distancia; la velocidad de circulación genera el espacio para el chut exterior.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 4 (+1 comodín)</strong> en cuadro de <strong>20×20 m</strong> con una <strong>zona de disparo exterior</strong> marcada por arcos de conos en dos esquinas, frente a <strong>portería con portero a 16 m</strong>.
+- Material: 10 conos, 1 portería + portero, balones.</p>
+<p><figure class="diag"><em>[falta rondo-34.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Rondo a <strong>1 toque obligatorio</strong> (comodín a 2).
+2. La circulación rápida arrastra a los rojos hacia un lado.
+3. Cuando un azul recibe en una <strong>zona de disparo exterior</strong> con espacio, <strong>chuta de media distancia</strong>. Tras remate, balón nuevo.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Toda la circulación a <strong>1 toque</strong>; segundo toque = punto para rojos.
+- El disparo solo cuenta <strong>desde la zona exterior marcada</strong>.
+- Disparo en <strong>≤ 1 s</strong> tras recibir en la zona (de primeras o control orientado máximo).
+- Gol de media distancia = 2 puntos; parada = 0.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 2 toques permitidos, sin portero.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 1 toque estricto y un rojo puede saltar a cerrar la zona de disparo.</p>
+<p><strong>Coaching</strong>
+- Ritmo alto de circulación para descolocar la presión; preparar el cuerpo para el chut antes de recibir; golpeo con interior-empeine, abajo y a los palos.</p>
+<p><strong>Duración / series:</strong> 5 series de 2:30, 75 s descanso. Total ~17 min.</p>
+<hr />
+<h2>Rondo 35 — "Rondo continuo: conservar–progresar–finalizar"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> integrar las tres fases en una sola tarea; encadenar mantenimiento, progresión entre zonas y remate; resistencia específica a la toma de decisiones.</p>
+<p><strong>Organización</strong>
+- Espacio: <strong>3 zonas en línea</strong> hacia portería (total ~45 m). Zona 1 (conservación, 15×20): <strong>4 v 2</strong>. Zona 2 (progresión, 15×20): pasillo con <strong>1 comodín ámbar</strong>. Zona 3 (finalización, 15×20): <strong>2 azules v 1 rojo + portero</strong>.
+- Material: 12 conos, 1 portería + portero, petos, balones.</p>
+<p><figure class="diag"><em>[falta rondo-35.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Se inicia en zona 1 conservando ante 2 rojos.
+2. Tras <strong>5 pases</strong>, se progresa a zona 2 apoyándose en el comodín, superando la línea de forma orientada.
+3. En zona 3, los 2 azules que entran resuelven un <strong>2 v 1 + portero</strong> y finalizan. Tras gol o pérdida, balón nuevo en zona 1. Los azules rotan posiciones entre zonas cada serie.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Respetar el orden de zonas (no saltarse la 2).
+- <strong>5 pases mínimos</strong> en zona 1 antes de progresar.
+- El 2v1 final se resuelve en <strong>≤ 5 s</strong>.
+- Secuencia completa conservar-progresar-gol sin pérdida = 3 puntos.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 3v1 final con portero, zonas más cortas.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 2v2 + portero en zona 3, y zona 1 pasa a 4v3.</p>
+<p><strong>Coaching</strong>
+- Cada salto de zona orientado hacia portería; en el 2v1, fijar al rojo y soltar en el momento; mantener calidad de pase pese a la fatiga acumulada.</p>
+<p><strong>Duración / series:</strong> 4 series de 4 min (rotando), 2 min descanso. Total ~24 min.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f6"><h1>Familia 6 · Competitivos y condicionados (Rondos 36–43)</h1>
+<blockquote>
+<p><strong>Las dos fases con marcador, toma de decisión bajo presión, transiciones.</strong> Lo más cercano al partido: tensión competitiva real.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 36 — "Liga de rondos 4 v 4 v 4" (rotación por equipos)</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> competir conservando y presionando con rotación; mentalidad competitiva; cambio rápido de rol poseedor↔presionador.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>3 equipos de 4</strong> (azul A, azul B con petos distintos, rojo) en cuadro de <strong>18×18 m</strong>. Dos equipos conservan (8 v 4) y uno presiona.
+- Material: 8 conos, 3 juegos de petos, balones, pizarra de marcador.</p>
+<p><figure class="diag"><em>[falta rondo-36.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Dos equipos juntan <strong>8 jugadores que conservan</strong> ante los <strong>4 que presionan</strong>.
+2. Cada <strong>10 pases</strong> de los poseedores = 1 punto para AMBOS equipos poseedores.
+3. Si los presionadores roban (o el balón sale), <strong>entra a presionar el equipo que perdió el balón</strong> y los presionadores pasan a conservar. Gana quien acumule más puntos.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>10 pases = 1 punto</strong> para los dos equipos que poseen.
+- El equipo que <strong>provoca la pérdida</strong> pasa a presionar.
+- Máx. <strong>3 toques</strong> por jugador.
+- Marcador visible; "minijornadas" de 3 min.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 8 pases por punto, toques libres.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 2 toques máximo y los presionadores roban con solo tocar el balón fuera.</p>
+<p><strong>Coaching</strong>
+- Comunicación entre los dos equipos poseedores (juegan juntos un momento); concentración para no ser el que pierde; al presionar, robar en bloque, no individualmente.</p>
+<p><strong>Duración / series:</strong> 5 minijornadas de 3 min. Total ~20 min con marcador acumulado.</p>
+<hr />
+<h2>Rondo 37 — "Rondo con puntos por orientación"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> premiar el juego orientado y el cambio de orientación; un sistema de puntos que recompensa decisiones de calidad, no solo conservar.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 3</strong> en cuadro de <strong>20×20 m</strong> dividido visualmente en <strong>4 cuartos</strong> con conos de color.
+- Material: 8 conos perimetrales + 4 conos de color interiores, petos, balones, marcador.</p>
+<p><figure class="diag"><em>[falta rondo-37.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo normal con <strong>puntuación condicionada al valor del pase</strong>:
+- Pase corto dentro del mismo cuarto = 0 puntos.
+- Pase que <strong>cambia de cuarto</strong> = 1 punto.
+- Pase que <strong>cruza en diagonal</strong> a un cuarto opuesto = 3 puntos.
+Los rojos roban; cada robo resta 2 puntos al marcador azul. Se acumula por serie.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Solo el pase <strong>recibido y controlado</strong> suma.
+- Diagonal larga (cuarto a cuarto opuesto) = <strong>3 puntos</strong>.
+- Cada robo de los rojos = <strong>–2</strong> al azul.
+- Objetivo de serie: superar 15 puntos = los rojos hacen prenda física.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 7v2, sin penalización por robo.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 6v4 y los cambios diagonales deben ser <strong>antes del 3.er toque del equipo</strong>.</p>
+<p><strong>Coaching</strong>
+- Buscar siempre el pase de más valor disponible (escanear antes de recibir); no abusar del pase de seguridad; el cambio diagonal exige que alguien se ofrezca en el cuarto opuesto.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 90 s descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 38 — "Torneo de rondos eliminatorio"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> alta intensidad competitiva por eliminación; gestionar la presión del marcador y el error que elimina.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>4 cuadros de 5 v 2</strong> simultáneos (<strong>12×12 m</strong> cada uno).
+- Material: 16 conos (4 cuadros), petos, balones, cronómetro.</p>
+<p><figure class="diag"><em>[falta rondo-38.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. <strong>Formato torneo a rondas.</strong> En cada ronda de <strong>90 s</strong>, el equipo poseedor de cada cuadro intenta encadenar el máximo de pases.
+2. El cuadro con <strong>menos pases acumulados</strong> queda eliminado (sus jugadores pasan a presionar en los cuadros restantes).
+3. Se reduce hasta una <strong>final</strong> de un solo cuadro con relación ajustada (p. ej. 5 v 4). Gana el último equipo en pie.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Cada ronda dura <strong>90 s</strong>; se cuenta el máximo de pases consecutivos por cuadro.
+- El cuadro con <strong>menor marca</strong> se elimina cada ronda.
+- Una pérdida reinicia la cuenta a 0.
+- En la final, relación numérica más exigente.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> rondas de 2 min, sin reinicio total al perder (solo resta).
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> rondas de 60 s y los eliminados presionan de forma agresiva.</p>
+<p><strong>Coaching</strong>
+- Gestionar nervios al ir por detrás; calidad antes que prisa; en la final, leer la presión extra de los eliminados.</p>
+<p><strong>Duración / series:</strong> torneo completo ~16–20 min según nº de rondas.</p>
+<hr />
+<h2>Rondo 39 — "Rondo condicionado por toques (escalera)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> adaptarse a una restricción de toques creciente; mejorar el control orientado y la velocidad de circulación bajo condición.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 2 (+1 comodín)</strong> en cuadro de <strong>16×16 m</strong>.
+- Material: 8 conos, petos, balones, marcador/cartel de toques.</p>
+<p><figure class="diag"><em>[falta rondo-39.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo con <strong>"escalera de toques"</strong> que cambia cada minuto: minuto 1 libre, minuto 2 máx. 3, minuto 3 máx. 2, minuto 4 a 1 toque obligatorio. El equipo poseedor suma <strong>1 punto por cada 8 pases</strong> sin pérdida; el reto es mantener el rendimiento al apretar la restricción. El comodín ámbar siempre juega <strong>un toque por encima</strong> de la condición.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Restricción de toques <strong>decreciente cada minuto</strong> (libre→3→2→1).
+- <strong>8 pases = 1 punto</strong>; un toque de más = pérdida + un azul al medio.
+- Comodín juega +1 toque respecto a la condición vigente.
+- Récord de la sesión: máxima racha a 1 toque.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> escalera libre→3→2 (sin llegar al 1 toque).
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 6v3, escalera más rápida (cada 45 s) y sin comodín.</p>
+<p><strong>Coaching</strong>
+- Anticipar la condición de toques que viene; primer control que ya orienta hacia el siguiente pase; cuanto menos toque, más importa el desmarque de apoyo previo.</p>
+<p><strong>Duración / series:</strong> 3 bloques de 4 min (una escalera por bloque), 90 s descanso. Total ~16 min.</p>
+<hr />
+<h2>Rondo 40 — "Rondo del premio: gana espacio, gana ventaja"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> asociar la calidad del juego a una ventaja tangible; condicionante que premia romper líneas con superioridad creada.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>5 v 3</strong> en cuadro de <strong>18×18 m</strong> con un <strong>comodín ámbar "de premio" en banda</strong> que se activa.
+- Material: 8 conos, petos, balones, marcador.</p>
+<p><figure class="diag"><em>[falta rondo-40.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo 5v3. Cada vez que los azules logran un <strong>pase interior que rompe la línea de los 3 rojos</strong> (entre dos defensores), se <strong>activa el comodín de premio durante 15 s</strong>, convirtiendo el rondo en 6v3. Si pasan 15 s sin romper línea, el comodín se desactiva. Objetivo: mantener el comodín activo el mayor tiempo posible encadenando pases que rompen líneas.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Pase que rompe línea</strong> (entre dos rojos, recibido y controlado) = activa comodín 15 s.
+- Romper línea de nuevo dentro de los 15 s = <strong>renueva</strong> el tiempo.
+- Cada robo rojo desactiva el comodín inmediatamente.
+- Medir el <strong>% de tiempo con comodín activo</strong> por serie.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> comodín activo 25 s, premio por cualquier cambio de orientación.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 5v4 y el comodín solo dura 10 s.</p>
+<p><strong>Coaching</strong>
+- Generar la línea de pase interior fijando con pases laterales; reconocer la ventana entre defensores; aprovechar de inmediato la superioridad del premio para volver a romper.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 90 s descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 41 — "Rondo a tres equipos con permanencia"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> competir por permanecer en posesión; intensidad y concentración para no caer al medio; presión coordinada para subir.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>3 equipos de 3</strong> en cuadro de <strong>15×15 m</strong> (relación <strong>6 v 3</strong>).
+- Material: 8 conos, 3 juegos de petos, balones, marcador.</p>
+<p><figure class="diag"><em>[falta rondo-41.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Dos equipos conservan (6) y uno presiona (3). <strong>Regla de permanencia:</strong> el equipo cuyo jugador <strong>pierde el balón</strong> baja a presionar; el que presionaba sube a conservar. Cada equipo lleva su <strong>contador de tiempo total en posesión</strong>: gana quien acumule más minutos arriba.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- El <strong>responsable de la pérdida</strong> baja a presionar (individual o por equipo según versión).
+- Se cronometra el <strong>tiempo en posesión</strong> de cada equipo.
+- Robar = subir; el equipo que sube reinicia con balón.
+- Bonus: 12 pases seguidos = 30 s extra de "tiempo en posesión".</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> baja el equipo completo, sin cronómetro.
+- <em>Medio:</em> la descrita con cronómetro.
+- <em>Difícil:</em> baja solo el jugador que pierde (rondo numéricamente cambiante, 6v3 → 5v4…).</p>
+<p><strong>Coaching</strong>
+- Responsabilidad individual en la pérdida; al presionar, salir los 3 a una para subir rápido; gestionar el riesgo (no arriesgar el pase que te puede mandar abajo en momento clave).</p>
+<p><strong>Duración / series:</strong> 1 bloque continuo de 12–15 min con marcador acumulado.</p>
+<hr />
+<h2>Rondo 42 — "Rondo bonificado por finalización condicionada"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> combinar conservación competitiva con condición de finalización; decidir cuándo arriesgar el pase de gol.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>6 v 4</strong> en zona de <strong>24×18 m</strong> con <strong>2 mini-porterías (2 m, sin portero)</strong> en un fondo.
+- Material: 8 conos, 2 mini-porterías, petos, balones, marcador.</p>
+<p><figure class="diag"><em>[falta rondo-42.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Los azules conservan y suman <strong>1 punto cada 8 pases</strong>. En cualquier momento pueden <strong>arriesgar a finalizar</strong> en una mini-portería: gol = <strong>3 puntos</strong>, pero si fallan o los rojos roban el intento, <strong>pierden los puntos acumulados de esa posesión</strong> (mecánica "banca o arriesga"). Los rojos, si roban, finalizan a la portería que defienden los azules.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>8 pases = 1 punto</strong> (se acumulan en la posesión).
+- Finalizar: gol = <strong>+3</strong>; fallo/robo = <strong>se pierden los puntos de la posesión</strong>.
+- Robo de rojos con finalización = puntos para rojos.
+- Condición: solo se finaliza tras <strong>mínimo 1 cambio de orientación</strong> en la posesión.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> el fallo no resta lo acumulado; porterías más anchas.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> el gol exige asistencia de primeras (pase-gol al primer toque del rematador).</p>
+<p><strong>Coaching</strong>
+- Leer el momento de arriesgar (riesgo-recompensa); no malgastar una posesión larga con un remate precipitado; el cambio de orientación previo abre el lado para finalizar.</p>
+<p><strong>Duración / series:</strong> 4 series de 3 min, 90 s descanso. Total ~18 min.</p>
+<hr />
+<h2>Rondo 43 — "Rondo de alta intensidad: presión a contrarreloj"</h2>
+<p><strong>Objetivo</strong>
+- <em>Táctico:</em> intensidad máxima en la presión y resistencia específica; recuperar lo antes posible; condicionante temporal para el equipo defensor.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>7 v 3</strong> en cuadro de <strong>22×22 m</strong>.
+- Material: 8 conos, petos, balones, cronómetro, marcador.</p>
+<p><figure class="diag"><em>[falta rondo-43.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Los 3 rojos tienen el <strong>reto a contrarreloj</strong>: <strong>robar el balón en menos de 20 s</strong>. Si lo logran, suman 1 punto y descansa la pareja que más corrió; si no, los azules suman 1 punto y los rojos siguen otra ventana. Se rotan los tríos de presión cada 2 ventanas. El espacio amplio obliga a recorrer mucho campo presionando.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Ventanas de <strong>20 s</strong>: robo a tiempo = punto rojo; aguantar = punto azul.
+- Rotación de presionadores cada <strong>2 ventanas</strong>.
+- Azules a máx. <strong>2 toques</strong> (circular rápido, exigir más a la presión).
+- Registrar nº de robos dentro de tiempo por trío.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> ventana de 30 s, espacio más pequeño.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> ventana de 15 s y cuadro de 25×25 m.</p>
+<p><strong>Coaching</strong>
+- Presión coordinada: orientar el robo hacia una zona, no perseguir el balón en desorden; cubrir líneas de pase mientras se aprieta; los azules circulan rápido para fundir a la presión.</p>
+<p><strong>Duración / series:</strong> 6 ventanas por bloque, 2 bloques, 2 min descanso entre bloques. Total ~16 min muy intensos.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="f7"><h1>Familia 7 · Lúdicos y de calentamiento (Rondos 44–50)</h1>
+<blockquote>
+<p><strong>Activación neuromuscular, ritmo, técnica bajo fatiga ligera, cohesión.</strong> Preparan el cuerpo y el "ojo" para la sesión o el partido.</p>
+<p><strong>Notación:</strong> poseedores = <strong>azules</strong>, defensores = <strong>rojos</strong>, comodines = <strong>ámbar</strong>. Espacio con conos; flechas según <code>README</code>.</p>
+</blockquote>
+<hr />
+<h2>Rondo 44 — "El manín / burro clásico con castigo activado"</h2>
+<p><strong>Objetivo</strong>
+- <em>Socioemocional/técnico:</em> activación técnica, ambiente competitivo de grupo y castigo que mantiene la concentración; calentamiento divertido con foco en el pase preciso.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>8 v 1</strong> en círculo de <strong>8–9 m de diámetro</strong> (un solo defensor, "el manín/burro").
+- Material: 8 conos para el círculo, 1 balón, petos opcionales.</p>
+<p><figure class="diag"><em>[falta rondo-44.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+1. Rondo clásico: 8 poseedores en círculo, 1 en el medio que intenta robar o tocar el balón.
+2. <strong>Quien pierde el balón</strong> (mal pase, balón tocado, o "túnel" sufrido) <strong>pasa al medio</strong>.
+3. Castigo: si el del medio hace un <strong>caño/túnel</strong>, el castigado entra y da <strong>una vuelta corriendo al círculo</strong> antes de incorporarse. Ideal como primer ejercicio de la sesión.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Quien pierde el balón <strong>entra al medio</strong>.
+- <strong>Caño = doble castigo</strong> (entra + vuelta al círculo).
+- Pase a ras de suelo obligatorio (nada de balones altos).
+- Récord: cuántos pases seguidos sin que entre nadie.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 10 v 1, balón libre.
+- <em>Medio:</em> 8 v 1 a 2 toques.
+- <em>Difícil:</em> 6 v 2 a 1 toque, dos "burros" en el medio.</p>
+<p><strong>Coaching</strong>
+- Calidad del pase desde el primer minuto (no es solo juego); abrir ángulos para el compañero; el del medio aprende a cerrar líneas con el cuerpo.</p>
+<p><strong>Duración / series:</strong> 8–10 min de activación al inicio de sesión.</p>
+<hr />
+<h2>Rondo 45 — "Rondo multibalón (dos balones a la vez)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Cognitivo-perceptivo:</em> atención dividida y visión periférica; calentamiento con alta exigencia de escaneo.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>8 v 2</strong> en cuadro de <strong>16×16 m</strong> con <strong>DOS balones en juego simultáneamente</strong>.
+- Material: 8 conos, 2 balones, petos.</p>
+<p><figure class="diag"><em>[falta rondo-45.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo normal pero con <strong>dos balones circulando a la vez</strong>. Los 8 azules conservan ambos evitando que choquen o que los 2 rojos los toquen. Exige mirar antes de recibir y comunicar ("¡balón!", "¡voy!"). Si los rojos tocan un balón o dos balones se cruzan, <strong>prenda corta</strong> para los implicados y se reinicia.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>2 balones</strong> simultáneos siempre en juego.
+- Balones que <strong>chocan</strong> = prenda para los dos últimos pasadores.
+- Rojo toca un balón = ese balón sale, prenda al que lo perdió, se repone.
+- Reto: aguantar 60 s con los dos balones vivos sin incidencias.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 1 balón y se añade el 2.º a mitad.
+- <em>Medio:</em> la descrita (2 balones, 2 rojos).
+- <em>Difícil:</em> 2 balones a 2 toques, o 3 balones con 9–10 azules.</p>
+<p><strong>Coaching</strong>
+- Cabeza arriba y comunicación verbal constante; no fijarse solo en "tu" balón; repartir la atención y anticipar dónde está el otro balón.</p>
+<p><strong>Duración / series:</strong> 8 min de calentamiento cognitivo, 3 mini-rondas con prenda.</p>
+<hr />
+<h2>Rondo 46 — "Rondo de colores (cognitivo por señal)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Cognitivo-perceptivo:</em> reacción a estímulos externos; asociar color/señal a una acción técnica mientras se conserva.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>7 v 2 (+1 comodín)</strong> en cuadro de <strong>16×16 m</strong>. Conos de <strong>4 colores</strong> en las esquinas (los colores son los conos, no los petos).
+- Material: 8 conos perimetrales + 4 conos/petos de color, petos, balón.</p>
+<p><figure class="diag"><em>[falta rondo-46.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo de conservación con <strong>señal cognitiva</strong>. El entrenador grita un color de cono y el equipo <strong>reacciona</strong> según el código pactado sin perder el balón:
+- <strong>Rojo</strong> → el siguiente pase va hacia la esquina de ese color.
+- <strong>Verde</strong> → todos cambian de posición girando en sentido horario.
+- <strong>Azul</strong> → siguiente pase a 1 toque.
+- <strong>Amarillo</strong> → buscar al comodín obligatoriamente.
+El reto es no equivocarse de acción y no perder el balón.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Reaccionar a la señal <strong>antes del 2.º pase</strong> tras oírla.
+- Error de código = prenda corta o entrar al medio.
+- Mantener el balón mientras se ejecuta la consigna.
+- Subir el ritmo de señales hacia el cierre del calentamiento.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> solo 2 colores/códigos, señal lenta.
+- <em>Medio:</em> la descrita (4 códigos).
+- <em>Difícil:</em> señal <strong>invertida</strong> (rojo significa lo del verde) para forzar inhibición cognitiva.</p>
+<p><strong>Coaching</strong>
+- Atención al entrenador sin descuidar el balón; reacción rápida pero técnica limpia; el componente cognitivo prepara la mente para leer estímulos en el partido.</p>
+<p><strong>Duración / series:</strong> 8–10 min de activación cognitiva.</p>
+<hr />
+<h2>Rondo 47 — "Rondo carrusel con prenda divertida"</h2>
+<p><strong>Objetivo</strong>
+- <em>Físico/lúdico:</em> activación dinámica con desplazamientos; calentamiento músculo-articular integrado en el juego; ambiente desenfadado con castigo motivador.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>9 v 3</strong> en cuadro grande de <strong>22×22 m</strong> donde los azules deben <strong>rotar constantemente</strong> (carrusel).
+- Material: 8 conos, petos, balón, marcador de prendas.</p>
+<p><figure class="diag"><em>[falta rondo-47.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo de conservación con regla del <strong>carrusel</strong>: tras pasar, el jugador <strong>debe desplazarse a un nuevo espacio</strong> (no se queda quieto), generando movimiento continuo de calentamiento dinámico. Cuando los rojos roban o el balón sale, los <strong>tres últimos azules que tocaron el balón</strong> hacen una <strong>prenda divertida</strong> y se rota quién va al medio.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>Prohibido quedarse quieto</strong> tras pasar (si te pillan parado, prenda).
+- Pérdida = prenda para los 3 últimos pasadores + rota el medio.
+- Mantener el balón vivo el máximo tiempo (récord de grupo).
+- Progresión del calentamiento: empezar suave, subir intensidad de desplazamientos.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 10 v 2, desplazamientos cortos.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> 8 v 3 a 2 toques con desplazamiento obligatorio a la banda contraria a la que pasas.</p>
+<p><strong>Coaching</strong>
+- Movimiento con intención (ofrecer línea de pase, no correr por correr); calentar gradualmente; mantener calidad técnica pese al ambiente lúdico.</p>
+<p><strong>Duración / series:</strong> 8–10 min como parte central del calentamiento.</p>
+<hr />
+<h2>Rondo 48 — "Rondo de las parejas (cooperación lúdica)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Socioemocional:</em> activación con componente cooperativo; coordinación por parejas; calentamiento divertido que exige comunicación.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>8 azules en 4 parejas v 2 rojos</strong> en cuadro de <strong>18×18 m</strong>. Los azules juegan <strong>emparejados</strong> (cada pareja a menos de 3 m).
+- Material: 8 conos, petos, balón, petos de pareja del mismo color.</p>
+<p><figure class="diag"><em>[falta rondo-48.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo cooperativo: los 8 azules forman 4 parejas que permanecen <strong>juntas</strong> (a menos de 3 m). Conservan ante 2 rojos. El reto es coordinarse con tu pareja para ofrecer apoyos sin separarse. Si una pareja se separa demasiado o pierde el balón, esa pareja <strong>entra al medio</strong> (los 2 a presionar) y los rojos suben.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Las parejas no se separan <strong>más de 3 m</strong> (penalización: prenda o entrar al medio).
+- Pérdida de balón = la pareja responsable baja a presionar.
+- 6 pases seguidos sin separación = punto de grupo.
+- Sube la dificultad reduciendo la distancia permitida (2 m).</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> distancia de pareja amplia (5 m), 1 rojo.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> parejas cogidas de la mano todo el rondo.</p>
+<p><strong>Coaching</strong>
+- Comunicación con la pareja; ofrecer apoyo sin romper la unión; el componente socioemocional refuerza la cohesión del grupo.</p>
+<p><strong>Duración / series:</strong> 8 min de activación cooperativa.</p>
+<hr />
+<h2>Rondo 49 — "Rondo reloj (señales numéricas y direccionales)"</h2>
+<p><strong>Objetivo</strong>
+- <em>Cognitivo-perceptivo:</em> reacción a números/direcciones; agilidad mental y cambios de sentido; preparar la lectura rápida de situaciones.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>8 v 2</strong> en círculo/cuadro de <strong>16×16 m</strong> con los azules numerados del <strong>1 al 8</strong>.
+- Material: 8 conos, petos numerados, balón.</p>
+<p><figure class="diag"><em>[falta rondo-49.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo de conservación donde el entrenador <strong>dicta el orden o el sentido</strong>:
+- <strong>Número</strong> → el balón va a ese jugador.
+- <strong>"Reloj"</strong> → pases en sentido horario obligatorio.
+- <strong>"Contrarreloj"</strong> → sentido antihorario.
+- <strong>"Salto"</strong> → prohibido pasar al de al lado, hay que saltar a uno más lejano.
+Los azules ejecutan sin perder el balón ante 2 rojos. Equivocarse = entrar al medio.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- Reaccionar a la consigna en el <strong>siguiente pase</strong>.
+- Pase a número/sentido equivocado = entra al medio.
+- Mantener el balón vivo bajo la consigna activa.
+- Acelerar el ritmo de órdenes hacia el final del calentamiento.</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> solo "reloj/contrarreloj", sin números.
+- <em>Medio:</em> la descrita.
+- <em>Difícil:</em> combinar dos consignas ("contrarreloj + salto") simultáneas.</p>
+<p><strong>Coaching</strong>
+- Escaneo previo para saber dónde está cada número; reacción ágil con técnica limpia; el reto cognitivo activa la concentración antes del trabajo principal.</p>
+<p><strong>Duración / series:</strong> 8–10 min de activación cognitiva.</p>
+<hr />
+<h2>Rondo 50 — "Gran rondo final: olla con premio y castigo"</h2>
+<p><strong>Objetivo</strong>
+- <em>Socioemocional:</em> cierre lúdico-competitivo de la sesión; descarga emocional y diversión manteniendo técnica; rondo de gran grupo que une al equipo.</p>
+<p><strong>Organización</strong>
+- Relación: <strong>gran rondo de todo el grupo</strong>, p. ej. <strong>12 v 3</strong> en círculo amplio de <strong>12–14 m de diámetro</strong> (la "olla").
+- Material: conos para el círculo, 1 balón, marcador de prendas/premios.</p>
+<p><figure class="diag"><em>[falta rondo-50.svg]</em></figure></p>
+<p><strong>Desarrollo</strong>
+Rondo de cierre con <strong>sistema de premio y castigo</strong>:
+- Cada <strong>15 pases seguidos</strong> del grupo = se <strong>libera a un jugador</strong> del medio o se anota un punto de grupo hacia el premio final.
+- <strong>Caño/túnel</strong> del defensor a un poseedor = ese poseedor entra al medio y el grupo le dedica un "ole".
+- Quien pierde el balón entra al medio; si ya hay 3, sale el que más tiempo lleve.
+Es el broche de la sesión: alta participación, risas y calidad técnica bajo presión emocional.</p>
+<p><strong>Provocaciones (medibles)</strong>
+- <strong>15 pases = premio</strong> (liberar jugador / punto de grupo).
+- <strong>Caño = castigo</strong> (entrar al medio).
+- Récord de la sesión: máxima racha de pases del grupo entero.
+- Premio final tangible pactado (menos prenda física, elegir el siguiente ejercicio, etc.).</p>
+<p><strong>Variantes (fácil → difícil)</strong>
+- <em>Fácil:</em> 14 v 2, balón libre, 12 pases para premio.
+- <em>Medio:</em> la descrita (12 v 3).
+- <em>Difícil:</em> 10 v 4 a 2 toques, 20 pases para premio.</p>
+<p><strong>Coaching</strong>
+- Mantener calidad técnica aunque sea el cierre y haya cansancio; ambiente positivo que refuerza la cohesión; el premio colectivo fomenta el juego en equipo por encima del lucimiento individual.</p>
+<p><strong>Duración / series:</strong> 8–12 min como cierre de la sesión.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section>
+<footer class="foot">Curso "Rondos: el corazón del entrenamiento" · MISTER ÉLITE — Moisés Díaz</footer>
+</div></main></div>
+<script>const b=document.getElementById('menu-btn'),s=document.querySelector('.side');
+b.onclick=()=>s.classList.toggle('open');
+document.querySelectorAll('.side a').forEach(a=>a.onclick=()=>s.classList.remove('open'));</script>
+</body></html>

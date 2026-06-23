@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera un PDF unico del curso 1-4-4-2 (textos + pizarras) -> curso-1442.pdf"""
+"""Genera un PDF unico del curso de Rondos (textos + pizarras) -> curso-rondos.pdf"""
 import os, re, html
 import markdown
 from weasyprint import HTML
@@ -10,17 +10,16 @@ GRAF = os.path.join(ROOT, "graficos")
 DOCS = [
     ("README.md", None),
     ("modulos/01-fundamentos.md", "MÓDULO 01 · Fundamentos"),
-    ("modulos/02-fase-defensiva.md", "MÓDULO 02 · Fase defensiva"),
-    ("modulos/03-fase-ofensiva.md", "MÓDULO 03 · Fase ofensiva"),
-    ("modulos/04-transiciones-y-balon-parado.md", "MÓDULO 04 · Transiciones y balón parado"),
+    ("modulos/02-metodologia.md", "MÓDULO 02 · Metodología y diseño"),
+    ("modulos/03-del-rondo-al-juego.md", "MÓDULO 03 · Del rondo al juego"),
     ("ejercicios/00-plan-sesiones.md", "PLAN DE SESIONES"),
-    ("ejercicios/01-salida.md", "BLOQUE 1 · Salida de balón"),
-    ("ejercicios/02-defensa.md", "BLOQUE 2 · Organización defensiva"),
-    ("ejercicios/03-pressing.md", "BLOQUE 3 · Pressing"),
-    ("ejercicios/04-delanteros-centros.md", "BLOQUE 4 · Delanteros y centros"),
-    ("ejercicios/05-transiciones.md", "BLOQUE 5 · Transiciones"),
-    ("ejercicios/06-partido-condicionado.md", "BLOQUE 6 · Partido condicionado"),
-    ("ejercicios/07-balon-parado.md", "BLOQUE 7 · Balón parado"),
+    ("ejercicios/01-iniciacion-mantenimiento.md", "FAMILIA 1 · Iniciación y mantenimiento (R1–7)"),
+    ("ejercicios/02-presion-recuperacion.md", "FAMILIA 2 · Presión y recuperación (R8–14)"),
+    ("ejercicios/03-posicionales-orientacion.md", "FAMILIA 3 · Posicionales y de orientación (R15–21)"),
+    ("ejercicios/04-lineas-comodines.md", "FAMILIA 4 · Con líneas y comodines (R22–28)"),
+    ("ejercicios/05-finalizacion.md", "FAMILIA 5 · Finalización (R29–35)"),
+    ("ejercicios/06-competitivos.md", "FAMILIA 6 · Competitivos y condicionados (R36–43)"),
+    ("ejercicios/07-ludicos-calentamiento.md", "FAMILIA 7 · Lúdicos y de calentamiento (R44–50)"),
 ]
 
 def fix_imgs(body):
@@ -43,7 +42,7 @@ def strip_md_links(body):
 
 CSS = """
 @page{size:A4;margin:1.8cm 1.6cm;
- @bottom-center{content:"Sistema 1-4-4-2 · del concepto al campo";font-size:8pt;color:#999;}
+ @bottom-center{content:"Rondos: el corazón del entrenamiento · MISTER ÉLITE — Moisés Díaz";font-size:8pt;color:#999;}
  @bottom-right{content:counter(page);font-size:8pt;color:#999;}}
 @page cover{margin:0;}
 .cover{page:cover;page-break-after:always;width:100%;height:100%;}
@@ -83,7 +82,7 @@ def main():
         chunks.append(f'<div class="doc">{body}</div>')
     doc = (f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'
            f'<style>{CSS}</style></head><body>{"".join(chunks)}</body></html>')
-    out = os.path.join(ROOT, "curso-1442.pdf")
+    out = os.path.join(ROOT, "curso-rondos.pdf")
     HTML(string=doc, base_url=ROOT).write_pdf(out)
     print("PDF generado:", out, os.path.getsize(out), "bytes")
 
