@@ -124,7 +124,7 @@
 - **Objetivo (1-4-3-3):** materializar la estructura de ataque 1-3-2-5: 3 atrás (2 DFC + un lateral o el 6), 2 interiores como enlace y 5 arriba (extremos abiertos + interiores/9 ocupando el área).
 - **Tipo:** Juego de posición 10v8 en campo grande.
 - **Organización:** 3/4 de campo a lo ancho completo. **1, 4, 5, 2, 3, 6, 8, 10, 7, 11** (+9 si hay número). Rival en bloque medio 1-4-4-1. 1 portería grande + 3 puertas en el último tercio.
-- **Desarrollo:** El equipo construye y se transforma: el **6 baja** o el **3 se queda** formando 3 atrás; **2 y 8** ocupan el medio; **7, 9, 11, 10** generan los 5 de arriba ocupando los 5 carriles. Objetivo: meter el balón en una puerta del último tercio con la estructura desplegada.
+- **Desarrollo:** El equipo construye y se transforma a 1-3-2-5: línea de **3 atrás = 4 + 5 + un tercer hombre** (el **6 que baja** o un **lateral que invierte**); **doble pivote** con los dos restantes de ese trío (p. ej. 6 + 8, o lateral invertido + 6); arriba, **5 ocupando los 5 carriles** (7 y 11 en banda, 8/10 en medio-espacios, 9 en eje). Objetivo: meter el balón en una puerta del último tercio con la estructura desplegada.
 - **Reglas/Provocaciones (medibles):** Punto sólo si en el momento del pase a puerta hay **5 jugadores en la última línea ocupando ≥4 carriles** (verificable por conos). Cambio de orientación obligatorio antes de finalizar. Pérdida → contra rival vale doble.
 - **Variantes:** *(fácil)* rival pasivo, foco en ocupar carriles; *(media)* exigir velocidad de circulación; *(difícil)* rival sube a 1-4-3-3 y presiona → obliga a transformar bajo presión.
 - **Coaching:** quién baja y quién sube (automatismos); ocupar los 5 carriles sin amontonarse; los interiores como pulmón entre las dos estructuras.
@@ -160,14 +160,14 @@
 
 ---
 
-### T3.3 — Contrapressing 5 segundos tras pérdida
-- **Objetivo (1-4-3-3):** entrenar la reacción inmediata a la pérdida (contrapressing) propia del 1-4-3-3, con el tridente y los interiores cerrando líneas para recuperar arriba.
-- **Tipo:** Juego en espacio reducido (JER) 7v7 con regla de 5 s.
-- **Organización:** 45×40 m, 4 mini-porterías (2 por lado). 7 vs 7 con estructura aproximada (tridente + medios por un equipo).
-- **Desarrollo:** Juego libre; **al perder el balón, 5 s de presión asfixiante** para recuperar antes de replegar. El equipo que recupera arriba ataca las mini-porterías cercanas.
-- **Reglas/Provocaciones (medibles):** Recuperación en **≤5 s** tras pérdida = 2 puntos (cronometrado por el míster); si no se recupera, repliegue obligatorio a campo propio. Gol tras recuperación en contrapressing = doble.
-- **Variantes:** *(fácil)* 6 s; *(media)* 5 s; *(difícil)* 4 s + obligar a 3 jugadores mínimos en la presión.
-- **Coaching:** reacción del jugador más cercano (presión al balón) + cierre de líneas de los demás; postura preventiva antes de perder (estar bien para el contrapressing).
+### T3.3 — Contrapressing 5 segundos con el 6 como ancla
+- **Objetivo (1-4-3-3):** entrenar la reacción inmediata a la pérdida (contrapressing) con los **roles del sistema**: el portador más cercano y los dos siguientes (tridente/interior) cierran al balón y las líneas de pase, mientras el **6 tapa el carril central** (pase de progresión) y orienta la reacción al lado del balón.
+- **Tipo:** Juego en espacio reducido (JER) 7v7 con roles fijos y regla de 5 s.
+- **Organización:** 45×40 m. Equipo en foco con **roles asignados**: 7-9-11 (tridente) + 8/10 (interiores) + 6 (ancla) + 1 fijo de salida. 4 mini-porterías: 2 en la línea de fondo rival (premian robo arriba) y 2 en bandas a media altura. Zona central de 8 m marcada con conos = "carril del 6".
+- **Desarrollo:** Juego dirigido a posesión; **al perder, 5 s de presión inmediata de los 3 más cercanos** mientras el **6 NO salta**: se queda tapando el carril central marcado para impedir el pase de progresión interior. Recuperación arriba → atacar mini-portería de fondo.
+- **Reglas/Provocaciones (medibles):** Recuperación en **≤5 s** = 2 puntos (cronometrado). Punto válido **solo si en el momento del robo el 6 estaba dentro del carril central** marcado (verificable). Si el rival juega un pase limpio por ese carril durante la presión → punto rival (penaliza al 6 por saltar). Gol tras robo arriba = doble.
+- **Variantes:** *(fácil)* 6 s y rival a 1 toque obligado tras robar; *(media)* 5 s a ritmo real; *(difícil)* 4 s + mínimo 3 presores y prohibido que el 6 abandone su carril.
+- **Coaching:** los 3 más cercanos cierran balón + líneas; el 6 es la red que tapa el centro (no persigue); postura preventiva del resto antes de perder; orientar la presión al lado donde se pierde.
 - **Duración/series:** 5 × 3 min. **Categoría: S.**
 
 ---

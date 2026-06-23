@@ -33,8 +33,8 @@ Superada la primera línea, el objetivo es **progresar entre líneas** y transfo
 - **Mecánica de recepción entre líneas**: uno baja a recibir (atrae al medio rival) y el otro **ataca el espacio** que deja → relación de **profundidad alterna** (uno pie, uno espacio). Nunca los dos al mismo tiempo en el mismo plano.
 
 ### Transformación posicional 1-3-2-5 / 1-2-3-5
-- **1-3-2-5**: el **pivote 6 baja** (o lo hace un central que abre) → 3 atrás; **6 + un interior** forman el doble pivote; **5 jugadores en la última línea**: ED 7 y EI 11 abren a las bandas, **LD 2 / LI 3 suben** a dar amplitud o entran por dentro, **DC 9** fija centrales, interiores llegando.
-- **1-2-3-5**: **2 centrales** atrás, **pivote 6 + 2 interiores** (o 6 + interior + lateral por dentro) en el medio, **5 arriba**. Más agresiva, exige cobertura del 6 y atención a la transición.
+- **1-3-2-5**: línea de **3 atrás = 2 DFC + un tercer hombre** (el **pivote 6 que baja** entre los centrales, o un **lateral que invierte**); por delante, **doble pivote** con los dos restantes de ese trío (p. ej. 6 + interior, o lateral invertido + 6); **5 jugadores en la última línea**: ED 7 y EI 11 abren a las bandas, **LD 2 / LI 3** dan amplitud o entran por dentro, **DC 9** fija centrales, interiores llegando.
+- **1-2-3-5**: **2 DFC** atrás, **pivote 6 + 2 interiores** (o 6 + interior + lateral invertido) en el medio, **5 arriba**. Más agresiva, exige cobertura del 6 y atención a la transición.
 - **Ocupación de los 5 carriles (regla de oro)**: máximo **3 jugadores por línea horizontal** y **2 por carril vertical**. Extremos sostienen la **anchura máxima**; cuando el extremo pisa por dentro, el lateral de ese lado **da la amplitud** (y viceversa). Nunca dos en el mismo carril sin escalonamiento.
 
 ---

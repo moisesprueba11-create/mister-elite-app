@@ -2,7 +2,7 @@
 
 > Nomenclatura fija (ver `_pipeline/CONVENCION.md`): POR 1 · LD 2 · LI 3 · DFC 4 (central der.) · DFC 5 (central izq.) · pivote 6 · interiores 8/10 · tridente ED 7 · DC 9 · EI 11. Línea de 4 (LD/LI + 2 DFC), mediocampo de 3 (6 + 8/10), tridente (7-9-11).
 
-El 1-4-3-3 defiende con **tres líneas horizontales** (4-3-3) que, al replegar, se convierten en **dos líneas de presión cerradas** (4-5-1 / 4-1-4-1) bajando los extremos 7 y 11. Es un sistema de **densidad central** (mediocampo de 3 + 9) y **presión orientada**; su talón de Aquiles es el **espacio a la espalda de los laterales** y el **1v1 del pivote 6** cuando los interiores 8/10 abandonan el eje.
+El 1-4-3-3 defiende con **tres líneas horizontales** que, al replegar, se convierten en **dos líneas de presión cerradas** (1-4-5-1 / 1-4-1-4-1) bajando los extremos 7 y 11. Es un sistema de **densidad central** (mediocampo de 3 + 9) y **presión orientada**; su talón de Aquiles es el **espacio a la espalda de los laterales** y el **1v1 del pivote 6** cuando los interiores 8/10 abandonan el eje.
 
 ---
 
@@ -50,7 +50,7 @@ El 1-4-3-3 defiende con **tres líneas horizontales** (4-3-3) que, al replegar, 
 | **Doble esfuerzo**: presionan arriba (saltan al pivote/central rival como gatillo) y **basculan** atrás para defender el ancho del mediocampo. | Llegada al área desde segunda línea (8 box-to-box) y juego entre líneas / última asociación (10 creativo). |
 | Cierran el carril interior y el semiespacio; marcan al interior rival en zona. | Reciben entre líneas, conducen y fijan; generan superioridad por dentro. |
 | **Relevo del 6**: si el pivote sale a presionar o se rompe, el interior del lado del balón baja a tapar el eje. | Sostienen la amplitud interior para que el lateral suba y el extremo pise por dentro. |
-| Al replegar forman la línea de 5 (4-1-4-1) junto a los extremos. | Tercer hombre en combinaciones y remate de segunda jugada. |
+| Al replegar forman la línea de 5 (1-4-1-4-1) junto a los extremos. | Tercer hombre en combinaciones y remate de segunda jugada. |
 
 ### Tridente ED 7 · DC 9 · EI 11
 
@@ -58,7 +58,7 @@ El 1-4-3-3 defiende con **tres líneas horizontales** (4-3-3) que, al replegar, 
 |---|---|
 | **DC 9**: primer presor; **orienta** la salida rival a un lado tapando el pase al pivote (cubre la sombra del 6 contrario) y conduce al central hacia la banda. | 9 referencia: fija a los dos centrales, ataca la profundidad y el área; apoya de espaldas. |
 | **ED 7 / EI 11**: parten cerrando el pase interior; **saltan al lateral rival** (gatillo) cuando el 9 orienta a su lado. | Extremos: anchura, desborde 1v1 o pisar por dentro para que suba el lateral. Remate al segundo palo. |
-| Al perder la posición alta, **bajan a la línea de medios** (4-5-1 / 4-1-4-1) y ayudan al lateral en el 1v1 (doblar). | Transición ofensiva rápida: 9 fija, extremos atacan la espalda de los laterales rivales. |
+| Al perder la posición alta, **bajan a la línea de medios** (1-4-5-1 / 1-4-1-4-1) y ayudan al lateral en el 1v1 (doblar). | Transición ofensiva rápida: 9 fija, extremos atacan la espalda de los laterales rivales. |
 | Primer eslabón del **contrapressing**: cierran la salida fácil tras la pérdida. | |
 
 ---
@@ -71,11 +71,11 @@ Referencia sobre campo de 105 m, líneas medidas por la **defensa (línea de 4)*
 |---|---|---|---|
 | **Alto** | ~40-50 m (cerca del medio campo) | Presiona en campo rival, ~60-75 m. | Robar arriba, achicar el campo, dejar el balón al rival lejos de portería; exige fuera de juego y POR-líbero. |
 | **Medio** | ~30-40 m | Primera línea sobre el centro del campo, ~50-60 m. | Replegado pero activo: invita a la salida rival y activa gatillos al pasar el medio. Bloque por defecto del 4-3-3. |
-| **Bajo** | ~18-25 m (borde del área) | 9 referencia adelantado; resto en 4-5-1 muy junto, ~30-40 m. | Defender el área, proteger la profundidad, salir al contragolpe. Distancia entre líneas < 10-12 m. |
+| **Bajo** | ~18-25 m (borde del área) | 9 referencia adelantado; resto en 1-4-5-1 muy junto, ~30-40 m. | Defender el área, proteger la profundidad, salir al contragolpe. Distancia entre líneas ≤ 10-12 m. |
 
-**Repliegue 4-3-3 → 4-5-1 / 4-1-4-1.** Cuando no hay opción de robo arriba, los extremos 7 y 11 **bajan a la línea de medios** y forman un bloque de 4-5-1:
-- **4-1-4-1**: el 6 queda como único pivote por delante de la defensa; 8-7 y 10-11 forman la línea de 4 medios. Protege el centro y filtra al área.
-- **4-5-1**: los cinco medios juntos en un bloque plano, ideal contra equipos de banda. El 9 queda arriba aislado como salida.
+**Repliegue 1-4-3-3 → 1-4-5-1 / 1-4-1-4-1.** Cuando no hay opción de robo arriba, los extremos 7 y 11 **bajan a la línea de medios** y forman un bloque de 1-4-5-1:
+- **1-4-1-4-1**: el 6 queda como único pivote por delante de la defensa; 8-7 y 10-11 forman la línea de 4 medios. Protege el centro y filtra al área.
+- **1-4-5-1**: los cinco medios juntos en un bloque plano, ideal contra equipos de banda. El 9 queda arriba aislado como salida.
 - Regla: nunca repliegan ambos extremos a la vez si solo hay un foco de balón; primero baja el del lado fuerte; el del lado débil cierra el carril central.
 
 ---
@@ -139,7 +139,7 @@ El 4-3-3 es de las mejores estructuras para presionar tras pérdida por su **den
 1. **Cobertura escalonada del lado contrario**: cuando el lateral sube, el **central de ese lado** ensancha y el **interior del lado débil** vigila la espalda; el lateral contrario cierra a tercer central (defensa en 3+1 al perder el balón).
 2. **Subida alterna de interiores**: regla de "**un interior arriba, un interior abajo**" — solo uno de 8/10 llega al área; el otro queda al lado del 6 para no dejarlo en 1v1. Pizarra: 8 llega, 10 sostiene (y viceversa según el lado del balón).
 3. **Pivote que cae a tercer central** (salida 3+) y, al perder, **repliegue del 6 a la línea de 4** para proteger la espalda del lateral subido.
-4. **Repliegue inmediato del extremo** sobre su lateral (regla de los 4-5-1): el extremo del lado del balón baja a doblar el 1v1; gatillo = pérdida o rival superando la primera línea.
+4. **Repliegue inmediato del extremo** sobre su lateral (regla del 1-4-5-1): el extremo del lado del balón baja a doblar el 1v1; gatillo = pérdida o rival superando la primera línea.
 5. **Falta táctica / temporización** del 6 o del interior en el carril central tras pérdida, para dar tiempo a que la línea de 4 recupere su forma y se cierre la espalda del lateral.
 6. **Bloque medio por defecto** (no alto permanente) contra rivales verticales con extremos rápidos: reduce el espacio a defender a la espalda y mantiene a los laterales menos expuestos.
 
@@ -160,7 +160,7 @@ El 4-3-3 es de las mejores estructuras para presionar tras pérdida por su **den
 - [ ] ¿Un solo interior sube al área (el otro tapa al 6)?
 - [ ] ¿El lado débil bascula hacia dentro (extremo+interior+lateral cerrados)?
 - [ ] ¿Espalda de los laterales cubierta (central ensancha / 6 baja / lateral contrario cierra)?
-- [ ] ¿Extremos bajan a 4-5-1 / 4-1-4-1 cuando se pierde la presión alta?
+- [ ] ¿Extremos bajan a 1-4-5-1 / 1-4-1-4-1 cuando se pierde la presión alta?
 - [ ] ¿Línea recta para el fuera de juego y POR adelantado cubriendo la profundidad?
 - [ ] ¿Reacción de contrapressing en los primeros 5 s o falta/repliegue ordenado?
 - [ ] ¿Centro y zona de remate siempre con más hombres que el rival?

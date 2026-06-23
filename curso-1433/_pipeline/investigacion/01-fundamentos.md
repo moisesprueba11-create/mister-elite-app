@@ -11,21 +11,24 @@ El 1-4-3-3 reparte 11 jugadores en cuatro bloques: portero, línea de cuatro, tr
 
 ### Las tres líneas y sus alturas de referencia (campo de 105 m de fondo)
 - **Línea defensiva (4):** DFC 4 y 5 por dentro, LD 2 y LI 3 abriendo el campo. Altura de partida en posesión propia: 25–35 m desde portería propia; con bloque alto, sobre el círculo central.
-- **Mediocampo (3):** pivote 6 por delante de los centrales (35–45 m); interiores 8/10 en los medio-espacios, 10–15 m por delante del 6.
+- **Mediocampo (3):** pivote 6 por delante de los centrales (35–45 m); interiores 8/10 en los medio-espacios, 10–12 m por delante del 6.
 - **Tridente (3):** ED 7 y EI 11 pegados a la cal (amplitud máxima), DC 9 como referencia central fijando a los DFC rivales.
 
-### Distancias de referencia (idea fuerza, no dogma)
-- Entre líneas: **10–15 m** vertical. Más cerca = más control y rondos; más lejos = más profundidad y riesgo.
+### Distancias de referencia (ESTÁNDAR ÚNICO del curso — idea fuerza, no dogma)
+- **Distancia entre líneas (vertical, línea a línea): 10–12 m.** Es el techo de referencia en todo el curso (defensa↔medio y medio↔ataque). Más cerca = más control y rondos; si se supera, aparece el espacio entre líneas que el sistema quiere proteger.
+- **Compactación vertical del bloque (de la primera a la última línea): < 30–35 m.**
 - Anchura del bloque con balón: extremos en banda → **ancho máximo de campo** para estirar a la defensa rival.
 - Distancia interior–pivote–interior: triángulo de **8–12 m** de lado para sostener el rondo central.
 
 ### Orientación del triángulo del medio (clave del sistema)
-- **Vértice abajo ▽ (un pivote):** 6 solo por delante de la defensa, 8 y 10 más adelantados. Triángulo apuntando atrás. Da dos interiores llegadores y un mediocampo más ofensivo; deja al 6 más expuesto.
-- **Vértice arriba △ (doble pivote + enganche):** 6 y 8 forman doble pivote, 10 como enganche entre líneas. Triángulo apuntando arriba. Más solidez y dos jugadores de equilibrio; emparenta con el 1-4-2-3-1. Es el "4-3-3 falso".
+> Convención: el **vértice** es el jugador solitario; los otros dos forman la base. El triángulo se nombra por dónde queda ese vértice respecto a la portería rival.
+- **Vértice abajo ▽ (un pivote):** 6 solo por delante de la defensa (vértice atrasado), 8 y 10 más adelantados formando la base alta. Da dos interiores llegadores y un mediocampo más ofensivo; deja al 6 más expuesto.
+- **Vértice arriba △ (doble pivote + enganche):** 6 y 8 forman el doble pivote (base atrasada), 10 como enganche entre líneas (vértice adelantado). Más solidez y dos jugadores de equilibrio; emparenta con el 1-4-2-3-1. Es el "4-3-3 falso".
 
 ### Transformación con balón (idea fuerza)
-- **1-3-2-5:** un lateral invierte hacia dentro junto al 6 (doble pivote provisional), los DFC + el otro lateral forman la línea de 3, y arriba se ocupan los **cinco carriles** (ED + EI en banda, 8 + 10 en medio-espacios, 9 en eje).
-- **1-2-3-5:** los dos DFC quedan de salida (línea de 2), 6 + los dos laterales forman el medio de 3, y arriba los mismos cinco. Variante de Guardiola con laterales invertidos.
+> Notación coherente en todo el curso: **1-3-2-5** y **1-2-3-5** (con el "1" del portero). La última línea SIEMPRE ocupa los **cinco carriles** (ED + EI en banda, 8 + 10 en medio-espacios, 9 en eje).
+- **1-3-2-5 (la más usada):** se forma una **línea de 3 atrás = 2 DFC + un tercer hombre** (el **pivote 6 que baja** entre los centrales, o un **lateral que invierte** hacia dentro). Por delante, **doble pivote** con los dos jugadores restantes de ese trío (p. ej. 6 + interior, o lateral invertido + 6). Arriba, los cinco.
+- **1-2-3-5:** los **dos DFC** quedan de salida (línea de 2); el medio de 3 lo forman **6 + los dos laterales invertidos** (o 6 + interior + lateral). Más agresiva; exige cobertura del 6. Variante asociada a Guardiola con laterales invertidos.
 
 ### Repliegue sin balón (idea fuerza)
 - **1-4-5-1:** los extremos 7 y 11 bajan a la línea de medios → cinco en el medio + 9 como única referencia arriba. Bloque medio/bajo, cierra el centro.
@@ -35,11 +38,11 @@ El 1-4-3-3 reparte 11 jugadores en cuatro bloques: portero, línea de cuatro, tr
 
 ## 2. Historia y vigencia
 
-- **Orígenes (Ajax / Países Bajos, fin 60–70):** Rinus Michels institucionaliza el **Fútbol Total** en el Ajax y en la selección neerlandesa; el 1-4-3-3 es su marco natural porque permite la rotación de posiciones y desbordaba al rígido 4-4-2 de la época. Cumbre: **Mundial 1974** con Cruyff de capitán. (Cruyff, ya como técnico, derivaría hacia un 3-4-3 en rombo en el Barça, porque sentía la inferioridad 6v8 del 4-3-3 puro en posesión.)
-- **Barça de Guardiola (2008–2012):** lleva el 1-4-3-3 al **juego de posición**: ocupación de carriles, superioridades numérica-posicional-cualitativa, falso 9 (Messi) y triángulos por todo el campo. De aquí nace la lectura moderna del 1-4-3-3 como **estructura de posesión** que se transforma a 3-2-5 / 2-3-5.
+- **Orígenes (Ajax / Países Bajos, fin 60–70):** Rinus Michels institucionaliza el **Fútbol Total** en el Ajax y en la selección neerlandesa; el 1-4-3-3 es su marco natural porque permite la rotación de posiciones y desbordaba al rígido 4-4-2 de la época. Cumbre: **Mundial 1974** con Cruyff de capitán (subcampeones; perdieron la final 2-1 ante la RFA anfitriona). (Cruyff, ya como técnico del Barça del *Dream Team* 1988–96, alternó el 1-4-3-3 con un **3-4-3 en rombo**: buscaba que cada jugador formara triángulos para dar siempre dos líneas de pase al poseedor, su obsesión por la posesión.)
+- **Barça de Guardiola (2008–2012):** lleva el 1-4-3-3 al **juego de posición**: ocupación de carriles, superioridades numérica-posicional-cualitativa, falso 9 (Messi) y triángulos por todo el campo. De aquí nace la lectura moderna del 1-4-3-3 como **estructura de posesión** que se transforma a 1-3-2-5 / 1-2-3-5.
 - **Selección española (2008–2012) y la era del tiki-taka:** el 1-4-3-3 / 4-3-3 con falso 9 como base de tres títulos consecutivos, prolongando la escuela neerlandesa.
 - **Klopp / Liverpool (2015–2024):** 1-4-3-3 de **gegenpressing**: medio de tres más físico que creativo, extremos a pie cambiado (Salah/Mané) como inside forwards, falso 9 (Firmino) liberando los costados y laterales-playmakers (Alexander-Arnold, Robertson). Demuestra que el sistema sirve igual para dominar con balón que para atacar la transición.
-- **Vigencia actual (2026):** sigue siendo una de las estructuras más usadas en élite, tanto en versión posesión (raíz Guardiola/City) como en versión vertical/presión (raíz Klopp). Su plasticidad para mutar a 3-2-5, 2-3-5 o replegar a 4-5-1 lo mantiene plenamente vigente.
+- **Vigencia actual (2026):** sigue siendo una de las estructuras más usadas en élite, tanto en versión posesión (raíz Guardiola/City) como en versión vertical/presión (raíz Klopp). Su plasticidad para mutar a 1-3-2-5 / 1-2-3-5 con balón o replegar a 1-4-5-1 / 1-4-1-4-1 sin balón lo mantiene plenamente vigente.
 
 ---
 
@@ -81,7 +84,7 @@ El **4-3-3 ↔ 4-2-3-1** es un continuo: con el 10 muy adelantado y 6+8 fijos, e
 ### Ventajas
 - Superioridad estructural en el medio (3) frente a sistemas de dos centrales puros.
 - Amplitud natural del tridente: estira a la defensa rival y crea 1v1 en banda.
-- Plasticidad: muta a 3-2-5 / 2-3-5 con balón y a 4-5-1 / 4-1-4-1 sin balón.
+- Plasticidad: muta a 1-3-2-5 / 1-2-3-5 con balón y a 1-4-5-1 / 1-4-1-4-1 sin balón.
 - Triángulos por todo el campo → muchas líneas de pase cortas.
 
 ### Desventajas
