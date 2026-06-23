@@ -17,14 +17,14 @@ El 1-4-2-3-1 reparte a los 10 jugadores de campo en **cuatro líneas claras**, l
 - **Anchura defensiva:** los cuatro defensas cubren el ancho útil con separaciones de **8–12 m** entre ellos; nunca más de un pasillo de distancia.
 - **Doble pivote:** separados **8–15 m** entre sí, ~**8–10 m** por delante de los centrales. No se juntan ni se alinean; uno cubre la espalda del otro.
 - **Línea de 3:** los extremos dan amplitud máxima (pegados a banda); el 10 ocupa el centro, **10–15 m** por delante del doble pivote, en la franja entre la línea de medios y la defensa rival.
-- **Bloque medio compacto:** ~**30–35 m** entre la última línea y el 9; bloque bajo cerca de **25 m**; bloque alto puede estirarse a **40 m**.
-- **Distancia entre líneas propias:** mantener **10–15 m** entre defensa-pivote y pivote-mediapunta para no dejar espacios explotables.
+- **Longitud del bloque (última línea ↔ 9):** medio **30–35 m**; bajo **25–30 m**; alto hasta **40 m**. Estándar único de curso: bloque medio = **30–35 m** (alturas de la primera línea de presión, ver tabla del doc 02).
+- **Distancia entre líneas propias (estándar único de curso):** **10–12 m** entre líneas cuando se defiende compacto en bloque (las dos líneas de 4 tras la mutación, ver doc 02); hasta **15 m** en fase de construcción/ataque, donde se busca más separación para tener líneas de pase. Nunca más de 12 m sin balón en bloque medio/bajo.
 
 ### La idea fuerza: la DOBLE estructura
 El 1-4-2-3-1 no es una formación rígida, sino **dos sistemas en uno** según la fase de juego:
 
 - **Sin balón → se repliega a 1-4-4-2 / 1-4-4-1-1.** Los extremos 7/11 bajan a formar una línea de 4 medios junto al doble pivote; el 10 sube junto al 9 (1-4-4-2) o queda medio escalón por detrás vigilando al pivote rival (1-4-4-1-1). Dos líneas de cuatro muy compactas, difíciles de penetrar.
-- **Con balón → se estira a 1-2-3-5 / 1-4-3-3.** Suben los dos laterales (2 y 3) hasta dar amplitud alta, un pivote (normalmente el 6) **baja entre o junto a los centrales** (salida en 3 o "salida lavolpiana"), el otro pivote (8) y el 10 forman la línea de creación, y arriba se dibuja un **frente de cinco** (extremo–extremo–laterales altos + 9) o un 1-4-3-3 si solo sube un lateral.
+- **Con balón → se estira a 1-2-3-5 / 1-4-3-3.** Suben los dos laterales (2 y 3) hasta dar amplitud alta, un pivote (normalmente el 6) **baja entre o junto a los centrales** (salida en 3 o "salida en tercer hombre" tipo Lavolpe), el otro pivote (8) y el 10 forman la línea de creación, y arriba se dibuja un **frente de cinco** que ocupa los cinco carriles (extremo 7 · lateral alto / 9 · 10 · extremo 11) o un 1-4-3-3 si solo sube un lateral. El "5" del 1-2-3-5 lo forman los **dos extremos + los dos laterales altos + el 9**: dos quedan en banda y tres pueblan los carriles interiores y el central.
 
 La transición fluida entre esas dos formas es lo que hace moderno y vigente al sistema.
 
@@ -35,11 +35,11 @@ La **zona 14** es la franja central inmediatamente por delante del área rival (
 
 ## 2. Historia y vigencia
 
-- **Origen (años 2000):** evoluciona del 1-4-3-3 / 4-1-2-3 al **desdoblar el pivote único** en doble pivote, para cerrar el espacio entre líneas que un solo mediocentro (el rol Makélélé) no podía cubrir solo. Surge para ganar control central sin renunciar al delantero referencia.
-- **Mourinho (Chelsea 2004–07):** lo convierte en estándar en Inglaterra. Doble pivote **Makélélé (destructor/ancla) + Lampard (llegador)** — el arquetipo exacto del 6 + 8. Defensivamente demoledor (15 goles encajados en la Premier 2004-05) y dos títulos consecutivos.
-- **Löw / Alemania (2010–2014):** el sistema como **default global** del Mundial 2010. Schweinsteiger–Khedira de doble pivote; Özil de mediapunta; Müller/Podolski de extremos; Klose de referencia. Hitos icónicos: 4-0 a Argentina (2010) y 7-1 a Brasil (2014, camino al título mundial).
+- **Origen (años 2000):** se populariza al **reforzar el eje con un doble pivote** por delante de la línea de 4, cerrando el espacio entre líneas que un solo mediocentro no protegía igual de bien. Surge para ganar control central sin renunciar al delantero referencia; convive con la lógica del 1-4-3-3 con el que comparte raíz.
+- **Mourinho (Chelsea 2004–07):** referencia del doble pivote en Inglaterra. Pareja de medios **Makélélé (destructor/ancla) + Lampard (llegador)** — el arquetipo del 6 + 8 (matiz: el Chelsea campeón alineaba a menudo un 1-4-3-3 con Makélélé de ancla y dos interiores; la idea del doble seis protegido es la que hereda el 1-4-2-3-1). Récord defensivo histórico: **solo 15 goles encajados en la Premier 2004-05** (récord de la liga) y dos títulos consecutivos (2004-05 y 2005-06).
+- **Löw / Alemania (2010–2014):** uno de los referentes del 1-4-2-3-1 moderno. En el Mundial 2010: Schweinsteiger–Khedira de doble pivote; Özil de mediapunta; Müller (derecha) y Podolski (izquierda) de extremos; Klose de referencia. Hitos: **4-0 a Argentina** (cuartos, 2010) y, ya con plantilla renovada y el sistema más flexible, **7-1 a Brasil** (semifinal de 2014, camino al título mundial).
 - **Ancelotti:** maestro del **equilibrio del doble pivote** (Madrid, PSG, Bayern), con un ancla y un mediocentro de mayor recorrido, y mediapunta libre. Modelo de gestión de jugadores creativos dentro de una estructura estable.
-- **Vigencia actual:** sigue siendo una de las estructuras más usadas del fútbol moderno. Hoy convive con el 1-4-3-3 mediante la lógica de **fases** (4-4-2 sin balón / 3-2-5 con balón), de modo que muchos equipos "de 4-3-3" defienden en realidad con un doble pivote. El 1-4-2-3-1 es la versión más limpia y enseñable de esa idea.
+- **Vigencia actual:** sigue siendo una de las estructuras más usadas del fútbol moderno. Hoy convive con el 1-4-3-3 mediante la lógica de **fases** (1-4-4-2 sin balón / 1-2-3-5 con balón, lo que muchos analistas anotan como "3-2-5" por la estructura de los jugadores de campo), de modo que muchos equipos "de 4-3-3" defienden en realidad con un doble pivote. El 1-4-2-3-1 es la versión más limpia y enseñable de esa idea.
 
 ---
 
@@ -85,21 +85,21 @@ La **zona 14** es la franja central inmediatamente por delante del área rival (
 ### Ventajas
 - Equilibrio defensa-ataque y **control del centro** (doble pivote = superioridad ante un punta solo).
 - Estructura clara y **fácil de enseñar**; roles definidos por carril.
-- Flexibilidad de fase (muta a 4-4-2 / 3-2-5 sin tocar piezas).
+- Flexibilidad de fase (muta a 1-4-4-2 / 1-4-4-1-1 sin balón y a 1-2-3-5 / 1-4-3-3 con balón, sin cambiar de jugadores).
 - Un creador libre (10) en la zona de más valor.
 
 ### Desventajas
 - Puede quedar **aislado el 9** si la línea de 3 no acompaña.
 - Si los dos pivotes son ofensivos, se descubre el eje ante la contra.
 - Exige **laterales de mucho recorrido** (sostienen toda la banda en ataque y defensa).
-- El 10 que no repliega genera **infrarioridad en medio** contra trivotes (3 vs 2).
+- El 10 que no repliega genera **inferioridad en el medio** contra trivotes (2 vs 3).
 
 ### Enfrentamientos
 
 **vs 1-4-3-3**
 - **La batalla del medio: 2 vs 3.** El trivote rival puede generar superioridad ante el doble pivote. Solución: que el 10 baje a igualar (3 vs 3) o presión orientada a banda para neutralizar.
 - A favor: el 10 propio ataca el **espacio entre el pivote y los centrales** del 4-3-3.
-- Lado débil: castigar la banda contraria al mediocentro que rival que sale a presionar.
+- Lado débil: castigar la banda contraria al mediocentro rival que sale a presionar.
 
 **vs 1-4-4-2**
 - **Superioridad numérica del 10:** el 4-4-2 deja libre la zona 14 (sus mediocentros vigilan a los pivotes), y el mediapunta encuentra espacio entre líneas. Ventaja estructural típica del sistema.

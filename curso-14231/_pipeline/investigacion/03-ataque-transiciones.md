@@ -1,6 +1,6 @@
 # Fase ofensiva, transiciones y balón parado — 1-4-2-3-1
 
-> Nomenclatura fija (CONVENCION.md): POR 1 · LD 2 · LI 3 · DFC 4 (der) · DFC 5 (izq) · doble pivote MC 6 (ancla) / MC 8 (box-to-box) · trivote ED 7 · MCO 10 · EI 11 · DC 9. Defensiva repliega a 1-4-4-2; con balón se estira a 1-2-3-5 / 1-4-3-3.
+> Nomenclatura fija (CONVENCION.md): POR 1 · LD 2 · LI 3 · DFC 4 (der) · DFC 5 (izq) · doble pivote MC 6 (ancla) / MC 8 (box-to-box) · trivote ED 7 · MCO 10 · EI 11 · DC 9. Sin balón repliega a **1-4-4-2 / 1-4-4-1-1** (extremos 7/11 bajan; el 10 sube con el 9 o engancha al pivote rival); con balón se estira a **1-2-3-5 / 1-4-3-3**.
 
 ---
 
@@ -15,9 +15,9 @@ Salida con los **2 centrales (4 y 5) abiertos** a la anchura del área, el **POR
 
 ### Salida en 3 (un pivote baja entre centrales)
 Cuando el rival presiona con **dos o tres puntas** y bloquea la salida en 2:
-- El **MC 6 baja entre los centrales 4 y 5** (formando una línea de 3: 5–6–4) o **a un costado** de un central (salida en 3 asimétrica, "saída em 3" tipo Lavolpiana).
-- Los **centrales se abren** aún más y los **laterales (2/3) suben** a la línea del 8 → se genera estructura **1-3-... con LD/LI altos**: el equipo se reorganiza en **3+2** (3 atrás, doble pivote ahora 8 + interior) o **1-2-3-5** si ambos laterales se proyectan.
-- El **8 queda como pivote único receptor** entre líneas y el **10 baja** un escalón para ofrecer apoyo interior.
+- El **MC 6 baja entre los centrales 4 y 5** (formando una línea de 3: 5–6–4) o **a un costado** de un central (salida en 3 asimétrica, "saída em 3" tipo Lavolpe).
+- Los **centrales se abren** aún más y los **laterales (2/3) suben** a la línea del 8 → la salida queda como **línea de 3 atrás (4–6–5) + el 8 de pivote** por delante. Si ambos laterales se proyectan alto, la estructura ofensiva resultante es el **1-2-3-5** (2 centrales · 1 pivote 8 + 10 + ... · frente de 5).
+- El **8 queda como pivote único receptor** por delante de la línea de 3 y el **10 baja** un escalón para ofrecer apoyo interior, dando dos alturas de pase tras la salida.
 
 ### Mecanismos para superar la presión alta
 1. **Fijar para liberar**: el central conduce hacia el punta para fijarlo y, al saltar el rival, libera al pivote o al lateral por fuera.

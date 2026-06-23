@@ -41,10 +41,10 @@ Las 26 tareas se organizan en 6 bloques. Cada ficha fuerza un comportamiento ESP
 - **Coaching**: "6 recibe-deja, no recibe-gira si tiene la espalda marcada"; "8 ataca el espacio que deja el rival que salta al 6"; sincronía del desmarque de apoyo y de ruptura.
 - **Duración/series**: 3x4 min por lado. **Categoría: F**
 
-### Tarea 1.4 — Construcción condicionada 8v8 con zona de presión prohibida para retroceso
+### Tarea 1.4 — Construcción condicionada 7v7 con zona de presión prohibida para retroceso
 - **Objetivo (1-4-2-3-1)**: jugar la salida bajo presión real evitando la pelota atrás sistemática; valentía del doble pivote para recibir de cara.
-- **Tipo**: juego condicionado 8v8+POR.
-- **Organización**: campo de 60x50 m dividido en 3 franjas horizontales. Azules en 1-4-2-3-1 reducido (POR, 4 defensas, 6, 8, 9). Rojos presionan en 1-4-3-1.
+- **Tipo**: juego condicionado 7v7 (+POR cada equipo).
+- **Organización**: campo de 60x50 m dividido en 3 franjas horizontales. Azules en 1-4-2-3-1 reducido (POR + 4 defensas + 6 + 8 + 9 = 6 de campo). Rojos presionan con bloque equivalente (+POR) en 1-4-2-... reducido, saltando con 2 puntas en franja 1.
 - **Desarrollo**: salida desde POR superando la franja de presión (franja 1). Una vez en franja 2, ataque libre a portería.
 - **Reglas/Provocaciones**: (1) **Prohibido el pase atrás dentro de la franja 1 una vez el balón ha pasado de los centrales a los pivotes** (solo se permite devolver al POR si está totalmente libre). Fuerza progresión vertical. (2) +1 gol si la salida termina con el 6 u 8 conduciendo a franja 3. (3) 6 s de posesión máxima por jugador en franja 1.
 - **Variantes**: fácil = se permite 1 pase atrás por posesión; medio = regla estricta; difícil = los pivotes solo pueden recibir de espaldas (giro obligado).
@@ -100,9 +100,9 @@ Las 26 tareas se organizan en 6 bloques. Cada ficha fuerza un comportamiento ESP
 - **Tipo**: rondo posicional 5v2 con comodines de banda.
 - **Organización**: 18x18 m con 4 comodines exteriores (LD 2, LI 3, ED 7, EI 11). Dentro: 6 y 8 + 3 apoyos. 2 defensores (presión 9+10 rival).
 - **Desarrollo**: rondo manteniendo posesión; cada 5 pases internos hay que sacar a un comodín de banda (extremo o lateral) simulando apertura a carril.
-- **Reglas/Provocaciones**: (1) **Obligatorio que el balón pase por uno de los dos pivotes antes de salir a banda** (los pivotes son el "filtro" del juego). (2) El otro pivote debe ofrecer siempre línea de pase a un toque de distancia. (3) Pérdida si dos pases consecutivos esquivan a ambos pivotes.
-- **Variantes**: fácil = 5v2 amplio; medio = reducir espacio; difícil = 5v3.
-- **Coaching**: ventana de pase, cuerpo abierto, recibir en el lado contrario a la presión; "el pivote conecta interior con exterior".
+- **Reglas/Provocaciones**: (1) **La salida a banda solo es válida si el último pase interior lo da un pivote (6 u 8) recibiendo de perfil/orientado**; si la abre un apoyo que no es pivote, no cuenta. (2) Los **dos pivotes deben estar siempre en pasillos distintos**; si se juntan, pérdida. (3) Medible: **aperturas válidas pivote→banda por serie** (objetivo ≥6) y pérdidas por juntarse los pivotes (objetivo 0).
+- **Variantes**: fácil = 5v2 amplio; medio = reducir espacio a 14x14; difícil = 5v3 (obliga a leer qué pivote sale del marcaje).
+- **Coaching**: ventana de pase, cuerpo abierto, recibir en el lado contrario a la presión; "el pivote conecta interior con exterior y nunca pisa el pasillo de su pareja".
 - **Duración/series**: 4x3 min. **Categoría: F**
 
 ---

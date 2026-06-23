@@ -43,7 +43,7 @@
 |---|---|---|---|
 | **Alto** | Presión arranca en campo rival (~10-15 m de su área) | 1-4-4-2 (9+10 a los DFC; 7/11 saltan a laterales rivales) | Robo arriba, ahogar la salida, recuperar cerca de portería rival |
 | **Medio** | Línea del medio campo (~halfway) | 1-4-4-1-1 / 1-4-4-2 | Controlar el centro, esperar el pase a zona 14 para saltar |
-| **Bajo** | Borde de la frontal del propia área (~25-30 m) | 1-4-4-1-1 muy junto, líneas a 8-10 m | Cerrar espacios, proteger área, salir a la contra |
+| **Bajo** | Borde de la frontal de la propia área (~25-30 m de la portería) | 1-4-4-1-1 muy junto, líneas a 8-10 m | Cerrar espacios, proteger área, salir a la contra |
 
 **Cómo muta de 1-4-2-3-1 a 1-4-4-2 / 1-4-4-1-1 sin balón (clave del módulo):**
 1. Los **extremos 7/11 bajan** a la altura del doble pivote → se forma la **segunda línea de 4** (7-6-8-11 o, según lado, intercalados).
