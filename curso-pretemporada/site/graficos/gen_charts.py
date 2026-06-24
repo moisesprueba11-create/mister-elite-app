@@ -212,4 +212,71 @@ Calendar(
     ],
 ).save(p("micro-2.svg"))
 
+# ============================ EJEMPLOS DE DISEÑO DE MICROCICLO ============================
+# (para el módulo "Diseñar tu propio microciclo": distintos escenarios, no frecuencias)
+
+# Ejemplo 1 — Semana de DESARROLLO (pretemporada, sin partido)
+Calendar(
+    "Ejemplo 1 · Microciclo de DESARROLLO (sin partido)",
+    subtitle="pretemporada o parón · 2 picos para construir · cierra con competición interna",
+    note="objetivo: cargar y mejorar",
+    days=[
+        day("LUN", B, [s("", "Reactivación + prevención", B)]),
+        day("MAR", A, [s("", "PICO 1 · HIIT con balón", A)]),
+        day("MIÉ", M, [s("", "Velocidad (inicio) + táctico", M)]),
+        day("JUE", A, [s("", "PICO 2 · Fuerza-pot. + fase de juego", A)]),
+        day("VIE", M, [s("", "Táctico + finalización", M)]),
+        day("SÁB", M, [s("", "Competición interna (gran formato)", M)]),
+        day("DOM", R),
+    ],
+).save(p("micro-ej-desarrollo.svg"))
+
+# Ejemplo 2 — Semana de COMPETICIÓN con 1 partido (lenguaje MD-x)
+Calendar(
+    "Ejemplo 2 · Microciclo de COMPETICIÓN (1 partido)",
+    subtitle="se planifica desde el partido · cargar lejos del MD, descargar cerca",
+    note="referencia de temporada",
+    days=[
+        day("MD+1", B, [s("", "Recuperación (jugaron) / compensar (no jugaron)", B)]),
+        day("MD-5", R),
+        day("MD-4", A, [s("", "Fuerza + táctico (espacios reducidos)", A)]),
+        day("MD-3", A, [s("", "Resistencia + táctico colectivo (volumen)", A)]),
+        day("MD-2", M, [s("", "Velocidad + táctico específico", M)]),
+        day("MD-1", B, [s("", "Activación + ABP", B)]),
+        day("MD", P_, [s("", "PARTIDO", P_)]),
+    ],
+).save(p("micro-ej-competicion.svg"))
+
+# Ejemplo 3 — Semana con DOBLE PARTIDO (miércoles + domingo)
+Calendar(
+    "Ejemplo 3 · Microciclo de DOBLE PARTIDO",
+    subtitle="dos partidos en la semana · solo se recupera y se activa: NO hay días de carga alta",
+    note="prioridad: recuperar",
+    days=[
+        day("LUN", B, [s("", "MD+1 · Recuperación", B)]),
+        day("MAR", M, [s("", "MD-1 · Activación + táctico ligero", M)]),
+        day("MIÉ", P_, [s("", "PARTIDO 1", P_)]),
+        day("JUE", B, [s("", "MD+1 · Recuperación", B)]),
+        day("VIE", M, [s("", "MD-2 · Táctico medio", M)]),
+        day("SÁB", B, [s("", "MD-1 · Activación + ABP", B)]),
+        day("DOM", P_, [s("", "PARTIDO 2", P_)]),
+    ],
+).save(p("micro-ej-doble.svg"))
+
+# Ejemplo 4 — MORFOCICLO (periodización táctica): tensión-duración-velocidad
+Calendar(
+    "Ejemplo 4 · MORFOCICLO (periodización táctica)",
+    subtitle="las subdinámicas: tensión → duración → velocidad → activación, todo con balón",
+    note="la 'forma' se repite cada semana",
+    days=[
+        day("LUN", B, [s("", "MD+1 · Recuperación", B)]),
+        day("MAR", R),
+        day("MIÉ", A, [s("", "MD-4 · TENSIÓN (fuerza · espacios reducidos)", A)]),
+        day("JUE", A, [s("", "MD-3 · DURACIÓN (resistencia · espacios grandes)", A)]),
+        day("VIE", M, [s("", "MD-2 · VELOCIDAD (espacios amplios · acciones cortas)", M)]),
+        day("SÁB", B, [s("", "MD-1 · ACTIVACIÓN (reacción + ABP)", B)]),
+        day("DOM", P_, [s("", "MD · PARTIDO", P_)]),
+    ],
+).save(p("micro-ej-morfociclo.svg"))
+
 print("charts OK")

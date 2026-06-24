@@ -13,6 +13,7 @@ DOCS = [
     ("modulos/02-carga-fisica.md", "MÓDULO 02 · La carga física"),
     ("modulos/03-como-meter-las-cargas.md", "MÓDULO 03 · Cómo meter las cargas"),
     ("modulos/04-tactica-estrategia.md", "MÓDULO 04 · Táctica y estrategia"),
+    ("modulos/05-disenar-microciclo.md", "MÓDULO 05 · Diseña tu propio microciclo"),
     ("ejercicios/00-mapa-decision.md", "MAPA DE DECISIÓN · Elige tu plan"),
     ("ejercicios/01-plan-dobles.md", "PLAN · Dobles sesiones (pro / semipro)"),
     ("ejercicios/02-plan-6-sesiones.md", "PLAN · 6 sesiones (lunes a sábado)"),

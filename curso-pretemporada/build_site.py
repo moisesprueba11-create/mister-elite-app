@@ -14,6 +14,7 @@ PAGES = [
     ("modulos/02-carga-fisica.md", "modulos/02-carga-fisica.html", "M02 · La carga física", "Teoría"),
     ("modulos/03-como-meter-las-cargas.md", "modulos/03-como-meter-las-cargas.html", "M03 · Cómo meter las cargas", "Teoría"),
     ("modulos/04-tactica-estrategia.md", "modulos/04-tactica-estrategia.html", "M04 · Táctica y estrategia", "Teoría"),
+    ("modulos/05-disenar-microciclo.md", "modulos/05-disenar-microciclo.html", "M05 · Diseña tu microciclo", "Teoría"),
     ("ejercicios/00-mapa-decision.md", "ejercicios/00-mapa-decision.html", "Mapa de decisión", "Planes"),
     ("ejercicios/01-plan-dobles.md", "ejercicios/01-plan-dobles.html", "Plan · Dobles sesiones", "Planes"),
     ("ejercicios/02-plan-6-sesiones.md", "ejercicios/02-plan-6-sesiones.html", "Plan · 6 sesiones", "Planes"),

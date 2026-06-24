@@ -57,7 +57,7 @@
   </g>
   <g font-family="Segoe UI,Arial">
     <g transform="translate(470,300)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">6</text><text x="18" y="66" font-size="12" fill="#cdd9e5">planes por frecuencia</text></g>
-    <g transform="translate(632,300)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">4</text><text x="18" y="66" font-size="12" fill="#cdd9e5">módulos de teoría</text></g>
+    <g transform="translate(632,300)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">5</text><text x="18" y="66" font-size="12" fill="#cdd9e5">módulos de teoría</text></g>
     <g transform="translate(470,392)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">12</text><text x="18" y="66" font-size="12" fill="#cdd9e5">sesiones tipo</text></g>
     <g transform="translate(632,392)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="22" font-weight="900" fill="#f7c948">sin GPS</text><text x="18" y="66" font-size="12" fill="#cdd9e5">control de carga</text></g>
   </g>

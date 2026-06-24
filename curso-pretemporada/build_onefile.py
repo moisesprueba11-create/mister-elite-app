@@ -13,6 +13,7 @@ PAGES = [
     ("modulos/02-carga-fisica.md", "m02", "M02 · La carga física", "Teoría"),
     ("modulos/03-como-meter-las-cargas.md", "m03", "M03 · Cómo meter las cargas", "Teoría"),
     ("modulos/04-tactica-estrategia.md", "m04", "M04 · Táctica y estrategia", "Teoría"),
+    ("modulos/05-disenar-microciclo.md", "m05", "M05 · Diseña tu microciclo", "Teoría"),
     ("ejercicios/00-mapa-decision.md", "mapa", "Mapa de decisión", "Planes"),
     ("ejercicios/01-plan-dobles.md", "p1", "Plan · Dobles sesiones", "Planes"),
     ("ejercicios/02-plan-6-sesiones.md", "p2", "Plan · 6 sesiones", "Planes"),

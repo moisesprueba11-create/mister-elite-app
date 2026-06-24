@@ -24,6 +24,7 @@ Bienvenido al curso de planificación de la pretemporada de **MISTER ÉLITE — 
 2. **La carga física** — qué es la carga, cómo medirla sin tecnología, ACWR, supercompensación y prevención de lesiones.
 3. **Cómo meter las cargas** — *el módulo central:* el microciclo, integrar físico y táctico, la curva de carga, el orden de las capacidades y el tapering.
 4. **Táctica y estrategia** — qué entrenar y en qué orden, construir identidad, los amistosos y el balón parado.
+5. **Diseña tu propio microciclo** — los 7 principios, el método paso a paso y varios ejemplos distintos (desarrollo, competición, doble partido, morfociclo).
 
 **Práctica — el cómo:**
 - **Mapa de decisión** — *empieza aquí:* elige tu plan según tus sesiones, semanas y recursos.
