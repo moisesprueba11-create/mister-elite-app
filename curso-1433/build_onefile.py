@@ -1,11 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-1433-completo.html"""
-import os, re, html
+import os, re, html, base64
 import markdown
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GRAF = os.path.join(ROOT, "graficos")
+ANIMDIR = os.path.join(ROOT, "..", "video-curso-1433", "clips")
+
+# pizarra estática -> (clip mp4, título de la animación)
+ANIM = {
+    "teoria-11-salida-rombo.svg":       ("01-salida-rombo",        "Salida en rombo"),
+    "teoria-12-salida-en-3.svg":        ("02-salida-en-3",         "Salida en 3 (lavolpiana)"),
+    "teoria-04-transformacion-1325.svg":("03-transformacion-1325", "Transformación a 1-3-2-5"),
+    "teoria-08-pressing-gatillos.svg":  ("04-pressing-tridente",   "Pressing del tridente"),
+    "teoria-13-entre-lineas.svg":       ("05-apoyo-ruptura",       "Apoyo + ruptura"),
+    "tarea-15.svg":                     ("06-sociedad-banda",      "Sociedad de banda"),
+    "teoria-15-transicion-ofensiva.svg":("07-transicion-ofensiva", "Transición ofensiva"),
+}
+
+def anim_block(slug, title):
+    mp4 = os.path.join(ANIMDIR, slug + ".mp4")
+    if not os.path.exists(mp4):
+        return ""
+    b64 = base64.b64encode(open(mp4, "rb").read()).decode()
+    return (f'<figure class="diag anim"><video autoplay loop muted playsinline '
+            f'src="data:video/mp4;base64,{b64}"></video>'
+            f'<figcaption>▶ animación · {html.escape(title)}</figcaption></figure>')
 
 PAGES = [
     ("README.md", "inicio", "Inicio", "Curso"),
@@ -46,7 +67,10 @@ def inline_images(body):
         cap_html = html.escape(cap)
         if svg is None:
             return f'<figure class="diag"><em>[falta {html.escape(fname)}]</em></figure>'
-        return f'<figure class="diag">{svg}<figcaption>📋 {cap_html}</figcaption></figure>'
+        block = f'<figure class="diag">{svg}<figcaption>📋 {cap_html}</figcaption></figure>'
+        if fname in ANIM:
+            block += anim_block(*ANIM[fname])
+        return block
     return re.sub(r'<img[^>]*>', repl, body)
 
 def strip_md_links(body):
@@ -92,6 +116,9 @@ th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-
 th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6;}
 figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.7rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
+figure.diag.anim{border-color:#1d6fb8;}
+figure.diag.anim video{display:block;width:100%;height:auto;border-radius:6px;background:#0c1b2a;}
+figure.diag.anim figcaption{color:#1d6fb8;font-weight:600;}
 figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
 .foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
 @media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
