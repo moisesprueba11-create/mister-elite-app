@@ -29,6 +29,7 @@ Bienvenido al curso de planificación de la pretemporada de **MISTER ÉLITE — 
 - **Mapa de decisión** — *empieza aquí:* elige tu plan según tus sesiones, semanas y recursos.
 - **6 planes por frecuencia** — microciclo tipo + reparto de cargas para dobles / 6 / 5 / 4 / 3 / 2 sesiones.
 - **Banco de 12 sesiones tipo** — cada una con su pizarra: tests, aeróbico, HIIT, RSA, velocidad, prevención, rondos, juego de posición, fases de juego y partido.
+- **Programación completa de 6 semanas** — la tabla día a día, sesión a sesión, con las tareas propuestas de toda la pretemporada.
 - **Herramientas de control** — plantillas de sRPE, ACWR, wellness y batería de tests.
 
 ---

@@ -21,6 +21,7 @@ DOCS = [
     ("ejercicios/05-plan-3-sesiones.md", "PLAN · 3 sesiones (amateur)"),
     ("ejercicios/06-plan-2-sesiones.md", "PLAN · 2 sesiones (base / recursos limitados)"),
     ("ejercicios/07-banco-sesiones.md", "BANCO DE 12 SESIONES TIPO"),
+    ("ejercicios/09-programacion-6-semanas.md", "PROGRAMACIÓN COMPLETA · 6 SEMANAS, SESIÓN A SESIÓN"),
     ("ejercicios/08-herramientas.md", "HERRAMIENTAS DE CONTROL DE CARGA"),
 ]
 

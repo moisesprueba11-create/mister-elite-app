@@ -22,6 +22,7 @@ PAGES = [
     ("ejercicios/05-plan-3-sesiones.md", "ejercicios/05-plan-3-sesiones.html", "Plan · 3 sesiones", "Planes"),
     ("ejercicios/06-plan-2-sesiones.md", "ejercicios/06-plan-2-sesiones.html", "Plan · 2 sesiones", "Planes"),
     ("ejercicios/07-banco-sesiones.md", "ejercicios/07-banco-sesiones.html", "Banco de 12 sesiones", "Práctica"),
+    ("ejercicios/09-programacion-6-semanas.md", "ejercicios/09-programacion-6-semanas.html", "Programación 6 semanas", "Práctica"),
     ("ejercicios/08-herramientas.md", "ejercicios/08-herramientas.html", "Herramientas de control", "Práctica"),
 ]
 
