@@ -119,7 +119,7 @@
 
 **Organización.**
 - Relación: **8 v 6** (+0 comodines).
-- Medidas: **40 × 32 m** dividido en **3 carriles verticales** (izq–centro–der) con conos; carriles ≈10,6 m.
+- Medidas: **40 × 32 m** dividido en **3 carriles verticales** (izq–centro–der) con conos; carriles ≈10,7 m.
 - Material: petos, conos de carril, balones, **2 mini-líneas de gol** (líneas de 6 m al fondo de cada carril lateral, no central).
 - Las "metas" son las líneas de fondo de los carriles laterales.
 
@@ -147,35 +147,36 @@
 
 ---
 
-### Tarea 20 — Relevos de progresión: 3 zonas, conquista de terreno
+### Tarea 20 — Pausa–aceleración: conquistar zona y romper a la siguiente (ritmo)
 
-**Objetivo.** Progresar conservando el terreno ganado (no retroceder); transferir la idea de "ganar metros" del rondo al partido.
+**Objetivo.** Gestionar el **ritmo (pausa–aceleración)** como herramienta de progresión: **pausar** para fijar y consolidar la zona conquistada y **acelerar** en el pase que rompe a la zona siguiente. Conservar el terreno ganado (no retroceder) sin caer en posesión estéril.
 
 **Organización.**
 - Relación: **6 v 6** + **3 comodines de zona** (ámbar): uno fijo en cada una de las 3 zonas, solo apoya, no roba.
 - Medidas: **45 × 30 m**, 3 zonas de 15 m (A–B–C).
-- Material: petos (2 colores + 3 ámbar), conos, balones.
-- Sin portería; objetivo = **estabilizar posesión en Zona C**.
+- Material: petos (2 colores + 3 ámbar), conos, balones, **silbato/cronómetro del coach** para señalar la ventana de aceleración.
+- Sin portería; objetivo = **estabilizar posesión en Zona C** rompiendo cada línea de zona en el momento justo.
 
 **Desarrollo.**
 - El equipo en posesión debe progresar A→B→C. **Regla del cerrojo de zona**: una vez que el balón llega controlado a B, NO puede volver a A (zona conquistada cerrada); igual de B a C.
-- El comodín de cada zona ofrece apoyo de pared para no perder la conquista.
+- En cada zona el equipo **pausa** (asegura con los apoyos y obliga a bascular a los rojos) y solo cuando un compañero se ofrece de cara en la zona siguiente, **acelera** el pase que rompe la línea. El comodín de cada zona ofrece apoyo de pared para sostener la pausa sin perder la conquista.
 - Punto = **3 pases consecutivos dentro de Zona C** tras haber conquistado A→B→C en orden.
 
 **Reglas / Provocaciones (medibles).**
-- Si el balón **vuelve a una zona ya conquistada**, posesión al rival (provoca compromiso con la progresión).
-- Conquistar las 3 zonas en **menos de 15 s** = punto doble.
+- **Pausa obligada:** mínimo **3 pases dentro de cada zona** (A y B) antes de romper a la siguiente → fuerza fijar antes de acelerar. Romper sin esos 3 pases no consolida la conquista (se repite la zona).
+- **Aceleración premiada:** si el pase que rompe a la zona siguiente llega **a un compañero de cara que progresa al primer toque**, esa rotura **vale doble**.
+- Si el balón **vuelve a una zona ya conquistada**, posesión al rival (compromiso con la progresión).
 - El comodín de zona da máximo **2 toques**.
 
 **Variantes (fácil → difícil).**
-1. Fácil: se permite 1 retroceso de zona por jugada.
-2. Media: comodines a 1 toque.
-3. Difícil: quitar el comodín de la Zona A (salida más difícil bajo presión).
+1. Fácil: solo el cerrojo de zona (sin el mínimo de pausa ni el reloj).
+2. Media: pausa de 3 pases + aceleración al primer toque (base).
+3. Difícil: ventana de aceleración con **tope de 3 s** desde que aparece el hombre libre de la zona siguiente (si no se rompe en ese tiempo, la ventana se cierra y hay que volver a fijar) → leer el momento exacto.
 
 **Puntos de coaching.**
-- Asegurar la conquista con el apoyo antes de buscar la siguiente zona.
-- Cuerpos orientados hacia delante en cada recepción de zona.
-- Decidir entre **proteger lo ganado** y **acelerar**: leer la presión.
+- **Pausa = fijar**, no dormirse: circular para atraer al rojo y abrir la ventana, no por circular.
+- **Acelerar cuando el rival bascula**: la señal es el hombre libre de cara en la zona siguiente.
+- Cambiar de marcha con el cuerpo ya orientado hacia delante; primer toque que rompe, no que para.
 
 **Duración / series.** 4 series de 4 min, 90 s descanso. ≈ 22 min.
 
@@ -527,7 +528,7 @@
 
 | Familia | Tareas | Nº |
 |---|---|---|
-| **F4 — Posesión con progresión y dirección** | 16 Las tres zonas · 17 Romper líneas por puertas · 18 Líneas de superación (jugador-puente) · 19 Cambio de orientación obligatorio · 20 Relevos de progresión (conquista de zona) | 5 |
+| **F4 — Posesión con progresión y dirección** | 16 Las tres zonas · 17 Romper líneas por puertas · 18 Líneas de superación (jugador-puente) · 19 Cambio de orientación obligatorio · 20 Pausa–aceleración (conquista de zona con ritmo) | 5 |
 | **F5 — Posesión para finalizar** | 21 Del control a la ocasión · 22 Posición y remate por centros · 23 Superioridad central a portero (4v4+3) · 24 Dos equipos, dos porterías direccional · 25 Superioridad efímera (3v2 en 6 s) | 5 |
 | **F6 — Posesión defensiva: recuperar y conservar** | 26 Contrapresión de 5 s · 27 Robar y conservar 6 pases · 28 Transición posesión↔presión (3 equipos) · 29 Recuperar y atacar la portería · 30 Bloque de reacción 8 s (síntesis) | 5 |
 
