@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Construye una versión HTML navegable del curso de Rondos a partir de los .md.
-Salida: curso-rondos/site/  (abrir site/index.html)."""
+"""Construye una versión HTML navegable del curso de Juego de posición a partir de los .md.
+Salida: curso-posesion/site/  (abrir site/index.html)."""
 import os, re, shutil, html
 import markdown
 
@@ -11,16 +11,16 @@ SITE = os.path.join(ROOT, "site")
 PAGES = [
     ("README.md", "index.html", "Inicio", None),
     ("modulos/01-fundamentos.md", "modulos/01-fundamentos.html", "M01 · Fundamentos", "Teoría"),
-    ("modulos/02-metodologia.md", "modulos/02-metodologia.html", "M02 · Metodología y diseño", "Teoría"),
+    ("modulos/02-mecanismos.md", "modulos/02-mecanismos.html", "M02 · Mecanismos", "Teoría"),
     ("modulos/03-del-rondo-al-juego.md", "modulos/03-del-rondo-al-juego.html", "M03 · Del rondo al juego", "Teoría"),
+    ("modulos/04-posesion-con-finalidad.md", "modulos/04-posesion-con-finalidad.html", "M04 · Posesión con finalidad", "Teoría"),
     ("ejercicios/00-plan-sesiones.md", "ejercicios/00-plan-sesiones.html", "Plan de sesiones", "Práctica"),
-    ("ejercicios/01-iniciacion-mantenimiento.md", "ejercicios/01-iniciacion-mantenimiento.html", "F1 · Iniciación (R1–7)", "Práctica"),
-    ("ejercicios/02-presion-recuperacion.md", "ejercicios/02-presion-recuperacion.html", "F2 · Presión (R8–14)", "Práctica"),
-    ("ejercicios/03-posicionales-orientacion.md", "ejercicios/03-posicionales-orientacion.html", "F3 · Posicionales (R15–21)", "Práctica"),
-    ("ejercicios/04-lineas-comodines.md", "ejercicios/04-lineas-comodines.html", "F4 · Líneas y comodines (R22–28)", "Práctica"),
-    ("ejercicios/05-finalizacion.md", "ejercicios/05-finalizacion.html", "F5 · Finalización (R29–35)", "Práctica"),
-    ("ejercicios/06-competitivos.md", "ejercicios/06-competitivos.html", "F6 · Competitivos (R36–43)", "Práctica"),
-    ("ejercicios/07-ludicos-calentamiento.md", "ejercicios/07-ludicos-calentamiento.html", "F7 · Lúdicos (R44–50)", "Práctica"),
+    ("ejercicios/01-rondos-posicionales.md", "ejercicios/01-rondos-posicionales.html", "F1 · Rondos posicionales (T1–5)", "Práctica"),
+    ("ejercicios/02-juegos-posicion.md", "ejercicios/02-juegos-posicion.html", "F2 · Juegos de posición (T6–10)", "Práctica"),
+    ("ejercicios/03-superioridades.md", "ejercicios/03-superioridades.html", "F3 · Superioridades (T11–15)", "Práctica"),
+    ("ejercicios/04-progresion.md", "ejercicios/04-progresion.html", "F4 · Progresión (T16–20)", "Práctica"),
+    ("ejercicios/05-finalizacion.md", "ejercicios/05-finalizacion.html", "F5 · Finalización (T21–25)", "Práctica"),
+    ("ejercicios/06-posesion-defensiva.md", "ejercicios/06-posesion-defensiva.html", "F6 · Posesión defensiva (T26–30)", "Práctica"),
     ("graficos/PEDIDOS.md", "graficos/PEDIDOS.html", "Índice de diagramas", "Recursos"),
 ]
 
@@ -38,7 +38,7 @@ def build_nav(current_out, prefix):
             order.append(key)
         sections[key].append((out, title))
     parts = ['<nav class="side">']
-    parts.append(f'<a class="brand" href="{prefix}index.html">⚽ Rondos</a>')
+    parts.append(f'<a class="brand" href="{prefix}index.html">⚽ Juego de posición</a>')
     for sec in order:
         parts.append(f'<div class="sec-title">{html.escape(sec)}</div>')
         parts.append('<ul>')
@@ -82,7 +82,7 @@ PAGE_TMPL = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} · Rondos</title>
+<title>{title} · Juego de posición</title>
 <link rel="stylesheet" href="{prefix}assets/style.css">
 </head>
 <body>
@@ -92,7 +92,7 @@ PAGE_TMPL = """<!DOCTYPE html>
 <main class="content">
 <div class="content-inner">
 {body}
-<footer class="foot">Curso "Rondos: el corazón del entrenamiento" · MISTER ÉLITE — Moisés Díaz</footer>
+<footer class="foot">Curso "Juego de posición: dominar con el balón" · MISTER ÉLITE — Moisés Díaz</footer>
 </div>
 </main>
 </div>
@@ -175,7 +175,7 @@ def main():
         prefix = prefix_for(out)
         if out == "index.html":
             body = (f'<img class="hero" src="{prefix}graficos/portada.svg" '
-                    f'alt="Rondos: el corazón del entrenamiento · MISTER ÉLITE">' + body)
+                    f'alt="Juego de posición: dominar con el balón · MISTER ÉLITE">' + body)
         page = PAGE_TMPL.format(title=html.escape(title), prefix=prefix,
                                 nav=build_nav(out, prefix), body=body)
         out_path = os.path.join(SITE, out)

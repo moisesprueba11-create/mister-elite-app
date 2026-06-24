@@ -1,0 +1,1552 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego de posición: dominar con el balón · MISTER ÉLITE</title><style>
+:root{--bg:#f5f4f0;--ink:#1a1a18;--dark:#15202b;--muted:#6b6b66;--line:#e3e1da;--accent:#1d6fb8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.layout{display:flex;}
+.side{width:280px;flex-shrink:0;background:var(--dark);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.4rem 0;}
+.side .brand{display:block;font-size:17px;font-weight:800;color:#fff;text-decoration:none;padding:0 1.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:.4rem;}
+.side .brand small{display:block;font-size:11px;font-weight:600;color:#f7c948;letter-spacing:1px;margin-top:2px;}
+.side .sec{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);padding:.9rem 1.4rem .3rem;}
+.side a.nav{display:block;padding:.45rem 1.4rem;color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;border-left:3px solid transparent;}
+.side a.nav:hover{color:#fff;background:rgba(255,255,255,.06);}
+.content{flex:1;min-width:0;display:flex;justify-content:center;}
+.inner{max-width:840px;width:100%;padding:2.4rem 2rem 5rem;}
+section{scroll-margin-top:1rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:2.5rem;}
+section:first-of-type{border-top:none;margin-top:0;}
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:50;background:var(--dark);color:#fff;border:none;font-size:20px;width:42px;height:42px;border-radius:8px;cursor:pointer;}
+img.hero{display:block;width:100%;height:auto;border-radius:12px;margin:0 0 2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+h1{font-size:30px;line-height:1.2;margin:.2rem 0 1rem;letter-spacing:-.02em;}
+h2{font-size:22px;margin:1.8rem 0 .7rem;padding-bottom:.3rem;border-bottom:2px solid var(--line);}
+h3{font-size:17px;margin:1.3rem 0 .4rem;}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:1rem 0 .3rem;}
+p{margin:.55rem 0;} ul,ol{margin:.4rem 0 .8rem 1.4rem;} li{margin:.2rem 0;}
+a{color:var(--accent);} strong{color:#111;}
+code{background:#ecebe6;padding:.1em .35em;border-radius:4px;font-size:.9em;}
+blockquote{border-left:4px solid var(--accent);background:#eef4fa;padding:.7rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;color:#33485c;}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:14px;display:block;overflow-x:auto;}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;}
+th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6;}
+figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.7rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
+figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+@media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
+ .side.open{transform:translateX(0);} #menu-btn{display:block;} .inner{padding:4rem 1.1rem 3rem;} h1{font-size:24px;}}
+</style></head><body>
+<button id="menu-btn">☰</button>
+<div class="layout"><nav class="side"><a class="brand" href="#inicio">⚽ Juego de posición<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>
+<div class="sec">Curso</div>
+<a class="nav" href="#inicio">Inicio</a>
+<div class="sec">Teoría</div>
+<a class="nav" href="#m01">M01 · Fundamentos</a>
+<a class="nav" href="#m02">M02 · Mecanismos</a>
+<a class="nav" href="#m03">M03 · Del rondo al juego</a>
+<a class="nav" href="#m04">M04 · Posesión con finalidad</a>
+<div class="sec">Práctica</div>
+<a class="nav" href="#plan">Plan de sesiones</a>
+<a class="nav" href="#f1">F1 · Rondos posicionales (T1–5)</a>
+<a class="nav" href="#f2">F2 · Juegos de posición (T6–10)</a>
+<a class="nav" href="#f3">F3 · Superioridades (T11–15)</a>
+<a class="nav" href="#f4">F4 · Progresión (T16–20)</a>
+<a class="nav" href="#f5">F5 · Finalización (T21–25)</a>
+<a class="nav" href="#f6">F6 · Posesión defensiva (T26–30)</a></nav>
+<main class="content"><div class="inner"><section id="inicio"><div class="hero"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#0c1b2a"/><stop offset="0.55" stop-color="#0f2438"/><stop offset="1" stop-color="#08131f"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c948"/><stop offset="1" stop-color="#e0a526"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.46" r="0.6"><stop offset="0" stop-color="#1d6fb8" stop-opacity="0.35"/><stop offset="1" stop-color="#1d6fb8" stop-opacity="0"/></radialGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f7c948"/></marker>
+  </defs>
+  <rect width="794" height="1123" fill="url(#bg)"/><rect width="794" height="1123" fill="url(#glow)"/>
+
+  <!-- cuadrícula de juego de posición (carriles + líneas) -->
+  <g opacity="0.9">
+    <rect x="150" y="600" width="494" height="430" rx="10" fill="#1f7a36" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+    <g stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5">
+      <line x1="248.8" y1="600" x2="248.8" y2="1030"/><line x1="347.6" y1="600" x2="347.6" y2="1030"/>
+      <line x1="446.4" y1="600" x2="446.4" y2="1030"/><line x1="545.2" y1="600" x2="545.2" y2="1030"/>
+      <line x1="150" y1="743" x2="644" y2="743"/><line x1="150" y1="886" x2="644" y2="886"/>
+    </g>
+    <!-- pases que rompen líneas -->
+    <g stroke="#f7c948" stroke-width="2.4" stroke-dasharray="7 6" opacity="0.85" marker-end="url(#ar)" fill="none">
+      <line x1="300" y1="965" x2="397" y2="820"/>
+      <line x1="397" y1="800" x2="500" y2="690"/>
+    </g>
+    <!-- defensores -->
+    <circle cx="350" cy="812" r="19" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/>
+    <circle cx="445" cy="812" r="19" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/>
+    <!-- poseedores en carriles -->
+    <g font-size="0">
+      <circle cx="300" cy="965" r="18" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="200" cy="880" r="18" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="595" cy="880" r="18" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+      <circle cx="500" cy="690" r="18" fill="#0d3c75" stroke="#1d6fb8" stroke-width="2.5"/>
+    </g>
+    <!-- HOMBRE LIBRE entre líneas (resaltado) -->
+    <circle cx="397" cy="810" r="22" fill="#26c6da" stroke="#f7c948" stroke-width="3"/>
+    <text x="397" y="850" font-size="13" font-weight="800" fill="#f7c948" text-anchor="middle">hombre libre</text>
+    <!-- balón -->
+    <circle cx="312" cy="958" r="7.5" fill="#fafafa" stroke="#222" stroke-width="1.4"/>
+  </g>
+
+  <rect x="0" y="0" width="794" height="8" fill="url(#gold)"/>
+  <g transform="translate(64,92)">
+    <rect x="0" y="0" width="46" height="46" rx="10" fill="url(#gold)"/>
+    <text x="23" y="32" font-size="28" font-weight="900" fill="#0c1b2a" text-anchor="middle">ME</text>
+    <text x="62" y="22" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="3">MISTER ÉLITE</text>
+    <text x="62" y="41" font-size="12.5" font-weight="600" fill="#f7c948" letter-spacing="2">ACADEMIA DE ENTRENADORES · MOISÉS DÍAZ</text>
+  </g>
+  <g transform="translate(64,295)">
+    <text x="0" y="0" font-size="16" font-weight="700" fill="#7fd0ff" letter-spacing="5">CURSO DE METODOLOGÍA</text>
+    <text x="0" y="70" font-size="58" font-weight="900" fill="#ffffff" letter-spacing="-1">JUEGO DE</text>
+    <text x="0" y="128" font-size="58" font-weight="900" fill="#ffffff" letter-spacing="-1">POSICIÓN</text>
+    <text x="0" y="172" font-size="24" font-weight="800" fill="#f7c948">dominar con el balón</text>
+    <line x1="4" y1="196" x2="120" y2="196" stroke="#f7c948" stroke-width="4"/>
+    <text x="0" y="232" font-size="17" font-weight="500" fill="#cdd9e5">Superioridades · hombre libre · tercer hombre</text>
+  </g>
+  <g font-family="Segoe UI,Arial">
+    <g transform="translate(470,330)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">30</text><text x="18" y="66" font-size="12" fill="#cdd9e5">tareas de campo</text></g>
+    <g transform="translate(632,330)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">4</text><text x="18" y="66" font-size="12" fill="#cdd9e5">módulos de teoría</text></g>
+    <g transform="translate(470,422)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="30" font-weight="900" fill="#f7c948">ANIM</text><text x="18" y="66" font-size="12" fill="#cdd9e5">conceptos animados</text></g>
+    <g transform="translate(632,422)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">6</text><text x="18" y="66" font-size="12" fill="#cdd9e5">familias de tarea</text></g>
+  </g>
+  <rect x="0" y="1080" width="794" height="43" fill="#08131f"/>
+  <text x="64" y="1107" font-size="13" font-weight="600" fill="#8aa0b6">Rondos · Superioridades · Progresión · Finalización</text>
+  <text x="730" y="1107" font-size="13" font-weight="800" fill="#f7c948" text-anchor="end">MISTER ÉLITE</text>
+  <rect x="0" y="1115" width="794" height="8" fill="url(#gold)"/>
+</svg></div><h1>Juego de posición: dominar con el balón</h1>
+<p><strong>MISTER ÉLITE — Moisés Díaz</strong></p>
+<p>Curso de metodología para entrenar el <strong>juego de posición</strong>: ocupar racionalmente el espacio, crear superioridades y circular el balón con la intención de progresar, finalizar y, al perderlo, recuperarlo de inmediato. Filosofía del curso: <strong>poca teoría, mucha aplicación práctica</strong>.</p>
+<hr />
+<h2>A quién va dirigido</h2>
+<p>A entrenadores de fútbol (formación y rendimiento) que quieran <strong>enseñar a su equipo a dominar con el balón</strong> de verdad: no a "tener" posesión, sino a usarla para mandar en el partido. Útil desde categorías de formación avanzada hasta sénior. No exige un sistema concreto: es una <strong>metodología transferible</strong> a cualquier modelo de juego.</p>
+<h2>Objetivos del curso</h2>
+<p>Al terminar, el entrenador será capaz de:</p>
+<ul>
+<li>Distinguir <strong>juego de posición</strong> de <strong>posesión estéril</strong> y medir la posesión por su finalidad, no por el número de pases.</li>
+<li>Reconocer y provocar las <strong>tres superioridades</strong> (numérica, posicional, cualitativa) y encontrar al <strong>hombre libre</strong>.</li>
+<li>Aplicar la <strong>ocupación racional del espacio</strong> (5 carriles + alturas, regla "máx. 2 por carril, no 3 en la misma línea").</li>
+<li>Entrenar los <strong>mecanismos</strong> clave: hombre libre, atraer-cambiar, tercer hombre, pase entre líneas, perfil y orientación, ritmo (pausa-aceleración), conducir vs pasar.</li>
+<li>Diseñar y progresar la cadena <strong>rondo → juego de posición → partido</strong>, y coachearla con criterio (qué corregir, cuándo intervenir, freeze por excepción).</li>
+<li>Trabajar la <strong>posesión con finalidad</strong>: progresar, finalizar, proteger el balón y aplicar la <strong>contrapresión</strong> tras pérdida.</li>
+<li>Construir microciclos integrando las 30 tareas del banco.</li>
+</ul>
+<h2>Cómo está organizado</h2>
+<p>El curso se divide en <strong>4 módulos de teoría</strong> (concisos, aplicados) y <strong>6 familias de ejercicios</strong> (30 tareas en total) más un <strong>plan de sesiones</strong>. Cada tarea trae su pizarra; cada concepto teórico clave, su diagrama.</p>
+<pre><code>TEORÍA (por qué y cómo)          PRÁCTICA (banco de 30 tareas)
+01 Fundamentos                   F1 Rondos posicionales (T1–5)
+02 Mecanismos               →    F2 Juegos de posición (T6–10)
+03 Del rondo al juego            F3 Superioridades / hombre libre (T11–15)
+04 Posesión con finalidad        F4 Progresión y dirección (T16–20)
+                                 F5 Posesión para finalizar (T21–25)
+                                 F6 Posesión defensiva (T26–30)
+</code></pre>
+<hr />
+<h2>Índice</h2>
+<h3>Teoría</h3>
+<ul>
+<li><a href="#m01">Módulo 01 · Fundamentos del juego de posición</a></li>
+<li><a href="#m02">Módulo 02 · Mecanismos del juego de posición</a></li>
+<li><a href="#m03">Módulo 03 · Del rondo al juego de posición (y al partido)</a></li>
+<li><a href="#m04">Módulo 04 · Posesión con finalidad</a></li>
+</ul>
+<h3>Práctica</h3>
+<ul>
+<li><a href="#plan">Plan de sesiones · 2 microciclos</a></li>
+<li><a href="#f1">Familia 1 · Rondos posicionales y de orientación (T1–5)</a></li>
+<li><a href="#f2">Familia 2 · Juegos de posición clásicos (T6–10)</a></li>
+<li><a href="#f3">Familia 3 · Crear y usar superioridades / hombre libre (T11–15)</a></li>
+<li><a href="#f4">Familia 4 · Posesión con progresión y dirección (T16–20)</a></li>
+<li><a href="#f5">Familia 5 · Posesión para finalizar (T21–25)</a></li>
+<li><a href="#f6">Familia 6 · Posesión defensiva: recuperar y conservar (T26–30)</a></li>
+</ul>
+<h3>Recursos</h3>
+<ul>
+<li>Índice de diagramas (PEDIDOS)</li>
+</ul>
+<hr />
+<h2>Leyenda de la notación</h2>
+<p>Notación única para todas las pizarras del curso.</p>
+<p><strong>Fichas (jugadores):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔵 <strong>Azul</strong></td>
+<td><strong>Poseedores</strong> — el equipo que tiene el balón.</td>
+</tr>
+<tr>
+<td>🔴 <strong>Rojo</strong></td>
+<td><strong>Defensores / recuperadores</strong> — el equipo que presiona o roba.</td>
+</tr>
+<tr>
+<td>🟠 <strong>Ámbar</strong></td>
+<td><strong>Comodines / apoyos neutrales</strong> — juegan SIEMPRE con quien tiene el balón.</td>
+</tr>
+<tr>
+<td>🔷 <strong>Azul-cian</strong></td>
+<td><strong>2.º equipo poseedor</strong> — en juegos a tres equipos o que rotan posesión.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Espacio y marcas:</strong></p>
+<ul>
+<li><strong>Conos</strong> → delimitan el campo, las zonas, los carriles, las puertas y las mini-porterías.</li>
+<li><strong>Carriles</strong> → 5 franjas verticales (banda izq · pasillo interior izq · centro · pasillo interior der · banda der). Los pasillos interiores (2 y 4) son las "zonas de oro" para recibir entre líneas.</li>
+<li><strong>Líneas / alturas</strong> → franjas horizontales (defensa · medio · ataque) que hacen visibles las líneas defensivas que romper.</li>
+</ul>
+<p><strong>Flechas:</strong></p>
+<ul>
+<li><strong>Pase</strong> → amarillo discontinuo.</li>
+<li><strong>Conducción</strong> → azul.</li>
+<li><strong>Desmarque / apoyo</strong> → blanco.</li>
+<li><strong>Presión</strong> (defensor) → rojo.</li>
+<li>Las secuencias se numeran <strong>1 – 2 – 3</strong> para indicar el orden de la jugada.</li>
+</ul>
+<p>Cada pizarra lleva al pie la marca <strong>MISTER ÉLITE — Moisés Díaz</strong>.</p>
+<hr />
+<h2>Glosario de conceptos</h2>
+<ul>
+<li><strong>Superioridad numérica</strong> — tener <strong>más jugadores</strong> que el rival en la zona del balón (el clásico +1). Garantiza salida limpia: siempre sobra alguien.</li>
+<li><strong>Superioridad posicional</strong> — estar <strong>mejor situados</strong> que el rival (entre líneas, escalonados, con mejor orientación), aunque haya igualdad numérica. Un pase que la explota salta varios rivales de golpe.</li>
+<li><strong>Superioridad cualitativa</strong> — generar un <strong>1v1 a nuestro favor</strong> (nuestro jugador es claramente superior al defensor). Se busca aislando al jugador de calidad y cambiándole el balón con espacio.</li>
+<li><strong>Hombre libre</strong> — el jugador <strong>sin marca directa</strong> que sobra respecto a la presión del rival. Encontrarlo y usarlo es el objetivo nº 1 de cada acción. Suele estar en el lado contrario a la presión.</li>
+<li><strong>Tercer hombre</strong> — combinación de <strong>tres jugadores</strong> para alcanzar a un compañero (el tercero) que el primer pasador no podía encontrar directamente: A juega a B para que B encuentre a C, que aparece libre mientras el balón viaja.</li>
+<li><strong>Atraer para liberar (fijar y cambiar)</strong> — provocar la presión del rival en una zona (fijar) para <strong>abrir el espacio contrario</strong> y cambiar el juego allí, donde queda superioridad o un 1v1.</li>
+<li><strong>Pase entre líneas</strong> — pase introducido en el <strong>espacio entre dos líneas rivales</strong> (típicamente medios y defensas) a un compañero orientado. El pase que más rompe: supera una línea entera.</li>
+<li><strong>Ocupación racional del espacio</strong> — repartir a los jugadores por <strong>carriles y alturas</strong> con la regla "máx. 2 por carril, no 3 en la misma línea", para dibujar triángulos y rombos y tener siempre 3+ líneas de pase.</li>
+<li><strong>Ritmo (pausa-aceleración)</strong> — gestionar la velocidad del juego: <strong>pausar</strong> para fijar y leer, <strong>acelerar</strong> justo cuando se abre la ventaja.</li>
+<li><strong>Posesión estéril</strong> — tener mucho el balón <strong>sin progresar ni amenazar</strong>: circulación horizontal y hacia atrás que no desordena al rival.</li>
+<li><strong>Contrapresión (counter-pressing)</strong> — presionar <strong>de inmediato</strong> tras perder el balón para recuperarlo donde se perdió, aprovechando que el rival está mal orientado.</li>
+</ul>
+<hr />
+<p><em>Curso "Juego de posición: dominar con el balón" · MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m01"><h1>Módulo 01 · Fundamentos del juego de posición</h1>
+<blockquote>
+<p>Qué es el juego de posición (y qué no es) · las tres superioridades · ocupación racional del espacio · por qué funciona.</p>
+</blockquote>
+<hr />
+<h2>1. Qué es el juego de posición</h2>
+<p>El <strong>juego de posición</strong> es un modelo de organización del equipo con balón cuyo objetivo no es <em>tener</em> el balón, sino <strong>usarlo para progresar generando superioridades</strong>. Se basa en <strong>ocupar el espacio de forma racional y estable</strong> (jugadores repartidos en anchura, profundidad y entre líneas) de modo que el poseedor disponga siempre de <strong>varias líneas de pase orientadas hacia adelante</strong> y el equipo conserve una estructura que permita <strong>atacar bien y, tras la pérdida, recuperar rápido</strong>.</p>
+<blockquote>
+<p><strong>Definición de trabajo:</strong> juego de posición = ocupar racionalmente el espacio + crear superioridades + circular el balón con la intención de avanzar y rematar, manteniendo una estructura que facilite la recuperación inmediata.</p>
+</blockquote>
+<p>Tres ideas siempre presentes:</p>
+<ul>
+<li><strong>Posición antes que balón.</strong> Primero me sitúo bien (perfil, distancia, altura), después recibo. La estructura es estable, no depende de dónde va el balón.</li>
+<li><strong>El balón se mueve para mover al rival.</strong> Cada pase busca desordenar al adversario, no "pasar por pasar".</li>
+<li><strong>Finalidad.</strong> Toda circulación apunta a progresar → finalizar, y a proteger (contrapresión tras pérdida).</li>
+</ul>
+<h3>Juego de posición vs posesión estéril</h3>
+<p>La <strong>posesión estéril</strong> es tener mucho el balón <strong>sin progresar ni amenazar</strong>: circulación horizontal y hacia atrás que no rompe líneas ni crea ocasión. Domina en la estadística (alto % de posesión) pero <strong>no genera control real</strong>: no desorganiza al rival.</p>
+<p><figure class="diag"><em>[falta teoria-01-jdp-vs-esteril.svg]</em></figure></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Juego de posición</th>
+<th>Posesión estéril</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Objetivo del pase</strong></td>
+<td>Mover al rival y progresar</td>
+<td>Conservar / no perder</td>
+</tr>
+<tr>
+<td><strong>Dirección dominante</strong></td>
+<td>Vertical y diagonal (rompe líneas)</td>
+<td>Horizontal y hacia atrás</td>
+</tr>
+<tr>
+<td><strong>Ocupación</strong></td>
+<td>Racional: anchura + profundidad + entre líneas</td>
+<td>Cerca del balón, sin profundidad</td>
+</tr>
+<tr>
+<td><strong>Superioridades</strong></td>
+<td>Se buscan y se explotan</td>
+<td>No se generan o no se usan</td>
+</tr>
+<tr>
+<td><strong>Tras pérdida</strong></td>
+<td>Estructura permite contrapresión</td>
+<td>Equipo desordenado, vulnerable</td>
+</tr>
+<tr>
+<td><strong>Métrica útil</strong></td>
+<td>Pases que rompen línea, recepciones entre líneas</td>
+<td>% de posesión a secas</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Regla de oro:</strong> la posesión es buena si, cuando termina, el equipo está <strong>más cerca de la portería rival</strong> o ha obligado al rival a defender peor. Si el balón vuelve siempre al punto de partida sin mover al rival, es estéril.</p>
+</blockquote>
+<hr />
+<h2>2. Las tres superioridades</h2>
+<p>Crear y aprovechar superioridades es el <strong>fin táctico</strong> del juego de posición.</p>
+<h3>Numérica — <em>somos más aquí</em></h3>
+<p><figure class="diag"><em>[falta teoria-02-superioridad-numerica.svg]</em></figure></p>
+<p>Tener <strong>más atacantes que defensores</strong> en la zona del balón (el clásico <strong>+1</strong>). Garantiza salida limpia y obliga al rival a elegir a quién marcar: siempre queda <strong>alguien libre</strong>. Se crea con el portero como jugador de campo, un mediocentro que baja entre centrales, o atrayendo presión a un lado para que el contrario quede sobrado.</p>
+<h3>Posicional — <em>estamos mejor colocados</em></h3>
+<p><figure class="diag"><em>[falta teoria-03-superioridad-posicional.svg]</em></figure></p>
+<p>Estar <strong>mejor situado</strong> que el rival, aprovechando los <strong>espacios entre líneas</strong> y el <strong>hombre libre</strong>. Puede darse incluso en igualdad numérica (4v4) si uno de los nuestros recibe <strong>a espaldas de una línea rival, orientado y sin marca</strong>. Un solo pase que lo encuentra equivale a superar a 3-4 rivales.</p>
+<h3>Cualitativa — <em>ganamos el duelo</em></h3>
+<p><figure class="diag"><em>[falta teoria-04-superioridad-cualitativa.svg]</em></figure></p>
+<p>Generar un <strong>1v1 a nuestro favor</strong> (un extremo veloz contra un lateral lento, p. ej.). Se crea <strong>aislando</strong> al jugador de calidad: dar amplitud para dejarlo solo frente a su par, fijar al resto en el centro y <strong>cambiar</strong> el balón a su banda con espacio para encarar.</p>
+<blockquote>
+<p><strong>Síntesis:</strong> el juego de posición busca <strong>encadenarlas</strong>: muevo el balón para crear una, y si el rival la tapa, aparece otra. El rival siempre llega un paso tarde.</p>
+</blockquote>
+<hr />
+<h2>3. Ocupación racional del espacio</h2>
+<h3>Los 5 carriles + las alturas</h3>
+<p><figure class="diag"><em>[falta teoria-05-cinco-carriles.svg]</em></figure></p>
+<p>El campo se divide a lo ancho en <strong>5 carriles verticales</strong>: banda izq · <strong>pasillo interior izq</strong> · centro · <strong>pasillo interior der</strong> · banda der. Y a lo largo en <strong>líneas/alturas</strong> (defensa, medio, ataque). Los <strong>pasillos interiores (2 y 4)</strong> son zonas de oro: desde ahí se recibe entre líneas y se ataca en diagonal.</p>
+<h3>La regla: "no más de 2 por carril, no 3 en la misma línea"</h3>
+<ul>
+<li><strong>Máx. 2 por carril vertical:</strong> evita amontonarse, mantiene anchura y estira al rival.</li>
+<li><strong>No 3 en la misma línea horizontal:</strong> garantiza <strong>escalonamiento</strong> (jugadores a distintas alturas) → siempre hay apoyo por delante y por detrás, y se crean <strong>líneas de pase diagonales</strong> (mejores que las horizontales).</li>
+<li>Resultado: el equipo dibuja <strong>triángulos y rombos</strong>; cada poseedor tiene <strong>3+ opciones</strong> y el balón circula sin callejones.</li>
+</ul>
+<h3>Ocupar para FIJAR y para APOYAR</h3>
+<ul>
+<li><strong>Fijar:</strong> un jugador en banda o en profundidad <strong>obliga a un rival a vigilarlo</strong> aunque no reciba, y abre espacio para otros (un extremo a la cal fija al lateral y libera el medio-espacio).</li>
+<li><strong>Apoyar:</strong> estar bien situado da al poseedor <strong>soluciones reales</strong> (apoyo al pie, profundidad por fuera, descarga por detrás). Sin ocupación correcta no hay a quién pasar → posesión estéril.</li>
+</ul>
+<blockquote>
+<p>Regla práctica: <em>ancho cuando atacamos, estrecho cuando defendemos.</em> La amplitud máxima la dan extremos a la cal; la profundidad, un jugador siempre en la última línea que fija a la defensa.</p>
+</blockquote>
+<hr />
+<h2>4. Por qué funciona</h2>
+<p>No es estética: produce ventajas concretas.</p>
+<ol>
+<li><strong>Da control del partido.</strong> Con triángulos y buena ocupación, el equipo conserva el balón <strong>progresando</strong>, dicta el ritmo y fatiga al rival.</li>
+<li><strong>Genera superioridades por diseño.</strong> La estructura hace que aparezcan sistemáticamente: si tapan una, expongo otra.</li>
+<li><strong>Facilita la contrapresión.</strong> Como los jugadores están <strong>cerca, escalonados y repartidos</strong>, al perder el balón hay varios a pocos metros para presionar al instante, y el rival está mal posicionado para salir. <strong>Atacar ordenado = recuperar ordenado.</strong></li>
+<li><strong>Reduce el riesgo.</strong> Tener siempre apoyos y un hombre libre baja la probabilidad de pérdida y evita quedar partido.</li>
+</ol>
+<blockquote>
+<p><strong>Mensaje para el alumno:</strong> atacamos bien posicionados no solo para meter gol, sino para <strong>no concederlo</strong>. Orden con balón = orden sin balón.</p>
+</blockquote>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El objetivo no es tener el balón, es <strong>usarlo para progresar</strong> creando superioridades.</li>
+<li><strong>Posición antes que balón</strong>; el pase mueve al rival, no se da por darlo.</li>
+<li>Tres superioridades: <strong>numérica</strong> (somos más), <strong>posicional</strong> (mejor colocados / entre líneas), <strong>cualitativa</strong> (ganamos el 1v1). Se encadenan.</li>
+<li>Ocupación racional: <strong>5 carriles + alturas</strong>, "máx. 2 por carril, no 3 en línea" → triángulos y siempre 3+ opciones.</li>
+<li>El juego de posición es <strong>la mejor defensa</strong>: la estructura que ataca bien recupera rápido.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li><strong>Confundir posesión con dominio:</strong> tocar mucho sin progresar ni amenazar. Medir por pases que rompen línea, no por toques.</li>
+<li><strong>Amontonarse</strong> en el carril del balón: facilita la presión y elimina líneas de pase. Aplicar la regla de ocupación.</li>
+<li><strong>Falta de profundidad:</strong> nadie amenaza la espalda → el rival sube y comprime. Tener siempre un jugador en la última línea.</li>
+<li><strong>Buscar la posesión por la posesión</strong> sin finalidad: olvidar que toda circulación apunta a progresar, finalizar y proteger.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m02"><h1>Módulo 02 · Mecanismos del juego de posición</h1>
+<blockquote>
+<p>Las herramientas concretas con las que se ejecuta el juego de posición. Para cada una: qué es, cómo se hace y cuándo usarla.</p>
+</blockquote>
+<hr />
+<h2>1. El hombre libre (y cómo encontrarlo)</h2>
+<p><figure class="diag"><em>[falta teoria-06-hombre-libre.svg]</em></figure></p>
+<p><strong>Qué es.</strong> El jugador <strong>sin marca directa</strong> que, por la estructura, queda <strong>sobrante</strong> respecto a la presión rival. Es la consecuencia natural de una superioridad bien creada. Encontrarlo y usarlo es <strong>el objetivo nº 1 de cada acción</strong>.</p>
+<p><strong>Cómo encontrarlo:</strong></p>
+<ul>
+<li><strong>Contar líneas.</strong> Si presionan con 2 y salimos con 3, <strong>uno sobra</strong>: ese es el libre. Identificarlo <strong>antes de recibir</strong> (escaneo).</li>
+<li><strong>Mirar el lado opuesto a la presión.</strong> El rival no cubre todo; el libre suele estar <strong>lejos del balón</strong>.</li>
+<li><strong>Es dinámico:</strong> al circular el balón, el sobrante cambia. Hay que leerlo en tiempo real.</li>
+</ul>
+<p><strong>Cuándo usarlo.</strong> Siempre que exista. Si está <strong>orientado y puede progresar</strong>, se le busca de inmediato (vale un cambio de orientación). Si está de espaldas o presionado, primero se mueve el balón para reubicarlo.</p>
+<blockquote>
+<p>Coaching: "¿Quién sobra?" en cada secuencia. Si nadie lo identifica, la posesión se vuelve estéril.</p>
+</blockquote>
+<hr />
+<h2>2. Atraer para liberar (fijar y cambiar)</h2>
+<p><figure class="diag"><em>[falta teoria-07-atraer-cambiar.svg]</em></figure></p>
+<p><strong>Qué es.</strong> Provocar la presión en una zona (normalmente un lado) para <strong>abrir el espacio contrario</strong> y cambiar allí el juego. Convierte la presión rival en ventaja.</p>
+<p><strong>Cómo se hace:</strong></p>
+<ol>
+<li><strong>Fijar/atraer:</strong> circular en un lado con apoyos cercanos para que el rival <strong>bascule</strong> y concentre jugadores ahí.</li>
+<li><strong>Liberar/cambiar:</strong> en cuanto el rival se ha desplazado, <strong>cambiar la orientación</strong> al lado contrario, donde hay superioridad o 1v1 con espacio.</li>
+<li>El cambio puede ser <strong>largo</strong> (al extremo a la cal) o <strong>escalonado</strong> por dentro vía el hombre libre.</li>
+</ol>
+<p><strong>Cuándo usarlo.</strong> Contra rivales que <strong>presionan o basculan en bloque</strong>. <strong>Cuándo NO:</strong> si el rival defiende muy abierto/pasivo, fijar no abre nada; mejor progresar por dentro.</p>
+<hr />
+<h2>3. Tercer hombre</h2>
+<p><figure class="diag"><em>[falta teoria-08-tercer-hombre.svg]</em></figure></p>
+<p><strong>Qué es.</strong> Combinación de <strong>tres jugadores</strong> para alcanzar a un compañero (el "tercero") que el pasador no podía encontrar directamente. A↔B sirve para que <strong>B encuentre a C</strong>.</p>
+<p><strong>Cómo se hace:</strong> A pasa a B (apoyo que recibe de espaldas o pivote); B, <strong>a un toque</strong>, filtra a C, que <strong>ataca el espacio</strong> entre líneas o la espalda de la defensa. Clave: C <strong>se mueve mientras el balón viaja A→B</strong> (sincronía); B juega de primeras.</p>
+<p><strong>Cuándo usarlo.</strong> Cuando el <strong>pase directo está tapado</strong> pero hay un apoyo intermedio. Recurso estrella contra presiones agresivas: el rival que salta a B deja libre a C.</p>
+<hr />
+<h2>4. Pase entre líneas</h2>
+<p><figure class="diag"><em>[falta teoria-09-pase-entre-lineas.svg]</em></figure></p>
+<p><strong>Qué es.</strong> El pase introducido en el <strong>espacio entre dos líneas rivales</strong> (típicamente medios y defensas). Es el pase que <strong>más rompe</strong>: salta una línea entera.</p>
+<p><strong>Cómo se hace:</strong> el receptor se sitúa en el <strong>medio-espacio</strong>, en el <strong>punto ciego</strong> del defensor, y temporiza; el pasador busca la <strong>ventana</strong> (hueco entre dos rivales) y juega <strong>firme y al pie correcto</strong> (el que deja al receptor orientado). Si no hay ventana, primero se mueve el balón.</p>
+<p><strong>Cuándo usarlo.</strong> Cuando hay un jugador <strong>libre y orientable</strong> entre líneas. <strong>Cuándo NO arriesgarlo:</strong> receptor de espaldas y muy vigilado en zona propia (pérdida peligrosa).</p>
+<hr />
+<h2>5. Perfil y orientación corporal</h2>
+<p><figure class="diag"><em>[falta teoria-10-perfil-orientacion.svg]</em></figure></p>
+<p><strong>Qué es.</strong> La <strong>postura al recibir</strong>: <strong>medio-girado / perfil abierto</strong> para controlar orientado hacia adelante y ver el máximo de campo. Convierte una recepción en progresión.</p>
+<p><strong>Cómo se hace:</strong> orientarse <strong>antes</strong> de que llegue el balón (cuerpo hacia la portería rival, no de cara al pasador); recibir con el <strong>pie más alejado</strong> del defensor y dar el primer toque <strong>hacia el espacio libre</strong>; <strong>escanear</strong> (2-3 vistazos) antes de recibir.</p>
+<p><strong>Cuándo usarlo.</strong> Siempre que se reciba de cara o de costado. Si se recibe de espaldas con un defensor pegado, no se fuerza el giro: se <strong>protege y descarga</strong>.</p>
+<blockquote>
+<p>Coaching: el primer toque ya es una decisión táctica. "Recibe abierto, mira antes".</p>
+</blockquote>
+<hr />
+<h2>6. Ritmo: pausa — aceleración</h2>
+<p><figure class="diag"><em>[falta teoria-11-ritmo-pausa-aceleracion.svg]</em></figure></p>
+<p><strong>Qué es.</strong> Gestionar la <strong>velocidad del juego</strong>: <strong>pausar</strong> (circular tranquilo, fijar, leer) para <strong>acelerar</strong> en el momento exacto en que se abre la ventaja. El balón cambia de marcha.</p>
+<p><strong>Cómo se hace:</strong> <strong>pausa</strong> = posesión paciente y segura para provocar al rival y leer dónde se abrirá el espacio; <strong>aceleración</strong> = cuando aparece el hombre libre / la ventana / el 1v1, <strong>velocidad máxima</strong> para rematar la ventaja antes de que el rival ajuste. La señal para acelerar la da <strong>el rival desordenado</strong>.</p>
+<p><strong>Cuándo usarlo.</strong> Pausa cuando no hay ventaja clara; acelera cuando aparece. Error típico: acelerar siempre (pérdidas) o pausar siempre (esterilidad).</p>
+<hr />
+<h2>7. Conducir vs pasar</h2>
+<p><strong>Qué es.</strong> La decisión entre <strong>conducir</strong> o <strong>pasar</strong>. El pase mueve el balón más rápido que cualquier jugada; pero <strong>conducir tiene una función táctica concreta: atraer y fijar</strong>.</p>
+<p><strong>Cuándo CONDUCIR:</strong> para <strong>fijar a un rival</strong> y obligarle a salir (libera a un compañero); cuando hay espacio por delante y nadie mejor situado; para <strong>ganar la línea</strong> y atraer una segunda presión.</p>
+<p><strong>Cuándo PASAR:</strong> cuando el pase progresa más que la conducción; bajo presión cercana; para mover al rival rápido (cambio de orientación).</p>
+<blockquote>
+<p><strong>Regla práctica:</strong> <em>conduzco para crear superioridad (atraer), paso para aprovecharla.</em> Conducir sin intención es un error.</p>
+</blockquote>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El <strong>hombre libre</strong> es el objetivo nº 1: se encuentra contando líneas y mirando el lado opuesto a la presión.</li>
+<li><strong>Atraer-cambiar</strong> convierte la presión del rival en ventaja; el <strong>tercer hombre</strong> supera al que salta a un apoyo.</li>
+<li>El <strong>pase entre líneas</strong> es la progresión más rentable; exige ventana y receptor orientado.</li>
+<li>El <strong>perfil</strong> convierte recepción en progresión: cuerpo abierto, mirar antes, primer toque al espacio.</li>
+<li>El <strong>ritmo</strong> es leer cuándo pausar (fijar) y cuándo acelerar (romper); se conduce para fijar, se pasa para aprovechar.</li>
+</ul>
+<h2>Errores comunes</h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Qué pasa</th>
+<th>Corrección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Posesión horizontal estéril</strong></td>
+<td>El balón va de lado a lado sin romper líneas.</td>
+<td>Buscar siempre un pase vertical/diagonal o al hombre libre.</td>
+</tr>
+<tr>
+<td><strong>Amontonarse</strong></td>
+<td>Se quitan espacio, facilitan la presión, no hay líneas limpias.</td>
+<td>"Máx. 2 por carril, no 3 en línea"; reocupar carriles vacíos.</td>
+</tr>
+<tr>
+<td><strong>Falta de profundidad</strong></td>
+<td>Nadie amenaza la espalda; el rival sube y comprime.</td>
+<td>Un jugador siempre en la última línea que fije a la defensa.</td>
+</tr>
+<tr>
+<td><strong>Recibir de espaldas sin necesidad</strong></td>
+<td>Se juega hacia atrás, no se progresa.</td>
+<td>Orientar el cuerpo antes de recibir; perfil abierto.</td>
+</tr>
+<tr>
+<td><strong>No identificar al hombre libre</strong></td>
+<td>Se desperdicia la superioridad creada.</td>
+<td>Escaneo + "¿quién sobra?"; jugar al lado contrario de la presión.</td>
+</tr>
+<tr>
+<td><strong>Acelerar/pausar a destiempo</strong></td>
+<td>Pérdidas o esterilidad.</td>
+<td>Leer al rival: acelerar cuando se desordena, pausar cuando hay equilibrio.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m03"><h1>Módulo 03 · Del rondo al juego de posición (y al partido)</h1>
+<blockquote>
+<p>La cadena de transferencia · cómo progresar y dar dirección a una posesión · cómo coachear el juego de posición.</p>
+</blockquote>
+<hr />
+<h2>1. La cadena de transferencia: rondo → juego de posición → partido</h2>
+<p>El error metodológico más común es tratar el rondo como un calentamiento lúdico aislado del partido. En realidad rondo, juego de posición y partido son <strong>tres escalones de la misma escalera de transferencia</strong>: cada uno conserva el problema táctico anterior y le añade una capa de realidad competitiva.</p>
+<p><figure class="diag"><em>[falta teoria-12-cadena-transferencia.svg]</em></figure></p>
+<pre><code>RONDO              JUEGO DE POSICIÓN          PARTIDO (reducido / 11)
+sin dirección  →   con dirección/porterías  →  con marcador y consecuencia
+técnica/decisión   estructura posicional      todo integrado + emoción
+</code></pre>
+<p>La regla que ordena la cadena es la <strong>representatividad</strong> (cuánto se parece la práctica a la competición). Se incrementa <strong>por capas</strong>, no de golpe.</p>
+<p><strong>Escalón 1 — Rondo.</strong> Posesión en superioridad clara (4v1, 5v2…) y <strong>sin dirección</strong>. Entrena con máxima densidad: <strong>velocidad técnica bajo presión real</strong>, <strong>perfil y "mirar antes de recibir"</strong>, lectura del 1.er defensor y del libre inmediato, tercer hombre elemental. Su límite: no entrena dirección, orientación al espacio ni finalización. Solo rondos = "tocar bonito" sin progresar.</p>
+<p><strong>Escalón 2 — Juego de posición.</strong> Coge el problema del rondo y le añade lo que le falta: <strong>dirección y orientación al espacio</strong>, mediante (1) <strong>porterías/zonas de progresión</strong>, (2) <strong>división en carriles y líneas</strong> (ocupación racional), (3) <strong>comodines posicionados</strong> que reproducen estructura de equipo. Aporta orientación hacia un objetivo, <strong>superioridad posicional</strong>, cambios de orientación y reconocimiento de líneas que romper. Es el <strong>escalón bisagra</strong>.</p>
+<p><strong>Escalón 3 — Partido.</strong> Dos equipos, dos porterías, <strong>marcador y consecuencia</strong>. Aporta oposición plena y bidireccional (transiciones reales, contrapresión en su contexto), finalización con portero y <strong>carga emocional</strong>. Su límite: como todo ocurre a la vez, es difícil aislar un detalle fino → se vuelve al rondo/JdP para pulir.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Rondo</th>
+<th>Juego de posición</th>
+<th>Partido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dirección</strong></td>
+<td>No</td>
+<td>Sí (a zona/portería)</td>
+<td>Sí (marcar)</td>
+</tr>
+<tr>
+<td><strong>Orientación al espacio</strong></td>
+<td>Mínima</td>
+<td>Alta (carriles/líneas)</td>
+<td>Total</td>
+</tr>
+<tr>
+<td><strong>Superioridad</strong></td>
+<td>Numérica</td>
+<td>Numérica + <strong>posicional</strong></td>
+<td>La que se genere</td>
+</tr>
+<tr>
+<td><strong>Finalización</strong></td>
+<td>No</td>
+<td>Opcional (mini-meta)</td>
+<td>Sí (portero)</td>
+</tr>
+<tr>
+<td><strong>Transición/contrapresión</strong></td>
+<td>No</td>
+<td>Parcial</td>
+<td>Real</td>
+</tr>
+<tr>
+<td><strong>Repeticiones técnicas/min</strong></td>
+<td><strong>Muy alta</strong></td>
+<td>Media-alta</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td><strong>Representatividad</strong></td>
+<td>Baja</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Idea-fuerza:</strong> el rondo enseña a tocar, el juego de posición enseña a tocar <strong>en una dirección y con estructura</strong>, el partido enseña a hacerlo <strong>cuando importa</strong>. Se progresa subiendo escalones; se corrige bajando uno.</p>
+</blockquote>
+<hr />
+<h2>2. Cómo progresar y dar dirección a una posesión</h2>
+<p><figure class="diag"><em>[falta teoria-13-mantener-progresar-finalizar.svg]</em></figure></p>
+<pre><code>MANTENER  →  PROGRESAR  →  FINALIZAR
+(conservar)  (romper líneas)   (terminar en remate)
+</code></pre>
+<p>El defecto frecuente es atascarse en "mantener". Progresar y finalizar <strong>no surgen solos</strong>: se provocan modificando la tarea. Palancas, de menor a mayor exigencia:</p>
+<p><strong>a) Añadir DIRECCIÓN.</strong> Porterías/mini-porterías de progresión (de "conservar" a "introducir el balón en una zona"); líneas de progresión (3 franjas; punto al pasar de zona 1 a 3 controlado); de zona a zona <strong>con condición</strong> (el balón pasa solo si lo recibe un jugador de cara o entre líneas).</p>
+<p><strong>b) Añadir ZONAS y CARRILES.</strong> 5 carriles + 3 alturas con la regla de ocupación; zona prohibida / de pase obligado (p. ej. no progresar por el centro sin haber jugado por fuera); zona de "hombre libre entre líneas" que vale doble.</p>
+<p><strong>c) Usar COMODINES para dirigir.</strong> Comodín de progresión (en la zona objetivo); comodín-pivote (entre líneas, fuerza buscar el interior); comodines de banda (amplitud, atraer-cambiar); <strong>quitarlos progresivamente</strong> (+3 → +2 → +1) sube la exigencia.</p>
+<p><strong>d) REGLAS que fuerzan progresar/finalizar.</strong> Límite de toques por zona; nº mínimo de pases antes de progresar/finalizar; <strong>premio por acción de valor</strong> (gol doble tras pase entre líneas o cambio de orientación); límite de tiempo para finalizar.</p>
+<blockquote>
+<p><strong>Regla de oro de diseño:</strong> cambia <strong>una sola variable</strong> cada vez para saber qué provocó la mejora.</p>
+</blockquote>
+<hr />
+<h2>3. Cómo coachear el juego de posición</h2>
+<p>El juego de posición no se "deja correr": se coachea. Pero <strong>sobre-coachear lo mata</strong> (mata el ritmo y la decisión). El arte es saber qué corregir, cuándo intervenir y cómo gestionar la intensidad.</p>
+<h3>a) Qué corregir (por prioridad de impacto)</h3>
+<ol>
+<li><strong>Perfil / orientación corporal antes de recibir.</strong> El fallo nº 1. <em>"Abre el cuerpo, recíbela de lado, mira tu portería objetivo".</em></li>
+<li><strong>Mirar antes de recibir (escaneo).</strong> <em>"¿Qué viste antes de recibir?"</em></li>
+<li><strong>Primer toque orientado.</strong> Que el control ya vaya hacia donde se progresa.</li>
+<li><strong>Peso y dirección del pase.</strong> Fuerte y al pie correcto (al perfil de progresión, no "al jugador").</li>
+<li><strong>Ocupar/abandonar carriles.</strong> <em>"No 2 en el mismo carril; si él baja, tú subes".</em></li>
+<li><strong>Apoyos y orientación del juego:</strong> línea de cara + línea de seguridad.</li>
+<li><strong>Ritmo (pausa-aceleración):</strong> cuándo circular para atraer y cuándo acelerar para romper.</li>
+</ol>
+<h3>b) Cuándo intervenir (jerarquía de intervenciones)</h3>
+<p><figure class="diag"><em>[falta teoria-14-coaching-intervenciones.svg]</em></figure></p>
+<p>De menos a más invasiva (usar siempre la mínima necesaria):</p>
+<ul>
+<li><strong>Coaching en vivo (sin parar):</strong> la mayoría del tiempo. Indicaciones cortas y posicionales (<em>"perfil", "de cara", "cambia", "ahora"</em>).</li>
+<li><strong>Pregunta tras la acción:</strong> aprovechar una pausa para preguntar (<em>"¿había hombre libre? ¿dónde?"</em>). Desarrolla la decisión.</li>
+<li><strong>FREEZE (congelar la imagen):</strong> parar en el momento exacto del error/acierto recurrente, todos quietos. Solo cuando el error es <strong>colectivo, recurrente y posicional</strong>. Congelar → señalar la mejor opción (idealmente que la vea el jugador) → <strong>rebobinar y repetir bien</strong> → soltar. 20-30 s máx.</li>
+<li><strong>Parada + repetición guiada (walk-through):</strong> si el fallo es generalizado, recolocar y reproducir el patrón a baja velocidad.</li>
+</ul>
+<blockquote>
+<p><strong>Regla:</strong> <em>freeze por excepción, coaching en vivo por norma.</em></p>
+</blockquote>
+<h3>c) Gestión del ritmo y la intensidad</h3>
+<p>El juego de posición debe entrenarse a <strong>intensidad de competición</strong>: si los defensores (rojos) presionan flojo, no hay presión real y la técnica no transfiere. <strong>Exigir presión auténtica</strong>; series cortas de alta intensidad con descanso suficiente; <strong>penalizar la pasividad</strong> (el que pierde, pisa a recuperar → entrena la contrapresión); <strong>subir/bajar la dificultad</strong> para mantener la <strong>dificultad óptima</strong> (ni trivial ni imposible); intervenciones cortas para no enfriar el ritmo.</p>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>Rondo, juego de posición y partido son <strong>tres escalones de la misma escalera</strong>: se sube para progresar, se baja para corregir.</li>
+<li>El juego de posición es el <strong>escalón bisagra</strong>: añade al rondo dirección, estructura y superioridad posicional.</li>
+<li>Para progresar, <strong>provoca</strong> con dirección, zonas/carriles, comodines y reglas — <strong>una variable cada vez</strong>.</li>
+<li>Coachea <strong>en vivo por norma, freeze por excepción</strong>; corrige primero perfil y escaneo (lo que más rinde).</li>
+<li>Sin <strong>intensidad de competición</strong> real, la tarea no transfiere nada al domingo.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li><strong>Tratar el rondo como calentamiento aislado:</strong> se pierde la transferencia; el equipo toca pero no progresa.</li>
+<li><strong>Saltar del rondo al partido</strong> sin el escalón intermedio: el salto es demasiado grande.</li>
+<li><strong>Cambiar varias variables a la vez:</strong> no se sabe qué provocó la mejora (o el empeoramiento).</li>
+<li><strong>Sobre-coachear / abusar del freeze:</strong> se mata el ritmo que precisamente se quiere entrenar.</li>
+<li><strong>Permitir presión floja de los defensores:</strong> sin estrés real, la técnica no se transfiere.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="m04"><h1>Módulo 04 · Posesión con finalidad</h1>
+<blockquote>
+<p>La posesión no es un fin (tener el balón), es un medio: progresar, finalizar y, al perderlo, recuperar — sostenido por proteger el balón.</p>
+</blockquote>
+<hr />
+<h2>0. La premisa: posesión ≠ fin, posesión = medio</h2>
+<p>Tener el balón solo sirve si conduce a algo. Una posesión es buena cuando <strong>progresa, rompe líneas y termina en ocasión</strong>, no cuando acumula pases. Toda la finalidad se resume en tres verbos encadenados —<strong>progresar → finalizar → (al perder) recuperar</strong>— más un cuarto que los sostiene: <strong>proteger</strong>.</p>
+<hr />
+<h2>1. Posesión para progresar y para finalizar</h2>
+<h3>1.1 Progresar: romper líneas y encontrar al hombre libre entre líneas</h3>
+<p><strong>Progresar</strong> es avanzar el balón superando líneas defensivas <strong>en condiciones de seguir jugando</strong> (no es "tirar el balón hacia delante"). El objetivo concreto es encontrar al <strong>hombre libre entre líneas</strong> (el que recibe entre la defensa y la medular rival, de cara y con tiempo).</p>
+<p>Mecanismos de progresión (cómo se rompe una línea):</p>
+<ul>
+<li><strong>Pase entre líneas a jugador de cara</strong> — el más valioso: rompe línea y orienta el ataque de una sola acción.</li>
+<li><strong>Atraer para liberar (fijar y cambiar)</strong> — la superioridad se crea moviendo al rival, no solo el balón.</li>
+<li><strong>Tercer hombre</strong> — cuando el receptor que rompe está marcado, se juega a un apoyo que filtra al tercero.</li>
+<li><strong>Conducir para fijar, fijar para pasar</strong> — conducir hacia un rival lo obliga a salir y libera al que dejó.</li>
+<li><strong>Superioridad posicional &gt; numérica</strong> — no basta ser más: hay que estar <strong>mejor situados</strong> para que siempre exista una línea que rompa.</li>
+</ul>
+<p><strong>Condición de calidad:</strong> la progresión vale cuando el balón llega <strong>controlable y orientado (de cara)</strong>, no cuando cruza una línea en el aire y se pierde. Por eso las tareas premian recibir <strong>de cara entre líneas</strong>, no solo "llegar arriba".</p>
+<h3>1.2 Finalizar: cómo la posesión termina en ocasión</h3>
+<p><figure class="diag"><em>[falta teoria-15-finalizacion.svg]</em></figure></p>
+<p>La posesión que progresa pero no remata es trabajo a medias. <strong>Finalizar</strong> es convertir la superioridad en <strong>un remate en buena posición</strong>. Dos componentes:</p>
+<ul>
+<li><strong>Posición (la ocasión se construye antes del remate).</strong> Empieza con la <strong>ocupación del área</strong>: alguien al primer palo, al segundo, al punto de penalti, alguien en la frontal para el rechace, y amplitud que estire a la defensa. La posesión debe <strong>llegar a la última línea con esa estructura ya formada</strong>.</li>
+<li><strong>Remate (la decisión final).</strong> El último pase deja al rematador <strong>de cara y con espacio/tiempo</strong>: pase atrás desde fondo, centro raso/medido a la zona ocupada, o filtrado para el mano a mano.</li>
+</ul>
+<pre><code>construir y atraer → romper línea (hombre libre entre líneas / banda)
+   → llegar a fondo o frontal con el área OCUPADA → último pase a jugador de cara → REMATE
+</code></pre>
+<p><strong>Implicación para el diseño (familia 5):</strong> las tareas de finalización exigen <strong>posición + remate</strong> — punto solo si el gol llega tras romper una línea u ocupar bien el área. Posesión y finalización quedan unidas, no separadas.</p>
+<hr />
+<h2>2. Proteger el balón y contrapresión tras pérdida</h2>
+<h3>2.1 Proteger el balón</h3>
+<p>Proteger no es jugar lento, es <strong>asegurar el balón cuando no hay progresión limpia disponible</strong>: cuerpo entre balón y rival (perfil de protección); <strong>apoyo de seguridad siempre disponible</strong> por detrás; <strong>no forzar el pase imposible</strong> (asegurar antes que regalar en zona de riesgo); cuerpo orientado para volver a jugar hacia delante en cuanto baje la presión.</p>
+<h3>2.2 Contrapresión tras pérdida — las reglas</h3>
+<p><figure class="diag"><em>[falta teoria-16-contrapresion.svg]</em></figure></p>
+<p>La <strong>contrapresión</strong> es presionar <strong>inmediatamente</strong> tras perder, para recuperar donde se perdió, aprovechando que el rival está mal orientado. El momento más vulnerable de un equipo es <strong>justo después de recuperar</strong>.</p>
+<ol>
+<li><strong>Reacción inmediata (1-2 s).</strong> El que pierde y los más cercanos pasan de atacar a presionar <strong>al instante</strong>, sin medio segundo de lamento.</li>
+<li><strong>Presionar al portador y orientarlo:</strong> el más cercano impide el pase fácil hacia delante y conduce al rival hacia la banda/atrás.</li>
+<li><strong>Los de alrededor tapan líneas de pase, no van todos al balón:</strong> recuperar es colectivo (uno presiona, el resto roba el espacio de pase).</li>
+<li><strong>Recuperar en pocos segundos (~5-6 s) o replegar:</strong> si no se recupera en el plazo o el rival saca con control, <strong>se repliega ordenado</strong>. Contrapresión fallida sin repliegue = contraataque encajado.</li>
+<li><strong>Compactar y achicar al perder:</strong> subir y juntar líneas para dejar al rival sin opciones cómodas.</li>
+<li><strong>Gatillo + cobertura:</strong> definir <strong>cuándo</strong> se contrapresiona y que <strong>siempre quede cobertura</strong> detrás.</li>
+</ol>
+<h3>2.3 Por qué el juego de posición facilita la contrapresión</h3>
+<p>No es casualidad que los mejores en juego de posición sean los mejores en contrapresión: <strong>la misma estructura que ordena el ataque ordena el robo inmediato</strong>. La ocupación racional mantiene a los jugadores <strong>cerca y escalonados</strong> → al perder, ya hay varios cuerpos alrededor; las distancias cortas hacen la reacción <strong>inmediata y coordinada</strong>; si la pérdida ocurre tras atraer al rival, este está juntado y mal posicionado para defender la contra; y el <strong>balance defensivo ya está hecho</strong> (regla 6).</p>
+<blockquote>
+<p><strong>Idea-fuerza:</strong> <em>atacar bien (con estructura) es la mejor manera de defender rápido.</em> Orden con balón = orden inmediato sin balón.</p>
+</blockquote>
+<hr />
+<h2>3. Indicadores de una buena posesión</h2>
+<p>El error de medición más extendido es valorar la posesión por el <strong>nº de pases</strong> o el <strong>% de posesión</strong>: pueden subir mientras el equipo no hace nada útil. Los indicadores que importan miden <strong>finalidad</strong>:</p>
+<p><strong>Sí miden una buena posesión:</strong> progresión (metros ganados, pases que progresan vs laterales); <strong>ruptura de líneas</strong> (líneas superadas con control, pases entre líneas de cara — el indicador estrella); encontrar al hombre libre; ocasiones generadas y calidad de la finalización; recuperación tras pérdida (% recuperado en X s); conservación con sentido (pocas pérdidas en zona de riesgo).</p>
+<p><strong>No sirven por sí solos:</strong> nº de pases / % de posesión; pases completados en zona segura.</p>
+<blockquote>
+<p><strong>Regla de evaluación y diseño:</strong> una posesión es buena si <strong>progresa, rompe líneas y termina en ocasión</strong> —y si, al perderse, el equipo está estructurado para recuperar—. Las tareas puntúan por ruptura de línea, hombre libre y remate, no por tocar.</p>
+</blockquote>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>La posesión es <strong>medio, no fin</strong>: vale si progresa, rompe líneas y termina en ocasión.</li>
+<li><strong>Progresar</strong> = romper líneas encontrando al hombre libre <strong>de cara</strong>; la calidad es recibir controlable y orientado.</li>
+<li><strong>Finalizar</strong> = posición (área ocupada en 3 alturas) + remate (último pase que deja de cara).</li>
+<li><strong>Proteger</strong> asegura cuando no hay progresión limpia; nunca forzar el pase imposible en zona de riesgo.</li>
+<li>La <strong>contrapresión</strong> se rige por 6 reglas (reacción, orientar, tapar líneas, X s o replegar, compactar, gatillo+cobertura) y se apoya en la misma estructura del ataque.</li>
+<li>Se mide por <strong>ruptura de línea, hombre libre y remate</strong>, no por % de posesión.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li><strong>Medir la posesión por el % o el nº de pases:</strong> se puede tener el 70% y no rematar.</li>
+<li><strong>Progresar "en el aire":</strong> mandar el balón arriba sin que llegue controlable y de cara.</li>
+<li><strong>Finalizar sin haber ocupado el área:</strong> llegar a fondo sin estructura → no hay rematadores.</li>
+<li><strong>No reaccionar tras la pérdida:</strong> el medio segundo de lamento regala la transición.</li>
+<li><strong>Contrapresionar sin gatillo ni cobertura:</strong> quedar abiertos a la contra si el rival supera la primera presión.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p></section><section id="plan"><h1>Plan de sesiones · 2 microciclos</h1>
+<blockquote>
+<p>Cómo integrar las 30 tareas del banco en una semana de trabajo. Notación: <strong>MD</strong> = matchday (día de partido). <strong>MD-4, MD-3…</strong> son los días previos contando hacia atrás; <strong>MD+1/+2</strong> los posteriores. Modelo orientativo de microciclo competitivo (partido el domingo).</p>
+</blockquote>
+<hr />
+<h2>Cómo leer el microciclo</h2>
+<p>El microciclo organiza la carga <strong>alrededor del partido</strong>: alejado del partido (MD-4/MD-3) se entrena lo más exigente cognitiva y físicamente; cerca del partido (MD-2/MD-1) se reduce volumen y se afina la decisión a alta intensidad.</p>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Foco general</th>
+<th>Carga</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD+1 / MD-5</td>
+<td>Recuperación / descarga (no incluido)</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td><strong>MD-4</strong></td>
+<td>Fundamentos: rondos + ocupación + crear superioridad</td>
+<td>Media-alta</td>
+</tr>
+<tr>
+<td><strong>MD-3</strong></td>
+<td>Progresión y dirección: romper líneas, cambios</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>MD-2</strong></td>
+<td>Finalización + transición (posesión con finalidad)</td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>MD-1</strong></td>
+<td>Activación: rondo + juego de posición corto</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td><strong>MD</strong></td>
+<td>PARTIDO</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Principio rector (módulo 03): <strong>una sola variable cada vez</strong> y siempre a <strong>intensidad de competición</strong>. El cierre semanal (MD-2) trabaja la posesión defensiva: recuperar es parte de la posesión.</p>
+<hr />
+<h2>Microciclo 1 — Construir la base del juego de posición</h2>
+<p>Objetivo de la semana: instalar <strong>perfil/orientación</strong>, <strong>ocupación racional</strong> y el <strong>hombre libre</strong>. Subir el escalón rondo → juego de posición.</p>
+<h3>MD-4 · Fundamentos (perfil, ocupación, superioridad)</h3>
+<ol>
+<li><strong>Calentamiento / activación</strong> — <a href="#f1">T1 · Rondo de orientación con dos colores de cono</a> · 12 min.</li>
+<li><strong>Parte principal A</strong> — <a href="#f2">T8 · Cuadrícula de 5 carriles (3v3+3)</a> · 18 min. <em>Foco: ocupación racional.</em></li>
+<li><strong>Parte principal B</strong> — <a href="#f3">T11 · Generar 3v2 por zonas</a> · 16 min. <em>Foco: crear el +1.</em></li>
+<li><strong>Vuelta a la calma</strong> — rondo libre 1 toque.</li>
+</ol>
+<h3>MD-3 · Progresión y dirección</h3>
+<ol>
+<li><strong>Activación</strong> — <a href="#f1">T3 · Rondo de tres jaulas (romper línea)</a> · 12 min.</li>
+<li><strong>Principal A</strong> — <a href="#f4">T16 · Las tres zonas (salida–medio–llegada)</a> · 22 min. <em>Foco: progresión orientada.</em></li>
+<li><strong>Principal B</strong> — <a href="#f4">T19 · Cambio de orientación obligatorio</a> · 21 min. <em>Foco: atraer y soltar al lado débil.</em></li>
+</ol>
+<h3>MD-2 · Posesión con finalidad + recuperar</h3>
+<ol>
+<li><strong>Activación</strong> — <a href="#f2">T6 · JdP clásico 4v4+3</a> · 14 min.</li>
+<li><strong>Principal A</strong> — <a href="#f5">T21 · Del control a la ocasión</a> · 22 min. <em>Foco: construir → rematar.</em></li>
+<li><strong>Principal B</strong> — <a href="#f6">T26 · Contrapresión de los 5 segundos</a> · 18 min. <em>Foco: reacción tras pérdida.</em></li>
+</ol>
+<h3>MD-1 · Activación pre-partido</h3>
+<ol>
+<li><a href="#f3">T15 · 4v3 dinámico con relevo del libre</a> · 12 min (alta intensidad, poco volumen).</li>
+<li><a href="#f2">T10 · Cuatro porterías (4v4+2)</a> · 14 min, formato corto y vivo.</li>
+</ol>
+<blockquote>
+<p><strong>MD · PARTIDO.</strong> Trasladar al 11: salida limpia, ocupar carriles, buscar al hombre libre, finalizar lo construido, contrapresionar tras pérdida.</p>
+</blockquote>
+<hr />
+<h2>Microciclo 2 — Mecanismos finos y finalización</h2>
+<p>Objetivo de la semana: pulir <strong>pase entre líneas</strong>, <strong>tercer hombre</strong>, <strong>atraer-cambiar</strong>, <strong>ritmo</strong> y cerrar en <strong>finalización + transición</strong>.</p>
+<h3>MD-4 · Mecanismos de progresión</h3>
+<ol>
+<li><strong>Activación</strong> — <a href="#f1">T4 · Rondo 4+1 con apoyo central (por dentro)</a> · 12 min.</li>
+<li><strong>Principal A</strong> — <a href="#f3">T12 · Hombre libre entre líneas (4v4+1)</a> · 16 min. <em>Foco: pase entre líneas.</em></li>
+<li><strong>Principal B</strong> — <a href="#f4">T18 · De zona a zona con jugador-puente</a> · 18 min. <em>Foco: tercer hombre / superar línea.</em></li>
+</ol>
+<h3>MD-3 · Atraer-cambiar y ritmo</h3>
+<ol>
+<li><strong>Activación</strong> — <a href="#f1">T2 · Rondo con dirección: comodín del lado contrario</a> · 12 min.</li>
+<li><strong>Principal A</strong> — <a href="#f3">T13 · Atraer para liberar (6v4, dos bandas)</a> · 20 min. <em>Foco: fijar y cambiar.</em></li>
+<li><strong>Principal B</strong> — <a href="#f4">T20 · Pausa–aceleración (conquista de zona)</a> · 22 min. <em>Foco: ritmo.</em></li>
+</ol>
+<h3>MD-2 · Finalización + posesión defensiva</h3>
+<ol>
+<li><strong>Activación</strong> — <a href="#f2">T7 · 3v3+3 en rombo</a> · 14 min.</li>
+<li><strong>Principal A</strong> — <a href="#f5">T22 · Posición y remate por centros</a> o <a href="#f5">T23 · Superioridad central a portero</a> · 22 min.</li>
+<li><strong>Principal B</strong> — <a href="#f6">T29 · Recuperar y atacar la portería</a> · 20 min. <em>Foco: contrapresión productiva.</em></li>
+</ol>
+<h3>MD-1 · Activación pre-partido</h3>
+<ol>
+<li><a href="#f1">T5 · Rondo con dos puertas de salida</a> · 10 min.</li>
+<li><a href="#f5">T25 · Superioridad efímera (3v2 en 6 s)</a> · 14 min (decisión rápida, poco volumen).</li>
+</ol>
+<blockquote>
+<p><strong>MD · PARTIDO.</strong> Integrar todo: la tarea-síntesis <a href="#f6">T30 · Bloque de reacción 8 s</a> y <a href="#f5">T24 · Dos equipos, dos porterías</a> sirven como referencia de partido reducido para evaluar la transferencia.</p>
+</blockquote>
+<hr />
+<h2>Mapa rápido tarea → concepto (para componer tus propias sesiones)</h2>
+<table>
+<thead>
+<tr>
+<th>Concepto a entrenar</th>
+<th>Tareas recomendadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfil / orientación</td>
+<td>T1, T5</td>
+</tr>
+<tr>
+<td>Hombre libre</td>
+<td>T11, T12, T15</td>
+</tr>
+<tr>
+<td>Cambio de orientación / atraer-cambiar</td>
+<td>T2, T13, T19</td>
+</tr>
+<tr>
+<td>Tercer hombre</td>
+<td>T4, T14, T17, T18</td>
+</tr>
+<tr>
+<td>Pase entre líneas / romper líneas</td>
+<td>T3, T12, T17</td>
+</tr>
+<tr>
+<td>Ocupación racional (carriles)</td>
+<td>T8, T19</td>
+</tr>
+<tr>
+<td>Ritmo (pausa-aceleración)</td>
+<td>T20, T9, T16</td>
+</tr>
+<tr>
+<td>Superioridades clásicas (JdP)</td>
+<td>T6, T7, T10</td>
+</tr>
+<tr>
+<td>Progresión y dirección</td>
+<td>T16, T17, T18, T19, T20</td>
+</tr>
+<tr>
+<td>Finalización con criterio</td>
+<td>T21, T22, T23, T24, T25</td>
+</tr>
+<tr>
+<td>Contrapresión / recuperar</td>
+<td>T26, T27, T28, T29, T30</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Recordatorio de diseño (módulo 03):</strong> sube de escalón para progresar (rondo → JdP → partido), baja uno para corregir; cambia una sola variable cada vez; exige siempre presión real.</p>
+</blockquote>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Plan de sesiones.</em></p></section><section id="f1"><h1>Familia 1 · Rondos posicionales y de orientación (T1–5)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores <strong>rojos</strong>, comodines <strong>ámbar</strong>. Flechas: pase (amarillo discontinuo), conducción (azul), desmarque (blanco), presión (rojo). Secuencias numeradas 1-2-3.
+El rondo entrena <strong>el qué y el cómo del pase</strong> (perfil, primer toque, lectura) con máxima densidad. Aquí se le añade un primer <strong>sentido de orientación y dirección</strong> para enlazar con el juego de posición.</p>
+</blockquote>
+<hr />
+<h2>Tarea 1 — Rondo de orientación con dos colores de cono</h2>
+<p><strong>Objetivo.</strong> Orientación corporal y perfil de recepción. El poseedor aprende a abrir el cuerpo para jugar SIEMPRE hacia el lado libre (lejos del defensor), no por inercia.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v2</strong> (5 azules en cuadrado + 2 rojos dentro). Sin comodines.
+- Medidas: cuadrado de <strong>9×9 m</strong>.
+- Material: 4 conos esquina; en cada lado un <strong>cono amarillo a la izquierda y uno rojo a la derecha</strong> del jugador (referencia de orientación). Balones de repuesto en 2 esquinas.</p>
+<p><figure class="diag"><em>[falta tarea-01.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Rondo clásico 5v2 a uno-dos toques. La diferencia: antes de recibir, el azul <strong>mira dónde están los 2 rojos</strong> y orienta el primer apoyo (control orientado) hacia el cono amarillo o rojo que deje libre la presión.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Máximo 2 toques.</strong> Si el primer control no va orientado a un lado libre (control "de frente y parado"), balón perdido → rotan los rojos.
+- <strong>Punto de equipo</strong> cada <strong>8 pases</strong> con al menos 1 control orientado por jugador.
+- Si los rojos roban o tocan, entra el azul que perdió y sale un rojo.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 3 toques, rondo 6v2.
+2. <em>Media</em>: 2 toques, 5v2.
+3. <em>Difícil</em>: <strong>1 solo toque</strong> y prohibido devolver al que te pasó (fuerza orientación a un tercer apoyo).</p>
+<p><strong>Coaching.</strong>
+- "Recibe medio cuerpo girado": pie de apoyo apuntando al lado por el que vas a salir.
+- Ver antes de recibir: cabeza arriba en el momento del pase del compañero.
+- El control resuelve el pase: si el control es bueno, el pase es fácil.</p>
+<p><strong>Duración.</strong> 4 series de 3 min, 1 min descanso (rota la pareja de rojos cada serie).</p>
+<hr />
+<h2>Tarea 2 — Rondo con dirección: jugar al comodín del lado contrario</h2>
+<p><strong>Objetivo.</strong> <strong>Cambio de orientación</strong> y uso del <strong>hombre libre lejano</strong>. El punto solo vale conectando con el comodín del lado opuesto a la presión.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v2 + 2 comodines</strong> (4 azules, 2 rojos dentro, 2 comodines ámbar fijos en bandas cortas opuestas).
+- Medidas: rectángulo <strong>16×10 m</strong>.
+- Material: 4 conos esquina + 2 conos para las casillas de comodines. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-02.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los azules circulan; objetivo: conectar con un comodín ámbar, que devuelve de pared al primer toque, y entonces <strong>cambiar y conectar con el comodín del extremo OPUESTO</strong>.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Punto SOLO si se conecta comodín A → circulación → comodín B</strong> sin pérdida. Repetir el mismo comodín no puntúa.
+- Comodines a <strong>1 toque</strong>.
+- Si los rojos roban, entra el azul perdedor.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: comodines a 2 toques, rectángulo 18 m de largo.
+2. <em>Media</em>: comodines a 1 toque, 16 m.
+3. <em>Difícil</em>: añadir un 3.er rojo (4v3+2) → obliga a circular más rápido.</p>
+<p><strong>Coaching.</strong>
+- "Fija a un lado, juega al otro": atraer la presión a una banda para liberar la opuesta.
+- Cambio con el menor número de pases posible (pausa-aceleración).
+- El comodín libre pide con el cuerpo abierto al campo.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 90 s descanso.</p>
+<hr />
+<h2>Tarea 3 — Rondo de tres jaulas: romper línea para progresar</h2>
+<p><strong>Objetivo.</strong> <strong>Romper líneas</strong> con pase interior. El rondo deja de ser circular y adquiere <strong>dirección de avance</strong> entre tres zonas.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v3 en 3 zonas</strong> (2 azules + 1 azul "puente" por zona; 1 rojo por zona).
+- Medidas: pasillo de <strong>24×12 m</strong> dividido en <strong>3 cuadrículas de 8×12 m</strong>.
+- Material: 8 conos que delimitan las 3 zonas (Z1 salida – Z2 centro – Z3 llegada). Petos.</p>
+<p><figure class="diag"><em>[falta tarea-03.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> El balón nace en Z1. Para avanzar de zona hay que <strong>romper la línea de conos con un pase</strong> (no se puede conducir a la zona siguiente). Los rojos defienden su zona sin salir. Llegar a Z3 = punto.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Solo se progresa con pase entre zonas</strong> (vertical/diagonal que cruce la línea). Conducir cruzando = pérdida.
+- <strong>Máx. 3 toques de equipo</strong> por zona antes de progresar.
+- El azul que recibe en la zona nueva debe estar <strong>ya dentro</strong> cuando llega el balón.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: se permite conducir Z1→Z2; pase obligatorio solo Z2→Z3.
+2. <em>Media</em>: pase obligatorio en las dos transiciones.
+3. <em>Difícil</em>: un rojo puede <strong>saltar</strong> a presionar la zona del balón (2v2 puntual) → exige timing del pase.</p>
+<p><strong>Coaching.</strong>
+- Esperar a que el receptor entre en zona (no pasar antes de tiempo).
+- Pase al pie contrario del defensor para fijar la línea.
+- Reconocer la "ventana": el hueco entre conos = la línea de pase que rompe.</p>
+<p><strong>Duración.</strong> 5 series de 3 min; cambiar los 3 rojos cada serie.</p>
+<hr />
+<h2>Tarea 4 — Rondo posicional 4+1 con apoyo central (jugar por dentro)</h2>
+<p><strong>Objetivo.</strong> Uso del <strong>jugador interior / pivote</strong> y juego "por dentro". Entrena la decisión exterior↔interior y la protección del balón del comodín central.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v2 + 1 comodín central</strong> (4 azules en cuadrado, 1 comodín ámbar en el centro, 2 rojos).
+- Medidas: cuadrado <strong>12×12 m</strong>.
+- Material: 4 conos esquina + 1 aro/cono que marca la casilla central. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-04.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los azules circulan por fuera; el comodín se mueve dentro buscando líneas de pase. Cada vez que el balón <strong>entra al central y sale al lado opuesto</strong> (entra-sale = "jugar por dentro"), suma. El comodín NO puede devolver al mismo jugador.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Punto cada vez que el balón pasa por el comodín y sale a un azul distinto</strong> del que se lo dio (tercer hombre embrionario).
+- Comodín a <strong>1 toque</strong> salvo que reciba de espaldas (2: control orientado + pase).
+- Si los rojos cierran el central, los azules juegan exterior, pero solo la conexión interior puntúa.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: comodín 2 toques, cuadrado 14 m.
+2. <em>Media</em>: comodín 1 toque.
+3. <em>Difícil</em>: <strong>2 comodines centrales</strong>; ambos deben tocar antes de salir (juego de pivotes).</p>
+<p><strong>Coaching.</strong>
+- El central recibe entre los dos rojos, perfil abierto.
+- Exterior fija, interior libera: provocar el pase interior con el cuerpo del exterior.
+- Soltar rápido tras recibir dentro (no enamorarse del balón en zona de presión).</p>
+<p><strong>Duración.</strong> 4 series de 3 min, 1 min descanso.</p>
+<hr />
+<h2>Tarea 5 — Rondo de orientación con dos puertas de salida (dirección obligada)</h2>
+<p><strong>Objetivo.</strong> <strong>Orientación + finalidad</strong>: dos "puertas" y hay que decidir hacia cuál salir según dónde esté la presión. Transición rondo → conducción dirigida.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v3</strong> (5 azules, 3 rojos). Sin comodines.
+- Medidas: cuadrado <strong>14×14 m</strong> con <strong>2 mini-puertas de conos (1,5 m)</strong> en dos lados contiguos (no opuestos).
+- Material: 4 conos esquina + 4 conos para las 2 puertas. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-05.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Rondo 5v3. La posesión "vale" cuando los azules consiguen <strong>conducir el balón controlado a través de una de las dos puertas</strong> tras una secuencia de pases. Dos puertas obligan a leer cuál está libre.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Punto = salir conducido por la puerta del lado MENOS presionado</strong> (decisión correcta). Salir por la puerta con un rojo encima no puntúa.
+- Mínimo <strong>5 pases</strong> antes de buscar la puerta.
+- Pérdida o salida forzada por la puerta cerrada → rotan rojos.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: puertas de 2,5 m; 5v2.
+2. <em>Media</em>: puertas de 1,5 m; 5v3.
+3. <em>Difícil</em>: la salida debe hacerse <strong>de primer pase</strong> a un compañero situado fuera (no conducida).</p>
+<p><strong>Coaching.</strong>
+- Escanear ambas puertas antes de decidir.
+- Atraer a los rojos a una puerta para abrir la otra (provocar-fijar).
+- Cambio de ritmo justo al salir por la puerta libre.</p>
+<p><strong>Duración.</strong> 5 series de 2,5 min; rotación de rojos cada serie.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 1 · Rondos posicionales y de orientación.</em></p></section><section id="f2"><h1>Familia 2 · Juegos de posición clásicos (T6–10)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores <strong>rojos</strong>, comodines <strong>ámbar</strong>. El juego de posición añade al rondo <strong>dirección, estructura y superioridad posicional</strong>: porterías/zonas, carriles y líneas, comodines posicionados.</p>
+</blockquote>
+<hr />
+<h2>Tarea 6 — Juego de posición clásico 4v4+3</h2>
+<p><strong>Objetivo.</strong> El JdP de referencia: <strong>superioridad por comodines (4+3 vs 4)</strong> y ocupación racional. Conservar y orientar bajo presión real de equipo.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v4 + 3 comodines</strong> (3 comodines ámbar con el poseedor → siempre 7v4).
+- Medidas: cuadrado <strong>20×20 m</strong>.
+- Material: 4 conos grandes esquina; conos de referencia para 3 comodines (2 en lados opuestos + 1 central). Petos 3 colores.</p>
+<p><figure class="diag"><em>[falta tarea-06.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Dos equipos de 4 dentro; 3 comodines neutrales juegan con quien posee. Conservar; al perder, los comodines apoyan al otro equipo. Los 2 comodines de banda dan amplitud, el central profundidad/interior.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Comodines de banda a <strong>2 toques</strong>; comodín central a <strong>1 toque</strong>.
+- <strong>Punto cada 6 pases</strong> consecutivos; <strong>doble si tocan los 3 comodines</strong> en la secuencia.
+- Tras pérdida, <strong>5 s de contrapresión</strong> para recuperar antes de organizarse.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: campo 22×22, comodines libres de toques.
+2. <em>Media</em>: reglas estándar.
+3. <em>Difícil</em>: comodín central no puede devolver al que se la dio (tercer hombre) y campo 18×18.</p>
+<p><strong>Coaching.</strong>
+- Ocupar los 4 lados + el interior: no amontonarse.
+- Buscar al comodín libre (casi siempre el central o el de banda lejana).
+- Cuerpo orientado a la portería virtual (al espacio libre).</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 2 min descanso. Rotar comodines a mitad.</p>
+<hr />
+<h2>Tarea 7 — Juego de posición 3v3+3 en rombo (dos pivotes)</h2>
+<p><strong>Objetivo.</strong> <strong>Superioridad central</strong> con estructura de rombo. Conexión pivote-interiores en espacio reducido.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>3v3 + 3 comodines</strong> (3 comodines ámbar formando eje: 1 arriba, 1 abajo, 1 lateral móvil).
+- Medidas: cuadrado <strong>18×18 m</strong>.
+- Material: conos esquina + 3 conos de posición de comodines. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-07.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> 3 azules + 3 comodines (=6) contra 3 rojos. Mantener la estructura de rombo (siempre alguien arriba, abajo y a los lados) para circular por el comodín libre. Al perder, los comodines cambian de bando.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Prohibido tres pases seguidos entre los mismos 2 jugadores</strong> (rompe el ping-pong).
+- <strong>Punto cada vez que el balón recorre el rombo completo</strong> (4 vértices distintos) sin pérdida.
+- Comodines a 2 toques.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 3v2+3, campo 20×20.
+2. <em>Media</em>: 3v3+3.
+3. <em>Difícil</em>: rombo a 1 toque en los comodines; un rojo puede saltar al vértice del balón.</p>
+<p><strong>Coaching.</strong>
+- Mantener el rombo: si un compañero ocupa tu altura, ajusta tú.
+- Tercer hombre: el comodín de un vértice juega al del siguiente, no devuelve.
+- Velocidad de circulación = ventaja; el balón corre más que el defensor.</p>
+<p><strong>Duración.</strong> 5 series de 3 min, 90 s descanso.</p>
+<hr />
+<h2>Tarea 8 — Juego de posición en cuadrícula de 5 carriles (3v3+3)</h2>
+<p><strong>Objetivo.</strong> <strong>Ocupación racional del espacio</strong>: regla "no más de 2 por carril, no 3 en la misma línea". Escalonamiento posicional.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>3v3 + 3 comodines</strong> (reparten amplitud y profundidad).
+- Medidas: rectángulo <strong>24×18 m</strong> dividido en <strong>5 carriles verticales</strong> (4,8 m c/u) y <strong>3 líneas horizontales</strong> → cuadrícula 5×3.
+- Material: conos de carril (colores alternos para ver los 5 carriles). Petos.</p>
+<p><figure class="diag"><em>[falta tarea-08.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión 3v3+3 con condición POSICIONAL: el poseedor debe cumplir las reglas de ocupación mientras circula. Un supervisor (o el entrenador) vigila infracciones.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Infracción si 3+ azules en el mismo carril o 3 en la misma línea</strong> → pérdida de posesión.
+- <strong>Punto cada 8 pases</strong> manteniendo ocupados <strong>≥4 carriles distintos</strong>.
+- Comodines ocupan carriles exteriores (1 y 5) o central (3) según falte amplitud o interior.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: solo regla de carriles, 4 carriles.
+2. <em>Media</em>: 5 carriles + ambas reglas.
+3. <em>Difícil</em>: añadir <strong>dirección</strong> (puntúa más progresar de línea 1 a 3 ocupando bien).</p>
+<p><strong>Coaching.</strong>
+- "Si un compañero entra en tu carril, sal tú": ajuste permanente.
+- Escalonar alturas para crear líneas de pase diagonales.
+- Amplitud y profundidad máximas para estirar al rival.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 2 min descanso.</p>
+<hr />
+<h2>Tarea 9 — Juego de posición 5v5+3 con direccionalidad a zonas de finalización</h2>
+<p><strong>Objetivo.</strong> <strong>JdP con finalidad</strong>: superioridad 8v5 con dirección. Progresar de banda a banda y "finalizar" estabilizando el balón en una zona objetivo.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v5 + 3 comodines</strong> (1 por banda + 1 central; siempre 8v5).
+- Medidas: rectángulo <strong>35×25 m</strong>.
+- Material: conos para 2 <strong>zonas de finalización</strong> (franjas de 3 m en cada extremo corto) + carriles de banda. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-09.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión con dirección: llevar el balón y <strong>controlarlo dentro de la zona objetivo</strong> del extremo que se ataca (un jugador recibe y para el balón en la franja). El otro equipo, al recuperar, ataca la zona contraria.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Gol = controlar el balón parado dentro de la zona</strong> tras pase (no conducido a dentro).
+- <strong>El balón debe haber tocado banda y centro</strong> (un comodín de banda + el central) antes de finalizar.
+- Comodines de banda 2 toques, central 1 toque.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: zonas de 4 m, finalización conducida válida.
+2. <em>Media</em>: reglas estándar.
+3. <em>Difícil</em>: el último pase debe venir del comodín de la banda contraria a donde empezó la jugada.</p>
+<p><strong>Coaching.</strong>
+- Atraer la presión a una banda y cambiar a la libre para finalizar.
+- El central conecta las dos bandas (jugar por dentro para cambiar).
+- Ritmo: pausa para fijar, aceleración para la finalización.</p>
+<p><strong>Duración.</strong> 4 series de 5 min, 2 min descanso.</p>
+<hr />
+<h2>Tarea 10 — Juego de posición de cuatro porterías (4v4+2) con cambio de zona</h2>
+<p><strong>Objetivo.</strong> Decisión de <strong>a qué espacio progresar</strong> entre varias opciones. Cuatro porterías obligan a leer la menos defendida = hombre libre del espacio.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v4 + 2 comodines</strong> (2 comodines ámbar con el poseedor → 6v4).
+- Medidas: cuadrado <strong>26×26 m</strong> con <strong>4 mini-porterías de conos</strong> (una al centro de cada lado).
+- Material: 8 conos (4 porterías) + esquinas + petos.</p>
+<p><figure class="diag"><em>[falta tarea-10.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Cada equipo ataca las porterías disponibles. Se marca pasando el balón raso entre los conos de una portería válida a un compañero al otro lado. Los comodines mantienen la superioridad.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Gol solo si la portería se cruza con un pase a un compañero</strong> (no conduciendo) y solo en la <strong>menos defendida</strong> (si hay un rojo delante, no cuenta).
+- <strong>No repetir la misma portería dos goles seguidos.</strong>
+- Tras gol, sigue el juego: contraataque inmediato.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: cada equipo defiende 2 fijas, comodines libres.
+2. <em>Media</em>: 4 porterías abiertas, reglas estándar.
+3. <em>Difícil</em>: 1 solo comodín (5v4) y obligación de tocar al comodín antes de cada gol.</p>
+<p><strong>Coaching.</strong>
+- Mirar las 4 porterías = mirar todos los espacios; ir donde no está el rival.
+- Fijar a un lado para liberar la portería opuesta.
+- Cabeza arriba constante: la mejor portería cambia cada 2-3 segundos.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 2 min descanso.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 2 · Juegos de posición clásicos.</em></p></section><section id="f3"><h1>Familia 3 · Crear y usar superioridades / hombre libre (T11–15)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores <strong>rojos</strong>, comodines <strong>ámbar</strong>. El objetivo de toda la familia: <strong>crear</strong> una superioridad (numérica, posicional o cualitativa), <strong>reconocer al hombre libre</strong> que produce y <strong>usarlo</strong> antes de que el rival ajuste.</p>
+</blockquote>
+<hr />
+<h2>Tarea 11 — Generar 3v2 por zonas (subir el hombre libre)</h2>
+<p><strong>Objetivo.</strong> <strong>Crear superioridad numérica 3v2</strong> en la zona del balón: un jugador "llega" para fabricar el +1 que decide.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>base 2v2 + 1 flotante</strong> por zona (el flotante crea el 3v2 al sumarse).
+- Medidas: pasillo <strong>20×14 m</strong> dividido en <strong>2 zonas de 10×14 m</strong>.
+- Material: conos de la línea divisoria + esquinas. Peto distinto para el flotante azul. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-11.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Hay 2v2 en cada zona. Un azul flotante decide a qué zona sumarse para crear un <strong>3v2</strong> en la zona del balón. Conservar y, con la superioridad, progresar a la otra zona, donde se repite.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>El balón solo pasa de zona cuando se ha materializado un 3v2</strong> y se progresa con pase.
+- Los rojos NO cambian de zona (2 fijo) → el flotante siempre puede generar el +1.
+- <strong>Punto cada vez que se crea el 3v2 y se progresa de zona</strong> sin pérdida.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: flotante libre, 3 toques.
+2. <em>Media</em>: flotante a 2 toques, debe entrar DESPUÉS del primer pase (timing).
+3. <em>Difícil</em>: 2 flotantes pero solo 1 en la zona del balón (decide quién sube).</p>
+<p><strong>Coaching.</strong>
+- El flotante llega tarde y por sorpresa (timing &gt; velocidad).
+- Crear el 3v2 = un libre garantizado: hay que encontrarlo y usarlo, no solo crearlo.
+- Tras progresar, reorganizar rápido el siguiente 3v2.</p>
+<p><strong>Duración.</strong> 5 series de 3 min; cambiar el flotante cada serie.</p>
+<hr />
+<h2>Tarea 12 — Encontrar al hombre libre entre líneas (4v4+1 con dos líneas de presión)</h2>
+<p><strong>Objetivo.</strong> <strong>Pase entre líneas al hombre libre</strong> posicional. Reconocer y conectar al jugador situado entre las dos líneas rojas.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v4 + 1 comodín interior</strong> (el comodín ámbar vive entre líneas).
+- Medidas: rectángulo <strong>30×20 m</strong> con <strong>3 franjas horizontales</strong>: salida – franja intermedia (comodín + presión) – llegada.
+- Material: conos para 2 líneas horizontales. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-12.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los azules de salida hacen llegar el balón a los de llegada, pero la única vía "limpia" es <strong>conectar primero con el comodín entre líneas</strong>, que orienta y filtra hacia delante (pase entre líneas / tercer hombre). Los rojos defienden las dos líneas.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Punto SOLO si el balón pasa por el comodín entre líneas</strong> antes de la zona de llegada. Pase largo directo = no puntúa.
+- Comodín entre líneas a <strong>2 toques</strong> (control orientado + filtrado).
+- El comodín debe recibir <strong>de perfil</strong> (si recibe de frente y parado, no cuenta como "entre líneas").</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: franja intermedia ancha (8 m), 1 rojo en ella.
+2. <em>Media</em>: franja 5 m, 2 rojos.
+3. <em>Difícil</em>: 2 comodines entre líneas; el balón pasa por uno y sale al otro (tercer hombre entre líneas).</p>
+<p><strong>Coaching.</strong>
+- Reconocer la ventana entre líneas: pase con ritmo, al pie de perfil abierto.
+- El hombre libre se ofrece en el momento justo (no antes).
+- Tras recibir entre líneas: cara al frente y filtrar rápido.</p>
+<p><strong>Duración.</strong> 5 series de 3 min, 90 s descanso.</p>
+<hr />
+<h2>Tarea 13 — Atraer para liberar: fijar un lado y cambiar (6v4 con dos bandas)</h2>
+<p><strong>Objetivo.</strong> <strong>Atraer para liberar.</strong> Fijar la presión en una banda con pases cortos y cambiar al hombre libre de la banda opuesta.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v4</strong> (4 azules interiores + 2 azules de banda fijos; 4 rojos). Superioridad por estructura.
+- Medidas: rectángulo <strong>36×22 m</strong> con <strong>2 carriles de banda de 4 m</strong>.
+- Material: conos de los 2 carriles + esquinas. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-13.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los azules atraen a los 4 rojos hacia una banda con pases cortos. Cuando 3+ rojos están en ese lado, ejecutan un <strong>cambio de orientación</strong> al azul de la banda contraria, que recibe <strong>libre</strong> y progresa.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Punto SOLO con cambio a banda libre</strong> habiendo antes ≥4 pases en la banda fijada (se debe "ver" la atracción).
+- El cambio debe ser <strong>máx. 2 pases</strong> (directo o con un apoyo interior).
+- Si cambian sin haber fijado (rivales repartidos), no puntúa.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: banda contraria siempre con su jugador libre; 6v3.
+2. <em>Media</em>: 6v4, reglas estándar.
+3. <em>Difícil</em>: un rojo "lee" y puede anticipar el cambio → obliga a cambiar con disfraz (mirar a un lado, jugar al otro).</p>
+<p><strong>Coaching.</strong>
+- Fijar = pases reales que obligan al rival a desplazarse, no amagos.
+- El cambio se prepara con el último apoyo interior orientado al lado libre.
+- Banda libre: prepararse a recibir de cara y atacar el espacio.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 2 min descanso.</p>
+<hr />
+<h2>Tarea 14 — Tercer hombre (gol válido solo vía tercer hombre)</h2>
+<p><strong>Objetivo.</strong> <strong>Tercer hombre</strong>: A juega a B (que fija), B descarga y un TERCER jugador aparece para recibir en el espacio que B liberó. La provocación lo hace obligatorio.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v3 + 1 comodín</strong> (apoyo de espaldas / pivote).
+- Medidas: rectángulo <strong>28×20 m</strong> con <strong>zona de finalización</strong> (franja de 4 m) en un extremo.
+- Material: conos de la zona de finalización + esquinas. Peto distinto al comodín pivote. Petos.</p>
+<p><figure class="diag"><em>[falta tarea-14.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Mecánica de tercer hombre: un azul juega al pivote de espaldas (1.º→2.º), este descarga, y un <strong>tercer jugador</strong> que llega desde atrás recibe de cara y ataca la zona de finalización. El gol exige completar la cadena de tres.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Gol válido SOLO si la jugada pasa por 3 jugadores distintos en secuencia</strong> con el 2.º jugando de cara a su propia portería (pivote).
+- El <strong>2.º hombre a 1 toque</strong> (descarga directa, no se gira).
+- El <strong>3.er hombre debe llegar en movimiento</strong> desde detrás de la línea del 2.º.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 5v2+1, 2 toques para el pivote.
+2. <em>Media</em>: 5v3+1, pivote 1 toque.
+3. <em>Difícil</em>: sin comodín (el pivote es un azul de campo) y cadena en menos de 4 s.</p>
+<p><strong>Coaching.</strong>
+- El tercer hombre ve la jugada completa: temporiza su llegada.
+- 2.º hombre: descarga al primer toque hacia el espacio del tercero.
+- Romper la marca por detrás del defensor que sigue el balón.</p>
+<p><strong>Duración.</strong> 5 series de 3,5 min, 90 s descanso.</p>
+<hr />
+<h2>Tarea 15 — Superioridad 4v3 dinámica con relevo del libre (rotaciones)</h2>
+<p><strong>Objetivo.</strong> <strong>Usar el 4v3 de forma sostenida</strong>: el hombre libre cambia tras cada pase; reconocer al nuevo libre y mantener la ventaja con rotaciones.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v3</strong> puro (la superioridad es del juego de los 4).
+- Medidas: cuadrado <strong>16×16 m</strong> con <strong>4 conos de referencia</strong> (4 posiciones base, un azul por esquina aprox.).
+- Material: 4 conos posición + esquinas + petos.</p>
+<p><figure class="diag"><em>[falta tarea-15.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> 4 azules contra 3 rojos: <strong>siempre hay 1 azul libre</strong>. Identificar al libre, jugarle, y como los rojos se ajustan, el libre cambia → rotar para mantenerlo. Cada pérdida, entra un rojo de refresco para presión alta.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Obligatorio jugar al hombre libre</strong>: si hay un compañero claramente libre y se juega a otro presionado, pérdida.
+- <strong>Punto cada 6 pases consecutivos al libre.</strong>
+- <strong>No más de 2 toques</strong> (la ventaja se mantiene con velocidad, no con conducción).</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 4v2, 3 toques.
+2. <em>Media</em>: 4v3, 2 toques.
+3. <em>Difícil</em>: 4v3 en 14×14 y los rojos hacen presión orientada para cerrar al libre evidente → crear al libre con un pase previo (atraer-liberar dentro del 4v3).</p>
+<p><strong>Coaching.</strong>
+- El libre casi nunca es el más cercano: suele ser el opuesto a la presión.
+- Reconocer al libre ANTES de recibir (escaneo) para jugarlo a 1-2 toques.
+- Rotar para que siempre exista una línea de pase al libre.</p>
+<p><strong>Duración.</strong> 5 series de 3 min, 90 s descanso; rotar el trío de rojos cada serie.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 3 · Crear y usar superioridades / hombre libre.</em></p></section><section id="f4"><h1>Familia 4 · Posesión con progresión y dirección (T16–20)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores <strong>rojos</strong>, comodines <strong>ámbar</strong>, 2.º equipo poseedor <strong>azul-cian</strong>. Progresar = avanzar el balón <strong>rompiendo líneas</strong> en condiciones de seguir jugando, no "tirarlo hacia delante".</p>
+</blockquote>
+<hr />
+<h2>Tarea 16 — Las tres zonas (posesión orientada salida–medio–llegada)</h2>
+<p><strong>Objetivo.</strong> Progresar con sentido de juego: dominar el balón sin perder la dirección de ataque; <strong>atraer en una zona para progresar a la siguiente</strong>.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v6 + 2 comodines</strong> (ámbar móviles, uno por banda).
+- Medidas: rectángulo <strong>40×30 m</strong> en <strong>3 zonas iguales</strong> (≈13,3 m): A (salida) – B (medio) – C (llegada).
+- Material: petos, 2 ámbar, conos de líneas, balones en cada zona. Sin porterías.</p>
+<p><figure class="diag"><em>[falta tarea-16.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión libre de A hacia C. Punto = <strong>conducir o recibir controlado un balón en la Zona C</strong> tras haber pasado por las tres zonas. Si los rojos roban, atacan de C hacia A. Los comodines juegan siempre con el poseedor y solo por las bandas (amplitud + pase de progresión).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Punto = balón <strong>estabilizado</strong> (2 toques) en Zona C habiendo tocado en A o B antes (no vale largo directo A→C).
+- Mínimo <strong>5 pases</strong> antes de entrar a Zona C.
+- Progresar A→B→C en <strong>menos de 12 s</strong> = punto doble.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: comodines también dentro del campo (4 apoyos).
+2. <em>Media</em>: límite de 2 toques para los azules.
+3. <em>Difícil</em>: prohibido que más de 1 jugador retroceda de zona con el balón.</p>
+<p><strong>Coaching.</strong>
+- Atraer para liberar: fijar rojos en A para encontrar al libre en B.
+- Orientación del receptor en B mirando a C antes de recibir.
+- Tempo: pausa en A, aceleración en el pase que rompe a B/C.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 90 s descanso. ≈ 22 min.</p>
+<hr />
+<h2>Tarea 17 — Romper líneas por puertas internas</h2>
+<p><strong>Objetivo.</strong> Premiar el <strong>pase que rompe línea</strong> (vertical entre defensores) frente al pase de seguridad; identificar y usar el pasillo interior.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>7v5</strong> (azules en superioridad para favorecer la circulación que crea ventanas).
+- Medidas: <strong>36×28 m</strong>.
+- Material: <strong>3 "puertas"</strong> de 2 m de ancho con conos, repartidas en la franja central a distintas alturas (ventanas entre líneas). Petos, balones. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-17.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión de los azules. Punto cada vez que completan un <strong>pase que atraviesa una puerta y es recibido y controlado</strong> al otro lado. La misma puerta no se usa dos veces seguidas. Los rojos tapan puertas con su cuerpo; si roban, conservan 6 s para 1 punto de transición.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Pase a través de puerta + control = <strong>1 punto</strong>.
+- Si el receptor da un toque y <strong>filtra otro pase a puerta</strong> (dos roturas encadenadas) = <strong>3 puntos</strong> (tercer hombre).
+- Objetivo: <strong>8 roturas</strong> por serie como equipo.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: puertas de 3 m, 4 puertas.
+2. <em>Media</em>: puertas de 1,5 m, 3 puertas, 6v5.
+3. <em>Difícil</em>: 6v6, las puertas se desplazan (el coach las mueve cada 60 s).</p>
+<p><strong>Coaching.</strong>
+- Ver la ventana antes de recibir; convocar el pase con el cuerpo abierto.
+- Romper línea con el pie adecuado, al pie de progresión del receptor.
+- Tras la rotura, fijar y buscar la siguiente puerta sin retroceder.</p>
+<p><strong>Duración.</strong> 3 series de 5 min, 2 min descanso. ≈ 21 min.</p>
+<hr />
+<h2>Tarea 18 — De zona a zona con jugador-puente (líneas de superación)</h2>
+<p><strong>Objetivo.</strong> Progresar superando líneas mediante <strong>apoyo–dejada–tercer hombre</strong>; usar el jugador-puente para saltar líneas.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v5 + 1 comodín central</strong> (ámbar) que vive en la <strong>línea media</strong>.
+- Medidas: <strong>30×24 m</strong>, dividido por una <strong>línea de superación</strong> central; el comodín es el único que se mueve libre entre mitades.
+- Material: petos, conos de línea media, balones. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-18.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> El poseedor arranca en su mitad. Punto = <strong>pasar el balón a la otra mitad y que sea controlado</strong> por un compañero (línea superada). El comodín central actúa de pivote: recibe de espaldas, descarga o gira. Tras superar, encadenar y volver a superar en sentido inverso (combo).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Línea superada por <strong>pase directo</strong> = 1 punto.
+- Línea superada usando al <strong>comodín-puente con dejada de primer toque</strong> (pared) = 2 puntos.
+- 3 superaciones consecutivas sin pérdida = punto bonus.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 2 comodines-puente.
+2. <em>Media</em>: el comodín solo da 1 toque.
+3. <em>Difícil</em>: añadir <strong>2.º equipo poseedor</strong> (azul-cian): 3 equipos de 4, el que pierde sale; superar línea da derecho a seguir.</p>
+<p><strong>Coaching.</strong>
+- Calidad del apoyo: aparecer cuando el poseedor levanta la cabeza, no antes.
+- Dejada <strong>orientada</strong> hacia el espacio de progresión, no neutra.
+- Tercer hombre: el que recibe la dejada ya debe tener decidida la siguiente.</p>
+<p><strong>Duración.</strong> 4 series de 3,5 min. ≈ 18 min.</p>
+<hr />
+<h2>Tarea 19 — Posesión con cambio de orientación obligatorio (atraer y progresar al lado débil)</h2>
+<p><strong>Objetivo.</strong> Progresar <strong>atrayendo a un carril para liberar el opuesto</strong>; ejecutar el cambio de orientación como herramienta de progresión.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>8v6</strong> (sin comodines).
+- Medidas: <strong>40×32 m</strong> en <strong>3 carriles verticales</strong> (izq–centro–der, ≈10,7 m c/u).
+- Material: petos, conos de carril, balones, <strong>2 mini-líneas de gol</strong> (líneas de 6 m al fondo de cada carril lateral).</p>
+<p><figure class="diag"><em>[falta tarea-19.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Azules progresan para conducir el balón sobre <strong>cualquiera de las 2 líneas de fondo laterales</strong>. Para validar deben haber <strong>circulado de un carril lateral al otro</strong> (cambio de orientación) al menos una vez. Regla de ocupación viva: <strong>máx. 2 azules por carril</strong>.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Gol válido solo si el balón <strong>cruzó del carril izq al der (o viceversa) en ≤4 pases</strong> antes de finalizar.
+- Cambio con <strong>un solo pase largo de un lateral a otro</strong> controlado = punto extra.
+- Si tardan <strong>más de 20 s</strong> sin cambiar de carril, balón al rival.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: cambio permitido en cualquier nº de pases.
+2. <em>Media</em>: el cambio debe iniciarlo un jugador de <strong>carril central</strong> (tercer hombre).
+3. <em>Difícil</em>: 8v7 y los rojos pueden saltar a presionar el cambio.</p>
+<p><strong>Coaching.</strong>
+- Sobrecargar un lado para abrir el contrario; ver al hombre libre lejos.
+- El cambio llega al pie que orienta hacia delante.
+- Cambiar cuando la presión bascula, no antes.</p>
+<p><strong>Duración.</strong> 3 series de 5 min, 2 min descanso. ≈ 21 min.</p>
+<hr />
+<h2>Tarea 20 — Pausa–aceleración: conquistar zona y romper a la siguiente (ritmo)</h2>
+<p><strong>Objetivo.</strong> Gestionar el <strong>ritmo (pausa–aceleración)</strong> como herramienta de progresión: <strong>pausar</strong> para fijar y consolidar la zona conquistada y <strong>acelerar</strong> en el pase que rompe a la siguiente. Conservar el terreno ganado sin caer en posesión estéril.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v6 + 3 comodines de zona</strong> (ámbar): uno fijo en cada zona, solo apoya, no roba.
+- Medidas: <strong>45×30 m</strong>, 3 zonas de 15 m (A–B–C).
+- Material: petos (2 colores + 3 ámbar), conos, balones, <strong>cronómetro del coach</strong>. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-20.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Progresar A→B→C. <strong>Cerrojo de zona:</strong> una vez el balón llega controlado a B, NO puede volver a A; igual de B a C. En cada zona el equipo <strong>pausa</strong> (asegura con los apoyos y obliga a bascular a los rojos) y solo cuando un compañero se ofrece de cara en la zona siguiente, <strong>acelera</strong> el pase que rompe. Punto = 3 pases consecutivos en Zona C tras conquistar A→B→C en orden.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>Pausa obligada:</strong> mínimo <strong>3 pases dentro de cada zona</strong> (A y B) antes de romper. Romper sin esos 3 pases no consolida (se repite la zona).
+- <strong>Aceleración premiada:</strong> si el pase que rompe llega a un compañero de cara que progresa al primer toque, esa rotura <strong>vale doble</strong>.
+- Si el balón <strong>vuelve a una zona ya conquistada</strong>, posesión al rival.
+- Comodín de zona máximo 2 toques.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: solo el cerrojo de zona (sin mínimo de pausa ni reloj).
+2. <em>Media</em>: pausa de 3 pases + aceleración al primer toque.
+3. <em>Difícil</em>: ventana de aceleración con <strong>tope de 3 s</strong> desde que aparece el hombre libre de la zona siguiente.</p>
+<p><strong>Coaching.</strong>
+- <strong>Pausa = fijar</strong>, no dormirse: circular para atraer y abrir la ventana.
+- <strong>Acelerar cuando el rival bascula</strong>: la señal es el hombre libre de cara en la zona siguiente.
+- Cambiar de marcha con el cuerpo ya orientado; primer toque que rompe, no que para.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 90 s descanso. ≈ 22 min.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 4 · Posesión con progresión y dirección.</em></p></section><section id="f5"><h1>Familia 5 · Posesión para finalizar (T21–25)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores <strong>rojos</strong>, comodines <strong>ámbar</strong>. La posesión es el medio, el <strong>remate</strong> es el fin. Estas tareas exigen <strong>posición + remate</strong>: el gol vale si se ha construido (romper línea, ocupar el área), no "de churro".</p>
+</blockquote>
+<hr />
+<h2>Tarea 21 — Del control a la ocasión (posesión + remate a portería real)</h2>
+<p><strong>Objetivo.</strong> Convertir la superioridad en posesión en <strong>finalización</strong>; entender que la posesión es medio, el remate es fin.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v4 + 1 comodín</strong> (ámbar, con el poseedor). <strong>1 portero</strong> en portería reglamentaria.
+- Medidas: <strong>40×36 m</strong>. <strong>Portería grande con portero</strong> en un fondo; en el opuesto, <strong>2 mini-porterías</strong> (1 m, sin portero) para los rojos.
+- Material: portería + portero, 2 mini-porterías, petos, balones junto a la portería grande para reposición.</p>
+<p><figure class="diag"><em>[falta tarea-21.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los azules mantienen y progresan para <strong>rematar a la portería grande con portero</strong>. Condición para rematar: <strong>mínimo 6 pases</strong> o haber <strong>superado una línea media</strong> (zona de creación → zona de remate). Si los rojos roban, atacan a las 2 mini-porterías.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Gol válido solo tras cumplir la condición (6 pases o superación de línea).
+- Remate de <strong>primera tras centro/pase de la última zona</strong> = vale doble.
+- Rematar en <strong>≤8 s</strong> desde que se supera la línea media = +1.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 6v3 + comodín, condición de 4 pases.
+2. <em>Media</em>: base (6v4+1).
+3. <em>Difícil</em>: 5v5 sin comodín, condición de superar línea <strong>y</strong> tocar en banda antes de rematar.</p>
+<p><strong>Coaching.</strong>
+- Diferenciar el ritmo de circulación (paciencia) del de finalización (explosión).
+- El último pase: al pie de remate, con ventaja, no "de seguridad".
+- Ocupar el área en 3 alturas (1.er palo, 2.º palo, punto de penalti).</p>
+<p><strong>Duración.</strong> 4 series de 4 min. ≈ 22 min con reposiciones.</p>
+<hr />
+<h2>Tarea 22 — Posición y remate por zonas de centro (juego por bandas a finalizar)</h2>
+<p><strong>Objetivo.</strong> Usar la amplitud para finalizar; <strong>posesión interior → liberar banda → centro → remate</strong>.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>7v6</strong>, con <strong>2 comodines de banda</strong> (ámbar) fijos en pasillos exteriores. <strong>1 portero</strong>.
+- Medidas: <strong>44×40 m</strong>. <strong>1 portería con portero</strong>; dos <strong>pasillos de banda</strong> de 5 m con conos donde solo entran los comodines y disponen de toque libre para centrar.
+- Material: portería + portero, conos de pasillo, petos, balones.</p>
+<p><figure class="diag"><em>[falta tarea-22.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Azules circulan en zona interior. Para finalizar deben <strong>dar el balón a un comodín de banda</strong>, que <strong>centra al área</strong>. El gol solo cuenta si proviene de <strong>remate a un centro</strong> (no de jugada interior directa). El comodín no es presionado dentro de su pasillo (premia el timing del remate).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Gol de cabeza o de primera tras centro = <strong>2 puntos</strong>; tras controlar el centro = 1 punto.
+- Mínimo <strong>2 rematadores</strong> entran al área en el centro o el gol no vale.
+- Dos goles seguidos por la misma banda: el segundo no puntúa (obliga a variar).</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 2 comodines por banda, centro sin oposición.
+2. <em>Media</em>: base.
+3. <em>Difícil</em>: añadir 1 defensor central rojo que puede entrar al pasillo a tapar el centro (7v7).</p>
+<p><strong>Coaching.</strong>
+- Timing de la llegada al área: salir desde atrás hacia el balón.
+- Tipos de centro según el rematador (raso al 1.er palo, tenso, atrás).
+- Ataque de los 3 espacios del área coordinado.</p>
+<p><strong>Duración.</strong> 4 series de 4 min. ≈ 22 min.</p>
+<hr />
+<h2>Tarea 23 — Superioridad central para finalizar (4v4+3 que termina en portero)</h2>
+<p><strong>Objetivo.</strong> Llevar el clásico <strong>4v4+3</strong> hasta la portería: usar al hombre libre del centro para crear el último pase.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>4v4 + 3 comodines</strong> (ámbar; 2 exteriores + 1 central).
+- Medidas: <strong>30×25 m</strong> + <strong>zona de finalización</strong> de 8 m al fondo con <strong>portería y portero</strong>.
+- Material: portería + portero, conos que separan posesión y finalización, petos, balones.</p>
+<p><figure class="diag"><em>[falta tarea-23.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> En la zona de posesión se juega 4v4+3 buscando al hombre libre. Cuando los azules logran <strong>un pase filtrado al comodín central</strong> o <strong>6 pases</strong>, se <strong>abre</strong> la zona de finalización: 2 azules entran a rematar <strong>2v1 + portero</strong> (un rojo defiende). Tras el remate, vuelve a empezar la posesión.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- La finalización se "desbloquea" solo con la condición (pase al central libre o 6 pases).
+- Finalizar en <strong>≤6 s</strong> desde que se abre la zona = vale doble.
+- El defensor solo sale a por el balón cuando este cruza la línea (ventaja inicial al atacante).</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 2v0 + portero en finalización.
+2. <em>Media</em>: 2v1 + portero (base).
+3. <em>Difícil</em>: 3v2 + portero y condición de pase al central obligatoria.</p>
+<p><strong>Coaching.</strong>
+- El hombre libre central como <strong>gatillo</strong> de la finalización.
+- Transición posesión→ataque: el primer apoyo tras abrir la zona ya es de progresión.
+- Definición: portería corta, primer toque orientado a portería.</p>
+<p><strong>Duración.</strong> 5 series de 3 min, rotando rematadores. ≈ 20 min.</p>
+<hr />
+<h2>Tarea 24 — Dos equipos, dos porterías: posesión orientada a finalizar (juego direccional completo)</h2>
+<p><strong>Objetivo.</strong> Integrar todo: posesión con dirección, progresión y finalización en <strong>partido reducido con 2 porterías y porteros</strong>.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>8v8 + 2 comodines</strong> (ámbar) que juegan con quien ataca (uno por mitad).
+- Medidas: <strong>50×40 m</strong>, <strong>2 porterías con portero</strong>.
+- Material: 2 porterías + 2 porteros, petos (2 colores + 2 ámbar), conos para <strong>3 zonas</strong> (defensa–medio–ataque), balones en porterías.</p>
+<p><figure class="diag"><em>[falta tarea-24.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Partido direccional: cada equipo ataca su portería; los comodines dan superioridad permanente al poseedor. <strong>Condición de finalización:</strong> para que el gol valga, el equipo debe haber tenido el balón controlado en las <strong>3 zonas</strong> en la misma posesión (obliga a construir). Reposiciones siempre desde el portero (trabaja la salida).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Gol estándar (3 zonas tocadas) = 1 punto.
+- Gol tras <strong>superar línea con pase entre líneas + finalización en ≤10 s</strong> = 2 puntos.
+- Cada equipo alterna el portero que inicia; los comodines no pueden estar en la misma mitad.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: sin condición de 3 zonas (libre) para calentar.
+2. <em>Media</em>: condición de 3 zonas (base).
+3. <em>Difícil</em>: 3 zonas + mínimo 1 cambio de orientación antes del gol.</p>
+<p><strong>Coaching.</strong>
+- Construir desde el portero con paciencia, acelerar al superar líneas.
+- Ocupar el campo para finalizar <strong>sin</strong> quedar expuestos a la transición rival.
+- La cadena completa: salida limpia → progresión → finalización.</p>
+<p><strong>Duración.</strong> 3 bloques de 6 min, 2 min descanso. ≈ 24 min.</p>
+<hr />
+<h2>Tarea 25 — Finalización con superioridad efímera (posesión que crea el 3v2 final)</h2>
+<p><strong>Objetivo.</strong> Crear y <strong>explotar inmediatamente</strong> una superioridad de finalización antes de que el rival se reorganice; del control a la ocasión en pocos segundos.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>5v5 + 1 comodín</strong> en zona de posesión; al finalizar se genera un <strong>3v2 + portero</strong>.
+- Medidas: <strong>35×30 m</strong> de posesión + <strong>zona de finalización</strong> de 12 m con <strong>portería y portero</strong>.
+- Material: portería + portero, conos de zona, petos, balones de reposición rápida.</p>
+<p><figure class="diag"><em>[falta tarea-25.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> 5v5+comodín en la zona de posesión. Cuando un azul <strong>conduce cruzando la línea de finalización</strong>, se desbloquea el ataque: <strong>3 atacantes vs 2 defensores + portero</strong>, pero los defensores arrancan <strong>2 m por detrás</strong> (superioridad efímera real). El ataque tiene <strong>6 s</strong> para rematar desde que se cruza (cronómetro del coach).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Reloj de <strong>6 s</strong> para finalizar el 3v2 (obliga a resolver rápido).
+- Gol con <strong>≤2 toques del rematador</strong> = vale doble.
+- Si los defensores recuperan antes del remate, contra a 2 mini-porterías en el otro fondo.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 3v1 + portero, 8 s.
+2. <em>Media</em>: 3v2 + portero, 6 s (base).
+3. <em>Difícil</em>: 3v3 + portero, 5 s, con un defensor pudiendo salir antes.</p>
+<p><strong>Coaching.</strong>
+- Atacar la superioridad <strong>antes</strong> de que llegue el repliegue: velocidad de decisión.
+- Fijar a un defensor para liberar al tercero (2v1 dentro del 3v2).
+- Primer toque siempre hacia portería.</p>
+<p><strong>Duración.</strong> 5 series de 3 min rotando, 60 s descanso. ≈ 20 min.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 5 · Posesión para finalizar.</em></p></section><section id="f6"><h1>Familia 6 · Posesión defensiva: recuperar y conservar (T26–30)</h1>
+<blockquote>
+<p>Notación: poseedores <strong>azules</strong>, defensores/recuperadores <strong>rojos</strong>, comodines <strong>ámbar</strong>, 2.º equipo poseedor <strong>azul-cian</strong>. La posesión incluye <strong>qué hacer al perderla</strong>: contrapresión inmediata, conservar tras robar y decidir presionar o replegar. La misma estructura que ataca bien recupera rápido.</p>
+</blockquote>
+<hr />
+<h2>Tarea 26 — Contrapresión de los 5 segundos (recuperar tras pérdida)</h2>
+<p><strong>Objetivo.</strong> Reaccionar de inmediato tras perder; <strong>recuperar el balón en ≤5 s</strong> con presión coordinada al poseedor y a los apoyos.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v6 + 2 comodines</strong> (ámbar, con el poseedor). Cuadrado.
+- Medidas: <strong>30×30 m</strong>.
+- Material: petos, conos de límite, <strong>cronómetro visible / silbato del coach</strong>, balones en los 4 lados. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-26.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión normal del equipo azul (con comodines) frente a los rojos. <strong>En el instante de la pérdida</strong>, el coach activa el cronómetro: el equipo que perdió tiene <strong>5 s para recuperar</strong> = punto de contrapresión. Si el equipo que robó <strong>aguanta 5 s</strong> (o saca por uno de los 4 lados con pase controlado), gana el punto de "supera la presión".</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Cronómetro explícito de <strong>5 s</strong> desde la pérdida (el coach cuenta en voz alta o silba).
+- Recuperación en ≤5 s = 1 punto; recuperación con el balón <strong>en la misma zona donde se perdió</strong> = 2 puntos.
+- "Superar la presión" (aguantar 5 s o sacarla limpia) = 1 punto para ellos.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 7 s de ventana.
+2. <em>Media</em>: 5 s (base).
+3. <em>Difícil</em>: 4 s y campo más grande (35×35).</p>
+<p><strong>Coaching.</strong>
+- Reacción <strong>inmediata</strong> del más cercano (presión al portador) + tapar líneas de los apoyos.
+- "Pressing trap": orientar la presión hacia la banda/esquina.
+- Si no se recupera en el tiempo, <strong>replegar ordenado</strong>.</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 90 s descanso. ≈ 22 min.</p>
+<hr />
+<h2>Tarea 27 — Robar y conservar 6 pases (transición a posesión)</h2>
+<p><strong>Objetivo.</strong> Premiar la <strong>conservación inmediata tras robar</strong>: que el robo se convierta en posesión estable, no en pérdida apresurada.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>2 equipos de 6</strong> + <strong>3 comodines neutrales</strong> (ámbar) que <strong>siempre juegan con quien acaba de robar</strong>.
+- Medidas: <strong>35×30 m</strong>.
+- Material: petos (2 colores + 3 ámbar), conos, balones de reposición. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-27.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Posesión disputada. Cuando un equipo <strong>roba</strong>, los 3 comodines pasan a jugar con él (superioridad de conservación). Objetivo del que roba: <strong>encadenar 6 pases</strong> tras el robo para sumar punto. Si lo pierde antes, los comodines cambian de bando al instante.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- <strong>6 pases</strong> seguidos tras robo = 1 punto (el contador reinicia con cada pérdida).
+- Si el <strong>primer pase tras robar es progresivo y se mantiene</strong> = punto extra (robar para atacar).
+- Comodines máximo 2 toques.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 8 pases pero 3 comodines fijos con un mismo equipo (más estable).
+2. <em>Media</em>: base (comodines cambian con el robo).
+3. <em>Difícil</em>: solo 2 comodines y objetivo de 8 pases.</p>
+<p><strong>Coaching.</strong>
+- Primer movimiento tras robar: <strong>alejar el balón de la presión</strong> (apoyos rápidos alrededor del que roba).
+- Decidir conservar vs atacar según la posición del rival al perder.
+- Calma tras el robo: asegurar el primer pase antes de acelerar.</p>
+<p><strong>Duración.</strong> 4 series de 4 min. ≈ 22 min.</p>
+<hr />
+<h2>Tarea 28 — Transición continua posesión ↔ presión (3 equipos rotativos)</h2>
+<p><strong>Objetivo.</strong> Entrenar el cambio constante de rol <strong>poseedor ↔ recuperador</strong>; reaccionar tanto al perder (contrapresión) como al robar (conservar).</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>3 equipos de 4</strong> (azul, azul-cian, rojo). Dos equipos juntan posesión (8) contra <strong>4 que presionan</strong>.
+- Medidas: <strong>28×28 m</strong>.
+- Material: 3 juegos de petos diferenciados, conos, balones en lados. Sin portería.</p>
+<p><figure class="diag"><em>[falta tarea-28.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Los dos equipos en posesión (8) circulan ante el presionante (4). <strong>El equipo que pierde el balón</strong> baja a presionar; el que presionaba entra a posesión con el otro. Mientras presionan, <strong>robar en ≤6 s</strong>; mientras poseen, <strong>superar la presión</strong> con 5 pases.</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Equipo presionante: robo en <strong>≤6 s</strong> desde que entra = 1 punto (cronómetro por ciclo).
+- Equipo en posesión: <strong>5 pases</strong> sin que el presionante toque = 1 punto.
+- El equipo que provoca la pérdida <strong>siempre rota a presionar</strong> (regla clara y medible).</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: media presión (rojos a trote) para asentar la mecánica.
+2. <em>Media</em>: base.
+3. <em>Difícil</em>: ventana de robo de 5 s y campo a 26×26.</p>
+<p><strong>Coaching.</strong>
+- Reacción mental al cambio de rol: del que ataca al que presiona sin transición lenta.
+- En presión: tapar primero el pase de progresión, luego al portador.
+- En posesión: el equipo aliado ofrece apoyos para "no quedarse 4 solos".</p>
+<p><strong>Duración.</strong> 4 series de 4 min, 2 min descanso. ≈ 24 min.</p>
+<hr />
+<h2>Tarea 29 — Recuperar y atacar la portería (contrapresión que termina en gol)</h2>
+<p><strong>Objetivo.</strong> Vincular la <strong>recuperación inmediata</strong> con la finalización: robar arriba y atacar la portería antes de que el rival se ordene.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>6v6</strong>, <strong>1 portería con portero</strong> en un fondo; en el opuesto, <strong>2 mini-porterías</strong> (sin portero).
+- Medidas: <strong>40×34 m</strong> con una <strong>zona de presión alta</strong> de 15 m delante de la portería con portero.
+- Material: portería + portero, 2 mini-porterías, conos de zona, petos, balones.</p>
+<p><figure class="diag"><em>[falta tarea-29.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> El equipo rojo "saca" desde su fondo (mini-porterías) e intenta progresar; el azul presiona. Si los azules <strong>roban dentro de la zona de presión alta</strong>, disponen de <strong>8 s para finalizar</strong> en la portería con portero. Si roban fuera, primero meten el balón en la zona y luego finalizan (el reloj cuenta desde el robo en zona).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Robo en zona alta + gol en <strong>≤8 s</strong> = 2 puntos (contrapresión productiva).
+- Robo + gol fuera de tiempo o construido lento = 1 punto.
+- Si el rojo <strong>supera la zona de presión con el balón controlado</strong>, suma 1 punto y ataca las mini-porterías (premia salir jugando bajo presión).</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: zona de presión de 18 m, 10 s para finalizar.
+2. <em>Media</em>: base (15 m, 8 s).
+3. <em>Difícil</em>: zona de 12 m, 6 s, y un rojo más para salir (6v7 en defensa).</p>
+<p><strong>Coaching.</strong>
+- Activar la presión sobre el <strong>gatillo</strong> (pase malo, control orientado hacia su portería).
+- Tras el robo: balón directo a portería, no toque de más.
+- Equilibrio: 1-2 jugadores cubren la transición rival a mini-porterías.</p>
+<p><strong>Duración.</strong> 5 series de 3,5 min, 90 s descanso. ≈ 24 min.</p>
+<hr />
+<h2>Tarea 30 — Bloque de reacción: 8 segundos para recuperar o replegar (síntesis defensiva)</h2>
+<p><strong>Objetivo.</strong> Tarea de cierre que integra la decisión completa tras pérdida: <strong>recuperar en contrapresión o replegar ordenado</strong>, según el cronómetro; conservar tras robar.</p>
+<p><strong>Organización.</strong>
+- Relación: <strong>7v7 + 1 comodín</strong> (ámbar, con el poseedor) en formato direccional. <strong>2 porterías con portero</strong>.
+- Medidas: <strong>50×38 m</strong> en <strong>3 zonas</strong> (propia, medio, rival).
+- Material: 2 porterías + 2 porteros, conos de 3 zonas, petos + 1 ámbar, <strong>cronómetro del coach</strong>, balones.</p>
+<p><figure class="diag"><em>[falta tarea-30.svg]</em></figure></p>
+<p><strong>Desarrollo.</strong> Partido direccional 7v7+comodín, foco en el momento de la pérdida:
+- Al perder en <strong>zona rival o media</strong>, el equipo dispone de <strong>8 s para recuperar (contrapresión)</strong>; si lo logra, mantiene ataque y puede finalizar.
+- Si <strong>no recupera en 8 s</strong>, debe <strong>replegar a su propia zona</strong> (todos cruzan a su mitad) antes de volver a robar; recuperar tras repliegue también puntúa, pero menos.</p>
+<p>Tras cualquier robo, <strong>3 pases obligatorios</strong> antes de poder finalizar (asegurar la conservación post-robo).</p>
+<p><strong>Provocaciones (medibles).</strong>
+- Cronómetro explícito de <strong>8 s</strong> tras pérdida en campo rival/medio.
+- Recuperación por contrapresión (≤8 s) que termina en gol = <strong>3 puntos</strong>.
+- Recuperación tras repliegue ordenado = 1 punto; gol normal = 1 punto.
+- Robar y <strong>no</strong> dar los 3 pases de conservación antes de finalizar = gol anulado.</p>
+<p><strong>Variantes (fácil → difícil).</strong>
+1. <em>Fácil</em>: 10 s de ventana y sin obligación de repliegue total.
+2. <em>Media</em>: base (8 s, repliegue obligatorio).
+3. <em>Difícil</em>: 6 s, repliegue obligatorio y <strong>2 comodines</strong> para el que defiende mejor la salida.</p>
+<p><strong>Coaching.</strong>
+- Decisión presionar vs replegar en función de cobertura y distancia al balón.
+- Coordinación de la contrapresión: portador + apoyos + líneas de pase.
+- Tras robar, asegurar (3 pases) y luego buscar la finalización: equilibrio recuperar–conservar–atacar.</p>
+<p><strong>Duración.</strong> 3 bloques de 6 min, 2 min descanso. ≈ 24 min.</p>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz · Familia 6 · Posesión defensiva: recuperar y conservar.</em></p></section>
+<footer class="foot">Curso "Juego de posición: dominar con el balón" · MISTER ÉLITE — Moisés Díaz</footer>
+</div></main></div>
+<script>const b=document.getElementById('menu-btn'),s=document.querySelector('.side');
+b.onclick=()=>s.classList.toggle('open');
+document.querySelectorAll('.side a').forEach(a=>a.onclick=()=>s.classList.remove('open'));</script>
+</body></html>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-rondos-completo.html"""
+"""Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-posesion-completo.html"""
 import os, re, html
 import markdown
 
@@ -10,16 +10,16 @@ GRAF = os.path.join(ROOT, "graficos")
 PAGES = [
     ("README.md", "inicio", "Inicio", "Curso"),
     ("modulos/01-fundamentos.md", "m01", "M01 · Fundamentos", "Teoría"),
-    ("modulos/02-metodologia.md", "m02", "M02 · Metodología y diseño", "Teoría"),
+    ("modulos/02-mecanismos.md", "m02", "M02 · Mecanismos", "Teoría"),
     ("modulos/03-del-rondo-al-juego.md", "m03", "M03 · Del rondo al juego", "Teoría"),
+    ("modulos/04-posesion-con-finalidad.md", "m04", "M04 · Posesión con finalidad", "Teoría"),
     ("ejercicios/00-plan-sesiones.md", "plan", "Plan de sesiones", "Práctica"),
-    ("ejercicios/01-iniciacion-mantenimiento.md", "f1", "F1 · Iniciación (R1–7)", "Práctica"),
-    ("ejercicios/02-presion-recuperacion.md", "f2", "F2 · Presión (R8–14)", "Práctica"),
-    ("ejercicios/03-posicionales-orientacion.md", "f3", "F3 · Posicionales (R15–21)", "Práctica"),
-    ("ejercicios/04-lineas-comodines.md", "f4", "F4 · Líneas y comodines (R22–28)", "Práctica"),
-    ("ejercicios/05-finalizacion.md", "f5", "F5 · Finalización (R29–35)", "Práctica"),
-    ("ejercicios/06-competitivos.md", "f6", "F6 · Competitivos (R36–43)", "Práctica"),
-    ("ejercicios/07-ludicos-calentamiento.md", "f7", "F7 · Lúdicos (R44–50)", "Práctica"),
+    ("ejercicios/01-rondos-posicionales.md", "f1", "F1 · Rondos posicionales (T1–5)", "Práctica"),
+    ("ejercicios/02-juegos-posicion.md", "f2", "F2 · Juegos de posición (T6–10)", "Práctica"),
+    ("ejercicios/03-superioridades.md", "f3", "F3 · Superioridades (T11–15)", "Práctica"),
+    ("ejercicios/04-progresion.md", "f4", "F4 · Progresión (T16–20)", "Práctica"),
+    ("ejercicios/05-finalizacion.md", "f5", "F5 · Finalización (T21–25)", "Práctica"),
+    ("ejercicios/06-posesion-defensiva.md", "f6", "F6 · Posesión defensiva (T26–30)", "Práctica"),
 ]
 
 def read_svg(name):
@@ -107,7 +107,7 @@ def main():
         secs.setdefault(sec, []);
         if sec not in order: order.append(sec)
         secs[sec].append((anc, title))
-    nav = ['<a class="brand" href="#inicio">⚽ Rondos<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>']
+    nav = ['<a class="brand" href="#inicio">⚽ Juego de posición<small>MISTER ÉLITE · MOISÉS DÍAZ</small></a>']
     for sec in order:
         nav.append(f'<div class="sec">{html.escape(sec)}</div>')
         for anc, title in secs[sec]:
@@ -129,17 +129,17 @@ def main():
         parts.append(f'<section id="{anc}">{body}</section>')
     doc = f"""<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rondos: el corazón del entrenamiento · MISTER ÉLITE</title><style>{CSS}</style></head><body>
+<title>Juego de posición: dominar con el balón · MISTER ÉLITE</title><style>{CSS}</style></head><body>
 <button id="menu-btn">☰</button>
 <div class="layout"><nav class="side">{nav_html}</nav>
 <main class="content"><div class="inner">{''.join(parts)}
-<footer class="foot">Curso "Rondos: el corazón del entrenamiento" · MISTER ÉLITE — Moisés Díaz</footer>
+<footer class="foot">Curso "Juego de posición: dominar con el balón" · MISTER ÉLITE — Moisés Díaz</footer>
 </div></main></div>
 <script>const b=document.getElementById('menu-btn'),s=document.querySelector('.side');
 b.onclick=()=>s.classList.toggle('open');
 document.querySelectorAll('.side a').forEach(a=>a.onclick=()=>s.classList.remove('open'));</script>
 </body></html>"""
-    out = os.path.join(ROOT, "curso-rondos-completo.html")
+    out = os.path.join(ROOT, "curso-posesion-completo.html")
     open(out, "w", encoding="utf-8").write(doc)
     print("HTML único:", out, round(os.path.getsize(out)/1024), "KB")
 

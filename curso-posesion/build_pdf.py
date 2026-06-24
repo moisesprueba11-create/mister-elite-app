@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera un PDF unico del curso de Rondos (textos + pizarras) -> curso-rondos.pdf"""
+"""Genera un PDF unico del curso de Juego de posición (textos + pizarras) -> curso-posesion.pdf"""
 import os, re, html
 import markdown
 from weasyprint import HTML
@@ -10,16 +10,16 @@ GRAF = os.path.join(ROOT, "graficos")
 DOCS = [
     ("README.md", None),
     ("modulos/01-fundamentos.md", "MÓDULO 01 · Fundamentos"),
-    ("modulos/02-metodologia.md", "MÓDULO 02 · Metodología y diseño"),
+    ("modulos/02-mecanismos.md", "MÓDULO 02 · Mecanismos"),
     ("modulos/03-del-rondo-al-juego.md", "MÓDULO 03 · Del rondo al juego"),
+    ("modulos/04-posesion-con-finalidad.md", "MÓDULO 04 · Posesión con finalidad"),
     ("ejercicios/00-plan-sesiones.md", "PLAN DE SESIONES"),
-    ("ejercicios/01-iniciacion-mantenimiento.md", "FAMILIA 1 · Iniciación y mantenimiento (R1–7)"),
-    ("ejercicios/02-presion-recuperacion.md", "FAMILIA 2 · Presión y recuperación (R8–14)"),
-    ("ejercicios/03-posicionales-orientacion.md", "FAMILIA 3 · Posicionales y de orientación (R15–21)"),
-    ("ejercicios/04-lineas-comodines.md", "FAMILIA 4 · Con líneas y comodines (R22–28)"),
-    ("ejercicios/05-finalizacion.md", "FAMILIA 5 · Finalización (R29–35)"),
-    ("ejercicios/06-competitivos.md", "FAMILIA 6 · Competitivos y condicionados (R36–43)"),
-    ("ejercicios/07-ludicos-calentamiento.md", "FAMILIA 7 · Lúdicos y de calentamiento (R44–50)"),
+    ("ejercicios/01-rondos-posicionales.md", "FAMILIA 1 · Rondos posicionales y de orientación (T1–5)"),
+    ("ejercicios/02-juegos-posicion.md", "FAMILIA 2 · Juegos de posición clásicos (T6–10)"),
+    ("ejercicios/03-superioridades.md", "FAMILIA 3 · Crear y usar superioridades / hombre libre (T11–15)"),
+    ("ejercicios/04-progresion.md", "FAMILIA 4 · Posesión con progresión y dirección (T16–20)"),
+    ("ejercicios/05-finalizacion.md", "FAMILIA 5 · Posesión para finalizar (T21–25)"),
+    ("ejercicios/06-posesion-defensiva.md", "FAMILIA 6 · Posesión defensiva: recuperar y conservar (T26–30)"),
 ]
 
 def fix_imgs(body):
@@ -42,7 +42,7 @@ def strip_md_links(body):
 
 CSS = """
 @page{size:A4;margin:1.8cm 1.6cm;
- @bottom-center{content:"Rondos: el corazón del entrenamiento · MISTER ÉLITE — Moisés Díaz";font-size:8pt;color:#999;}
+ @bottom-center{content:"Juego de posición: dominar con el balón · MISTER ÉLITE — Moisés Díaz";font-size:8pt;color:#999;}
  @bottom-right{content:counter(page);font-size:8pt;color:#999;}}
 @page cover{margin:0;}
 .cover{page:cover;page-break-after:always;width:100%;height:100%;}
@@ -82,7 +82,7 @@ def main():
         chunks.append(f'<div class="doc">{body}</div>')
     doc = (f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'
            f'<style>{CSS}</style></head><body>{"".join(chunks)}</body></html>')
-    out = os.path.join(ROOT, "curso-rondos.pdf")
+    out = os.path.join(ROOT, "curso-posesion.pdf")
     HTML(string=doc, base_url=ROOT).write_pdf(out)
     print("PDF generado:", out, os.path.getsize(out), "bytes")
 
