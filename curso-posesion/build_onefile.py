@@ -1,11 +1,35 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Genera UN SOLO archivo HTML autocontenido (SVG + CSS embebidos) -> curso-posesion-completo.html"""
-import os, re, html
+import os, re, html, base64
 import markdown
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GRAF = os.path.join(ROOT, "graficos")
+ANIMDIR = os.path.join(ROOT, "..", "video-curso-posesion", "clips")
+
+# mapea cada diagrama estático -> (slug del clip, título de la animación)
+ANIM = {
+    "teoria-02-superioridad-numerica.svg": ("01-superioridad-numerica", "Superioridad numérica"),
+    "teoria-03-superioridad-posicional.svg": ("02-superioridad-posicional", "Superioridad posicional"),
+    "teoria-06-hombre-libre.svg": ("03-hombre-libre", "Encontrar al hombre libre"),
+    "teoria-07-atraer-cambiar.svg": ("04-atraer-cambiar", "Atraer para liberar"),
+    "teoria-08-tercer-hombre.svg": ("05-tercer-hombre", "Tercer hombre"),
+    "teoria-09-pase-entre-lineas.svg": ("06-pase-entre-lineas", "Pase entre líneas"),
+    "teoria-11-ritmo-pausa-aceleracion.svg": ("07-ritmo", "Ritmo: pausa-aceleración"),
+    "teoria-16-contrapresion.svg": ("08-contrapresion", "Contrapresión"),
+    "tarea-06.svg": ("09-jdp-4v4mas3", "Juego de posición 4v4+3"),
+    "teoria-05-cinco-carriles.svg": ("10-cinco-carriles", "Ocupar los 5 carriles"),
+}
+
+def anim_block(slug, title):
+    mp4 = os.path.join(ANIMDIR, slug + ".mp4")
+    if not os.path.exists(mp4):
+        return ""
+    b64 = base64.b64encode(open(mp4, "rb").read()).decode()
+    return (f'<figure class="diag anim"><video autoplay loop muted playsinline '
+            f'src="data:video/mp4;base64,{b64}"></video>'
+            f'<figcaption>▶ animación · {html.escape(title)}</figcaption></figure>')
 
 PAGES = [
     ("README.md", "inicio", "Inicio", "Curso"),
@@ -46,7 +70,10 @@ def inline_images(body):
         cap_html = html.escape(cap)
         if svg is None:
             return f'<figure class="diag"><em>[falta {html.escape(fname)}]</em></figure>'
-        return f'<figure class="diag">{svg}<figcaption>📋 {cap_html}</figcaption></figure>'
+        block = f'<figure class="diag">{svg}<figcaption>📋 {cap_html}</figcaption></figure>'
+        if fname in ANIM:
+            block += anim_block(*ANIM[fname])
+        return block
     return re.sub(r'<img[^>]*>', repl, body)
 
 def strip_md_links(body):
@@ -93,6 +120,9 @@ th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6
 figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.7rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
 figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
+figure.diag.anim{border-color:#1d6fb8;}
+figure.diag.anim video{display:block;width:100%;height:auto;border-radius:6px;background:#0c1b2a;}
+figure.diag.anim figcaption{color:#1d6fb8;font-weight:600;}
 .foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
 @media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
  .side.open{transform:translateX(0);} #menu-btn{display:block;} .inner{padding:4rem 1.1rem 3rem;} h1{font-size:24px;}}
