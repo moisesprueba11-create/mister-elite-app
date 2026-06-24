@@ -121,13 +121,119 @@ def p7():
     sc.caption(16,55,"2 · pase vertical y carriles para el tridente")
     return sc
 
+# ---------- 8) Repliegue a 1-4-5-1 ----------
+def p8():
+    sc = Scene("Repliegue a 1-4-5-1", "sin balón los extremos bajan a la línea de medios", 50)
+    sc.actor("2","own",[(0,82,26)]); sc.actor("4","own",[(0,60,18)]); sc.actor("5","own",[(0,40,18)]); sc.actor("3","own",[(0,18,26)])
+    sc.actor("6","own",[(0,50,36)]); sc.actor("8","own",[(0,62,42)]); sc.actor("10","own",[(0,38,42)])
+    sc.actor("7","own",[(0,84,60),(28,76,42)], role="baja"); sc.actor("11","own",[(0,16,60),(28,24,42)], role="baja")
+    sc.actor("9","own",[(0,50,64)], role="referencia")
+    sc.actor("DC","rival",[(0,50,80)]); sc.actor("DC","rival",[(0,66,76)]); sc.actor("DC","rival",[(0,34,76)])
+    sc.ball([(0,50,82),(50,50,82)])
+    sc.caption(0,25,"1 · perdemos el balón: los extremos repliegan")
+    sc.caption(26,49,"2 · bloque 1-4-5-1 compacto, dos líneas")
+    return sc
+
+# ---------- 9) Basculación ----------
+def p9():
+    sc = Scene("Basculación", "el bloque se desplaza al lado del balón", 48)
+    D = 16
+    for lbl, x, y in [("2",82,30),("4",58,24),("5",38,24),("3",16,30),("6",50,42),("8",62,46),("10",40,46)]:
+        sc.actor(lbl,"own",[(0,x,y),(30,x+D,y)])
+    sc.actor("7","own",[(0,84,60),(30,90,60)]); sc.actor("11","own",[(0,16,60),(30,40,60)], role="pisa dentro")
+    sc.actor("9","own",[(0,50,68),(30,62,68)])
+    sc.actor("DC","rival",[(0,30,82),(30,80,80)], role="circula")
+    sc.ball([(0,30,80),(30,80,78)])
+    sc.zone(30,47,62,20,99,72,"lado fuerte (densidad)","#ffd54a")
+    sc.caption(0,23,"1 · el balón cambia de lado…")
+    sc.caption(24,47,"2 · …y las dos líneas bascula juntas")
+    return sc
+
+# ---------- 10) Ataque del área ----------
+def p10():
+    sc = Scene("Ataque del área", "centro y los cuatro puntos de remate", 54, half="att")
+    sc.actor("7","own",[(0,82,72),(16,86,80)], role="centra")
+    sc.actor("9","own",[(0,52,80),(40,40,90)], role="1er palo")
+    sc.actor("10","own",[(0,46,72),(40,52,90)], role="penalti")
+    sc.actor("11","own",[(0,18,74),(40,62,92)], role="2º palo")
+    sc.actor("8","own",[(0,56,64),(40,54,78)], role="frontal")
+    sc.actor("DFC","rival",[(0,44,86)]); sc.actor("DFC","rival",[(0,58,86)]); sc.actor("1",("rival"),[(0,50,97)])
+    sc.ball([(0,82,72),(18,86,80),(40,56,90)])
+    sc.arrow(18,40,(86,80),(56,90))
+    sc.caption(0,17,"1 · desborde y centro del extremo")
+    sc.caption(18,53,"2 · 1er palo · penalti · 2º palo · frontal")
+    return sc
+
+# ---------- 11) Los 5 carriles ----------
+def p11():
+    sc = Scene("Ocupar los 5 carriles", "uno por carril: nunca dos en el mismo", 44)
+    for i in range(1,5):
+        sc.zone(0,43, i*20, 6, i*20, 94, "")  # líneas divisorias suaves
+    sc.actor("3","own",[(0,30,34),(26,10,40)], role="LI"); sc.actor("2","own",[(0,70,34),(26,90,40)], role="LD")
+    sc.actor("11","own",[(0,30,66),(26,12,78)], role="EI"); sc.actor("7","own",[(0,70,66),(26,88,78)], role="ED")
+    sc.actor("10","own",[(0,44,60),(26,30,70)], role="interior"); sc.actor("8","own",[(0,56,60),(26,70,70)], role="interior")
+    sc.actor("9","own",[(0,50,80),(26,50,86)], role="DC")
+    sc.actor("6","own",[(0,50,40)]); sc.actor("5","own",[(0,40,24)]); sc.actor("4","own",[(0,60,24)])
+    sc.ball([(0,50,42),(44,50,42)])
+    sc.caption(0,43,"un jugador por cada uno de los 5 carriles")
+    return sc
+
+# ---------- 12) 1v1 del extremo a pie cambiado ----------
+def p12():
+    sc = Scene("1v1 del extremo (pie cambiado)", "corta dentro y dispara", 48, half="att")
+    sc.actor("7","own",[(0,80,66),(18,80,66),(40,64,82)], role="ED")
+    sc.actor("2","own",[(0,72,60),(40,90,82)], role="LD da amplitud")
+    sc.actor("LI","rival",[(0,84,72),(40,74,84)], role="lateral")
+    sc.actor("1","rival",[(0,50,97)])
+    sc.ball([(0,80,66),(40,64,82),(48,50,98)])
+    sc.arrow(40,48,(64,82),(50,97), kind="pass")
+    sc.caption(0,19,"1 · el extremo encara con el lateral abierto")
+    sc.caption(20,47,"2 · corta hacia dentro y dispara a portería")
+    return sc
+
+# ---------- 13) Cambio de orientación ----------
+def p13():
+    sc = Scene("Cambio de orientación", "atraer a un lado y cambiar al extremo aislado", 52)
+    sc.actor("8","own",[(0,64,48),(24,54,50)], role="atrae")
+    sc.actor("2","own",[(0,84,52)]); sc.actor("7","own",[(0,88,64)])
+    sc.actor("6","own",[(0,50,40)])
+    sc.actor("11","own",[(0,14,66),(40,12,74)], role="EI aislado 1v1")
+    sc.actor("3","own",[(0,20,52),(40,22,66)], role="LI acompaña")
+    sc.actor("DFC","rival",[(0,70,58)]); sc.actor("DFC","rival",[(0,58,60)]); sc.actor("LD","rival",[(0,24,70)])
+    sc.ball([(0,64,48),(24,52,50),(44,14,70)])
+    sc.arrow(26,44,(52,50),(14,70))
+    sc.caption(0,23,"1 · se atrae al rival al lado fuerte")
+    sc.caption(24,51,"2 · cambio largo al extremo aislado")
+    return sc
+
+# ---------- 14) Llegada de interiores al área ----------
+def p14():
+    sc = Scene("Llegada de interiores", "el centro lo rematan los que llegan de atrás", 52, half="att")
+    sc.actor("11","own",[(0,18,72),(16,14,80)], role="centra")
+    sc.actor("9","own",[(0,50,82),(40,40,90)], role="fija 1er palo")
+    sc.actor("10","own",[(0,46,66),(40,54,90)], role="llega al punto de penalti")
+    sc.actor("8","own",[(0,60,60),(40,58,80)], role="al frontal")
+    sc.actor("DFC","rival",[(0,44,86)]); sc.actor("DFC","rival",[(0,58,86)]); sc.actor("1","rival",[(0,50,97)])
+    sc.ball([(0,18,72),(18,14,80),(40,52,90)])
+    sc.arrow(18,40,(14,80),(52,90))
+    sc.caption(0,17,"1 · centro desde la banda contraria")
+    sc.caption(18,51,"2 · interiores rematan desde segunda línea")
+    return sc
+
 PLAYS = [("01-salida-rombo", p1, "Salida en rombo"),
          ("02-salida-en-3", p2, "Salida en 3 (lavolpiana)"),
          ("03-transformacion-1325", p3, "Transformación a 1-3-2-5"),
          ("04-pressing-tridente", p4, "Pressing del tridente"),
          ("05-apoyo-ruptura", p5, "Apoyo + ruptura"),
          ("06-sociedad-banda", p6, "Sociedad de banda"),
-         ("07-transicion-ofensiva", p7, "Transición ofensiva")]
+         ("07-transicion-ofensiva", p7, "Transición ofensiva"),
+         ("08-repliegue-1451", p8, "Repliegue a 1-4-5-1"),
+         ("09-basculacion", p9, "Basculación"),
+         ("10-ataque-area", p10, "Ataque del área"),
+         ("11-cinco-carriles", p11, "Ocupar los 5 carriles"),
+         ("12-extremo-1v1", p12, "1v1 del extremo"),
+         ("13-cambio-orientacion", p13, "Cambio de orientación"),
+         ("14-llegada-interiores", p14, "Llegada de interiores")]
 
 def main():
     clips = os.path.join(OUT, "clips"); os.makedirs(clips, exist_ok=True)

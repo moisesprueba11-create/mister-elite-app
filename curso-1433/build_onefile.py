@@ -17,6 +17,13 @@ ANIM = {
     "teoria-13-entre-lineas.svg":       ("05-apoyo-ruptura",       "Apoyo + ruptura"),
     "tarea-15.svg":                     ("06-sociedad-banda",      "Sociedad de banda"),
     "teoria-15-transicion-ofensiva.svg":("07-transicion-ofensiva", "Transición ofensiva"),
+    "teoria-05-repliegue-1451.svg":     ("08-repliegue-1451",      "Repliegue a 1-4-5-1"),
+    "teoria-09-basculacion.svg":        ("09-basculacion",         "Basculación"),
+    "teoria-14-ataque-area.svg":        ("10-ataque-area",         "Ataque del área"),
+    "teoria-02-cinco-carriles.svg":     ("11-cinco-carriles",      "Ocupar los 5 carriles"),
+    "tarea-14.svg":                     ("12-extremo-1v1",         "1v1 del extremo"),
+    "tarea-16.svg":                     ("13-cambio-orientacion",  "Cambio de orientación"),
+    "tarea-20.svg":                     ("14-llegada-interiores",  "Llegada de interiores"),
 }
 
 def anim_block(slug, title):
