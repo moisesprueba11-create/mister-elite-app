@@ -22,6 +22,21 @@ Nombres fijos por curso (no cambiar):
 Esto aplica a TODOS los cursos (actuales y futuros): pretemporada, posesión, rondos,
 1-4-4-2, 1-5-3-2, 1-3-4-3, 1-4-2-3-1, 1-4-3-3, etc.
 
+## Publicación automática en WordPress
+
+Al **terminar de crear o actualizar cualquier curso** (todos son de MISTER ÉLITE), tras el build
+y la validación TOP, ejecutar la skill `subir-wordpress` para publicar/actualizar el curso en la
+web de Moisés Díaz:
+
+```
+python3 .claude/skills/subir-wordpress/upload.py <slug>
+```
+
+Sube el PDF y el HTML único por la REST API, reemplaza la versión anterior (sin duplicar) y
+publica automáticamente. Requiere los secretos de entorno `WP_URL`, `WP_USER`, `WP_APP_PASSWORD`
+(nunca en el repo). Si faltan, el script avisa y no sube nada. Detalles en
+`.claude/skills/subir-wordpress/SKILL.md`.
+
 ## Estándar de calidad
 
 - Bucle de mejora hasta que el evaluador considere el curso "TOP" (≥ 8,5/10).

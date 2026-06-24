@@ -72,6 +72,12 @@ Un agente evaluador revisa el producto REAL (contenido, cobertura de imágenes, 
 - **TOP** si ≥ 8.5 y sin bloqueantes → entrega.
 - Si no, devuelve must-fix concretos → vuelve al paso pertinente (normalmente 6) y RE-EVALÚA. Repite hasta TOP.
 
+## 10) Publicar en WordPress (automático)
+Tras TOP, subir el curso a la web ejecutando la skill `subir-wordpress`:
+`python3 .claude/skills/subir-wordpress/upload.py <slug>`. Sube PDF + HTML único por la REST API,
+reemplaza la versión anterior (sin duplicar) y publica. Requiere los secretos `WP_URL`/`WP_USER`/
+`WP_APP_PASSWORD`; si faltan, avisa y no sube (no rompe el flujo).
+
 ## Convenciones fijas (no cambian entre sistemas)
 - Marca **MISTER ÉLITE — Moisés Díaz** en portada y al pie de cada pizarra (lo pone `pitch.py`).
 - Estética: paleta y estilo de `pitch.py`; portada dorada/azul de `build_cover.py`.
