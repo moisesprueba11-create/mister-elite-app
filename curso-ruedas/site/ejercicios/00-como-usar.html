@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo usar el banco · Ruedas de pases</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="../index.html">📋 Ruedas de pases</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a href="../modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="../modulos/02-principios-tecnicos.html">M02 · Principios técnicos</a></li>
+<li><a href="../modulos/03-organizar-progresar.html">M03 · Organizar y progresar</a></li>
+<li><a href="../modulos/04-del-patron-al-juego.html">M04 · Del patrón al juego</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a class="active" href="../ejercicios/00-como-usar.html">Cómo usar el banco</a></li>
+<li><a href="../ejercicios/01-basicas.html">F1 · Básicas (01–05)</a></li>
+<li><a href="../ejercicios/02-movilidad.html">F2 · Movilidad (06–10)</a></li>
+<li><a href="../ejercicios/03-tercer-hombre.html">F3 · Pared y tercer hombre (11–15)</a></li>
+<li><a href="../ejercicios/04-progresion.html">F4 · Progresión (16–20)</a></li>
+<li><a href="../ejercicios/05-finalizacion.html">F5 · Finalización (21–25)</a></li>
+<li><a href="../ejercicios/06-oposicion.html">F6 · Oposición (26–30)</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<h1>Cómo usar el banco de 30 ruedas</h1>
+<p>El banco está ordenado en <strong>6 familias</strong>, de lo simple a lo complejo, siguiendo la progresión metodológica del Módulo 3. No tienes que recorrerlas en orden: elige el objetivo de tu sesión y ve a la familia que lo entrena.</p>
+<hr />
+<h2>Las 6 familias</h2>
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Entrena</th>
+<th>Ruedas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 · Básicas</strong></td>
+<td>técnica de pase y primer toque en formas fijas</td>
+<td>01–05</td>
+</tr>
+<tr>
+<td><strong>2 · Movilidad y rotación</strong></td>
+<td>desmarque tras el pase, rotaciones</td>
+<td>06–10</td>
+</tr>
+<tr>
+<td><strong>3 · Pared y tercer hombre</strong></td>
+<td>combinación, give-and-go, tercer hombre</td>
+<td>11–15</td>
+</tr>
+<tr>
+<td><strong>4 · Progresión por zonas</strong></td>
+<td>salida, romper líneas, cambio de orientación</td>
+<td>16–20</td>
+</tr>
+<tr>
+<td><strong>5 · Finalización</strong></td>
+<td>centro, pase de la muerte, definición</td>
+<td>21–25</td>
+</tr>
+<tr>
+<td><strong>6 · Oposición y transferencia</strong></td>
+<td>decisión, semioposición, juego real</td>
+<td>26–30</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Cómo leer cada ficha</h2>
+<p>Cada rueda trae:
+- <strong>Pizarra</strong> con la disposición (estaciones con letras A, B, C…) y la secuencia numerada de pases.
+- <strong>Objetivo</strong> — qué entrena (sus <em>coaching points</em>).
+- <strong>Secuencia</strong> — el orden de pases y movimientos.
+- <strong>Medidas</strong> — distancias orientativas (ajústalas a tu categoría).
+- <strong>Variante</strong> — cómo complicarla para subir un peldaño.</p>
+<p><strong>Convención de las pizarras:</strong>
+- 🔵 Estaciones (jugadores) con su letra · 🟠 apoyo / pared / pivote · 🔴 defensor.
+- Flecha amarilla discontinua = <strong>pase</strong> (numerada 1-2-3) · flecha blanca = <strong>carrera/desmarque</strong> · flecha azul = <strong>conducción</strong>.</p>
+<hr />
+<h2>Cómo encajarlas en la sesión</h2>
+<ul>
+<li><strong>Calentamiento / activación:</strong> familias 1, 2 y 3 (técnica y combinación).</li>
+<li><strong>Bloque principal técnico-táctico:</strong> familias 4 y 5 (progresión y finalización).</li>
+<li><strong>Cierre hacia el juego:</strong> familia 6 (oposición y transferencia).</li>
+<li><strong>Duración:</strong> 8-15 min. Series de 2-4 min por sentido. <strong>Siempre los dos sentidos / las dos piernas.</strong></li>
+</ul>
+<blockquote>
+<p>Recuerda el principio del curso: cuando el patrón salga limpio, <strong>súbelo de nivel</strong> (movimiento → combinación → carga → oposición → finalización). No te quedes repitiendo la versión fácil.</p>
+</blockquote>
+<footer class="foot">Curso "Ruedas de pases" · MISTER ÉLITE — Moisés Díaz</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>
