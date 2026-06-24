@@ -22,20 +22,20 @@ Nombres fijos por curso (no cambiar):
 Esto aplica a TODOS los cursos (actuales y futuros): pretemporada, posesión, rondos,
 1-4-4-2, 1-5-3-2, 1-3-4-3, 1-4-2-3-1, 1-4-3-3, etc.
 
-## Publicación automática en WordPress
+## Publicación en WordPress (flujo actual)
 
-Al **terminar de crear o actualizar cualquier curso** (todos son de MISTER ÉLITE), tras el build
-y la validación TOP, ejecutar la skill `subir-wordpress` para publicar/actualizar el curso en la
-web de Moisés Díaz:
+**Este entorno de código NO tiene WordPress conectado** (sus MCP son Canva, Gmail, Google Drive,
+Make, Notion, GitHub). El MCP de WordPress vive en el Claude del chat del usuario.
 
-```
-python3 .claude/skills/subir-wordpress/upload.py <slug>
-```
+Flujo elegido: al terminar de crear o actualizar un curso →
+1. **Build + validación TOP** aquí.
+2. **Entregar** los archivos: `SendUserFile` del PDF y el HTML único + `git commit`/`push` a la rama.
+3. **El usuario publica desde su Claude del chat** (que sí tiene el MCP de WordPress), que sube el
+   PDF y el HTML único y reemplaza la versión anterior (nombres estables → sin copias dobladas).
 
-Sube el PDF y el HTML único por la REST API, reemplaza la versión anterior (sin duplicar) y
-publica automáticamente. Requiere los secretos de entorno `WP_URL`, `WP_USER`, `WP_APP_PASSWORD`
-(nunca en el repo). Si faltan, el script avisa y no sube nada. Detalles en
-`.claude/skills/subir-wordpress/SKILL.md`.
+Opcional / futuro: si algún día se conecta WordPress a ESTE entorno (su MCP o credenciales REST
+`WP_URL`/`WP_USER`/`WP_APP_PASSWORD`), la skill `subir-wordpress` ya está lista para automatizar la
+subida desde aquí (`python3 .claude/skills/subir-wordpress/upload.py <slug>`).
 
 ## Estándar de calidad
 
