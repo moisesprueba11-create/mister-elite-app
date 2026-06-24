@@ -65,6 +65,8 @@ Desde `curso-<slug>/`: `python3 build_site.py`, `python3 build_pdf.py`, `python3
 Comprueba **0 rutas de imagen rotas** y que cada tarea tiene exactamente 1 pizarra.
 Salidas: `site/` (web navegable), `curso-<slug>.pdf` (portada como pág. 1), `curso-<slug>-completo.html` (1 archivo autocontenido).
 
+> **Nombres ESTABLES (no negociable):** al corregir o actualizar un curso ya existente, los entregables conservan SIEMPRE el mismo nombre que la versión anterior (`curso-<slug>.pdf`, `curso-<slug>-completo.html`). El build sobrescribe; NUNCA se añaden sufijos de versión (`-v2`, `-final`, fechas…). Así la nueva versión reemplaza a la anterior al subirla y el usuario no acumula copias dobladas.
+
 ## 9) Evaluador final → bucle hasta TOP
 Un agente evaluador revisa el producto REAL (contenido, cobertura de imágenes, calidad/coherencia gráfica, portada/marca, PDF) y puntúa por dimensión + global. Veredicto en `_pipeline/evaluacion/VEREDICTO-FINAL.md`:
 - **TOP** si ≥ 8.5 y sin bloqueantes → entrega.
