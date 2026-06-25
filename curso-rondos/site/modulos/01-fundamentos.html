@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M01 · Fundamentos · Rondos</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="../index.html">⚽ Rondos</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a class="active" href="../modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="../modulos/02-metodologia.html">M02 · Metodología y diseño</a></li>
+<li><a href="../modulos/03-del-rondo-al-juego.html">M03 · Del rondo al juego</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a href="../ejercicios/00-plan-sesiones.html">Plan de sesiones</a></li>
+<li><a href="../ejercicios/01-iniciacion-mantenimiento.html">F1 · Iniciación (R1–7)</a></li>
+<li><a href="../ejercicios/02-presion-recuperacion.html">F2 · Presión (R8–14)</a></li>
+<li><a href="../ejercicios/03-posicionales-orientacion.html">F3 · Posicionales (R15–21)</a></li>
+<li><a href="../ejercicios/04-lineas-comodines.html">F4 · Líneas y comodines (R22–28)</a></li>
+<li><a href="../ejercicios/05-finalizacion.html">F5 · Finalización (R29–35)</a></li>
+<li><a href="../ejercicios/06-competitivos.html">F6 · Competitivos (R36–43)</a></li>
+<li><a href="../ejercicios/07-ludicos-calentamiento.html">F7 · Lúdicos (R44–50)</a></li>
+</ul>
+<div class="sec-title">Recursos</div>
+<ul>
+<li><a href="../graficos/PEDIDOS.html">Índice de diagramas</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<h1>Módulo 01 · Fundamentos de los rondos</h1>
+<blockquote>
+<p>Poca teoría, mucha práctica. Este módulo te da lo justo para entender <strong>qué es</strong> un rondo, <strong>de dónde viene</strong> y <strong>por qué</strong> es la tarea reina. A partir del módulo 02 ya estamos diseñando; del 04 en adelante, ejecutando los 50 rondos.</p>
+</blockquote>
+<hr />
+<h2>1. Qué es un rondo (definición operativa)</h2>
+<p>Un rondo es una <strong>tarea jugada de mantenimiento–recuperación del balón en superioridad numérica</strong>, dentro de un <strong>espacio reducido y delimitado</strong>, con <strong>posiciones de partida fijadas</strong> (poseedores normalmente en el perímetro, recuperadores en el centro), donde un grupo conserva la posesión y otro, en inferioridad, intenta robarla.</p>
+<p>Cuatro rasgos lo definen y lo distinguen de cualquier otra tarea:</p>
+<ol>
+<li><strong>Superioridad numérica estable para el poseedor</strong> (4v1, 5v2, 6v3…). La ventaja es estructural y permanente, no coyuntural.</li>
+<li><strong>Espacio reducido y delimitado</strong> (cuadrado, rectángulo, círculo o rombo con conos), que comprime el tiempo y el espacio de decisión.</li>
+<li><strong>Posiciones de partida pre-fijadas</strong>: los poseedores ocupan el contorno; el o los recuperadores, el interior. De ahí el característico "cerco" alrededor del que roba.</li>
+<li><strong>Doble objetivo simultáneo y opuesto</strong>: un equipo <strong>conserva</strong> y el otro <strong>recupera</strong>. Hay oposición real; no es una rueda de pases.</li>
+</ol>
+<p><figure class="diagrama"><img loading="lazy" src="../graficos/teoria-01-definicion.svg" alt="Definición del rondo: poseedores azules en el perímetro, defensor rojo en el centro, espacio acotado con conos"><figcaption>📋 Definición del rondo: poseedores azules en el perímetro, defensor rojo en el centro, espacio acotado con conos</figcaption></figure></p>
+<blockquote>
+<p><strong>Origen del nombre.</strong> En España se le llamó <em>torello</em> ("torito"), porque el del centro persigue el balón como un toro al capote; en el mundo anglosajón, <em>piggy in the middle</em>. "Rondo" (de <em>redondo</em>, jugar en círculo) se impuso después.</p>
+</blockquote>
+<h3>Diferencias con tareas vecinas</h3>
+<p>El rondo se confunde a menudo con el <strong>juego de posición</strong> y con el <strong>partido reducido (SSG)</strong>. No son lo mismo:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th><strong>Rondo</strong></th>
+<th><strong>Juego de posición</strong></th>
+<th><strong>Partido reducido (SSG)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naturaleza</td>
+<td>Tarea / herramienta</td>
+<td>Tarea <strong>y</strong> concepto del modelo de juego</td>
+<td>Forma reducida del partido</td>
+</tr>
+<tr>
+<td>Relación numérica</td>
+<td>Superioridad estable (4v1, 5v2…)</td>
+<td>Superioridades zonales (3v2, 4v3) por zonas</td>
+<td>Tiende a la igualdad</td>
+</tr>
+<tr>
+<td>Estructura del espacio</td>
+<td>Un solo espacio, posiciones fijas</td>
+<td>Espacio <strong>sectorizado</strong> por zonas/pasillos</td>
+<td>Campo con porterías, estructura de partido</td>
+</tr>
+<tr>
+<td>Dirección del juego</td>
+<td>Habitualmente <strong>sin dirección</strong></td>
+<td>Direccional o semidireccional</td>
+<td><strong>Direccional</strong>: hay portería</td>
+</tr>
+<tr>
+<td>Objetivo dominante</td>
+<td>Conservar y recuperar</td>
+<td>Ocupar el espacio para progresar</td>
+<td>Competir cercano al partido (con gol)</td>
+</tr>
+<tr>
+<td>Especificidad</td>
+<td>Media (sin porterías)</td>
+<td>Alta (dirección, zonas, fases)</td>
+<td>Muy alta (es el partido en pequeño)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves para no confundirlos:</strong></p>
+<ul>
+<li>El <strong>rondo</strong> es la <strong>célula básica</strong>: máximo control del entrenador, pocas variables, mucha repetición de fundamentos en superioridad.</li>
+<li>El <strong>juego de posición</strong> añade <strong>dirección y sectorización</strong>: ya no se conserva por conservar, sino para <strong>progresar ocupando bien el espacio</strong>. El rondo es su puerta de entrada.</li>
+<li>El <strong>partido reducido</strong> añade <strong>finalización, porterías e igualdad</strong>: máxima transferencia, menor control del entrenador.</li>
+</ul>
+<p>Conviene verlo como un <strong>continuo de especificidad</strong>: cada peldaño gana realismo y pierde control aislado del estímulo.</p>
+<p><figure class="diagrama"><img loading="lazy" src="../graficos/teoria-02-continuo-especificidad.svg" alt="Continuo de especificidad: rondo, rondo direccional, juego de posición, partido reducido, partido"><figcaption>📋 Continuo de especificidad: rondo, rondo direccional, juego de posición, partido reducido, partido</figcaption></figure></p>
+<hr />
+<h2>2. Origen e historia (la versión honesta)</h2>
+<ul>
+<li><strong>Tradición neerlandesa y Total Football.</strong> El rondo es inseparable del <em>Totaalvoetbal</em> del Ajax y la selección neerlandesa de los 70 (Rinus Michels, con Johan Cruyff como referencia). El fútbol total exige recibir, orientarse y pasar bajo presión en espacios pequeños: el rondo es su laboratorio.</li>
+<li><strong>Laureano Ruiz en Barcelona.</strong> Un matiz a menudo omitido: el rondo como herramienta sistemática de formación en La Masia se asocia al técnico cántabro <strong>Laureano Ruiz</strong>, responsable del fútbol base del FC Barcelona desde comienzos de los 70 (y del primer equipo en 1976). Es decir, el rondo estaba en Barcelona <strong>antes</strong> del Cruyff entrenador.</li>
+<li><strong>Cruyff y la universalización.</strong> Cruyff, síntesis de la escuela neerlandesa y la española, lo convirtió en seña de identidad al volver como entrenador del Barça en <strong>1988</strong> (el "Dream Team"), llevándolo al entrenamiento diario y a la rutina previa al partido.</li>
+<li><strong>La Masia y Guardiola.</strong> La generación formada en esa cultura (Guardiola incluido) heredó el rondo como gramática básica. Con <strong>Pep Guardiola</strong> (2008–2012) y su éxito global, las imágenes del rondo dieron la vuelta al mundo: hoy es patrimonio común de cualquier estilo.</li>
+</ul>
+<blockquote>
+<p><em>"Todo lo que ocurre en un partido, excepto el remate, lo puedes hacer en un rondo."</em> — Johan Cruyff</p>
+</blockquote>
+<p><strong>Cronología en una frase:</strong> ejercicios de mantenimiento en círculo ya existían en los 50–60; en los <strong>70</strong> confluyen dos focos (neerlandés y catalán); Cruyff lo institucionaliza (1988–96); Guardiola lo universaliza (2008→). Lo correcto es presentarlo como <strong>tradición compartida</strong>, sin una paternidad única no documentable.</p>
+<hr />
+<h2>3. Por qué es la "tarea reina": el principio de especificidad</h2>
+<p>El jugador <strong>se adapta a aquello que entrena de forma parecida a como compite</strong>. Por eso el entrenamiento moderno prefiere tareas jugadas frente a ejercicios analíticos: una rueda de pases sin oposición mejora el gesto, pero no la <strong>lectura</strong> ni la <strong>decisión</strong> que el partido exige.</p>
+<p>El rondo cumple la especificidad mejor que casi cualquier tarea simple:</p>
+<ol>
+<li><strong>Hay balón, oposición y compañeros</strong> → se percibe, decide y ejecuta con adversario, no en el vacío.</li>
+<li><strong>El espacio reducido comprime tiempo y distancias</strong> → obliga a percibir antes y decidir más rápido; luego el partido "parece más lento".</li>
+<li><strong>Densidad de acciones altísima</strong> → decenas de controles, pases, apoyos y presiones por jugador en pocos minutos.</li>
+<li><strong>Integra todas las dimensiones a la vez</strong> (técnica, táctica, cognitiva, condicional, emocional), como en la competición.</li>
+<li><strong>Es infinitamente regulable</strong>: cambiando número, espacio, toques, comodines y reglas, el mismo formato sirve para objetivos opuestos.</li>
+</ol>
+<p>Esa combinación de <strong>alta especificidad + alta densidad + máxima regulabilidad</strong> es lo que lo hace <em>tarea reina</em>.</p>
+<blockquote>
+<p>Matiz: el rondo es reina, <strong>no monarca absoluta</strong>. En su forma básica no tiene dirección ni finalización. Por eso necesita progresar hacia rondos direccionales, juego de posición y partido reducido para cerrar la transferencia (módulo 03).</p>
+</blockquote>
+<hr />
+<h2>4. Los tipos de beneficio</h2>
+<p>El rondo entrena todas estas dimensiones <strong>a la vez</strong>. Las separamos solo para describirlas.</p>
+<p><figure class="diagrama"><img loading="lazy" src="../graficos/teoria-03-tipos-beneficio.svg" alt="Los cinco tipos de beneficio del rondo: técnico, táctico, cognitivo-perceptivo, físico, socioemocional"><figcaption>📋 Los cinco tipos de beneficio del rondo: técnico, táctico, cognitivo-perceptivo, físico, socioemocional</figcaption></figure></p>
+<h3>4.1 Técnico</h3>
+<p>Control orientado y primer toque útil; calidad, peso y timing del pase; uso de todas las superficies y ambas piernas; protección y conducción breve para fijar; ritmo de circulación a uno o dos toques.</p>
+<h3>4.2 Táctico</h3>
+<p>Apoyos y ángulos que abren línea de pase; triángulos y rombos permanentes (siempre dos opciones); ampliación del espacio y búsqueda del hombre libre; orientación corporal y cambio de orientación; y, para los del centro, <strong>presión tras pérdida y defensa en inferioridad</strong> (el lado defensivo del rondo, muy infravalorado).</p>
+<h3>4.3 Cognitivo-perceptivo</h3>
+<p>Toma de decisiones bajo presión temporal; <strong>escaneo / visión periférica</strong> (mirar antes de recibir); anticipación de la presión y del compañero; atención sostenida; reconocimiento de patrones (localizar al hombre libre, la línea abierta).</p>
+<h3>4.4 Físico-condicional</h3>
+<p>Acciones intermitentes de alta intensidad (sobre todo para el recuperador); cambios de ritmo y agilidad en espacio corto; <strong>RSA</strong> (capacidad de repetir esfuerzos cortos); carga regulable con el tamaño del espacio, la relación numérica y el tiempo en el centro.</p>
+<h3>4.5 Socioemocional</h3>
+<p>Tensión competitiva del marcador implícito; cohesión y comunicación; gestión del error y del "castigo" simbólico de quedar en el centro; liderazgo y autoexigencia entre iguales.</p>
+<hr />
+<h2>Ideas clave</h2>
+<ul>
+<li>El rondo = <strong>superioridad estable + espacio reducido + posiciones fijas + oposición real</strong>. Sin oposición y sin reglas, no es un rondo: es una rueda de pases.</li>
+<li>No es lo mismo que el juego de posición (añade dirección y zonas) ni que el partido reducido (añade porterías e igualdad). Son <strong>peldaños de un continuo de especificidad</strong>.</li>
+<li>Es <strong>tradición compartida</strong> (neerlandesa + catalana), consolidada en los 70, popularizada por Cruyff y universalizada por Guardiola. Sin paternidad única.</li>
+<li>Es la <strong>tarea reina</strong> por especificidad + densidad + regulabilidad, pero <strong>no monarca absoluta</strong>: necesita progresar para llegar al gol.</li>
+<li>Entrena <strong>cinco dimensiones a la vez</strong>; el jugador del centro entrena la <strong>defensa en inferioridad</strong>, no pierde el tiempo.</li>
+</ul>
+<h2>Errores comunes</h2>
+<ul>
+<li><strong>Tratarlo solo como calentamiento.</strong> Es un uso legítimo, pero reduccionista: bien diseñado, es tarea principal (conservación, presión, RSA, decisión).</li>
+<li><strong>Confundirlo con "jugar al toro" sin objetivo.</strong> Sin objetivo, reglas ni feedback, degenera en pasarse el balón.</li>
+<li><strong>Creer que solo sirve a equipos posesionales.</strong> Su fase defensiva (presión, robo en inferioridad) es oro para equipos de transición.</li>
+<li><strong>Pensar que no transfiere por no tener porterías.</strong> La transferencia se construye <strong>progresando</strong> (módulo 03), no descartando la herramienta.</li>
+<li><strong>Verlo como ejercicio "solo técnico".</strong> Su mayor virtud es integrar técnica, táctica, cognición y condición a la vez.</li>
+<li><strong>"Cuanto más rato, mejor".</strong> La calidad cae con la fatiga: <strong>series cortas e intensas con foco</strong>, no rondos eternos.</li>
+</ul>
+<hr />
+<p><em>MISTER ÉLITE — Moisés Díaz</em></p>
+<footer class="foot">Curso "Rondos: el corazón del entrenamiento" · MISTER ÉLITE — Moisés Díaz</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>

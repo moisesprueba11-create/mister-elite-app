@@ -1,0 +1,343 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Genera las 30 pizarras de ruedas de pases del curso (MISTER ÉLITE).
+Las ruedas SIN finalización son circuitos CERRADOS y continuos: el balón vuelve
+al inicio y se repite (arco punteado '↻') o rota sin parar. Las de finalización
+terminan en remate (excepción) y se reinician como oleadas."""
+import os, sys, math
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, "lib"))
+from drill import DrillPitch
+from pitch import Pitch
+
+def out(name): return os.path.join(HERE, name)
+def frame(p): p.field(8, 8, 92, 92, corners=False, stroke="#ffffff", w=1.6, dash="4 6")
+def st(p, x, y, letter, team="own"): p.player(x, y, letter, team=team)
+def cyc(p, x1, y1, x2, y2, bend=18, label="↻ repite"): p.cycle_arrow(x1, y1, x2, y2, bend=bend, label=label)
+def cont(p, x, y, txt="↻ circuito continuo"): p.note(x, y, txt, c="#ffe08a", size=11)
+def wave(p, x, y): p.note(x, y, "→ siguiente oleada", c="#ffe08a", size=11)
+
+# ============================ FAMILIA 1 · BÁSICAS ============================
+
+# 01 Cuadrado base (ya cierra: D→A)
+p = DrillPitch("Rueda 01 — Cuadrado base", "4 estaciones · 12×12 m · circuito cerrado y continuo")
+frame(p)
+st(p, 22, 22, "A"); st(p, 78, 22, "B"); st(p, 78, 78, "C"); st(p, 22, 78, "D")
+p.ball(28, 22)
+p.arrow(22, 22, 78, 22, kind="pass", label="1"); p.arrow(78, 22, 78, 78, kind="pass", label="2")
+p.arrow(78, 78, 22, 78, kind="pass", label="3"); p.arrow(22, 78, 22, 22, kind="pass", label="4")
+cont(p, 50, 50, "↻ no se detiene")
+p.save(out("rueda-01.svg"))
+
+# 02 Rombo (cierra: D→A)
+p = DrillPitch("Rueda 02 — Rombo (diamante)", "4 estaciones · 15×15 m · circuito cerrado y continuo")
+frame(p)
+st(p, 50, 16, "A"); st(p, 84, 50, "B"); st(p, 50, 84, "C"); st(p, 16, 50, "D")
+p.ball(56, 18)
+p.arrow(50, 16, 84, 50, kind="pass", label="1"); p.arrow(84, 50, 50, 84, kind="pass", label="2")
+p.arrow(50, 84, 16, 50, kind="pass", label="3"); p.arrow(16, 50, 50, 16, kind="pass", label="4")
+cont(p, 50, 50, "↻ no se detiene")
+p.save(out("rueda-02.svg"))
+
+# 03 Triángulo (cierra: C→A)
+p = DrillPitch("Rueda 03 — Triángulo de apoyos", "3 estaciones · ~15 m · circuito cerrado y continuo")
+frame(p)
+st(p, 50, 20, "A"); st(p, 82, 74, "B"); st(p, 18, 74, "C")
+p.ball(56, 22)
+p.arrow(50, 20, 82, 74, kind="pass", label="1"); p.arrow(82, 74, 18, 74, kind="pass", label="2")
+p.arrow(18, 74, 50, 20, kind="pass", label="3")
+cont(p, 50, 56, "↻ y vuelta a empezar")
+p.save(out("rueda-03.svg"))
+
+# 04 Forma en Y (no cierra → arco de retorno D→A)
+p = DrillPitch("Rueda 04 — Forma en Y", "tronco + dos brazos · introduce el tercer hombre")
+frame(p)
+st(p, 50, 16, "A"); st(p, 50, 50, "B"); st(p, 22, 84, "C"); st(p, 78, 84, "D")
+p.ball(56, 18)
+p.arrow(50, 16, 50, 50, kind="pass", label="1"); p.arrow(50, 50, 22, 84, kind="pass", label="2")
+p.arrow(22, 84, 50, 50, kind="pass", label="3"); p.arrow(50, 50, 78, 84, kind="pass", label="4")
+cyc(p, 78, 84, 50, 16, bend=26)
+p.save(out("rueda-04.svg"))
+
+# 05 Estrella (cierra: D→A)
+p = DrillPitch("Rueda 05 — Estrella (5 puntas)", "5 estaciones · pentágono · circuito cerrado y continuo")
+frame(p)
+cx, cy, r = 50, 52, 36
+pts = {}
+for i, L in enumerate(["A", "B", "C", "D", "E"]):
+    a = math.radians(90 + i * 72)
+    pts[L] = (cx + r * math.cos(a), cy + r * math.sin(a))
+for L, (x, y) in pts.items(): st(p, x, y, L)
+p.ball(pts["A"][0] + 6, pts["A"][1])
+seq = ["A", "C", "E", "B", "D", "A"]
+for i in range(5):
+    (x1, y1), (x2, y2) = pts[seq[i]], pts[seq[i + 1]]
+    p.arrow(x1, y1, x2, y2, kind="pass", label=str(i + 1))
+cont(p, 50, 52, "↻ continuo")
+p.save(out("rueda-05.svg"))
+
+# ============================ FAMILIA 2 · MOVILIDAD ============================
+
+# 06 Sigue tu pase (continuo por la propia carrera)
+p = DrillPitch("Rueda 06 — Sigue tu pase", "cuadrado 15×15 m · circuito continuo: corres a la estación a la que pasas")
+frame(p)
+st(p, 22, 24, "A"); st(p, 78, 24, "B"); st(p, 78, 78, "C"); st(p, 22, 78, "D")
+p.ball(28, 24)
+p.arrow(22, 24, 78, 24, kind="pass", label="1"); p.arrow(28, 28, 70, 28, kind="run", label="sigue")
+p.arrow(78, 24, 78, 78, kind="pass", label="2"); p.arrow(74, 30, 74, 72, kind="run")
+cont(p, 50, 50, "↻ y sigue: C→D→A…")
+p.save(out("rueda-06.svg"))
+
+# 07 Rotación interior con comodín (rota sin parar)
+p = DrillPitch("Rueda 07 — Rotación interior con comodín", "4 + comodín central · circuito con rotación continua")
+frame(p)
+st(p, 50, 85, "A"); st(p, 85, 52, "B"); st(p, 50, 19, "C"); st(p, 15, 52, "D")
+st(p, 50, 52, "E", team="neutral")
+p.ball(56, 85)
+p.arrow(50, 85, 50, 52, kind="pass", label="1"); p.arrow(50, 52, 85, 52, kind="pass", label="2")
+p.arrow(85, 52, 50, 19, kind="pass", label="3")
+cont(p, 31, 33, "↻ A entra al centro, E sale: rota sin parar")
+p.save(out("rueda-07.svg"))
+
+# 08 Cambio de estación (L) (no cierra → retorno C→A)
+p = DrillPitch("Rueda 08 — Cambio de estación (L)", "relevo posicional · circuito continuo")
+frame(p)
+st(p, 20, 80, "A"); st(p, 82, 80, "B"); st(p, 20, 20, "C")
+p.ball(26, 80)
+p.arrow(20, 80, 82, 80, kind="pass", label="1"); p.arrow(82, 80, 60, 80, kind="drive", label="2")
+p.arrow(60, 80, 20, 20, kind="pass", label="3"); p.arrow(28, 26, 76, 74, kind="run", label="C ocupa B")
+cyc(p, 20, 20, 20, 80, bend=-22)
+p.save(out("rueda-08.svg"))
+
+# 09 Molino (el triángulo gira sin parar)
+p = DrillPitch("Rueda 09 — Molino (rotación de 3)", "el triángulo gira · circuito continuo")
+frame(p)
+st(p, 50, 82, "A"); st(p, 82, 25, "B"); st(p, 18, 25, "C")
+p.ball(56, 82)
+p.arrow(50, 82, 82, 25, kind="pass", label="1"); p.arrow(54, 78, 78, 30, kind="run")
+p.arrow(82, 25, 18, 25, kind="pass", label="2"); p.arrow(78, 25, 22, 25, kind="run")
+cont(p, 50, 55, "↻ el triángulo gira sin parar")
+p.save(out("rueda-09.svg"))
+
+# 10 Combinación en X (dos diagonales que se cruzan)
+p = DrillPitch("Rueda 10 — Combinación en X", "cuadrado · dos diagonales cruzadas · aparecer en el carril contrario")
+frame(p)
+st(p, 24, 78, "A"); st(p, 76, 22, "C"); st(p, 76, 78, "B"); st(p, 24, 22, "D")
+p.ball(30, 78)
+p.arrow(24, 78, 76, 22, kind="pass", label="1"); p.arrow(76, 22, 76, 78, kind="pass", label="2")
+p.arrow(76, 78, 24, 22, kind="pass", label="3")
+p.arrow(30, 74, 70, 30, kind="run"); p.arrow(70, 74, 30, 30, kind="run", label="cruzan")
+cont(p, 50, 52, "↻ las trayectorias dibujan una X")
+p.save(out("rueda-10.svg"))
+
+# ============================ FAMILIA 3 · PARED / TERCER HOMBRE ============================
+
+# 11 Pase y pared (no cierra → retorno C→A)
+p = DrillPitch("Rueda 11 — Pase y pared (give-and-go)", "pared y desmarque de ruptura · circuito continuo")
+frame(p)
+st(p, 30, 16, "A"); st(p, 54, 30, "B", team="neutral"); st(p, 50, 86, "C")
+p.ball(36, 16)
+p.arrow(30, 16, 54, 30, kind="pass", label="1"); p.arrow(34, 20, 40, 48, kind="run")
+p.arrow(54, 30, 40, 50, kind="pass", label="2"); p.arrow(40, 50, 50, 82, kind="drive", label="3")
+cyc(p, 50, 86, 30, 16, bend=30)
+p.save(out("rueda-11.svg"))
+
+# 12 Dejar de cara (devuelve a la cola)
+p = DrillPitch("Rueda 12 — Dejar de cara", "apoyo de espaldas · circuito continuo")
+frame(p)
+st(p, 50, 18, "A"); st(p, 50, 55, "B", team="neutral"); st(p, 76, 44, "C")
+p.ball(56, 18)
+p.arrow(50, 18, 50, 55, kind="pass", label="1"); p.arrow(50, 55, 76, 44, kind="pass", label="2")
+p.arrow(76, 44, 56, 22, kind="pass", label="3 a la cola")
+cont(p, 30, 30, "↻ vuelve a A: continuo")
+p.save(out("rueda-12.svg"))
+
+# 13 Tercer hombre (no cierra → retorno C→A)
+p = DrillPitch("Rueda 13 — Tercer hombre", "A→B (de espaldas)→C que aparece · circuito continuo")
+frame(p)
+st(p, 40, 18, "A"); st(p, 52, 52, "B", team="neutral"); st(p, 80, 82, "C")
+p.ball(46, 18)
+p.arrow(40, 18, 52, 52, kind="pass", label="1"); p.arrow(52, 52, 80, 82, kind="pass", label="2")
+p.arrow(62, 34, 78, 76, kind="run", label="C aparece"); p.arrow(80, 82, 86, 64, kind="drive", label="3")
+cyc(p, 86, 64, 40, 18, bend=22)
+p.save(out("rueda-13.svg"))
+
+# 14 Pared doble (no cierra → retorno D→A)
+p = DrillPitch("Rueda 14 — Pared doble (uno-dos encadenado)", "dos paredes en conducción · circuito continuo")
+frame(p)
+st(p, 20, 15, "A"); st(p, 40, 42, "B", team="neutral"); st(p, 72, 60, "C", team="neutral"); st(p, 55, 88, "D")
+p.ball(26, 15)
+p.arrow(20, 15, 40, 42, kind="pass", label="1"); p.arrow(40, 42, 32, 50, kind="pass", label="2")
+p.arrow(32, 50, 72, 60, kind="pass", label="3"); p.arrow(72, 60, 55, 70, kind="pass", label="4")
+p.arrow(55, 70, 55, 86, kind="drive", label="5")
+cyc(p, 55, 88, 20, 15, bend=30)
+p.save(out("rueda-14.svg"))
+
+# 15 Up-Back-Through (arriba-atrás-profundo) — patrón estrella
+p = DrillPitch("Rueda 15 — Up-Back-Through (arriba-atrás-profundo)", "vertical al pivote → dejada → filtrado a la espalda", ratio=1.18)
+frame(p)
+st(p, 50, 14, "A"); st(p, 50, 50, "B", team="neutral"); st(p, 68, 44, "C")
+p.ball(56, 14)
+p.arrow(50, 14, 50, 48, kind="pass", label="1 arriba"); p.arrow(50, 50, 50, 22, kind="pass", label="2 atrás")
+p.arrow(50, 24, 80, 84, kind="pass", label="3 profundo"); p.arrow(66, 48, 80, 82, kind="run", label="rompe")
+cyc(p, 80, 84, 50, 14, bend=40)
+p.save(out("rueda-15.svg"))
+
+# ============================ FAMILIA 4 · PROGRESIÓN ============================
+
+# 16 Salida 4-3-3 (build-up con rotación del trivote)
+p = DrillPitch("Rueda 16 — Salida 4-3-3 (build-up)", "central → pívot → cambio de orientación → dejada → filtrado", ratio=1.18)
+frame(p)
+st(p, 50, 12, "A"); st(p, 50, 34, "B", team="neutral"); st(p, 26, 46, "C"); st(p, 82, 54, "D"); st(p, 54, 84, "E")
+p.ball(56, 12)
+p.arrow(50, 12, 50, 32, kind="pass", label="1"); p.arrow(50, 34, 26, 46, kind="pass", label="2")
+p.arrow(26, 46, 82, 54, kind="pass", label="3 cambio"); p.arrow(82, 54, 54, 82, kind="pass", label="4 al 9")
+cyc(p, 54, 84, 50, 12, bend=44)
+p.save(out("rueda-16.svg"))
+
+# 17 De carril a carril (no cierra → retorno D→A)
+p = DrillPitch("Rueda 17 — De carril a carril", "circular de banda a banda · circuito continuo", ratio=0.66)
+frame(p)
+st(p, 15, 30, "A"); st(p, 40, 58, "B"); st(p, 60, 38, "C"); st(p, 85, 64, "D")
+p.ball(19, 30)
+p.arrow(15, 30, 40, 58, kind="pass", label="1"); p.arrow(40, 58, 60, 38, kind="pass", label="2")
+p.arrow(60, 38, 85, 64, kind="pass", label="3"); p.arrow(85, 64, 80, 40, kind="drive", label="4")
+cyc(p, 80, 40, 15, 30, bend=-20)
+p.save(out("rueda-17.svg"))
+
+# 18 Romper líneas (no cierra → retorno C→A)
+p = DrillPitch("Rueda 18 — Romper líneas", "pase vertical filtrado entre líneas · circuito continuo")
+frame(p)
+st(p, 50, 14, "A"); st(p, 50, 58, "B", team="neutral"); st(p, 50, 86, "C")
+p.cone(42, 44); p.cone(58, 44)
+p.ball(56, 14)
+p.arrow(50, 14, 50, 56, kind="pass", label="1 filtra"); p.arrow(50, 58, 50, 86, kind="pass", label="2")
+p.arrow(50, 86, 64, 78, kind="drive", label="3")
+p.note(34, 44, "puerta = línea rival", c="#cfe0ee", size=10)
+cyc(p, 64, 78, 50, 14, bend=34)
+p.save(out("rueda-18.svg"))
+
+# 19 Subir en tres zonas (no cierra → retorno E→A por el lateral)
+p = DrillPitch("Rueda 19 — Subir en tres zonas", "progresión baja → media → alta · circuito continuo", ratio=1.25)
+frame(p)
+st(p, 50, 12, "A"); st(p, 30, 35, "B"); st(p, 70, 52, "C"); st(p, 50, 70, "D", team="neutral"); st(p, 50, 88, "E")
+p.ball(56, 12)
+p.arrow(50, 12, 30, 35, kind="pass", label="1"); p.arrow(30, 35, 70, 52, kind="pass", label="2")
+p.arrow(70, 52, 50, 70, kind="pass", label="3"); p.arrow(50, 70, 50, 88, kind="pass", label="4")
+cyc(p, 50, 88, 50, 12, bend=60)
+p.save(out("rueda-19.svg"))
+
+# 20 Salida con desdoblamiento (no cierra → retorno D→A)
+p = DrillPitch("Rueda 20 — Salida con desdoblamiento", "banda + desdoblamiento del lateral · circuito continuo", ratio=1.2)
+frame(p)
+st(p, 38, 18, "A"); st(p, 30, 40, "B"); st(p, 26, 66, "C", team="neutral"); st(p, 58, 82, "D")
+p.ball(44, 18)
+p.arrow(38, 18, 30, 40, kind="pass", label="1"); p.arrow(30, 40, 26, 66, kind="pass", label="2")
+p.arrow(26, 66, 56, 80, kind="pass", label="3"); p.arrow(40, 50, 56, 78, kind="run", label="desdobla")
+p.arrow(58, 82, 64, 62, kind="drive", label="4")
+cyc(p, 64, 62, 38, 18, bend=34)
+p.save(out("rueda-20.svg"))
+
+# ============================ FAMILIA 5 · FINALIZACIÓN (terminan en remate) ============================
+
+def att(title, sub):
+    return Pitch(title, half="att", subtitle=sub, attack_arrow=False)
+
+# 21 Centro y remate
+p = att("Rueda 21 — Centro y remate", "apertura a banda · centro y remate de primeras")
+p.player(36, 58, "A"); p.player(20, 66, "B"); p.player(56, 82, "R")
+p.ball(40, 58)
+p.arrow(36, 58, 20, 66, kind="pass", label="1"); p.arrow(20, 66, 18, 88, kind="drive", label="2")
+p.arrow(18, 88, 52, 90, kind="pass", label="3 centro"); p.arrow(56, 82, 50, 97, kind="drive", label="remate")
+wave(p, 35, 56)
+p.save(out("rueda-21.svg"))
+
+# 22 Pase de la muerte
+p = att("Rueda 22 — Pase de la muerte", "llegada desde segunda línea · corte atrás y definición")
+p.player(40, 60, "A"); p.player(72, 72, "B"); p.player(52, 80, "C")
+p.ball(45, 60)
+p.arrow(40, 60, 72, 72, kind="pass", label="1"); p.arrow(72, 72, 80, 92, kind="drive", label="2")
+p.arrow(80, 92, 52, 84, kind="pass", label="3 atrás"); p.arrow(52, 80, 50, 96, kind="drive", label="remate")
+wave(p, 34, 58)
+p.save(out("rueda-22.svg"))
+
+# 23 Pared y definición
+p = att("Rueda 23 — Pared y definición", "uno-dos frente al área y disparo")
+p.player(50, 60, "A"); p.player(66, 68, "B", team="neutral")
+p.ball(45, 60)
+p.arrow(50, 60, 66, 68, kind="pass", label="1"); p.arrow(52, 64, 54, 82, kind="run")
+p.arrow(66, 68, 54, 82, kind="pass", label="2"); p.arrow(54, 82, 50, 97, kind="drive", label="3 define")
+wave(p, 32, 58)
+p.save(out("rueda-23.svg"))
+
+# 24 Combinación central + remate
+p = att("Rueda 24 — Triángulo ofensivo + remate", "triangulación en zona de creación que acaba en disparo")
+p.player(38, 60, "A"); p.player(56, 72, "B", team="neutral"); p.player(64, 62, "C")
+p.ball(43, 60)
+p.arrow(38, 60, 56, 72, kind="pass", label="1"); p.arrow(56, 72, 64, 62, kind="pass", label="2 de cara")
+p.arrow(64, 62, 52, 96, kind="drive", label="3 dispara")
+wave(p, 34, 58)
+p.save(out("rueda-24.svg"))
+
+# 25 Doble banda y centro
+p = att("Rueda 25 — Doble banda y centro", "circulación amplia con cambio de banda y finalización")
+p.player(20, 56, "A"); p.player(50, 62, "B"); p.player(82, 64, "C"); p.player(54, 84, "R")
+p.ball(24, 56)
+p.arrow(20, 56, 50, 62, kind="pass", label="1"); p.arrow(50, 62, 82, 64, kind="pass", label="2 cambio")
+p.arrow(82, 64, 84, 90, kind="drive", label="3"); p.arrow(84, 90, 52, 90, kind="pass", label="centro")
+p.arrow(54, 84, 50, 97, kind="drive", label="remate")
+wave(p, 50, 52)
+p.save(out("rueda-25.svg"))
+
+# ============================ FAMILIA 6 · OPOSICIÓN / TRANSFERENCIA ============================
+
+# 26 Semioposición (triángulo, circula)
+p = DrillPitch("Rueda 26 — Semioposición", "defensor pasivo que orienta el pase · circuito continuo")
+frame(p)
+st(p, 50, 20, "A"); st(p, 80, 74, "B"); st(p, 20, 74, "C"); st(p, 50, 55, "X", team="rival")
+p.ball(56, 20)
+p.arrow(50, 20, 80, 74, kind="pass", label="1"); p.arrow(80, 74, 20, 74, kind="pass", label="2")
+cont(p, 50, 88, "↻ circula al apoyo libre, sin parar")
+p.save(out("rueda-26.svg"))
+
+# 27 Decisión (dos salidas)
+p = DrillPitch("Rueda 27 — Decisión (dos salidas)", "leer al defensor y pasar al libre · se reinicia por el otro lado")
+frame(p)
+st(p, 50, 20, "A"); st(p, 24, 66, "B"); st(p, 76, 66, "C"); st(p, 38, 50, "X", team="rival")
+p.ball(56, 20)
+p.arrow(50, 20, 76, 66, kind="pass", label="al libre"); p.arrow(76, 66, 70, 50, kind="drive", label="conduce")
+cont(p, 50, 88, "↻ X tapa a uno · reinicia por el lado contrario")
+p.save(out("rueda-27.svg"))
+
+# 28 Pase-pared contra defensor (no cierra → retorno)
+p = DrillPitch("Rueda 28 — Pared contra defensor", "give-and-go superando a un rival activo · circuito continuo")
+frame(p)
+st(p, 30, 22, "A"); st(p, 58, 40, "B", team="neutral"); st(p, 46, 56, "X", team="rival")
+p.ball(36, 22)
+p.arrow(30, 22, 58, 40, kind="pass", label="1"); p.arrow(34, 26, 48, 64, kind="run", label="supera a X")
+p.arrow(58, 40, 50, 64, kind="pass", label="2"); p.arrow(50, 64, 52, 86, kind="drive", label="3")
+cyc(p, 52, 86, 30, 22, bend=-30)
+p.save(out("rueda-28.svg"))
+
+# 29 Rueda condicionada (rombo, circula)
+p = DrillPitch("Rueda 29 — Rueda condicionada", "rombo 18 m · máx. 2 toques · circulación continua bajo presión")
+frame(p)
+st(p, 50, 16, "A"); st(p, 84, 52, "B"); st(p, 50, 86, "C"); st(p, 16, 52, "D"); st(p, 62, 56, "X", team="rival")
+p.ball(56, 16)
+p.arrow(50, 16, 16, 52, kind="pass", label="1"); p.arrow(16, 52, 50, 86, kind="pass", label="2")
+p.arrow(50, 86, 84, 52, kind="pass", label="3"); p.arrow(84, 52, 50, 16, kind="pass", label="4")
+cont(p, 30, 32, "↻ circulación continua")
+p.save(out("rueda-29.svg"))
+
+# 30 Transición rueda → 3v2 a portería (acaba a puerta)
+p = att("Rueda 30 — Transición a 3v2", "combinar la rueda y romper a portería en superioridad")
+p.player(30, 56, "A"); p.player(50, 52, "B"); p.player(70, 56, "C")
+p.player(42, 76, "X", team="rival"); p.player(60, 76, "Y", team="rival")
+p.ball(34, 56)
+p.arrow(30, 56, 50, 52, kind="pass", label="1"); p.arrow(50, 52, 70, 56, kind="pass", label="2")
+p.arrow(70, 56, 56, 92, kind="drive", label="3 rompen")
+p.note(50, 64, "circula la rueda → a la señal, 3v2", c="#fff5cc", size=11)
+wave(p, 50, 49)
+p.save(out("rueda-30.svg"))
+
+print("ruedas OK")

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio · Balón parado defensivo</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="index.html">🛡️ Balón parado defensivo</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a class="active" href="index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a href="modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="modulos/02-sistemas-marcaje.html">M02 · Sistemas de marcaje</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a href="ejercicios/00-como-defender.html">Cómo defender</a></li>
+<li><a href="ejercicios/01-corner.html">Córners</a></li>
+<li><a href="ejercicios/02-faltas.html">Faltas</a></li>
+<li><a href="ejercicios/03-saques-banda.html">Saques de banda</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<img class="hero" src="graficos/portada.svg" alt="Balón parado defensivo · MISTER ÉLITE"><h1>Balón parado defensivo — córners, faltas y saques de banda</h1>
+<h3>Cómo defender las acciones a balón parado, con pizarras y roles claros</h3>
+<p>Bienvenido al curso de <strong>balón parado defensivo</strong> de <strong>MISTER ÉLITE — Moisés Díaz</strong>. El balón parado decide partidos: en la Premier League 2022-23, <strong>casi el 14 % de todos los goles</strong> llegaron de córner. Defenderlo bien no es cuestión de suerte: es <strong>organización, roles memorizados y unos cuantos principios de oro</strong>.</p>
+<p>Este curso te da el método y las pizarras para defender las tres grandes situaciones: <strong>córners, faltas y saques de banda</strong>.</p>
+<blockquote>
+<p><strong>La idea que atraviesa el curso:</strong> a balón parado no se "improvisa". Cada jugador debe saber <strong>su tarea de memoria</strong> —su zona o su hombre—, atacar el balón (no esperarlo) y ganar el <strong>primer contacto</strong>. Eso anula la jugada ensayada del rival.</p>
+</blockquote>
+<hr />
+<h2>Filosofía del curso</h2>
+<ul>
+<li><strong>Poca teoría, mucha pizarra.</strong> Lo justo de concepto; el resto, esquemas con los roles de cada jugador.</li>
+<li><strong>Roles claros y memorizados.</strong> Cada uno sabe qué defiende antes de que el rival saque.</li>
+<li><strong>Principios de oro repetidos.</strong> No perder el primer palo, atacar el balón, despejar alto-lejos-ancho, comunicar.</li>
+<li><strong>Fundamentado.</strong> Datos y posiciones de fuentes profesionales (FIFA Training Centre, análisis del Mundial 2022, leyes IFAB/FA).</li>
+</ul>
+<hr />
+<h2>Cómo está organizado</h2>
+<p><strong>Teoría (2 módulos):</strong>
+1. <strong>Fundamentos</strong> — por qué importa, los datos y los principios de oro del balón parado defensivo.
+2. <strong>Sistemas de marcaje</strong> — zonal, al hombre y mixto/híbrido: pros, contras y cuándo usar cada uno.</p>
+<p><strong>Práctica (con pizarras):</strong>
+- <strong>Cómo defender</strong> — índice y principios rápidos.
+- <strong>Córners</strong> — zonal, al hombre, mixto, inswinger/outswinger, en corto y la transición.
+- <strong>Faltas</strong> — la barrera, falta lateral, cuántos en la barrera, saltador, tumbado y fuera de juego.
+- <strong>Saques de banda</strong> — en campo propio y el saque largo (tipo Delap) defendido como un córner.</p>
+<hr />
+<h2>Cómo usar el curso</h2>
+<ol>
+<li>Lee los <strong>2 módulos</strong> (rápido). Quédate con los <strong>principios de oro</strong> y la elección de sistema.</li>
+<li>Define con tu equipo el <strong>sistema</strong> de córner (recomendado: mixto) y reparte <strong>roles</strong>.</li>
+<li>Lleva al campo las <strong>pizarras</strong> de cada situación y asígnale a cada jugador su zona o su hombre.</li>
+<li><strong>Ensaya y repite</strong>: el balón parado se defiende de memoria, no pensando.</li>
+</ol>
+<p><em>Las cifras y posiciones provienen de fuentes profesionales; adáptalas a tu rival, tu portero y tu categoría.</em></p>
+<hr />
+<p><strong>MISTER ÉLITE — Moisés Díaz · Academia de entrenadores</strong></p>
+<footer class="foot">Curso "Balón parado defensivo" · MISTER ÉLITE — Moisés Díaz</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>

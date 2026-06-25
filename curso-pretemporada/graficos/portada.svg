@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" width="794" height="1123" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#0c1b2a"/><stop offset="0.55" stop-color="#0f2438"/><stop offset="1" stop-color="#08131f"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c948"/><stop offset="1" stop-color="#e0a526"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.46" r="0.6"><stop offset="0" stop-color="#1d6fb8" stop-opacity="0.35"/><stop offset="1" stop-color="#1d6fb8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7c948" stop-opacity="0.30"/><stop offset="1" stop-color="#f7c948" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="794" height="1123" fill="url(#bg)"/><rect width="794" height="1123" fill="url(#glow)"/>
+
+  <!-- motivo: curva de carga ondulada sobre rejilla de microciclo -->
+  <g opacity="0.95">
+    <rect x="120" y="600" width="554" height="430" rx="12" fill="#0c1d2e" stroke="#24435f" stroke-width="1.5"/>
+    <!-- columnas-día -->
+    <g stroke="#23415c" stroke-width="1.3">
+      <line x1="199" y1="600" x2="199" y2="1030"/><line x1="278" y1="600" x2="278" y2="1030"/>
+      <line x1="357" y1="600" x2="357" y2="1030"/><line x1="436" y1="600" x2="436" y2="1030"/>
+      <line x1="515" y1="600" x2="515" y2="1030"/><line x1="594" y1="600" x2="594" y2="1030"/>
+    </g>
+    <!-- barras de carga del microciclo -->
+    <g>
+      <rect x="146" y="850" width="40" height="150" rx="5" fill="#f5a623" opacity="0.85"/>
+      <rect x="225" y="720" width="40" height="280" rx="5" fill="#e8453c" opacity="0.85"/>
+      <rect x="304" y="920" width="40" height="80"  rx="5" fill="#3fa34d" opacity="0.85"/>
+      <rect x="383" y="720" width="40" height="280" rx="5" fill="#e8453c" opacity="0.85"/>
+      <rect x="462" y="858" width="40" height="142" rx="5" fill="#f5a623" opacity="0.85"/>
+      <rect x="541" y="745" width="40" height="255" rx="5" fill="#1d6fb8" opacity="0.85"/>
+      <rect x="620" y="985" width="40" height="15"  rx="5" fill="#5a6b7b" opacity="0.85"/>
+    </g>
+    <!-- área + curva suave de carga -->
+    <path d="M166,850 C200,840 200,720 245,720 C290,720 285,920 324,920 C363,920 360,720 403,720 C446,720 444,858 482,858 C520,858 525,745 561,745 C595,745 600,985 640,985 L640,1030 L166,1030 Z" fill="url(#area)"/>
+    <path d="M166,850 C200,840 200,720 245,720 C290,720 285,920 324,920 C363,920 360,720 403,720 C446,720 444,858 482,858 C520,858 525,745 561,745 C595,745 600,985 640,985" fill="none" stroke="#f7c948" stroke-width="3.5"/>
+    <g fill="#0c1b2a" stroke="#f7c948" stroke-width="2.5">
+      <circle cx="166" cy="850" r="6"/><circle cx="245" cy="720" r="6"/><circle cx="324" cy="920" r="6"/>
+      <circle cx="403" cy="720" r="6"/><circle cx="482" cy="858" r="6"/><circle cx="561" cy="745" r="6"/><circle cx="640" cy="985" r="6"/>
+    </g>
+    <g font-size="13" font-weight="800" fill="#8aa0b6" text-anchor="middle">
+      <text x="166" y="1018">L</text><text x="245" y="1018">M</text><text x="324" y="1018">X</text>
+      <text x="403" y="1018">J</text><text x="482" y="1018">V</text><text x="561" y="1018">S</text><text x="640" y="1018">D</text>
+    </g>
+    <text x="138" y="628" font-size="13" font-weight="700" fill="#9fb3c8">curva de carga del microciclo</text>
+  </g>
+
+  <rect x="0" y="0" width="794" height="8" fill="url(#gold)"/>
+  <g transform="translate(64,92)">
+    <rect x="0" y="0" width="46" height="46" rx="10" fill="url(#gold)"/>
+    <text x="23" y="32" font-size="28" font-weight="900" fill="#0c1b2a" text-anchor="middle">ME</text>
+    <text x="62" y="22" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="3">MISTER ÉLITE</text>
+    <text x="62" y="41" font-size="12.5" font-weight="600" fill="#f7c948" letter-spacing="2">ACADEMIA DE ENTRENADORES · MOISÉS DÍAZ</text>
+  </g>
+  <g transform="translate(64,250)">
+    <text x="0" y="0" font-size="16" font-weight="700" fill="#7fd0ff" letter-spacing="5">CURSO DE PLANIFICACIÓN</text>
+    <text x="0" y="64" font-size="45" font-weight="900" fill="#ffffff" letter-spacing="-1.5">PRETEMPORADA</text>
+    <text x="0" y="116" font-size="40" font-weight="900" fill="#f7c948" letter-spacing="-0.5">PERFECTA</text>
+    <text x="0" y="178" font-size="22" font-weight="800" fill="#ffffff">física · táctica · estrategia</text>
+    <line x1="4" y1="202" x2="120" y2="202" stroke="#f7c948" stroke-width="4"/>
+    <text x="0" y="238" font-size="17" font-weight="500" fill="#cdd9e5">Cómo meter la carga — y adaptarla a TUS sesiones por semana</text>
+  </g>
+  <g font-family="Segoe UI,Arial">
+    <g transform="translate(470,300)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">6</text><text x="18" y="66" font-size="12" fill="#cdd9e5">planes por frecuencia</text></g>
+    <g transform="translate(632,300)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">5</text><text x="18" y="66" font-size="12" fill="#cdd9e5">módulos de teoría</text></g>
+    <g transform="translate(470,392)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="34" font-weight="900" fill="#f7c948">12</text><text x="18" y="66" font-size="12" fill="#cdd9e5">sesiones tipo</text></g>
+    <g transform="translate(632,392)"><rect width="150" height="80" rx="12" fill="#13283d" stroke="#24435f"/><text x="18" y="44" font-size="22" font-weight="900" fill="#f7c948">sin GPS</text><text x="18" y="66" font-size="12" fill="#cdd9e5">control de carga</text></g>
+  </g>
+  <rect x="0" y="1080" width="794" height="43" fill="#08131f"/>
+  <text x="64" y="1107" font-size="13" font-weight="600" fill="#8aa0b6">Dobles · 6 · 5 · 4 · 3 · 2 sesiones/semana — un plan para cada realidad</text>
+  <text x="730" y="1107" font-size="13" font-weight="800" fill="#f7c948" text-anchor="end">MISTER ÉLITE</text>
+  <rect x="0" y="1115" width="794" height="8" fill="url(#gold)"/>
+</svg>
