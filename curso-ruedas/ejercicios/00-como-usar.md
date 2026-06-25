@@ -1,6 +1,6 @@
 # Cómo usar el banco de 30 ruedas
 
-El banco está ordenado en **6 familias**, de lo simple a lo complejo, siguiendo la progresión metodológica del Módulo 3. No tienes que recorrerlas en orden: elige el objetivo de tu sesión y ve a la familia que lo entrena.
+El banco está ordenado en **6 familias**, de lo simple a lo complejo. Cada rueda viene como una **ficha de trabajo profesional**: objetivo, secuencia, **mecánica de rotación**, **parámetros** (jugadores, balones, distancias, series, toques), *coaching points* y cómo subirla de nivel.
 
 ---
 
@@ -9,37 +9,61 @@ El banco está ordenado en **6 familias**, de lo simple a lo complejo, siguiendo
 | Familia | Entrena | Ruedas |
 |---|---|---|
 | **1 · Básicas** | técnica de pase y primer toque en formas fijas | 01–05 |
-| **2 · Movilidad y rotación** | desmarque tras el pase, rotaciones | 06–10 |
-| **3 · Pared y tercer hombre** | combinación, give-and-go, tercer hombre | 11–15 |
-| **4 · Progresión por zonas** | salida, romper líneas, cambio de orientación | 16–20 |
-| **5 · Finalización** | centro, pase de la muerte, definición | 21–25 |
+| **2 · Movilidad y rotación** | desmarque tras el pase, rotaciones, X, figura | 06–10 |
+| **3 · Pared y tercer hombre** | combinación, give-and-go, tercer hombre, up-back-through | 11–15 |
+| **4 · Progresión por zonas** | salida 4-3-3, romper líneas, cambio de orientación | 16–20 |
+| **5 · Finalización** | centro, cut-back, definición, primer/segundo palo | 21–25 |
 | **6 · Oposición y transferencia** | decisión, semioposición, juego real | 26–30 |
 
 ---
 
-## Cómo leer cada ficha
+## La mecánica de rotación (el corazón de la rueda)
 
-Cada rueda trae:
-- **Pizarra** con la disposición (estaciones con letras A, B, C…) y la secuencia numerada de pases.
-- **Objetivo** — qué entrena (sus *coaching points*).
-- **Secuencia** — el orden de pases y movimientos.
-- **Medidas** — distancias orientativas (ajústalas a tu categoría).
-- **Variante** — cómo complicarla para subir un peldaño.
+Regla de oro: **el balón nunca espera a un jugador y el jugador nunca espera al balón.** La rotación es lo que mantiene la rueda **cerrada** (vuelve al inicio) y **continua** (sin paradas). En las fichas verás cuál usa cada una:
 
-**Convención de las pizarras:**
-- 🔵 Estaciones (jugadores) con su letra · 🟠 apoyo / pared / pivote · 🔴 defensor.
-- Flecha amarilla discontinua = **pase** (numerada 1-2-3) · flecha blanca = **carrera/desmarque** · flecha azul = **conducción**.
-- Arco amarillo **punteado con ↻** = el **circuito se cierra y se repite**: la rueda no termina, el balón vuelve al inicio. Solo las ruedas de **finalización** (Familia 5 y la 30) terminan —en remate— y se reinician como **oleadas**.
+- **Sigue tu pase** — pasas y corres detrás del balón a la estación que recibió. La más usada; todos pasan por todos los roles.
+- **Rota a la siguiente estación** — pasas a B pero corres a C (la siguiente): crea tercer hombre y desmarques de ruptura.
+- **A la cola del receptor** — con varios por cono, pasas y te incorporas al final de esa fila. Ideal para grupos grandes.
+- **Permuta** — A y B se intercambian la posición tras la pared (la "X" de la permuta).
+- **Carrusel de 3** — cada uno pasa y se desplaza a la siguiente posición del triángulo, siempre en el mismo sentido.
+- **A 2 balones** — dos balones desfasados media vuelta (nunca coinciden en la misma estación). Dobla el ritmo cognitivo.
 
-> **Una rueda es un circuito CERRADO y continuo.** No es una secuencia que acaba: es un patrón que gira y se repite (con "sigue tu pase", rotación o el retorno del balón al inicio). Mantén el ritmo y que no se detenga.
+> En la pizarra: **flecha amarilla discontinua = pase** · **flecha blanca = carrera/desmarque** · **flecha azul = conducción** · **arco punteado ↻ = el circuito se cierra y se repite**. Cada pase lleva su carrera: ninguna estación se queda parada.
 
 ---
 
-## Cómo encajarlas en la sesión
+## Parámetros profesionales (rangos de academia)
 
-- **Calentamiento / activación:** familias 1, 2 y 3 (técnica y combinación).
-- **Bloque principal técnico-táctico:** familias 4 y 5 (progresión y finalización).
-- **Cierre hacia el juego:** familia 6 (oposición y transferencia).
-- **Duración:** 8-15 min. Series de 2-4 min por sentido. **Siempre los dos sentidos / las dos piernas.**
+| Parámetro | Rango | Nota |
+|---|---|---|
+| Jugadores por estación | 1–3 | con 2 hay relevo inmediato |
+| Jugadores totales | 12–20 | <8 se hace estática; >20 monta 2 ruedas en espejo |
+| Balones | 1 → 2 | el 2.º balón, desfasado media vuelta |
+| Distancia entre estaciones | 12–15 m (técnica) · 20–25 m (orientación/cambio) | calíbrala: si es muy fácil, agranda; si se rompe, acorta |
+| Toques | libre → 2 → 1 | el 1 toque solo cuando el gesto está automatizado |
+| Duración | 3–5 min por sentido | 8–12 min total; cambia de sentido y de pierna |
 
-> Recuerda el principio del curso: cuando el patrón salga limpio, **súbelo de nivel** (movimiento → combinación → carga → oposición → finalización). No te quedes repitiendo la versión fácil.
+---
+
+## Checklist de "rueda de élite"
+
+Antes de dar una rueda por buena, comprueba:
+
+- [ ] **Continuidad real** (nadie parado; colas cortas o "sigue tu pase").
+- [ ] **El circuito se cierra** (vuelve al inicio) — salvo finalización.
+- [ ] **Cada pase lleva su carrera.**
+- [ ] **Recepción orientada / cuerpo abierto** (semigiro, pierna de atrás, ve dos opciones).
+- [ ] **Al menos un punto de decisión** (comodín, doble opción o señal del míster) en los niveles avanzados.
+- [ ] **Bilateralidad** (los dos sentidos / las dos piernas).
+- [ ] **Distancias calibradas** y **progresión de toques** (libre → 2 → 1).
+- [ ] **Intención de cada pase** (al pie/al espacio, romper línea, fijar).
+- [ ] **Timing** del desmarque sincronizado con la salida del balón.
+- [ ] **Transferencia**: reproduce una secuencia real del juego (salida, tercer hombre, cambio…) y, mejor, termina en finalización.
+
+---
+
+## 12 "upgrades" para subir cualquier rueda de nivel
+
+Aplica 2-3 escalonados a cada rueda básica: **pared/dejada · tercer hombre · pase ciego (tras escaneo) · primer toque obligado a un lado · comodín que cambia el sentido · 2.º balón · condicionante de tiempo · rotación doble · finalización al cabo de N vueltas · postas físicas en la carrera · estímulos de color/número/voz · defensor pasivo → activo.**
+
+> Recuerda el principio del curso: **una rueda es un circuito cerrado y continuo.** Cuando el patrón salga limpio, súbelo de nivel; no te quedes repitiendo la versión fácil.
