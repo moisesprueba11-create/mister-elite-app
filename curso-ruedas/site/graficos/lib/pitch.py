@@ -253,6 +253,23 @@ class Pitch:
             mx, my = (X1+X2)/2, (Y1+Y2)/2
             self._text(mx, my - 5, label, size=9.5, c=col, w=700)
 
+    def cycle_arrow(self, x1, y1, x2, y2, label="↻ repite", bend=18, c=None):
+        """Arco curvo PUNTEADO que CIERRA el circuito: la rueda no termina, el balón
+        vuelve al inicio y se repite. bend = curvatura (signo = lado del arco)."""
+        import math
+        c = c or "#ffe08a"
+        X1, Y1, X2, Y2 = self.X(x1), self.Y(y1), self.X(x2), self.Y(y2)
+        mx, my = (X1 + X2) / 2, (Y1 + Y2) / 2
+        dx, dy = X2 - X1, Y2 - Y1
+        L = math.hypot(dx, dy) or 1
+        ox, oy = -dy / L * self.S(bend), dx / L * self.S(bend)
+        cxp, cyp = mx + ox, my + oy
+        self._cur.append(f'<path d="M{X1:.1f},{Y1:.1f} Q{cxp:.1f},{cyp:.1f} {X2:.1f},{Y2:.1f}" '
+                         f'fill="none" stroke="{c}" stroke-width="1.8" stroke-dasharray="1.5 6" '
+                         f'opacity="0.85" marker-end="url(#ah_cycle)"/>')
+        if label:
+            self._text(cxp, cyp - 3, label, size=10, c=c, w=800)
+
     def zone(self, x1, y1, x2, y2, label="", c=None, fill_op=0.16, dash="6 5", ellipse=False):
         c = c or PALETTE["zone_c"]
         X1, Y1, X2, Y2 = self.X(min(x1,x2)), self.Y(max(y1,y2)), self.X(max(x1,x2)), self.Y(min(y1,y2))
@@ -334,7 +351,8 @@ class Pitch:
                     f'<path d="M0,0 L10,5 L0,10 z" fill="{col}"/></marker>')
         return ("<defs>" + "".join(self.defs)
                 + m("ah_pass", PALETTE["pass_c"]) + m("ah_run", PALETTE["run_c"])
-                + m("ah_drive", PALETTE["drive_c"]) + m("ah_white", "#ffffff") + "</defs>")
+                + m("ah_drive", PALETTE["drive_c"]) + m("ah_white", "#ffffff")
+                + m("ah_cycle", "#ffe08a") + "</defs>")
 
     def svg(self):
         return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.W:.0f} {self.H:.0f}" '

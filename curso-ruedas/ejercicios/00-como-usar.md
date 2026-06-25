@@ -29,6 +29,9 @@ Cada rueda trae:
 **Convención de las pizarras:**
 - 🔵 Estaciones (jugadores) con su letra · 🟠 apoyo / pared / pivote · 🔴 defensor.
 - Flecha amarilla discontinua = **pase** (numerada 1-2-3) · flecha blanca = **carrera/desmarque** · flecha azul = **conducción**.
+- Arco amarillo **punteado con ↻** = el **circuito se cierra y se repite**: la rueda no termina, el balón vuelve al inicio. Solo las ruedas de **finalización** (Familia 5 y la 30) terminan —en remate— y se reinician como **oleadas**.
+
+> **Una rueda es un circuito CERRADO y continuo.** No es una secuencia que acaba: es un patrón que gira y se repite (con "sigue tu pase", rotación o el retorno del balón al inicio). Mantén el ritmo y que no se detenga.
 
 ---
 
