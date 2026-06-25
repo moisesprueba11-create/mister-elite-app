@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saques de banda · Balón parado defensivo</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="../index.html">🛡️ Balón parado defensivo</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a href="../modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="../modulos/02-sistemas-marcaje.html">M02 · Sistemas de marcaje</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a href="../ejercicios/00-como-defender.html">Cómo defender</a></li>
+<li><a href="../ejercicios/01-corner.html">Córners</a></li>
+<li><a href="../ejercicios/02-faltas.html">Faltas</a></li>
+<li><a class="active" href="../ejercicios/03-saques-banda.html">Saques de banda</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<h1>Defender los saques de banda</h1>
+<p>Una regla lo cambia todo: <strong>no existe fuera de juego en el saque de banda.</strong> Así que el fuera de juego <strong>no es un arma</strong> aquí; hay que <strong>marcar al hombre y ganar profundidad</strong> rápido, no fiarse de la línea.</p>
+<hr />
+<h2>Saque de banda en campo propio</h2>
+<p><figure class="diagrama"><img loading="lazy" src="../graficos/saque-propio.svg" alt="Defensa del saque de banda propio: marcar apoyos, presionar al sacador, ganar profundidad"><figcaption>📋 Defensa del saque de banda propio: marcar apoyos, presionar al sacador, ganar profundidad</figcaption></figure></p>
+<ul>
+<li><strong>No concedas el apoyo fácil:</strong> marca las opciones cercanas del sacador (el receptor de pie, el apoyo interior, el de banda). Quita la <strong>primera línea de pase</strong>.</li>
+<li><strong>Cuidado con la pared con el sacador:</strong> coloca un jugador <strong>cerca/detrás del sacador</strong> para anular el devolver-y-recibir y la superioridad.</li>
+<li><strong>Orienta:</strong> deja abierta a propósito la opción <strong>hacia atrás/banda</strong> (zona pobre) y <strong>presiona tras el primer control</strong> para recuperar orientado hacia fuera.</li>
+<li><strong>Evita el saque rápido:</strong> <strong>gana profundidad de inmediato</strong> del lado del saque (el lateral/extremo esprinta a su posición en cuanto se pierde el balón).</li>
+</ul>
+<h2>Saque de banda LARGO (tipo Delap)</h2>
+<p><figure class="diagrama"><img loading="lazy" src="../graficos/saque-largo.svg" alt="Defensa del saque largo: como un córner, primer palo fijo, target marcado por delante"><figcaption>📋 Defensa del saque largo: como un córner, primer palo fijo, target marcado por delante</figcaption></figure></p>
+<p>El saque largo, <strong>plano y rápido</strong> cerca del área, es tan peligroso como un córner (y, al no haber fuera de juego, el rival <strong>satura el área pequeña</strong>). Se defiende <strong>como un córner</strong>:</p>
+<ul>
+<li><strong>Marca al target del flick-on</strong> (el rematador que prolonga, casi siempre al <strong>primer palo</strong>): <strong>por delante</strong>, para que no peine.</li>
+<li><strong>Defensor fijo en el PRIMER PALO</strong> (zona): corta la peinada, el remate más peligroso.</li>
+<li><strong>Portero al mando:</strong> posición un paso por delante del primer palo, a un brazo, <strong>cuerpo de cara</strong>; sale a <strong>blocar o despejar con puños</strong> lo que llegue a su zona. Decide de antemano: <strong>sale</strong> o se <strong>llena el área pequeña</strong>.</li>
+<li><strong>Segundas jugadas:</strong> jugadores <strong>fuera del área</strong> para recoger los rechaces.</li>
+<li><strong>Roles memorizados:</strong> cada uno sabe si va al <strong>primer palo</strong>, al <strong>segundo / por detrás</strong> o <strong>mantiene su zona</strong>.</li>
+</ul>
+<hr />
+<h2>Reglas de oro</h2>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Regla de oro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cualquier saque</td>
+<td><strong>Sin fuera de juego → marca al hombre y gana profundidad ya</strong></td>
+</tr>
+<tr>
+<td>El sacador</td>
+<td><strong>Presiónalo/condiciónalo</strong>; cierra la primera línea de pase; orienta hacia atrás</td>
+</tr>
+<tr>
+<td>Saque rápido</td>
+<td><strong>Esprinta a tu posición</strong> del lado del saque</td>
+</tr>
+<tr>
+<td>Saque largo</td>
+<td><strong>Como un córner:</strong> primer palo fijo, target marcado por delante, portero al mando, segundas jugadas cubiertas</td>
+</tr>
+<tr>
+<td>El portero</td>
+<td><strong>Decide</strong> (salir o llenar el área), pero <strong>comunicado de antemano</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Recuerda:</strong> el error nº1 en el saque de banda es <strong>subir la línea creyendo en el fuera de juego</strong>. No existe. Marca y gana profundidad.</p>
+</blockquote>
+<footer class="foot">Curso "Balón parado defensivo" · MISTER ÉLITE — Moisés Díaz</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>

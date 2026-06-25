@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo defender · Balón parado defensivo</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<button id="menu-btn" aria-label="Menú">☰</button>
+<div class="layout">
+<nav class="side">
+<a class="brand" href="../index.html">🛡️ Balón parado defensivo</a>
+<div class="sec-title">Curso</div>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+<div class="sec-title">Teoría</div>
+<ul>
+<li><a href="../modulos/01-fundamentos.html">M01 · Fundamentos</a></li>
+<li><a href="../modulos/02-sistemas-marcaje.html">M02 · Sistemas de marcaje</a></li>
+</ul>
+<div class="sec-title">Práctica</div>
+<ul>
+<li><a class="active" href="../ejercicios/00-como-defender.html">Cómo defender</a></li>
+<li><a href="../ejercicios/01-corner.html">Córners</a></li>
+<li><a href="../ejercicios/02-faltas.html">Faltas</a></li>
+<li><a href="../ejercicios/03-saques-banda.html">Saques de banda</a></li>
+</ul>
+</nav>
+<main class="content">
+<div class="content-inner">
+<h1>Cómo defender el balón parado</h1>
+<p>Aquí están las <strong>pizarras</strong> de cada situación, con los roles de cada jugador. No las copies a ciegas: elige el sistema (Módulo 2), reparte roles y <strong>ensáyalos</strong> hasta que tu equipo los defienda de memoria.</p>
+<hr />
+<h2>Las tres situaciones</h2>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Pizarras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Córners</strong></td>
+<td>zonal · al hombre · mixto · inswinger/outswinger · en corto · transición</td>
+</tr>
+<tr>
+<td><strong>Faltas</strong></td>
+<td>la barrera · falta lateral · cuántos en la barrera</td>
+</tr>
+<tr>
+<td><strong>Saques de banda</strong></td>
+<td>en campo propio · saque largo (tipo Delap)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Cómo leer las pizarras</h2>
+<p>Defendemos la portería de <strong>arriba</strong>. Códigos dentro de cada ficha:
+- 🔵 <strong>P</strong> = portero · <strong>Z</strong> = zonal (defiende un espacio) · <strong>H</strong> = al hombre · <strong>B</strong> = barrera.
+- 🔴 = rival. · Flecha amarilla discontinua = <strong>envío/centro</strong> · flecha blanca = <strong>carrera</strong> · zona azul = espacio a proteger.</p>
+<hr />
+<h2>Principios rápidos (llévalos al campo)</h2>
+<ol>
+<li><strong>No pierdas el primer palo.</strong></li>
+<li><strong>Ataca el balón</strong> con carrera y salto; gánalo <strong>primero</strong>.</li>
+<li><strong>Despeja ALTO, LEJOS y ANCHO</strong> (a la banda, nunca al centro).</li>
+<li><strong>Marca goal-side y en contacto</strong>; en zonal, <strong>espaciado y altura</strong> correctos.</li>
+<li><strong>Manda el portero</strong>: comunica antes y durante.</li>
+<li><strong>Sé el primero al segundo balón.</strong></li>
+<li><strong>Deja 1-2 arriba</strong> y <strong>sube la línea</strong> tras despejar.</li>
+<li><strong>Ensaya y memoriza</strong> los roles.</li>
+</ol>
+<blockquote>
+<p>Cada jugador tiene que poder decir, antes de que el rival saque, <strong>qué defiende</strong> (su zona o su hombre) y <strong>qué hace tras el despeje</strong> (subir la línea o salir al contra).</p>
+</blockquote>
+<footer class="foot">Curso "Balón parado defensivo" · MISTER ÉLITE — Moisés Díaz</footer>
+</div>
+</main>
+</div>
+<script>
+const b=document.getElementById('menu-btn');const s=document.querySelector('.side');
+b.addEventListener('click',()=>s.classList.toggle('open'));
+document.querySelectorAll('.side a').forEach(a=>a.addEventListener('click',()=>s.classList.remove('open')));
+</script>
+</body>
+</html>
