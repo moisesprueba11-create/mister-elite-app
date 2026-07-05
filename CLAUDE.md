@@ -1,8 +1,15 @@
-# MISTER ÉLITE — Notas del proyecto (Moisés Díaz)
+# MISTER ÉLITE — Notas del proyecto
 
 Colección de cursos de fútbol generados con la metodología multi-agente y la marca
-**MISTER ÉLITE — Moisés Díaz**. Cada curso vive en su carpeta `curso-<nombre>/` y se
+**MISTER ÉLITE**. Cada curso vive en su carpeta `curso-<nombre>/` y se
 entrega en tres formatos: HTML único autocontenido, sitio navegable (`site/`) y PDF.
+
+## Marca (IMPORTANTE)
+
+**El nombre personal del usuario NUNCA debe aparecer** en ningún entregable (portadas,
+pies de pizarra/infografía, reels, HTML, PDF, sitio, etc.). La única marca visible es
+**MISTER ÉLITE** (sin nombre propio detrás). Si algún archivo o plantilla existente todavía
+incluye el nombre personal, quítalo al tocar ese archivo.
 
 ## Convención de nombres de archivo (IMPORTANTE)
 
@@ -42,5 +49,5 @@ subida desde aquí (`python3 .claude/skills/subir-wordpress/upload.py <slug>`).
 - Bucle de mejora hasta que el evaluador considere el curso "TOP" (≥ 8,5/10).
 - Techo realista de contenido: ~9,0–9,5. No perseguir el 10 (depende de validación en campo,
   no del archivo).
-- Filosofía: poca teoría, mucha aplicación práctica. Marca MISTER ÉLITE — Moisés Díaz en
-  portada y al pie de cada pizarra/infografía.
+- Filosofía: poca teoría, mucha aplicación práctica. Marca **MISTER ÉLITE** (sin nombre
+  personal) en portada y al pie de cada pizarra/infografía.
