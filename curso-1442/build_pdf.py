@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Genera un PDF unico del curso 1-4-4-2 (textos + pizarras) -> curso-1442.pdf"""
 import os, re, html
+from pathlib import Path
 import markdown
 from weasyprint import HTML
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GRAF = os.path.join(ROOT, "graficos")
 
+GRAF_URI = Path(GRAF).as_uri()
 DOCS = [
     ("README.md", None),
     ("modulos/01-fundamentos.md", "MÓDULO 01 · Fundamentos"),
@@ -25,8 +27,8 @@ DOCS = [
 
 def fix_imgs(body):
     # rutas relativas a graficos -> ruta absoluta (file)
-    body = body.replace('src="../graficos/', f'src="file://{GRAF}/')
-    body = body.replace('src="graficos/', f'src="file://{GRAF}/')
+    body = body.replace('src="../graficos/', f'src="{GRAF_URI}/')
+    body = body.replace('src="graficos/', f'src="{GRAF_URI}/')
     def repl(m):
         full = m.group(0)
         alt = re.search(r'alt="([^"]*)"', full)
@@ -72,7 +74,7 @@ figure.diag figcaption{font-size:8pt;color:#777;font-style:italic;margin-top:.1c
 
 def main():
     md = markdown.Markdown(extensions=["tables","fenced_code","sane_lists","attr_list"])
-    chunks = [f'<div class="cover"><img src="file://{GRAF}/portada.svg"></div>']
+    chunks = [f'<div class="cover"><img src="{GRAF_URI}/portada.svg"></div>']
     for src, _ in DOCS:
         p = os.path.join(ROOT, src)
         if not os.path.exists(p):
