@@ -610,6 +610,7 @@ function openTema(t){
     '<h1>Tema '+t+'</h1><h3 style="margin-top:-6px;color:var(--muted);font-weight:600">'+T.titulo+'</h3>'+
     '<p class="lead">'+T.subtitulo+'</p>'+
     sectionPalacio(T)+sectionClasif(T)+sectionLeyes(T)+sectionAutores(T)+sectionFlash(T);
+  window.scrollTo({top:0,behavior:'auto'}); // al abrir un tema, saltar arriba
 }
 
 function sectionPalacio(T){
