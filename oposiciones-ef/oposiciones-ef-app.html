@@ -298,7 +298,7 @@ function go(v){
   $('#v-'+v).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-$('#tabs').addEventListener('click',e=>{if(e.target.dataset.v)go(e.target.dataset.v)});
+$('#tabs').addEventListener('click',e=>{const v=e.target.dataset.v;if(!v)return;if(v==='temario')renderTemas();go(v)});
 
 /* días de la semana (Lun..Dom -> índice 0..6) */
 (function(){
@@ -579,7 +579,15 @@ const TEMARIO={
 };
 
 function renderTemas(){
-  const c=state.cfg, n=c?c.temas:61;
+  const c=state.cfg;
+  const maxTrab=Math.max(0,...Object.keys(TEMARIO).map(Number));
+  const n=Math.max(c?c.temas:61, maxTrab); // los temas trabajados se ven siempre
+  const v=$('#v-temario');
+  v.innerHTML='<h1>Temario</h1>'+
+    '<p class="lead">El Tema 36 está trabajado de punta a punta como ejemplo. '+
+    'Toca cualquier tema con la etiqueta <b>trabajado</b> para ver sus recursos. '+
+    'El resto se cargará según nos paséis los documentos.</p>'+
+    '<div id="temas-list" style="margin-top:16px"></div>';
   const list=$('#temas-list'); list.innerHTML='';
   for(let t=1;t<=n;t++){
     const T=TEMARIO[t];
