@@ -1,0 +1,672 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISTER ÉLITE · Oposiciones EF — Ruta de estudio</title>
+<style>
+  :root{
+    --bg:#0e1116; --bg2:#151b24; --card:#1a222d; --line:#2a3542;
+    --ink:#eaf0f7; --muted:#9fb0c3; --gold:#e8b23a; --gold2:#f6cf6d;
+    --green:#4bd18a; --blue:#5aa9ff; --red:#ff6b6b; --violet:#b98cff;
+    --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:radial-gradient(1200px 600px at 80% -10%,#1b2635 0,var(--bg) 60%);
+    color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--gold2)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+  header.top{position:sticky;top:0;z-index:20;background:rgba(14,17,22,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:16px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+  .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));
+    box-shadow:0 0 0 4px rgba(232,178,58,.15)}
+  .brand small{display:block;font-weight:600;color:var(--muted);letter-spacing:.5px;font-size:11px;margin-top:-2px}
+  nav.tabs{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  nav.tabs button{background:transparent;border:1px solid transparent;color:var(--muted);
+    padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600;font-size:14px}
+  nav.tabs button:hover{color:var(--ink)}
+  nav.tabs button.active{color:#111;background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold)}
+  main{padding:26px 0 80px}
+  .view{display:none;animation:fade .25s ease}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  h1,h2,h3{line-height:1.2}
+  h1{font-size:30px;margin:.2em 0 .1em}
+  .lead{color:var(--muted);max-width:70ch}
+  .card{background:linear-gradient(180deg,var(--card),#161d27);border:1px solid var(--line);
+    border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
+  label.f{display:block;margin:14px 0 6px;font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.3px}
+  input,select{width:100%;background:#0f151d;border:1px solid var(--line);color:var(--ink);
+    padding:11px 12px;border-radius:10px;font-size:15px}
+  input[type=range]{padding:0}
+  .days{display:flex;gap:8px;flex-wrap:wrap}
+  .days label{display:flex;align-items:center;gap:7px;background:#0f151d;border:1px solid var(--line);
+    padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600;font-size:14px;user-select:none}
+  .days input{width:auto}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold),var(--gold2));
+    color:#141414;border:none;padding:13px 22px;border-radius:12px;font-weight:800;font-size:15px;cursor:pointer;
+    box-shadow:0 6px 18px rgba(232,178,58,.28)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  .btn:active{transform:translateY(1px)}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700}
+  .stat{display:flex;flex-direction:column;gap:2px}
+  .stat b{font-size:28px}
+  .stat span{color:var(--muted);font-size:13px}
+  .verdict{border-radius:12px;padding:14px 16px;font-weight:700;border:1px solid}
+  .v-ok{background:rgba(75,209,138,.1);border-color:rgba(75,209,138,.4);color:var(--green)}
+  .v-tight{background:rgba(232,178,58,.1);border-color:rgba(232,178,58,.4);color:var(--gold2)}
+  .v-bad{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.4);color:var(--red)}
+  .week{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}
+  .week h4{margin:0;padding:11px 14px;background:#111823;font-size:13px;color:var(--muted);
+    display:flex;justify-content:space-between;align-items:center}
+  .week .days-row{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line)}
+  .day{background:#141b25;min-height:78px;padding:8px;font-size:12px}
+  .day .dn{color:var(--muted);font-size:11px;margin-bottom:4px;display:flex;justify-content:space-between}
+  .day.off{background:#10141b;opacity:.5}
+  .task{border-radius:6px;padding:3px 6px;margin-bottom:3px;font-weight:600;line-height:1.25;font-size:11px}
+  .t-v1{background:rgba(90,169,255,.16);color:#bcdcff}
+  .t-v2{background:rgba(185,140,255,.16);color:#dcc9ff}
+  .t-v3{background:rgba(75,209,138,.16);color:#bff2d6}
+  .t-rep{background:rgba(232,178,58,.16);color:#f3d791}
+  .t-sim{background:rgba(255,107,107,.16);color:#ffc4c4}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:6px 0 16px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+  .today-box{border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;background:rgba(232,178,58,.06)}
+  .temaitem{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);
+    border-radius:12px;margin-bottom:8px;background:#141b25;cursor:pointer}
+  .temaitem:hover{border-color:var(--gold)}
+  .temaitem .num{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:800;
+    background:#0f151d;border:1px solid var(--line);flex:0 0 auto}
+  .temaitem .meta{margin-left:auto;color:var(--muted);font-size:12px;text-align:right}
+  .tech{border-left:3px solid var(--gold);padding:12px 16px;background:#141b25;border-radius:0 12px 12px 0;margin:10px 0}
+  .tech h4{margin:0 0 4px}
+  .chip{display:inline-block;padding:3px 9px;border-radius:8px;background:#0f151d;border:1px solid var(--line);
+    font-size:12px;font-weight:700;color:var(--gold2);margin:0 6px 6px 0}
+  details.acc{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:#141b25}
+  details.acc>summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;
+    justify-content:space-between;align-items:center}
+  details.acc>summary::-webkit-details-marker{display:none}
+  details.acc>summary::after{content:"+";color:var(--gold2);font-size:20px}
+  details.acc[open]>summary::after{content:"–"}
+  details.acc .body{padding:0 16px 16px}
+  .flash{perspective:1000px;margin:8px 0}
+  .flash .inner{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:96px}
+  .flash.flip .inner{transform:rotateY(180deg)}
+  .flash .side{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;display:flex;align-items:center;background:#0f151d}
+  .flash .back{transform:rotateY(180deg);background:#12211a;border-color:rgba(75,209,138,.35)}
+  .flash .q{position:relative;min-height:96px}
+  table.mem{width:100%;border-collapse:collapse;font-size:14px}
+  table.mem td,table.mem th{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  table.mem th{background:#111823;color:var(--muted);font-size:12px}
+  .foot{color:var(--muted);font-size:12px;text-align:center;padding:26px 0;border-top:1px solid var(--line);margin-top:40px}
+  .kbd{font-size:12px;color:var(--muted)}
+  .bar{height:9px;background:#0f151d;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+  .muted{color:var(--muted)}
+  .hidden{display:none!important}
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}}
+  .badge{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--gold2);text-transform:uppercase}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><span class="dot"></span><div>MISTER ÉLITE<small>OPOSICIONES EF · CANARIAS</small></div></div>
+  <nav class="tabs" id="tabs">
+    <button data-v="inicio" class="active">Inicio</button>
+    <button data-v="config">Mi configuración</button>
+    <button data-v="ruta">Mi ruta</button>
+    <button data-v="temario">Temario</button>
+    <button data-v="tecnicas">Técnicas de estudio</button>
+  </nav>
+</div></header>
+
+<main><div class="wrap">
+
+  <!-- INICIO -->
+  <section class="view active" id="v-inicio">
+    <div class="hero">
+      <div>
+        <span class="badge">Tu preparación, con mapa</span>
+        <h1>Una ruta de estudio hecha a tu medida.</h1>
+        <p class="lead">Dinos cuándo es tu examen, los días y horas que tienes y cuántas vueltas
+        quieres dar al temario. La app te devuelve un <b>mapa día a día</b> —con repasos espaciados
+        y simulacros— y, dentro de cada tema, <b>qué técnica de memorización</b> usar y los
+        <b>recursos ya hechos</b> para las fechas, leyes y clasificaciones difíciles.</p>
+        <p style="margin-top:18px">
+          <button class="btn" onclick="go('config')">Crear mi ruta →</button>
+          <button class="btn ghost" onclick="go('temario')">Ver el temario</button>
+        </p>
+      </div>
+      <div class="card">
+        <div class="grid g2">
+          <div class="stat"><b id="h-dias">—</b><span>días para el examen</span></div>
+          <div class="stat"><b id="h-horas">—</b><span>horas disponibles</span></div>
+          <div class="stat"><b id="h-temas">61</b><span>temas del temario</span></div>
+          <div class="stat"><b id="h-vueltas">—</b><span>vueltas planificadas</span></div>
+        </div>
+        <div id="h-note" class="muted" style="margin-top:14px;font-size:13px">
+          Aún no has creado tu ruta. <a href="#" onclick="go('config');return false">Configúrala aquí</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><span class="badge">Motor 1</span><h3>Planificador inteligente</h3>
+        <p class="muted">Reparte las vueltas al temario en el calendario real que tienes, con la
+        <b>curva del olvido</b>: primeros repasos a 24h, 7 días y 1 mes. Te dice si vas holgado o justo.</p></div>
+      <div class="card"><span class="badge">Motor 2</span><h3>Técnicas avanzadas</h3>
+        <p class="muted">Palacio de la memoria, sistema número-imagen, active recall, Feynman…
+        y para cada contenido, <b>la técnica adecuada</b> ya aplicada.</p></div>
+      <div class="card"><span class="badge">Ejemplo real</span><h3>Tema 36 trabajado</h3>
+        <p class="muted">Deportes individuales: guion en un palacio, autores y años en imágenes,
+        leyes convertidas, clasificaciones en acrónimos y flashcards listas.</p></div>
+    </div>
+  </section>
+
+  <!-- CONFIG -->
+  <section class="view" id="v-config">
+    <h1>Mi configuración</h1>
+    <p class="lead">Cuéntanos tu situación. Puedes cambiarla cuando quieras: la ruta se recalcula sola.</p>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <label class="f">Fecha del examen</label>
+        <input type="date" id="c-fecha">
+        <label class="f">Días que puedes estudiar</label>
+        <div class="days" id="c-dias"></div>
+        <label class="f">Horas por día (entre semana)</label>
+        <input type="number" id="c-hd" min="0.5" max="14" step="0.5" value="3">
+        <label class="f">Horas por día (fin de semana)</label>
+        <input type="number" id="c-hf" min="0" max="16" step="0.5" value="5">
+      </div>
+      <div class="card">
+        <label class="f">Nº de temas del temario</label>
+        <input type="number" id="c-temas" min="1" max="120" value="61">
+        <label class="f">Vueltas al temario que quieres dar</label>
+        <select id="c-vueltas">
+          <option value="1">1 vuelta (comprender)</option>
+          <option value="2">2 vueltas (comprender + memorizar)</option>
+          <option value="3" selected>3 vueltas (recomendado)</option>
+          <option value="4">4 vueltas (dominio alto)</option>
+        </select>
+        <label class="f">Tu punto de partida</label>
+        <select id="c-nivel">
+          <option value="1.25">Primera vez / desde cero</option>
+          <option value="1" selected>Ya conozco parte del temario</option>
+          <option value="0.8">Repito, voy con buena base</option>
+        </select>
+        <label class="f">Extras</label>
+        <div class="days">
+          <label><input type="checkbox" id="c-sim" checked> Reservar simulacros</label>
+          <label><input type="checkbox" id="c-rep" checked> Repaso espaciado</label>
+        </div>
+        <p style="margin-top:20px"><button class="btn" onclick="build()">Generar mi ruta →</button></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUTA -->
+  <section class="view" id="v-ruta">
+    <h1>Mi ruta de estudio</h1>
+    <div id="ruta-empty" class="card">Todavía no hay ruta. <a href="#" onclick="go('config');return false">Configúrala</a> y pulsa «Generar mi ruta».</div>
+    <div id="ruta-body" class="hidden">
+      <div id="ruta-verdict" class="verdict" style="margin-bottom:16px"></div>
+      <div class="grid g3" style="margin-bottom:8px">
+        <div class="card stat"><b id="r-dias">—</b><span>días hasta el examen</span></div>
+        <div class="card stat"><b id="r-disp">—</b><span>horas disponibles</span></div>
+        <div class="card stat"><b id="r-nec">—</b><span>horas estimadas necesarias</span></div>
+      </div>
+      <div class="card" style="margin-bottom:18px">
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px" class="muted">
+          <span>Progreso del temario</span><span id="r-progtxt">0%</span></div>
+        <div class="bar"><i id="r-progbar" style="width:0"></i></div>
+      </div>
+
+      <div class="today-box" id="r-today" style="margin-bottom:20px"></div>
+
+      <h3>Calendario</h3>
+      <div class="legend">
+        <span><i style="background:#5aa9ff"></i>1ª vuelta</span>
+        <span><i style="background:#b98cff"></i>2ª vuelta</span>
+        <span><i style="background:#4bd18a"></i>3ª+ vuelta</span>
+        <span><i style="background:#e8b23a"></i>Repaso</span>
+        <span><i style="background:#ff6b6b"></i>Simulacro</span>
+      </div>
+      <div id="r-cal"></div>
+    </div>
+  </section>
+
+  <!-- TEMARIO -->
+  <section class="view" id="v-temario">
+    <h1>Temario</h1>
+    <p class="lead">El Tema 36 está trabajado de punta a punta como ejemplo. El resto se cargará según
+    nos paséis los documentos (cada uno se procesa igual: guion, autores, leyes, clasificaciones y flashcards).</p>
+    <div id="temas-list" style="margin-top:16px"></div>
+  </section>
+
+  <!-- TECNICAS -->
+  <section class="view" id="v-tecnicas">
+    <h1>Técnicas de estudio avanzadas</h1>
+    <p class="lead">La biblioteca de técnicas y —lo importante— <b>qué técnica encaja con cada tipo de
+    contenido</b> de una oposición. La app aplica esto automáticamente dentro de cada tema.</p>
+
+    <div class="card" style="margin:18px 0">
+      <h3 style="margin-top:0">Mapa: tipo de contenido → técnica óptima</h3>
+      <table class="mem">
+        <tr><th>Si el contenido es…</th><th>Técnica recomendada</th><th>Por qué</th></tr>
+        <tr><td>Fechas, nº de ley, artículos, datos numéricos</td><td>Sistema número-imagen (Major/número-forma)</td><td>Convierte cifras abstractas en imágenes concretas y memorables.</td></tr>
+        <tr><td>Clasificaciones y listas cerradas</td><td>Acrónimo / acróstico + Palacio de la memoria</td><td>La primera letra ancla el orden; el palacio fija la secuencia.</td></tr>
+        <tr><td>El guion del tema (índice)</td><td>Palacio de la memoria (recorrido)</td><td>Recitas el tema «paseando» por un lugar conocido, sin saltarte apartados.</td></tr>
+        <tr><td>Autores y sus aportaciones</td><td>Asociación imagen-verbal + historia</td><td>Ligas cada autor a una imagen que resume su idea clave.</td></tr>
+        <tr><td>Conceptos y definiciones</td><td>Técnica de Feynman + mapas mentales</td><td>Explicarlo con tus palabras revela los huecos; el mapa da estructura.</td></tr>
+        <tr><td>Todo, para que no se olvide</td><td>Active recall + repaso espaciado (Leitner)</td><td>Recuperar de memoria y repasar en intervalos crecientes es lo que fija a largo plazo.</td></tr>
+      </table>
+    </div>
+
+    <div id="tech-lib"></div>
+    <div class="card" style="margin-top:16px">
+      <p class="muted" style="margin:0">¿Quieres que haga una <b>investigación en profundidad</b> (informe con fuentes citadas)
+      sobre las técnicas más avanzadas y las adaptemos una a una a este temario? Puedo lanzarla cuando digas.</p>
+    </div>
+  </section>
+
+</div></main>
+
+<div class="wrap"><div class="foot">
+  MISTER ÉLITE — Moisés Díaz · Academia de Oposiciones de Educación Física (Canarias)<br>
+  Prototipo v0.1 · funciona sin conexión · tu progreso se guarda en este dispositivo.
+</div></div>
+
+<script>
+/* ---------------- utilidades ---------------- */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const DOW=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom']; // 0=Lunes
+const store={
+  get k(){return 'mrelite_oef_v1'},
+  load(){try{return JSON.parse(localStorage.getItem(this.k))||{}}catch(e){return{}}},
+  save(o){localStorage.setItem(this.k,JSON.stringify(o))}
+};
+let state=store.load();
+
+function go(v){
+  $$('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.v===v));
+  $$('.view').forEach(s=>s.classList.remove('active'));
+  $('#v-'+v).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('#tabs').addEventListener('click',e=>{if(e.target.dataset.v)go(e.target.dataset.v)});
+
+/* días de la semana (Lun..Dom -> índice 0..6) */
+(function(){
+  const c=$('#c-dias');
+  DOW.forEach((d,i)=>{
+    const l=document.createElement('label');
+    l.innerHTML=`<input type="checkbox" value="${i}" ${i<5?'checked':''}> ${d}`;
+    c.appendChild(l);
+  });
+})();
+
+/* fecha por defecto: 6 meses vista */
+(function(){
+  const cfg=state.cfg;
+  if(cfg){restoreCfg(cfg)}
+  else{
+    const d=new Date(); d.setMonth(d.getMonth()+6);
+    $('#c-fecha').value=d.toISOString().slice(0,10);
+  }
+})();
+
+function readCfg(){
+  return {
+    fecha:$('#c-fecha').value,
+    dias:$$('#c-dias input:checked').map(x=>+x.value),
+    hd:+$('#c-hd').value, hf:+$('#c-hf').value,
+    temas:+$('#c-temas').value, vueltas:+$('#c-vueltas').value,
+    nivel:+$('#c-nivel').value, sim:$('#c-sim').checked, rep:$('#c-rep').checked
+  };
+}
+function restoreCfg(c){
+  $('#c-fecha').value=c.fecha; $('#c-hd').value=c.hd; $('#c-hf').value=c.hf;
+  $('#c-temas').value=c.temas; $('#c-vueltas').value=c.vueltas; $('#c-nivel').value=c.nivel;
+  $('#c-sim').checked=c.sim; $('#c-rep').checked=c.rep;
+  $$('#c-dias input').forEach(x=>x.checked=c.dias.includes(+x.value));
+}
+
+/* ---------------- planificador ---------------- */
+// horas base por tema y vuelta (se multiplican por factor de nivel)
+const VUELTA_H={1:4.0, 2:2.5, 3:1.5, 4:1.2}; // 1ª leer+esquematizar, 2ª memorizar, 3ª recitar, 4ª afianzar
+
+function jsDow(date){ return (date.getDay()+6)%7; } // -> 0=Lunes
+
+function buildPlan(c){
+  const today=new Date(); today.setHours(0,0,0,0);
+  const exam=new Date(c.fecha+'T00:00:00');
+  const msDay=86400000;
+  const totalDays=Math.round((exam-today)/msDay);
+
+  // slots de estudio reales
+  const slots=[]; let disp=0;
+  for(let i=0;i<totalDays;i++){
+    const d=new Date(today.getTime()+i*msDay);
+    const dw=jsDow(d);
+    let h=0;
+    if(c.dias.includes(dw)) h=(dw>=5)?c.hf:c.hd;
+    if(h>0) disp+=h;
+    slots.push({date:d,dw,h,tasks:[]});
+  }
+
+  // horas necesarias
+  const perTema=Object.keys(VUELTA_H).slice(0,c.vueltas).reduce((a,v)=>a+VUELTA_H[v],0)*c.nivel;
+  let nec=perTema*c.temas;
+  if(c.sim) nec+=Math.max(3,c.vueltas)*3;   // simulacros ~3h
+  if(c.rep) nec*=1.08;                        // colchón de repaso espaciado
+
+  // cola de tareas: vueltas secuenciales, tema a tema
+  const queue=[];
+  for(let v=1;v<=c.vueltas;v++){
+    for(let t=1;t<=c.temas;t++){
+      queue.push({v, t, rem:VUELTA_H[v]*c.nivel});
+    }
+  }
+  // reserva del tramo final para simulacros/repaso general
+  const studySlots=slots.filter(s=>s.h>0);
+  const reserveN=(c.sim||c.rep)?Math.min(studySlots.length, Math.max(4,Math.round(studySlots.length*0.14))):0;
+  const fillSlots=studySlots.slice(0,studySlots.length-reserveN);
+  const finalSlots=studySlots.slice(studySlots.length-reserveN);
+
+  // volcado voraz de la cola en los slots de estudio
+  let qi=0;
+  for(const s of fillSlots){
+    let cap=s.h;
+    while(cap>0.01 && qi<queue.length){
+      const task=queue[qi];
+      const use=Math.min(cap,task.rem);
+      task.rem-=use; cap-=use;
+      const last=s.tasks[s.tasks.length-1];
+      if(last && last.v===task.v && last.t===task.t){ last.h+=use; }
+      else s.tasks.push({type:'tema',v:task.v,t:task.t,h:use});
+      if(task.rem<=0.01) qi++;
+    }
+  }
+  const cubierto = qi>=queue.length; // ¿cabe todo el temario en las vueltas pedidas?
+
+  // repasos espaciados ligeros: cada ~10 días, un bloque de repaso en el primer slot libre
+  if(c.rep){
+    for(let k=10;k<fillSlots.length;k+=12){
+      const s=fillSlots[k];
+      if(s) s.tasks.unshift({type:'rep',h:Math.min(1,s.h*0.3)});
+    }
+  }
+  // tramo final: simulacros + repaso general
+  finalSlots.forEach((s,i)=>{
+    if(c.sim && (i%2===0)) s.tasks.push({type:'sim',h:s.h});
+    else s.tasks.push({type:'rep',h:s.h,general:true});
+  });
+
+  return {slots,totalDays,disp,nec,cubierto,queueLen:queue.length,done:qi,perTema};
+}
+
+function build(){
+  const c=readCfg();
+  if(!c.fecha){alert('Pon la fecha del examen');return}
+  if(c.dias.length===0){alert('Elige al menos un día de estudio');return}
+  const plan=buildPlan(c);
+  state.cfg=c; store.save(state);
+  renderRuta(c,plan); renderHome(c,plan);
+  go('ruta');
+}
+
+/* ---------------- render ruta ---------------- */
+function temaTitle(t){ return TEMARIO[t]? TEMARIO[t].titulo : ('Tema '+t); }
+
+function renderRuta(c,plan){
+  $('#ruta-empty').classList.add('hidden');
+  $('#ruta-body').classList.remove('hidden');
+  $('#r-dias').textContent=plan.totalDays;
+  $('#r-disp').textContent=Math.round(plan.disp)+' h';
+  $('#r-nec').textContent=Math.round(plan.nec)+' h';
+
+  const ratio=plan.disp/plan.nec;
+  const v=$('#ruta-verdict');
+  if(plan.cubierto && ratio>=1.15){v.className='verdict v-ok';
+    v.innerHTML='✅ <b>Vas holgado.</b> Te caben las '+c.vueltas+' vueltas con margen para repasar. Mantén el ritmo y usa el colchón para reforzar tus temas flojos.';}
+  else if(plan.cubierto && ratio>=0.98){v.className='verdict v-tight';
+    v.innerHTML='⚠️ <b>Vas justo pero llegas.</b> El plan encaja sin apenas margen: cumple los días marcados. Si fallas jornadas, sube 30 min o quita 1 vuelta.';}
+  else{v.className='verdict v-bad';
+    const faltan=Math.round(plan.nec-plan.disp);
+    v.innerHTML='⛔ <b>No encaja del todo.</b> Con estas horas cubres '+plan.done+' de '+plan.queueLen+' bloques ('+Math.round(plan.done/plan.queueLen*100)+'%). Faltan ~'+faltan+' h: añade días/horas, reduce a '+(Math.max(1,c.vueltas-1))+' vueltas, o adelanta el estudio.';}
+
+  // progreso
+  state.done=state.done||{};
+  updateProgress(c);
+
+  // hoy
+  const todayStr=new Date().toDateString();
+  const ts=plan.slots.find(s=>s.date.toDateString()===todayStr && s.h>0);
+  const tb=$('#r-today');
+  if(ts){
+    tb.innerHTML='<b>📌 Hoy toca ('+DOW[ts.dw]+' '+ts.date.getDate()+'):</b><br>'+
+      ts.tasks.map(t=>taskLabel(t)).join(' · ')+
+      ' <span class="muted">('+ts.h+' h)</span>';
+  } else {
+    const next=plan.slots.find(s=>s.date>=new Date()&&s.h>0);
+    tb.innerHTML=next?('📌 Hoy descansas. Próxima sesión: <b>'+DOW[next.dw]+' '+next.date.getDate()+'/'+(next.date.getMonth()+1)+'</b> — '+next.tasks.map(taskLabel).join(' · ')):'Sin sesiones próximas.';
+  }
+
+  // calendario por semanas
+  const cal=$('#r-cal'); cal.innerHTML='';
+  // agrupar en semanas (lunes a domingo)
+  const weeks=[]; let cur=null;
+  plan.slots.forEach(s=>{
+    if(s.dw===0||!cur){cur={start:s.date,days:Array(7).fill(null)};weeks.push(cur);}
+    cur.days[s.dw]=s;
+  });
+  weeks.slice(0,26).forEach((w,wi)=>{
+    const wh=Object.values(w.days).filter(Boolean).reduce((a,s)=>a+s.h,0);
+    const el=document.createElement('div'); el.className='week';
+    let inner='<h4><span>Semana '+(wi+1)+'</span><span>'+Math.round(wh)+' h</span></h4><div class="days-row">';
+    for(let i=0;i<7;i++){
+      const s=w.days[i];
+      if(!s){inner+='<div class="day off"></div>';continue}
+      const off=s.h<=0;
+      inner+='<div class="day'+(off?' off':'')+'"><div class="dn"><span>'+DOW[i]+' '+s.date.getDate()+'</span>'+(s.h>0?'<span>'+s.h+'h</span>':'')+'</div>';
+      s.tasks.forEach(t=>{inner+='<div class="task '+taskClass(t)+'">'+taskShort(t)+'</div>'});
+      inner+='</div>';
+    }
+    inner+='</div>';
+    el.innerHTML=inner; cal.appendChild(el);
+  });
+  if(weeks.length>26) cal.insertAdjacentHTML('beforeend','<p class="muted">… mostrando las primeras 26 semanas.</p>');
+}
+
+function taskClass(t){ if(t.type==='rep')return 't-rep'; if(t.type==='sim')return 't-sim';
+  return t.v===1?'t-v1':t.v===2?'t-v2':'t-v3'; }
+function taskShort(t){ if(t.type==='rep')return t.general?'Repaso gral.':'Repaso'; if(t.type==='sim')return 'Simulacro';
+  return 'T'+t.t+' · v'+t.v; }
+function taskLabel(t){ if(t.type==='rep')return t.general?'Repaso general':'Repaso espaciado';
+  if(t.type==='sim')return 'Simulacro de examen';
+  const T=TEMARIO[t.t];
+  return 'Tema '+t.t+(T?' — '+T.titulo:'')+' (vuelta '+t.v+')'; }
+
+function updateProgress(c){
+  const total=c.temas*c.vueltas;
+  const done=Object.values(state.done||{}).filter(Boolean).length;
+  const pct=total?Math.round(done/total*100):0;
+  $('#r-progbar').style.width=pct+'%';
+  $('#r-progtxt').textContent=pct+'% ('+done+'/'+total+' bloques)';
+}
+
+/* ---------------- home ---------------- */
+function renderHome(c,plan){
+  if(!c){go;return}
+  $('#h-dias').textContent=plan?plan.totalDays:'—';
+  $('#h-horas').textContent=plan?Math.round(plan.disp)+' h':'—';
+  $('#h-temas').textContent=c.temas;
+  $('#h-vueltas').textContent=c.vueltas;
+  $('#h-note').innerHTML=plan.cubierto?
+    'Ruta creada ✔️ — <a href="#" onclick="go(\'ruta\');return false">ábrela aquí</a>.':
+    'Ruta creada, pero <b>ajusta horas</b> para que quepa todo. <a href="#" onclick="go(\'ruta\');return false">Ver detalles</a>.';
+}
+
+/* ============================================================
+   TEMARIO — datos y Tema 36 trabajado (motor de técnicas)
+   ============================================================ */
+const TEMARIO={
+  36:{
+    titulo:'Los deportes individuales como contenido de enseñanza',
+    subtitulo:'Intenciones educativas y de aprendizaje. Orientaciones y adaptaciones didácticas.',
+    trabajado:true,
+    indice:['Introducción','El deporte: concepto y clasificaciones',
+      'Los deportes individuales en el currículo','Intenciones educativas y de aprendizaje',
+      'Orientaciones y adaptaciones didácticas','Conclusiones','Bibliografía y legislación'],
+    // Palacio de la memoria: recorrido por el estadio de Olimpia (encaja con la aplicación práctica del tema)
+    palacio:{
+      lugar:'El estadio de la «Ciudad de Olimpia» (el propio escenario de la aplicación práctica del tema)',
+      paradas:[
+        ['Puerta de entrada','Michael Phelps te recibe con su frase «cuanto más sueñas, más lejos llegas» → arranca la <b>Introducción</b> (valor educativo del deporte individual, dato OMS 80%).'],
+        ['Taquilla / torniquetes','Clasifican a la gente por entradas → <b>concepto y clasificaciones del deporte</b> (Parlebas: psicomotrices vs sociomotrices; Devís y Peiró: 5 grupos).'],
+        ['Gradas numeradas','Asientos de uno en uno → <b>los deportes individuales en el currículo</b> (dominios de acción motriz 1 y 5; Batalla y Martínez).'],
+        ['Marcador gigante','Muestra los objetivos → <b>intenciones educativas</b> (autonomía, autorregulación, salud, evaluación formativa).'],
+        ['La pista','Donde se adapta el juego → <b>orientaciones y adaptaciones didácticas</b> (Sánchez Bañuelos fases III y IV; modelo ludotécnico).'],
+        ['El podio','Subes a lo alto → <b>conclusiones</b> (cita de Cagigal).'],
+        ['Sala de prensa','Libros y el BOC sobre la mesa → <b>bibliografía y legislación</b>.']
+      ]
+    },
+    autores:[
+      ['Parlebas','Praxiología: el deporte como <b>situación motriz reglada e institucionalizada</b>; psicomotrices (individuales) vs sociomotrices.','Un árbitro con bata de laboratorio midiendo cada movimiento.'],
+      ['Devís y Peiró (1992)','<b>5 grupos</b> de juegos deportivos: invasión, cancha dividida, campo y bate, muro y pared, blanco-diana.','Cinco canchas distintas una al lado de otra.'],
+      ['Batalla y Martínez (2002)','Clasifican los DI en: atléticos, gimnásticos, náuticos, en la naturaleza y de precisión.','Un pentatleta cambiando de disciplina cinco veces.'],
+      ['Hernández Moreno (2004)','<b>Praxiología motriz</b>: recopila las clasificaciones de referencia.','Un moreno con una lupa sobre un mapa de deportes.'],
+      ['López Pastor et al. (2018)','<b>Dominios de acción motriz</b> (los DI están en el 1º y el 5º).','Un pastor guiando ovejas a dominios/corrales numerados.'],
+      ['Sánchez Bañuelos','<b>4 fases</b> del tratamiento didáctico (nos centramos en III: 10-13 y IV: 14-18).','Un baño con 4 escalones que subes con la edad.'],
+      ['Valero y Conde','<b>Modelo ludotécnico</b>: juegos modificados con reglas técnicas, 4 fases.','Un conde jugando: se divierte y aprende la técnica sin repetir.'],
+      ['Cagigal','Cierre: «el deporte no es educativo por sí mismo; es el uso pedagógico lo que lo convierte en herramienta».','Una gaviota (Ca-gig-al) posada sobre un libro.']
+    ],
+    clasif:[
+      {t:'Devís y Peiró — 5 grupos de juegos deportivos',
+       items:['Invasión','Cancha dividida','Campo y bate','Muro y pared','Blanco-diana'],
+       acr:'I-C-C-M-B', frase:'«<b>I</b>nés <b>C</b>ocina <b>C</b>on <b>M</b>ucha <b>B</b>uena maña» → Invasión, Cancha, Campo-bate, Muro, Blanco.'},
+      {t:'Batalla y Martínez (2002) — deportes individuales',
+       items:['Atléticos y combinados','Gimnásticos','Náuticos','En la naturaleza','De precisión'],
+       acr:'A-G-N-N-P', frase:'«<b>A G</b>ran <b>N</b>ivel, <b>N</b>adie <b>P</b>ierde» → Atléticos, Gimnásticos, Náuticos, Naturaleza, Precisión.'},
+      {t:'Modelo ludotécnico (Valero y Conde) — 4 fases',
+       items:['Presentación global y desafíos','Propuestas ludotécnicas','Propuestas globales','Reflexión y puesta en común'],
+       acr:'P-L-G-R', frase:'«<b>P</b>edro <b>L</b>anza <b>G</b>randes <b>R</b>etos» → Presentación, Ludotécnica, Global, Reflexión.'}
+    ],
+    // Sistema número-imagen para leyes (número-forma): fija la cifra con una imagen
+    leyes:[
+      ['LOMLOE — Ley Orgánica 3/2020','Estatal. Modifica la LOE (2/2006).','<b>3</b>=corazón partido (reforma) del año <b>20</b>. «Un corazón (3) parte la vieja ley en 2020».'],
+      ['RD 217/2022','Currículo básico de la ESO (estatal).','<b>2-1-7</b>: un cisne (2) con un lápiz (1) y una bandera (7) escribe el currículo en 2022.'],
+      ['Ley 6/2014 — Canaria de Educación no Universitaria','Autonómica.','<b>6</b>=cereza guanche cae en el <b>14</b>. «6 cerezas en Canarias, año 14».'],
+      ['Decreto 30/2023','Ordena el currículo ESO y Bachillerato en Canarias.','<b>30</b>=un volcán (Teide) humeando en el <b>23</b>. Currículo canario “erupciona” en 2023.']
+    ],
+    flashcards:[
+      ['¿Cómo define Parlebas el deporte?','Situación motriz reglada e institucionalizada.'],
+      ['¿En qué dominios de acción motriz se encuadran los deportes individuales?','En el 1º y el 5º (López Pastor et al., 2018).'],
+      ['Devís y Peiró: enumera los 5 grupos','Invasión, cancha dividida, campo y bate, muro y pared, blanco-diana.'],
+      ['Batalla y Martínez (2002): 5 tipos de DI','Atléticos, gimnásticos, náuticos, en la naturaleza, de precisión.'],
+      ['Sánchez Bañuelos: ¿qué fases trabajamos y a qué edad?','Fase III (10-13 años) y Fase IV (14-18 años).'],
+      ['¿Qué es el modelo ludotécnico y de quién es?','Valero y Conde: juegos modificados con reglas técnicas; 4 fases. Aprender la técnica sin el aburrimiento de la repetición.'],
+      ['Dato OMS de la introducción','El 80% de los adolescentes no cumple las recomendaciones mínimas de actividad física (OMS, 2024).'],
+      ['Cita de cierre (Cagigal)','«El deporte no es educativo por sí mismo; es el uso pedagógico que se haga de él lo que lo convierte en herramienta educativa».'],
+      ['Nombre de la situación de aprendizaje del tema','«Decathlon cooperativo en la Ciudad de Olimpia» (a través del atletismo).']
+    ]
+  }
+};
+
+function renderTemas(){
+  const c=state.cfg, n=c?c.temas:61;
+  const list=$('#temas-list'); list.innerHTML='';
+  for(let t=1;t<=n;t++){
+    const T=TEMARIO[t];
+    const el=document.createElement('div'); el.className='temaitem';
+    el.innerHTML='<div class="num">'+t+'</div><div><b>Tema '+t+'</b> — '+
+      (T?T.titulo:'<span class="muted">pendiente de cargar</span>')+
+      (T&&T.trabajado?' <span class="pill" style="background:rgba(75,209,138,.15);color:var(--green)">trabajado</span>':'')+
+      '</div><div class="meta">'+(T&&T.trabajado?'ver recursos ▸':'—')+'</div>';
+    if(T&&T.trabajado) el.onclick=()=>openTema(t);
+    list.appendChild(el);
+  }
+}
+
+function openTema(t){
+  const T=TEMARIO[t];
+  const w=$('#temario-detail')||document.createElement('div');
+  // construir modal simple reemplazando la vista
+  const v=$('#v-temario');
+  v.innerHTML='<p><a href="#" onclick="go(\'temario\');renderTemas();return false">‹ volver al temario</a></p>'+
+    '<h1>Tema '+t+'</h1><h3 style="margin-top:-6px;color:var(--muted);font-weight:600">'+T.titulo+'</h3>'+
+    '<p class="lead">'+T.subtitulo+'</p>'+
+    sectionPalacio(T)+sectionClasif(T)+sectionLeyes(T)+sectionAutores(T)+sectionFlash(T);
+}
+
+function sectionPalacio(T){
+  let rows=T.palacio.paradas.map((p,i)=>'<tr><td><b>'+(i+1)+'. '+p[0]+'</b></td><td>'+p[1]+'</td></tr>').join('');
+  return '<details class="acc" open><summary>🏛️ Guion del tema · Palacio de la memoria</summary><div class="body">'+
+    '<p class="muted">Recorre siempre el mismo lugar y no te saltarás ningún apartado en el examen oral.</p>'+
+    '<p><span class="chip">Técnica: Palacio de la memoria</span><span class="chip">Contenido: índice/guion</span></p>'+
+    '<p><b>Lugar:</b> '+T.palacio.lugar+'</p>'+
+    '<table class="mem"><tr><th>Parada</th><th>Qué recuerdas ahí</th></tr>'+rows+'</table></div></details>';
+}
+function sectionClasif(T){
+  let blocks=T.clasif.map(c=>'<div class="tech"><h4>'+c.t+'</h4>'+
+    '<p class="muted" style="margin:.2em 0">'+c.items.join(' · ')+'</p>'+
+    '<p><span class="chip">Acrónimo: '+c.acr+'</span></p><p>'+c.frase+'</p></div>').join('');
+  return '<details class="acc"><summary>🔤 Clasificaciones · Acrónimos + frase gancho</summary><div class="body">'+
+    '<p><span class="chip">Técnica: Acróstico</span><span class="chip">Contenido: listas cerradas</span></p>'+blocks+'</div></details>';
+}
+function sectionLeyes(T){
+  let rows=T.leyes.map(l=>'<tr><td><b>'+l[0]+'</b><br><span class="muted">'+l[1]+'</span></td><td>'+l[2]+'</td></tr>').join('');
+  return '<details class="acc"><summary>⚖️ Legislación · Sistema número-imagen</summary><div class="body">'+
+    '<p><span class="chip">Técnica: Número-forma</span><span class="chip">Contenido: nº de ley y años</span></p>'+
+    '<table class="mem"><tr><th>Norma</th><th>Cómo recordar la cifra</th></tr>'+rows+'</table></div></details>';
+}
+function sectionAutores(T){
+  let rows=T.autores.map(a=>'<tr><td><b>'+a[0]+'</b></td><td>'+a[1]+'</td><td class="muted">'+a[2]+'</td></tr>').join('');
+  return '<details class="acc"><summary>👤 Autores y aportaciones · Asociación imagen-verbal</summary><div class="body">'+
+    '<p><span class="chip">Técnica: Asociación + historia</span><span class="chip">Contenido: autores/citas</span></p>'+
+    '<table class="mem"><tr><th>Autor</th><th>Aportación clave</th><th>Imagen para fijarlo</th></tr>'+rows+'</table></div></details>';
+}
+function sectionFlash(T){
+  let cards=T.flashcards.map((f,i)=>'<div class="flash" onclick="this.classList.toggle(\'flip\')"><div class="inner">'+
+    '<div class="side q"><div><span class="muted">Pregunta '+(i+1)+' · toca para girar</span><br>'+f[0]+'</div></div>'+
+    '<div class="side back"><div>'+f[1]+'</div></div></div></div>').join('');
+  return '<details class="acc"><summary>🃏 Flashcards · Active recall</summary><div class="body">'+
+    '<p><span class="chip">Técnica: Recuperación activa</span><span class="chip">Repaso espaciado</span></p>'+
+    '<p class="muted">Intenta responder ANTES de girar la tarjeta. Lo que falles, repásalo mañana.</p>'+cards+'</div></details>';
+}
+
+/* ============================================================
+   BIBLIOTECA DE TÉCNICAS
+   ============================================================ */
+const TECNICAS=[
+  ['Palacio de la memoria (método loci)','Asocias cada idea a un punto de un lugar que conoces y las recuerdas «paseando» por él. Ideal para el guion del tema y listas ordenadas.','Guiones, índices, secuencias, procesos.'],
+  ['Sistema número-imagen (Major / número-forma)','Conviertes cifras en imágenes fijas (1=lápiz, 2=cisne, 3=corazón…) para memorizar fechas, artículos y números de ley sin esfuerzo.','Fechas, leyes, artículos, datos numéricos.'],
+  ['Acrónimos y acrósticos','La primera letra de cada elemento forma una palabra o frase pegadiza que ancla el orden de una lista.','Clasificaciones y listas cerradas.'],
+  ['Active recall (recuperación activa)','En vez de releer, te obligas a recuperar la información de memoria (flashcards, preguntas). Es la técnica con más evidencia científica.','Todo el temario; consolidación.'],
+  ['Repaso espaciado (curva del olvido / Leitner)','Repasas en intervalos crecientes (24h, 3d, 1sem, 1mes). Vence al olvido con el mínimo tiempo. La app lo programa por ti.','Retención a largo plazo.'],
+  ['Técnica de Feynman','Explica el concepto en voz alta como si se lo enseñaras a un niño. Los huecos donde te trabas son lo que aún no dominas.','Conceptos, definiciones, comprensión profunda.'],
+  ['Mapas mentales','Representas el tema de forma visual y ramificada desde una idea central. Da estructura y visión de conjunto.','Relacionar apartados; visión global del tema.'],
+  ['Cadena / historia','Enlazas los elementos en una mini-historia absurda y vívida; el cerebro retiene mejor lo narrativo y llamativo.','Listas, fases, secuencias de autores.']
+];
+function renderTecnicas(){
+  const c=$('#tech-lib'); c.innerHTML='';
+  TECNICAS.forEach(t=>{
+    const d=document.createElement('details'); d.className='acc';
+    d.innerHTML='<summary>'+t[0]+'</summary><div class="body"><p>'+t[1]+
+      '</p><p><span class="chip">Úsala para: '+t[2]+'</span></p></div>';
+    c.appendChild(d);
+  });
+}
+
+/* ---------------- init ---------------- */
+renderTemas(); renderTecnicas();
+if(state.cfg){
+  const plan=buildPlan(state.cfg);
+  renderRuta(state.cfg,plan); renderHome(state.cfg,plan);
+}
+</script>
