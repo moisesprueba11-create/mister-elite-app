@@ -139,7 +139,7 @@
         <b>recursos ya hechos</b> para las fechas, leyes y clasificaciones difíciles.</p>
         <p style="margin-top:18px">
           <button class="btn" onclick="go('config')">Crear mi ruta →</button>
-          <button class="btn ghost" onclick="go('temario')">Ver el temario</button>
+          <button class="btn ghost" onclick="verEjemplo()">Ver ejemplo: Tema 36 →</button>
         </p>
       </div>
       <div class="card">
@@ -299,6 +299,9 @@ function go(v){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 $('#tabs').addEventListener('click',e=>{const v=e.target.dataset.v;if(!v)return;if(v==='temario')renderTemas();go(v)});
+
+// acceso directo al tema de ejemplo (Tema 36)
+function verEjemplo(){ go('temario'); openTema(36); }
 
 /* días de la semana (Lun..Dom -> índice 0..6) */
 (function(){
@@ -600,6 +603,7 @@ function renderTemas(){
     '<p class="lead">El Tema 36 está trabajado de punta a punta como ejemplo. '+
     'Toca cualquier tema con la etiqueta <b>trabajado</b> para ver sus recursos. '+
     'El resto se cargará según nos paséis los documentos.</p>'+
+    '<p><button class="btn" onclick="openTema(36)">Abrir el Tema 36 de ejemplo →</button></p>'+
     '<div id="temas-list" style="margin-top:16px"></div>';
   const list=$('#temas-list'); list.innerHTML='';
   for(let t=1;t<=n;t++){
