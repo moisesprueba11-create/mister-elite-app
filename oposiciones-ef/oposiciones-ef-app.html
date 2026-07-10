@@ -129,6 +129,12 @@
   .reader .theading{color:var(--gold2);font-size:17px;margin:22px 0 8px;text-wrap:balance}
   .reader .tlist{margin:0 0 13px;padding-left:20px;max-width:72ch}
   .reader .tlist li{margin:4px 0}
+  .mapa-ctrls{display:flex;gap:8px;margin:0 0 10px}
+  .mapa-ctrls .btn{padding:8px 16px;font-size:16px}
+  #mapa-wrap{border:1px solid var(--line);border-radius:14px;background:
+    radial-gradient(600px 300px at 20% 0,#18212d,#10151d);overflow:auto;
+    -webkit-overflow-scrolling:touch;max-height:70vh;padding:6px}
+  #mapa-inner{transform-origin:top left;transition:transform .12s ease;width:max-content}
   .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
   @media(max-width:820px){.hero{grid-template-columns:1fr}}
   .badge{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--gold2);text-transform:uppercase}
@@ -618,6 +624,45 @@ const TEMARIO={
 // texto íntegro del Tema 36 (extraído del documento aportado)
 if(typeof TEMA36_TEXTO!=='undefined') TEMARIO[36].textoGlobal=TEMA36_TEXTO;
 
+// mapa mental del Tema 36
+TEMARIO[36].mapa={
+  raiz:'Deportes individuales · Tema 36',
+  ramas:[
+    {t:'1 · Introducción', c:'#5aa9ff', hijos:[
+      'Valor educativo: autonomía y salud',
+      'Dato OMS: 80% de adolescentes inactivos',
+      'Forma el bloque de deportes (temas 33–40)']},
+    {t:'2 · Concepto y clasificaciones', c:'#4bd18a', hijos:[
+      'Deporte: competición, esfuerzo, reglas (Cyrulnik, 2023)',
+      'Parlebas: psicomotrices vs sociomotrices',
+      'Devís y Peiró (1992): 5 grupos de juegos']},
+    {t:'3 · DI en el currículo', c:'#b98cff', hijos:[
+      'Dominios de acción motriz 1 y 5 (López Pastor, 2018)',
+      'Latorre: actúa solo / simultáneo',
+      'Batalla y Martínez (2002): atléticos, gimnásticos, náuticos, naturaleza, precisión',
+      'Medio fijo vs fluctuante']},
+    {t:'4 · Intenciones educativas', c:'#e8b23a', hijos:[
+      'Condición física y habilidades motrices',
+      'Autoexigencia, autonomía, autorregulación',
+      'Evaluación formativa',
+      'Modelo ludotécnico (Valero)']},
+    {t:'5 · Orientaciones didácticas', c:'#ff8a5b', hijos:[
+      'Sánchez Bañuelos: Fase III (10–13) y IV (14–18)',
+      'Progresión cronológica',
+      'Estrategia analítica / global',
+      'Ludotécnico: 4 fases',
+      'Aplicación: Decathlon en la Ciudad de Olimpia']},
+    {t:'6 · Conclusiones', c:'#ff6b6b', hijos:[
+      'Autonomía y autorregulación',
+      'Enfoque comprensivo y ludotécnico',
+      'Cita de Cagigal']},
+    {t:'7 · Bibliografía y legislación', c:'#7ec7ff', hijos:[
+      'LOMLOE 3/2020 · RD 217/2022',
+      'Ley 6/2014 (Canaria) · Decreto 30/2023',
+      'Autores: Cyrulnik, H. Moreno, López Pastor, Valero…']}
+  ]
+};
+
 function renderTemas(){
   const c=state.cfg;
   const maxTrab=Math.max(0,...Object.keys(TEMARIO).map(Number),...Object.keys(TITULOS).map(Number));
@@ -651,18 +696,23 @@ function openTema(t){
     '<h1>Tema '+t+'</h1><h3 style="margin-top:-6px;color:var(--muted);font-weight:600">'+T.titulo+'</h3>'+
     '<p class="lead">'+T.subtitulo+'</p>'+
     '<div class="tabsec"><button class="segbtn active" data-sec="leer" onclick="temaTab(this,\'leer\')">📖 Leer el tema</button>'+
-    '<button class="segbtn" data-sec="tecnicas" onclick="temaTab(this,\'tecnicas\')">🧠 Técnicas y recursos</button></div>'+
+    '<button class="segbtn" data-sec="mapa" onclick="temaTab(this,\'mapa\')">🗺️ Mapa mental</button>'+
+    '<button class="segbtn" data-sec="tecnicas" onclick="temaTab(this,\'tecnicas\')">🧠 Técnicas</button></div>'+
     '<div id="sec-leer">'+sectionContenido(T)+'</div>'+
+    '<div id="sec-mapa" class="hidden">'+sectionMapa(T)+'</div>'+
     '<div id="sec-tecnicas" class="hidden">'+sectionPalacio(T)+sectionClasif(T)+sectionLeyes(T)+sectionAutores(T)+sectionFlash(T)+'</div>';
+  if(T.mapa) renderMapa(T.mapa);
   window.scrollTo({top:0,behavior:'auto'}); // al abrir un tema, saltar arriba
 }
 
-// alternar entre "Leer el tema" y "Técnicas y recursos"
+// alternar entre las vistas internas del tema
 function temaTab(btn,sec){
   document.querySelectorAll('.tabsec .segbtn').forEach(b=>b.classList.toggle('active',b===btn));
   $('#sec-leer').classList.toggle('hidden',sec!=='leer');
+  $('#sec-mapa').classList.toggle('hidden',sec!=='mapa');
   $('#sec-tecnicas').classList.toggle('hidden',sec!=='tecnicas');
   window.scrollTo({top:0,behavior:'auto'});
+  if(sec==='mapa'){const wrap=$('#mapa-wrap'); if(wrap) wrap.scrollTop=Math.max(0,mapaRootY-70);}
 }
 
 // ¿la línea es un encabezado de apartado?
@@ -690,6 +740,81 @@ function sectionContenido(T){
   });
   cerrarLista();
   return '<div class="reader card">'+body+'</div>';
+}
+
+// ---- Mapa mental (SVG, autocontenido) ----
+let mapaZoom=1, mapaRootY=0;
+function sectionMapa(T){
+  if(!T.mapa) return '<p class="muted">Mapa no disponible.</p>';
+  return '<p class="muted">Mapa mental del tema: el centro es el tema y cada rama, un apartado con sus ideas clave. '+
+    'Arrastra para moverte y usa +/− para acercar.</p>'+
+    '<div class="mapa-ctrls">'+
+      '<button class="btn ghost" onclick="zoomMapa(-0.15)">−</button>'+
+      '<button class="btn ghost" onclick="zoomMapa(0.15)">+</button>'+
+      '<button class="btn ghost" onclick="zoomMapa(0,true)">Ajustar</button>'+
+    '</div>'+
+    '<div id="mapa-wrap"><div id="mapa-inner"></div></div>';
+}
+function zoomMapa(delta,reset){
+  mapaZoom=reset?1:Math.max(0.4,Math.min(2,mapaZoom+delta));
+  const inner=$('#mapa-inner'); if(inner) inner.style.transform='scale('+mapaZoom+')';
+  if(reset) centrarMapa();
+}
+function centrarMapa(){
+  const wrap=$('#mapa-wrap'); if(!wrap) return;
+  wrap.scrollTo({left:0, top:Math.max(0,mapaRootY*mapaZoom-70), behavior:'smooth'});
+}
+function estAltura(txt,ancho,fs){
+  const cpl=Math.max(6,Math.floor(ancho/(fs*0.56)));
+  const lineas=Math.max(1,Math.ceil(txt.length/cpl));
+  return lineas*(fs+5)+16;
+}
+function nodoSVG(x,y,w,h,txt,fill,stroke,fs,peso){
+  return '<foreignObject x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'">'+
+    '<div xmlns="http://www.w3.org/1999/xhtml" style="box-sizing:border-box;width:'+w+'px;height:'+h+'px;'+
+    'display:flex;align-items:center;padding:7px 11px;border-radius:11px;background:'+fill+';'+
+    'border:1px solid '+stroke+';color:#eaf0f7;font:'+(peso||600)+' '+fs+'px system-ui,sans-serif;line-height:1.25">'+
+    esc(txt)+'</div></foreignObject>';
+}
+function renderMapa(m){
+  const inner=$('#mapa-inner'); if(!inner) return;
+  const RW=180, L1W=200, L2W=250, GX=70, GY=14, BRANCHGAP=16, PAD=20;
+  const xr=PAD, x1=xr+RW+GX, x2=x1+L1W+GX;
+  // layout vertical de hijos (nivel 2) y ramas (nivel 1)
+  let cursor=PAD;
+  const ramas=m.ramas.map(r=>{
+    const hijos=r.hijos.map(h=>{const hh=estAltura(h,L2W,13); const o={txt:h,h:hh,y:cursor}; cursor+=hh+GY; return o;});
+    const top=hijos[0].y, bot=hijos[hijos.length-1].y+hijos[hijos.length-1].h;
+    const rh=estAltura(r.t,L1W,14);
+    const ry=(top+bot)/2-rh/2;
+    cursor+=BRANCHGAP;
+    return {t:r.t,c:r.c,hijos,y:ry,h:rh,cy:(top+bot)/2};
+  });
+  const totalH=cursor+PAD;
+  const rootH=estAltura(m.raiz,RW,15);
+  const rootCy=(ramas[0].cy+ramas[ramas.length-1].cy)/2;
+  const rootY=rootCy-rootH/2;
+  const W=x2+L2W+PAD, H=Math.max(totalH,rootCy+PAD);
+  // conectores
+  const curva=(x1,y1,x2,y2,col)=>{const mx=(x1+x2)/2;
+    return '<path d="M'+x1+','+y1+' C'+mx+','+y1+' '+mx+','+y2+' '+x2+','+y2+'" fill="none" stroke="'+col+'" stroke-width="2.5" opacity=".7"/>';};
+  let paths='',nodes='';
+  ramas.forEach(r=>{
+    paths+=curva(xr+RW,rootCy,x1,r.y+r.h/2,r.c);
+    nodes+=nodoSVG(x1,r.y,L1W,r.h,r.t,r.c+'22',r.c,14,700);
+    r.hijos.forEach(h=>{
+      paths+=curva(x1+L1W,r.y+r.h/2,x2,h.y+h.h/2,r.c);
+      nodes+=nodoSVG(x2,h.y,L2W,h.h,h.txt,'#161d27',r.c+'88',13,500);
+    });
+  });
+  const root=nodoSVG(xr,rootY,RW,rootH,m.raiz,'#e8b23a','#f6cf6d',15,800)
+    .replace('color:#eaf0f7','color:#141414');
+  inner.innerHTML='<svg width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'" '+
+    'xmlns="http://www.w3.org/2000/svg" style="max-width:none">'+paths+nodes+root+'</svg>';
+  mapaZoom=1; inner.style.transform='scale(1)';
+  mapaRootY=rootY;
+  // colocar la vista sobre el tema central al abrir
+  const wrap=$('#mapa-wrap'); if(wrap) wrap.scrollTop=Math.max(0,rootY-70);
 }
 
 function sectionPalacio(T){
