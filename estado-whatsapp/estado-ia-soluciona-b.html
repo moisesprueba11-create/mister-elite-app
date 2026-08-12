@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box }
+  html,body { width:1080px; height:1920px }
+  body{
+    font-family:'Liberation Sans','DejaVu Sans',sans-serif;
+    background:#f5f4f0; color:#15202b; overflow:hidden; position:relative;
+  }
+  .paper{ position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 50% 34%, rgba(29,111,184,.10) 0%, rgba(245,244,240,0) 58%),
+      #f5f4f0;
+  }
+  .grid{ position:absolute; inset:0; opacity:.55 }
+
+  .wrap{ position:relative; height:100%; display:flex; flex-direction:column;
+         padding:160px 96px 140px }
+
+  .kicker{ display:flex; align-items:center; gap:22px; margin-bottom:auto }
+  .kicker .bar{ width:78px; height:7px; background:#1d6fb8; border-radius:4px }
+  .kicker span{ font-size:31px; letter-spacing:.30em; font-weight:700; color:#6b6b66 }
+  .kicker{ margin-bottom:130px }
+
+  .badge{
+    display:inline-block; align-self:flex-start;
+    background:#15202b; color:#f5f4f0; font-size:32px; font-weight:800;
+    letter-spacing:.22em; padding:20px 34px; border-radius:10px; margin-bottom:44px;
+  }
+
+  h1{ font-size:150px; line-height:.95; font-weight:800; letter-spacing:-.035em; color:#15202b }
+  h1 em{ font-style:normal; color:#1d6fb8; display:block }
+  h1 .hl{
+    display:inline-block; padding:0 10px;
+    background:linear-gradient(180deg, rgba(212,165,55,0) 52%, rgba(212,165,55,.60) 52%, rgba(212,165,55,.60) 80%, rgba(212,165,55,0) 80%);
+  }
+
+  .sub{ font-size:48px; line-height:1.30; font-weight:600; color:#3c4a58;
+        margin-top:52px; max-width:830px }
+  .sub b{ color:#15202b }
+
+  .cards{ display:flex; gap:22px; margin-top:62px }
+  .card{ flex:1; background:#fff; border:3px solid #e3e1da; border-radius:20px;
+         padding:36px 26px; text-align:center }
+  .card .n{ font-size:56px; font-weight:800; color:#1d6fb8; line-height:1 }
+  .card .t{ font-size:30px; font-weight:700; color:#4a5866; margin-top:16px; line-height:1.25 }
+
+  .note{ margin-top:auto; font-size:40px; line-height:1.40; color:#6b6b66; font-weight:600;
+         border-left:8px solid #d4a537; padding-left:32px; margin-bottom:80px }
+  .note b{ color:#15202b }
+
+  .foot{ border-top:5px solid #15202b; padding-top:44px;
+         display:flex; align-items:center; justify-content:space-between }
+  .foot .l{ font-size:42px; font-weight:800; color:#15202b }
+  .foot .r{ font-size:30px; font-weight:700; letter-spacing:.20em; color:#6b6b66; text-align:right }
+  .foot .r b{ color:#15202b; display:block; font-size:34px; letter-spacing:.16em }
+</style>
+
+<div class="paper"></div>
+<svg class="grid" width="1080" height="1920" viewBox="0 0 1080 1920" fill="none">
+  <g stroke="#d9d6cd" stroke-width="2">
+    <path d="M0 1500 H1080"/>
+    <circle cx="540" cy="1500" r="170"/>
+    <rect x="300" y="1760" width="480" height="200"/>
+  </g>
+</svg>
+
+<div class="wrap">
+  <div class="kicker"><i class="bar"></i><span>MISTER ÉLITE</span></div>
+
+  <div class="badge">ENTRENADORES</div>
+
+  <h1>NO ES <span class="hl">MAGIA</span>.<em>ES IA.</em></h1>
+
+  <p class="sub">Tú pones el <b>ojo de míster</b>.<br>La IA pone las <b>horas</b> que no tienes.</p>
+
+  <div class="cards">
+    <div class="card"><div class="n">1</div><div class="t">Dices el sistema</div></div>
+    <div class="card"><div class="n">2</div><div class="t">Sale la sesión</div></div>
+    <div class="card"><div class="n">3</div><div class="t">Con pizarras</div></div>
+  </div>
+
+  <p class="note">Nada de plantillas genéricas:<br><b>tu sistema, tu categoría, tu idea de juego.</b></p>
+
+  <div class="foot">
+    <div class="l">¿Te lo enseño?</div>
+    <div class="r">MOISÉS DÍAZ<b>MISTER ÉLITE</b></div>
+  </div>
+</div>
