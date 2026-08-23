@@ -22,6 +22,11 @@ Nombres fijos por curso (no cambiar):
 Esto aplica a TODOS los cursos (actuales y futuros): pretemporada, posesión, rondos,
 1-4-4-2, 1-5-3-2, 1-3-4-3, 1-4-2-3-1, 1-4-3-3, etc.
 
+**Esta regla está automatizada.** El hook `.claude/hooks/nombres-estables.js`
+(registrado en `.claude/settings.json`) deniega en `PreToolUse` cualquier
+escritura, edición de `build_*.py` o comando bash que produciría un entregable
+con nombre no canónico. Ver `.claude/hooks/README.md`.
+
 ## Publicación en WordPress (flujo actual)
 
 **Este entorno de código NO tiene WordPress conectado** (sus MCP son Canva, Gmail, Google Drive,
