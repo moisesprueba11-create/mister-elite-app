@@ -11,10 +11,13 @@
     --ok:#2C935C; --ok-soft:#DCF0E2; --fail:#C9463A; --fail-soft:#F8DFDC;
     --shadow:0 1px 1px rgba(18,42,33,.05), 0 10px 26px -18px rgba(18,42,33,.55);
     --r:14px;
-    /* escena de la ciudad — día */
-    --sky-1:#BFE0F0; --sky-2:#EAF3E4; --grass:#4E9B4E; --grass-2:#3D8340; --path:#D9D2C0;
-    --b-wall:#F2EEE4; --b-wall-2:#DCD5C6; --b-roof:#2E4A57; --b-glass:#7FB6D6; --b-trim:#C9463A;
-    --b-metal:#9AA7AC; --b-line:rgba(18,42,33,.22);
+    /* pueblo — de día */
+    --sky-1:#BEE1F2; --sky-2:#E9F2E2; --hill:#9CC79A; --hill-2:#7FB57F;
+    --grass:#66AC5C; --grass-2:#4E9450; --path:#E2D8BE;
+    --wall:#F7F0E3; --wall-2:#E7DBC6; --roof:#B4553F; --roof-2:#8E4130;
+    --wood:#8C6239; --stone:#BCC0B2; --water:#74B9DA; --glass:#93C8E6; --glassline:rgba(18,42,33,.25);
+    --leaf:#4E9B4E; --leaf-2:#3A7C3E; --trunk:#7A5334; --flower:#E4557A; --flower-2:#F0C23A;
+    --smoke:rgba(255,255,255,.75); --sunmoon:#F6D66B;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -23,9 +26,12 @@
       --accent:#FFB63C; --accent-soft:#3A2B0C; --on-accent:#221602;
       --ok:#46B87B; --ok-soft:#12301F; --fail:#E2685B; --fail-soft:#361713;
       --shadow:0 1px 1px rgba(0,0,0,.4), 0 14px 30px -20px rgba(0,0,0,.9);
-      --sky-1:#16283A; --sky-2:#0E1B26; --grass:#26603A; --grass-2:#1C4A2D; --path:#3A3A34;
-      --b-wall:#2C3A3E; --b-wall-2:#222E31; --b-roof:#16232A; --b-glass:#FFCF6B; --b-trim:#E2685B;
-      --b-metal:#6E7C82; --b-line:rgba(233,241,231,.18);
+      --sky-1:#0F1D31; --sky-2:#1D3040; --hill:#1B3A2C; --hill-2:#163024;
+      --grass:#2C6440; --grass-2:#214E33; --path:#4A4437;
+      --wall:#38424C; --wall-2:#2C353D; --roof:#7C3A2C; --roof-2:#5E2C21;
+      --wood:#5C4629; --stone:#6E7568; --water:#2F5F7C; --glass:#FFCF6B; --glassline:rgba(0,0,0,.35);
+      --leaf:#2F6B41; --leaf-2:#245335; --trunk:#4A3722; --flower:#C0466A; --flower-2:#C9A030;
+      --smoke:rgba(255,255,255,.28); --sunmoon:#EAEFC9;
     }
   }
   :root[data-theme="dark"]{
@@ -34,9 +40,12 @@
     --accent:#FFB63C; --accent-soft:#3A2B0C; --on-accent:#221602;
     --ok:#46B87B; --ok-soft:#12301F; --fail:#E2685B; --fail-soft:#361713;
     --shadow:0 1px 1px rgba(0,0,0,.4), 0 14px 30px -20px rgba(0,0,0,.9);
-    --sky-1:#16283A; --sky-2:#0E1B26; --grass:#26603A; --grass-2:#1C4A2D; --path:#3A3A34;
-    --b-wall:#2C3A3E; --b-wall-2:#222E31; --b-roof:#16232A; --b-glass:#FFCF6B; --b-trim:#E2685B;
-    --b-metal:#6E7C82; --b-line:rgba(233,241,231,.18);
+    --sky-1:#0F1D31; --sky-2:#1D3040; --hill:#1B3A2C; --hill-2:#163024;
+    --grass:#2C6440; --grass-2:#214E33; --path:#4A4437;
+    --wall:#38424C; --wall-2:#2C353D; --roof:#7C3A2C; --roof-2:#5E2C21;
+    --wood:#5C4629; --stone:#6E7568; --water:#2F5F7C; --glass:#FFCF6B; --glassline:rgba(0,0,0,.35);
+    --leaf:#2F6B41; --leaf-2:#245335; --trunk:#4A3722; --flower:#C0466A; --flower-2:#C9A030;
+    --smoke:rgba(255,255,255,.28); --sunmoon:#EAEFC9;
   }
 
   *{box-sizing:border-box}
@@ -71,12 +80,27 @@
   .stack{display:flex; flex-direction:column; gap:14px}
   .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
 
-  /* ---------- ciudad ---------- */
-  .city{border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:var(--sky-2)}
-  .city .scene{overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch}
-  .city svg{display:block; height:230px}
-  .city .capt{display:flex; justify-content:space-between; gap:10px; padding:9px 13px;
-              border-top:1px solid var(--line); background:var(--surface); font-size:12.5px}
+  /* ---------- pueblo ---------- */
+  .village{border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:var(--sky-2)}
+  .village .scene{overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch}
+  .village svg{display:block; height:250px}
+  .village .capt{display:flex; justify-content:space-between; gap:10px; padding:9px 13px;
+                 border-top:1px solid var(--line); background:var(--surface); font-size:12.5px}
+  .day{display:block} .night{display:none}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .day{display:none}
+    :root:not([data-theme="light"]) .night{display:block}
+  }
+  :root[data-theme="dark"] .day{display:none}
+  :root[data-theme="dark"] .night{display:block}
+  .blades{transform-box:fill-box; transform-origin:center; animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .puff{animation:rise 5s ease-out infinite}
+  .puff:nth-of-type(2){animation-delay:1.6s} .puff:nth-of-type(3){animation-delay:3.2s}
+  @keyframes rise{0%{opacity:0; transform:translateY(0) scale(.6)}
+                  25%{opacity:.9}100%{opacity:0; transform:translateY(-26px) scale(1.5)}}
+  .justbuilt{animation:drop .7s cubic-bezier(.2,1.5,.4,1)}
+  @keyframes drop{0%{opacity:0; transform:translateY(-42px)}100%{opacity:1; transform:translateY(0)}}
 
   /* ---------- temporada ---------- */
   .season{display:grid; grid-template-columns:repeat(auto-fit,minmax(44px,1fr)); gap:6px}
@@ -85,8 +109,7 @@
        font-weight:600; font-size:17px}
   .lvl small{font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; font-family:"Asap",sans-serif;
              color:var(--ink-soft); font-weight:600}
-  .lvl.done{background:var(--ok-soft); border-color:var(--ok)}
-  .lvl.done small{color:var(--ok)}
+  .lvl.done{background:var(--ok-soft); border-color:var(--ok)} .lvl.done small{color:var(--ok)}
   .lvl.now{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
   .lvl.now small{color:var(--on-accent)}
   .lvl.locked{opacity:.45; cursor:not-allowed}
@@ -95,6 +118,11 @@
   .brief{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
   .brief .big{font-family:"Anton",Impact,sans-serif; font-size:27px; text-transform:uppercase; line-height:1.05}
   .brief .goalline{font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--ink-soft)}
+  .prize{display:flex; align-items:center; gap:11px; background:var(--accent-soft); border:1px solid var(--accent);
+         border-radius:12px; padding:9px 12px}
+  .prize .pic{width:54px; height:48px; flex:none; border-radius:8px; overflow:hidden; background:var(--sky-2)}
+  .prize .pic svg{display:block; width:100%; height:100%}
+  .prize b{display:block; font-size:14.5px} .prize span{font-size:12px; color:var(--ink-soft)}
   .cta{border:0; border-radius:12px; background:var(--accent); color:var(--on-accent);
        font-family:"Anton",Impact,sans-serif; text-transform:uppercase; letter-spacing:.05em;
        font-size:21px; padding:14px 20px; width:100%}
@@ -102,21 +130,17 @@
          font-weight:600; font-size:14.5px}
   .ghost[aria-pressed="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
 
-  /* ---------- obras ---------- */
-  .shop{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:10px}
-  .item{display:flex; align-items:center; gap:11px; border:1px solid var(--line); background:var(--surface-2);
-        border-radius:12px; padding:9px 11px; text-align:left; width:100%}
-  .item .pic{width:46px; height:42px; flex:none; border-radius:8px; background:var(--sky-2); overflow:hidden}
+  /* ---------- adornos ---------- */
+  .shop{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:9px}
+  .item{display:flex; align-items:center; gap:9px; border:1px solid var(--line); background:var(--surface-2);
+        border-radius:12px; padding:8px 10px; text-align:left; width:100%}
+  .item .pic{width:40px; height:40px; flex:none; border-radius:8px; overflow:hidden; background:var(--sky-2)}
   .item .pic svg{display:block; width:100%; height:100%}
   .item .txt{flex:1; min-width:0}
-  .item .txt b{display:block; font-size:14px; line-height:1.25}
-  .item .txt span{font-size:11.5px; color:var(--ink-soft); font-family:"IBM Plex Mono",monospace}
-  .item.built{border-color:var(--ok); background:var(--ok-soft)}
-  .item.locked{opacity:.5; cursor:not-allowed}
-  .item.poor{cursor:not-allowed}
-  .item.poor .txt span{color:var(--fail)}
-  .price{font-family:"IBM Plex Mono",monospace; font-weight:700; font-size:15px; white-space:nowrap;
-         margin-left:auto; padding-left:10px}
+  .item .txt b{display:block; font-size:13.5px; line-height:1.25}
+  .item .txt span{font-size:11px; color:var(--ink-soft); font-family:"IBM Plex Mono",monospace}
+  .item.poor{cursor:not-allowed} .item.poor .txt span{color:var(--fail)}
+  .price{font-family:"IBM Plex Mono",monospace; font-weight:700; font-size:14.5px; margin-left:auto; padding-left:8px}
 
   /* ---------- partida ---------- */
   .hud{display:flex; align-items:center; gap:16px}
@@ -127,7 +151,7 @@
   .ring .fill{stroke:var(--accent); stroke-width:11; transition:stroke .3s}
   .ring.hot .fill{stroke:var(--fail)}
   .ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:"Anton",Impact,sans-serif;
-             font-size:38px; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+             font-size:38px; font-variant-numeric:tabular-nums}
   .ring.hot .num{color:var(--fail)}
   .ring.hot{animation:tick 1s ease-in-out infinite}
   @keyframes tick{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
@@ -139,8 +163,8 @@
   .hud .meta b{font-family:"IBM Plex Mono",monospace; color:var(--ink); font-size:15px}
   .penalty{position:absolute; left:50%; top:-6px; transform:translateX(-50%); font-family:"IBM Plex Mono",monospace;
            font-weight:700; color:var(--fail); font-size:16px; opacity:0; pointer-events:none}
-  .penalty.go{animation:rise .9s ease-out}
-  @keyframes rise{0%{opacity:1; transform:translate(-50%,0)}100%{opacity:0; transform:translate(-50%,-26px)}}
+  .penalty.go{animation:rise2 .9s ease-out}
+  @keyframes rise2{0%{opacity:1; transform:translate(-50%,0)}100%{opacity:0; transform:translate(-50%,-26px)}}
 
   .field{position:relative; border-radius:var(--r); overflow:hidden; color:var(--on-pitch); text-align:center;
     background:repeating-linear-gradient(180deg, rgba(255,255,255,.028) 0 24px, transparent 24px 48px),
@@ -162,7 +186,9 @@
   @keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.06)}100%{transform:scale(1)}}
   @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .anim-ok{animation:pop .3s ease} .anim-ko{animation:shake .28s ease}
-  @media (prefers-reduced-motion: reduce){ .anim-ok,.anim-ko,.ring.hot,.coins.bump{animation:none} }
+  @media (prefers-reduced-motion: reduce){
+    .anim-ok,.anim-ko,.ring.hot,.coins.bump,.blades,.puff,.justbuilt{animation:none}
+  }
 
   .keys{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
   .key{border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:14px 0;
@@ -182,6 +208,11 @@
   .banner.lose{background:linear-gradient(150deg,#C9463A,#8E2A21)}
   .banner h2{font-family:"Anton",Impact,sans-serif; font-size:32px; text-transform:uppercase}
   .banner p{opacity:.92; font-size:14.5px}
+  .newpiece{display:flex; align-items:center; gap:14px; border:2px solid var(--ok); background:var(--ok-soft);
+            border-radius:var(--r); padding:12px 14px}
+  .newpiece .pic{width:86px; height:74px; flex:none; border-radius:10px; overflow:hidden; background:var(--sky-2)}
+  .newpiece .pic svg{display:block; width:100%; height:100%}
+  .newpiece b{display:block; font-family:"Anton",Impact,sans-serif; font-size:21px; text-transform:uppercase}
   .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
   .stat{background:var(--surface-2); border-radius:11px; padding:10px 12px}
   .stat .v{font-family:"IBM Plex Mono",monospace; font-size:22px; font-weight:700; font-variant-numeric:tabular-nums}
@@ -193,7 +224,6 @@
   footer{color:var(--ink-soft); font-size:11px; letter-spacing:.14em; text-transform:uppercase; text-align:center}
   @media (max-width:430px){
     .hud{gap:12px} .ring{width:100px; height:100px} .ring .num{font-size:32px}
-    .stats{grid-template-columns:repeat(3,1fr)}
   }
 </style>
 
@@ -203,13 +233,13 @@
     <div class="coins" id="coinsBox"><span class="coin">€</span><span id="coins">0</span></div>
   </header>
 
-  <!-- ================= CIUDAD / MAPA ================= -->
+  <!-- ================= PUEBLO ================= -->
   <section id="home" class="stack">
-    <div class="city">
+    <div class="village">
       <div class="scene" id="scene"></div>
       <div class="capt">
-        <span class="muted" id="cityCount">Solar vacío</span>
-        <span class="muted" id="cityNext"></span>
+        <span class="muted" id="vCount"></span>
+        <span class="muted" id="vNext"></span>
       </div>
     </div>
 
@@ -223,6 +253,10 @@
         </div>
         <button class="ghost" id="drill" type="button">Ensayar sin reloj</button>
       </div>
+      <div class="prize" id="prizeBox">
+        <span class="pic" id="prizePic"></span>
+        <span><b id="prizeName">Tu casa</b><span id="prizeSub">Se construye si superas este nivel</span></span>
+      </div>
       <button class="cta" id="play" type="button">Jugar nivel</button>
       <div class="row" style="justify-content:space-between">
         <span class="muted" id="bestLine"></span>
@@ -235,7 +269,7 @@
 
     <div class="panel pad stack">
       <div class="row" style="justify-content:space-between">
-        <p class="eyebrow">Obras de la ciudad deportiva</p>
+        <p class="eyebrow">Adornos del pueblo · con monedas</p>
         <span class="muted" id="shopHint"></span>
       </div>
       <div class="shop" id="shop"></div>
@@ -248,8 +282,7 @@
       <div class="ring" id="ring">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <circle class="track" cx="60" cy="60" r="52"></circle>
-          <circle class="fill" id="ringFill" cx="60" cy="60" r="52"
-                  stroke-dasharray="326.7" stroke-dashoffset="0"></circle>
+          <circle class="fill" id="ringFill" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="0"></circle>
         </svg>
         <div class="num mono" id="ringNum" role="timer" aria-live="off">60</div>
         <span class="penalty" id="penalty">−3 s</span>
@@ -280,7 +313,11 @@
   <section id="end" class="stack" hidden>
     <div class="banner" id="banner">
       <h2 id="endTitle">¡Nivel superado!</h2>
-      <p id="endSub">Ya puedes construir en tu ciudad.</p>
+      <p id="endSub"></p>
+    </div>
+    <div class="newpiece" id="newPiece" hidden>
+      <span class="pic" id="newPic"></span>
+      <span><span class="eyebrow">Construido en tu pueblo</span><b id="newName">Tu casa</b></span>
     </div>
     <div class="panel pad stack">
       <div class="stats">
@@ -295,7 +332,7 @@
     </div>
     <div class="row" style="flex-wrap:nowrap">
       <button class="cta" id="endMain" type="button" style="flex:2">Siguiente nivel</button>
-      <button class="ghost" id="endCity" type="button" style="flex:1">Mi ciudad</button>
+      <button class="ghost" id="endCity" type="button" style="flex:1">Mi pueblo</button>
     </div>
   </section>
 
@@ -314,153 +351,284 @@
     {t:8,  goal:12, time:55}, {t:9,  goal:12, time:50}, {t:10, goal:12, time:50},
     {t:11, goal:12, time:50}, {t:12, goal:12, time:50}, {t:0,  goal:15, time:60}
   ];
-  var PENALTY = 3;                     // segundos que cuesta un fallo
+  var PENALTY = 3;
   var levelName = function(i){ return LEVELS[i].t ? "Tabla del " + LEVELS[i].t : "Reto élite"; };
 
-  /* ================= construcciones ================= */
-  var BUILDINGS = [
-    {id:"campo",   name:"Campo de entrenamiento", cost:25,  need:1,  w:170},
-    {id:"vestu",   name:"Vestuarios",             cost:35,  need:1,  w:110},
-    {id:"foco",    name:"Torre de focos",         cost:45,  need:2,  w:64},
-    {id:"grada",   name:"Grada norte",            cost:60,  need:3,  w:150},
-    {id:"marcador",name:"Marcador electrónico",   cost:55,  need:4,  w:96},
-    {id:"gim",     name:"Gimnasio",               cost:75,  need:5,  w:128},
-    {id:"cantera", name:"Campo de la cantera",    cost:85,  need:6,  w:150},
-    {id:"bus",     name:"Autobús del equipo",     cost:70,  need:7,  w:132},
-    {id:"clinica", name:"Clínica de recuperación",cost:95,  need:8,  w:120},
-    {id:"museo",   name:"Museo de trofeos",       cost:120, need:9,  w:136},
-    {id:"resi",    name:"Residencia de canteranos",cost:150,need:10, w:126},
-    {id:"estadio", name:"Estadio ÉLITE",          cost:220, need:11, w:210}
+  /* ============ construcciones: una por nivel ganado ============ */
+  var PIECES = [
+    {id:"casa",    name:"Tu casa",             w:126, h:146},
+    {id:"jardin",  name:"El jardín",           w:118, h:58},
+    {id:"huerto",  name:"El huerto",           w:118, h:114},
+    {id:"arbol",   name:"El árbol del columpio", w:100, h:150},
+    {id:"fuente",  name:"La fuente de la plaza", w:104, h:72},
+    {id:"pan",     name:"La panadería",        w:124, h:100},
+    {id:"escuela", name:"La escuela",          w:146, h:162},
+    {id:"campo",   name:"El campo de fútbol",  w:158, h:70},
+    {id:"mercado", name:"El mercado",          w:126, h:78},
+    {id:"molino",  name:"El molino",           w:116, h:156},
+    {id:"lago",    name:"El lago con patos",   w:148, h:52},
+    {id:"iglesia", name:"La iglesia del reloj",w:120, h:176}
+  ];
+  /* ============ adornos: con monedas, se colocan solos ============ */
+  var DECOR = [
+    {id:"arbolito", name:"Árbol",     cost:12, h:72},
+    {id:"arbusto",  name:"Arbustos",  cost:8, h:26},
+    {id:"flores",   name:"Flores",    cost:8, h:28},
+    {id:"farola",   name:"Farola",    cost:15, h:74},
+    {id:"banco",    name:"Banco",     cost:12, h:32},
+    {id:"bici",     name:"Bicicleta", cost:18, h:36},
+    {id:"perro",    name:"Perro",     cost:22, h:34},
+    {id:"buzon",    name:"Buzón",     cost:10, h:50}
   ];
 
-  /* dibujos: cada uno se apoya en y=0 y crece hacia arriba */
+  /* ---- dibujos (apoyados en y=0, crecen hacia arriba) ---- */
   var DRAW = {
+    casa: function(){ return ''
+      + '<rect x="12" y="-74" width="102" height="74" fill="var(--wall)"/>'
+      + '<rect x="12" y="-74" width="102" height="74" fill="none" stroke="var(--wall-2)" stroke-width="2"/>'
+      + '<polygon points="0,-72 63,-118 126,-72" fill="var(--roof)"/>'
+      + '<polygon points="0,-72 63,-118 63,-72" fill="var(--roof-2)"/>'
+      + '<rect x="88" y="-134" width="14" height="30" fill="var(--roof-2)"/>'
+      + '<circle class="puff" cx="95" cy="-140" r="6" fill="var(--smoke)"/>'
+      + '<circle class="puff" cx="95" cy="-140" r="5" fill="var(--smoke)"/>'
+      + '<circle class="puff" cx="95" cy="-140" r="7" fill="var(--smoke)"/>'
+      + '<rect x="52" y="-40" width="24" height="40" rx="2" fill="var(--wood)"/>'
+      + '<circle cx="71" cy="-20" r="2.4" fill="var(--accent)"/>'
+      + '<g fill="var(--glass)" stroke="var(--glassline)" stroke-width="1.5">'
+      + '<rect x="24" y="-58" width="20" height="20"/><rect x="84" y="-58" width="20" height="20"/></g>'
+      + '<line x1="34" y1="-58" x2="34" y2="-38" stroke="var(--glassline)" stroke-width="1.5"/>'
+      + '<line x1="94" y1="-58" x2="94" y2="-38" stroke="var(--glassline)" stroke-width="1.5"/>'
+      + '<line x1="24" y1="-48" x2="44" y2="-48" stroke="var(--glassline)" stroke-width="1.5"/>'
+      + '<line x1="84" y1="-48" x2="104" y2="-48" stroke="var(--glassline)" stroke-width="1.5"/>'; },
+
+    jardin: function(){ return ''
+      + '<rect x="6" y="-26" width="106" height="26" rx="4" fill="var(--grass-2)"/>'
+      + '<g stroke="var(--wood)" stroke-width="4" stroke-linecap="round">'
+      + '<line x1="4" y1="-34" x2="4" y2="0"/><line x1="30" y1="-34" x2="30" y2="0"/>'
+      + '<line x1="56" y1="-34" x2="56" y2="0"/><line x1="82" y1="-34" x2="82" y2="0"/>'
+      + '<line x1="108" y1="-34" x2="108" y2="0"/><line x1="0" y1="-26" x2="112" y2="-26"/>'
+      + '<line x1="0" y1="-12" x2="112" y2="-12"/></g>'
+      + '<g><circle cx="18" cy="-40" r="6" fill="var(--flower)"/><rect x="16.5" y="-40" width="3" height="16" fill="var(--leaf-2)"/>'
+      + '<circle cx="44" cy="-46" r="6" fill="var(--flower-2)"/><rect x="42.5" y="-46" width="3" height="22" fill="var(--leaf-2)"/>'
+      + '<circle cx="70" cy="-42" r="6" fill="var(--flower)"/><rect x="68.5" y="-42" width="3" height="18" fill="var(--leaf-2)"/>'
+      + '<circle cx="96" cy="-48" r="6" fill="var(--flower-2)"/><rect x="94.5" y="-48" width="3" height="24" fill="var(--leaf-2)"/></g>'
+      + '<ellipse cx="58" cy="-4" rx="52" ry="5" fill="var(--grass)"/>'; },
+
+    huerto: function(){ return ''
+      + '<rect x="0" y="-22" width="118" height="22" rx="3" fill="var(--wood)" opacity=".55"/>'
+      + '<g fill="var(--leaf)">'
+      + '<ellipse cx="16" cy="-26" rx="9" ry="7"/><ellipse cx="40" cy="-26" rx="9" ry="7"/>'
+      + '<ellipse cx="64" cy="-26" rx="9" ry="7"/><ellipse cx="88" cy="-26" rx="9" ry="7"/>'
+      + '<ellipse cx="106" cy="-26" rx="8" ry="6"/></g>'
+      + '<g fill="var(--flower)"><circle cx="16" cy="-32" r="3.5"/><circle cx="64" cy="-32" r="3.5"/></g>'
+      + '<g fill="var(--flower-2)"><circle cx="40" cy="-32" r="3.5"/><circle cx="88" cy="-32" r="3.5"/></g>'
+      + '<line x1="56" y1="-84" x2="56" y2="-30" stroke="var(--wood)" stroke-width="5"/>'
+      + '<line x1="34" y1="-70" x2="78" y2="-70" stroke="var(--wood)" stroke-width="5"/>'
+      + '<circle cx="56" cy="-92" r="11" fill="var(--wall-2)"/>'
+      + '<polygon points="42,-98 70,-98 56,-112" fill="var(--roof)"/>'
+      + '<g fill="var(--ink)" opacity=".7"><circle cx="52" cy="-94" r="1.8"/><circle cx="60" cy="-94" r="1.8"/></g>'; },
+
+    arbol: function(){ return ''
+      + '<rect x="44" y="-84" width="14" height="84" rx="3" fill="var(--trunk)"/>'
+      + '<circle cx="50" cy="-104" r="30" fill="var(--leaf)"/>'
+      + '<circle cx="26" cy="-92" r="21" fill="var(--leaf-2)"/>'
+      + '<circle cx="74" cy="-94" r="22" fill="var(--leaf-2)"/>'
+      + '<circle cx="50" cy="-124" r="20" fill="var(--leaf)"/>'
+      + '<g stroke="var(--wood)" stroke-width="2.5"><line x1="72" y1="-84" x2="72" y2="-40"/>'
+      + '<line x1="90" y1="-84" x2="90" y2="-40"/></g>'
+      + '<rect x="68" y="-42" width="26" height="5" rx="2" fill="var(--wood)"/>'
+      + '<line x1="66" y1="-84" x2="96" y2="-84" stroke="var(--trunk)" stroke-width="5"/>'; },
+
+    fuente: function(){ return ''
+      + '<ellipse cx="52" cy="-10" rx="52" ry="14" fill="var(--stone)"/>'
+      + '<ellipse cx="52" cy="-14" rx="44" ry="11" fill="var(--water)"/>'
+      + '<rect x="46" y="-52" width="12" height="38" fill="var(--stone)"/>'
+      + '<ellipse cx="52" cy="-52" rx="20" ry="6" fill="var(--stone)"/>'
+      + '<ellipse cx="52" cy="-56" rx="14" ry="4" fill="var(--water)"/>'
+      + '<path d="M52,-58 q-14,10 -20,20" fill="none" stroke="var(--water)" stroke-width="3" stroke-linecap="round"/>'
+      + '<path d="M52,-58 q14,10 20,20" fill="none" stroke="var(--water)" stroke-width="3" stroke-linecap="round"/>'
+      + '<circle cx="52" cy="-64" r="5" fill="var(--water)"/>'; },
+
+    pan: function(){ return ''
+      + '<rect x="8" y="-78" width="108" height="78" fill="var(--wall)"/>'
+      + '<polygon points="0,-78 124,-78 116,-96 8,-96" fill="var(--roof-2)"/>'
+      + '<rect x="18" y="-62" width="52" height="30" fill="var(--glass)" stroke="var(--glassline)" stroke-width="1.5"/>'
+      + '<g fill="var(--wood)"><ellipse cx="32" cy="-40" rx="9" ry="5"/><ellipse cx="52" cy="-40" rx="9" ry="5"/>'
+      + '<ellipse cx="42" cy="-50" rx="9" ry="5"/></g>'
+      + '<rect x="82" y="-46" width="24" height="46" rx="2" fill="var(--wood)"/>'
+      + '<circle cx="86" cy="-24" r="2.2" fill="var(--accent)"/>'
+      + '<g>' + stripes(10, -92, 104, 12) + '</g>'
+      + '<rect x="30" y="-92" width="58" height="14" rx="3" fill="var(--wall-2)"/>'
+      + '<text x="59" y="-81" text-anchor="middle" font-family="Anton, sans-serif" font-size="11"'
+      + ' fill="var(--roof-2)">PAN</text>'; },
+
+    escuela: function(){ return ''
+      + '<rect x="10" y="-86" width="126" height="86" fill="var(--wall)"/>'
+      + '<polygon points="2,-86 73,-112 144,-86" fill="var(--roof)"/>'
+      + '<rect x="60" y="-140" width="26" height="30" fill="var(--wall-2)"/>'
+      + '<polygon points="56,-140 90,-140 73,-158" fill="var(--roof-2)"/>'
+      + '<circle cx="73" cy="-126" r="7" fill="var(--accent)"/>'
+      + '<g fill="var(--glass)" stroke="var(--glassline)" stroke-width="1.5">'
+      + '<rect x="22" y="-72" width="22" height="22"/><rect x="52" y="-72" width="22" height="22"/>'
+      + '<rect x="82" y="-72" width="22" height="22"/><rect x="112" y="-72" width="16" height="22"/>'
+      + '<rect x="22" y="-40" width="22" height="22"/><rect x="112" y="-40" width="16" height="22"/></g>'
+      + '<rect x="58" y="-42" width="32" height="42" rx="2" fill="var(--wood)"/>'
+      + '<line x1="74" y1="-42" x2="74" y2="0" stroke="var(--glassline)" stroke-width="1.5"/>'; },
+
     campo: function(){ return ''
-      + '<rect x="0" y="-46" width="170" height="46" rx="4" fill="var(--grass-2)"/>'
-      + '<rect x="6" y="-40" width="158" height="34" rx="3" fill="var(--grass)"/>'
-      + '<rect x="10" y="-37" width="150" height="28" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
-      + '<line x1="85" y1="-37" x2="85" y2="-9" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
-      + '<ellipse cx="85" cy="-23" rx="15" ry="9" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
-      + '<rect x="4" y="-29" width="7" height="12" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/>'
-      + '<rect x="159" y="-29" width="7" height="12" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/>'; },
-    vestu: function(){ return ''
-      + '<rect x="4" y="-60" width="102" height="60" fill="var(--b-wall)"/>'
-      + '<rect x="0" y="-70" width="110" height="12" rx="2" fill="var(--b-roof)"/>'
-      + '<rect x="14" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
-      + '<rect x="46" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
-      + '<rect x="78" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
-      + '<rect x="44" y="-26" width="22" height="26" rx="2" fill="var(--b-roof)"/>'
-      + '<rect x="4" y="-14" width="102" height="14" fill="var(--b-wall-2)"/>'; },
-    foco: function(){ return ''
-      + '<rect x="28" y="-118" width="8" height="118" fill="var(--b-metal)"/>'
-      + '<line x1="32" y1="-60" x2="14" y2="0" stroke="var(--b-metal)" stroke-width="3"/>'
-      + '<line x1="32" y1="-60" x2="50" y2="0" stroke="var(--b-metal)" stroke-width="3"/>'
-      + '<rect x="6" y="-146" width="52" height="30" rx="3" fill="var(--b-roof)"/>'
-      + '<circle cx="18" cy="-138" r="5" fill="var(--accent)"/><circle cx="32" cy="-138" r="5" fill="var(--accent)"/>'
-      + '<circle cx="46" cy="-138" r="5" fill="var(--accent)"/><circle cx="18" cy="-125" r="5" fill="var(--accent)"/>'
-      + '<circle cx="32" cy="-125" r="5" fill="var(--accent)"/><circle cx="46" cy="-125" r="5" fill="var(--accent)"/>'; },
-    grada: function(){ return ''
-      + '<polygon points="0,0 150,0 150,-40 96,-40 96,-58 44,-58 44,-76 0,-76" fill="var(--b-wall-2)"/>'
-      + '<polygon points="4,-72 40,-72 40,-56 92,-56 92,-38 146,-38 146,-4 4,-4" fill="var(--b-wall)"/>'
-      + '<g stroke="var(--b-trim)" stroke-width="5">'
-      + '<line x1="10" y1="-66" x2="34" y2="-66"/><line x1="10" y1="-56" x2="34" y2="-56"/>'
-      + '<line x1="48" y1="-48" x2="86" y2="-48"/><line x1="48" y1="-38" x2="86" y2="-38"/>'
-      + '<line x1="100" y1="-30" x2="140" y2="-30"/><line x1="100" y1="-20" x2="140" y2="-20"/></g>'
-      + '<rect x="-4" y="-104" width="158" height="10" rx="3" fill="var(--b-roof)"/>'
-      + '<rect x="0" y="-96" width="6" height="24" fill="var(--b-metal)"/>'
-      + '<rect x="144" y="-96" width="6" height="60" fill="var(--b-metal)"/>'; },
-    marcador: function(){ return ''
-      + '<rect x="12" y="-56" width="10" height="56" fill="var(--b-metal)"/>'
-      + '<rect x="74" y="-56" width="10" height="56" fill="var(--b-metal)"/>'
-      + '<rect x="0" y="-116" width="96" height="62" rx="5" fill="var(--b-roof)"/>'
-      + '<rect x="8" y="-108" width="80" height="34" rx="3" fill="#0B1512"/>'
-      + '<text x="48" y="-84" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20"'
-      + ' font-weight="700" fill="var(--accent)">7×8</text>'
-      + '<text x="48" y="-62" text-anchor="middle" font-family="Anton, sans-serif" font-size="12"'
-      + ' letter-spacing="1.5" fill="var(--b-wall)">ÉLITE</text>'; },
-    gim: function(){ return ''
-      + '<path d="M0,0 L0,-52 Q64,-96 128,-52 L128,0 Z" fill="var(--b-wall)"/>'
-      + '<path d="M0,-52 Q64,-96 128,-52" fill="none" stroke="var(--b-roof)" stroke-width="7"/>'
-      + '<rect x="14" y="-44" width="100" height="16" fill="var(--b-glass)"/>'
-      + '<rect x="52" y="-24" width="24" height="24" rx="2" fill="var(--b-roof)"/>'
-      + '<g stroke="var(--b-trim)" stroke-width="4" stroke-linecap="round">'
-      + '<line x1="24" y1="-14" x2="40" y2="-14"/><circle cx="22" cy="-14" r="4" fill="var(--b-trim)" stroke="none"/>'
-      + '<circle cx="42" cy="-14" r="4" fill="var(--b-trim)" stroke="none"/></g>'; },
-    cantera: function(){ return ''
-      + '<rect x="0" y="-40" width="150" height="40" rx="4" fill="var(--grass-2)"/>'
-      + '<rect x="5" y="-35" width="140" height="30" rx="3" fill="var(--grass)"/>'
-      + '<line x1="75" y1="-33" x2="75" y2="-7" stroke="rgba(255,255,255,.65)" stroke-width="1.2"/>'
-      + '<rect x="3" y="-26" width="6" height="10" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.2"/>'
-      + '<rect x="141" y="-26" width="6" height="10" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.2"/>'
-      + '<circle cx="46" cy="-18" r="3.4" fill="#fff"/><circle cx="104" cy="-24" r="3.4" fill="#fff"/>'
-      + '<rect x="52" y="-58" width="46" height="16" rx="3" fill="var(--b-roof)"/>'
-      + '<text x="75" y="-46" text-anchor="middle" font-family="Anton, sans-serif" font-size="11"'
-      + ' fill="var(--accent)">CANTERA</text>'; },
-    bus: function(){ return ''
-      + '<rect x="0" y="-58" width="132" height="46" rx="9" fill="var(--b-trim)"/>'
-      + '<rect x="8" y="-50" width="34" height="18" rx="3" fill="var(--b-glass)"/>'
-      + '<rect x="48" y="-50" width="34" height="18" rx="3" fill="var(--b-glass)"/>'
-      + '<rect x="88" y="-50" width="36" height="18" rx="3" fill="var(--b-glass)"/>'
-      + '<rect x="0" y="-26" width="132" height="7" fill="var(--accent)"/>'
-      + '<circle cx="30" cy="-10" r="10" fill="#22292B"/><circle cx="30" cy="-10" r="4" fill="var(--b-metal)"/>'
-      + '<circle cx="102" cy="-10" r="10" fill="#22292B"/><circle cx="102" cy="-10" r="4" fill="var(--b-metal)"/>'; },
-    clinica: function(){ return ''
-      + '<rect x="0" y="-74" width="120" height="74" fill="var(--b-wall)"/>'
-      + '<rect x="0" y="-84" width="120" height="12" rx="2" fill="var(--b-roof)"/>'
-      + '<g fill="var(--b-glass)"><rect x="12" y="-64" width="20" height="16"/><rect x="42" y="-64" width="20" height="16"/>'
-      + '<rect x="72" y="-64" width="20" height="16"/><rect x="12" y="-40" width="20" height="16"/>'
-      + '<rect x="42" y="-40" width="20" height="16"/></g>'
-      + '<rect x="84" y="-24" width="24" height="24" rx="2" fill="var(--b-roof)"/>'
-      + '<g fill="var(--b-trim)"><rect x="96" y="-70" width="8" height="26" rx="2"/>'
-      + '<rect x="87" y="-61" width="26" height="8" rx="2"/></g>'; },
-    museo: function(){ return ''
-      + '<rect x="0" y="-10" width="136" height="10" fill="var(--b-wall-2)"/>'
-      + '<rect x="8" y="-62" width="120" height="52" fill="var(--b-wall)"/>'
-      + '<g fill="var(--b-wall-2)"><rect x="20" y="-58" width="11" height="48"/><rect x="46" y="-58" width="11" height="48"/>'
-      + '<rect x="78" y="-58" width="11" height="48"/><rect x="104" y="-58" width="11" height="48"/></g>'
-      + '<polygon points="0,-62 68,-96 136,-62" fill="var(--b-roof)"/>'
-      + '<circle cx="68" cy="-72" r="7" fill="var(--accent)"/>'
-      + '<rect x="64" y="-66" width="8" height="6" fill="var(--accent)"/>'; },
-    resi: function(){ return ''
-      + '<rect x="0" y="-124" width="126" height="124" fill="var(--b-wall)"/>'
-      + '<rect x="0" y="-132" width="126" height="10" rx="2" fill="var(--b-roof)"/>'
-      + '<g fill="var(--b-glass)">'
-      + '<rect x="12" y="-112" width="20" height="18"/><rect x="42" y="-112" width="20" height="18"/>'
-      + '<rect x="72" y="-112" width="20" height="18"/><rect x="98" y="-112" width="16" height="18"/>'
-      + '<rect x="12" y="-84" width="20" height="18"/><rect x="42" y="-84" width="20" height="18"/>'
-      + '<rect x="72" y="-84" width="20" height="18"/><rect x="98" y="-84" width="16" height="18"/>'
-      + '<rect x="12" y="-56" width="20" height="18"/><rect x="42" y="-56" width="20" height="18"/>'
-      + '<rect x="72" y="-56" width="20" height="18"/><rect x="98" y="-56" width="16" height="18"/></g>'
-      + '<rect x="48" y="-28" width="28" height="28" rx="2" fill="var(--b-roof)"/>'
-      + '<rect x="0" y="-32" width="126" height="4" fill="var(--accent)"/>'; },
-    estadio: function(){ return ''
-      + '<ellipse cx="105" cy="-14" rx="105" ry="16" fill="var(--b-wall-2)"/>'
-      + '<path d="M0,-14 Q0,-96 105,-96 Q210,-96 210,-14 Z" fill="var(--b-wall)"/>'
-      + '<path d="M18,-16 Q18,-82 105,-82 Q192,-82 192,-16 Z" fill="var(--grass-2)"/>'
-      + '<ellipse cx="105" cy="-30" rx="72" ry="30" fill="var(--grass)"/>'
-      + '<ellipse cx="105" cy="-30" rx="20" ry="9" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5"/>'
-      + '<line x1="105" y1="-60" x2="105" y2="-1" stroke="rgba(255,255,255,.75)" stroke-width="1.5"/>'
-      + '<path d="M0,-14 Q0,-104 105,-104 Q210,-104 210,-14" fill="none" stroke="var(--b-roof)" stroke-width="9"/>'
-      + '<g fill="var(--accent)"><circle cx="26" cy="-92" r="5"/><circle cx="105" cy="-106" r="5"/><circle cx="184" cy="-92" r="5"/></g>'
-      + '<text x="105" y="-4" text-anchor="middle" font-family="Anton, sans-serif" font-size="13"'
-      + ' letter-spacing="2" fill="var(--ink)">ÉLITE</text>'; }
+      + '<rect x="0" y="-48" width="158" height="48" rx="4" fill="var(--grass-2)"/>'
+      + '<rect x="6" y="-42" width="146" height="36" rx="3" fill="var(--grass)"/>'
+      + '<rect x="10" y="-38" width="138" height="28" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.4"/>'
+      + '<line x1="79" y1="-38" x2="79" y2="-10" stroke="rgba(255,255,255,.75)" stroke-width="1.4"/>'
+      + '<ellipse cx="79" cy="-24" rx="14" ry="8" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.4"/>'
+      + '<rect x="3" y="-31" width="8" height="14" fill="none" stroke="#fff" stroke-width="1.6"/>'
+      + '<rect x="147" y="-31" width="8" height="14" fill="none" stroke="#fff" stroke-width="1.6"/>'
+      + '<circle cx="60" cy="-20" r="4" fill="#fff" stroke="var(--ink)" stroke-width=".8"/>'
+      + '<rect x="52" y="-66" width="54" height="16" rx="3" fill="var(--wood)"/>'
+      + '<text x="79" y="-54" text-anchor="middle" font-family="Anton, sans-serif" font-size="11"'
+      + ' fill="var(--accent)">ÉLITE</text>'
+      + '<line x1="60" y1="-50" x2="60" y2="-42" stroke="var(--wood)" stroke-width="3"/>'
+      + '<line x1="98" y1="-50" x2="98" y2="-42" stroke="var(--wood)" stroke-width="3"/>'; },
+
+    mercado: function(){ return ''
+      + '<g>' + stripes(0, -74, 126, 16) + '</g>'
+      + '<polygon points="0,-74 126,-74 116,-58 10,-58" fill="rgba(0,0,0,.12)"/>'
+      + '<g stroke="var(--wood)" stroke-width="5"><line x1="10" y1="-58" x2="10" y2="0"/>'
+      + '<line x1="116" y1="-58" x2="116" y2="0"/></g>'
+      + '<rect x="14" y="-34" width="98" height="10" fill="var(--wood)"/>'
+      + '<g fill="var(--flower)"><circle cx="28" cy="-40" r="5"/><circle cx="40" cy="-40" r="5"/><circle cx="34" cy="-48" r="5"/></g>'
+      + '<g fill="var(--flower-2)"><circle cx="62" cy="-40" r="5"/><circle cx="74" cy="-40" r="5"/><circle cx="68" cy="-48" r="5"/></g>'
+      + '<g fill="var(--leaf)"><circle cx="96" cy="-40" r="5"/><circle cx="106" cy="-40" r="5"/><circle cx="101" cy="-48" r="5"/></g>'
+      + '<rect x="18" y="-24" width="90" height="24" rx="2" fill="var(--wall-2)"/>'; },
+
+    molino: function(){ return ''
+      + '<polygon points="26,0 90,0 78,-96 38,-96" fill="var(--wall)"/>'
+      + '<polygon points="26,0 58,0 58,-96 38,-96" fill="var(--wall-2)"/>'
+      + '<polygon points="30,-96 86,-96 58,-122" fill="var(--roof)"/>'
+      + '<rect x="48" y="-40" width="20" height="40" rx="2" fill="var(--wood)"/>'
+      + '<rect x="40" y="-72" width="16" height="16" fill="var(--glass)" stroke="var(--glassline)" stroke-width="1.4"/>'
+      + '<g class="blades"><g stroke="var(--wood)" stroke-width="5" stroke-linecap="round">'
+      + '<line x1="58" y1="-104" x2="58" y2="-152"/><line x1="58" y1="-104" x2="58" y2="-56"/>'
+      + '<line x1="58" y1="-104" x2="106" y2="-104"/><line x1="58" y1="-104" x2="10" y2="-104"/></g>'
+      + '<g fill="var(--wall-2)" opacity=".95"><rect x="52" y="-150" width="12" height="34" rx="2"/>'
+      + '<rect x="52" y="-92" width="12" height="34" rx="2"/><rect x="70" y="-110" width="34" height="12" rx="2"/>'
+      + '<rect x="12" y="-110" width="34" height="12" rx="2"/></g></g>'
+      + '<circle cx="58" cy="-104" r="6" fill="var(--roof-2)"/>'; },
+
+    lago: function(){ return ''
+      + '<ellipse cx="74" cy="-16" rx="74" ry="18" fill="var(--grass-2)"/>'
+      + '<ellipse cx="74" cy="-18" rx="66" ry="14" fill="var(--water)"/>'
+      + '<g stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none">'
+      + '<path d="M40,-20 q8,-3 16,0"/><path d="M92,-14 q8,-3 16,0"/></g>'
+      + '<g><ellipse cx="58" cy="-24" rx="10" ry="6" fill="#fff"/>'
+      + '<path d="M64,-30 q6,-2 7,-7 q-6,1 -9,5 z" fill="#fff"/>'
+      + '<circle cx="68" cy="-33" r="4.5" fill="#fff"/><polygon points="72,-33 79,-31 72,-29" fill="var(--accent)"/>'
+      + '<circle cx="69.5" cy="-34" r="1" fill="var(--ink)"/></g>'
+      + '<g><ellipse cx="96" cy="-20" rx="7" ry="4.5" fill="#F2ECE0"/>'
+      + '<circle cx="103" cy="-26" r="3.5" fill="#F2ECE0"/>'
+      + '<polygon points="106,-26 111,-24.5 106,-23" fill="var(--accent)"/></g>'
+      + '<g stroke="var(--leaf-2)" stroke-width="3" stroke-linecap="round">'
+      + '<line x1="14" y1="-16" x2="10" y2="-42"/><line x1="20" y1="-16" x2="22" y2="-38"/>'
+      + '<line x1="132" y1="-14" x2="136" y2="-40"/></g>'
+      + '<g fill="var(--wood)"><ellipse cx="10" cy="-46" rx="3" ry="7"/><ellipse cx="136" cy="-44" rx="3" ry="7"/></g>'; },
+
+    iglesia: function(){ return ''
+      + '<rect x="0" y="-72" width="78" height="72" fill="var(--wall)"/>'
+      + '<polygon points="-6,-72 39,-100 84,-72" fill="var(--roof)"/>'
+      + '<rect x="78" y="-124" width="42" height="124" fill="var(--wall-2)"/>'
+      + '<polygon points="72,-124 126,-124 99,-166" fill="var(--roof-2)"/>'
+      + '<circle cx="99" cy="-100" r="15" fill="var(--wall)" stroke="var(--stone)" stroke-width="2"/>'
+      + '<g stroke="var(--ink)" stroke-width="2" stroke-linecap="round">'
+      + '<line x1="99" y1="-100" x2="99" y2="-110"/><line x1="99" y1="-100" x2="106" y2="-100"/></g>'
+      + '<rect x="94" y="-172" width="4" height="12" fill="var(--accent)"/>'
+      + '<rect x="88" y="-166" width="16" height="4" fill="var(--accent)"/>'
+      + '<path d="M28,-44 a12,12 0 0 1 24,0 l0,44 l-24,0 z" fill="var(--wood)"/>'
+      + '<g fill="var(--glass)"><rect x="8" y="-58" width="12" height="18" rx="6"/>'
+      + '<rect x="60" y="-58" width="12" height="18" rx="6"/>'
+      + '<rect x="92" y="-70" width="14" height="20" rx="7"/></g>'; },
+
+    /* --- adornos --- */
+    arbolito: function(){ return ''
+      + '<rect x="16" y="-40" width="8" height="40" rx="2" fill="var(--trunk)"/>'
+      + '<circle cx="20" cy="-52" r="18" fill="var(--leaf)"/>'
+      + '<circle cx="9" cy="-46" r="12" fill="var(--leaf-2)"/>'
+      + '<circle cx="31" cy="-46" r="12" fill="var(--leaf-2)"/>'; },
+    arbusto: function(){ return ''
+      + '<ellipse cx="14" cy="-8" rx="14" ry="11" fill="var(--leaf-2)"/>'
+      + '<ellipse cx="30" cy="-10" rx="12" ry="13" fill="var(--leaf)"/>'
+      + '<circle cx="22" cy="-18" r="4" fill="var(--flower)"/>'; },
+    flores: function(){ return ''
+      + '<g stroke="var(--leaf-2)" stroke-width="2.5"><line x1="8" y1="0" x2="8" y2="-14"/>'
+      + '<line x1="20" y1="0" x2="20" y2="-18"/><line x1="32" y1="0" x2="32" y2="-12"/></g>'
+      + '<circle cx="8" cy="-17" r="5" fill="var(--flower)"/>'
+      + '<circle cx="20" cy="-21" r="5" fill="var(--flower-2)"/>'
+      + '<circle cx="32" cy="-15" r="5" fill="var(--flower)"/>'; },
+    farola: function(){ return ''
+      + '<rect x="10" y="-56" width="6" height="56" fill="var(--stone)"/>'
+      + '<rect x="4" y="-62" width="18" height="10" rx="3" fill="var(--roof-2)"/>'
+      + '<polygon points="6,-62 20,-62 13,-72" fill="var(--roof-2)"/>'
+      + '<rect x="7" y="-58" width="12" height="6" fill="var(--sunmoon)"/>'
+      + '<ellipse cx="13" cy="-2" rx="9" ry="3" fill="var(--stone)"/>'; },
+    banco: function(){ return ''
+      + '<g fill="var(--wood)"><rect x="2" y="-18" width="42" height="5" rx="2"/>'
+      + '<rect x="2" y="-30" width="42" height="5" rx="2"/><rect x="2" y="-24" width="42" height="5" rx="2"/></g>'
+      + '<g fill="var(--stone)"><rect x="5" y="-18" width="5" height="18"/><rect x="36" y="-18" width="5" height="18"/></g>'; },
+    bici: function(){ return ''
+      + '<g fill="none" stroke="var(--roof-2)" stroke-width="3">'
+      + '<circle cx="12" cy="-12" r="11"/><circle cx="44" cy="-12" r="11"/></g>'
+      + '<g stroke="var(--stone)" stroke-width="2.5" fill="none">'
+      + '<path d="M12,-12 L26,-12 L34,-30 L44,-12"/><path d="M26,-12 L34,-30"/>'
+      + '<line x1="30" y1="-32" x2="40" y2="-32"/><line x1="20" y1="-26" x2="28" y2="-26"/></g>'; },
+    perro: function(){ return ''
+      + '<ellipse cx="24" cy="-16" rx="17" ry="10" fill="var(--wood)"/>'
+      + '<circle cx="41" cy="-24" r="8" fill="var(--wood)"/>'
+      + '<ellipse cx="46" cy="-21" rx="5" ry="3.5" fill="var(--wall-2)"/>'
+      + '<circle cx="50" cy="-22" r="1.8" fill="var(--ink)"/>'
+      + '<path d="M36,-30 q-2,-8 4,-6 z" fill="var(--roof-2)"/>'
+      + '<g stroke="var(--wood)" stroke-width="4" stroke-linecap="round">'
+      + '<line x1="14" y1="-8" x2="14" y2="0"/><line x1="32" y1="-8" x2="32" y2="0"/></g>'
+      + '<path d="M8,-20 q-6,-6 -2,-10" fill="none" stroke="var(--wood)" stroke-width="4" stroke-linecap="round"/>'; },
+    buzon: function(){ return ''
+      + '<rect x="12" y="-30" width="6" height="30" fill="var(--wood)"/>'
+      + '<rect x="2" y="-48" width="26" height="20" rx="8" fill="var(--roof)"/>'
+      + '<rect x="6" y="-40" width="18" height="3" fill="var(--wall)"/>'
+      + '<rect x="26" y="-44" width="3" height="12" fill="var(--accent)"/>'; }
   };
+  function stripes(x, y, w, h){
+    var out = '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="var(--wall)"/>';
+    for(var i = 0; i * 16 < w; i++){
+      var sw = Math.min(8, w - i*16);
+      out += '<rect x="' + (x + i*16) + '" y="' + y + '" width="' + sw + '" height="' + h + '" fill="var(--roof)"/>';
+    }
+    return out;
+  }
+  function pieceById(id){ for(var i=0;i<PIECES.length;i++) if(PIECES[i].id===id) return PIECES[i]; return null; }
+  function decorById(id){ for(var i=0;i<DECOR.length;i++) if(DECOR[i].id===id) return DECOR[i]; return null; }
 
   /* ================= estado guardado ================= */
-  var KEY = "tablasDeGol.v2";
+  var KEY = "tablasDeGol.v3";
   var save = loadSave();
   function loadSave(){
+    var base = {coins:0, unlocked:1, pieces:[], decor:[], facts:{}, best:{}, input:"teclado", sound:true};
     try{
       var raw = localStorage.getItem(KEY);
       if(raw){
         var d = JSON.parse(raw);
         if(d && typeof d === "object"){
-          return {coins:d.coins||0, unlocked:d.unlocked||1, built:d.built||[], facts:d.facts||{},
-                  best:d.best||{}, input:d.input||"teclado", sound:d.sound !== false};
+          return {coins:d.coins||0, unlocked:d.unlocked||1, pieces:d.pieces||[], decor:d.decor||[],
+                  facts:d.facts||{}, best:d.best||{}, input:d.input||"teclado", sound:d.sound !== false};
         }
       }
+      var old = localStorage.getItem("tablasDeGol.v2");   // rescata el progreso anterior
+      if(old){
+        var o = JSON.parse(old);
+        base.coins = o.coins || 0; base.unlocked = o.unlocked || 1;
+        base.facts = o.facts || {}; base.best = o.best || {};
+        base.input = o.input || "teclado"; base.sound = o.sound !== false;
+        for(var i = 0; i < base.unlocked - 1 && i < PIECES.length; i++) base.pieces.push(PIECES[i].id);
+      }
     }catch(e){}
-    return {coins:0, unlocked:1, built:[], facts:{}, best:{}, input:"teclado", sound:true};
+    return base;
   }
   function persist(){ try{ localStorage.setItem(KEY, JSON.stringify(save)); }catch(e){} }
   function fact(a,b){ return save.facts[a+"x"+b] || {ok:0, ko:0}; }
@@ -470,8 +638,8 @@
     save.facts[k] = f;
   }
 
-  var selected = Math.min(save.unlocked, LEVELS.length) - 1;   // nivel elegido (índice)
-  var game = null, raf = null, audio = null;
+  var selected = Math.min(save.unlocked, LEVELS.length) - 1;
+  var game = null, raf = null, audio = null, freshPiece = null;
 
   /* ================= sonido ================= */
   function beep(freq, dur, type, vol){
@@ -479,112 +647,116 @@
     try{
       if(!audio) audio = new (window.AudioContext || window.webkitAudioContext)();
       var o = audio.createOscillator(), g = audio.createGain();
-      o.type = type || "sine"; o.frequency.value = freq;
-      g.gain.value = vol || 0.06;
-      o.connect(g); g.connect(audio.destination);
-      o.start();
-      g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + dur);
+      o.type = type || "sine"; o.frequency.value = freq; g.gain.value = vol || .06;
+      o.connect(g); g.connect(audio.destination); o.start();
+      g.gain.exponentialRampToValueAtTime(.0001, audio.currentTime + dur);
       o.stop(audio.currentTime + dur);
     }catch(e){}
   }
   function fanfare(){ [523,659,784,1046].forEach(function(f,i){ setTimeout(function(){ beep(f,.22,"triangle",.07); }, i*130); }); }
 
-  /* ================= ciudad ================= */
-  function drawCity(){
-    var built = save.built.filter(function(id){ return DRAW[id]; });
-    var GAP = 22, PADX = 24, base = 196, H = 230;
-    var widths = built.map(function(id){ return byId(id).w; });
-    var contentW = widths.reduce(function(s,w){ return s + w + GAP; }, 0);
-    var plots = Math.max(0, 3 - built.length);
-    var plotW = 96;
+  /* ================= el pueblo ================= */
+  function drawVillage(){
+    var pieces = save.pieces.map(pieceById).filter(Boolean);
+    var GAP = 20, PADX = 26, base = 200, H = 250;
+    var contentW = pieces.reduce(function(s,p){ return s + p.w + GAP; }, 0);
+    var plots = Math.max(0, 2 - pieces.length), plotW = 104;
     contentW += plots * (plotW + GAP);
     var W = Math.max(contentW + PADX*2, 1040);
 
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" '
-            + 'aria-label="Tu ciudad deportiva con ' + built.length + ' construcciones">'
-            + '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
-            + '<stop offset="0" stop-color="var(--sky-1)"/><stop offset="1" stop-color="var(--sky-2)"/>'
-            + '</linearGradient></defs>'
-            + '<rect width="' + W + '" height="' + H + '" fill="url(#sky)"/>'
-            + '<rect y="' + base + '" width="' + W + '" height="' + (H-base) + '" fill="var(--grass-2)"/>'
-            + '<rect y="' + base + '" width="' + W + '" height="8" fill="var(--grass)"/>';
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" '
+      + 'aria-label="Tu pueblo, con ' + pieces.length + ' de ' + PIECES.length + ' construcciones">'
+      + '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
+      + '<stop offset="0" stop-color="var(--sky-1)"/><stop offset="1" stop-color="var(--sky-2)"/></linearGradient></defs>'
+      + '<rect width="' + W + '" height="' + H + '" fill="url(#sky)"/>'
+      + '<g class="day"><circle cx="' + (W-90) + '" cy="52" r="24" fill="var(--sunmoon)"/></g>'
+      + '<g class="night"><circle cx="' + (W-90) + '" cy="52" r="21" fill="var(--sunmoon)"/>'
+      + '<circle cx="' + (W-99) + '" cy="45" r="19" fill="var(--sky-1)"/>'
+      + '<g fill="var(--sunmoon)"><circle cx="120" cy="40" r="1.8"/><circle cx="240" cy="66" r="1.5"/>'
+      + '<circle cx="360" cy="34" r="2"/><circle cx="500" cy="58" r="1.6"/><circle cx="640" cy="42" r="1.8"/>'
+      + '<circle cx="780" cy="70" r="1.4"/><circle cx="900" cy="38" r="1.8"/></g></g>'
+      + '<path d="M0,175 Q160,120 320,172 T640,168 T' + W + ',176 L' + W + ',' + H + ' L0,' + H + ' Z" fill="var(--hill)"/>'
+      + '<path d="M0,190 Q220,150 430,190 T860,186 T' + W + ',192 L' + W + ',' + H + ' L0,' + H + ' Z" fill="var(--hill-2)"/>'
+      + '<rect y="' + base + '" width="' + W + '" height="' + (H-base) + '" fill="var(--grass-2)"/>'
+      + '<rect y="' + base + '" width="' + W + '" height="7" fill="var(--grass)"/>'
+      + '<rect y="' + (base+26) + '" width="' + W + '" height="13" fill="var(--path)"/>';
 
     var x = PADX;
-    built.forEach(function(id){
-      var b = byId(id);
-      svg += '<g transform="translate(' + x + ',' + base + ')">' + DRAW[id]() + '</g>';
-      x += b.w + GAP;
+    pieces.forEach(function(p){
+      var isNew = freshPiece === p.id;
+      s += '<g class="' + (isNew ? "justbuilt" : "") + '" transform="translate(' + x + ',' + base + ')">'
+         + DRAW[p.id]() + '</g>';
+      x += p.w + GAP;
     });
     for(var i = 0; i < plots; i++){
-      svg += '<g transform="translate(' + x + ',' + base + ')">'
-           + '<rect x="0" y="-56" width="' + plotW + '" height="56" rx="6" fill="none" '
-           + 'stroke="var(--b-line)" stroke-width="2" stroke-dasharray="7 6"/>'
-           + '<text x="' + (plotW/2) + '" y="-24" text-anchor="middle" font-family="Asap, sans-serif" '
-           + 'font-size="12" fill="var(--b-line)">solar</text></g>';
+      s += '<g transform="translate(' + x + ',' + base + ')">'
+         + '<rect x="0" y="-54" width="' + plotW + '" height="54" rx="6" fill="none" stroke="var(--glassline)" '
+         + 'stroke-width="2" stroke-dasharray="7 6"/>'
+         + '<text x="' + (plotW/2) + '" y="-22" text-anchor="middle" font-family="Asap, sans-serif" font-size="12" '
+         + 'fill="var(--glassline)">solar</text></g>';
       x += plotW + GAP;
     }
-    svg += '</svg>';
-    $("scene").innerHTML = svg;
+    // adornos en primer plano, sobre el camino
+    save.decor.forEach(function(d){
+      if(!DRAW[d.id]) return;
+      s += '<g transform="translate(' + Math.round(d.pos * (W - 70) + 12) + ',' + (base + 39) + ')">' + DRAW[d.id]() + '</g>';
+    });
+    s += '</svg>';
+
+    $("scene").innerHTML = s;
     $("scene").scrollLeft = $("scene").scrollWidth;
+    freshPiece = null;
 
-    $("cityCount").textContent = built.length
-      ? built.length + " de " + BUILDINGS.length + " construcciones levantadas"
-      : "Solar vacío — gana monedas y empieza a construir";
-    var next = BUILDINGS.filter(function(b){ return save.built.indexOf(b.id) === -1; })[0];
-    $("cityNext").textContent = next ? "Siguiente obra: " + next.name + " · " + next.cost : "¡Ciudad deportiva completa!";
+    $("vCount").textContent = pieces.length
+      ? "Tu pueblo: " + pieces.length + " de " + PIECES.length + " construcciones"
+      : "Solar vacío — gana un nivel entero y llega tu casa";
+    var next = PIECES[save.pieces.length];
+    $("vNext").textContent = next
+      ? "Próxima: " + next.name + " (gana el nivel " + (save.pieces.length + 1) + ")"
+      : "¡Pueblo terminado!";
   }
-  function byId(id){
-    for(var i = 0; i < BUILDINGS.length; i++) if(BUILDINGS[i].id === id) return BUILDINGS[i];
-    return null;
-  }
-  function thumb(b){
-    // miniatura: el mismo dibujo, encajado en una caja de 46x42
-    var box = 150, scale = box / Math.max(b.w, 150);
-    return '<svg viewBox="0 0 ' + box + ' ' + 150 + '" aria-hidden="true">'
-         + '<g transform="translate(' + ((box - b.w*scale)/2) + ',146) scale(' + scale + ')">' + DRAW[b.id]() + '</g></svg>';
+  function art(id){ return pieceById(id) || decorById(id); }
+  function thumb(id){
+    var e = art(id);
+    if(!e || !DRAW[id]) return "";
+    var BOX = 100, PAD = 7;
+    var sc = Math.min((BOX - PAD*2) / e.w, (BOX - PAD*2) / e.h);
+    return '<svg viewBox="0 0 ' + BOX + ' ' + BOX + '" aria-hidden="true">'
+         + '<g transform="translate(' + ((BOX - e.w*sc)/2).toFixed(1) + ',' + (BOX - PAD) + ') scale('
+         + sc.toFixed(3) + ')">' + DRAW[id]() + '</g></svg>';
   }
 
-  /* ================= tienda ================= */
+  /* ================= adornos ================= */
   function drawShop(){
     var box = $("shop");
     box.innerHTML = "";
-    var completed = save.unlocked - 1;
-    BUILDINGS.forEach(function(b){
-      var owned = save.built.indexOf(b.id) > -1;
-      var locked = b.need > completed;
-      var poor = !owned && !locked && save.coins < b.cost;
+    DECOR.forEach(function(d){
+      var poor = save.coins < d.cost;
       var el = document.createElement("button");
       el.type = "button";
-      el.className = "item" + (owned ? " built" : locked ? " locked" : poor ? " poor" : "");
-      el.disabled = owned || locked;
-      el.innerHTML = '<span class="pic">' + thumb(b) + '</span>'
-        + '<span class="txt"><b>' + b.name + '</b><span>'
-        + (owned ? "construida" : locked ? "supera " + b.need + " niveles" : poor ? "te faltan " + (b.cost - save.coins) : "lista para construir")
-        + '</span></span>'
-        + '<span class="price">' + (owned ? "✓" : b.cost) + '</span>';
-      if(!owned && !locked && !poor){
+      el.className = "item" + (poor ? " poor" : "");
+      el.disabled = poor;
+      var mine = save.decor.filter(function(x){ return x.id === d.id; }).length;
+      el.innerHTML = '<span class="pic">' + thumb(d.id) + '</span>'
+        + '<span class="txt"><b>' + d.name + '</b><span>' + (mine ? "tienes " + mine : "aún ninguno") + '</span></span>'
+        + '<span class="price">' + d.cost + '</span>';
+      if(!poor){
         el.addEventListener("click", function(){
-          if(save.coins < b.cost) return;
-          save.coins -= b.cost;
-          save.built.push(b.id);
-          persist();
-          fanfare();
-          drawCity(); drawShop(); drawCoins();
+          if(save.coins < d.cost || save.decor.length >= 40) return;
+          save.coins -= d.cost;
+          save.decor.push({id:d.id, pos:Math.random()});
+          persist(); beep(880,.12,"triangle",.06);
+          drawVillage(); drawShop(); drawCoins(true);
         });
       }
       box.appendChild(el);
     });
-    var affordable = BUILDINGS.filter(function(b){
-      return save.built.indexOf(b.id) === -1 && b.need <= (save.unlocked-1) && save.coins >= b.cost;
-    }).length;
-    $("shopHint").textContent = affordable ? "Puedes construir " + affordable : "Gana monedas jugando";
+    var can = DECOR.filter(function(d){ return save.coins >= d.cost; }).length;
+    $("shopHint").textContent = can ? "Puedes poner " + can + " tipos" : "Gana monedas jugando";
   }
   function drawCoins(bump){
     $("coins").textContent = save.coins;
-    if(bump){
-      var c = $("coinsBox");
-      c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump");
-    }
+    if(bump){ var c = $("coinsBox"); c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump"); }
   }
 
   /* ================= temporada ================= */
@@ -608,8 +780,18 @@
     $("briefTitle").textContent = levelName(selected);
     $("briefGoal").textContent = lv.goal + " aciertos en " + lv.time + " s · cada fallo −" + PENALTY + " s";
     var best = save.best[selected];
-    $("bestLine").textContent = best ? "Tu récord aquí: " + best.hits + " aciertos, " + best.left + " s de sobra"
-                                     : (selected === save.unlocked - 1 ? "Nivel nuevo" : "");
+    $("bestLine").textContent = best ? "Tu récord aquí: " + best.hits + " aciertos, " + best.left + " s de sobra" : "";
+
+    var next = PIECES[save.pieces.length];
+    var box = $("prizeBox");
+    if(next){
+      box.hidden = false;
+      $("prizePic").innerHTML = thumb(next.id);
+      $("prizeName").textContent = next.name;
+      $("prizeSub").textContent = selected === save.unlocked - 1
+        ? "Se construye si ganas este nivel entero"
+        : "Se construye al ganar el nivel " + (save.pieces.length + 1);
+    } else { box.hidden = true; }
   }
 
   /* ================= preguntas ================= */
@@ -617,7 +799,7 @@
     var bag = [];
     for(var b = 1; b <= 10; b++){
       bag.push(b);
-      if(fact(t,b).ko > fact(t,b).ok) bag.push(b);      // los que fallas salen más
+      if(fact(t,b).ko > fact(t,b).ok) bag.push(b);
     }
     for(var i = bag.length-1; i > 0; i--){
       var j = Math.floor(Math.random()*(i+1)), tmp = bag[i]; bag[i] = bag[j]; bag[j] = tmp;
@@ -626,23 +808,21 @@
   }
   function nextPair(){
     var lv = LEVELS[game.level];
-    if(lv.t === 0){                                       // reto élite: todas mezcladas
+    if(lv.t === 0){
       var a = 2 + Math.floor(Math.random()*9), b = 1 + Math.floor(Math.random()*10);
       if(game.current && game.current[0] === a && game.current[1] === b) return nextPair();
       return [a,b];
     }
     if(!game.bag || !game.bag.length) game.bag = newBag(lv.t);
     var n = game.bag.pop();
-    if(game.current && game.current[1] === n && game.bag.length) { game.bag.unshift(n); n = game.bag.pop(); }
+    if(game.current && game.current[1] === n && game.bag.length){ game.bag.unshift(n); n = game.bag.pop(); }
     return [lv.t, n];
   }
   function options(a,b){
-    var right = a*b, set = [right];
+    var right = a*b, set = [right], guard = 0;
     var cands = [right+a, Math.max(0,right-a), right+1, Math.max(0,right-1), a*(b+1), Math.max(0,a*(b-1)), right+10];
-    var guard = 0;
     while(set.length < 4 && guard++ < 50){
-      var c = cands.length ? cands.splice(Math.floor(Math.random()*cands.length),1)[0]
-                           : right + Math.ceil(Math.random()*9);
+      var c = cands.length ? cands.splice(Math.floor(Math.random()*cands.length),1)[0] : right + Math.ceil(Math.random()*9);
       if(c >= 0 && set.indexOf(c) === -1) set.push(c);
     }
     for(var i = set.length-1; i > 0; i--){
@@ -652,39 +832,28 @@
   }
 
   /* ================= partida ================= */
-  function show(id){
-    ["home","game","end"].forEach(function(s){ $(s).hidden = (s !== id); });
-  }
+  function show(id){ ["home","game","end"].forEach(function(s){ $(s).hidden = (s !== id); }); }
+
   function startLevel(index, drill){
     var lv = LEVELS[index];
-    game = {
-      level:index, drill:!!drill, hits:0, misses:0, streak:0, best:0, coins:0,
-      typed:"", locked:false, times:[], errors:[], current:null, bag:null,
-      endsAt: Date.now() + lv.time*1000, lastTick:99
-    };
+    game = {level:index, drill:!!drill, hits:0, misses:0, streak:0, best:0, coins:0, typed:"", locked:false,
+            times:[], errors:[], current:null, bag:null, endsAt:Date.now() + lv.time*1000, lastTick:99};
     $("hudLevel").textContent = levelName(index) + (drill ? " · ensayo" : "");
-    buildKeys();
-    buildPips(drill ? 0 : lv.goal);
-    updateHud();
-    show("game");
-    nextQuestion();
+    buildKeys(); buildPips(drill ? 0 : lv.goal); updateHud();
+    show("game"); nextQuestion();
     if(!drill){ raf = requestAnimationFrame(tick); }
     else { $("ringNum").textContent = "∞"; $("ringFill").style.strokeDashoffset = "0"; $("ring").classList.remove("hot"); }
   }
   function buildPips(n){
-    var box = $("pips");
-    box.innerHTML = "";
+    var box = $("pips"); box.innerHTML = "";
     for(var i = 0; i < n; i++) box.appendChild(document.createElement("i"));
     box.hidden = n === 0;
   }
   function paintPips(){
-    Array.prototype.forEach.call($("pips").children, function(el, i){
-      el.className = i < game.hits ? "on" : "";
-    });
+    Array.prototype.forEach.call($("pips").children, function(el,i){ el.className = i < game.hits ? "on" : ""; });
   }
   function nextQuestion(){
-    game.current = nextPair();
-    game.typed = ""; game.locked = false; game.qStart = Date.now();
+    game.current = nextPair(); game.typed = ""; game.locked = false; game.qStart = Date.now();
     var a = game.current[0], b = game.current[1];
     $("question").innerHTML = a + ' <span class="x">×</span> ' + b;
     $("verdict").textContent = "";
@@ -699,7 +868,7 @@
   function press(d){
     if(!game || game.locked || save.input !== "teclado" || game.typed.length >= 4) return;
     if(game.typed === "" && d === "0") return;
-    game.typed += d; paintSlot(); beep(440, .04, "square", .03);
+    game.typed += d; paintSlot(); beep(440,.04,"square",.03);
   }
   function backspace(){ if(game && !game.locked){ game.typed = game.typed.slice(0,-1); paintSlot(); } }
   function submit(v){
@@ -709,8 +878,7 @@
     resolve(Number(val));
   }
   function resolve(value){
-    var lv = LEVELS[game.level], a = game.current[0], b = game.current[1], right = a*b;
-    var good = value === right;
+    var a = game.current[0], b = game.current[1], right = a*b, good = value === right;
     game.locked = true;
     game.times.push((Date.now() - game.qStart)/1000);
     noteFact(a, b, good);
@@ -721,26 +889,22 @@
       var win = 1 + (game.streak % 5 === 0 ? 3 : 0);
       if(!game.drill) game.coins += win;
       paintSlot("ok");
-      $("verdict").textContent = game.streak % 5 === 0 && game.streak > 0
-        ? "¡Racha de " + game.streak + "! +" + win + " monedas" : "¡Gol!";
+      $("verdict").textContent = game.streak % 5 === 0 ? "¡Racha de " + game.streak + "! +" + win + " monedas" : "¡Gol!";
       $("field").classList.add("anim-ok");
       beep(660 + Math.min(game.streak,8)*40, .12, "triangle", .06);
     } else {
-      game.misses++; game.streak = 0;
-      game.errors.push([a,b]);
+      game.misses++; game.streak = 0; game.errors.push([a,b]);
       paintSlot("ko");
       $("verdict").textContent = a + " × " + b + " = " + right + (game.drill ? "" : "  ·  −" + PENALTY + " s");
       $("field").classList.add("anim-ko");
-      beep(150, .22, "sawtooth", .05);
+      beep(150,.22,"sawtooth",.05);
       if(!game.drill){
         game.endsAt -= PENALTY*1000;
-        var p = $("penalty");
-        p.classList.remove("go"); void p.offsetWidth; p.classList.add("go");
+        var p = $("penalty"); p.classList.remove("go"); void p.offsetWidth; p.classList.add("go");
       }
     }
     if(save.input === "opciones") markOptions(right, value);
-    paintPips(); updateHud();
-    persist();
+    paintPips(); updateHud(); persist();
 
     if(!game.drill && LEVELS[game.level].goal <= game.hits) return setTimeout(function(){ finish(true); }, 450);
     setTimeout(function(){
@@ -757,15 +921,13 @@
   }
   function tick(){
     if(!game || game.drill) return;
-    var lv = LEVELS[game.level];
-    var left = Math.max(0, game.endsAt - Date.now());
-    var frac = left / (lv.time*1000);
+    var lv = LEVELS[game.level], left = Math.max(0, game.endsAt - Date.now()), frac = left/(lv.time*1000);
     $("ringFill").style.strokeDashoffset = (326.7 * (1 - frac)).toFixed(1);
     $("ringNum").textContent = left > 10000 ? Math.ceil(left/1000) : (left/1000).toFixed(1).replace(".", ",");
     $("ring").classList.toggle("hot", left <= 10000);
     var sec = Math.ceil(left/1000);
-    if(sec <= 5 && sec !== game.lastTick && sec > 0){ game.lastTick = sec; beep(880, .07, "square", .05); }
-    if(left <= 0){ if(!game.locked) return finish(false); }
+    if(sec <= 5 && sec !== game.lastTick && sec > 0){ game.lastTick = sec; beep(880,.07,"square",.05); }
+    if(left <= 0 && !game.locked) return finish(false);
     raf = requestAnimationFrame(tick);
   }
   function finish(won){
@@ -773,29 +935,41 @@
     if(!game) return;
     var g = game, lv = LEVELS[g.level];
     var left = Math.max(0, Math.round((g.endsAt - Date.now())/1000));
-    var bonus = 0;
+    var piece = null;
 
     if(!g.drill && won){
-      bonus = 10 + left;
-      g.coins += bonus;
+      g.coins += 10 + left;
       if(g.level === save.unlocked - 1 && save.unlocked < LEVELS.length) save.unlocked++;
       var prev = save.best[g.level];
       if(!prev || left > prev.left) save.best[g.level] = {hits:g.hits, left:left};
+      if(save.pieces.length < PIECES.length && g.level >= save.pieces.length){   // premio: una construcción
+        piece = PIECES[save.pieces.length];
+        save.pieces.push(piece.id);
+        freshPiece = piece.id;
+      }
       fanfare();
-    } else if(!g.drill){
-      beep(200, .4, "sawtooth", .05);
-    }
-    if(!g.drill){ save.coins += g.coins; }
+    } else if(!g.drill){ beep(200,.4,"sawtooth",.05); }
+    if(!g.drill) save.coins += g.coins;
     persist();
 
     var media = g.times.length ? g.times.reduce(function(s,x){ return s+x; },0)/g.times.length : 0;
-    $("banner").className = "banner " + (g.drill ? "win" : won ? "win" : "lose");
+    $("banner").className = "banner " + (g.drill || won ? "win" : "lose");
     $("endTitle").textContent = g.drill ? "Ensayo terminado" : won ? "¡Nivel superado!" : "Se acabó el tiempo";
     $("endSub").textContent = g.drill
       ? "Los ensayos no dan monedas, pero cuentan para saber qué fallas."
       : won
-        ? (g.level === LEVELS.length-1 ? "Has completado toda la temporada." : "Desbloqueado: " + levelName(Math.min(g.level+1, LEVELS.length-1)))
+        ? (save.pieces.length >= PIECES.length && g.level === LEVELS.length-1
+            ? "Has terminado la temporada y el pueblo entero es tuyo."
+            : piece ? "Tu pueblo crece." : "Ya lo tenías construido, pero las monedas cuentan igual.")
         : "Necesitabas " + lv.goal + " aciertos y llegaste a " + g.hits + ". Otra vez, más rápido.";
+
+    var np = $("newPiece");
+    if(piece){
+      np.hidden = false;
+      $("newPic").innerHTML = thumb(piece.id);
+      $("newName").textContent = piece.name;
+    } else { np.hidden = true; }
+
     $("eHits").textContent = g.drill ? g.hits : g.hits + "/" + lv.goal;
     $("eSpeed").textContent = media.toFixed(1).replace(".", ",") + " s";
     $("eCoins").textContent = g.drill ? "—" : "+" + g.coins;
@@ -807,8 +981,7 @@
     });
     $("endFacts").hidden = uniq.length === 0;
     $("endFactsTitle").textContent = "Repasa estas (" + uniq.length + ")";
-    var list = $("factList");
-    list.innerHTML = "";
+    var list = $("factList"); list.innerHTML = "";
     uniq.forEach(function(e){
       var s = document.createElement("span");
       s.className = "fact";
@@ -830,7 +1003,7 @@
 
     game = null;
     selected = Math.min(save.unlocked, LEVELS.length) - 1;
-    drawCity(); drawShop(); drawCoins(true); drawSeason(); drawBrief();
+    drawVillage(); drawShop(); drawCoins(true); drawSeason(); drawBrief();
     show("end");
   }
 
@@ -856,8 +1029,7 @@
   }
   function buildOptions(a,b){
     var box = $("opts");
-    box.hidden = false; $("keys").hidden = true;
-    box.innerHTML = "";
+    box.hidden = false; $("keys").hidden = true; box.innerHTML = "";
     options(a,b).forEach(function(v){
       var btn = document.createElement("button");
       btn.type = "button"; btn.className = "opt"; btn.dataset.value = String(v);
@@ -889,12 +1061,11 @@
   $("quit").addEventListener("click", function(){ if(game) finish(false); });
   $("endCity").addEventListener("click", function(){ show("home"); });
   $("modeBtn").addEventListener("click", function(){
-    save.input = save.input === "teclado" ? "opciones" : "teclado";
-    persist(); syncToggles();
+    save.input = save.input === "teclado" ? "opciones" : "teclado"; persist(); syncToggles();
   });
   $("soundBtn").addEventListener("click", function(){
     save.sound = !save.sound; persist(); syncToggles();
-    if(save.sound) beep(660, .1, "triangle", .06);
+    if(save.sound) beep(660,.1,"triangle",.06);
   });
   function syncToggles(){
     var m = $("modeBtn");
@@ -907,16 +1078,12 @@
 
   /* ================= arranque ================= */
   function start(){
-    syncToggles();
-    drawCity(); drawShop(); drawCoins(); drawSeason(); drawBrief();
-    show("home");
+    syncToggles(); drawVillage(); drawShop(); drawCoins(); drawSeason(); drawBrief(); show("home");
   }
   if(window.claude && window.claude.hot){
     window.claude.hot.snapshot(function(){ return {selected:selected}; });
-    var boot = function(data){ if(data && typeof data.selected === "number") selected = data.selected; start(); };
+    var boot = function(d){ if(d && typeof d.selected === "number") selected = d.selected; start(); };
     window.claude.hot.ready ? window.claude.hot.ready(boot) : boot(window.claude.hot.data || {});
-  } else {
-    start();
-  }
+  } else { start(); }
 })();
 </script>
