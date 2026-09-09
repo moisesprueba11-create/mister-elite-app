@@ -1,16 +1,20 @@
 <title>Tablas de Gol</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Asap:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Asap:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
 <style>
   :root{
-    --ground:#F3F6F0; --surface:#FFFFFF; --surface-2:#E9EEE3; --sunken:#DFE7D8;
+    --ground:#F3F6F0; --surface:#FFFFFF; --surface-2:#E9EEE3; --sunken:#DEE6D7;
     --ink:#122A21; --ink-soft:#4E6459; --line:#D2DCCA;
     --pitch:#0C2F23; --pitch-2:#07211A; --chalk:rgba(233,255,240,.42); --on-pitch:#F1F7F0;
     --accent:#E89A0C; --accent-soft:#FBE9C4; --on-accent:#2B1B02;
     --ok:#2C935C; --ok-soft:#DCF0E2; --fail:#C9463A; --fail-soft:#F8DFDC;
     --shadow:0 1px 1px rgba(18,42,33,.05), 0 10px 26px -18px rgba(18,42,33,.55);
     --r:14px;
+    /* escena de la ciudad — día */
+    --sky-1:#BFE0F0; --sky-2:#EAF3E4; --grass:#4E9B4E; --grass-2:#3D8340; --path:#D9D2C0;
+    --b-wall:#F2EEE4; --b-wall-2:#DCD5C6; --b-roof:#2E4A57; --b-glass:#7FB6D6; --b-trim:#C9463A;
+    --b-metal:#9AA7AC; --b-line:rgba(18,42,33,.22);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -19,6 +23,9 @@
       --accent:#FFB63C; --accent-soft:#3A2B0C; --on-accent:#221602;
       --ok:#46B87B; --ok-soft:#12301F; --fail:#E2685B; --fail-soft:#361713;
       --shadow:0 1px 1px rgba(0,0,0,.4), 0 14px 30px -20px rgba(0,0,0,.9);
+      --sky-1:#16283A; --sky-2:#0E1B26; --grass:#26603A; --grass-2:#1C4A2D; --path:#3A3A34;
+      --b-wall:#2C3A3E; --b-wall-2:#222E31; --b-roof:#16232A; --b-glass:#FFCF6B; --b-trim:#E2685B;
+      --b-metal:#6E7C82; --b-line:rgba(233,241,231,.18);
     }
   }
   :root[data-theme="dark"]{
@@ -27,232 +34,268 @@
     --accent:#FFB63C; --accent-soft:#3A2B0C; --on-accent:#221602;
     --ok:#46B87B; --ok-soft:#12301F; --fail:#E2685B; --fail-soft:#361713;
     --shadow:0 1px 1px rgba(0,0,0,.4), 0 14px 30px -20px rgba(0,0,0,.9);
+    --sky-1:#16283A; --sky-2:#0E1B26; --grass:#26603A; --grass-2:#1C4A2D; --path:#3A3A34;
+    --b-wall:#2C3A3E; --b-wall-2:#222E31; --b-roof:#16232A; --b-glass:#FFCF6B; --b-trim:#E2685B;
+    --b-metal:#6E7C82; --b-line:rgba(233,241,231,.18);
   }
 
   *{box-sizing:border-box}
-  body{
-    margin:0; background:var(--ground); color:var(--ink);
-    font-family:"Asap", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size:16px; line-height:1.5; -webkit-text-size-adjust:100%;
-  }
-  .wrap{max-width:720px; margin:0 auto; padding-inline:18px; padding-block:22px 34px;
-        display:flex; flex-direction:column; gap:20px;}
+  [hidden]{display:none !important}
+  body{margin:0; background:var(--ground); color:var(--ink);
+       font-family:"Asap", system-ui, -apple-system, "Segoe UI", sans-serif; font-size:16px; line-height:1.5;
+       -webkit-text-size-adjust:100%}
+  .wrap{max-width:720px; margin:0 auto; padding-inline:18px; padding-block:20px 34px;
+        display:flex; flex-direction:column; gap:18px}
   h1,h2,h3{margin:0; text-wrap:balance}
+  p{margin:0}
   button{font-family:inherit; font-size:inherit; color:inherit; cursor:pointer}
-  button:focus-visible, [tabindex]:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  button:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
   .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
   .eyebrow{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); font-weight:600}
+  .muted{color:var(--ink-soft); font-size:13.5px}
 
-  /* ---------- cabecera de marca ---------- */
-  .brand{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap}
-  .brand h1{font-family:"Anton", Impact, sans-serif; font-size:clamp(30px,7vw,44px);
-            letter-spacing:.01em; text-transform:uppercase; line-height:.95}
+  header.brand{display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .brand h1{font-family:"Anton", Impact, sans-serif; font-size:clamp(26px,6.4vw,38px);
+            text-transform:uppercase; line-height:.95}
   .brand h1 em{font-style:normal; color:var(--accent)}
-  .brand .sub{color:var(--ink-soft); font-size:13px}
+  .coins{display:flex; align-items:center; gap:7px; background:var(--accent-soft); border:1px solid var(--accent);
+         border-radius:999px; padding:6px 13px 6px 8px; font-family:"IBM Plex Mono",monospace; font-weight:700;
+         font-variant-numeric:tabular-nums; white-space:nowrap}
+  .coin{width:19px; height:19px; border-radius:50%; background:var(--accent); border:2px solid var(--on-accent);
+        display:inline-grid; place-items:center; font-size:10px; font-weight:700; color:var(--on-accent); flex:none}
+  .coins.bump{animation:bump .35s ease}
+  @keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.15)}100%{transform:scale(1)}}
 
-  /* ---------- tarjetas ---------- */
   .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
-  .panel-pad{padding:18px}
+  .pad{padding:16px}
   .stack{display:flex; flex-direction:column; gap:14px}
   .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
 
-  /* ---------- chips de tablas ---------- */
-  .chips{display:grid; grid-template-columns:repeat(auto-fit, minmax(58px,1fr)); gap:8px}
-  .chip{border:1px solid var(--line); background:var(--surface-2); border-radius:10px;
-        padding:9px 0; font-weight:700; font-size:17px; text-align:center; transition:transform .08s ease}
-  .chip .n{font-family:"IBM Plex Mono", monospace}
-  .chip .bar{display:block; height:3px; margin:6px 7px 0; border-radius:2px; background:var(--sunken); overflow:hidden}
-  .chip .bar i{display:block; height:100%; background:var(--ok); width:0}
-  .chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
-  .chip[aria-pressed="true"] .bar{background:rgba(0,0,0,.18)}
-  .chip[aria-pressed="true"] .bar i{background:var(--on-accent)}
-  .chip:active{transform:scale(.95)}
+  /* ---------- ciudad ---------- */
+  .city{border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:var(--sky-2)}
+  .city .scene{overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch}
+  .city svg{display:block; height:230px}
+  .city .capt{display:flex; justify-content:space-between; gap:10px; padding:9px 13px;
+              border-top:1px solid var(--line); background:var(--surface); font-size:12.5px}
 
-  /* ---------- selector de modo ---------- */
-  .modes{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
-  .mode{border:1px solid var(--line); background:var(--surface-2); border-radius:12px; padding:11px 10px;
-        text-align:left; display:flex; flex-direction:column; gap:2px}
-  .mode b{font-size:14px}
-  .mode span{font-size:11.5px; color:var(--ink-soft); line-height:1.3}
-  .mode[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent)}
-  .mode[aria-pressed="true"] span{color:var(--ink)}
+  /* ---------- temporada ---------- */
+  .season{display:grid; grid-template-columns:repeat(auto-fit,minmax(44px,1fr)); gap:6px}
+  .lvl{border:1px solid var(--line); background:var(--surface-2); border-radius:10px; padding:8px 0 6px;
+       display:flex; flex-direction:column; align-items:center; gap:2px; font-family:"IBM Plex Mono",monospace;
+       font-weight:600; font-size:17px}
+  .lvl small{font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; font-family:"Asap",sans-serif;
+             color:var(--ink-soft); font-weight:600}
+  .lvl.done{background:var(--ok-soft); border-color:var(--ok)}
+  .lvl.done small{color:var(--ok)}
+  .lvl.now{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
+  .lvl.now small{color:var(--on-accent)}
+  .lvl.locked{opacity:.45; cursor:not-allowed}
+  .lvl.sel{outline:3px solid var(--ink); outline-offset:2px}
 
-  .seg{display:inline-flex; border:1px solid var(--line); border-radius:999px; background:var(--surface-2); padding:3px}
-  .seg button{border:0; background:transparent; border-radius:999px; padding:6px 14px; font-size:14px; font-weight:600}
-  .seg button[aria-pressed="true"]{background:var(--ink); color:var(--surface)}
-
+  .brief{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+  .brief .big{font-family:"Anton",Impact,sans-serif; font-size:27px; text-transform:uppercase; line-height:1.05}
+  .brief .goalline{font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--ink-soft)}
   .cta{border:0; border-radius:12px; background:var(--accent); color:var(--on-accent);
-       font-family:"Anton", Impact, sans-serif; text-transform:uppercase; letter-spacing:.05em;
-       font-size:22px; padding:15px 20px; width:100%}
-  .cta:disabled{opacity:.45; cursor:not-allowed}
-  .ghost{border:1px solid var(--line); background:var(--surface); border-radius:10px; padding:10px 16px; font-weight:600}
+       font-family:"Anton",Impact,sans-serif; text-transform:uppercase; letter-spacing:.05em;
+       font-size:21px; padding:14px 20px; width:100%}
+  .ghost{border:1px solid var(--line); background:var(--surface); border-radius:10px; padding:10px 15px;
+         font-weight:600; font-size:14.5px}
+  .ghost[aria-pressed="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
 
-  /* ---------- marcador ---------- */
-  .board{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
-         border:1px solid var(--line); border-radius:12px; overflow:hidden}
-  .board div{background:var(--surface); padding:9px 6px; text-align:center}
-  .board .v{font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums;
-            font-size:22px; font-weight:600; line-height:1.1}
-  .board .k{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
-  .board .goles .v{color:var(--ok)} .board .fallos .v{color:var(--fail)}
+  /* ---------- obras ---------- */
+  .shop{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:10px}
+  .item{display:flex; align-items:center; gap:11px; border:1px solid var(--line); background:var(--surface-2);
+        border-radius:12px; padding:9px 11px; text-align:left; width:100%}
+  .item .pic{width:46px; height:42px; flex:none; border-radius:8px; background:var(--sky-2); overflow:hidden}
+  .item .pic svg{display:block; width:100%; height:100%}
+  .item .txt{flex:1; min-width:0}
+  .item .txt b{display:block; font-size:14px; line-height:1.25}
+  .item .txt span{font-size:11.5px; color:var(--ink-soft); font-family:"IBM Plex Mono",monospace}
+  .item.built{border-color:var(--ok); background:var(--ok-soft)}
+  .item.locked{opacity:.5; cursor:not-allowed}
+  .item.poor{cursor:not-allowed}
+  .item.poor .txt span{color:var(--fail)}
+  .price{font-family:"IBM Plex Mono",monospace; font-weight:700; font-size:15px; white-space:nowrap;
+         margin-left:auto; padding-left:10px}
 
-  .clock{height:6px; background:var(--sunken); border-radius:999px; overflow:hidden}
-  .clock i{display:block; height:100%; width:100%; background:var(--accent); transition:width .1s linear}
-  .clock.warn i{background:var(--fail)}
+  /* ---------- partida ---------- */
+  .hud{display:flex; align-items:center; gap:16px}
+  .ring{position:relative; width:118px; height:118px; flex:none}
+  .ring svg{display:block; width:100%; height:100%; transform:rotate(-90deg)}
+  .ring circle{fill:none; stroke-linecap:round}
+  .ring .track{stroke:var(--sunken); stroke-width:11}
+  .ring .fill{stroke:var(--accent); stroke-width:11; transition:stroke .3s}
+  .ring.hot .fill{stroke:var(--fail)}
+  .ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:"Anton",Impact,sans-serif;
+             font-size:38px; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+  .ring.hot .num{color:var(--fail)}
+  .ring.hot{animation:tick 1s ease-in-out infinite}
+  @keyframes tick{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  .hud .side{flex:1; min-width:0; display:flex; flex-direction:column; gap:7px}
+  .pips{display:flex; flex-wrap:wrap; gap:5px}
+  .pips i{width:15px; height:15px; border-radius:4px; background:var(--sunken); border:1px solid var(--line)}
+  .pips i.on{background:var(--ok); border-color:var(--ok)}
+  .hud .meta{display:flex; gap:14px; font-size:12.5px; color:var(--ink-soft)}
+  .hud .meta b{font-family:"IBM Plex Mono",monospace; color:var(--ink); font-size:15px}
+  .penalty{position:absolute; left:50%; top:-6px; transform:translateX(-50%); font-family:"IBM Plex Mono",monospace;
+           font-weight:700; color:var(--fail); font-size:16px; opacity:0; pointer-events:none}
+  .penalty.go{animation:rise .9s ease-out}
+  @keyframes rise{0%{opacity:1; transform:translate(-50%,0)}100%{opacity:0; transform:translate(-50%,-26px)}}
 
-  /* ---------- campo / pregunta ---------- */
-  .pitch{position:relative; border-radius:var(--r); overflow:hidden; color:var(--on-pitch);
-    background:
-      repeating-linear-gradient(180deg, rgba(255,255,255,.028) 0 26px, transparent 26px 52px),
-      linear-gradient(160deg, var(--pitch) 0%, var(--pitch-2) 100%);
-    border:1px solid var(--pitch-2); padding:26px 18px 22px; text-align:center;
-  }
-  .pitch::before{content:""; position:absolute; inset:8px; border:1px solid var(--chalk); border-radius:8px; pointer-events:none}
-  .pitch::after{content:""; position:absolute; left:50%; top:50%; width:190px; height:190px; margin:-95px 0 0 -95px;
-                border:1px solid var(--chalk); border-radius:50%; pointer-events:none}
-  .q{position:relative; font-family:"Anton", Impact, sans-serif; font-size:clamp(50px,15vw,84px);
-     line-height:1; letter-spacing:.02em; font-variant-numeric:tabular-nums}
-  .q .x{color:var(--accent); margin:0 .08em}
-  .slot{position:relative; margin:16px auto 0; width:min(230px,72vw); height:62px; border-radius:12px;
-        background:rgba(0,0,0,.28); border:2px solid var(--chalk); display:grid; place-items:center;
-        font-family:"IBM Plex Mono", monospace; font-size:34px; font-weight:600; letter-spacing:.06em}
-  .slot.empty{color:rgba(241,247,240,.35)}
-  .slot.ok{border-color:var(--ok); background:rgba(44,147,92,.35)}
-  .slot.ko{border-color:var(--fail); background:rgba(201,70,58,.32)}
-  .verdict{position:relative; margin-top:12px; min-height:44px; font-size:15px; font-weight:600}
-  .verdict .hint{display:block; font-weight:400; color:rgba(241,247,240,.75); font-size:13.5px; margin-top:3px}
-  .streakline{position:relative; margin-top:10px; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-              color:rgba(241,247,240,.62)}
-  @keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.09)}100%{transform:scale(1)}}
-  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
-  .anim-ok{animation:pop .32s ease} .anim-ko{animation:shake .3s ease}
-  @media (prefers-reduced-motion: reduce){ .anim-ok,.anim-ko{animation:none} .chip:active{transform:none} }
+  .field{position:relative; border-radius:var(--r); overflow:hidden; color:var(--on-pitch); text-align:center;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,.028) 0 24px, transparent 24px 48px),
+               linear-gradient(160deg, var(--pitch) 0%, var(--pitch-2) 100%);
+    border:1px solid var(--pitch-2); padding:20px 16px 16px}
+  .field::before{content:""; position:absolute; inset:7px; border:1px solid var(--chalk); border-radius:8px}
+  .field::after{content:""; position:absolute; left:50%; top:52%; width:170px; height:170px; margin:-85px 0 0 -85px;
+                border:1px solid var(--chalk); border-radius:50%}
+  .q{position:relative; font-family:"Anton",Impact,sans-serif; font-size:clamp(46px,13vw,72px); line-height:1;
+     font-variant-numeric:tabular-nums}
+  .q .x{color:var(--accent); margin:0 .07em}
+  .slot{position:relative; margin:13px auto 0; width:min(210px,66vw); height:56px; border-radius:12px;
+        background:rgba(0,0,0,.3); border:2px solid var(--chalk); display:grid; place-items:center;
+        font-family:"IBM Plex Mono",monospace; font-size:31px; font-weight:700; letter-spacing:.05em}
+  .slot.empty{color:rgba(241,247,240,.32)}
+  .slot.ok{border-color:var(--ok); background:rgba(44,147,92,.38)}
+  .slot.ko{border-color:var(--fail); background:rgba(201,70,58,.34)}
+  .verdict{position:relative; margin-top:9px; min-height:22px; font-size:14px; font-weight:600}
+  @keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.06)}100%{transform:scale(1)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .anim-ok{animation:pop .3s ease} .anim-ko{animation:shake .28s ease}
+  @media (prefers-reduced-motion: reduce){ .anim-ok,.anim-ko,.ring.hot,.coins.bump{animation:none} }
 
-  /* ---------- teclado / opciones ---------- */
-  .pad{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
-  .key{border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:15px 0;
-       font-family:"IBM Plex Mono", monospace; font-size:24px; font-weight:600; box-shadow:var(--shadow)}
+  .keys{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
+  .key{border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:14px 0;
+       font-family:"IBM Plex Mono",monospace; font-size:23px; font-weight:600; box-shadow:var(--shadow)}
   .key:active{background:var(--surface-2)}
-  .key.act{background:var(--ok); border-color:var(--ok); color:#fff; font-family:"Asap",sans-serif; font-size:19px; font-weight:700}
-  .key.del{background:var(--surface-2); font-size:20px}
+  .key.act{background:var(--ok); border-color:var(--ok); color:#fff; font-family:"Asap",sans-serif; font-size:18px; font-weight:700}
+  .key.del{background:var(--surface-2); font-size:19px}
   .opts{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
-  .opt{border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:20px 0;
-       font-family:"IBM Plex Mono", monospace; font-size:26px; font-weight:600; box-shadow:var(--shadow)}
+  .opt{border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:18px 0;
+       font-family:"IBM Plex Mono",monospace; font-size:25px; font-weight:600; box-shadow:var(--shadow)}
   .opt.ok{background:var(--ok); border-color:var(--ok); color:#fff}
   .opt.ko{background:var(--fail); border-color:var(--fail); color:#fff}
 
-  /* ---------- resultados ---------- */
-  .stats{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
-  .stat{background:var(--surface-2); border-radius:12px; padding:12px 14px}
-  .stat .v{font-family:"IBM Plex Mono", monospace; font-size:26px; font-weight:600; font-variant-numeric:tabular-nums}
-  .stat .k{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
-  .facts{display:flex; flex-wrap:wrap; gap:8px}
-  .fact{font-family:"IBM Plex Mono", monospace; font-size:14px; background:var(--fail-soft); color:var(--ink);
-        border:1px solid var(--fail); border-radius:8px; padding:6px 10px}
-  .facts.clean .fact{background:var(--ok-soft); border-color:var(--ok)}
+  /* ---------- fin de nivel ---------- */
+  .banner{border-radius:var(--r); padding:18px; color:#fff; text-align:center}
+  .banner.win{background:linear-gradient(150deg,#2C935C,#186B3E)}
+  .banner.lose{background:linear-gradient(150deg,#C9463A,#8E2A21)}
+  .banner h2{font-family:"Anton",Impact,sans-serif; font-size:32px; text-transform:uppercase}
+  .banner p{opacity:.92; font-size:14.5px}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
+  .stat{background:var(--surface-2); border-radius:11px; padding:10px 12px}
+  .stat .v{font-family:"IBM Plex Mono",monospace; font-size:22px; font-weight:700; font-variant-numeric:tabular-nums}
+  .stat .k{font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-soft)}
+  .facts{display:flex; flex-wrap:wrap; gap:7px}
+  .fact{font-family:"IBM Plex Mono",monospace; font-size:13.5px; background:var(--fail-soft);
+        border:1px solid var(--fail); border-radius:8px; padding:5px 9px}
 
-  .tablecard{background:var(--surface-2); border-radius:12px; padding:12px 14px}
-  .tablecard ol{margin:8px 0 0; padding:0; list-style:none; display:grid;
-                grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:4px 10px;
-                font-family:"IBM Plex Mono", monospace; font-size:14px; font-variant-numeric:tabular-nums}
-
-  footer{color:var(--ink-soft); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; text-align:center}
+  footer{color:var(--ink-soft); font-size:11px; letter-spacing:.14em; text-transform:uppercase; text-align:center}
   @media (max-width:430px){
-    .modes{grid-template-columns:1fr}
-    .board .v{font-size:19px}
+    .hud{gap:12px} .ring{width:100px; height:100px} .ring .num{font-size:32px}
+    .stats{grid-template-columns:repeat(3,1fr)}
   }
 </style>
 
 <div class="wrap">
   <header class="brand">
     <h1>Tablas de <em>Gol</em></h1>
-    <p class="sub">Marca goles resolviendo multiplicaciones</p>
+    <div class="coins" id="coinsBox"><span class="coin">€</span><span id="coins">0</span></div>
   </header>
 
-  <!-- ============ AJUSTES ============ -->
-  <section id="setup" class="stack">
-    <div class="panel panel-pad stack">
-      <div>
-        <p class="eyebrow">1 · Tablas convocadas</p>
-        <p style="margin:4px 0 10px; font-size:13.5px; color:var(--ink-soft)">
-          La barra de cada tabla es tu porcentaje de aciertos acumulado.
-        </p>
-        <div class="chips" id="chips"></div>
-      </div>
-      <div class="row" style="gap:8px">
-        <button class="ghost" id="selAll" type="button">Todas</button>
-        <button class="ghost" id="selEasy" type="button">Fáciles (2, 5, 10)</button>
-        <button class="ghost" id="selHard" type="button">Las que fallo más</button>
+  <!-- ================= CIUDAD / MAPA ================= -->
+  <section id="home" class="stack">
+    <div class="city">
+      <div class="scene" id="scene"></div>
+      <div class="capt">
+        <span class="muted" id="cityCount">Solar vacío</span>
+        <span class="muted" id="cityNext"></span>
       </div>
     </div>
 
-    <div class="panel panel-pad stack">
-      <div>
-        <p class="eyebrow">2 · Modo de juego</p>
-        <div class="modes" id="modes" style="margin-top:8px"></div>
+    <div class="panel pad stack">
+      <p class="eyebrow">Temporada · una tabla por nivel</p>
+      <div class="season" id="season"></div>
+      <div class="brief">
+        <div>
+          <p class="big" id="briefTitle">Tabla del 2</p>
+          <p class="goalline" id="briefGoal">10 aciertos en 60 s</p>
+        </div>
+        <button class="ghost" id="drill" type="button">Ensayar sin reloj</button>
       </div>
+      <button class="cta" id="play" type="button">Jugar nivel</button>
       <div class="row" style="justify-content:space-between">
-        <span class="eyebrow">3 · Cómo respondes</span>
-        <div class="seg" id="inputSeg">
-          <button type="button" data-input="teclado" aria-pressed="true">Escribir</button>
-          <button type="button" data-input="opciones" aria-pressed="false">Elegir</button>
+        <span class="muted" id="bestLine"></span>
+        <div class="row" style="gap:8px">
+          <button class="ghost" id="modeBtn" type="button" aria-pressed="false">Elegir respuesta</button>
+          <button class="ghost" id="soundBtn" type="button" aria-pressed="true">Sonido</button>
         </div>
       </div>
     </div>
 
-    <button class="cta" id="start" type="button">Saltar al campo</button>
-    <p id="record" class="mono" style="text-align:center; font-size:13px; color:var(--ink-soft); margin:0"></p>
+    <div class="panel pad stack">
+      <div class="row" style="justify-content:space-between">
+        <p class="eyebrow">Obras de la ciudad deportiva</p>
+        <span class="muted" id="shopHint"></span>
+      </div>
+      <div class="shop" id="shop"></div>
+    </div>
   </section>
 
-  <!-- ============ PARTIDA ============ -->
-  <section id="play" class="stack" hidden>
-    <div class="board">
-      <div class="goles"><div class="v" id="sGoles">0</div><div class="k">Goles</div></div>
-      <div class="fallos"><div class="v" id="sFallos">0</div><div class="k">Fallos</div></div>
-      <div><div class="v" id="sRacha">0</div><div class="k">Racha</div></div>
-      <div><div class="v" id="sReloj">—</div><div class="k" id="sRelojK">Tiempo</div></div>
+  <!-- ================= PARTIDA ================= -->
+  <section id="game" class="stack" hidden>
+    <div class="hud">
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="track" cx="60" cy="60" r="52"></circle>
+          <circle class="fill" id="ringFill" cx="60" cy="60" r="52"
+                  stroke-dasharray="326.7" stroke-dashoffset="0"></circle>
+        </svg>
+        <div class="num mono" id="ringNum" role="timer" aria-live="off">60</div>
+        <span class="penalty" id="penalty">−3 s</span>
+      </div>
+      <div class="side">
+        <p class="eyebrow" id="hudLevel">Tabla del 2</p>
+        <div class="pips" id="pips"></div>
+        <div class="meta">
+          <span>Aciertos <b id="hudHits">0</b></span>
+          <span>Racha <b id="hudStreak">0</b></span>
+          <span>Monedas <b id="hudCoins">0</b></span>
+        </div>
+      </div>
     </div>
-    <div class="clock" id="clock" hidden><i id="clockBar"></i></div>
 
-    <div class="pitch" id="pitch">
-      <p class="q" id="question" aria-live="off">7 <span class="x">×</span> 8</p>
+    <div class="field" id="field">
+      <p class="q" id="question">2 <span class="x">×</span> 3</p>
       <div class="slot empty" id="slot" role="status" aria-live="polite">?</div>
       <p class="verdict" id="verdict"></p>
-      <p class="streakline" id="streakline"></p>
     </div>
 
-    <div id="pad" class="pad"></div>
-    <div id="opts" class="opts" hidden></div>
-
-    <button class="ghost" id="quit" type="button" style="align-self:center">Terminar partida</button>
+    <div class="keys" id="keys"></div>
+    <div class="opts" id="opts" hidden></div>
+    <button class="ghost" id="quit" type="button" style="align-self:center">Dejar el nivel</button>
   </section>
 
-  <!-- ============ RESULTADOS ============ -->
-  <section id="results" class="stack" hidden>
-    <div class="panel panel-pad stack">
-      <p class="eyebrow" id="rMode">Final del partido</p>
-      <h2 style="font-family:'Anton',Impact,sans-serif; font-size:34px; text-transform:uppercase" id="rTitle">Resultado</h2>
+  <!-- ================= FIN DE NIVEL ================= -->
+  <section id="end" class="stack" hidden>
+    <div class="banner" id="banner">
+      <h2 id="endTitle">¡Nivel superado!</h2>
+      <p id="endSub">Ya puedes construir en tu ciudad.</p>
+    </div>
+    <div class="panel pad stack">
       <div class="stats">
-        <div class="stat"><div class="v" id="rGoles">0</div><div class="k">Goles</div></div>
-        <div class="stat"><div class="v" id="rPrec">0%</div><div class="k">Acierto</div></div>
-        <div class="stat"><div class="v" id="rRacha">0</div><div class="k">Mejor racha</div></div>
-        <div class="stat"><div class="v" id="rTiempo">0,0 s</div><div class="k">Media por respuesta</div></div>
+        <div class="stat"><div class="v" id="eHits">0</div><div class="k">Aciertos</div></div>
+        <div class="stat"><div class="v" id="eSpeed">0,0 s</div><div class="k">Por respuesta</div></div>
+        <div class="stat"><div class="v" id="eCoins">+0</div><div class="k">Monedas</div></div>
+      </div>
+      <div id="endFacts" class="stack" hidden>
+        <p class="eyebrow" id="endFactsTitle">Repasa estas</p>
+        <div class="facts" id="factList"></div>
       </div>
     </div>
-
-    <div class="panel panel-pad stack">
-      <p class="eyebrow" id="rListTitle">Tu lista de repaso</p>
-      <div class="facts" id="rFacts"></div>
-      <div class="tablecard" id="rTable" hidden>
-        <p class="eyebrow" id="rTableTitle">La tabla</p>
-        <ol id="rTableList"></ol>
-      </div>
-    </div>
-
     <div class="row" style="flex-wrap:nowrap">
-      <button class="cta" id="again" type="button" style="flex:2">Otra vez</button>
-      <button class="ghost" id="review" type="button" style="flex:1.4" hidden>Repasar fallos</button>
-      <button class="ghost" id="back" type="button" style="flex:1">Ajustes</button>
+      <button class="cta" id="endMain" type="button" style="flex:2">Siguiente nivel</button>
+      <button class="ghost" id="endCity" type="button" style="flex:1">Mi ciudad</button>
     </div>
   </section>
 
@@ -262,350 +305,558 @@
 <script>
 (function(){
   "use strict";
-
-  var TABLES = [1,2,3,4,5,6,7,8,9,10,11,12];
-  var MODES = {
-    partido:   {label:"Partido",  desc:"90 segundos. Los goles que puedas.", clock:90, total:0,  perQ:0, hints:false},
-    penaltis:  {label:"Penaltis", desc:"10 lanzamientos, 8 s cada uno.",     clock:0,  total:10, perQ:8, hints:false},
-    entreno:   {label:"Entreno",  desc:"20 preguntas, sin reloj y con pistas.", clock:0, total:20, perQ:0, hints:true}
-  };
-  var KEY = "tablasDeGol.v1";
-
-  var cfg = {tables:[2,3,4,5], mode:"partido", input:"teclado"};
-  var store = load();
-  var game = null;
-  var tickId = null;
-
   var $ = function(id){ return document.getElementById(id); };
 
-  /* ---------------- almacenamiento ---------------- */
-  function load(){
+  /* ================= niveles ================= */
+  var LEVELS = [
+    {t:2,  goal:10, time:60}, {t:3,  goal:10, time:60}, {t:4,  goal:10, time:60},
+    {t:5,  goal:11, time:60}, {t:6,  goal:11, time:55}, {t:7,  goal:12, time:55},
+    {t:8,  goal:12, time:55}, {t:9,  goal:12, time:50}, {t:10, goal:12, time:50},
+    {t:11, goal:12, time:50}, {t:12, goal:12, time:50}, {t:0,  goal:15, time:60}
+  ];
+  var PENALTY = 3;                     // segundos que cuesta un fallo
+  var levelName = function(i){ return LEVELS[i].t ? "Tabla del " + LEVELS[i].t : "Reto élite"; };
+
+  /* ================= construcciones ================= */
+  var BUILDINGS = [
+    {id:"campo",   name:"Campo de entrenamiento", cost:25,  need:1,  w:170},
+    {id:"vestu",   name:"Vestuarios",             cost:35,  need:1,  w:110},
+    {id:"foco",    name:"Torre de focos",         cost:45,  need:2,  w:64},
+    {id:"grada",   name:"Grada norte",            cost:60,  need:3,  w:150},
+    {id:"marcador",name:"Marcador electrónico",   cost:55,  need:4,  w:96},
+    {id:"gim",     name:"Gimnasio",               cost:75,  need:5,  w:128},
+    {id:"cantera", name:"Campo de la cantera",    cost:85,  need:6,  w:150},
+    {id:"bus",     name:"Autobús del equipo",     cost:70,  need:7,  w:132},
+    {id:"clinica", name:"Clínica de recuperación",cost:95,  need:8,  w:120},
+    {id:"museo",   name:"Museo de trofeos",       cost:120, need:9,  w:136},
+    {id:"resi",    name:"Residencia de canteranos",cost:150,need:10, w:126},
+    {id:"estadio", name:"Estadio ÉLITE",          cost:220, need:11, w:210}
+  ];
+
+  /* dibujos: cada uno se apoya en y=0 y crece hacia arriba */
+  var DRAW = {
+    campo: function(){ return ''
+      + '<rect x="0" y="-46" width="170" height="46" rx="4" fill="var(--grass-2)"/>'
+      + '<rect x="6" y="-40" width="158" height="34" rx="3" fill="var(--grass)"/>'
+      + '<rect x="10" y="-37" width="150" height="28" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
+      + '<line x1="85" y1="-37" x2="85" y2="-9" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
+      + '<ellipse cx="85" cy="-23" rx="15" ry="9" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/>'
+      + '<rect x="4" y="-29" width="7" height="12" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/>'
+      + '<rect x="159" y="-29" width="7" height="12" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/>'; },
+    vestu: function(){ return ''
+      + '<rect x="4" y="-60" width="102" height="60" fill="var(--b-wall)"/>'
+      + '<rect x="0" y="-70" width="110" height="12" rx="2" fill="var(--b-roof)"/>'
+      + '<rect x="14" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
+      + '<rect x="46" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
+      + '<rect x="78" y="-50" width="18" height="16" fill="var(--b-glass)"/>'
+      + '<rect x="44" y="-26" width="22" height="26" rx="2" fill="var(--b-roof)"/>'
+      + '<rect x="4" y="-14" width="102" height="14" fill="var(--b-wall-2)"/>'; },
+    foco: function(){ return ''
+      + '<rect x="28" y="-118" width="8" height="118" fill="var(--b-metal)"/>'
+      + '<line x1="32" y1="-60" x2="14" y2="0" stroke="var(--b-metal)" stroke-width="3"/>'
+      + '<line x1="32" y1="-60" x2="50" y2="0" stroke="var(--b-metal)" stroke-width="3"/>'
+      + '<rect x="6" y="-146" width="52" height="30" rx="3" fill="var(--b-roof)"/>'
+      + '<circle cx="18" cy="-138" r="5" fill="var(--accent)"/><circle cx="32" cy="-138" r="5" fill="var(--accent)"/>'
+      + '<circle cx="46" cy="-138" r="5" fill="var(--accent)"/><circle cx="18" cy="-125" r="5" fill="var(--accent)"/>'
+      + '<circle cx="32" cy="-125" r="5" fill="var(--accent)"/><circle cx="46" cy="-125" r="5" fill="var(--accent)"/>'; },
+    grada: function(){ return ''
+      + '<polygon points="0,0 150,0 150,-40 96,-40 96,-58 44,-58 44,-76 0,-76" fill="var(--b-wall-2)"/>'
+      + '<polygon points="4,-72 40,-72 40,-56 92,-56 92,-38 146,-38 146,-4 4,-4" fill="var(--b-wall)"/>'
+      + '<g stroke="var(--b-trim)" stroke-width="5">'
+      + '<line x1="10" y1="-66" x2="34" y2="-66"/><line x1="10" y1="-56" x2="34" y2="-56"/>'
+      + '<line x1="48" y1="-48" x2="86" y2="-48"/><line x1="48" y1="-38" x2="86" y2="-38"/>'
+      + '<line x1="100" y1="-30" x2="140" y2="-30"/><line x1="100" y1="-20" x2="140" y2="-20"/></g>'
+      + '<rect x="-4" y="-104" width="158" height="10" rx="3" fill="var(--b-roof)"/>'
+      + '<rect x="0" y="-96" width="6" height="24" fill="var(--b-metal)"/>'
+      + '<rect x="144" y="-96" width="6" height="60" fill="var(--b-metal)"/>'; },
+    marcador: function(){ return ''
+      + '<rect x="12" y="-56" width="10" height="56" fill="var(--b-metal)"/>'
+      + '<rect x="74" y="-56" width="10" height="56" fill="var(--b-metal)"/>'
+      + '<rect x="0" y="-116" width="96" height="62" rx="5" fill="var(--b-roof)"/>'
+      + '<rect x="8" y="-108" width="80" height="34" rx="3" fill="#0B1512"/>'
+      + '<text x="48" y="-84" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20"'
+      + ' font-weight="700" fill="var(--accent)">7×8</text>'
+      + '<text x="48" y="-62" text-anchor="middle" font-family="Anton, sans-serif" font-size="12"'
+      + ' letter-spacing="1.5" fill="var(--b-wall)">ÉLITE</text>'; },
+    gim: function(){ return ''
+      + '<path d="M0,0 L0,-52 Q64,-96 128,-52 L128,0 Z" fill="var(--b-wall)"/>'
+      + '<path d="M0,-52 Q64,-96 128,-52" fill="none" stroke="var(--b-roof)" stroke-width="7"/>'
+      + '<rect x="14" y="-44" width="100" height="16" fill="var(--b-glass)"/>'
+      + '<rect x="52" y="-24" width="24" height="24" rx="2" fill="var(--b-roof)"/>'
+      + '<g stroke="var(--b-trim)" stroke-width="4" stroke-linecap="round">'
+      + '<line x1="24" y1="-14" x2="40" y2="-14"/><circle cx="22" cy="-14" r="4" fill="var(--b-trim)" stroke="none"/>'
+      + '<circle cx="42" cy="-14" r="4" fill="var(--b-trim)" stroke="none"/></g>'; },
+    cantera: function(){ return ''
+      + '<rect x="0" y="-40" width="150" height="40" rx="4" fill="var(--grass-2)"/>'
+      + '<rect x="5" y="-35" width="140" height="30" rx="3" fill="var(--grass)"/>'
+      + '<line x1="75" y1="-33" x2="75" y2="-7" stroke="rgba(255,255,255,.65)" stroke-width="1.2"/>'
+      + '<rect x="3" y="-26" width="6" height="10" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.2"/>'
+      + '<rect x="141" y="-26" width="6" height="10" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.2"/>'
+      + '<circle cx="46" cy="-18" r="3.4" fill="#fff"/><circle cx="104" cy="-24" r="3.4" fill="#fff"/>'
+      + '<rect x="52" y="-58" width="46" height="16" rx="3" fill="var(--b-roof)"/>'
+      + '<text x="75" y="-46" text-anchor="middle" font-family="Anton, sans-serif" font-size="11"'
+      + ' fill="var(--accent)">CANTERA</text>'; },
+    bus: function(){ return ''
+      + '<rect x="0" y="-58" width="132" height="46" rx="9" fill="var(--b-trim)"/>'
+      + '<rect x="8" y="-50" width="34" height="18" rx="3" fill="var(--b-glass)"/>'
+      + '<rect x="48" y="-50" width="34" height="18" rx="3" fill="var(--b-glass)"/>'
+      + '<rect x="88" y="-50" width="36" height="18" rx="3" fill="var(--b-glass)"/>'
+      + '<rect x="0" y="-26" width="132" height="7" fill="var(--accent)"/>'
+      + '<circle cx="30" cy="-10" r="10" fill="#22292B"/><circle cx="30" cy="-10" r="4" fill="var(--b-metal)"/>'
+      + '<circle cx="102" cy="-10" r="10" fill="#22292B"/><circle cx="102" cy="-10" r="4" fill="var(--b-metal)"/>'; },
+    clinica: function(){ return ''
+      + '<rect x="0" y="-74" width="120" height="74" fill="var(--b-wall)"/>'
+      + '<rect x="0" y="-84" width="120" height="12" rx="2" fill="var(--b-roof)"/>'
+      + '<g fill="var(--b-glass)"><rect x="12" y="-64" width="20" height="16"/><rect x="42" y="-64" width="20" height="16"/>'
+      + '<rect x="72" y="-64" width="20" height="16"/><rect x="12" y="-40" width="20" height="16"/>'
+      + '<rect x="42" y="-40" width="20" height="16"/></g>'
+      + '<rect x="84" y="-24" width="24" height="24" rx="2" fill="var(--b-roof)"/>'
+      + '<g fill="var(--b-trim)"><rect x="96" y="-70" width="8" height="26" rx="2"/>'
+      + '<rect x="87" y="-61" width="26" height="8" rx="2"/></g>'; },
+    museo: function(){ return ''
+      + '<rect x="0" y="-10" width="136" height="10" fill="var(--b-wall-2)"/>'
+      + '<rect x="8" y="-62" width="120" height="52" fill="var(--b-wall)"/>'
+      + '<g fill="var(--b-wall-2)"><rect x="20" y="-58" width="11" height="48"/><rect x="46" y="-58" width="11" height="48"/>'
+      + '<rect x="78" y="-58" width="11" height="48"/><rect x="104" y="-58" width="11" height="48"/></g>'
+      + '<polygon points="0,-62 68,-96 136,-62" fill="var(--b-roof)"/>'
+      + '<circle cx="68" cy="-72" r="7" fill="var(--accent)"/>'
+      + '<rect x="64" y="-66" width="8" height="6" fill="var(--accent)"/>'; },
+    resi: function(){ return ''
+      + '<rect x="0" y="-124" width="126" height="124" fill="var(--b-wall)"/>'
+      + '<rect x="0" y="-132" width="126" height="10" rx="2" fill="var(--b-roof)"/>'
+      + '<g fill="var(--b-glass)">'
+      + '<rect x="12" y="-112" width="20" height="18"/><rect x="42" y="-112" width="20" height="18"/>'
+      + '<rect x="72" y="-112" width="20" height="18"/><rect x="98" y="-112" width="16" height="18"/>'
+      + '<rect x="12" y="-84" width="20" height="18"/><rect x="42" y="-84" width="20" height="18"/>'
+      + '<rect x="72" y="-84" width="20" height="18"/><rect x="98" y="-84" width="16" height="18"/>'
+      + '<rect x="12" y="-56" width="20" height="18"/><rect x="42" y="-56" width="20" height="18"/>'
+      + '<rect x="72" y="-56" width="20" height="18"/><rect x="98" y="-56" width="16" height="18"/></g>'
+      + '<rect x="48" y="-28" width="28" height="28" rx="2" fill="var(--b-roof)"/>'
+      + '<rect x="0" y="-32" width="126" height="4" fill="var(--accent)"/>'; },
+    estadio: function(){ return ''
+      + '<ellipse cx="105" cy="-14" rx="105" ry="16" fill="var(--b-wall-2)"/>'
+      + '<path d="M0,-14 Q0,-96 105,-96 Q210,-96 210,-14 Z" fill="var(--b-wall)"/>'
+      + '<path d="M18,-16 Q18,-82 105,-82 Q192,-82 192,-16 Z" fill="var(--grass-2)"/>'
+      + '<ellipse cx="105" cy="-30" rx="72" ry="30" fill="var(--grass)"/>'
+      + '<ellipse cx="105" cy="-30" rx="20" ry="9" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5"/>'
+      + '<line x1="105" y1="-60" x2="105" y2="-1" stroke="rgba(255,255,255,.75)" stroke-width="1.5"/>'
+      + '<path d="M0,-14 Q0,-104 105,-104 Q210,-104 210,-14" fill="none" stroke="var(--b-roof)" stroke-width="9"/>'
+      + '<g fill="var(--accent)"><circle cx="26" cy="-92" r="5"/><circle cx="105" cy="-106" r="5"/><circle cx="184" cy="-92" r="5"/></g>'
+      + '<text x="105" y="-4" text-anchor="middle" font-family="Anton, sans-serif" font-size="13"'
+      + ' letter-spacing="2" fill="var(--ink)">ÉLITE</text>'; }
+  };
+
+  /* ================= estado guardado ================= */
+  var KEY = "tablasDeGol.v2";
+  var save = loadSave();
+  function loadSave(){
     try{
       var raw = localStorage.getItem(KEY);
-      if(raw){ var d = JSON.parse(raw); if(d && d.facts) return d; }
+      if(raw){
+        var d = JSON.parse(raw);
+        if(d && typeof d === "object"){
+          return {coins:d.coins||0, unlocked:d.unlocked||1, built:d.built||[], facts:d.facts||{},
+                  best:d.best||{}, input:d.input||"teclado", sound:d.sound !== false};
+        }
+      }
     }catch(e){}
-    return {facts:{}, best:{}};
+    return {coins:0, unlocked:1, built:[], facts:{}, best:{}, input:"teclado", sound:true};
   }
-  function save(){
-    try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){}
-  }
-  function factKey(a,b){ return a + "x" + b; }
-  function factStat(a,b){ return store.facts[factKey(a,b)] || {ok:0, ko:0}; }
-  function recordFact(a,b,good){
-    var k = factKey(a,b), f = store.facts[k] || {ok:0, ko:0};
+  function persist(){ try{ localStorage.setItem(KEY, JSON.stringify(save)); }catch(e){} }
+  function fact(a,b){ return save.facts[a+"x"+b] || {ok:0, ko:0}; }
+  function noteFact(a,b,good){
+    var k = a+"x"+b, f = save.facts[k] || {ok:0, ko:0};
     if(good) f.ok++; else f.ko++;
-    store.facts[k] = f; save();
-  }
-  function tableAccuracy(t){
-    var ok = 0, ko = 0;
-    for(var b = 1; b <= 10; b++){ var f = factStat(t,b); ok += f.ok; ko += f.ko; }
-    return {ok:ok, ko:ko, total:ok+ko, pct: (ok+ko) ? ok/(ok+ko) : 0};
+    save.facts[k] = f;
   }
 
-  /* ---------------- pantalla de ajustes ---------------- */
-  function buildChips(){
-    var box = $("chips");
-    box.innerHTML = "";
-    TABLES.forEach(function(t){
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "chip"; b.dataset.table = String(t);
-      b.setAttribute("aria-pressed", cfg.tables.indexOf(t) > -1 ? "true" : "false");
-      b.setAttribute("aria-label", "Tabla del " + t);
-      b.innerHTML = '<span class="n">' + t + '</span><span class="bar"><i></i></span>';
-      b.addEventListener("click", function(){
-        var on = b.getAttribute("aria-pressed") === "true";
-        if(on){ cfg.tables = cfg.tables.filter(function(x){ return x !== t; }); }
-        else { cfg.tables.push(t); cfg.tables.sort(function(x,y){ return x-y; }); }
-        b.setAttribute("aria-pressed", on ? "false" : "true");
-        refreshSetup();
-      });
-      box.appendChild(b);
-    });
-  }
-  function buildModes(){
-    var box = $("modes");
-    box.innerHTML = "";
-    Object.keys(MODES).forEach(function(m){
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "mode"; b.dataset.mode = m;
-      b.setAttribute("aria-pressed", cfg.mode === m ? "true" : "false");
-      b.innerHTML = "<b>" + MODES[m].label + "</b><span>" + MODES[m].desc + "</span>";
-      b.addEventListener("click", function(){
-        cfg.mode = m;
-        Array.prototype.forEach.call(box.children, function(c){
-          c.setAttribute("aria-pressed", c.dataset.mode === m ? "true" : "false");
-        });
-        refreshSetup();
-      });
-      box.appendChild(b);
-    });
-  }
-  function refreshSetup(){
-    Array.prototype.forEach.call($("chips").children, function(c){
-      var t = Number(c.dataset.table), acc = tableAccuracy(t);
-      c.setAttribute("aria-pressed", cfg.tables.indexOf(t) > -1 ? "true" : "false");
-      c.querySelector("i").style.width = acc.total ? Math.round(acc.pct * 100) + "%" : "0%";
-      c.title = acc.total ? "Tabla del " + t + ": " + Math.round(acc.pct*100) + "% de acierto en " + acc.total + " intentos"
-                          : "Tabla del " + t + ": sin datos todavía";
-    });
-    $("start").disabled = cfg.tables.length === 0;
-    var best = store.best[cfg.mode];
-    $("record").textContent = best ? "Tu récord en " + MODES[cfg.mode].label + ": " + best + " goles" : "";
-  }
+  var selected = Math.min(save.unlocked, LEVELS.length) - 1;   // nivel elegido (índice)
+  var game = null, raf = null, audio = null;
 
-  /* ---------------- generación de preguntas ---------------- */
-  function pool(){
-    var out = [];
-    cfg.tables.forEach(function(a){
-      for(var b = 1; b <= 10; b++) out.push([a,b]);
-    });
-    return out;
+  /* ================= sonido ================= */
+  function beep(freq, dur, type, vol){
+    if(!save.sound) return;
+    try{
+      if(!audio) audio = new (window.AudioContext || window.webkitAudioContext)();
+      var o = audio.createOscillator(), g = audio.createGain();
+      o.type = type || "sine"; o.frequency.value = freq;
+      g.gain.value = vol || 0.06;
+      o.connect(g); g.connect(audio.destination);
+      o.start();
+      g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + dur);
+      o.stop(audio.currentTime + dur);
+    }catch(e){}
   }
-  function pickQuestion(prev){
-    var p = pool(), best = null, bestW = -1;
-    // muestreo ponderado: pesan más los que fallas y los que aún no has visto
-    for(var i = 0; i < p.length; i++){
-      var a = p[i][0], b = p[i][1], f = factStat(a,b);
-      if(prev && prev[0] === a && prev[1] === b) continue;
-      var w = 1 + f.ko * 2.5 - Math.min(f.ok, 6) * 0.12;
-      if(f.ok + f.ko === 0) w += 0.8;
-      w *= 0.6 + Math.random();
-      if(w > bestW){ bestW = w; best = [a,b]; }
+  function fanfare(){ [523,659,784,1046].forEach(function(f,i){ setTimeout(function(){ beep(f,.22,"triangle",.07); }, i*130); }); }
+
+  /* ================= ciudad ================= */
+  function drawCity(){
+    var built = save.built.filter(function(id){ return DRAW[id]; });
+    var GAP = 22, PADX = 24, base = 196, H = 230;
+    var widths = built.map(function(id){ return byId(id).w; });
+    var contentW = widths.reduce(function(s,w){ return s + w + GAP; }, 0);
+    var plots = Math.max(0, 3 - built.length);
+    var plotW = 96;
+    contentW += plots * (plotW + GAP);
+    var W = Math.max(contentW + PADX*2, 1040);
+
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" '
+            + 'aria-label="Tu ciudad deportiva con ' + built.length + ' construcciones">'
+            + '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
+            + '<stop offset="0" stop-color="var(--sky-1)"/><stop offset="1" stop-color="var(--sky-2)"/>'
+            + '</linearGradient></defs>'
+            + '<rect width="' + W + '" height="' + H + '" fill="url(#sky)"/>'
+            + '<rect y="' + base + '" width="' + W + '" height="' + (H-base) + '" fill="var(--grass-2)"/>'
+            + '<rect y="' + base + '" width="' + W + '" height="8" fill="var(--grass)"/>';
+
+    var x = PADX;
+    built.forEach(function(id){
+      var b = byId(id);
+      svg += '<g transform="translate(' + x + ',' + base + ')">' + DRAW[id]() + '</g>';
+      x += b.w + GAP;
+    });
+    for(var i = 0; i < plots; i++){
+      svg += '<g transform="translate(' + x + ',' + base + ')">'
+           + '<rect x="0" y="-56" width="' + plotW + '" height="56" rx="6" fill="none" '
+           + 'stroke="var(--b-line)" stroke-width="2" stroke-dasharray="7 6"/>'
+           + '<text x="' + (plotW/2) + '" y="-24" text-anchor="middle" font-family="Asap, sans-serif" '
+           + 'font-size="12" fill="var(--b-line)">solar</text></g>';
+      x += plotW + GAP;
     }
-    return best || p[0];
+    svg += '</svg>';
+    $("scene").innerHTML = svg;
+    $("scene").scrollLeft = $("scene").scrollWidth;
+
+    $("cityCount").textContent = built.length
+      ? built.length + " de " + BUILDINGS.length + " construcciones levantadas"
+      : "Solar vacío — gana monedas y empieza a construir";
+    var next = BUILDINGS.filter(function(b){ return save.built.indexOf(b.id) === -1; })[0];
+    $("cityNext").textContent = next ? "Siguiente obra: " + next.name + " · " + next.cost : "¡Ciudad deportiva completa!";
   }
-  function hintFor(a,b){
-    if(b === 1) return "Cualquier número por 1 se queda igual.";
-    if(b === 10) return a + " × 10 es " + a + " con un cero detrás.";
-    if(b === 9) return a + " × 10 = " + (a*10) + ", y le quitas " + a + ".";
-    if(b === 5 && a % 2 === 0) return "La mitad de " + a + " es " + (a/2) + ", y le pones un cero.";
-    return a + " × " + (b-1) + " = " + (a*(b-1)) + ", y sumas " + a + ".";
+  function byId(id){
+    for(var i = 0; i < BUILDINGS.length; i++) if(BUILDINGS[i].id === id) return BUILDINGS[i];
+    return null;
+  }
+  function thumb(b){
+    // miniatura: el mismo dibujo, encajado en una caja de 46x42
+    var box = 150, scale = box / Math.max(b.w, 150);
+    return '<svg viewBox="0 0 ' + box + ' ' + 150 + '" aria-hidden="true">'
+         + '<g transform="translate(' + ((box - b.w*scale)/2) + ',146) scale(' + scale + ')">' + DRAW[b.id]() + '</g></svg>';
+  }
+
+  /* ================= tienda ================= */
+  function drawShop(){
+    var box = $("shop");
+    box.innerHTML = "";
+    var completed = save.unlocked - 1;
+    BUILDINGS.forEach(function(b){
+      var owned = save.built.indexOf(b.id) > -1;
+      var locked = b.need > completed;
+      var poor = !owned && !locked && save.coins < b.cost;
+      var el = document.createElement("button");
+      el.type = "button";
+      el.className = "item" + (owned ? " built" : locked ? " locked" : poor ? " poor" : "");
+      el.disabled = owned || locked;
+      el.innerHTML = '<span class="pic">' + thumb(b) + '</span>'
+        + '<span class="txt"><b>' + b.name + '</b><span>'
+        + (owned ? "construida" : locked ? "supera " + b.need + " niveles" : poor ? "te faltan " + (b.cost - save.coins) : "lista para construir")
+        + '</span></span>'
+        + '<span class="price">' + (owned ? "✓" : b.cost) + '</span>';
+      if(!owned && !locked && !poor){
+        el.addEventListener("click", function(){
+          if(save.coins < b.cost) return;
+          save.coins -= b.cost;
+          save.built.push(b.id);
+          persist();
+          fanfare();
+          drawCity(); drawShop(); drawCoins();
+        });
+      }
+      box.appendChild(el);
+    });
+    var affordable = BUILDINGS.filter(function(b){
+      return save.built.indexOf(b.id) === -1 && b.need <= (save.unlocked-1) && save.coins >= b.cost;
+    }).length;
+    $("shopHint").textContent = affordable ? "Puedes construir " + affordable : "Gana monedas jugando";
+  }
+  function drawCoins(bump){
+    $("coins").textContent = save.coins;
+    if(bump){
+      var c = $("coinsBox");
+      c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump");
+    }
+  }
+
+  /* ================= temporada ================= */
+  function drawSeason(){
+    var box = $("season");
+    box.innerHTML = "";
+    LEVELS.forEach(function(lv, i){
+      var done = i < save.unlocked - 1, open = i < save.unlocked;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "lvl " + (done ? "done" : open ? "now" : "locked") + (i === selected ? " sel" : "");
+      b.disabled = !open;
+      b.innerHTML = (lv.t ? lv.t : "★") + "<small>" + (done ? "hecho" : open ? "aquí" : "cerrado") + "</small>";
+      b.setAttribute("aria-label", levelName(i) + (open ? "" : " (bloqueado)"));
+      b.addEventListener("click", function(){ selected = i; drawSeason(); drawBrief(); });
+      box.appendChild(b);
+    });
+  }
+  function drawBrief(){
+    var lv = LEVELS[selected];
+    $("briefTitle").textContent = levelName(selected);
+    $("briefGoal").textContent = lv.goal + " aciertos en " + lv.time + " s · cada fallo −" + PENALTY + " s";
+    var best = save.best[selected];
+    $("bestLine").textContent = best ? "Tu récord aquí: " + best.hits + " aciertos, " + best.left + " s de sobra"
+                                     : (selected === save.unlocked - 1 ? "Nivel nuevo" : "");
+  }
+
+  /* ================= preguntas ================= */
+  function newBag(t){
+    var bag = [];
+    for(var b = 1; b <= 10; b++){
+      bag.push(b);
+      if(fact(t,b).ko > fact(t,b).ok) bag.push(b);      // los que fallas salen más
+    }
+    for(var i = bag.length-1; i > 0; i--){
+      var j = Math.floor(Math.random()*(i+1)), tmp = bag[i]; bag[i] = bag[j]; bag[j] = tmp;
+    }
+    return bag;
+  }
+  function nextPair(){
+    var lv = LEVELS[game.level];
+    if(lv.t === 0){                                       // reto élite: todas mezcladas
+      var a = 2 + Math.floor(Math.random()*9), b = 1 + Math.floor(Math.random()*10);
+      if(game.current && game.current[0] === a && game.current[1] === b) return nextPair();
+      return [a,b];
+    }
+    if(!game.bag || !game.bag.length) game.bag = newBag(lv.t);
+    var n = game.bag.pop();
+    if(game.current && game.current[1] === n && game.bag.length) { game.bag.unshift(n); n = game.bag.pop(); }
+    return [lv.t, n];
   }
   function options(a,b){
-    var right = a*b, set = [right], guard = 0;
-    var cands = [right + a, Math.max(0, right - a), right + 1, Math.max(0, right - 1),
-                 a*(b+1), Math.max(0, a*(b-1)), right + 10, Math.max(0, right - 10)];
-    while(set.length < 4 && guard++ < 60){
-      var c = cands.length ? cands.splice(Math.floor(Math.random()*cands.length), 1)[0]
-                           : right + Math.ceil(Math.random()*12) * (Math.random() < .5 ? -1 : 1);
+    var right = a*b, set = [right];
+    var cands = [right+a, Math.max(0,right-a), right+1, Math.max(0,right-1), a*(b+1), Math.max(0,a*(b-1)), right+10];
+    var guard = 0;
+    while(set.length < 4 && guard++ < 50){
+      var c = cands.length ? cands.splice(Math.floor(Math.random()*cands.length),1)[0]
+                           : right + Math.ceil(Math.random()*9);
       if(c >= 0 && set.indexOf(c) === -1) set.push(c);
     }
-    for(var i = set.length - 1; i > 0; i--){
-      var j = Math.floor(Math.random() * (i+1)), t = set[i]; set[i] = set[j]; set[j] = t;
+    for(var i = set.length-1; i > 0; i--){
+      var j = Math.floor(Math.random()*(i+1)), t = set[i]; set[i] = set[j]; set[j] = t;
     }
     return set;
   }
 
-  /* ---------------- ciclo de juego ---------------- */
-  function show(which){
-    ["setup","play","results"].forEach(function(id){ $(id).hidden = (id !== which); });
+  /* ================= partida ================= */
+  function show(id){
+    ["home","game","end"].forEach(function(s){ $(s).hidden = (s !== id); });
   }
-  function startGame(queue){
-    var m = MODES[cfg.mode];
+  function startLevel(index, drill){
+    var lv = LEVELS[index];
     game = {
-      mode: cfg.mode, queue: queue || null, asked: 0,
-      goles: 0, fallos: 0, racha: 0, mejorRacha: 0,
-      typed: "", locked: false, times: [], errors: [], current: null,
-      endsAt: m.clock ? Date.now() + m.clock * 1000 : 0,
-      qEndsAt: 0, qStart: 0
+      level:index, drill:!!drill, hits:0, misses:0, streak:0, best:0, coins:0,
+      typed:"", locked:false, times:[], errors:[], current:null, bag:null,
+      endsAt: Date.now() + lv.time*1000, lastTick:99
     };
-    buildPad();
-    show("play");
-    updateBoard();
+    $("hudLevel").textContent = levelName(index) + (drill ? " · ensayo" : "");
+    buildKeys();
+    buildPips(drill ? 0 : lv.goal);
+    updateHud();
+    show("game");
     nextQuestion();
-    if(m.clock || m.perQ){ tickId = setInterval(tick, 100); }
-    else { $("clock").hidden = true; $("sReloj").textContent = "—"; $("sRelojK").textContent = "Sin reloj"; }
+    if(!drill){ raf = requestAnimationFrame(tick); }
+    else { $("ringNum").textContent = "∞"; $("ringFill").style.strokeDashoffset = "0"; $("ring").classList.remove("hot"); }
+  }
+  function buildPips(n){
+    var box = $("pips");
+    box.innerHTML = "";
+    for(var i = 0; i < n; i++) box.appendChild(document.createElement("i"));
+    box.hidden = n === 0;
+  }
+  function paintPips(){
+    Array.prototype.forEach.call($("pips").children, function(el, i){
+      el.className = i < game.hits ? "on" : "";
+    });
   }
   function nextQuestion(){
-    var m = MODES[game.mode];
-    if(m.total && game.asked >= m.total) return endGame();
-    if(game.queue && game.asked >= game.queue.length) return endGame();
-
-    game.current = game.queue ? game.queue[game.asked] : pickQuestion(game.current);
-    game.asked++;
-    game.typed = "";
-    game.locked = false;
-    game.qStart = Date.now();
-    if(m.perQ) game.qEndsAt = Date.now() + m.perQ * 1000;
-
+    game.current = nextPair();
+    game.typed = ""; game.locked = false; game.qStart = Date.now();
     var a = game.current[0], b = game.current[1];
     $("question").innerHTML = a + ' <span class="x">×</span> ' + b;
     $("verdict").textContent = "";
-    $("streakline").textContent = m.total
-      ? "Pregunta " + game.asked + " de " + (game.queue ? game.queue.length : m.total)
-      : (game.racha >= 3 ? "Racha de " + game.racha + " — no la sueltes" : "");
-    drawSlot();
-    if(cfg.input === "opciones") buildOptions(a,b);
+    paintSlot();
+    if(save.input === "opciones") buildOptions(a,b);
   }
-  function drawSlot(state){
+  function paintSlot(state){
     var s = $("slot");
     s.className = "slot" + (game.typed ? "" : " empty") + (state ? " " + state : "");
     s.textContent = game.typed || "?";
   }
   function press(d){
-    if(!game || game.locked || cfg.input !== "teclado") return;
-    if(game.typed.length >= 4) return;
+    if(!game || game.locked || save.input !== "teclado" || game.typed.length >= 4) return;
     if(game.typed === "" && d === "0") return;
-    game.typed += d;
-    drawSlot();
+    game.typed += d; paintSlot(); beep(440, .04, "square", .03);
   }
-  function backspace(){
+  function backspace(){ if(game && !game.locked){ game.typed = game.typed.slice(0,-1); paintSlot(); } }
+  function submit(v){
     if(!game || game.locked) return;
-    game.typed = game.typed.slice(0, -1);
-    drawSlot();
-  }
-  function submit(value){
-    if(!game || game.locked) return;
-    var val = (value !== undefined) ? value : game.typed;
+    var val = (v !== undefined) ? v : game.typed;
     if(val === "" || val === null) return;
-    answer(Number(val));
+    resolve(Number(val));
   }
-  function answer(value, timedOut){
-    var a = game.current[0], b = game.current[1], right = a*b;
-    var good = (value === right);
+  function resolve(value){
+    var lv = LEVELS[game.level], a = game.current[0], b = game.current[1], right = a*b;
+    var good = value === right;
     game.locked = true;
-    game.times.push((Date.now() - game.qStart) / 1000);
-    recordFact(a, b, good && !timedOut);
+    game.times.push((Date.now() - game.qStart)/1000);
+    noteFact(a, b, good);
+    game.typed = String(right);
 
     if(good){
-      game.goles++; game.racha++;
-      game.mejorRacha = Math.max(game.mejorRacha, game.racha);
-      game.typed = String(right);
-      drawSlot("ok");
-      $("verdict").innerHTML = "¡Gol! " + a + " × " + b + " = " + right;
-      $("pitch").classList.add("anim-ok");
+      game.hits++; game.streak++; game.best = Math.max(game.best, game.streak);
+      var win = 1 + (game.streak % 5 === 0 ? 3 : 0);
+      if(!game.drill) game.coins += win;
+      paintSlot("ok");
+      $("verdict").textContent = game.streak % 5 === 0 && game.streak > 0
+        ? "¡Racha de " + game.streak + "! +" + win + " monedas" : "¡Gol!";
+      $("field").classList.add("anim-ok");
+      beep(660 + Math.min(game.streak,8)*40, .12, "triangle", .06);
     } else {
-      game.fallos++; game.racha = 0;
+      game.misses++; game.streak = 0;
       game.errors.push([a,b]);
-      game.typed = String(right);
-      drawSlot("ko");
-      var head = timedOut ? "Se acabó el tiempo. " : "Parada del portero. ";
-      $("verdict").innerHTML = head + a + " × " + b + " = " + right +
-        (MODES[game.mode].hints ? '<span class="hint">' + hintFor(a,b) + "</span>" : "");
-      $("pitch").classList.add("anim-ko");
+      paintSlot("ko");
+      $("verdict").textContent = a + " × " + b + " = " + right + (game.drill ? "" : "  ·  −" + PENALTY + " s");
+      $("field").classList.add("anim-ko");
+      beep(150, .22, "sawtooth", .05);
+      if(!game.drill){
+        game.endsAt -= PENALTY*1000;
+        var p = $("penalty");
+        p.classList.remove("go"); void p.offsetWidth; p.classList.add("go");
+      }
     }
-    if(cfg.input === "opciones") markOptions(right, good ? right : value);
-    updateBoard();
+    if(save.input === "opciones") markOptions(right, value);
+    paintPips(); updateHud();
+    persist();
+
+    if(!game.drill && LEVELS[game.level].goal <= game.hits) return setTimeout(function(){ finish(true); }, 450);
     setTimeout(function(){
-      $("pitch").classList.remove("anim-ok","anim-ko");
+      $("field").classList.remove("anim-ok","anim-ko");
       if(!game) return;
-      if(MODES[game.mode].clock && Date.now() >= game.endsAt) return endGame();
+      if(!game.drill && Date.now() >= game.endsAt) return finish(false);
       nextQuestion();
-    }, good ? 620 : (MODES[game.mode].hints ? 2300 : 1500));
+    }, good ? 380 : 1050);
   }
-  function updateBoard(){
-    $("sGoles").textContent = game.goles;
-    $("sFallos").textContent = game.fallos;
-    $("sRacha").textContent = game.racha;
+  function updateHud(){
+    $("hudHits").textContent = game.drill ? game.hits : game.hits + "/" + LEVELS[game.level].goal;
+    $("hudStreak").textContent = game.streak;
+    $("hudCoins").textContent = game.coins;
   }
   function tick(){
-    if(!game) return;
-    var m = MODES[game.mode];
-    if(m.clock){
-      var left = Math.max(0, game.endsAt - Date.now());
-      $("clock").hidden = false;
-      $("clockBar").style.width = (left / (m.clock*1000) * 100) + "%";
-      $("clock").classList.toggle("warn", left < 15000);
-      $("sReloj").textContent = (left/1000).toFixed(1) + "s";
-      $("sRelojK").textContent = "Quedan";
-      if(left <= 0 && !game.locked) return endGame();
-    } else if(m.perQ){
-      var l = Math.max(0, game.qEndsAt - Date.now());
-      $("clock").hidden = false;
-      $("clockBar").style.width = (l / (m.perQ*1000) * 100) + "%";
-      $("clock").classList.toggle("warn", l < 3000);
-      $("sReloj").textContent = (l/1000).toFixed(1) + "s";
-      $("sRelojK").textContent = "Para tirar";
-      if(l <= 0 && !game.locked) answer(-1, true);
-    }
+    if(!game || game.drill) return;
+    var lv = LEVELS[game.level];
+    var left = Math.max(0, game.endsAt - Date.now());
+    var frac = left / (lv.time*1000);
+    $("ringFill").style.strokeDashoffset = (326.7 * (1 - frac)).toFixed(1);
+    $("ringNum").textContent = left > 10000 ? Math.ceil(left/1000) : (left/1000).toFixed(1).replace(".", ",");
+    $("ring").classList.toggle("hot", left <= 10000);
+    var sec = Math.ceil(left/1000);
+    if(sec <= 5 && sec !== game.lastTick && sec > 0){ game.lastTick = sec; beep(880, .07, "square", .05); }
+    if(left <= 0){ if(!game.locked) return finish(false); }
+    raf = requestAnimationFrame(tick);
   }
-  function endGame(){
-    if(tickId){ clearInterval(tickId); tickId = null; }
+  function finish(won){
+    if(raf){ cancelAnimationFrame(raf); raf = null; }
     if(!game) return;
-    var g = game, m = MODES[g.mode];
-    var total = g.goles + g.fallos;
-    var media = g.times.length ? g.times.reduce(function(s,x){ return s+x; }, 0) / g.times.length : 0;
+    var g = game, lv = LEVELS[g.level];
+    var left = Math.max(0, Math.round((g.endsAt - Date.now())/1000));
+    var bonus = 0;
 
-    if(!g.queue && (!store.best[g.mode] || g.goles > store.best[g.mode])){
-      store.best[g.mode] = g.goles; save();
+    if(!g.drill && won){
+      bonus = 10 + left;
+      g.coins += bonus;
+      if(g.level === save.unlocked - 1 && save.unlocked < LEVELS.length) save.unlocked++;
+      var prev = save.best[g.level];
+      if(!prev || left > prev.left) save.best[g.level] = {hits:g.hits, left:left};
+      fanfare();
+    } else if(!g.drill){
+      beep(200, .4, "sawtooth", .05);
     }
+    if(!g.drill){ save.coins += g.coins; }
+    persist();
 
-    $("rMode").textContent = g.queue ? "Repaso de fallos" : "Final · " + m.label;
-    $("rTitle").textContent = g.fallos === 0 && total > 0 ? "¡Partido perfecto!"
-                            : g.goles >= g.fallos ? "Buen partido" : "A seguir entrenando";
-    $("rGoles").textContent = g.goles;
-    $("rPrec").textContent = total ? Math.round(g.goles/total*100) + "%" : "—";
-    $("rRacha").textContent = g.mejorRacha;
-    $("rTiempo").textContent = media.toFixed(1).replace(".", ",") + " s";
+    var media = g.times.length ? g.times.reduce(function(s,x){ return s+x; },0)/g.times.length : 0;
+    $("banner").className = "banner " + (g.drill ? "win" : won ? "win" : "lose");
+    $("endTitle").textContent = g.drill ? "Ensayo terminado" : won ? "¡Nivel superado!" : "Se acabó el tiempo";
+    $("endSub").textContent = g.drill
+      ? "Los ensayos no dan monedas, pero cuentan para saber qué fallas."
+      : won
+        ? (g.level === LEVELS.length-1 ? "Has completado toda la temporada." : "Desbloqueado: " + levelName(Math.min(g.level+1, LEVELS.length-1)))
+        : "Necesitabas " + lv.goal + " aciertos y llegaste a " + g.hits + ". Otra vez, más rápido.";
+    $("eHits").textContent = g.drill ? g.hits : g.hits + "/" + lv.goal;
+    $("eSpeed").textContent = media.toFixed(1).replace(".", ",") + " s";
+    $("eCoins").textContent = g.drill ? "—" : "+" + g.coins;
 
     var uniq = [], seen = {};
     g.errors.forEach(function(e){
-      var k = factKey(e[0], e[1]);
+      var k = e[0]+"x"+e[1];
       if(!seen[k]){ seen[k] = 1; uniq.push(e); }
     });
-    var box = $("rFacts");
-    box.innerHTML = "";
-    box.className = "facts" + (uniq.length ? "" : " clean");
-    if(uniq.length){
-      $("rListTitle").textContent = "Tu lista de repaso (" + uniq.length + ")";
-      uniq.forEach(function(e){
-        var s = document.createElement("span");
-        s.className = "fact";
-        s.textContent = e[0] + " × " + e[1] + " = " + (e[0]*e[1]);
-        box.appendChild(s);
-      });
-      var worst = uniq[0][0];
-      $("rTable").hidden = false;
-      $("rTableTitle").textContent = "Repasa la tabla del " + worst;
-      var ol = $("rTableList");
-      ol.innerHTML = "";
-      for(var i = 1; i <= 10; i++){
-        var li = document.createElement("li");
-        li.textContent = worst + " × " + i + " = " + (worst*i);
-        ol.appendChild(li);
-      }
+    $("endFacts").hidden = uniq.length === 0;
+    $("endFactsTitle").textContent = "Repasa estas (" + uniq.length + ")";
+    var list = $("factList");
+    list.innerHTML = "";
+    uniq.forEach(function(e){
+      var s = document.createElement("span");
+      s.className = "fact";
+      s.textContent = e[0] + " × " + e[1] + " = " + (e[0]*e[1]);
+      list.appendChild(s);
+    });
+
+    var main = $("endMain");
+    if(!g.drill && won && g.level < LEVELS.length-1){
+      main.textContent = "Siguiente nivel";
+      main.onclick = function(){ selected = Math.min(g.level+1, LEVELS.length-1); startLevel(selected, false); };
+    } else if(!g.drill && won){
+      main.textContent = "Volver a jugar";
+      main.onclick = function(){ startLevel(g.level, false); };
     } else {
-      $("rListTitle").textContent = "Sin fallos";
-      $("rTable").hidden = true;
-      var s2 = document.createElement("span");
-      s2.className = "fact";
-      s2.textContent = total ? "Ni una parada del portero" : "Sin preguntas jugadas";
-      box.appendChild(s2);
+      main.textContent = "Reintentar";
+      main.onclick = function(){ startLevel(g.level, g.drill); };
     }
-    $("review").hidden = uniq.length === 0;
-    $("review").onclick = function(){ startGame(uniq.slice()); };
 
     game = null;
-    refreshSetup();
-    show("results");
+    selected = Math.min(save.unlocked, LEVELS.length) - 1;
+    drawCity(); drawShop(); drawCoins(true); drawSeason(); drawBrief();
+    show("end");
   }
 
-  /* ---------------- entradas ---------------- */
-  function buildPad(){
-    var pad = $("pad"), opts = $("opts");
-    pad.hidden = cfg.input !== "teclado";
-    opts.hidden = cfg.input !== "opciones";
-    if(cfg.input !== "teclado"){ pad.innerHTML = ""; return; }
-    pad.innerHTML = "";
+  /* ================= entradas ================= */
+  function buildKeys(){
+    var keys = $("keys"), opts = $("opts");
+    keys.hidden = save.input !== "teclado";
+    opts.hidden = save.input !== "opciones";
+    if(save.input !== "teclado"){ keys.innerHTML = ""; return; }
+    keys.innerHTML = "";
     ["1","2","3","4","5","6","7","8","9","⌫","0","OK"].forEach(function(label){
       var b = document.createElement("button");
       b.type = "button";
       b.className = "key" + (label === "OK" ? " act" : label === "⌫" ? " del" : "");
       b.textContent = label;
       if(label === "⌫") b.setAttribute("aria-label", "Borrar");
-      if(label === "OK") b.setAttribute("aria-label", "Comprobar respuesta");
+      if(label === "OK") b.setAttribute("aria-label", "Comprobar");
       b.addEventListener("click", function(){
-        if(label === "OK") submit();
-        else if(label === "⌫") backspace();
-        else press(label);
+        if(label === "OK") submit(); else if(label === "⌫") backspace(); else press(label);
       });
-      pad.appendChild(b);
+      keys.appendChild(b);
     });
   }
   function buildOptions(a,b){
     var box = $("opts");
-    box.hidden = false;
-    $("pad").hidden = true;
+    box.hidden = false; $("keys").hidden = true;
     box.innerHTML = "";
     options(a,b).forEach(function(v){
       var btn = document.createElement("button");
@@ -613,8 +864,7 @@
       btn.textContent = v;
       btn.addEventListener("click", function(){
         if(!game || game.locked) return;
-        game.typed = String(v);
-        submit(v);
+        game.typed = String(v); submit(v);
       });
       box.appendChild(btn);
     });
@@ -627,53 +877,46 @@
     });
   }
   document.addEventListener("keydown", function(ev){
-    if($("play").hidden) return;
+    if($("game").hidden) return;
     if(ev.key >= "0" && ev.key <= "9"){ press(ev.key); ev.preventDefault(); }
     else if(ev.key === "Enter"){ submit(); ev.preventDefault(); }
     else if(ev.key === "Backspace"){ backspace(); ev.preventDefault(); }
   });
 
-  /* ---------------- botones de pantalla ---------------- */
-  $("selAll").addEventListener("click", function(){ cfg.tables = TABLES.slice(); refreshSetup(); });
-  $("selEasy").addEventListener("click", function(){ cfg.tables = [2,5,10]; refreshSetup(); });
-  $("selHard").addEventListener("click", function(){
-    var ranked = TABLES.map(function(t){ return {t:t, a:tableAccuracy(t)}; })
-                       .filter(function(x){ return x.a.total >= 3; })
-                       .sort(function(x,y){ return x.a.pct - y.a.pct; });
-    cfg.tables = ranked.length ? ranked.slice(0,4).map(function(x){ return x.t; }).sort(function(a,b){ return a-b; })
-                               : [6,7,8,9];
-    refreshSetup();
+  /* ================= botones ================= */
+  $("play").addEventListener("click", function(){ startLevel(selected, false); });
+  $("drill").addEventListener("click", function(){ startLevel(selected, true); });
+  $("quit").addEventListener("click", function(){ if(game) finish(false); });
+  $("endCity").addEventListener("click", function(){ show("home"); });
+  $("modeBtn").addEventListener("click", function(){
+    save.input = save.input === "teclado" ? "opciones" : "teclado";
+    persist(); syncToggles();
   });
-  Array.prototype.forEach.call($("inputSeg").children, function(btn){
-    btn.addEventListener("click", function(){
-      cfg.input = btn.dataset.input;
-      Array.prototype.forEach.call($("inputSeg").children, function(c){
-        c.setAttribute("aria-pressed", c === btn ? "true" : "false");
-      });
-    });
+  $("soundBtn").addEventListener("click", function(){
+    save.sound = !save.sound; persist(); syncToggles();
+    if(save.sound) beep(660, .1, "triangle", .06);
   });
-  $("start").addEventListener("click", function(){ startGame(null); });
-  $("quit").addEventListener("click", function(){ endGame(); });
-  $("again").addEventListener("click", function(){ startGame(null); });
-  $("back").addEventListener("click", function(){ refreshSetup(); show("setup"); });
+  function syncToggles(){
+    var m = $("modeBtn");
+    m.textContent = save.input === "opciones" ? "Eligiendo respuesta" : "Elegir respuesta";
+    m.setAttribute("aria-pressed", save.input === "opciones" ? "true" : "false");
+    var s = $("soundBtn");
+    s.textContent = save.sound ? "Sonido" : "Sin sonido";
+    s.setAttribute("aria-pressed", save.sound ? "true" : "false");
+  }
 
-  /* ---------------- arranque ---------------- */
-  function start(saved){
-    if(saved && saved.cfg){
-      cfg = {tables: saved.cfg.tables || cfg.tables, mode: saved.cfg.mode || cfg.mode, input: saved.cfg.input || cfg.input};
-    }
-    buildChips(); buildModes();
-    Array.prototype.forEach.call($("inputSeg").children, function(c){
-      c.setAttribute("aria-pressed", c.dataset.input === cfg.input ? "true" : "false");
-    });
-    refreshSetup();
-    show("setup");
+  /* ================= arranque ================= */
+  function start(){
+    syncToggles();
+    drawCity(); drawShop(); drawCoins(); drawSeason(); drawBrief();
+    show("home");
   }
   if(window.claude && window.claude.hot){
-    window.claude.hot.snapshot(function(){ return {cfg:cfg}; });
-    window.claude.hot.ready ? window.claude.hot.ready(start) : start(window.claude.hot.data || {});
+    window.claude.hot.snapshot(function(){ return {selected:selected}; });
+    var boot = function(data){ if(data && typeof data.selected === "number") selected = data.selected; start(); };
+    window.claude.hot.ready ? window.claude.hot.ready(boot) : boot(window.claude.hot.data || {});
   } else {
-    start({});
+    start();
   }
 })();
 </script>
