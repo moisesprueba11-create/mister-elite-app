@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marca MISTER ÉLITE · Purple Cow aplicado</title><style>
+:root{--bg:#f5f4f0;--ink:#1a1a18;--dark:#15202b;--muted:#6b6b66;--line:#e3e1da;--accent:#1d6fb8;--gold:#f7c948;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.layout{display:flex;}
+.side{width:280px;flex-shrink:0;background:var(--dark);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.4rem 0;}
+.side .brand{display:block;font-size:17px;font-weight:800;color:#fff;text-decoration:none;padding:0 1.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:.4rem;}
+.side .brand small{display:block;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:1px;margin-top:2px;}
+.side .sec{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);padding:.9rem 1.4rem .3rem;}
+.side a.nav{display:block;padding:.45rem 1.4rem;color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;border-left:3px solid transparent;}
+.side a.nav:hover{color:#fff;background:rgba(255,255,255,.06);border-left-color:var(--gold);}
+.content{flex:1;min-width:0;display:flex;justify-content:center;}
+.inner{max-width:860px;width:100%;padding:2.4rem 2rem 5rem;}
+section{scroll-margin-top:1rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:2.5rem;}
+section:first-of-type{border-top:none;margin-top:0;}
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:50;background:var(--dark);color:#fff;border:none;font-size:20px;width:42px;height:42px;border-radius:8px;cursor:pointer;}
+h1{font-size:30px;line-height:1.2;margin:.2rem 0 1rem;letter-spacing:-.02em;}
+h2{font-size:22px;margin:1.8rem 0 .7rem;padding-bottom:.3rem;border-bottom:2px solid var(--line);}
+h3{font-size:17px;margin:1.4rem 0 .4rem;}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:1.1rem 0 .3rem;}
+p{margin:.55rem 0;} ul,ol{margin:.4rem 0 .8rem 1.4rem;} li{margin:.25rem 0;}
+a{color:var(--accent);} strong{color:#111;}
+blockquote{border-left:4px solid var(--accent);background:#eef4fa;padding:.7rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;color:#33485c;}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:14px;display:block;overflow-x:auto;}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;}
+th{background:#efeee9;font-weight:700;} tr:nth-child(even) td{background:#faf9f6;}
+.hero{background:var(--dark);color:#fff;border-radius:14px;padding:2rem 1.8rem;margin-bottom:1.6rem;}
+.hero .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.hero h1{color:#fff;margin:.5rem 0 .5rem;}
+.hero p{color:rgba(255,255,255,.78);font-size:15px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+.card.win{border-color:var(--accent);border-left-width:5px;background:#f7fbff;}
+.card .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#ecebe6;color:var(--muted);padding:.15rem .5rem;border-radius:20px;margin-bottom:.4rem;}
+.card.win .tag{background:var(--accent);color:#fff;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;margin:1rem 0;}
+.kit{display:grid;grid-template-columns:130px 1fr;gap:.4rem .9rem;font-size:14.5px;margin:1rem 0;}
+.kit dt{font-weight:700;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding-top:.2rem;}
+.kit dd{margin:0 0 .5rem;}
+figure.diag{margin:1.4rem 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.9rem;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+figure.diag svg{display:block;width:100%;height:auto;border-radius:6px;}
+figure.diag figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;font-style:italic;}
+.check{list-style:none;margin-left:0;}
+.check li{padding-left:1.6rem;position:relative;}
+.check li::before{content:"☐";position:absolute;left:0;color:var(--accent);font-size:15px;}
+.ask{background:#fff8e6;border:1px solid #f0dca8;border-radius:10px;padding:1rem 1.1rem;margin:1rem 0;}
+.ask h4{color:#8a6d1f;margin-top:0;}
+.quote-big{font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.3;color:var(--dark);margin:.6rem 0;}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+@media(max-width:880px){.side{position:fixed;transform:translateX(-100%);transition:transform .2s;z-index:40;box-shadow:2px 0 12px rgba(0,0,0,.3);}
+ .side.open{transform:translateX(0);} #menu-btn{display:block;} .inner{padding:4rem 1.1rem 3rem;} h1{font-size:24px;} .kit{grid-template-columns:1fr;} .kit dd{margin-bottom:.8rem;}}
+@media print{.side,#menu-btn{display:none;} .inner{padding:0;max-width:100%;} section{break-inside:avoid;}}
+</style></head><body>
+<button id="menu-btn">☰</button>
+<div class="layout"><nav class="side"><a class="brand" href="#inicio">⚽ Marca MISTER ÉLITE<small>PURPLE COW APLICADO</small></a>
+<div class="sec">Resumen</div>
+<a class="nav" href="#inicio">Inicio</a>
+<a class="nav" href="#kit">Kit de marca en 1 pantalla</a>
+<div class="sec">Los 5 bloques</div>
+<a class="nav" href="#p1">1 · Símbolo distintivo</a>
+<a class="nav" href="#p2">2 · Eslogan distintivo</a>
+<a class="nav" href="#p3">3 · Sorpresa distintiva</a>
+<a class="nav" href="#p4">4 · Idea central</a>
+<a class="nav" href="#p5">5 · Historia distintiva</a>
+<div class="sec">Ejecución</div>
+<a class="nav" href="#despliegue">Plan de despliegue</a>
+<a class="nav" href="#confirmar">Lo que tienes que confirmar</a>
+<a class="nav" href="#prompts">Prompts originales</a></nav>
+<main class="content"><div class="inner">
+
+<section id="inicio">
+<div class="hero">
+<div class="kicker">MISTER ÉLITE · Moisés Díaz</div>
+<h1>Purple Cow aplicado a tu marca</h1>
+<p>Transcripción de los 5 prompts de marca personal (Seth Godin · <em>Purple Cow</em>) y su
+aplicación concreta a MISTER ÉLITE: símbolo, eslogan, idea contraintuitiva, idea central e
+historia. Todo pensado para un entrenador de fútbol que vende cursos aplicables.</p>
+</div>
+<p>Los prompts originales piden, en su paso 1, <em>preguntarte</em> tu idea central, tu
+audiencia y tu historia. He rellenado esas respuestas con lo que ya está escrito y demostrado
+en tu proyecto —cursos por sistema, banco grande de tareas, pizarra en cada tarea, «poca
+teoría, mucha aplicación práctica»— y he marcado en amarillo lo único que necesita tu
+confirmación (tu historia personal, que no me invento).</p>
+<p>Cada bloque sigue la estructura del prompt: <strong>opciones → prueba → ganador → cómo
+usarlo</strong>.</p>
+</section>
+
+<section id="kit">
+<h2>Kit de marca en 1 pantalla</h2>
+<dl class="kit">
+<dt>Idea central</dt><dd><strong>El curso que se entrena mañana.</strong> Formación táctica para el míster de base que prepara la sesión con poco tiempo y necesita salir con las tareas resueltas, no con apuntes.</dd>
+<dt>Eslogan</dt><dd class="quote-big">«Menos teoría, más sesión.»</dd>
+<dt>Frase larga</dt><dd>De la pizarra al campo, sin escala.</dd>
+<dt>Símbolo</dt><dd>La <strong>flecha que se sale de la pizarra</strong>: un trazo táctico que rompe el marco y sale al campo.</dd>
+<dt>Sorpresa</dt><dd>«Los sistemas no se entrenan. Se entrenan las situaciones que el sistema repite.»</dd>
+<dt>Audiencia</dt><dd>Entrenador de fútbol base y amateur, 2–3 sesiones por semana, sin cuerpo técnico, con menos de una hora para preparar cada sesión.</dd>
+<dt>Enemigo</dt><dd>El PDF teórico de 200 páginas que se guarda y no se abre.</dd>
+<dt>Prueba</dt><dd>Cada curso es un banco de tareas con pizarra, no un manual.</dd>
+</dl>
+</section>
+
+<section id="p1">
+<h2>1 · Crea tu símbolo distintivo</h2>
+
+<h4>Paso 2 · El concepto más memorable que representa tu marca</h4>
+<p>Lo más memorable de MISTER ÉLITE no es el fútbol (todos tus competidores tienen fútbol): es
+el <strong>salto</strong>. La idea sale del papel y entra en el campo el mismo día. Tu símbolo
+tiene que dibujar ese salto, no un balón.</p>
+
+<h4>Paso 3 · Tres opciones</h4>
+<div class="grid">
+<div class="card"><span class="tag">Objeto</span>
+<h3>A · La pizarra rota</h3>
+<p>Una pizarra táctica (rectángulo con línea de medio campo) de la que <strong>sale una flecha
+que atraviesa el borde</strong>. La idea no se queda dentro del marco.</p>
+<p><em>Frase:</em> «La jugada que se sale de la pizarra.»</p></div>
+
+<div class="card"><span class="tag">Metáfora visual</span>
+<h3>B · El cono-flecha</h3>
+<p>Un cono de entrenamiento cuyo triángulo es, a la vez, la punta de una flecha táctica.
+Material de campo + lenguaje de pizarra en una sola forma.</p>
+<p><em>Frase:</em> «La táctica con forma de cono.»</p></div>
+
+<div class="card"><span class="tag">Gesto</span>
+<h3>C · Los dos dedos que trazan</h3>
+<p>Tu gesto en banda: dos dedos dibujando la línea de desmarque en el aire. Humano y tuyo,
+pero difícil de reducir a un icono plano.</p>
+<p><em>Frase:</em> «Se explica con la mano, se corrige en el campo.»</p></div>
+</div>
+
+<h4>Paso 4 · Prueba de memorabilidad (menos de 10 segundos)</h4>
+<table>
+<tr><th>Criterio</th><th>A · Pizarra rota</th><th>B · Cono-flecha</th><th>C · Gesto</th></tr>
+<tr><td>¿Se dibuja en una servilleta?</td><td>Sí (rectángulo + flecha)</td><td>Sí</td><td>No</td></tr>
+<tr><td>¿Funciona sin color?</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+<tr><td>¿Se explica en una frase?</td><td>Sí</td><td>Sí</td><td>Regular</td></tr>
+<tr><td>¿Es tuyo o genérico?</td><td><strong>Tuyo</strong>: nadie rompe el marco</td><td>El cono lo usa todo el sector</td><td>Tuyo, pero no escalable</td></tr>
+<tr><td>¿Se recuerda una semana después?</td><td><strong>Sí</strong></td><td>Poco probable</td><td>Solo en vídeo</td></tr>
+<tr><td>¿Sirve de favicon a 16 px?</td><td><strong>Sí</strong></td><td>Sí</td><td>No</td></tr>
+</table>
+
+<h4>Paso 5 · Símbolo ganador</h4>
+<div class="card win"><span class="tag">Ganador</span>
+<h3>A · La flecha que se sale de la pizarra</h3>
+<p>Una frase: <strong>«Una pizarra de la que la jugada se escapa al campo.»</strong> Es el
+dibujo literal de tu promesa, se reconoce en negro sobre blanco y ningún competidor de fútbol
+base lo está usando.</p></div>
+
+<figure class="diag">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-label="Símbolo MISTER ÉLITE en tres versiones">
+ <rect width="760" height="260" fill="#ffffff"/>
+ <!-- versión principal -->
+ <g transform="translate(40,40)">
+  <rect x="0" y="0" width="150" height="110" rx="10" fill="none" stroke="#15202b" stroke-width="7"/>
+  <line x1="75" y1="0" x2="75" y2="110" stroke="#15202b" stroke-width="3" stroke-dasharray="7 7" opacity=".45"/>
+  <circle cx="75" cy="55" r="16" fill="none" stroke="#15202b" stroke-width="3" opacity=".45"/>
+  <rect x="150" y="30" width="34" height="50" fill="#ffffff"/>
+  <path d="M28 92 C 70 92, 96 62, 200 40" fill="none" stroke="#1d6fb8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M176 28 L 206 39 L 182 58" fill="none" stroke="#1d6fb8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="92" r="8" fill="#15202b"/>
+  <text x="0" y="150" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#6b6b66">PRINCIPAL</text>
+ </g>
+ <!-- versión monocroma -->
+ <g transform="translate(290,40)">
+  <rect x="0" y="0" width="150" height="110" rx="10" fill="none" stroke="#15202b" stroke-width="7"/>
+  <line x1="75" y1="0" x2="75" y2="110" stroke="#15202b" stroke-width="3" stroke-dasharray="7 7" opacity=".45"/>
+  <circle cx="75" cy="55" r="16" fill="none" stroke="#15202b" stroke-width="3" opacity=".45"/>
+  <rect x="150" y="30" width="34" height="50" fill="#ffffff"/>
+  <path d="M28 92 C 70 92, 96 62, 200 40" fill="none" stroke="#15202b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M176 28 L 206 39 L 182 58" fill="none" stroke="#15202b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="92" r="8" fill="#15202b"/>
+  <text x="0" y="150" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#6b6b66">1 TINTA</text>
+ </g>
+ <!-- versión sello oscuro -->
+ <g transform="translate(540,40)">
+  <rect x="-10" y="-14" width="200" height="142" rx="14" fill="#15202b"/>
+  <g transform="translate(12,6)">
+   <rect x="0" y="0" width="118" height="86" rx="8" fill="none" stroke="#ffffff" stroke-width="6"/>
+   <line x1="59" y1="0" x2="59" y2="86" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6 6" opacity=".4"/>
+   <circle cx="59" cy="43" r="13" fill="none" stroke="#ffffff" stroke-width="2.5" opacity=".4"/>
+   <rect x="118" y="22" width="28" height="40" fill="#15202b"/>
+   <path d="M22 72 C 55 72, 75 48, 156 31" fill="none" stroke="#f7c948" stroke-width="6.5" stroke-linecap="round"/>
+   <path d="M138 21 L 161 30 L 143 45" fill="none" stroke="#f7c948" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+   <circle cx="22" cy="72" r="6.5" fill="#ffffff"/>
+  </g>
+  <text x="-10" y="150" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#6b6b66">SELLO / PIE DE PIZARRA</text>
+ </g>
+</svg>
+<figcaption>Símbolo MISTER ÉLITE: la flecha arranca dentro de la pizarra (punto = jugador) y
+cruza el marco. Tres versiones: color de marca, una tinta y sello oscuro para el pie de cada
+pizarra.</figcaption>
+</figure>
+
+<h4>Cómo usarlo en todas partes</h4>
+<table>
+<tr><th>Sitio</th><th>Uso</th></tr>
+<tr><td>Portada de cada curso</td><td>Símbolo grande arriba, sobre el título del sistema.</td></tr>
+<tr><td>Pie de cada pizarra/infografía</td><td>Versión sello + «MISTER ÉLITE — Moisés Díaz» (ya es tu estándar; solo se añade el símbolo).</td></tr>
+<tr><td>Favicon y avatar</td><td>Solo la pizarra + la flecha saliendo, sin texto.</td></tr>
+<tr><td>Miniaturas de vídeo</td><td>La flecha cruza desde la pizarra hacia la foto del campo.</td></tr>
+<tr><td>Transición de vídeo</td><td>La flecha se dibuja y arrastra el corte de plano: es tu <em>sting</em> de marca.</td></tr>
+<tr><td>Separador entre módulos</td><td>La flecha como línea divisoria entre «teoría» y «tareas».</td></tr>
+<tr><td>Camiseta / chaqueta de banda</td><td>Bordado en el pecho, una tinta.</td></tr>
+</table>
+<blockquote>Regla de oro: <strong>la flecha siempre sale del marco</strong>. Si la metes dentro
+de la caja, has matado el símbolo.</blockquote>
+</section>
+
+<section id="p2">
+<h2>2 · Crea tu eslogan distintivo</h2>
+
+<h4>Paso 2 · La verdad más fuerte detrás de lo que enseñas</h4>
+<p>Tu diferencia real no es saber más de táctica: es que <strong>quitas teoría</strong>. Donde
+los demás añaden páginas, tú añades tareas. Ese es el eslogan.</p>
+
+<h4>Paso 3 · Cinco opciones (todas de menos de 6 palabras)</h4>
+<table>
+<tr><th>#</th><th>Opción</th><th>Palabras</th><th>Lectura</th></tr>
+<tr><td>1</td><td><strong>Menos teoría, más sesión.</strong></td><td>4</td><td>Dice tu filosofía y tu formato a la vez. Se repite sola.</td></tr>
+<tr><td>2</td><td>De la pizarra al campo.</td><td>5</td><td>Muy claro, pero es lenguaje común del sector: te lo pueden copiar.</td></tr>
+<tr><td>3</td><td>Táctica que se entrena mañana.</td><td>5</td><td>Fuerte en la urgencia; algo más difícil de repetir de memoria.</td></tr>
+<tr><td>4</td><td>No se explica: se entrena.</td><td>5</td><td>El más provocador; funciona como frase de contenido, no como firma.</td></tr>
+<tr><td>5</td><td>Tu próxima sesión, resuelta.</td><td>4</td><td>Muy comercial; suena a producto, no a método.</td></tr>
+</table>
+
+<h4>Paso 4 · Prueba: ¿tu audiencia más específica lo repetiría sin explicación?</h4>
+<p>Escenario real: un míster de base en el bar después del entreno le dice a otro «cógete los
+cursos de Moisés». El otro pregunta «¿y qué tienen?». La respuesta que sale sola es
+<strong>«menos teoría, más sesión»</strong>. Las opciones 3 y 5 obligan a explicar; la 2 no
+identifica <em>quién</em> lo dice.</p>
+
+<h4>Paso 5 · Eslogan ganador</h4>
+<div class="card win"><span class="tag">Ganador</span>
+<p class="quote-big">MISTER ÉLITE — «Menos teoría, más sesión.»</p>
+<p><strong>Frase larga de apoyo</strong> (para portadas y bios, nunca sustituye al eslogan):
+<em>De la pizarra al campo, sin escala.</em></p></div>
+
+<h4>Dónde va, literal</h4>
+<ul>
+<li><strong>Bio (Instagram/YouTube):</strong> «Moisés Díaz · MISTER ÉLITE — Menos teoría, más sesión. Cursos tácticos con banco de tareas listas para tu próximo entreno.»</li>
+<li><strong>Portada de cada curso:</strong> bajo el título del sistema, en dorado, tamaño pequeño.</li>
+<li><strong>Primera línea de cada curso:</strong> «Este curso cumple una regla: menos teoría, más sesión. 4 módulos cortos y N tareas con pizarra.»</li>
+<li><strong>Cierre de cada vídeo:</strong> símbolo + eslogan en pantalla, 2 segundos.</li>
+<li><strong>Página de venta:</strong> como titular, no como adorno.</li>
+<li><strong>Email / firma:</strong> debajo del nombre.</li>
+</ul>
+<blockquote>Coherencia = repetición. El eslogan no se cambia por curso ni por temporada. Se
+repite hasta que te aburra a ti; ahí es cuando el público empieza a aprenderlo.</blockquote>
+</section>
+
+<section id="p3">
+<h2>3 · Encuentra tu sorpresa distintiva</h2>
+
+<h4>Paso 2 · La creencia común del nicho (incompleta)</h4>
+<p>«Para que el equipo juegue bien hay que <strong>elegir el sistema correcto</strong> y
+explicarlo bien.» De ahí salen los mercados de cursos por sistema, las charlas largas y el
+míster que cambia de dibujo cada tres jornadas buscando la tecla.</p>
+
+<h4>Paso 3 · Tu verdad contraintuitiva</h4>
+<div class="card win"><span class="tag">Sorpresa</span>
+<p class="quote-big">«Los sistemas no se entrenan. Se entrenan las situaciones que el sistema
+repite.»</p>
+<p>Corolario que duele: <em>si cambias de sistema y el equipo sigue igual, es que nunca fue el
+sistema.</em></p></div>
+
+<h4>Paso 4 · ¿Se defiende con lógica y evidencia?</h4>
+<ul>
+<li><strong>Lógica:</strong> un 1-4-3-3 y un 1-4-2-3-1 comparten la mayoría de situaciones —salida con pivote, ocupación de carriles, basculación, transición tras pérdida—. Lo que cambia no es el juego: cambia <em>quién</em> ocupa cada carril.</li>
+<li><strong>Evidencia interna:</strong> tus propios cursos ya lo demuestran. Los bloques de tareas se repiten entre sistemas (salida, mediocampo, presión, amplitud, llegada, transiciones); lo que se ajusta son los perfiles y las distancias.</li>
+<li><strong>Evidencia de campo:</strong> el jugador no ejecuta un dibujo, ejecuta una decisión ante una situación que ya ha vivido. Lo que se ha entrenado 40 veces sale en el partido; lo que se ha explicado una vez, no.</li>
+<li><strong>No es polémica gratuita:</strong> no dices que el sistema dé igual. Dices que el sistema es el <em>índice</em>, y la situación es el <em>contenido</em>.</li>
+</ul>
+<p><strong>Prueba final (¿alguien haría captura y se la mandaría a otro?):</strong> sí — es la
+frase que un ayudante le manda al entrenador que lleva tres cambios de dibujo en dos meses.</p>
+
+<h4>Paso 5 · Secuencia de revelación (tensión → sorpresa → claridad → prueba)</h4>
+<ol>
+<li><strong>Tensión (gancho):</strong> «Llevas tres sistemas esta temporada y el equipo sigue cometiendo el mismo error. No es el sistema.»</li>
+<li><strong>Reconocimiento:</strong> «Yo también lo hice: cambiar el dibujo cuando lo que fallaba era la situación.»</li>
+<li><strong>Sorpresa:</strong> «Los sistemas no se entrenan. Se entrenan las situaciones que el sistema repite.»</li>
+<li><strong>Prueba:</strong> «Coge tu 1-4-3-3 y tu 1-4-2-3-1: el 70% de las situaciones son las mismas. Cambia quién ocupa el carril, no el juego.»</li>
+<li><strong>Claridad:</strong> «Por eso mis cursos no son manuales del sistema: son bancos de tareas de las situaciones que ese sistema repite.»</li>
+<li><strong>Acción:</strong> «Elige una situación de esta semana y entrénala tres veces. Luego me cuentas.»</li>
+</ol>
+<blockquote>Esta secuencia es tu carrusel/reel maestro. Se puede repetir cada mes cambiando
+solo el ejemplo del punto 4 (salida de balón, presión tras pérdida, ABP…).</blockquote>
+</section>
+
+<section id="p4">
+<h2>4 · Construye tu idea central</h2>
+
+<h4>Paso 2 · Mapa de lo que comunicas hoy</h4>
+<table>
+<tr><th>Mensaje actual</th><th>¿Es central o consecuencia?</th></tr>
+<tr><td>Cursos por sistema (1-4-3-3, 1-4-4-2, 1-5-3-2, 1-3-4-3, 1-4-2-3-1…)</td><td>Catálogo, no idea. Es el escaparate.</td></tr>
+<tr><td>Poca teoría, mucha aplicación práctica</td><td><strong>Núcleo.</strong> Es lo único que no comparten tus competidores.</td></tr>
+<tr><td>Banco grande de tareas, cada una con su pizarra</td><td>Prueba material del núcleo.</td></tr>
+<tr><td>Tres formatos (PDF, HTML, sitio) y nombres estables</td><td>Servicio, no posicionamiento. Refuerza la fiabilidad.</td></tr>
+<tr><td>Cursos temáticos (pretemporada, posesión, rondos, ruedas, balón parado)</td><td>Extensión natural del núcleo.</td></tr>
+<tr><td>Estándar de calidad TOP (≥ 8,5/10)</td><td>Interno. No es mensaje de marca, es garantía.</td></tr>
+</table>
+
+<h4>Paso 3-4 · Idea central afinada</h4>
+<div class="card win"><span class="tag">Idea central (una sola)</span>
+<p class="quote-big">El curso que se entrena mañana.</p>
+<p>Formación táctica para el <strong>míster de fútbol base y amateur</strong> que prepara la
+sesión con el tiempo justo y necesita salir con las <strong>tareas resueltas</strong>, no con
+apuntes por leer.</p></div>
+
+<h4>¿Aguanta las reglas del prompt?</h4>
+<table>
+<tr><th>Regla</th><th>Comprobación</th></tr>
+<tr><td>Solo una idea</td><td>Sí. Todo lo demás (sistemas, formatos, pizarras) es consecuencia de esta.</td></tr>
+<tr><td>Para alguien específico</td><td>Míster de base/amateur, 2–3 sesiones semanales, sin cuerpo técnico, menos de 1 h para preparar.</td></tr>
+<tr><td>Todo contenido conecta</td><td>Cada tarea, cada vídeo y cada pizarra responde a «¿esto se puede entrenar mañana?».</td></tr>
+<tr><td>No la puede reclamar un competidor</td><td>El sector vende <em>conocimiento</em> (manuales, másteres, análisis). Tú vendes <strong>sesión resuelta</strong>. Reclamarla les obligaría a tirar su catálogo teórico.</td></tr>
+<tr><td>«Esto es exactamente para mí»</td><td>Sí, para el míster del martes a las 23:00 buscando qué hacer el miércoles.</td></tr>
+</table>
+
+<h4>Paso 5 · Cómo cada pieza vuelve a la idea central</h4>
+<table>
+<tr><th>Pieza</th><th>Cómo aterriza la idea</th></tr>
+<tr><td>Curso</td><td>Empieza por el plan de sesiones, no por la teoría. La teoría son 4 módulos cortos que se leen en 20 minutos.</td></tr>
+<tr><td>Tarea</td><td>Pizarra + material + tiempo + variantes. Se ejecuta sin releer el curso.</td></tr>
+<tr><td>Vídeo / reel</td><td>Una situación, una tarea, un «pruébala esta semana».</td></tr>
+<tr><td>Publicación</td><td>Termina siempre con algo entrenable, nunca con una reflexión abierta.</td></tr>
+<tr><td>Página de venta</td><td>Titular = idea central. Prueba = número de tareas con pizarra.</td></tr>
+<tr><td>Producto futuro</td><td>Filtro: si no se puede entrenar en la próxima sesión, no entra al catálogo.</td></tr>
+</table>
+<blockquote><strong>Filtro MISTER ÉLITE:</strong> antes de publicar cualquier cosa, pregunta
+«¿esto lo puede entrenar mañana?». Si la respuesta es no, es teoría: fuera o al pie de página.</blockquote>
+</section>
+
+<section id="p5">
+<h2>5 · Cuenta tu historia distintiva</h2>
+
+<div class="ask"><h4>⚠️ Este bloque es un borrador con huecos</h4>
+<p>Es tu historia real: no me la invento. He construido el <strong>arco</strong> y he dejado
+marcados en <strong>[corchetes]</strong> los datos que solo tú tienes. Rellénalos y el guion
+queda listo. Si el punto de giro fue otro, cámbialo: la estructura aguanta igual.</p></div>
+
+<h4>Paso 2 · El punto de giro</h4>
+<p>El momento en que dejaste de <em>explicar</em> el sistema y empezaste a <em>diseñar la tarea
+que lo obliga</em>. Es el instante en que tu problema pasó de «no me entienden» a «no lo han
+entrenado».</p>
+
+<h4>Paso 3 · Arco narrativo</h4>
+<table>
+<tr><th>Fase</th><th>Contenido</th></tr>
+<tr><td><strong>Antes</strong></td><td>Noches preparando la sesión a última hora, juntando ejercicios sueltos de internet sin saber a qué juego servían. Carpetas llenas de apuntes y un equipo que no los reconocía el domingo.</td></tr>
+<tr><td><strong>Tensión</strong></td><td>La charla salía perfecta. El partido, no. El equipo entendía la idea y no la ejecutaba. Y la conclusión fácil —«no me escuchan», «no da el nivel»— era mentira.</td></tr>
+<tr><td><strong>Punto de giro</strong></td><td>[Partido / temporada / equipo: ___] donde dejaste de explicar y montaste una tarea en la que <em>era imposible no hacer lo que pedías</em>. Ese día el equipo lo hizo sin que dijeras nada.</td></tr>
+<tr><td><strong>Después</strong></td><td>Desde entonces todo tu material se construye al revés: primero la situación, después la tarea, y la teoría solo lo justo para entenderla. De ahí nacen los cursos MISTER ÉLITE.</td></tr>
+</table>
+
+<h4>Paso 4 · Verdad universal (explícita, no escondida)</h4>
+<blockquote><strong>Nadie aprende un sistema escuchándolo. Se aprende jugándolo.</strong> Y si
+el equipo no lo hace, el problema no está en el jugador: está en la tarea que le pusiste.</blockquote>
+
+<h4>Paso 5 · Guion de menos de 3 minutos</h4>
+<div class="card">
+<p><em>(Tono: hablado, de banda, sin adornos. ~430 palabras ≈ 2:40.)</em></p>
+<p>«Durante [___] años preparé las sesiones igual que casi todos: por la noche, tarde, con el
+móvil, buscando ejercicios sueltos. Los apuntaba en una libreta y al día siguiente los ponía.
+Algunos salían bien. Pero el domingo, en el partido, no aparecía nada de lo que habíamos
+entrenado.</p>
+<p>Yo pensaba que el problema era que no me explicaba bien. Así que explicaba más. Charlas más
+largas, más pizarra, más vídeo. Y el equipo asentía. Entendían. En el vestuario todo el mundo
+entendía… y luego salíamos al campo y hacíamos exactamente lo mismo de siempre.</p>
+<p>Llegué a pensar lo que piensa todo entrenador cuando se cansa: que no daban el nivel, que no
+escuchaban, que hacía falta otro sistema. Cambié de dibujo [___ veces]. Y el equipo seguía
+igual.</p>
+<p>El día que lo entendí fue [PARTIDO / SESIÓN / EQUIPO: ___]. Ese día no expliqué nada.
+Monté una tarea donde, para poder progresar, <strong>había que</strong> hacer justo lo que yo
+llevaba un mes pidiendo. Sin charla. Sin pizarra. El campo se lo dijo por mí.</p>
+<p>Y lo hicieron. A la tercera repetición ya lo hacían solos. Ese domingo, por primera vez, vi
+en el partido algo que habíamos entrenado.</p>
+<p>Ahí me di cuenta: <strong>nadie aprende un sistema escuchándolo; se aprende jugándolo</strong>.
+Si el equipo no lo hace, el problema no es el jugador. Es la tarea.</p>
+<p>Desde entonces trabajo al revés. No empiezo por el dibujo: empiezo por la situación que ese
+dibujo repite una y otra vez. Diseño la tarea que obliga a resolverla. Y la teoría la dejo en
+lo mínimo imprescindible para entenderla.</p>
+<p>Eso es MISTER ÉLITE. No son manuales de 200 páginas que te guardas y no abres. Son cursos con
+la sesión ya resuelta: la situación, la tarea, la pizarra y las variantes. Los abres el martes
+por la noche y el miércoles lo entrenas.</p>
+<p>Porque tú no necesitas saber más fútbol. Ya sabes. Lo que necesitas es tiempo, y llegar al
+entreno con la sesión hecha.</p>
+<p><strong>Menos teoría, más sesión.</strong> Ahí te espero.»</p>
+</div>
+
+<h4>Dónde usar la historia</h4>
+<ul>
+<li><strong>Versión 3 min:</strong> vídeo de presentación, «Sobre mí» de la web, primera clase de cada curso.</li>
+<li><strong>Versión 60 s:</strong> del punto de giro al final. Reel de presentación fijado en el perfil.</li>
+<li><strong>Versión 1 línea:</strong> «Dejé de explicar el sistema y empecé a diseñar la tarea que lo obliga.»</li>
+</ul>
+</section>
+
+<section id="despliegue">
+<h2>Plan de despliegue (orden recomendado)</h2>
+<ol>
+<li><strong>Semana 1 · Fijar.</strong> Aprueba eslogan e idea central. A partir de ahí no se tocan en 12 meses.</li>
+<li><strong>Semana 1 · Símbolo.</strong> Confirma la opción A y lo integramos en las portadas y en el pie de pizarra de los cursos que ya existen (mismo nombre de archivo, se sobrescribe).</li>
+<li><strong>Semana 2 · Perfiles.</strong> Bio, avatar y portada con símbolo + eslogan en todas las plataformas, iguales.</li>
+<li><strong>Semana 2 · Historia.</strong> Rellenas los corchetes y grabamos la versión de 3 minutos y la de 60 segundos.</li>
+<li><strong>Semana 3 · Sorpresa.</strong> Publicas la secuencia de revelación como carrusel + reel. Es tu contenido de mayor alcance potencial.</li>
+<li><strong>Continuo · Filtro.</strong> Cada pieza pasa la pregunta «¿esto lo puede entrenar mañana?».</li>
+</ol>
+
+<h4>Checklist de coherencia</h4>
+<ul class="check">
+<li>Mismo símbolo en portada, favicon, pie de pizarra y miniaturas.</li>
+<li>Mismo eslogan, palabra por palabra, en todos los sitios.</li>
+<li>Cada curso abre con el plan de sesiones, no con la teoría.</li>
+<li>Cada publicación termina en algo entrenable.</li>
+<li>Cada curso dice cuántas tareas con pizarra tiene (es la prueba de la promesa).</li>
+<li>Nombres de archivo estables: la nueva versión sustituye a la anterior, sin duplicados.</li>
+</ul>
+</section>
+
+<section id="confirmar">
+<h2>Lo que tienes que confirmar</h2>
+<div class="ask">
+<h4>Cinco decisiones tuyas</h4>
+<ol>
+<li><strong>Eslogan:</strong> ¿«Menos teoría, más sesión.» o prefieres «De la pizarra al campo.»? (Mi recomendación: la primera; la segunda es más común en el sector.)</li>
+<li><strong>Audiencia:</strong> ¿fútbol base/amateur, o también quieres apuntar a entrenadores de categorías superiores? Toda la marca cambia de tono según esto.</li>
+<li><strong>Símbolo:</strong> ¿validamos la flecha que sale de la pizarra y lo integro ya en los cursos existentes?</li>
+<li><strong>Historia:</strong> los corchetes — años, número de cambios de sistema, y sobre todo <em>cuál fue el partido o la sesión</em> del punto de giro.</li>
+<li><strong>Sorpresa:</strong> ¿te sientes cómodo defendiendo en público «los sistemas no se entrenan»? Es fuerte a propósito y te van a discutir. Si prefieres bajarla un punto: «El sistema es el índice; lo que se entrena es la situación.»</li>
+</ol>
+</div>
+</section>
+
+<section id="prompts">
+<h2>Prompts originales (transcripción literal)</h2>
+<p>La transcripción completa y lista para copiar está en el archivo
+<strong>prompts-marca-mister-elite.md</strong>, junto a este documento. Resumen de los cinco:</p>
+<table>
+<tr><th>#</th><th>Prompt</th><th>Resultado que produce</th></tr>
+<tr><td>1</td><td>Crea tu símbolo distintivo</td><td>3 opciones → prueba de memorabilidad → símbolo ganador → guía de uso.</td></tr>
+<tr><td>2</td><td>Crea tu slogan distintivo</td><td>5 opciones → prueba de memorabilidad → eslogan ganador → cómo integrarlo.</td></tr>
+<tr><td>3</td><td>Encuentra tu sorpresa distintiva</td><td>Creencia común → verdad contraintuitiva → prueba → secuencia de revelación.</td></tr>
+<tr><td>4</td><td>Construye tu idea central</td><td>Mapa de ideas → prueba de audiencia → idea central afinada → cómo conectar todo.</td></tr>
+<tr><td>5</td><td>Cuenta tu historia distintiva</td><td>Punto de giro → arco de tensión → verdad universal → guion de 3 minutos.</td></tr>
+</table>
+<p>Todos aplican el principio de <em>Purple Cow</em> de Seth Godin: lo que se difunde no es lo
+correcto, es lo <strong>notable</strong>.</p>
+<p class="foot">Fuente de los prompts: carrusel de @nitzabarky (láminas 2/7 a 6/7).
+Aplicación y desarrollo: MISTER ÉLITE — Moisés Díaz.</p>
+</section>
+
+<div class="foot">MISTER ÉLITE — Moisés Díaz · Documento de marca · Menos teoría, más sesión.</div>
+</div></main></div>
+<script>
+var b=document.getElementById('menu-btn'),s=document.querySelector('.side');
+b.addEventListener('click',function(){s.classList.toggle('open');});
+document.querySelectorAll('.side a').forEach(function(a){a.addEventListener('click',function(){s.classList.remove('open');});});
+</script>
+</body></html>
