@@ -1,0 +1,252 @@
+{
+ "voz": {
+  "proveedor": "HeyGen",
+  "voz": "Carlos Claro - Broadcaster (es-ES)",
+  "voice_id": "398936ac428244c6966feefe6d151c6a"
+ },
+ "bloques": [
+  {
+   "id": "explicacion",
+   "inicio_en_reel": 0.15,
+   "duracion": 14.838,
+   "velocidad": 1.12,
+   "texto": "Juego de posición, siete contra cuatro: cuatro zonas y dos porterías. Laterales, medio centro y medias puntas. Trabajamos salida de balón y mantenimiento. Si la pierden, presión tras pérdida: recuperar en cinco segundos.",
+   "palabras": [
+    {
+     "w": "Juego",
+     "t0": 0.199,
+     "t1": 0.419
+    },
+    {
+     "w": "de",
+     "t0": 0.479,
+     "t1": 0.519
+    },
+    {
+     "w": "posición,",
+     "t0": 0.599,
+     "t1": 1.159
+    },
+    {
+     "w": "siete",
+     "t0": 1.519,
+     "t1": 1.759
+    },
+    {
+     "w": "contra",
+     "t0": 1.86,
+     "t1": 2.059
+    },
+    {
+     "w": "cuatro:",
+     "t0": 2.18,
+     "t1": 2.44
+    },
+    {
+     "w": "cuatro",
+     "t0": 3.019,
+     "t1": 3.24
+    },
+    {
+     "w": "zonas",
+     "t0": 3.359,
+     "t1": 3.699
+    },
+    {
+     "w": "y",
+     "t0": 3.779,
+     "t1": 3.839
+    },
+    {
+     "w": "dos",
+     "t0": 3.879,
+     "t1": 4.0
+    },
+    {
+     "w": "porterías.",
+     "t0": 4.099,
+     "t1": 4.679
+    },
+    {
+     "w": "Laterales,",
+     "t0": 5.199,
+     "t1": 5.759
+    },
+    {
+     "w": "medio",
+     "t0": 5.859,
+     "t1": 6.139
+    },
+    {
+     "w": "centro",
+     "t0": 6.179,
+     "t1": 6.539
+    },
+    {
+     "w": "y",
+     "t0": 6.659,
+     "t1": 6.679
+    },
+    {
+     "w": "medias",
+     "t0": 6.759,
+     "t1": 7.039
+    },
+    {
+     "w": "puntas.",
+     "t0": 7.139,
+     "t1": 7.559
+    },
+    {
+     "w": "Trabajamos",
+     "t0": 8.059,
+     "t1": 8.539
+    },
+    {
+     "w": "salida",
+     "t0": 8.599,
+     "t1": 8.859
+    },
+    {
+     "w": "de",
+     "t0": 8.92,
+     "t1": 8.96
+    },
+    {
+     "w": "balón",
+     "t0": 9.019,
+     "t1": 9.3
+    },
+    {
+     "w": "y",
+     "t0": 9.34,
+     "t1": 9.359
+    },
+    {
+     "w": "mantenimiento.",
+     "t0": 9.42,
+     "t1": 10.099
+    },
+    {
+     "w": "Si",
+     "t0": 10.5,
+     "t1": 10.539
+    },
+    {
+     "w": "la",
+     "t0": 10.619,
+     "t1": 10.659
+    },
+    {
+     "w": "pierden,",
+     "t0": 10.779,
+     "t1": 11.139
+    },
+    {
+     "w": "presión",
+     "t0": 11.319,
+     "t1": 11.699
+    },
+    {
+     "w": "tras",
+     "t0": 11.739,
+     "t1": 11.899
+    },
+    {
+     "w": "pérdida:",
+     "t0": 11.979,
+     "t1": 12.359
+    },
+    {
+     "w": "recuperar",
+     "t0": 12.88,
+     "t1": 13.42
+    },
+    {
+     "w": "en",
+     "t0": 13.479,
+     "t1": 13.619
+    },
+    {
+     "w": "cinco",
+     "t0": 13.679,
+     "t1": 13.88
+    },
+    {
+     "w": "segundos.",
+     "t0": 14.019,
+     "t1": 14.579
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "inicio_en_reel": 15.25,
+   "duracion": 4.441,
+   "velocidad": 1.08,
+   "texto": "Curso completo de juego de posición en Mister Élite, con Moisés Díaz.",
+   "palabras": [
+    {
+     "w": "Curso",
+     "t0": 0.159,
+     "t1": 0.399
+    },
+    {
+     "w": "completo",
+     "t0": 0.479,
+     "t1": 0.879
+    },
+    {
+     "w": "de",
+     "t0": 0.899,
+     "t1": 0.959
+    },
+    {
+     "w": "juego",
+     "t0": 1.059,
+     "t1": 1.299
+    },
+    {
+     "w": "de",
+     "t0": 1.319,
+     "t1": 1.419
+    },
+    {
+     "w": "posición",
+     "t0": 1.439,
+     "t1": 1.86
+    },
+    {
+     "w": "en",
+     "t0": 1.899,
+     "t1": 1.959
+    },
+    {
+     "w": "Mister",
+     "t0": 2.019,
+     "t1": 2.299
+    },
+    {
+     "w": "Élite,",
+     "t0": 2.379,
+     "t1": 2.639
+    },
+    {
+     "w": "con",
+     "t0": 2.98,
+     "t1": 3.079
+    },
+    {
+     "w": "Moisés",
+     "t0": 3.119,
+     "t1": 3.559
+    },
+    {
+     "w": "Díaz.",
+     "t0": 3.679,
+     "t1": 4.119
+    }
+   ]
+  }
+ ]
+}
