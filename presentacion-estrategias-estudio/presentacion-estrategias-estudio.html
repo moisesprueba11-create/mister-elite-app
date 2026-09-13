@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estrategias de estudio eficaces según la ciencia</title>
+<style>
+:root{
+  --ink:#11181f; --ink2:#2c3742; --muted:#6d7884; --line:#dcdbd4;
+  --bg:#eceae4; --paper:#fbfaf7; --accent:#1d6fb8; --accent-d:#155a97;
+  --gold:#e0a800; --red:#b3392f; --green:#2b7a54;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{background:var(--bg);font-family:var(--sans);color:var(--ink);overflow:hidden;}
+
+/* ---------- escenario ---------- */
+#deck{position:fixed;inset:0;display:grid;place-items:center;}
+.slide{
+  position:absolute;width:1280px;height:720px;background:var(--paper);
+  transform-origin:center center;padding:58px 72px 64px;display:none;
+  flex-direction:column;box-shadow:0 18px 60px rgba(17,24,31,.22);
+  border-radius:2px;overflow:hidden;
+}
+.slide.on{display:flex;}
+.slide::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--accent);}
+.slide.cover::before{display:none;}
+.slide:not(.cover):not(.end){justify-content:center;padding-bottom:86px;}
+
+/* ---------- cabecera / pie ---------- */
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.eyebrow .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;letter-spacing:0;}
+h1{font-family:var(--serif);font-size:44px;line-height:1.1;letter-spacing:-.015em;margin-bottom:10px;}
+h1.big{font-size:62px;}
+.sub{font-size:19px;color:var(--ink2);line-height:1.45;max-width:960px;margin-bottom:26px;}
+.foot{position:absolute;left:72px;right:72px;bottom:24px;display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;color:var(--muted);letter-spacing:.04em;border-top:1px solid var(--line);padding-top:10px;}
+.foot b{color:var(--ink2);font-weight:700;}
+
+/* ---------- portada ---------- */
+.cover{background:linear-gradient(155deg,#11181f 0%,#1b2b3a 55%,#22405c 100%);color:#fff;justify-content:center;padding:72px 90px;}
+.cover .kicker{font-size:14px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#7db6e8;margin-bottom:26px;}
+.cover h1{color:#fff;max-width:1000px;}
+.cover .rule{width:110px;height:5px;background:var(--gold);margin:26px 0 24px;}
+.cover .lead{font-size:21px;line-height:1.5;color:#d5dde5;max-width:860px;}
+.cover .src{position:absolute;left:90px;bottom:56px;font-size:13px;color:#8c9aa8;line-height:1.7;}
+.cover .src b{color:#cfd8e0;}
+.cover .tag{position:absolute;right:90px;bottom:56px;text-align:right;font-size:13px;color:#8c9aa8;}
+.cover .tag .big{display:block;font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1;}
+
+/* ---------- rejillas y tarjetas ---------- */
+.grid{display:grid;gap:18px;}
+.g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:repeat(3,1fr);}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;}
+.card h3{font-size:17px;margin-bottom:8px;letter-spacing:-.01em;}
+.card p,.card li{font-size:15.5px;line-height:1.5;color:var(--ink2);}
+.card .ico{font-size:26px;display:block;margin-bottom:8px;}
+.card.accent{border-left:5px solid var(--accent);}
+.card.bad{border-left:5px solid var(--red);background:#fdf4f3;}
+.card.good{border-left:5px solid var(--green);background:#f2f9f5;}
+ul.tick{list-style:none;} ul.tick li{position:relative;padding-left:24px;margin:9px 0;}
+ul.tick li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:800;}
+ul.dash{list-style:none;} ul.dash li{position:relative;padding-left:20px;margin:8px 0;}
+ul.dash li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:2px;background:var(--muted);}
+
+/* ---------- evidencia / citas ---------- */
+.evid{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;background:#e8f1fa;border:1px solid #c2dbf1;color:var(--accent-d);
+  font-size:13.5px;font-weight:700;padding:7px 14px;border-radius:999px;margin-bottom:18px;}
+.evid::before{content:"EVIDENCIA";font-size:10px;letter-spacing:.12em;background:var(--accent);color:#fff;padding:3px 7px;border-radius:4px;}
+.quote{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.45;color:var(--ink);
+  border-left:5px solid var(--gold);background:#fdf8e9;padding:18px 24px;border-radius:0 8px 8px 0;}
+.quote.sm{font-size:19px;}
+.quote cite{display:block;font-style:normal;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:9px;letter-spacing:.03em;}
+.note{font-size:14.5px;color:var(--muted);line-height:1.5;}
+.warn{background:#fdf4f3;border:1px solid #f0cdc8;border-left:5px solid var(--red);border-radius:0 8px 8px 0;padding:16px 20px;}
+.warn h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px;}
+.warn p{font-size:15.5px;line-height:1.5;color:var(--ink2);}
+
+/* ---------- índice ---------- */
+.idx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.idx div{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;}
+.idx span{font-family:var(--serif);font-size:30px;line-height:1;color:var(--accent);font-weight:700;min-width:34px;}
+.idx b{display:block;font-size:16px;margin-bottom:3px;}
+.idx small{font-size:13.5px;color:var(--muted);line-height:1.4;}
+
+/* ---------- comparativa bloque vs espaciado ---------- */
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:6px 0 16px;}
+.bars h4{font-size:14px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.blk{display:flex;gap:8px;align-items:flex-end;height:96px;}
+.blk i{display:block;border-radius:5px;font-style:normal;color:#fff;font-size:12.5px;font-weight:700;
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;}
+.blk .mass{flex:1;height:96px;background:var(--red);}
+.blk .sp{flex:1;height:58px;background:var(--green);}
+.verdict{font-size:15px;color:var(--ink2);}
+
+/* ---------- día tipo ---------- */
+.day{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.day .slot{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.day .hd{background:var(--ink);color:#fff;padding:11px 18px;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;}
+.day .hd em{font-style:normal;color:var(--gold);}
+.day .bd{padding:15px 18px;}
+.day .bd li{font-size:15px;line-height:1.45;color:var(--ink2);margin:8px 0;}
+
+/* ---------- tabla resumen ---------- */
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--ink);color:#fff;text-align:left;padding:9px 13px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;}
+td{padding:8px 13px;border-bottom:1px solid var(--line);color:var(--ink2);line-height:1.35;vertical-align:top;}
+tbody tr:nth-child(even){background:#f4f3ef;}
+td b{color:var(--ink);}
+td.n{font-family:var(--serif);color:var(--accent);font-weight:700;width:34px;text-align:center;}
+
+/* ---------- checklist ---------- */
+.chk{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.chk section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;}
+.chk h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.chk li{list-style:none;position:relative;padding-left:27px;font-size:15px;line-height:1.45;margin:10px 0;color:var(--ink2);}
+.chk li::before{content:"";position:absolute;left:0;top:2px;width:16px;height:16px;border:2px solid var(--accent);border-radius:4px;}
+
+/* ---------- cierre ---------- */
+.end{background:linear-gradient(155deg,#11181f 0%,#1b2b3a 60%,#22405c 100%);color:#fff;justify-content:center;padding:72px 90px;}
+.end h1{color:#fff;} .end .rule{width:110px;height:5px;background:var(--gold);margin:22px 0;}
+.end .list{columns:2;column-gap:56px;font-size:19px;line-height:1.75;color:#dbe3ea;list-style:none;}
+.end .list li::before{content:"✓ ";color:var(--gold);font-weight:800;}
+
+/* ---------- navegación ---------- */
+#bar{position:fixed;left:0;bottom:0;height:3px;background:var(--accent);width:0;z-index:20;transition:width .2s;}
+#hud{position:fixed;right:16px;bottom:14px;z-index:20;font-size:12px;color:#7c8894;letter-spacing:.1em;
+  background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:999px;padding:5px 13px;}
+#hint{position:fixed;left:16px;bottom:14px;z-index:20;font-size:12px;color:#7c8894;background:rgba(255,255,255,.85);
+  border:1px solid var(--line);border-radius:999px;padding:5px 13px;}
+.zone{position:fixed;top:0;bottom:0;width:14%;z-index:15;cursor:pointer;}
+.zone.l{left:0;} .zone.r{right:0;}
+
+/* ---------- impresión / PDF ---------- */
+@media print{
+  @page{size:1280px 720px;margin:0;}
+  html,body{background:#fff;overflow:visible;height:auto;}
+  #deck{position:static;display:block;}
+  #bar,#hud,#hint,.zone{display:none!important;}
+  .slide{position:relative;display:flex!important;transform:none!important;box-shadow:none;border-radius:0;
+    break-after:page;page-break-after:always;width:1280px;height:720px;}
+  .slide:last-child{break-after:auto;page-break-after:auto;}
+}
+</style></head><body>
+
+<div id="deck">
+
+<!-- 1 · PORTADA -->
+<section class="slide cover">
+  <div class="kicker">Módulo · Bases para la memorización</div>
+  <h1 class="big">Estrategias de estudio<br>eficaces según la ciencia</h1>
+  <div class="rule"></div>
+  <p class="lead">Nueve estrategias respaldadas por evidencia para aprender de forma más eficiente, retener la información a largo plazo y dedicarle menos horas al temario.</p>
+  <div class="src"><b>Fuente:</b> vídeo del canal EDUCACIÓN FÍSICA OPOSICIONES<br>@opoefi_preparadores · 7 de septiembre de 2024 · 18:50 min</div>
+  <div class="tag"><span class="big">9</span>estrategias</div>
+</section>
+
+<!-- 2 · PUNTO DE PARTIDA -->
+<section class="slide">
+  <div class="eyebrow">El punto de partida</div>
+  <h1>Estudiar más horas no es estudiar mejor</h1>
+  <p class="sub">La diferencia entre el opositor que retiene y el que se desespera no está en el número de horas, sino en <b>qué hace</b> durante esas horas.</p>
+  <div class="quote">«No se trata solo de dedicar horas frente al temario: leerlo, leerlo y leerlo… sino de utilizar técnicas que maximicen el aprendizaje.»<cite>Vídeo original, minuto 1:04</cite></div>
+  <div class="grid g3" style="margin-top:24px">
+    <div class="card accent"><span class="ico">⚡</span><h3>Aprender más eficiente</h3><p>Menos tiempo invertido por unidad de contenido realmente aprendido.</p></div>
+    <div class="card accent"><span class="ico">🧠</span><h3>Retener a largo plazo</h3><p>Que el tema no se evapore dos semanas después de estudiarlo.</p></div>
+    <div class="card accent"><span class="ico">🎯</span><h3>Entender de verdad</h3><p>Comprender el contenido, no reproducir párrafos de memoria.</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 3 · ÍNDICE -->
+<section class="slide">
+  <div class="eyebrow">Mapa de la sesión</div>
+  <h1>Las nueve estrategias</h1>
+  <p class="sub">Todas comparten un principio: lo que cuesta esfuerzo es lo que se queda.</p>
+  <div class="idx">
+    <div><span>1</span><div><b>Examínate</b><small>Autoevaluación y evocación</small></div></div>
+    <div><span>2</span><div><b>Espacia el aprendizaje</b><small>Repartir en vez de acumular</small></div></div>
+    <div><span>3</span><div><b>Práctica entrelazada</b><small>Mezclar bloques de contenido</small></div></div>
+    <div><span>4</span><div><b>El poder de las preguntas</b><small>8–10 preguntas por tema</small></div></div>
+    <div><span>5</span><div><b>Sé curioso</b><small>No te quedes en la base</small></div></div>
+    <div><span>6</span><div><b>Visual + texto</b><small>Enfoques multisensoriales</small></div></div>
+    <div><span>7</span><div><b>Foco asesino</b><small>Cero distracciones</small></div></div>
+    <div><span>8</span><div><b>Lee en voz alta</b><small>Modulando y con pausas</small></div></div>
+    <div><span>9</span><div><b>Enseña lo que aprendes</b><small>Aprender dos veces</small></div></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 4 · LA TRAMPA -->
+<section class="slide">
+  <div class="eyebrow">Antes de empezar</div>
+  <h1>La trampa: la falsa ilusión de competencia</h1>
+  <p class="sub">Lo más fácil casi nunca es lo más adecuado. Releer y subrayar son cómodos, y precisamente por eso engañan: generan la sensación de dominio sin el dominio.</p>
+  <div class="grid g2">
+    <div class="card bad"><h3>Lo fácil (y engañoso)</h3>
+      <ul class="dash">
+        <li>Leer el tema una y otra vez.</li>
+        <li>Subrayar y volver a subrayar.</li>
+        <li>Escuchar de fondo mientras haces otra cosa.</li>
+        <li>Sensación: <b>«ya me lo sé»</b>.</li>
+      </ul></div>
+    <div class="card good"><h3>Lo eficaz (y costoso)</h3>
+      <ul class="dash">
+        <li>Cerrar el tema y escribirlo de memoria.</li>
+        <li>Contestar preguntas sin mirar.</li>
+        <li>Hacer simulacros en condiciones reales.</li>
+        <li>Realidad: <b>sabes exactamente qué te falta</b>.</li>
+      </ul></div>
+  </div>
+  <div class="quote sm" style="margin-top:22px">«Me lo he leído 20 veces y tengo la sensación de que me lo sé. Cuando te enfrentas a un papel en blanco, las cosas cambian bastante.»</div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 5 · EXAMÍNATE -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">1</span> Estrategia uno</div>
+  <h1>Examínate</h1>
+  <div class="evid">Adesope y colaboradores, 2017</div>
+  <p class="sub">Quien se autoevalúa de forma continua <b>olvida menos</b>: a corto, a medio y a largo plazo. No es un control final, es la herramienta de estudio en sí.</p>
+  <div class="grid g2">
+    <div class="card accent"><h3>Cómo se aplica</h3>
+      <ul class="tick">
+        <li><b>Free recall:</b> papel en blanco y vuelca todo lo que recuerdes del tema.</li>
+        <li><b>Evocación dirigida:</b> recupera apartados concretos sin mirar.</li>
+        <li><b>Simulacros:</b> en condiciones y tiempo reales.</li>
+        <li><b>Tareas y supuestos:</b> producir, no reconocer.</li>
+      </ul></div>
+    <div class="warn"><h4>El error más repetido</h4>
+      <p>«Me he encontrado opositores que han estudiado horas y horas y me dicen: es que no retengo la información.» Si <b>solo estás leyendo</b>, por muchas horas que le eches nunca llegarás al punto de decir “ya me lo sé”.</p>
+      <p style="margin-top:10px"><b>Regla:</b> ninguna sesión de estudio termina sin haberte puesto a prueba.</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 6 · ESPACIADO -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">2</span> Estrategia dos</div>
+  <h1>Espacia el aprendizaje</h1>
+  <div class="evid">Estudio de 2019 · consolidación en memoria a largo plazo</div>
+  <p class="sub">Las mismas seis horas rinden mucho más repartidas que de golpe. La práctica masiva cansa y no consolida.</p>
+  <div class="bars">
+    <div><h4 style="color:var(--red)">✗ Práctica masiva · 1 × 6 h</h4>
+      <div class="blk"><i class="mass">6 horas seguidas</i></div></div>
+    <div><h4 style="color:var(--green)">✓ Práctica espaciada · 3 × 2 h</h4>
+      <div class="blk"><i class="sp">2 h</i><i class="sp">2 h</i><i class="sp">2 h</i></div></div>
+  </div>
+  <div class="grid g2" style="margin-top:6px">
+    <div class="card"><h3>Por qué funciona</h3><p>El intervalo entre sesiones da <b>tiempo para reflexionar</b>: conectas el contenido nuevo con el que ya sabías y todo se consolida mejor en la memoria a largo plazo.</p></div>
+    <div class="card"><h3>Cómo aplicarlo mañana</h3><p>Parte el día en <b>mañana y tarde</b>. Sean 3, 4, 6 u 8 horas, lo importante es el espaciado — ajustado, claro, al contexto laboral y familiar de cada uno.</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 7 · ENTRELAZADA -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">3</span> Estrategia tres</div>
+  <h1>Práctica entrelazada</h1>
+  <p class="sub">Durante años se recomendó el bloque temático: un día solo supuestos, otro solo programación. Según el momento de la preparación, <b>entrelazar las partes de la oposición rinde más</b>.</p>
+  <div class="grid g2">
+    <div class="card bad"><h3>Bloque temático</h3><p>Lunes: supuestos prácticos.<br>Martes: programación.<br>Miércoles: legislación.</p><p class="note" style="margin-top:10px">Menos espaciado y ninguna transferencia entre partes.</p></div>
+    <div class="card good"><h3>Entrelazado</h3><p>En un mismo día: tema · supuesto práctico · programación · legislación.</p><p class="note" style="margin-top:10px">Cumples el espaciado <b>y</b> creas transferencias.</p></div>
+  </div>
+  <div class="card accent" style="margin-top:20px"><h3>La transferencia es el verdadero premio</h3>
+    <p>Lo que estudias en legislación te sirve para el supuesto; la propuesta que diseñas en el supuesto puede entrar en la parte práctica del tema. Los contenidos de todas las partes de la oposición <b>son muy parecidos</b>: entrelazarlos multiplica cada hora.</p></div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 8 · DÍA TIPO -->
+<section class="slide">
+  <div class="eyebrow">Caso real</div>
+  <h1>El día tipo de un opositor que aprobó</h1>
+  <p class="sub">Casi todos los apartados se tocaban cada día. Así se cumplían a la vez el espaciado, el entrelazado y la autoevaluación.</p>
+  <div class="day">
+    <div class="slot"><div class="hd"><span>Mañana</span><em>Máxima energía</em></div><div class="bd"><ul class="dash">
+      <li><b>Foco en los temas</b> del bloque en curso.</li>
+      <li>Un hueco reservado para <b>legislación</b>.</li>
+      <li>30 minutos de <b>lectura formativa</b>: un libro o un artículo nuevo.</li></ul></div></div>
+    <div class="slot"><div class="hd"><span>Tarde</span><em>Carga cognitiva alta</em></div><div class="bd"><ul class="dash">
+      <li>Café, comida y <b>20 minutos de siesta</b>.</li>
+      <li>Biblioteca: <b>supuestos prácticos</b>, 2–3 horas.</li>
+      <li><b>Repaso</b> del tema trabajado por la mañana.</li></ul></div></div>
+    <div class="slot"><div class="hd"><span>Noche</span><em>Ya cansado</em></div><div class="bd"><ul class="dash">
+      <li>Leer una <b>ley nueva</b> o artículos.</li>
+      <li>Sacar ideas para <b>situaciones de aprendizaje</b>.</li>
+      <li>Escribir sobre la <b>programación</b>, con los cascos puestos.</li></ul></div></div>
+  </div>
+  <div class="quote sm" style="margin-top:20px">«La mía no era la mejor forma, pero a mí me funcionó: cumplía con espaciar el aprendizaje, con la práctica entrelazada y me examinaba.»</div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 9 · PREGUNTAS -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">4</span> Estrategia cuatro</div>
+  <h1>El poder de las preguntas</h1>
+  <p class="sub">Preguntar <b>da significado</b> al contenido, y lo que tiene significado se olvida mucho menos. Es la forma más barata de evocar.</p>
+  <div class="grid g3">
+    <div class="card accent"><span class="ico">✍️</span><h3>8–10 preguntas por tema</h3><p>Redáctalas tú e intenta resolverlas. Preguntas que <b>evoquen contenido</b>, no que se respondan con un sí o un no.</p></div>
+    <div class="card accent"><span class="ico">👥</span><h3>Que te pregunten</h3><p>«Venga, mamá, pregúntame el tema.» Cualquiera con el índice delante sirve: tú tienes que producir la respuesta.</p></div>
+    <div class="card accent"><span class="ico">📝</span><h3>Método Cornell</h3><p>Divide la hoja: ideas clave · contenido · resumen breve. La columna de preguntas es la que hace el trabajo.</p></div>
+  </div>
+  <div class="card" style="margin-top:20px"><h3>Ejemplos reales del temario</h3>
+    <ul class="tick" style="columns:2;column-gap:40px">
+      <li>¿Cuántas patologías de la espalda aparecen en el tema 51? Enuméralas.</li>
+      <li>¿Qué tipos de fuerza recoge el apartado? Dame un ejemplo de cada uno.</li>
+    </ul>
+    <p class="note" style="margin-top:8px">Para supuestos prácticos, la misma lógica con el <b>tarro de la evocación</b>: ir sacando preguntas al azar y resolverlas.</p></div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 10 · CURIOSIDAD -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">5</span> Estrategia cinco</div>
+  <h1>Sé curioso: no te quedes en la base</h1>
+  <p class="sub">Cuanto más formado estés, <b>menor es el esfuerzo cognitivo</b> de aprender algo nuevo: ya te suena, ya tienes dónde engancharlo. Un docente que sabe mucho mete mucha más información en la cabeza.</p>
+  <div class="grid g2">
+    <div class="card accent"><h3>Media hora diaria de formación libre</h3>
+      <ul class="tick">
+        <li>Libros de educación — por ejemplo <i>La nueva educación</i>, de César Bona.</li>
+        <li>Artículos recién publicados.</li>
+        <li>Vídeos: deportes nuevos, metodologías de fuera, lo que te llame.</li>
+      </ul>
+      <p class="note" style="margin-top:10px">En esos libros hay <b>verdaderos diamantes</b> para la exposición oral: frases, propuestas, ejemplos que te distinguen.</p></div>
+    <div class="warn"><h4>Aviso desde el tribunal</h4>
+      <p>«Nos viene gente que se nota que lo ha copiado todo: no lo explica bien, se lía, se pierde.» El tema de academia sin personalizar <b>se nota</b>, y se paga con una nota bajísima.</p>
+      <p style="margin-top:10px">Si tu plan es «que me pasen los temas y la programación hecha», <b>no vas a aprobar</b>.</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 11 · VISUAL -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">6</span> Estrategia seis</div>
+  <h1>Combina lo visual con el texto</h1>
+  <p class="sub">Los enfoques multisensoriales generan <b>más conexiones</b> entre contenidos y, con ellas, más retención.</p>
+  <div class="grid g3">
+    <div class="card accent"><span class="ico">🗺️</span><h3>Mapas conceptuales</h3><p>Convierte el texto en estructura: qué depende de qué.</p></div>
+    <div class="card accent"><span class="ico">📖</span><h3>Crea historias</h3><p>Hilar el contenido en una narración lo hace recuperable.</p></div>
+    <div class="card accent"><span class="ico">❤️</span><h3>Asocia emociones</h3><p>Lo que emociona se ancla mejor que lo neutro.</p></div>
+  </div>
+  <div class="card" style="margin-top:20px"><h3>Cómo lo hacía el preparador</h3>
+    <p><b>Imprimir siempre</b> — nunca estudiar desde el ordenador — y marcar el papel: un icono, un dibujo rápido, un sticker junto al párrafo. «El sticker de la planta era cuando hablábamos del entorno natural.»</p>
+    <p class="note" style="margin-top:10px">Sin magia: no es que por poner un sticker te lo aprendas. Son <b>pequeñas ayudas</b> que, sumadas, hacen que memorices mejor.</p></div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 12 · FOCO -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">7</span> Estrategia siete</div>
+  <h1>Foco asesino: fuera distracciones</h1>
+  <p class="sub">La forma más eficiente de encarar una sesión de estudio es entrar en ella con <b>un único foco</b>. Todo lo demás, fuera.</p>
+  <div class="grid g3">
+    <div class="card bad"><span class="ico">📵</span><h3>Móvil prohibido</h3><p>No en la mesa, no boca abajo: <b>fuera de la habitación</b>. Lo miras en el descanso, no antes.</p></div>
+    <div class="card bad"><span class="ico">🔇</span><h3>Sin música ni ruido</h3><p>Ni música de fondo ni nadie entrando a interrumpir mientras estudias.</p></div>
+    <div class="card good"><span class="ico">⏱️</span><h3>Pomodoros con temporizador</h3><p>Un timer de cocina y <b>20 minutos clavados</b>. Se van ampliando con las semanas.</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:20px">
+    <div class="quote sm">«Cuando tú opositas, también oposita tu familia.»<cite>Explícales que necesitas horas sin que nadie te moleste. Si en casa no puede ser, biblioteca.</cite></div>
+    <div class="warn"><h4>Dopamina barata</h4><p>Instagram te recarga en segundos; el tema no te da nada de eso. Si mezclas ambos, el cerebro elige el primero y <b>te revienta el estudio</b>.</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 13 · VOZ ALTA -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">8</span> Estrategia ocho</div>
+  <h1>Lee en voz alta</h1>
+  <div class="evid">Forrin y MacLeod</div>
+  <p class="sub">Leer el texto en voz alta mejora la comprensión <b>por encima</b> de escuchar una grabación propia, de que lo lea otra persona o de leerlo en silencio.</p>
+  <div class="grid g2">
+    <div class="card accent"><h3>Escala de eficacia</h3>
+      <ul class="tick">
+        <li><b>1.º Leerlo tú en voz alta</b> — la opción ganadora.</li>
+        <li>2.º Escuchar tu propia grabación.</li>
+        <li>3.º Escucharlo leído por otra persona.</li>
+        <li>4.º Leerlo en silencio — la más cómoda, la menos eficaz.</li>
+      </ul></div>
+    <div class="card"><h3>Cómo hacerlo bien</h3>
+      <p>No es recitar plano: usa <b>inflexiones</b>, modula la voz, haz <b>pausas</b> y dale sentido al tema. Esa interpretación es justo lo que mejora la comprensión y facilita memorizarlo.</p>
+      <p class="note" style="margin-top:12px"><b>Confesión del preparador:</b> «Yo me grababa los temas y los escuchaba paseando al perro o en el coche. Algo servía… pero no es lo que dice la ciencia.»</p></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 14 · ENSEÑAR -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">9</span> Estrategia nueve</div>
+  <h1>Enseña lo que aprendes</h1>
+  <p class="sub">Enseñar exige un <b>esfuerzo cognitivo enorme</b>, y ahí está exactamente su valor: tienes que adaptarte a quien te escucha.</p>
+  <div class="grid g2">
+    <div class="card accent"><h3>Qué te obliga a hacer</h3>
+      <ul class="tick">
+        <li>Reflexionar sobre lo que de verdad has entendido.</li>
+        <li>Reestructurar los párrafos para poder contarlos.</li>
+        <li>Buscar <b>metáforas y ejemplos</b> propios.</li>
+        <li>Usar <b>tus palabras</b>, no las del documento.</li>
+      </ul></div>
+    <div class="card"><h3>A quién</h3>
+      <p>A tu familia, a tu pareja, a tu mejor amigo… o al peor. Da igual: lo que cuenta es que tengas delante a alguien a quien explicárselo en voz alta.</p>
+      <div class="quote sm" style="margin-top:14px">«Cuando enseñas, aprendes dos veces.»</div></div>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 15 · TABLA RESUMEN -->
+<section class="slide">
+  <div class="eyebrow">Resumen operativo</div>
+  <h1>Las nueve, en una tabla</h1>
+  <table>
+    <thead><tr><th></th><th style="width:24%">Estrategia</th><th style="width:38%">En una frase</th><th>Qué hago hoy</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td><b>Examínate</b></td><td>Recuperar lo aprendido hace que se olvide menos.</td><td>Papel en blanco al cerrar cada tema.</td></tr>
+      <tr><td class="n">2</td><td><b>Espacia</b></td><td>3 sesiones de 2 h valen más que un bloque de 6 h.</td><td>Parte el día en mañana y tarde.</td></tr>
+      <tr><td class="n">3</td><td><b>Entrelaza</b></td><td>Mezclar partes crea transferencias entre ellas.</td><td>Tema, supuesto y legislación en el mismo día.</td></tr>
+      <tr><td class="n">4</td><td><b>Pregunta</b></td><td>Preguntar da significado al contenido.</td><td>8–10 preguntas escritas por tema.</td></tr>
+      <tr><td class="n">5</td><td><b>Sé curioso</b></td><td>Saber más abarata aprender lo siguiente.</td><td>30 min de lectura formativa diaria.</td></tr>
+      <tr><td class="n">6</td><td><b>Visual + texto</b></td><td>Más vías sensoriales, más conexiones.</td><td>Imprime y marca con iconos y esquemas.</td></tr>
+      <tr><td class="n">7</td><td><b>Foco asesino</b></td><td>Sin distracciones no hay estudio profundo.</td><td>Móvil fuera y temporizador de 20 min.</td></tr>
+      <tr><td class="n">8</td><td><b>Voz alta</b></td><td>Leer en alto supera a leer en silencio.</td><td>Lee el tema modulando y con pausas.</td></tr>
+      <tr><td class="n">9</td><td><b>Enseña</b></td><td>Al enseñar, aprendes dos veces.</td><td>Explica el tema a alguien esta semana.</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 16 · CHECKLIST -->
+<section class="slide">
+  <div class="eyebrow">Para aplicar ya</div>
+  <h1>Checklist de la sesión de estudio</h1>
+  <p class="sub">Imprime esta hoja y márcala cada día. Si las tres columnas se cumplen, la sesión ha sido eficaz — no importa cuántas horas hayas estado.</p>
+  <div class="chk">
+    <section><h3>Antes de empezar</h3><ul>
+      <li>Móvil fuera de la habitación.</li>
+      <li>Temporizador preparado (20 min).</li>
+      <li>Tema impreso, no en pantalla.</li>
+      <li>Familia avisada: no molestar.</li></ul></section>
+    <section><h3>Durante</h3><ul>
+      <li>Leer en voz alta, modulando.</li>
+      <li>Anotar ideas clave a lo Cornell.</li>
+      <li>Marcar con iconos y esquemas.</li>
+      <li>Descanso solo al sonar el timer.</li></ul></section>
+    <section><h3>Al terminar</h3><ul>
+      <li>Papel en blanco: vuelca lo que recuerdes.</li>
+      <li>Responde tus 8–10 preguntas.</li>
+      <li>Explícale a alguien un apartado.</li>
+      <li>Deja fijada la próxima sesión.</li></ul></section>
+  </div>
+  <div class="foot"><span><b>Estrategias de estudio eficaces según la ciencia</b> · EDUCACIÓN FÍSICA OPOSICIONES</span><span class="pg"></span></div>
+</section>
+
+<!-- 17 · CIERRE -->
+<section class="slide end">
+  <div class="kicker" style="font-size:14px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#7db6e8;margin-bottom:20px">Para llevarte</div>
+  <h1>Nueve gestos que cambian el estudio</h1>
+  <div class="rule"></div>
+  <ul class="list">
+    <li>Examínate</li>
+    <li>Espacia el aprendizaje</li>
+    <li>Usa la práctica entrelazada</li>
+    <li>Pregúntate el tema</li>
+    <li>Sé curioso, no te quedes en la base</li>
+    <li>Combina lo visual y el texto</li>
+    <li>Evita las distracciones</li>
+    <li>Lee en voz alta</li>
+    <li>Enseña lo que aprendes</li>
+  </ul>
+  <div class="src" style="position:absolute;left:90px;bottom:56px;font-size:13px;color:#8c9aa8;line-height:1.7">
+    Presentación elaborada a partir del vídeo <b style="color:#cfd8e0">«Estrategias de estudio eficaces según la ciencia»</b><br>
+    EDUCACIÓN FÍSICA OPOSICIONES · @opoefi_preparadores
+  </div>
+</section>
+
+</div>
+
+<div class="zone l" onclick="go(-1)"></div>
+<div class="zone r" onclick="go(1)"></div>
+<div id="bar"></div>
+<div id="hud"></div>
+<div id="hint">← → para navegar · P para imprimir</div>
+
+<script>
+var S=[].slice.call(document.querySelectorAll('.slide')),i=0,N=S.length;
+document.querySelectorAll('.pg').forEach(function(el,k){el.textContent=(k+2)+' / '+N;});
+function fit(){
+  var s=Math.min(window.innerWidth/1280,window.innerHeight/720)*0.94;
+  S.forEach(function(sl){sl.style.transform='scale('+s+')';});
+}
+function show(n){
+  i=Math.max(0,Math.min(N-1,n));
+  S.forEach(function(sl,k){sl.classList.toggle('on',k===i);});
+  document.getElementById('bar').style.width=((i+1)/N*100)+'%';
+  document.getElementById('hud').textContent=(i+1)+' / '+N;
+  if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1));
+}
+function go(d){show(i+d);}
+window.addEventListener('keydown',function(e){
+  if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>=0){go(1);e.preventDefault();}
+  else if(['ArrowLeft','PageUp','Backspace'].indexOf(e.key)>=0){go(-1);e.preventDefault();}
+  else if(e.key==='Home'){show(0);} else if(e.key==='End'){show(N-1);}
+  else if(e.key==='p'||e.key==='P'){window.print();}
+});
+var x0=null;
+window.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;});
+window.addEventListener('touchend',function(e){
+  if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;
+  if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null;});
+window.addEventListener('resize',fit);
+fit();show(parseInt((location.hash||'#1').slice(1),10)-1||0);
+setTimeout(function(){var h=document.getElementById('hint');if(h)h.style.display='none';},6000);
+</script>
+</body></html>
