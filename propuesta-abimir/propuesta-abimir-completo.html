@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta de soluciones IA — Abimir by DHC</title>
+<style>
+  :root{
+    --tinta:#12211d; --verde:#1d6b4f; --verde-claro:#eaf3ef; --oro:#b8892b;
+    --gris:#5b6a65; --fondo:#ffffff; --papel:#f7f6f3; --linea:#e2e0da;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--papel);color:var(--tinta);
+    font-family:"Georgia","Iowan Old Style",serif;font-size:11.2pt;line-height:1.62}
+  .hoja{max-width:820px;margin:0 auto;background:var(--fondo);padding:48px 56px 64px}
+  h1,h2,h3,h4,.sans{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+  h2{font-size:21pt;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
+  h3{font-size:13.5pt;margin:30px 0 8px;color:var(--verde)}
+  h4{font-size:11pt;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.08em;color:var(--gris)}
+  p{margin:0 0 11px}
+  a{color:var(--verde)}
+  ul,ol{margin:0 0 12px;padding-left:20px}
+  li{margin-bottom:5px}
+  strong{color:#000}
+  .num{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}
+
+  /* ---------- portada ---------- */
+  .portada{min-height:940px;display:flex;flex-direction:column;justify-content:space-between;
+    background:var(--tinta);color:#f4f2ec;margin:-48px -56px 0;padding:64px 56px}
+  .portada .kicker{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:9.5pt;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--oro)}
+  .portada h1{font-size:40pt;line-height:1.06;margin:22px 0 0;letter-spacing:-.03em;font-weight:700}
+  .portada h1 em{font-style:normal;color:var(--oro)}
+  .portada .lead{font-size:13pt;color:#c9d3cf;max-width:34em;margin-top:20px}
+  .rule{height:3px;width:74px;background:var(--oro);margin:26px 0}
+  .firma{border-top:1px solid #33443e;padding-top:18px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:10pt;color:#9fb0ab}
+  .firma b{color:#f4f2ec;font-size:11.5pt;display:block;margin-bottom:3px}
+
+  /* ---------- bloques ---------- */
+  section{padding-top:8px}
+  .sec{border-top:2px solid var(--tinta);margin-top:44px;padding-top:12px}
+  .sec .n{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:9.5pt;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:8px}
+  .box{background:var(--verde-claro);border-left:4px solid var(--verde);
+    padding:16px 20px;margin:18px 0;border-radius:0 6px 6px 0}
+  .box.warn{background:#fdf6e6;border-left-color:var(--oro)}
+  .box.dark{background:var(--tinta);color:#eef2f0;border-left-color:var(--oro)}
+  .box.dark strong{color:#fff}
+  .box p:last-child{margin-bottom:0}
+  .quote{font-size:13pt;line-height:1.5;color:var(--verde);border-left:none;
+    padding:0 0 0 18px;border-left:3px solid var(--oro);margin:20px 0}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:10pt;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--linea);vertical-align:top}
+  th{background:var(--tinta);color:#fff;font-size:8.8pt;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+  tbody tr:nth-child(even){background:#faf9f6}
+  .tabla-wrap{overflow-x:auto}
+
+  /* fichas de solución */
+  .ficha{border:1px solid var(--linea);border-radius:8px;padding:18px 22px;margin:16px 0;background:#fff}
+  .ficha .cab{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+  .ficha .cod{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;font-size:10pt;
+    background:var(--verde);color:#fff;border-radius:4px;padding:3px 9px;letter-spacing:.04em}
+  .ficha .tit{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13.5pt;font-weight:700}
+  .ficha dl{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;margin:12px 0 0;font-size:10pt}
+  .ficha dt{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:8.8pt;text-transform:uppercase;
+    letter-spacing:.07em;color:var(--gris);padding-top:3px}
+  .ficha dd{margin:0}
+  .pill{display:inline-block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:8.5pt;
+    border:1px solid var(--linea);border-radius:100px;padding:2px 10px;color:var(--gris);margin-left:auto}
+
+  /* paquetes */
+  .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .pack{border:1px solid var(--linea);border-radius:8px;padding:18px;background:#fff;display:flex;flex-direction:column}
+  .pack.destacado{border:2px solid var(--verde);background:var(--verde-claro)}
+  .pack h5{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12pt;margin:0 0 2px}
+  .pack .sub{font-size:9pt;color:var(--gris);margin-bottom:12px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+  .pack .precio{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:20pt;font-weight:700;color:var(--verde);line-height:1.1}
+  .pack .precio small{display:block;font-size:9.5pt;font-weight:400;color:var(--gris);margin-top:3px}
+  .pack ul{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:9.3pt;padding-left:16px;margin-top:12px}
+
+  .timeline{border-left:2px solid var(--linea);padding-left:22px;margin:18px 0}
+  .timeline .hito{margin-bottom:18px;position:relative}
+  .timeline .hito::before{content:"";position:absolute;left:-28px;top:6px;width:11px;height:11px;
+    border-radius:50%;background:var(--oro)}
+  .timeline h4{margin:0 0 3px;color:var(--tinta);text-transform:none;letter-spacing:0;font-size:11.5pt}
+
+  .pie{margin-top:52px;border-top:1px solid var(--linea);padding-top:14px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:8.6pt;color:var(--gris)}
+  .v{color:var(--verde);font-weight:700}
+  .e{color:var(--oro);font-weight:700}
+
+  @media (max-width:640px){
+    .hoja{padding:28px 20px 40px}
+    .portada{margin:-28px -20px 0;padding:44px 20px;min-height:auto}
+    .portada h1{font-size:28pt}
+    .packs{grid-template-columns:1fr}
+    .ficha dl{grid-template-columns:1fr;gap:2px}
+    .ficha dt{padding-top:8px}
+  }
+  @media print{
+    @page{size:A4;margin:16mm 14mm}
+    body{background:#fff;font-size:10pt}
+    .hoja{max-width:none;padding:0}
+    .portada{margin:0;min-height:245mm;padding:30mm 16mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .sec{break-before:page;page-break-before:always;margin-top:0}
+    .ficha,.pack,.box,table,.timeline .hito{break-inside:avoid;page-break-inside:avoid}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="hoja">
+
+<!-- ============ PORTADA ============ -->
+<div class="portada">
+  <div>
+    <span class="kicker">Propuesta comercial · Confidencial</span>
+    <h1>Que no se le escape<br>ni <em>un cliente</em> más.</h1>
+    <div class="rule"></div>
+    <p class="lead">Plan de soluciones con inteligencia artificial para
+      <strong style="color:#fff">Abimir by DHC</strong> — 25 años vendiendo cocinas a medida
+      en Las Palmas de Gran Canaria, y un escaparate digital que no está a la altura del taller.</p>
+  </div>
+  <div>
+    <p class="lead" style="font-size:11pt;color:#9fb0ab;margin-bottom:26px">
+      Preparado tras un estudio previo de la empresa, su reputación online y su competencia
+      directa en Gran Canaria. Sin compromiso y sin coste.
+    </p>
+    <div class="firma">
+      <b>Moisés Díaz</b>
+      Soluciones de IA aplicada a negocio · Las Palmas de Gran Canaria<br>
+      15 de septiembre de 2026 · Validez de la oferta: 30 días<br><br>
+      <span style="color:#677973">Teléfono / WhatsApp: ____________________</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 1. RESUMEN ============ -->
+<section class="sec">
+  <span class="n">01 — Resumen ejecutivo</span>
+  <h2>Tienen un problema bueno</h2>
+
+  <p>Abimir no tiene un problema de producto. Tiene <strong>cinco estrellas en Google</strong>,
+  25 años de oficio y clientes que hablan de la calidad y del trato personalizado. Eso no se
+  compra ni se improvisa: se gana cocina a cocina.</p>
+
+  <p>El problema es otro, y es el que se puede arreglar rápido: <strong>casi nadie se entera.</strong></p>
+
+  <div class="box">
+    <p><strong>Lo que he encontrado al estudiarles desde fuera, como cliente:</strong></p>
+    <ul style="margin-bottom:0">
+      <li>Su Instagram tiene <strong>16 publicaciones y 126 seguidores</strong>. En un sector
+        donde se compra por los ojos, eso es tener el escaparate con papel de periódico.</li>
+      <li>Cierran a las <strong>20:00 y no abren sábado ni domingo</strong>. Justo el momento
+        en el que una pareja se sienta a decidir que va a reformar la cocina.</li>
+      <li>Toda la captación depende de que <strong>alguien descuelgue el teléfono</strong>
+        dentro del horario de tienda.</li>
+      <li>Tienen las mejores valoraciones posibles... y muy pocas. En Google Maps
+        <strong>gana quien tiene 80 reseñas, no quien tiene 5 estrellas</strong>.</li>
+      <li>Varios competidores directos en Las Palmas <strong>sí publican cada semana</strong>.
+        No hacen mejores cocinas. Se ven más.</li>
+    </ul>
+  </div>
+
+  <p>Lo que propongo no cambia nada de cómo trabajan. No toca el taller, no toca el diseño,
+  no toca a su gente. <strong>Solo pone a trabajar las horas en las que la tienda está cerrada
+  y el trabajo terminado que hoy se queda en el móvil de alguien.</strong></p>
+
+  <h3>La propuesta en una línea</h3>
+  <p>Un sistema que <strong>atiende, cualifica y no pierde</strong> a ningún interesado —a
+  cualquier hora y cualquier día—, que convierte cada cocina instalada en contenido y en
+  reseñas, y que persigue con educación los presupuestos que hoy se quedan en silencio.</p>
+
+  <div class="box dark">
+    <p><strong>Empezamos pequeño:</strong> una prueba de 30 días con una sola pieza —el
+    asistente que contesta fuera de horario—. Si al cabo de un mes no ha habido conversaciones
+    reales fuera de su horario de tienda, <strong>no hay nada que pagar y aquí no ha pasado nada.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 2. RADIOGRAFÍA ============ -->
+<section class="sec">
+  <span class="n">02 — Lo que he estudiado de ustedes</span>
+  <h2>Radiografía de Abimir by DHC</h2>
+
+  <p>Todo lo que sigue procede de información pública, consultada el 15 de septiembre de 2026.
+  Marco con <span class="v">[V]</span> lo verificado y con <span class="e">[E]</span> lo que es
+  estimación mía pendiente de que ustedes me la confirmen o me la desmientan.</p>
+
+  <div class="tabla-wrap">
+  <table>
+    <thead><tr><th style="width:32%">Dato</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Marca comercial</td><td>Abimir · Abimir by DHC <span class="v">[V]</span></td></tr>
+      <tr><td>Sociedad</td><td>Design Home Canarias, S.L.U. — CIF B10728087, constituida el 25/05/2022 <span class="v">[V]</span></td></tr>
+      <tr><td>Administrador único</td><td>Juan Jesús Mesa Alonso (desde 30/06/2022) <span class="v">[V]</span></td></tr>
+      <tr><td>Domicilio social</td><td>C/ Tirma, 125 — 35260 Agüimes <span class="v">[V]</span></td></tr>
+      <tr><td>Tienda / exposición</td><td>C/ Don Pedro Infinito, 111, local dcha — 35012 Las Palmas de G.C. <span class="v">[V]</span></td></tr>
+      <tr><td>Equipo</td><td>4 empleados (último dato público, 2023) <span class="v">[V]</span></td></tr>
+      <tr><td>Actividad</td><td>Cocinas a medida, armarios empotrados, vestidores, baños y lavaderos, mobiliario a medida. Diseño + fabricación + instalación <span class="v">[V]</span></td></tr>
+      <tr><td>Zona de servicio</td><td>Todos los municipios de Gran Canaria <span class="v">[V]</span></td></tr>
+      <tr><td>Experiencia declarada</td><td>25–30 años en diseño y fabricación de mobiliario a medida <span class="v">[V]</span></td></tr>
+      <tr><td>Horario</td><td>L–V 9:00–13:00 y 16:30–20:00 · sábado y domingo cerrado <span class="v">[V]</span></td></tr>
+      <tr><td>Reputación</td><td>Media de 5★ en Google; se destaca calidad, trato personalizado y profesionalidad. Volumen de reseñas bajo <span class="v">[V]</span></td></tr>
+      <tr><td>Instagram @abimir_dhc</td><td>126 seguidores · 16 publicaciones <span class="v">[V]</span></td></tr>
+      <tr><td>Facebook /abimir</td><td>~520 seguidores, actividad histórica <span class="v">[V]</span></td></tr>
+      <tr><td>Web abimir.es</td><td>WordPress con páginas de servicio bien orientadas a búsqueda local (cocinas a medida, muebles a medida, catálogo, contacto) <span class="v">[V]</span></td></tr>
+      <tr><td>Captación actual</td><td>Teléfono, email y formulario. Sin evidencia de WhatsApp automatizado, chat ni presupuesto online <span class="e">[E]</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>La lectura</h3>
+  <p>Hay una marca de barrio con casi tres décadas de prestigio dentro de una sociedad joven,
+  de 2022, que la impulsa. Es un negocio <strong>en fase de empujar</strong>: estructura nueva,
+  cartera antigua, ganas de crecer. Y con cuatro personas, cada hora del equipo vale oro.</p>
+
+  <p>Por eso esta propuesta no va de «hacer marketing». Va de <strong>que el negocio siga
+  funcionando también cuando ustedes no están delante.</strong></p>
+</section>
+
+<!-- ============ 3. FUGAS ============ -->
+<section class="sec">
+  <span class="n">03 — Diagnóstico</span>
+  <h2>Las cinco fugas</h2>
+
+  <p>Un negocio de cocinas a medida no pierde dinero de golpe. Lo pierde por goteo, en cinco
+  sitios concretos. Estos son los suyos.</p>
+
+  <h3>1. La fuga de las 20:01</h3>
+  <p>De las 168 horas que tiene una semana, la tienda atiende unas <strong>37</strong>. Las otras
+  131 —noches, sábados, domingos, festivos— alguien busca «cocinas a medida Las Palmas», entra
+  en su web, no encuentra a nadie al otro lado y <strong>llama al siguiente</strong>. En una
+  reforma no hay segunda oportunidad: el cliente habla con dos o tres y se queda con el que
+  le atendió primero y mejor.</p>
+
+  <h3>2. La fuga del escaparate vacío</h3>
+  <p>Cada cocina que instalan es material de venta de primerísima calidad. Hoy acaba en el
+  carrete del móvil de alguien. <strong>16 publicaciones en Instagram</strong> frente a
+  competidores directos que publican varias veces por semana. No hacen mejores cocinas
+  que ustedes; simplemente las enseñan.</p>
+
+  <h3>3. La fuga de la reseña que no se pide</h3>
+  <p>Tener 5★ es extraordinario. Tener 5★ con pocas reseñas <strong>no posiciona en el mapa
+  de Google</strong>, que es hoy el primer sitio donde mira alguien que quiere reformar.
+  La reseña no llega sola: hay que pedirla, en el momento justo y por el canal justo.</p>
+
+  <h3>4. La fuga del presupuesto dormido <span class="e">[E]</span></h3>
+  <p>En mueble a medida, muchas ventas no se pierden por precio: se pierden por
+  <strong>silencio</strong>. Se entrega el presupuesto, el cliente lo tiene que hablar en casa,
+  pasan tres semanas y nadie vuelve a llamar porque nadie tiene tiempo. Ese presupuesto no está
+  perdido: está dormido. <em>(Confírmenme cuántos presupuestos entregan al mes y cuántos cierran:
+  con ese dato esta propuesta se vuelve exacta.)</em></p>
+
+  <h3>5. La fuga del tiempo del diseñador <span class="e">[E]</span></h3>
+  <p>Con un equipo de cuatro, cada visita a tienda que no iba en serio son dos horas que no se
+  han dedicado a un proyecto real. Hoy no hay ningún filtro previo: todo el que llama entra
+  igual, el que va a comprar y el que está mirando precios.</p>
+
+  <div class="box warn">
+    <p><strong>El patrón:</strong> las cinco fugas tienen la misma causa. Son tareas que hay que
+    hacer <em>siempre</em> —contestar, publicar, pedir la reseña, hacer seguimiento, filtrar— y
+    que sólo se hacen <em>cuando queda tiempo</em>. Y en un taller de cuatro personas nunca queda
+    tiempo. Eso es exactamente lo que resuelve bien la IA: <strong>lo constante, lo repetitivo
+    y lo que pasa a las once de la noche.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 4. SOLUCIONES ============ -->
+<section class="sec">
+  <span class="n">04 — Las soluciones</span>
+  <h2>Ocho piezas. Se pueden montar de una en una.</h2>
+
+  <p>No hace falta contratarlo todo. Cada pieza funciona sola y aporta por sí misma. Las he
+  ordenado por <strong>lo que antes se nota en caja</strong>.</p>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S1</span><span class="tit">Recepcionista IA 24/7</span>
+      <span class="pill">Prioridad máxima</span></div>
+    <p>Un asistente en <strong>WhatsApp y en la web</strong> que contesta a cualquier hora con el
+    tono de Abimir. Pregunta lo que preguntaría su diseñador —tipo de proyecto, medidas
+    aproximadas, plazo, si es obra nueva o reforma, zona de la isla—, recoge fotos del espacio,
+    da una horquilla orientativa y <strong>propone día y hora para venir a la exposición</strong>.
+    No cierra ventas ni inventa precios: recoge, filtra y avisa.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Fuga 1 y fuga 5</dd>
+      <dt>Ustedes reciben</dt><dd>Una ficha del cliente lista en el móvil y en el correo, con la conversación resumida</dd>
+      <dt>Puesta en marcha</dt><dd>2–3 semanas</dd>
+      <dt>Lo que necesito</dt><dd>2 horas suyas para enseñarle a hablar como Abimir y una línea de WhatsApp de empresa</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S2</span><span class="tit">Pre-presupuesto guiado</span></div>
+    <p>En la web, en lugar de un formulario de contacto frío, un recorrido corto de preguntas
+    con imágenes: qué proyecto, qué estilo, qué acabados, qué metros. Al final el cliente recibe
+    una <strong>horquilla orientativa</strong> y ustedes reciben un briefing completo antes de
+    haberle visto la cara. El cliente entra en la tienda sabiendo el rango de precio: se acaban
+    las visitas que terminan en un «ah, pues no sabía que costaba eso».</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Fuga 5 y calidad del lead</dd>
+      <dt>Ojo</dt><dd>Las horquillas las define Abimir, nunca la IA. Siempre orientativas y sujetas a medición</dd>
+      <dt>Puesta en marcha</dt><dd>3–4 semanas</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S3</span><span class="tit">Visualizador de estilos</span>
+      <span class="pill">Arma de cierre</span></div>
+    <p>El cliente manda una foto de su cocina actual y recibe <strong>tres propuestas visuales
+    de estilo</strong> sobre su propio espacio en cuestión de horas. No es un render técnico ni
+    un plano: es la conversación de «¿y si lo viéramos en madera clara?» resuelta en el sitio.
+    Sirve como imán para captar contactos y, sobre todo, <strong>como herramienta de cierre
+    dentro de la exposición</strong>, delante del cliente.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Indecisión, que es la causa nº1 del presupuesto dormido</dd>
+      <dt>Condición</dt><dd>Toda imagen sale marcada como orientativa. El proyecto real lo firma su diseñador</dd>
+      <dt>Puesta en marcha</dt><dd>4–6 semanas</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S4</span><span class="tit">Fábrica de contenido</span></div>
+    <p>Cada obra terminada entra por un lado como <strong>fotos del móvil</strong> y sale por el
+    otro como: un carrusel para Instagram, un guion de vídeo corto, un texto para Facebook, una
+    entrada de blog orientada a búsqueda local y una publicación en su ficha de Google. Objetivo
+    realista: pasar de <strong>16 publicaciones en total</strong> a <strong>12–16 al mes</strong>,
+    sin que nadie de su equipo se siente a escribir nada.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Fuga 2</dd>
+      <dt>Ustedes aportan</dt><dd>Fotos de cada trabajo terminado. Nada más</dd>
+      <dt>Puesta en marcha</dt><dd>2 semanas</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S5</span><span class="tit">Motor de reseñas</span>
+      <span class="pill">Mayor retorno por euro</span></div>
+    <p>A los pocos días de la instalación, el cliente recibe un mensaje corto y personal con el
+    enlace directo para valorar. Las respuestas a cada reseña se redactan solas y ustedes solo
+    las aprueban. Además, la ficha de Google se mantiene viva: fotos nuevas, horarios,
+    publicaciones, preguntas frecuentes. <strong>Es la pieza más barata y la que más rápido
+    mueve el teléfono</strong>, porque el mapa de Google es donde empieza hoy casi toda reforma.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Fuga 3</dd>
+      <dt>Regla</dt><dd>Solo se piden reseñas a clientes reales tras la entrega. Ni incentivos ni reseñas falsas. Nunca</dd>
+      <dt>Puesta en marcha</dt><dd>1 semana</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S6</span><span class="tit">Rescate de presupuestos</span></div>
+    <p>Secuencia automática y personalizada a los 2 días, 7 días, 21 días y 2 meses de entregar
+    un presupuesto. No son mensajes en cadena: cada uno se redacta con el contexto de ese
+    proyecto concreto. Incluye una acción de arranque: <strong>recuperar la lista de presupuestos
+    entregados en los últimos 12–24 meses</strong> y reactivarla uno a uno. Ahí suele haber
+    dinero ya ganado y olvidado.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Fuga 4</dd>
+      <dt>Ustedes aportan</dt><dd>El histórico de presupuestos, como esté: Excel, papel o carpeta</dd>
+      <dt>Puesta en marcha</dt><dd>2–3 semanas</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S7</span><span class="tit">Oficina IA (trastienda)</span></div>
+    <p>Lo que no ve el cliente y les come el día: la visita a la exposición se graba (con permiso)
+    y se convierte sola en <strong>ficha de proyecto con medidas, acabados y acuerdos</strong>;
+    los pedidos a proveedor se redactan a partir de esa ficha; las incidencias de postventa se
+    clasifican y priorizan solas. Objetivo: devolverle al equipo varias horas por semana de
+    papeleo para que las dedique a diseñar y a vender.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Coste oculto de administración con equipo pequeño</dd>
+      <dt>Puesta en marcha</dt><dd>4–8 semanas, por fases</dd>
+    </dl>
+  </div>
+
+  <div class="ficha">
+    <div class="cab"><span class="cod">S8</span><span class="tit">Cuadro de mando</span>
+      <span class="pill">Incluido siempre</span></div>
+    <p>Una pantalla, en el móvil, con cinco números: contactos del mes, de dónde vienen,
+    presupuestos entregados, tasa de cierre y ticket medio. <strong>Sin esto lo demás es fe.</strong>
+    Va incluido en cualquier paquete porque es lo que nos permite, a los tres meses, sentarnos
+    y decidir con datos si esto vale la pena o no.</p>
+    <dl>
+      <dt>Resuelve</dt><dd>Que la decisión de seguir o parar sea suya y con pruebas</dd>
+      <dt>Puesta en marcha</dt><dd>Desde el día 1</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 5. HOJA DE RUTA ============ -->
+<section class="sec">
+  <span class="n">05 — Hoja de ruta</span>
+  <h2>Los primeros 90 días</h2>
+
+  <div class="timeline">
+    <div class="hito">
+      <h4>Semana 0 — Sentarnos una vez</h4>
+      <p>Dos horas con quien decide y con quien diseña. Salgo con: cómo hablan ustedes a un
+      cliente, qué preguntan siempre, sus rangos de precio reales, sus plazos, sus proveedores
+      y sus líneas rojas. <strong>Nada se enciende sin esto.</strong></p>
+    </div>
+    <div class="hito">
+      <h4>Semanas 1–2 — Lo que se nota enseguida</h4>
+      <p>Motor de reseñas en marcha (S5) y cuadro de mando midiendo (S8). Ficha de Google
+      revisada y actualizada. Primeras reseñas nuevas entrando.</p>
+    </div>
+    <div class="hito">
+      <h4>Semanas 3–4 — El asistente, en pruebas</h4>
+      <p>Recepcionista IA (S1) funcionando primero <strong>solo por dentro</strong>: ustedes leen
+      todo lo que contestaría antes de que lo vea nadie. Se corrige el tono hasta que suene a
+      Abimir y no a robot. Entonces, y solo entonces, se abre al público.</p>
+    </div>
+    <div class="hito">
+      <h4>Semanas 5–8 — Que se vea el trabajo</h4>
+      <p>Fábrica de contenido (S4) en ritmo semanal y rescate de presupuestos (S6) con el
+      histórico ya cargado. Primeras reactivaciones de clientes antiguos.</p>
+    </div>
+    <div class="hito">
+      <h4>Semanas 9–12 — Afinar y decidir</h4>
+      <p>Pre-presupuesto guiado (S2) en la web. Revisión de números reales del trimestre.
+      <strong>Reunión de decisión: seguimos, ampliamos o lo dejamos.</strong> Con los datos
+      delante, no con impresiones.</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <p><strong>Compromiso de trabajo:</strong> nada se pone en marcha de cara al cliente sin que
+    ustedes lo hayan leído y aprobado antes. Ni un mensaje, ni un precio, ni una publicación.
+    La voz de Abimir es suya; yo solo la pongo a trabajar más horas.</p>
+  </div>
+</section>
+
+<!-- ============ 6. PAQUETES ============ -->
+<section class="sec">
+  <span class="n">06 — Inversión</span>
+  <h2>Tres formas de empezar</h2>
+
+  <div class="packs">
+    <div class="pack">
+      <h5>ARRANQUE</h5>
+      <div class="sub">Prueba de 30 días</div>
+      <div class="precio">950 €<small>puesta en marcha</small></div>
+      <div class="precio" style="font-size:15pt;margin-top:8px">+ 190 €<small>al mes</small></div>
+      <ul>
+        <li>S1 · Recepcionista IA 24/7</li>
+        <li>S5 · Motor de reseñas</li>
+        <li>S8 · Cuadro de mando</li>
+        <li>Revisión mensual (30 min)</li>
+      </ul>
+      <p style="font-size:9pt;color:var(--gris);margin-top:auto;padding-top:10px">
+        <strong>Sin permanencia.</strong> Si en 30 días no hay conversaciones reales fuera de
+        su horario, no se factura la mensualidad.</p>
+    </div>
+
+    <div class="pack destacado">
+      <h5>CRECIMIENTO</h5>
+      <div class="sub">La recomendada</div>
+      <div class="precio">2.450 €<small>puesta en marcha</small></div>
+      <div class="precio" style="font-size:15pt;margin-top:8px">+ 390 €<small>al mes</small></div>
+      <ul>
+        <li>Todo lo de ARRANQUE</li>
+        <li>S2 · Pre-presupuesto guiado</li>
+        <li>S4 · Fábrica de contenido (12–16 piezas/mes)</li>
+        <li>S6 · Rescate de presupuestos + reactivación del histórico</li>
+        <li>Revisión mensual (1 h) y ajustes</li>
+      </ul>
+      <p style="font-size:9pt;color:var(--gris);margin-top:auto;padding-top:10px">
+        Compromiso mínimo de <strong>3 meses</strong>, el tiempo que tarda en verse un ciclo
+        completo de venta de cocina.</p>
+    </div>
+
+    <div class="pack">
+      <h5>ÉLITE</h5>
+      <div class="sub">Todo el sistema</div>
+      <div class="precio">4.900 €<small>puesta en marcha</small></div>
+      <div class="precio" style="font-size:15pt;margin-top:8px">+ 690 €<small>al mes</small></div>
+      <ul>
+        <li>Todo lo de CRECIMIENTO</li>
+        <li>S3 · Visualizador de estilos</li>
+        <li>S7 · Oficina IA (actas, pedidos, postventa)</li>
+        <li>Formación al equipo (2 sesiones)</li>
+        <li>Optimización mensual y soporte prioritario</li>
+      </ul>
+      <p style="font-size:9pt;color:var(--gris);margin-top:auto;padding-top:10px">
+        Para cuando el sistema ya está probado y se quiere escalar a toda la isla.</p>
+    </div>
+  </div>
+
+  <h4>Condiciones</h4>
+  <ul>
+    <li>Precios <strong>orientativos y en euros, IGIC no incluido</strong>. Se ajustan a lo que
+      decidamos en la reunión de arranque: si sobra alguna pieza, baja el precio.</li>
+    <li>No incluyen el consumo de servicios de terceros (mensajería de WhatsApp Business,
+      alojamiento, uso de modelos de IA). Se estima en <strong>30–80 €/mes</strong> según volumen
+      y se paga directamente al proveedor, sin margen por mi parte.</li>
+    <li>La puesta en marcha se abona 50 % al inicio y 50 % a la entrega.</li>
+    <li><strong>Todo lo que se construye es de Abimir.</strong> Si un día dejamos de trabajar
+      juntos, se entregan las cuentas, los accesos, los textos y los contenidos. No hay secuestro
+      de nada.</li>
+    <li>Descuento del 10 % en la puesta en marcha si se contrata durante los 30 días de validez
+      de esta propuesta.</li>
+  </ul>
+</section>
+
+<!-- ============ 7. NÚMEROS ============ -->
+<section class="sec">
+  <span class="n">07 — Los números</span>
+  <h2>Cuándo sale rentable</h2>
+
+  <p>No voy a prometerles un porcentaje de aumento de ventas: quien lo hace, miente. Lo que sí
+  puedo hacer es plantear la cuenta y que la comprueben ustedes con sus cifras reales.</p>
+
+  <div class="box warn">
+    <p><strong>Estos números son una hipótesis mía</strong> <span class="e">[E]</span>, montada
+    con precios habituales del sector en Gran Canaria. <strong>No son datos de Abimir.</strong>
+    Díganme su ticket medio y su margen y la rehacemos delante de ustedes en cinco minutos.</p>
+  </div>
+
+  <div class="tabla-wrap">
+  <table>
+    <thead><tr><th style="width:55%">Supuesto</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Ticket medio de una cocina a medida instalada</td><td class="num">7.000 €</td></tr>
+      <tr><td>Margen bruto estimado</td><td class="num">30 %</td></tr>
+      <tr><td>Margen por cocina</td><td class="num">2.100 €</td></tr>
+      <tr><td>Coste anual del paquete CRECIMIENTO (alta + 12 meses)</td><td class="num">2.450 € + 4.680 € = <strong>7.130 €</strong></td></tr>
+      <tr><td><strong>Ventas adicionales necesarias para cubrirlo</strong></td><td class="num"><strong>3,4 cocinas al año</strong></td></tr>
+      <tr><td>Es decir</td><td>Una cocina más cada <strong>3,5 meses</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Con el paquete <strong>ARRANQUE</strong> (950 € + 2.280 € al año = 3.230 €) el umbral baja a
+  <strong>una cocina y media al año</strong>. Es decir: <strong>si el asistente recupera un solo
+  cliente de sábado cada seis meses, el sistema se ha pagado.</strong></p>
+
+  <p>Y ese umbral no cuenta lo que no se ve en la tabla: las horas de su equipo que dejan de irse
+  en visitas que no iban a ninguna parte, en perseguir presupuestos y en pelearse con Instagram
+  un domingo por la noche.</p>
+
+  <h3>Cómo lo mediremos</h3>
+  <ul>
+    <li>Conversaciones atendidas <strong>fuera del horario de tienda</strong> (la métrica que
+      justifica el proyecto entero).</li>
+    <li>Contactos nuevos al mes y de qué canal vienen.</li>
+    <li>Reseñas nuevas en Google y valoración media.</li>
+    <li>Presupuestos entregados y tasa de cierre, antes y después.</li>
+    <li>Presupuestos antiguos reactivados y cuánto han facturado.</li>
+  </ul>
+  <p>Todo en el cuadro de mando, en su móvil, sin que tengan que pedírmelo.</p>
+</section>
+
+<!-- ============ 8. LÍMITES ============ -->
+<section class="sec">
+  <span class="n">08 — Honestidad</span>
+  <h2>Lo que esto NO hace</h2>
+
+  <p>Prefiero decirlo yo ahora que descubrirlo ustedes en el mes tres.</p>
+
+  <ul>
+    <li><strong>No sustituye a nadie.</strong> Ni a su diseñador, ni a su instalador, ni al trato
+      de mostrador que es justo lo que les hace ganar. El asistente recoge y filtra; la venta la
+      cierran ustedes, como siempre.</li>
+    <li><strong>No inventa precios ni cierra contratos.</strong> Da horquillas que ustedes han
+      definido y las marca como orientativas.</li>
+    <li><strong>Las imágenes del visualizador no son planos.</strong> Son ideas de estilo sobre
+      una foto. Van marcadas como tales para que ningún cliente se lleve una sorpresa.</li>
+    <li><strong>No genera reseñas.</strong> Las pide a clientes reales después de la entrega.
+      Comprar o fabricar reseñas es ilegal, se detecta y hunde una ficha de Google. Con ustedes
+      no lo haría ni aunque me lo pidieran.</li>
+    <li><strong>No es inmediato.</strong> El ciclo de venta de una cocina es largo. Las reseñas y
+      el contenido se notan en 4–8 semanas; el efecto sobre el cierre, en un trimestre.</li>
+    <li><strong>No funciona sin ustedes.</strong> Necesito fotos de sus trabajos y quince minutos
+      al mes de su tiempo. Si eso no va a pasar, se lo digo claro: mejor no empezamos.</li>
+  </ul>
+
+  <h3>Protección de datos y cumplimiento</h3>
+  <ul>
+    <li>Todo el tratamiento de datos de clientes se hace conforme al <strong>RGPD y la LOPDGDD</strong>,
+      con base jurídica documentada, aviso de que se atiende con asistencia automatizada y salida
+      a persona humana siempre disponible.</li>
+    <li>Los mensajes comerciales por WhatsApp se envían por los <strong>canales oficiales de
+      WhatsApp Business</strong> y con consentimiento previo. Nada de envíos masivos ni de números
+      comprados.</li>
+    <li>Firmo <strong>contrato de encargado de tratamiento y acuerdo de confidencialidad</strong>.
+      Sus clientes y sus precios no salen de aquí.</li>
+    <li>Las cuentas, dominios y perfiles se crean <strong>a nombre de Abimir</strong>, nunca a mi
+      nombre.</li>
+  </ul>
+</section>
+
+<!-- ============ 9. SIGUIENTE PASO ============ -->
+<section class="sec">
+  <span class="n">09 — Siguiente paso</span>
+  <h2>Cuarenta y cinco minutos</h2>
+
+  <p>No hace falta que decidan nada con este documento en la mano. Lo que propongo es una
+  segunda conversación, de tres cuartos de hora, en su exposición, con quien decide y con quien
+  diseña.</p>
+
+  <p><strong>A esa reunión yo llevo:</strong></p>
+  <ul>
+    <li>El asistente <strong>ya funcionando en una demo con el nombre de Abimir</strong>, para
+      que lo prueben ustedes mismos desde su móvil.</li>
+    <li>La cuenta del retorno rehecha con <strong>sus</strong> números, no con los míos.</li>
+    <li>Una propuesta cerrada, con precio, plazos y lo que hay que firmar.</li>
+  </ul>
+
+  <p><strong>Y lo que les pido a ustedes son tres datos:</strong></p>
+  <ol>
+    <li>Cuántos presupuestos entregan al mes, aproximadamente.</li>
+    <li>Cuántos de esos se cierran.</li>
+    <li>Cuál es su ticket medio de cocina instalada.</li>
+  </ol>
+  <p>Con esos tres números, esta propuesta deja de ser una idea y pasa a ser una previsión.</p>
+
+  <div class="box dark">
+    <p style="font-size:12.5pt"><strong>Y si no quieren trabajar conmigo, este informe es suyo
+    igualmente.</strong> Las cinco fugas del apartado 3 están ahí tanto si me contratan como si
+    no. Arreglen al menos la de las reseñas: es gratis, la puede hacer cualquiera de su equipo
+    en una tarde, y es la que más rápido les va a mover el teléfono.</p>
+  </div>
+
+  <div style="margin-top:34px;border:1px solid var(--linea);border-radius:8px;padding:22px;background:var(--papel)">
+    <h4 style="margin-top:0">Contacto</h4>
+    <p style="font-size:13pt;margin-bottom:4px"><strong>Moisés Díaz</strong></p>
+    <p style="color:var(--gris);margin-bottom:12px">Soluciones de IA aplicada a negocio ·
+      Las Palmas de Gran Canaria</p>
+    <p style="margin-bottom:0">Teléfono / WhatsApp: ______________________<br>
+      Correo: ______________________</p>
+  </div>
+</section>
+
+<!-- ============ ANEXO ============ -->
+<section class="sec">
+  <span class="n">Anexo</span>
+  <h2>Fuentes y nota de verificación</h2>
+
+  <p>Estudio realizado el <strong>15 de septiembre de 2026</strong> exclusivamente con información
+  pública, sin contacto previo con la empresa.</p>
+
+  <h4>Fuentes consultadas</h4>
+  <ul style="font-size:10pt">
+    <li>abimir.es — páginas de servicio, catálogo y contacto (contenido indexado en buscadores).</li>
+    <li>Instagram <em>@abimir_dhc</em> y Facebook <em>/abimir</em>.</li>
+    <li>Registros mercantiles y bases de datos empresariales: eInforma, Empresite (elEconomista),
+      Infonif, Empresia, Axesor, Kompass — ficha de Design Home Canarias, S.L. (B10728087).</li>
+    <li>Directorios y portales sectoriales: Houzz, QDQ, Páginas Amarillas, Vulka, Foursquare,
+      Guiaparacomprar.</li>
+    <li>Búsquedas de competencia en Las Palmas de Gran Canaria y Gran Canaria.</li>
+  </ul>
+
+  <div class="box warn">
+    <p><strong>Transparencia:</strong> desde el entorno donde preparé este estudio no fue posible
+    abrir directamente el sitio <em>abimir.es</em> por una restricción de red, de modo que lo
+    relativo a su web procede del contenido indexado por buscadores. Los datos societarios,
+    de contacto, de horario y de redes sociales sí están verificados en fuente. Cualquier dato
+    marcado <span class="e">[E]</span> en este documento es una estimación pendiente de que la
+    propia empresa la confirme.</p>
+  </div>
+
+  <p style="font-size:10pt;color:var(--gris)">Los datos societarios reproducidos proceden de
+  registros públicos y se incluyen con la única finalidad de preparar esta propuesta comercial.
+  Se eliminarán a petición de la empresa.</p>
+
+  <div class="pie">
+    Propuesta de soluciones IA para Abimir by DHC (Design Home Canarias, S.L.) ·
+    Moisés Díaz · 15 de septiembre de 2026 · Documento confidencial ·
+    Validez de la oferta: 30 días naturales.
+  </div>
+</section>
+
+</div>
+</body>
+</html>
