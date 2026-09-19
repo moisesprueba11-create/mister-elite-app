@@ -37,3 +37,12 @@ Todo el material del canal. Lo que hay aquí y para qué sirve:
 Ninguna cifra de ingresos sale en pantalla sin ser real y verificable. Los guiones llevan
 marcadores `[TU DATO REAL]` en los huecos que tienes que rellenar tú. Si un dato no lo
 tienes, se reescribe la frase — no se inventa.
+
+## Vídeos producidos
+
+| Pieza | Estado | Dónde está |
+|---|---|---|
+| Short 01 — El negocio de tu calle | ✅ Renderizado, 51 s | [app.heygen.com](https://app.heygen.com/videos/1412bdfaf059669b1d6c483fea1057ea) |
+
+Los MP4 no se pueden guardar en este repositorio: la política de red del entorno bloquea
+los dominios de HeyGen. Los detalles y los identificadores están en `assets/README.md`.
