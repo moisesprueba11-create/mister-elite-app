@@ -122,7 +122,7 @@ def sombra_de(im, desenfoque=28, opacidad=150):
 # ------------------------------------------------------------------ clip ----
 def render(formato="v", dur=8.0, fps=30, salida=None, escala=1.0):
     W, H = (1080, 1920) if formato == "v" else (1920, 1080)
-    W, H = int(W * escala), int(H * escala)
+    W, H = int(W * escala) // 2 * 2, int(H * escala) // 2 * 2   # yuv420p exige pares
     total = int(round(dur * fps))
 
     campo = cargar_campo(W, H)
