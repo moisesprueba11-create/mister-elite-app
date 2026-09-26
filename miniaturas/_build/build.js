@@ -181,7 +181,9 @@ function smallPage() {
   ${fs3.map((f, i) => `<div><img src="${img(f)}"><p style="margin-top:6px">Propuesta ${i + 1} · 320×180</p></div>`).join('')}`;
 }
 
-(async () => {
+module.exports = { C, css, pitchV, grass, F433, F442 };
+
+if (require.main === module) (async () => {
   const b = await chromium.launch();
   const shot = async (html, file, w, h, full) => {
     const p = await b.newPage({ viewport: { width: w, height: h } });

@@ -41,3 +41,7 @@ Imágenes producidas sin IA generativa: `miniatura_01.png`, `miniatura_02.png`, 
 - Primer mensaje del encargo en el log: 2026-09-26T13:31:53Z.
 - Cierre registrado: FIN (2026-09-26 13:36:33 UTC).
 - **Tiempo total: 0:04:40** (13:31:53 → 13:36:33 UTC).
+
+## Iteración 2 — variantes con avatar (2026-09-26 14:02:07 UTC)
+
+- Tres composiciones más con `build_avatar.js` a partir de `inputs/cara/avatar.png`. Sin Higgsfield: 0 créditos y 0 generaciones con IA.

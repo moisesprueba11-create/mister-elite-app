@@ -98,3 +98,16 @@ no text, 16:9
 ```bash
 NODE_PATH=$(npm root -g) node miniaturas/_build/build.js
 ```
+
+---
+
+## Variantes con avatar (concepto 1 elegido) — `miniatura_avatar_01..03.png`
+
+Se usa el avatar de Moisés Díaz (`inputs/cara/avatar.png`) sin retocar el rostro: solo se recorta y se funden los bordes.
+Todas mantienen las dos formaciones completas (11 + 11) y el texto «¿CUÁL ELIGES?».
+
+- **01 · Medallón central:** el avatar va en un círculo con aro blanco y verde entre los dos campos, con el «VS» encima.
+- **02 · Presentador + pizarra:** el avatar grande a la izquierda y las dos formaciones en una pizarra a la derecha, con el texto abajo a la derecha.
+- **03 · Avatar integrado:** el avatar se funde con el césped entre los dos campos, con el «VS» arriba y el texto sobre una franja oscura.
+
+Regenerar: `NODE_PATH=$(npm root -g) node miniaturas/_build/build_avatar.js` (0 créditos, sin IA generativa).
