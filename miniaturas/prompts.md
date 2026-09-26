@@ -113,3 +113,17 @@ Todas mantienen las dos formaciones completas (11 + 11) y el texto «¿CUÁL ELI
 - **03 · Primer plano:** Moisés grande a la derecha, la pizarra a la izquierda y la pregunta arriba.
 
 Regenerar: `NODE_PATH=$(npm root -g) node miniaturas/_build/build_avatar.js` (0 créditos, sin IA generativa de imagen).
+
+---
+
+## Estilo «presentador + dos tarjetas» (referencia de Moisés) — `miniatura_estilo_01..03.png`
+
+- Moisés recortado en el centro y una tarjeta inclinada por sistema a cada lado (formación completa de 11 y su número).
+- Fondo partido en dos brillos con rayos y chispas, y titular de dos partes arriba (la segunda parte en color).
+- **01:** dorado frente a verde, con «2 SISTEMAS. 1 ELECCIÓN.».
+- **02:** naranja frente a verde (la más parecida a la referencia), con «2 SISTEMAS. ¿CUÁL ELIGES?».
+- **03:** blanco frío frente a verde, con «¿1-4-3-3 O 1-4-4-2?».
+- Limitación: el recorte solo incluye cabeza y hombros, así que las tarjetas «flotan» y no las sostiene con las manos.
+  Para que las sujete habría que generar una pose nueva con IA (Higgsfield), usando su foto como referencia.
+
+Regenerar: `NODE_PATH=$(npm root -g) node miniaturas/_build/build_estilo.js`
