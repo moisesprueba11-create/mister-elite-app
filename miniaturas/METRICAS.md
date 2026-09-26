@@ -40,4 +40,4 @@ Imágenes producidas sin IA generativa: `miniatura_01.png`, `miniatura_02.png`, 
 
 - Primer mensaje del encargo en el log: 2026-09-26T13:31:53Z.
 - Cierre registrado: FIN (2026-09-26 13:36:33 UTC).
-- Tiempo total ≈ desde 13:31:53 hasta FIN (el valor exacto está en la tabla final de la respuesta).
+- **Tiempo total: 0:04:40** (13:31:53 → 13:36:33 UTC).
