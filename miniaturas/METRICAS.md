@@ -45,3 +45,11 @@ Imágenes producidas sin IA generativa: `miniatura_01.png`, `miniatura_02.png`, 
 ## Iteración 2 — variantes con avatar (2026-09-26 14:02:07 UTC)
 
 - Tres composiciones más con `build_avatar.js` a partir de `inputs/cara/avatar.png`. Sin Higgsfield: 0 créditos y 0 generaciones con IA.
+
+## Iteración 4: brazos sujetando las tarjetas (2026-09-26 14:11 UTC)
+
+- Subir la foto a Canva: bloqueado. El proxy devolvió 403 a `canva.com` y el sistema de permisos denegó la importación desde URL.
+- 1 generación con Canva AI (`generate-image`, solo texto, sin la foto de Moisés): «cuerpo genérico con polo marino sujetando dos tarjetas en blanco».
+  - Job `AaDeDibKaUSGMjBMZLdZmw`, media `MAHWTnshRPg`.
+  - Coste en créditos de Canva: no disponible.
+  - Resultado: solo se pudo descargar una vista previa de 199×112 (canva.com está bloqueado por la red), insuficiente para componer. **No usada.**
