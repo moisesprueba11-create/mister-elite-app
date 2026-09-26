@@ -103,11 +103,13 @@ NODE_PATH=$(npm root -g) node miniaturas/_build/build.js
 
 ## Variantes con avatar (concepto 1 elegido) — `miniatura_avatar_01..03.png`
 
-Se usa el avatar de Moisés Díaz (`inputs/cara/avatar.png`) sin retocar el rostro: solo se recorta y se funden los bordes.
+Se usa la figura de Moisés Díaz **recortada, sin el fondo de la foto**. El recorte está en `inputs/cara/avatar_recorte.png`
+y se hizo a partir de `inputs/cara/avatar.png` con rembg y el modelo `birefnet-portrait`, en local.
+No se retoca el rostro: solo se añade una luz de contorno blanca y verde y una sombra para integrarlo.
 Todas mantienen las dos formaciones completas (11 + 11) y el texto «¿CUÁL ELIGES?».
 
-- **01 · Medallón central:** el avatar va en un círculo con aro blanco y verde entre los dos campos, con el «VS» encima.
-- **02 · Presentador + pizarra:** el avatar grande a la izquierda y las dos formaciones en una pizarra a la derecha, con el texto abajo a la derecha.
-- **03 · Avatar integrado:** el avatar se funde con el césped entre los dos campos, con el «VS» arriba y el texto sobre una franja oscura.
+- **01 · Centro:** Moisés entre los dos campos, con el «VS» sobre la cabeza y la pregunta en una franja inferior.
+- **02 · Presentador + pizarra:** Moisés a la izquierda y las dos formaciones en una pizarra a la derecha, con el texto abajo a la derecha.
+- **03 · Primer plano:** Moisés grande a la derecha, la pizarra a la izquierda y la pregunta arriba.
 
-Regenerar: `NODE_PATH=$(npm root -g) node miniaturas/_build/build_avatar.js` (0 créditos, sin IA generativa).
+Regenerar: `NODE_PATH=$(npm root -g) node miniaturas/_build/build_avatar.js` (0 créditos, sin IA generativa de imagen).
