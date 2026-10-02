@@ -30,7 +30,7 @@ Otros ángulos para rotar cuando haga falta: estadística, error típico ("el er
 ## Protocolo de test (72 h)
 1. Publicar A, B, C como Trial Reels el mismo día, a la hora recomendada (15:30-17:30 WEST), uno tras otro.
 2. A las 72 h leer, por versión: abandono a 3 s, completado, envíos/espectador, comentarios.
-3. Ganador = mayor combinación (retención 3 s y envíos/espectador); desempate por completado.
+3. Ganador = mayor combinación (retención 3 s y envíos/espectador); desempate por completado. **Umbral (hipótesis de partida, ajustar con datos):** declarar ganador solo si la mejor versión supera a la segunda en ≥5 puntos de abandono a 3 s o ≥30 % relativo en envíos/espectador, y cada versión tiene ≥1.000 espectadores. Si no, anotar "empate" (no cuenta como victoria de ningún tipo). 1 sola variable: el gancho (cuerpo, duración y hora iguales).
 4. Registrar en `conocimiento/tests-ganchos.md`. El ganador pasa a público (automático si supera el umbral, o manualmente).
 5. Perdedores: no se borran; se anota por qué (ángulo + métrica).
 

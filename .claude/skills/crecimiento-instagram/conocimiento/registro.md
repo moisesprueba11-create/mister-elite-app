@@ -24,3 +24,7 @@ Revisados registro de conectores, plugins y skills. Hallazgo: META y Windsor.ai 
 ## 2026-10-02 — Ronda 4 (bucle de mejora completo)
 Estudiado: social-media-skills (106 skills), retención 2026, límites comentario→DM, embudos de cursos, Trial Reels. Cambios aplicados: (1) subtítulos quemados + composición sin tapar la pizarra en montar_reel.py; (2) corregido el plan ManyChat (primer mensaje en un bloque, sin recordatorio automático a 24 h); (3) nuevo marca-y-voz.md; (4) detectado y eliminado "Moisés Díaz" del motor de animación de vídeo (video-*), clips regenerados; (5) Trial Reels como método de test de ganchos.
 Autocrítica: mi plan ManyChat anterior incumplía los límites de la API (recordatorio a 24 h, flujo de varios pasos en el primer DM); lo corregí. Además la firma de las pizarras de vídeo llevaba el nombre personal y yo no lo había comprobado.
+
+## 2026-10-02 — Ronda 5
+Estudiado: marketingskills (60+ skills; ab-testing, lead-magnets, product-marketing), carruseles 2026, SEO de Instagram, estudio Metricool 2026, métricas de creadores. Aplicado: carrusel mixto, SEO/alt text, duración como variable de test, umbral de victoria en tests de ganchos, competencia vía API oficial.
+Autocrítica: (1) en la ronda 1 di como referencia "carruseles 0,55 % engagement"; hoy aparece 1,92 % en otras fuentes → sin consenso, usar solo datos propios. (2) La búsqueda de cuentas de táctica en español no dio nada útil; no inventé referentes. (3) Dije "ideal 7-15 s" y hay fuentes que dicen 30-60 s: ahora es variable de test.

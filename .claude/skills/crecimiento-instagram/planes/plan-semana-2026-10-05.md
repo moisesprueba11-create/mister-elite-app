@@ -34,3 +34,8 @@ Línea 1 (≤125 car.): gancho con cifra o nombre. 1 CTA de comentario. 3-5 hash
 
 ## Qué medir esta semana (para decidir la siguiente)
 Espectadores, envíos/espectador, comentarios/espectador, nuevos seguidores por pieza, clics al enlace.
+
+## Ajuste ronda 5 (carruseles y búsqueda)
+- Carrusel 1 (mar) y Carrusel 2 (sáb): **mixtos**, 8 diapositivas: portada con gancho + 5-6 pizarras + 1 clip animado + cierre con palabra clave. Subir en 4:5 (1080x1350).
+- Alt text (≤100 car.) con palabras clave en cada pieza; primera línea del caption con la palabra clave principal.
+- Cada Reel con 3 ganchos A/B/C (ver modos/ganchos-ab.md). Duración: el Reel del lunes ~20 s y el del miércoles ~45 s para empezar a medir duración.

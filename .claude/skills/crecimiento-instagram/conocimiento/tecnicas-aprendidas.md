@@ -56,6 +56,22 @@ Fuentes: github.com/social-media-skills/skills · zebracat/retensis/opus.pro (re
 13. **Límites reales de comentario→DM (API de Instagram)** [confirmado en varias guías; verificar en ManyChat]: máx. 200 DMs/hora; **1 DM automático por usuario cada 24 h** desde comentario/Story; 1 mensaje privado por comentario y dentro de 7 días; **el primer mensaje = un solo bloque, sin esperas ni pasos extra**. Recomendado: 3-5 variantes de DM y de respuesta pública, personalizar con el nombre. Conversión típica comentario→lead 15-25 % si el CTA es claro y específico.
 14. **Embudo de cursos**: la mayoría de ventas se cierran en el DM: contenido que abre conversación → flujo que cualifica → derivación al curso adecuado. El pack social-media-skills lo estructura con: brand-profile, voice-builder, audience-research, goals-and-kpis (bases) + lead-magnets-and-funnels + link-in-bio.
 
+## Ronda 5 (2026-10-02)
+Fuentes: github.com/coreyhaines31/marketingskills · posteverywhere.ai / adpicto.com / carouselli.com (carruseles) · inro.social / later.com (SEO de Instagram) · metricool.com (estudio 2026) · creatorflow.so (métricas).
+
+15. **Carruseles 2026** [plausible; datos de herramientas, ojo con contradicciones]: óptimo 7-10 diapositivas (el límite ya es 20); la portada decide ~80 % del resultado; guardados +35 % frente a imagen única. **Carrusel mixto (imágenes + vídeo) 2,33 % de engagement y solo el 7 % de las cuentas lo usa** → oportunidad directa: pizarras estáticas + 1 clip animado de la jugada como diapositiva.
+16. **SEO de Instagram** [confirmado en varias guías]: desde julio-2025 los posts públicos de cuentas profesionales se indexan en Google por defecto; la búsqueda es semántica (entiende intención), pero prioriza palabras clave en nombre de usuario, **campo nombre**, bio, primera línea del caption y **alt text (hasta 100 car.)**. Poner alt text a cada Reel/imagen.
+17. **5 métricas que importan** [plausible]: engagement por alcance, envíos/alcance, retención de Reels, velocidad de crecimiento de seguidores, finalización de Stories. (Ignorar likes sueltos y seguidores totales.)
+18. **Diseño de experimentos** (skill `ab-testing` de marketingskills) [adoptado]: 1 variable por test, hipótesis escrita antes, no declarar ganador con diferencias pequeñas o muestra baja. → Aplicado a ganchos A/B (umbral de victoria).
+19. **Skill base compartida** (`product-marketing` en marketingskills: todas las skills leen primero el contexto de marca) → ya equivale a `marca-y-voz.md`; las skills deben leerlo siempre primero.
+20. **Investigación de competencia sin scrapers**: la API oficial de Instagram permite leer métricas públicas (likes, comentarios) de cuentas Business/Creator ajenas (en Make: "List public user posts / Get public user info"). Cuando esté autorizada la conexión de @misterelite, analizar cuentas de táctica sin tocar sus datos privados ni violar normas. [verificar alcance de campos]
+
+### Contradicciones detectadas (no tomar nada como ley)
+- **Duración óptima del Reel**: unas fuentes dicen 7-15 s (más completado), otras 30-60 s (más engagement/vistas medianas). → Probar duración como variable propia (un Reel corto y uno de 40-50 s del mismo tema) y decidir con tus datos.
+- **Engagement de carruseles**: 0,55 % (ronda 1) frente a 1,92 % (ronda 5): muestras y definiciones distintas. Usar solo tu propia mediana.
+- **Tendencia general**: el estudio de Metricool 2026 reporta caída de alcance de Reels (-35 %) y posts (-31 %) interanual: la saturación del vídeo corto es real → la diferenciación (series, marca, análisis propio) pesa más que el volumen. Otro dato (vendor): 4+ Reels/semana crecen 2,8x más rápido que 1-2.
+- **Búsqueda de cuentas de táctica en español**: sin resultados útiles con buscadores; no inventar referentes. Alternativa: la API de competencia (técnica 20).
+
 ## Pendiente de estudiar (próximas rondas)
 - github.com/social-media-skills/skills (106 skills: vídeo, diseño, analítica, publicación).
 - github.com/coreyhaines31/marketingskills (copy, CRO, analítica).

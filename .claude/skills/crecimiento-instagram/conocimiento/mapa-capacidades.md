@@ -37,3 +37,6 @@ Cada ronda: (a) volver a buscar en el registro de conectores/plugins con palabra
 ## Automatización de publicación (idea clave, 2026-10-02)
 Moisés YA tiene en Make un escenario de publicación por cola (data store, 11:00 y 19:00, módulos CreateAReelPost/CreatePostPhoto) para otra cuenta (herencias-canarias). Reutilizar el patrón para @misterelite: Reels listos → cola → publicación a las 15:30/17:30 WEST. Falta autorizar Instagram de @misterelite en Make y decidir dónde viven los vídeos (URL accesible: Drive u otro).
 ManyChat: palabras clave FIJAS aplicadas a "cualquier publicación" → cero activaciones por Reel.
+
+## Competencia sin scrapers (2026-10-02)
+Con la conexión de Instagram de @misterelite autorizada en Make, los módulos "List public user posts" y "Get public user info" leen métricas públicas de otras cuentas Business/Creator (API oficial). Usarlos cada ronda sobre 5-10 cuentas de táctica (a elegir; pedir a Moisés SOLO los @ que quiera vigilar, una vez) y calcular múltiplos sobre su mediana. Verificar qué campos devuelve.

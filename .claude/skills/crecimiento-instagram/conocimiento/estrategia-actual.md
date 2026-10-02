@@ -37,3 +37,10 @@
 - **Público**: 66 % entrenadores de 35-54 años, 96 % hombres → tono profesional y directo, sin jerga juvenil, lenguaje válido en España y Latinoamérica ("míster/entrenador", evitar localismos).
 - **Horario**: 15:00-18:00 WEST (ver cuenta-y-metricas.md).
 - **Medir**: sin acceso a todas las piezas no se calculan medianas; cuando Make dé los datos completos, recalcular múltiplos.
+
+## Decisiones ronda 5 (2026-10-02)
+- **Carrusel mixto** como formato estrella para guardar: 7-10 diapositivas = portada fuerte + pizarras estáticas + 1 diapositiva con el clip animado de la jugada + cierre con CTA ("Comenta SISTEMA/RUEDAS/SALIDA"). Hipótesis: mejor que carrusel solo-imagen porque casi nadie lo hace.
+- **SEO**: revisar el campo *nombre* del perfil (hoy "Mister Élite - Entrenador de Fútbol"): valorar incluir "Táctica" (p. ej. "Mister Élite | Táctica y Sistemas de Fútbol"); alt text de cada pieza con palabras clave (sistema, equipo, entrenador, táctica); primera línea del caption con la palabra clave.
+- **Duración como variable de test**: alternar un Reel de ~20 s y otro de ~45 s por tema; decidir con envíos/espectador y retención.
+- **Métricas semanales (las 5)**: engagement por alcance, envíos/alcance, retención, velocidad de seguidores, finalización de Stories.
+- **Saturación**: diferenciar con series de marca y análisis propio; no subir volumen a costa de calidad.
