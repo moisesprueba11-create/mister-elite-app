@@ -48,6 +48,9 @@ comprobar el estado de los ya instalados y proponer como máximo 1 mejora de int
 ## Archivos
 - `conocimiento/mapa-capacidades.md` · `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
 
+## ManyChat (Moisés ya lo usa)
+Cada pieza del plan lleva una palabra clave de comentario y su texto de respuesta pública + mensaje directo en `planes/manychat-<fecha>.md`. Medir por palabra clave (comentarios, DMs, clics, ventas) y mejorar los textos según los resultados.
+
 ## Reglas
 - **Marca pública: solo "MISTER ÉLITE". NUNCA aparece el nombre "Moisés Díaz" en Reels, carruseles, pizarras, captions ni Stories** (sí puede figurar en los cursos, según CLAUDE.md).
 - Poca teoría, mucha aplicación (misma filosofía que los cursos).

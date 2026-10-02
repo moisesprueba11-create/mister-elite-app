@@ -53,6 +53,7 @@ El Claude del **PC** tiene ElevenLabs; la **nube** (rutina del lunes) no. El rep
 - `locucion.txt` — texto limpio SOLO de locución, listo para pegar en ElevenLabs (sin acotaciones, sin el nombre personal).
 - `clips.txt` — una ruta de clip MP4 por línea (los clips animados ya renderizados, en esa carpeta o en `video-*/clips/`).
 - `caption.txt` — caption listo (1ª línea ≤125 car., 1 CTA, 3-5 hashtags).
+- `manychat.txt` — palabra clave del Reel, respuestas públicas y mensaje directo para pegar en ManyChat (ver `planes/manychat-*.md`).
 Commit + push. Nada se publica.
 
 **PC (Claude con ElevenLabs):** al decir "produce los reels pendientes":
