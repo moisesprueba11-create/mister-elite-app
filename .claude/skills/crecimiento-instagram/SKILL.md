@@ -1,0 +1,41 @@
+---
+name: crecimiento-instagram
+description: >-
+  Estratega de crecimiento en redes (principalmente Instagram) para la marca
+  MISTER ÉLITE — Moisés Díaz. Investiga de forma continua (web, YouTube, GitHub,
+  skills de otros) técnicas nuevas, las valida, las guarda en una base de
+  conocimiento y las convierte en un plan de contenido accionable. Úsala cuando
+  el usuario pida "investiga cómo crecer", "mejora la estrategia de Instagram",
+  "plan de contenido", "ideas de Reels/carruseles", "ronda de aprendizaje", o en
+  la rutina semanal automática.
+---
+
+# Crecimiento en Instagram (MISTER ÉLITE) — bucle de mejora continua
+
+Objetivo: hacer crecer la cuenta de Moisés Díaz (entrenador de fútbol, cursos tácticos)
+con seguidores reales, autoridad y venta de cursos. Sin trampas (nada de bots, compra
+de seguidores ni contenido robado: Instagram desde 2026 retira de recomendaciones las
+cuentas que republican contenido ajeno).
+
+## Bucle (cada ronda)
+1. **Leer** `conocimiento/estrategia-actual.md` y `conocimiento/registro.md` (qué ya sabemos / qué probamos).
+2. **Investigar** (mín. 5 búsquedas, fuentes variadas): cambios de algoritmo, formatos que
+   funcionan, cuentas top de fútbol/entrenadores (ES/EN), YouTube (tutoriales de growth,
+   análisis de Reels virales), GitHub (skills/agentes de Instagram, repos de marketing).
+   Prioriza fuentes recientes (últimos 3-6 meses) y primarias (Mosseri, Meta, datos propios).
+3. **Filtrar**: descarta humo y trucos. Cada hallazgo se etiqueta: `confirmado` (fuente
+   primaria/varias fuentes), `plausible` o `descartado` (y por qué).
+4. **Integrar**: actualiza `estrategia-actual.md` (solo lo confirmado/plausible útil) y
+   añade una entrada con fecha a `registro.md` con fuentes (URL).
+5. **Aplicar**: genera entregables concretos para Moisés: calendario de la semana, 5 ideas
+   de Reels con gancho, 2 carruseles, textos/CTA. Marca MISTER ÉLITE — Moisés Díaz.
+6. **Medir**: si hay datos reales de la cuenta (insights que pegue Moisés), compara con la
+   semana anterior y ajusta. Sin datos propios, dilo; no inventes métricas.
+7. **Commit + push** a la rama; resumir en 5 líneas qué se aprendió y qué hay que probar.
+
+## Reglas
+- Poca teoría, mucha aplicación (misma filosofía que los cursos).
+- Nada de promesas de "viral garantizado". Techo realista: crecimiento constante por consistencia.
+- Contenido propio: cada curso/tarea/pizarra del repo es materia prima (recortes de pizarras,
+  errores comunes por sistema, "tarea del día").
+- Cita siempre las fuentes de lo aprendido en `registro.md`.
