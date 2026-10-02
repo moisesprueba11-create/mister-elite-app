@@ -9,15 +9,18 @@ Sustituye {ENLACE} por el enlace real del recurso (guía, PDF o curso). No inven
 - Seguimiento a las 24 h solo si no abrió el enlace (1 recordatorio, nunca más).
 - Medir por palabra clave: comentarios, mensajes enviados, clics al enlace, altas/ventas (Stripe cuando esté conectado).
 
-## Palabras clave por pieza
-| Pieza | Palabra clave | Recurso que entrega |
+## Palabras clave FIJAS (se configuran UNA vez y valen para siempre)
+En ManyChat: automatización de comentarios de Instagram aplicada a **cualquier publicación o Reel** (no a uno concreto).
+Así no hay que activar nada al subir cada Reel. (Verificar en el panel de ManyChat el nombre exacto de la opción.)
+
+| Palabra clave (fija) | Series que cubre | Qué hace el flujo |
 |---|---|---|
-| Reel México (lun) | MEXICO | Pizarra resumen del sistema de México (imagen/PDF de 1 página) |
-| Reel Brasil (mié) | BRASIL | Pizarra resumen del sistema de Brasil |
-| Reel Colombia (vie) | COLOMBIA | Pizarra resumen del sistema de Colombia |
-| Ruedas de pases (mar/jue) | RUEDAS | Ficha de 3 ruedas de pases con organización y variantes (del curso de Ruedas de pases) |
-| Salida de balón (sáb) | SALIDA | Ficha de salida de balón en 1-4-3-3 (del curso 1-4-3-3) |
-| Reel dom | CLAVE de la semana | Encuesta/guía según tema |
+| SISTEMA | Todos los "Sistemas de ataque de [selección]" y análisis de equipos | Pregunta con botones: "¿De qué selección/equipo?" (México · Brasil · Colombia · España · Argentina · Otro) y envía su pizarra resumen |
+| RUEDAS | Todas las "Ruedas de pases" | Envía la ficha de ruedas de pases del momento |
+| SALIDA | Salida de balón y sistemas con balón | Envía la ficha de salida de balón |
+
+- Las pizarras/fichas nuevas se **añaden a la lista de botones** (1 minuto cuando hay una selección nueva), no se rehace el flujo.
+- Cada Reel termina con la misma frase fija de su serie: "Comenta SISTEMA y te lo mando" / "Comenta RUEDAS…" / "Comenta SALIDA…".
 
 ## Respuestas públicas (elegir una al azar)
 1. "Te lo envío por mensaje, míster 👇"
@@ -34,4 +37,4 @@ Para enviarte lo que más te sirva: ¿qué sistema juega tu equipo y en qué cat
 - No responde → un solo recordatorio a las 24 h: "¿Pudiste ver {RECURSO}? Si quieres, te digo qué curso encaja con tu equipo."
 
 ## Frase de cierre en el Reel (locución)
-"Comenta {PALABRA CLAVE} y te lo mando. Y pásaselo a un míster que aún use este sistema."
+"Comenta {SISTEMA | RUEDAS | SALIDA} y te lo mando. Y pásaselo a un míster que aún use este sistema."

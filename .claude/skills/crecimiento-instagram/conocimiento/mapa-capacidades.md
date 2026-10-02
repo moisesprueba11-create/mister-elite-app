@@ -33,3 +33,7 @@
 
 ## Regla de la ronda semanal
 Cada ronda: (a) volver a buscar en el registro de conectores/plugins con palabras nuevas (reels, analytics, comment automation, YouTube analytics, TikTok/Shorts cross-posting), (b) comprobar si algo de la lista cambió de estado, (c) proponer como máximo 1 mejora de integración, con su esfuerzo para Moisés (clics necesarios).
+
+## Automatización de publicación (idea clave, 2026-10-02)
+Moisés YA tiene en Make un escenario de publicación por cola (data store, 11:00 y 19:00, módulos CreateAReelPost/CreatePostPhoto) para otra cuenta (herencias-canarias). Reutilizar el patrón para @misterelite: Reels listos → cola → publicación a las 15:30/17:30 WEST. Falta autorizar Instagram de @misterelite en Make y decidir dónde viven los vídeos (URL accesible: Drive u otro).
+ManyChat: palabras clave FIJAS aplicadas a "cualquier publicación" → cero activaciones por Reel.
