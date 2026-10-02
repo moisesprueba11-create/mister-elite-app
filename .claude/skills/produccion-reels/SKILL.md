@@ -28,7 +28,7 @@ Enlaza con `crecimiento-instagram`: allí se decide QUÉ publicar (plan semanal 
      generada en su chat y dejada en el repo.
    - Alternativas conectadas aquí: HeyGen `create_speech`, Higgsfield `generate_audio`.
    Usar SIEMPRE la misma voz (identidad de marca).
-4. **Montaje**: `./montar_reel.sh salida.mp4 locucion.mp3 clip1.mp4 [clip2.mp4 …]` → 1080x1920, H.264/AAC,
+4. **Montaje**: `python montar_reel.py salida.mp4 locucion.mp3 clip1.mp4 [clip2.mp4 …]` (multiplataforma, Windows incluido) → 1080x1920, H.264/AAC,
    fondo de marca, firma "MISTER ÉLITE". Subtítulos: añadir como siguiente mejora.
 5. **Revisión humana (1 min)**: Moisés mira el Reel, corrige si hace falta. Mientras no haya tasa
    de aprobación alta, NO se publica nada sin su visto bueno.
@@ -59,6 +59,15 @@ Commit + push. Nada se publica.
 1. `git pull` de la rama.
 2. Para cada carpeta de `reels/pendientes/` sin `locucion.mp3`: generar la voz con ElevenLabs a partir de `locucion.txt`
    usando **siempre la misma voz de marca** (la que ya usa Moisés; anotar su nombre en `voz.md` la 1ª vez) y guardar `locucion.mp3` en esa carpeta.
-3. Ejecutar `.claude/skills/produccion-reels/montar_pendientes.sh` → deja `reels/listos/reel-<slug>.mp4` + caption.
+3. Ejecutar `.claude/skills/produccion-reels/montar_reel.py --pendientes`, es decir `python .claude/skills/produccion-reels/montar_reel.py --pendientes` → deja `reels/listos/reel-<slug>.mp4` + caption.
 4. Commit + push y avisar a Moisés para su visto bueno (1 min). Publicación: manual o por Make cuando esté autorizado.
 Requisitos PC: `ffmpeg` instalado.
+
+## Modo PC completo (todo en el PC, sin nube)
+Si Moisés pide "haz la semana completa" desde el PC, el Claude del PC ejecuta TODO en una sesión:
+1. Skill `crecimiento-instagram` (ronda de investigación + plan en `planes/`).
+2. Renderizar los clips animados de cada pieza (motor `anim.py`).
+3. Voz con ElevenLabs (voz de `voz.md`) → `locucion.mp3` por pieza.
+4. `python .claude/skills/produccion-reels/montar_reel.py --pendientes` → `reels/listos/`.
+5. Commit + push. Publicación solo con visto bueno de Moisés.
+Marca pública: solo "MISTER ÉLITE", nunca el nombre personal.
