@@ -33,6 +33,17 @@ cuentas que republican contenido ajeno).
    semana anterior y ajusta. Sin datos propios, dilo; no inventes métricas.
 7. **Commit + push** a la rama; resumir en 5 líneas qué se aprendió y qué hay que probar.
 
+## Fase de auto-mejora (obligatoria en cada ronda)
+Además de investigar Instagram, **mejorarme como herramienta**:
+- Estudiar al menos 1 skill/repo/vídeo de otro experto (GitHub, YouTube) y extraer técnicas concretas.
+- Registrarlas en `conocimiento/tecnicas-aprendidas.md` con fuente y estado (confirmado/plausible/descartado).
+- Convertir lo útil en un **modo** de `modos/modos.md` o en una regla de esta skill.
+- Revisar qué predicciones mías fallaron con los datos reales de Moisés y corregir el método.
+- Si una técnica no se puede validar con datos, marcarla como hipótesis, nunca como hecho.
+
+## Archivos
+- `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
+
 ## Reglas
 - Poca teoría, mucha aplicación (misma filosofía que los cursos).
 - Nada de promesas de "viral garantizado". Techo realista: crecimiento constante por consistencia.
