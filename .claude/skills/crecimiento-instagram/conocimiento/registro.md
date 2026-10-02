@@ -17,3 +17,6 @@ Moisés aportó captura de actividad de seguidores (pico 18 h WEST; lun 15-21 h,
 
 ## 2026-10-02 — Ronda 1c (datos por pieza y audiencia completa)
 Moisés aportó 9 capturas: países, género, edad, seguidores 30 d, y ranking de piezas por espectadores/reproducciones/me gusta/nuevos seguidores. Hallazgos en cuenta-y-metricas.md y decisiones en estrategia-actual.md.
+
+## 2026-10-02 — Ronda 3 (capacidades)
+Revisados registro de conectores, plugins y skills. Hallazgo: META y Windsor.ai ya están instalados pero sin completar; plugin "instagram" resuelve comentario→DM. Ver mapa-capacidades.md.

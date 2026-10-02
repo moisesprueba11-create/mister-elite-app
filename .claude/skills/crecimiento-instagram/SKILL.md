@@ -41,8 +41,12 @@ Además de investigar Instagram, **mejorarme como herramienta**:
 - Revisar qué predicciones mías fallaron con los datos reales de Moisés y corregir el método.
 - Si una técnica no se puede validar con datos, marcarla como hipótesis, nunca como hecho.
 
+## Fase de capacidades (cada ronda)
+Revisar `conocimiento/mapa-capacidades.md`: buscar conectores, plugins y skills nuevos útiles para Instagram,
+comprobar el estado de los ya instalados y proponer como máximo 1 mejora de integración (indicando cuántos clics cuesta).
+
 ## Archivos
-- `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
+- `conocimiento/mapa-capacidades.md` · `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
 
 ## Reglas
 - **Marca pública: solo "MISTER ÉLITE". NUNCA aparece el nombre "Moisés Díaz" en Reels, carruseles, pizarras, captions ni Stories** (sí puede figurar en los cursos, según CLAUDE.md).
