@@ -108,7 +108,7 @@ def title_card(big, small, n_frames=18, size=(W, None)):
     <text x="300" y="300" font-size="20" font-weight="700" fill="#7fd0ff" text-anchor="middle" letter-spacing="4">MISTER ÉLITE · 1-4-3-3</text>
     <text x="300" y="370" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle">{_esc(big)}</text>
     <text x="300" y="420" font-size="20" font-weight="600" fill="#f7c948" text-anchor="middle">{_esc(small)}</text>
-    <text x="300" y="720" font-size="13" fill="#8aa0b6" text-anchor="middle">del concepto al campo · Moisés Díaz</text>
+    <text x="300" y="720" font-size="13" fill="#8aa0b6" text-anchor="middle">del concepto al campo</text>
     </svg>'''
     png = cairosvg.svg2png(bytestring=svg.encode(), output_width=W)
     im = Image.open(io.BytesIO(png)).convert("RGB")

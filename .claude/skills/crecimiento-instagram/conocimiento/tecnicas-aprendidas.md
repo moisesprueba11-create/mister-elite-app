@@ -47,6 +47,15 @@ Cada técnica lleva fuente y estado. Se adapta a MISTER ÉLITE; no se copia cód
 ## 9. Investigación viral sin trampas [confirmado]
 - Capturar a mano 10-12 Reels de ~10 cuentas del nicho; ranking por múltiplo sobre su mediana; nombrar la fórmula de gancho de cada outlier. Sin scrapers con login (riesgo para tu cuenta).
 
+## Ronda 4 (2026-10-02) — nuevas técnicas
+Fuentes: github.com/social-media-skills/skills · zebracat/retensis/opus.pro (retención 2026) · manychat.com/blog (comment automation) · setsmart.io / learnybox.com (embudos de cursos) · inro.social / socialchamp.com (Trial Reels).
+
+10. **Trial Reels** [confirmado, varias fuentes]: se muestran SOLO a no seguidores hasta 72 h; si superan el umbral, pasan a seguidores y al grid. Requiere cuenta profesional pública ≥1.000 seguidores (la tuya cumple). → **Sustituye al "score de ganchos": publicar 2-3 variantes del gancho como Trial y quedarse con la que gane.** (Activación manual en la app al publicar; no sé si la API de Make lo soporta.)
+11. **Benchmarks de retención** [plausible, fuentes de herramientas]: abandono en los primeros 3 s <20 % sano, 20-30 % normal, >40 % el gancho falla; completado >50 % = sigue distribuyéndose; retención a 3 s >70 % activa más alcance. Subtítulos ≈ +38 % de retención; cara en los 3 primeros segundos ≈ +35 %. → Subtítulos quemados ya incluidos en `montar_reel.py`.
+12. **Tipos de gancho con mejor conversión** [plausible, estudio de anuncios]: resultado concreto > POV realista > opinión impopular. Encaja con "X es una trampa" (opinión impopular) y "en 4 minutos mejoras Y" (resultado concreto).
+13. **Límites reales de comentario→DM (API de Instagram)** [confirmado en varias guías; verificar en ManyChat]: máx. 200 DMs/hora; **1 DM automático por usuario cada 24 h** desde comentario/Story; 1 mensaje privado por comentario y dentro de 7 días; **el primer mensaje = un solo bloque, sin esperas ni pasos extra**. Recomendado: 3-5 variantes de DM y de respuesta pública, personalizar con el nombre. Conversión típica comentario→lead 15-25 % si el CTA es claro y específico.
+14. **Embudo de cursos**: la mayoría de ventas se cierran en el DM: contenido que abre conversación → flujo que cualifica → derivación al curso adecuado. El pack social-media-skills lo estructura con: brand-profile, voice-builder, audience-research, goals-and-kpis (bases) + lead-magnets-and-funnels + link-in-bio.
+
 ## Pendiente de estudiar (próximas rondas)
 - github.com/social-media-skills/skills (106 skills: vídeo, diseño, analítica, publicación).
 - github.com/coreyhaines31/marketingskills (copy, CRO, analítica).

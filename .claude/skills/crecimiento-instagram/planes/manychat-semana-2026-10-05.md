@@ -6,7 +6,8 @@ Sustituye {ENLACE} por el enlace real del recurso (guía, PDF o curso). No inven
 - Disparador: comentario que contenga la palabra clave (sin distinguir mayúsculas).
 - Respuesta pública (variar entre 3 para no repetir): ver abajo.
 - Mensaje directo: 1 mensaje corto con el recurso + 1 pregunta para calificar.
-- Seguimiento a las 24 h solo si no abrió el enlace (1 recordatorio, nunca más).
+- **Límites de Instagram (verificar en ManyChat):** el PRIMER mensaje es un único bloque (sin esperas ni pasos extra) y solo se permite 1 DM automático por persona cada 24 h. Por eso NO hay recordatorio automático a las 24 h: el seguimiento solo ocurre si la persona responde.
+- 3-5 variantes de respuesta pública y de DM; personalizar con el nombre.
 - Medir por palabra clave: comentarios, mensajes enviados, clics al enlace, altas/ventas (Stripe cuando esté conectado).
 
 ## Palabras clave FIJAS (se configuran UNA vez y valen para siempre)
@@ -32,9 +33,9 @@ Así no hay que activar nada al subir cada Reel. (Verificar en el panel de ManyC
 
 Para enviarte lo que más te sirva: ¿qué sistema juega tu equipo y en qué categoría entrenas?"
 
-## Mensaje de calificación → derivación (según su respuesta, manual o con Claude)
+## Después de su respuesta (la ventana de 24 h se reabre cuando responde)
 - Responde un sistema (p. ej. 4-3-3) → recomendar el curso de ese sistema con 1 frase de beneficio + enlace.
-- No responde → un solo recordatorio a las 24 h: "¿Pudiste ver {RECURSO}? Si quieres, te digo qué curso encaja con tu equipo."
+- No responde → no se insiste automáticamente. Se retoma en su próxima interacción (comentario o Story).
 
 ## Frase de cierre en el Reel (locución)
 "Comenta {SISTEMA | RUEDAS | SALIDA} y te lo mando. Y pásaselo a un míster que aún use este sistema."

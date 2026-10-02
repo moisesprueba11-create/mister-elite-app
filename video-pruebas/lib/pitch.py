@@ -126,7 +126,7 @@ class Pitch:
                 self._text(self.W/2, 40, self.subtitle, size=11, c="#9fb3c8", w=500)
         if self.brand:
             self._rect(0, self.H - self.foot_h, self.W, self.foot_h, fill=PALETTE["dark"])
-            self._text(self.W - 12, self.H - 8, "MISTER ÉLITE · Moisés Díaz",
+            self._text(self.W - 12, self.H - 8, "MISTER ÉLITE",
                        size=10, c="#8aa0b6", w=700, anchor="end")
             self._text(12, self.H - 8, "Animación · prueba", size=10, c="#7f93a8", w=600, anchor="start")
         # flecha de sentido de ataque

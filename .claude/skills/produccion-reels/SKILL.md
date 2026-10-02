@@ -29,7 +29,7 @@ Enlaza con `crecimiento-instagram`: allí se decide QUÉ publicar (plan semanal 
    - Alternativas conectadas aquí: HeyGen `create_speech`, Higgsfield `generate_audio`.
    Usar SIEMPRE la misma voz (identidad de marca).
 4. **Montaje**: `python montar_reel.py salida.mp4 locucion.mp3 clip1.mp4 [clip2.mp4 …]` (multiplataforma, Windows incluido) → 1080x1920, H.264/AAC,
-   fondo de marca, firma "MISTER ÉLITE". Subtítulos: añadir como siguiente mejora.
+   fondo de marca, firma "MISTER ÉLITE". Subtítulos quemados automáticos si hay `locucion.txt`. Para decidir ganchos: publicar variantes como **Trial Reels** (solo no seguidores, 72 h).
 5. **Revisión humana (1 min)**: Moisés mira el Reel, corrige si hace falta. Mientras no haya tasa
    de aprobación alta, NO se publica nada sin su visto bueno.
 6. **Publicación** (cuando exista conexión válida de Instagram en Make): módulo `CreateAReelPost`,
@@ -42,7 +42,7 @@ en `reels/` (no son entregables de curso; la fecha identifica cada pieza).
 
 ## Estado
 - [x] Animaciones por código (existente) · [x] Montaje 1080x1920 (probado) · [x] Guion/plan
-- [ ] Voz automática (falta conectar proveedor aquí) · [ ] Subtítulos quemados
+- [ ] Voz automática en la nube (la pone el Claude del PC con ElevenLabs) · [x] Subtítulos quemados (desde locucion.txt)
 - [ ] Publicación automática y lectura de insights (falta autorizar Instagram en Make)
 
 ## Reparto nube ↔ PC (flujo definitivo)

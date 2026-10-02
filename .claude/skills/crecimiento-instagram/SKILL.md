@@ -46,7 +46,7 @@ Revisar `conocimiento/mapa-capacidades.md`: buscar conectores, plugins y skills 
 comprobar el estado de los ya instalados y proponer como máximo 1 mejora de integración (indicando cuántos clics cuesta).
 
 ## Archivos
-- `conocimiento/mapa-capacidades.md` · `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
+- `conocimiento/marca-y-voz.md` · `conocimiento/mapa-capacidades.md` · `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
 
 ## ManyChat (Moisés ya lo usa)
 Cada pieza del plan lleva una palabra clave de comentario y su texto de respuesta pública + mensaje directo en `planes/manychat-<fecha>.md`. Medir por palabra clave (comentarios, DMs, clics, ventas) y mejorar los textos según los resultados.

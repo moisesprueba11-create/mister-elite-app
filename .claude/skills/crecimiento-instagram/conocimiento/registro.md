@@ -20,3 +20,7 @@ Moisés aportó 9 capturas: países, género, edad, seguidores 30 d, y ranking d
 
 ## 2026-10-02 — Ronda 3 (capacidades)
 Revisados registro de conectores, plugins y skills. Hallazgo: META y Windsor.ai ya están instalados pero sin completar; plugin "instagram" resuelve comentario→DM. Ver mapa-capacidades.md.
+
+## 2026-10-02 — Ronda 4 (bucle de mejora completo)
+Estudiado: social-media-skills (106 skills), retención 2026, límites comentario→DM, embudos de cursos, Trial Reels. Cambios aplicados: (1) subtítulos quemados + composición sin tapar la pizarra en montar_reel.py; (2) corregido el plan ManyChat (primer mensaje en un bloque, sin recordatorio automático a 24 h); (3) nuevo marca-y-voz.md; (4) detectado y eliminado "Moisés Díaz" del motor de animación de vídeo (video-*), clips regenerados; (5) Trial Reels como método de test de ganchos.
+Autocrítica: mi plan ManyChat anterior incumplía los límites de la API (recordatorio a 24 h, flujo de varios pasos en el primer DM); lo corregí. Además la firma de las pizarras de vídeo llevaba el nombre personal y yo no lo había comprobado.
