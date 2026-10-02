@@ -48,9 +48,12 @@ en `reels/` (no son entregables de curso; la fecha identifica cada pieza).
 ## Reparto nube ↔ PC (flujo definitivo)
 El Claude del **PC** tiene ElevenLabs; la **nube** (rutina del lunes) no. El repo es el buzón:
 
+**3 versiones de gancho SIEMPRE** (ver `crecimiento-instagram/modos/ganchos-ab.md`): cada Reel sale como A/B/C, mismo cuerpo, distinto gancho, para probar como Trial Reels.
+
 **Nube (automático, lunes):** por cada Reel del plan crea `reels/pendientes/AAAA-MM-DD-<slug>/` con:
-- `guion.md` — gancho elegido + guion con tiempos.
-- `locucion.txt` — texto limpio SOLO de locución, listo para pegar en ElevenLabs (sin acotaciones, sin el nombre personal).
+- `guion.md` — guion con tiempos.
+- `ganchos.json` — los 3 ganchos (A opinión, B resultado, C curiosidad) con texto de pantalla y locución; `cuerpo.txt` — locución del cuerpo.
+- `locucion.txt` — solo si el Reel NO usa variantes: texto limpio de locución (sin acotaciones ni nombre personal).
 - `clips.txt` — una ruta de clip MP4 por línea (los clips animados ya renderizados, en esa carpeta o en `video-*/clips/`).
 - `caption.txt` — caption listo (1ª línea ≤125 car., 1 CTA, 3-5 hashtags).
 - `manychat.txt` — palabra clave del Reel, respuestas públicas y mensaje directo para pegar en ManyChat (ver `planes/manychat-*.md`).
@@ -58,7 +61,7 @@ Commit + push. Nada se publica.
 
 **PC (Claude con ElevenLabs):** al decir "produce los reels pendientes":
 1. `git pull` de la rama.
-2. Para cada carpeta de `reels/pendientes/` sin `locucion.mp3`: generar la voz con ElevenLabs a partir de `locucion.txt`
+2. Para cada carpeta de `reels/pendientes/`: con `ganchos.json`, generar con ElevenLabs `gancho_A.mp3`, `gancho_B.mp3`, `gancho_C.mp3` (desde cada `locucion`) y `cuerpo.mp3` (desde `cuerpo.txt`); sin `ganchos.json`, generar `locucion.mp3` desde `locucion.txt`
    usando **siempre la misma voz de marca** (la que ya usa Moisés; anotar su nombre en `voz.md` la 1ª vez) y guardar `locucion.mp3` en esa carpeta.
 3. Ejecutar `.claude/skills/produccion-reels/montar_reel.py --pendientes`, es decir `python .claude/skills/produccion-reels/montar_reel.py --pendientes` → deja `reels/listos/reel-<slug>.mp4` + caption.
 4. Commit + push y avisar a Moisés para su visto bueno (1 min). Publicación: manual o por Make cuando esté autorizado.

@@ -60,7 +60,7 @@ def filtros_subtitulos(texto, dur, tmp, fnt):
         t0 += d
     return "," + ",".join(partes)
 
-def montar(salida, voz, clips, texto=None):
+def montar(salida, voz, clips, texto=None, gancho=None):
     if not shutil.which("ffmpeg"):
         sys.exit("ERROR: falta ffmpeg en el PATH (Windows: winget install Gyan.FFmpeg).")
     os.makedirs(os.path.dirname(os.path.abspath(salida)), exist_ok=True)
@@ -73,6 +73,14 @@ def montar(salida, voz, clips, texto=None):
         fnt = fuente()
         if texto:
             vf += filtros_subtitulos(texto, duracion(voz), tmp, fnt)
+        if gancho and fnt:
+            g_txt, g_dur = gancho
+            gp = os.path.join(tmp, "gancho.txt")
+            open(gp, "w", encoding="utf-8").write("\n".join(trocear(g_txt, 18)))
+            vf += (",drawtext=fontfile='%s':textfile='%s':fontcolor=white:fontsize=84:borderw=6:"
+                   "bordercolor=black:box=1:boxcolor=black@0.60:boxborderw=34:line_spacing=14:"
+                   "x=(w-text_w)/2:y=(h-text_h)/2:enable='between(t,0,%.2f)'") % (
+                       ff_escape(fnt), ff_escape(gp), max(g_dur, 1.5))
         if fnt:
             vf += (",drawtext=fontfile='%s':text='%s':fontcolor=0xD4AF37:fontsize=40:"
                    "x=(w-text_w)/2:y=1840" % (ff_escape(fnt), MARCA))
@@ -83,6 +91,28 @@ def montar(salida, voz, clips, texto=None):
         subprocess.run(cmd, check=True)
     print("OK ->", salida)
 
+def montar_variantes(d, slug, clips):
+    """3 versiones del mismo Reel: solo cambia el gancho (texto en pantalla + frase inicial).
+    Requiere: ganchos.json, cuerpo.mp3, gancho_<ID>.mp3 y opcionalmente cuerpo.txt."""
+    import json
+    ganchos = json.load(open(os.path.join(d, "ganchos.json"), encoding="utf-8"))
+    cuerpo_mp3 = os.path.join(d, "cuerpo.mp3")
+    cuerpo_txt_p = os.path.join(d, "cuerpo.txt")
+    cuerpo_txt = open(cuerpo_txt_p, encoding="utf-8").read() if os.path.exists(cuerpo_txt_p) else ""
+    hechas = 0
+    for g in ganchos:
+        gid = g["id"]; g_mp3 = os.path.join(d, "gancho_%s.mp3" % gid)
+        if not (os.path.exists(g_mp3) and os.path.exists(cuerpo_mp3)):
+            print("· %s-%s: faltan gancho_%s.mp3 / cuerpo.mp3 (pendiente de voz)" % (slug, gid, gid)); continue
+        with tempfile.TemporaryDirectory() as tmp:
+            voz = os.path.join(tmp, "voz.mp3")
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", g_mp3, "-i", cuerpo_mp3,
+                            "-filter_complex", "[0:a][1:a]concat=n=2:v=0:a=1[a]", "-map", "[a]", voz], check=True)
+            montar("reels/listos/reel-%s-%s.mp4" % (slug, gid), voz, clips,
+                   (g.get("locucion", "") + " " + cuerpo_txt).strip(), (g["pantalla"], duracion(g_mp3)))
+        hechas += 1
+    return hechas == len(ganchos)
+
 def pendientes():
     raiz = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True).stdout.strip() or "."
     os.chdir(raiz)
@@ -91,6 +121,15 @@ def pendientes():
     for d in sorted(glob.glob("reels/pendientes/*/")):
         d = d.rstrip("/\\"); slug = os.path.basename(d)
         voz = os.path.join(d, "locucion.mp3"); lst = os.path.join(d, "clips.txt")
+        if os.path.exists(os.path.join(d, "ganchos.json")) and os.path.exists(lst):
+            clips = [l.strip() for l in open(lst, encoding="utf-8") if l.strip()]
+            if montar_variantes(d, slug, clips):
+                cap = os.path.join(d, "caption.txt")
+                if os.path.exists(cap): shutil.copy(cap, "reels/listos/reel-%s.caption.txt" % slug)
+                dest = os.path.join("reels/hechos", slug)
+                if os.path.exists(dest): shutil.rmtree(dest)
+                shutil.move(d, dest); hechos += 1
+            continue
         if not os.path.exists(voz): print("· %s: falta locucion.mp3 (pendiente de voz)" % slug); continue
         if not os.path.exists(lst): print("· %s: falta clips.txt" % slug); continue
         clips = [l.strip() for l in open(lst, encoding="utf-8") if l.strip()]
