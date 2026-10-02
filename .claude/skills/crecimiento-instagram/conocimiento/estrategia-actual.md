@@ -18,3 +18,12 @@
 - Stories: bastidores de la creación de cursos, encuestas tácticas.
 - 5-10 hashtags relevantes (3 amplios + 3 nicho + resto específicos), no 30.
 - CTA a curso en bio/enlace, no en cada post.
+
+## Diagnóstico con datos reales (ronda 1b)
+- Tracción buena: ~6 mil visualizaciones/pieza y +1.488 seguidores/mes con cadencia diaria. NO hace falta cambiar de rumbo; sí afinar.
+- Palanca nº 1: pasar de crecer en seguidores a **convertir seguidores en alumnos** (+30 cursos, enlace misterelite.es/ig). Medir clics en el enlace y altas.
+- Palanca nº 2: optimizar por **envíos (sends)**: cada Reel debe tener un momento "mándaselo a tu míster/compañero".
+- Palanca nº 3: serie reconocible ("Sistema de la semana", "Error típico del 4-3-3") con pizarra de los cursos → retención y marca.
+- Palanca nº 4: aprovechar actualidad (ej. "Cómo juega la Campeona del Mundo") sin copiar contenido ajeno: análisis propio con pizarra.
+- Bio: sirve, pero el gancho puede ser más de resultado ("Aprende el sistema X en 30 días") y prueba social concreta.
+- Verificación Meta One: evaluar coste/beneficio (credibilidad); no es prioritario antes de datos de conversión.
