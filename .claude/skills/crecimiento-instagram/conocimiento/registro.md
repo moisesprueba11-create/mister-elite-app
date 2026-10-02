@@ -14,3 +14,6 @@ Lección clave: los "scores" de ganchos solo filtran lo malo; lo bueno se valida
 
 ## 2026-10-02 — Audiencia
 Moisés aportó captura de actividad de seguidores (pico 18 h WEST; lun 15-21 h, mar 15-18 h; Colombia 5 %). Añadida regla de horarios en cuenta-y-metricas.md.
+
+## 2026-10-02 — Ronda 1c (datos por pieza y audiencia completa)
+Moisés aportó 9 capturas: países, género, edad, seguidores 30 d, y ranking de piezas por espectadores/reproducciones/me gusta/nuevos seguidores. Hallazgos en cuenta-y-metricas.md y decisiones en estrategia-actual.md.

@@ -27,3 +27,13 @@
 - Palanca nº 4: aprovechar actualidad (ej. "Cómo juega la Campeona del Mundo") sin copiar contenido ajeno: análisis propio con pizarra.
 - Bio: sirve, pero el gancho puede ser más de resultado ("Aprende el sistema X en 30 días") y prueba social concreta.
 - Verificación Meta One: evaluar coste/beneficio (credibilidad); no es prioritario antes de datos de conversión.
+
+## Decisiones basadas en datos reales (ronda 1c, 2026-10-02)
+- **Serie estrella**: "Los sistemas de ataque de [selección]". Hechas: España, Argentina. Siguientes por audiencia: México, Brasil, Colombia; luego Uruguay, Portugal, Francia, Inglaterra, Alemania. Siempre con pizarra propia y veredicto ("trampa"/"acierto").
+- **Serie 2**: "Ruedas de pases" (portada fija, numerada). Mantener 1 por semana.
+- **Ejercicios sueltos de campo**: reempaquetar dentro de una serie con portada de marca; no publicarlos sueltos.
+- **Comentarios**: añadir un CTA de comentario en cada Reel ("Comenta 4231 y te digo cómo atacarlo") y responder TODOS en la primera hora. Meta: ≥0,2 % de comentarios sobre alcance.
+- **Envíos**: cerrar con "mándaselo al míster que aún use X" (el más enviado, el de España, tiene el tema más polémico).
+- **Público**: 66 % entrenadores de 35-54 años, 96 % hombres → tono profesional y directo, sin jerga juvenil, lenguaje válido en España y Latinoamérica ("míster/entrenador", evitar localismos).
+- **Horario**: 15:00-18:00 WEST (ver cuenta-y-metricas.md).
+- **Medir**: sin acceso a todas las piezas no se calculan medianas; cuando Make dé los datos completos, recalcular múltiplos.
