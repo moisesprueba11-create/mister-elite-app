@@ -44,3 +44,21 @@ en `reels/` (no son entregables de curso; la fecha identifica cada pieza).
 - [x] Animaciones por código (existente) · [x] Montaje 1080x1920 (probado) · [x] Guion/plan
 - [ ] Voz automática (falta conectar proveedor aquí) · [ ] Subtítulos quemados
 - [ ] Publicación automática y lectura de insights (falta autorizar Instagram en Make)
+
+## Reparto nube ↔ PC (flujo definitivo)
+El Claude del **PC** tiene ElevenLabs; la **nube** (rutina del lunes) no. El repo es el buzón:
+
+**Nube (automático, lunes):** por cada Reel del plan crea `reels/pendientes/AAAA-MM-DD-<slug>/` con:
+- `guion.md` — gancho elegido + guion con tiempos.
+- `locucion.txt` — texto limpio SOLO de locución, listo para pegar en ElevenLabs (sin acotaciones, sin el nombre personal).
+- `clips.txt` — una ruta de clip MP4 por línea (los clips animados ya renderizados, en esa carpeta o en `video-*/clips/`).
+- `caption.txt` — caption listo (1ª línea ≤125 car., 1 CTA, 3-5 hashtags).
+Commit + push. Nada se publica.
+
+**PC (Claude con ElevenLabs):** al decir "produce los reels pendientes":
+1. `git pull` de la rama.
+2. Para cada carpeta de `reels/pendientes/` sin `locucion.mp3`: generar la voz con ElevenLabs a partir de `locucion.txt`
+   usando **siempre la misma voz de marca** (la que ya usa Moisés; anotar su nombre en `voz.md` la 1ª vez) y guardar `locucion.mp3` en esa carpeta.
+3. Ejecutar `.claude/skills/produccion-reels/montar_pendientes.sh` → deja `reels/listos/reel-<slug>.mp4` + caption.
+4. Commit + push y avisar a Moisés para su visto bueno (1 min). Publicación: manual o por Make cuando esté autorizado.
+Requisitos PC: `ffmpeg` instalado.
