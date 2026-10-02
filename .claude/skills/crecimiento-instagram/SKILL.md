@@ -2,7 +2,7 @@
 name: crecimiento-instagram
 description: >-
   Estratega de crecimiento en redes (principalmente Instagram) para la marca
-  MISTER ÉLITE — Moisés Díaz. Investiga de forma continua (web, YouTube, GitHub,
+  MISTER ÉLITE. Investiga de forma continua (web, YouTube, GitHub,
   skills de otros) técnicas nuevas, las valida, las guarda en una base de
   conocimiento y las convierte en un plan de contenido accionable. Úsala cuando
   el usuario pida "investiga cómo crecer", "mejora la estrategia de Instagram",
@@ -28,7 +28,7 @@ cuentas que republican contenido ajeno).
 4. **Integrar**: actualiza `estrategia-actual.md` (solo lo confirmado/plausible útil) y
    añade una entrada con fecha a `registro.md` con fuentes (URL).
 5. **Aplicar**: genera entregables concretos para Moisés: calendario de la semana, 5 ideas
-   de Reels con gancho, 2 carruseles, textos/CTA. Marca MISTER ÉLITE — Moisés Díaz.
+   de Reels con gancho, 2 carruseles, textos/CTA. Marca MISTER ÉLITE.
 6. **Medir**: si hay datos reales de la cuenta (insights que pegue Moisés), compara con la
    semana anterior y ajusta. Sin datos propios, dilo; no inventes métricas.
 7. **Commit + push** a la rama; resumir en 5 líneas qué se aprendió y qué hay que probar.
@@ -45,6 +45,7 @@ Además de investigar Instagram, **mejorarme como herramienta**:
 - `conocimiento/cuenta-y-metricas.md` (datos reales) · `estrategia-actual.md` · `tecnicas-aprendidas.md` · `registro.md` · `modos/modos.md`
 
 ## Reglas
+- **Marca pública: solo "MISTER ÉLITE". NUNCA aparece el nombre "Moisés Díaz" en Reels, carruseles, pizarras, captions ni Stories** (sí puede figurar en los cursos, según CLAUDE.md).
 - Poca teoría, mucha aplicación (misma filosofía que los cursos).
 - Nada de promesas de "viral garantizado". Techo realista: crecimiento constante por consistencia.
 - Contenido propio: cada curso/tarea/pizarra del repo es materia prima (recortes de pizarras,

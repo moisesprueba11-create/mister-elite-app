@@ -1,7 +1,7 @@
 ---
 name: produccion-reels
 description: >-
-  Produce los Reels y animaciones de tareas de MISTER ÉLITE — Moisés Díaz de
+  Produce los Reels y animaciones de tareas de MISTER ÉLITE de
   forma casi automática a partir del plan semanal de crecimiento: guion con
   gancho → animación táctica por código (anim.py) → locución (TTS) → montaje
   vertical 1080x1920 con marca → listo para publicar. Úsala cuando el usuario
@@ -13,6 +13,8 @@ description: >-
 
 Enlaza con `crecimiento-instagram`: allí se decide QUÉ publicar (plan semanal en
 `.claude/skills/crecimiento-instagram/planes/`); aquí se PRODUCE.
+
+**Regla de marca: en pantalla y en audio solo "MISTER ÉLITE". Nunca el nombre "Moisés Díaz"** (ni en la firma, ni en la locución, ni en el caption).
 
 ## Cadena
 1. **Guion** (por pieza del plan): gancho elegido + 3-4 frases de locución (~2,5 palabras/seg) en
@@ -27,7 +29,7 @@ Enlaza con `crecimiento-instagram`: allí se decide QUÉ publicar (plan semanal 
    - Alternativas conectadas aquí: HeyGen `create_speech`, Higgsfield `generate_audio`.
    Usar SIEMPRE la misma voz (identidad de marca).
 4. **Montaje**: `./montar_reel.sh salida.mp4 locucion.mp3 clip1.mp4 [clip2.mp4 …]` → 1080x1920, H.264/AAC,
-   fondo de marca, firma "MISTER ÉLITE — Moisés Díaz". Subtítulos: añadir como siguiente mejora.
+   fondo de marca, firma "MISTER ÉLITE". Subtítulos: añadir como siguiente mejora.
 5. **Revisión humana (1 min)**: Moisés mira el Reel, corrige si hace falta. Mientras no haya tasa
    de aprobación alta, NO se publica nada sin su visto bueno.
 6. **Publicación** (cuando exista conexión válida de Instagram en Make): módulo `CreateAReelPost`,

@@ -1,4 +1,4 @@
-# Plan semana 5-11 oct 2026 — MISTER ÉLITE — Moisés Díaz
+# Plan semana 5-11 oct 2026 — MISTER ÉLITE
 Horario principal 15:30-17:30 WEST; Stories 18-21 h. Responder comentarios la 1ª hora.
 
 | Día | Pieza |
