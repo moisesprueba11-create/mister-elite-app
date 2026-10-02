@@ -27,3 +27,13 @@
 3. Audiencia: países, edad, horas activas.
 4. Visitas al perfil y toques en el enlace (→ cursos).
 5. Ventas/altas en misterelite.es atribuibles a Instagram.
+
+## Audiencia — momentos de actividad (captura 2026-10-02, zona WEST = hora Canarias/Portugal)
+- Gráfico del domingo: actividad mínima 6-9 h, sube desde mediodía; **pico a las 18 h**, y fuerte a 15 h y 21 h. Madrugada (3 h) intermedia.
+- Ventanas más activas listadas: **Lunes 15-18 h y 18-21 h; Martes 15-18 h** (lista cortada: faltan miércoles-domingo).
+- Colombia = 5,0 % de la audiencia (solo se ve esta fila; faltan país principal y resto).
+- Implicación: audiencia con peso hispanohablante fuera de España → horas tardías de WEST llegan a Latinoamérica a media mañana/mediodía (Colombia va unas 6 h por detrás en verano).
+
+## Regla de publicación derivada (hipótesis a validar con datos por pieza)
+- Publicar Reels principales **entre 15:00 y 18:00 WEST** (calienta antes del pico de las 18-21 h). Stories de interacción a las 18-21 h. Evitar 6-9 h.
+- Probar 2 semanas alternando 15:30 vs 18:30 y comparar múltiplo sobre la mediana.

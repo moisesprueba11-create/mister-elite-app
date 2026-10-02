@@ -11,3 +11,6 @@ Moisés aportó capturas del perfil y panel (ver cuenta-y-metricas.md). Hallazgo
 ## 2026-10-02 — Ronda 2 (auto-mejora como herramienta)
 Estudiados: Jakeschincariol/instagram-agent-skill, sergebulaev/instagram-skills, brainbytes-dev/everything-claude-marketing (social-instagram). Resultado: tecnicas-aprendidas.md + modos/modos.md + fase de auto-mejora en SKILL.md.
 Lección clave: los "scores" de ganchos solo filtran lo malo; lo bueno se valida con datos reales → pedir siempre insights por pieza.
+
+## 2026-10-02 — Audiencia
+Moisés aportó captura de actividad de seguidores (pico 18 h WEST; lun 15-21 h, mar 15-18 h; Colombia 5 %). Añadida regla de horarios en cuenta-y-metricas.md.
