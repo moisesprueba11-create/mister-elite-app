@@ -75,3 +75,21 @@ Criterios: autonomía ganada · clics/tiempo para Moisés · riesgo para la cuen
 - No pegar tokens en el repo ni en el chat; usar el sistema de conexiones de Make/claude.ai o secretos del entorno.
 - Preferir API oficial; descartar herramientas que pidan usuario y contraseña de Instagram o hagan scraping (riesgo de bloqueo de la cuenta).
 - Revisar qué publicador y qué permisos pide cada plugin antes de recomendarlo.
+
+# RONDA 7 (2026-10-03) — verificaciones y correcciones
+
+## Correcciones a lo dicho antes
+1. **Trial Reels SÍ existen en la API oficial** (parámetro `trial_params` con `graduation_strategy`: `MANUAL` = pasar a seguidores a mano en la app; `SS_PERFORMANCE` = **se gradúa solo si rinde bien**). Antes dije "no confirmado". **Pero el módulo de Make "Create a reel post" NO expone ese campo** (solo cuenta/página, video_url, caption, portada y "compartir en feed"). → Con Make, los Trial Reels se siguen activando a mano; vía API directa (MCP local o script propio) se podrían publicar A/B/C como Trial con graduación automática.
+2. **Google Drive NO sirve como alojamiento del vídeo**: la propia documentación de Make dice que Instagram no puede descargar de Drive aunque sea público. Antes sugerí Drive: error. → Usar WordPress (biblioteca de medios de misterelite.es), S3 o Cloudflare R2.
+
+## Requisitos del vídeo para publicar por Make/API (del módulo CreateAReelPost)
+MP4/MOV; **moov al principio (faststart)**; H.264/HEVC progresivo, GOP cerrado, 4:2:0; AAC ≤48 kHz 1-2 canales 128 kbps; 23-60 fps; ancho ≤1920; VBR ≤5 Mbps; 3 s-15 min; ≤1 GB; caption ≤2200 car., ≤30 hashtags; `thumb_offset` (ms) para elegir la portada. → `montar_reel.py` ya genera ese formato (verificado: faststart, H.264 yuv420p, 30 fps, AAC 48 kHz estéreo 128 kbps, ~0,15 Mbps).
+
+## Métricas que se pueden leer por API (para el bucle sin capturas)
+Por Reel: reproducciones/visualizaciones, alcance, guardados, **envíos**, comentarios, likes, tiempo medio de visualización (**en milisegundos**), % completado y **tasa de abandono en los primeros 3 s ("skip rate")**; solo cuentas ≥1.000 seguidores (tu cuenta cumple). El módulo de Make "Get post insights" lista las métricas disponibles al conectarse. → Con la conexión autorizada, el test de ganchos puede medirse **sin que Moisés pase números**.
+
+## ManyChat por API/MCP
+Existe API y varios MCP comunitarios (todos de 2026, inmaduros). Permite leer contactos, etiquetas y campos, enviar mensajes y **lanzar flujos ya construidos**; **no permite construir flujos**. Uso útil: leer cuántos contactos por palabra clave (etiquetas SISTEMA/RUEDAS/SALIDA) y cruzar con ventas. Verificar si el plan de ManyChat de Moisés incluye API y generar el token (no pegarlo en el chat).
+
+## vidIQ MCP
+~50 herramientas (palabras clave, outliers, transcripciones, tendencias, Instagram/TikTok/YouTube). Gratis "en periodo de lanzamiento" para todos los planes, con **150 créditos/mes (~30 llamadas) en el plan gratuito**; oficialmente función del plan Max (49 $/mes). Outliers: 6 resultados por búsqueda en gratis. → Útil como prueba puntual, no como pieza base.

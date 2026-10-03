@@ -32,3 +32,8 @@ Autocrítica: (1) en la ronda 1 di como referencia "carruseles 0,55 % engagement
 ## 2026-10-03 — Ronda 6 (autonomía: conectores, MCP, plugins)
 Revisados registro de conectores, catálogo de plugins y GitHub (MCP de Instagram con API oficial). Hallazgos: existen varios MCP abiertos (IvanBBaev 28 herramientas, mcpware 23, Burak-cell-max con panel), todos limitados por: vídeo en URL pública, DMs solo tras revisión de Meta, Trial Reels sin soporte confirmado. Decisión y ruta en mapa-capacidades.md.
 Autocrítica: antes insinué que el plugin "instagram" podía reemplazar a ManyChat; las propias limitaciones de la API (DMs con revisión de Meta) lo desaconsejan. Corregido: ManyChat se mantiene.
+
+## 2026-10-03 — Ronda 7 (autonomía, verificación con documentación real)
+Verificado en Make (módulo CreateAReelPost y GetMediaInsights) y en documentación de la API: requisitos de vídeo, métricas por Reel (incluye skip rate 3 s), Trial Reels por API, ManyChat API/MCP, vidIQ MCP (límites gratuitos).
+Cambios: montar_reel.py ahora produce vídeo compatible con la publicación por API (faststart, 48 kHz, ≤5 Mbps). Mapa de capacidades corregido.
+Autocrítica: (1) dije que Drive valdría como alojamiento del vídeo: Make documenta que NO funciona; (2) dije que los Trial Reels no tenían soporte por API: sí lo tienen, pero Make no lo expone; (3) en ambos casos afirmé sin haber leído la especificación; desde ahora verifico el módulo/documentación antes de recomendar una ruta.

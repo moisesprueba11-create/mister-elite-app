@@ -27,6 +27,9 @@ Otros ángulos para rotar cuando haga falta: estadística, error típico ("el er
 - Voz (PC, ElevenLabs): `gancho_A.mp3`, `gancho_B.mp3`, `gancho_C.mp3` y `cuerpo.mp3`.
 - Montaje: `python .claude/skills/produccion-reels/montar_reel.py --pendientes` → `reel-<slug>-A/B/C.mp4`.
 
+## Nota técnica de publicación
+Por Make, los Trial Reels se activan a mano en la app. Por la API directa existe `trial_params` (`graduation_strategy`: MANUAL o SS_PERFORMANCE = graduación automática si rinde). Las métricas de cada versión (abandono 3 s, tiempo medio, envíos) se pueden leer por API cuando haya conexión.
+
 ## Protocolo de test (72 h)
 1. Publicar A, B, C como Trial Reels el mismo día, a la hora recomendada (15:30-17:30 WEST), uno tras otro.
 2. A las 72 h leer, por versión: abandono a 3 s, completado, envíos/espectador, comentarios.

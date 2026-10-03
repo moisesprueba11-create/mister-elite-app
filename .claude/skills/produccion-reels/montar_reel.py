@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Monta un Reel vertical 1080x1920 (clips de anim.py + locución) con la marca MISTER ÉLITE.
+Salida compatible con la API de publicación de Instagram: H.264 4:2:0, GOP cerrado, AAC 48 kHz 128 kbps,
+23-60 fps, <=5 Mbps VBR, moov al principio (faststart).
 Multiplataforma (Windows/Mac/Linux). Requiere ffmpeg en el PATH.
 
 Uso:
@@ -87,7 +89,9 @@ def montar(salida, voz, clips, texto=None, gancho=None):
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lista,
                "-i", voz, "-filter_complex", "[0:v]%s[v]" % vf, "-map", "[v]", "-map", "1:a",
                "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-               "-c:a", "aac", "-b:a", "192k", "-shortest", salida]
+               "-maxrate", "5M", "-bufsize", "10M", "-x264-params", "open-gop=0",
+               "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2",
+               "-movflags", "+faststart", "-shortest", salida]
         subprocess.run(cmd, check=True)
     print("OK ->", salida)
 
