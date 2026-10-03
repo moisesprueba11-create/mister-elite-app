@@ -28,3 +28,7 @@ Autocrítica: mi plan ManyChat anterior incumplía los límites de la API (recor
 ## 2026-10-02 — Ronda 5
 Estudiado: marketingskills (60+ skills; ab-testing, lead-magnets, product-marketing), carruseles 2026, SEO de Instagram, estudio Metricool 2026, métricas de creadores. Aplicado: carrusel mixto, SEO/alt text, duración como variable de test, umbral de victoria en tests de ganchos, competencia vía API oficial.
 Autocrítica: (1) en la ronda 1 di como referencia "carruseles 0,55 % engagement"; hoy aparece 1,92 % en otras fuentes → sin consenso, usar solo datos propios. (2) La búsqueda de cuentas de táctica en español no dio nada útil; no inventé referentes. (3) Dije "ideal 7-15 s" y hay fuentes que dicen 30-60 s: ahora es variable de test.
+
+## 2026-10-03 — Ronda 6 (autonomía: conectores, MCP, plugins)
+Revisados registro de conectores, catálogo de plugins y GitHub (MCP de Instagram con API oficial). Hallazgos: existen varios MCP abiertos (IvanBBaev 28 herramientas, mcpware 23, Burak-cell-max con panel), todos limitados por: vídeo en URL pública, DMs solo tras revisión de Meta, Trial Reels sin soporte confirmado. Decisión y ruta en mapa-capacidades.md.
+Autocrítica: antes insinué que el plugin "instagram" podía reemplazar a ManyChat; las propias limitaciones de la API (DMs con revisión de Meta) lo desaconsejan. Corregido: ManyChat se mantiene.
