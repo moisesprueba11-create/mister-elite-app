@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISTER ÉLITE · Cuerpo Técnico Digital — Método, no ejercicios sueltos</title>
+<meta name="description" content="Cada tarea sale de un método: sistema, fase de juego, principio, tarea con provocaciones medibles y progresión. El cuerpo técnico digital para entrenadores de fútbol sin staff. Por Moisés Díaz.">
+<meta name="theme-color" content="#12161c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12161c; --bg2:#171c24; --bg3:#1d232c; --line:#2c333e;
+  --text:#ece6da; --muted:#aaa79e; --cu:#b8873a; --cu-hi:#d6a95e; --cu-deep:#8a6429;
+  --serif:'Playfair Display','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --r:10px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:var(--cu-hi)}
+:focus-visible{outline:3px solid var(--cu-hi);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em;color:var(--text)}
+h1{font-size:clamp(2.2rem,8vw,4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,5.4vw,2.6rem);letter-spacing:-.005em}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+.eyebrow{font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cu-hi);font-weight:600;margin:0 0 1rem;display:flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--cu)}
+.lead{font-size:1.15rem;color:#d8d2c5;max-width:60ch}
+.muted{color:var(--muted)}
+section{padding:64px 0;border-top:1px solid var(--line);position:relative}
+@media(min-width:760px){section{padding:96px 0}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.5rem;border-radius:6px;background:var(--cu);color:#12161c;font-weight:700;text-decoration:none;font-size:1rem;border:1px solid var(--cu);transition:background .2s,transform .2s}
+.btn:hover{background:var(--cu-hi);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--cu-hi);border-color:var(--cu-deep)}
+.btn.ghost:hover{background:rgba(184,135,58,.12)}
+.btn.big{min-height:56px;padding:1rem 2rem;font-size:1.08rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.cta-note{font-size:.88rem;color:var(--muted);margin-top:.9rem}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(18,22,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:1rem}
+.brand{font-family:var(--serif);font-weight:700;letter-spacing:.04em;font-size:1rem;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand b{color:var(--cu-hi);font-weight:700}
+.top .btn{min-height:40px;padding:.4rem 1rem;font-size:.92rem}
+
+/* hero */
+.hero{border-top:0;padding:56px 0 64px;overflow:hidden}
+@media(min-width:760px){.hero{padding:104px 0 112px}}
+.hero-bg{position:absolute;right:-120px;top:-40px;width:560px;max-width:none;opacity:.5;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1 em{font-style:italic;color:var(--cu-hi)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.6rem;border-radius:var(--r);overflow:hidden}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--bg2);padding:1.1rem 1.2rem}
+.stat b{display:block;font-family:var(--serif);font-size:2rem;line-height:1.1;color:var(--cu-hi);font-weight:600}
+.stat span{font-size:.88rem;color:var(--muted);line-height:1.35;display:block;margin-top:.25rem}
+
+/* problema */
+.cmp{margin-top:2rem;display:grid;gap:14px}
+.cmp-row{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem}
+.cmp-row h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu-hi);margin:0 0 .7rem;font-weight:600}
+.cmp-cols{display:grid;gap:.8rem}
+.cmp-cols div{font-size:.98rem;line-height:1.5}
+.cmp-cols small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.15rem;color:var(--muted);font-weight:600}
+.cmp-cols .yes small{color:var(--cu-hi)}
+.cmp-cols .no{color:var(--muted)}
+.cmp-cols .yes{color:var(--text);border-left:2px solid var(--cu);padding-left:.8rem}
+@media(min-width:760px){.cmp-cols{grid-template-columns:1fr 1.25fr;gap:1.6rem}}
+.quote{font-family:var(--serif);font-size:clamp(1.25rem,3.6vw,1.6rem);font-style:italic;color:#d8d2c5;border-left:2px solid var(--cu);padding:.2rem 0 .2rem 1.2rem;margin:2.2rem 0 0;max-width:40ch}
+
+/* metodo */
+.metodo-fig{margin:2.2rem 0 0;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.metodo-fig svg{display:block;width:100%;height:auto}
+.metodo-fig .sv-d{display:none}
+@media(min-width:820px){.metodo-fig .sv-d{display:block}.metodo-fig .sv-m{display:none}.metodo-fig{padding:20px}}
+.metodo-fig figcaption{font-size:.85rem;color:var(--muted);margin-top:.8rem;text-align:center}
+.sv-lab{font:600 11px var(--sans);letter-spacing:.16em;fill:var(--cu-hi)}
+.sv-ti{font:600 19px var(--serif);fill:var(--text)}
+.sv-tx{font:400 13px var(--sans);fill:#c9c4b8}
+.sv-n{font:700 17px var(--serif);fill:var(--cu-hi);text-anchor:middle}
+.sv-card{fill:var(--bg3);stroke:var(--line)}
+.sv-line{stroke:var(--cu);stroke-width:1.5;fill:none}
+.sv-circ{fill:var(--bg);stroke:var(--cu);stroke-width:1.5}
+.pasos{margin:2.4rem 0 0;padding:0;list-style:none;display:grid;gap:1.4rem;counter-reset:p}
+@media(min-width:760px){.pasos{grid-template-columns:1fr 1fr;gap:1.6rem 3rem}}
+.pasos li{counter-increment:p;padding-left:3rem;position:relative}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border:1px solid var(--cu);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:var(--cu-hi);font-weight:700}
+.pasos h3{margin:0 0 .2rem;font-size:1.15rem}
+.pasos p{margin:0;font-size:.97rem;color:#c9c4b8}
+
+/* muestra */
+.muestra{background:var(--bg2)}
+.t1{display:grid;gap:2rem;margin-top:2.2rem}
+@media(min-width:900px){.t1{grid-template-columns:minmax(0,380px) 1fr;gap:3rem;align-items:start}}
+.pizarra{margin:0}
+.pizarra svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;border-radius:var(--r);border:1px solid var(--line)}
+.pizarra figcaption{font-size:.82rem;color:var(--muted);margin-top:.7rem;text-align:center}
+.ficha h3{font-size:1.5rem;margin-bottom:.3rem}
+.ficha .sub{color:var(--muted);font-size:.92rem;margin-bottom:1.2rem}
+.ficha dl{margin:0}
+.ficha dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu-hi);font-weight:600;margin-top:1.05rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ficha dt .tag{font-size:.68rem;letter-spacing:.08em;border:1px solid var(--cu-deep);color:var(--muted);padding:.05rem .5rem;border-radius:99px;text-transform:none;font-weight:500}
+.ficha dd{margin:.2rem 0 0;font-size:.98rem;color:#d8d2c5}
+
+/* evidencia */
+.autores{display:grid;gap:12px;margin-top:2rem}
+@media(min-width:760px){.autores{grid-template-columns:repeat(5,1fr)}}
+.autor{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:1rem}
+.autor b{font-family:var(--serif);font-size:1.1rem;display:block;color:var(--text)}
+.autor span{font-size:.85rem;color:var(--muted);line-height:1.4;display:block;margin-top:.2rem}
+.duda{margin-top:2rem;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.duda-row{display:grid;gap:.5rem;padding:1.1rem 1.2rem;border-top:1px solid var(--line);background:var(--bg2)}
+.duda-row:first-child{border-top:0}
+.duda-row h3{font-family:var(--sans);font-size:1rem;margin:0;font-weight:600}
+.duda-row p{margin:0;font-size:.95rem;color:#c9c4b8}
+.duda-row .fl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cu-hi);font-weight:600;display:block}
+@media(min-width:760px){.duda-row{grid-template-columns:1fr 1.2fr 1.4fr;gap:2rem;align-items:start}}
+
+/* cuerpo tecnico */
+.roles{display:grid;gap:14px;margin-top:2.2rem}
+@media(min-width:760px){.roles{grid-template-columns:1fr 1fr}}
+.rol{background:var(--bg2);border:1px solid var(--line);border-top:2px solid var(--cu);border-radius:var(--r);padding:1.4rem}
+.rol .fl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu-hi);font-weight:600;display:block;margin-bottom:.3rem}
+.rol h3{margin-bottom:.4rem}
+.rol p{font-size:.96rem;color:#c9c4b8;margin-bottom:.8rem}
+.rol ul{margin:0;padding-left:1.1rem;font-size:.92rem;color:var(--text)}
+.rol li{margin:.2rem 0}
+.rol li::marker{color:var(--cu)}
+
+.cursos{display:grid;gap:10px;margin-top:2.2rem;padding:0;list-style:none;grid-template-columns:1fr}
+@media(min-width:560px){.cursos{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.cursos{grid-template-columns:repeat(3,1fr)}}
+.cursos li{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;font-size:.95rem}
+.cursos b{font-family:var(--serif);color:var(--cu-hi);display:block;font-size:1.05rem}
+.formatos{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.formatos span{border:1px solid var(--cu-deep);border-radius:99px;padding:.3rem .9rem;font-size:.88rem;color:var(--text)}
+
+/* TODO blocks */
+.todo{margin-top:2rem;border:1px dashed var(--cu-deep);border-radius:var(--r);padding:1.2rem 1.3rem;background:rgba(184,135,58,.06)}
+.todo h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu-hi);margin:0 0 .5rem;font-weight:600}
+.todo p{margin:0;font-size:.95rem;color:#c9c4b8}
+.firma{display:grid;gap:1.4rem;margin-top:1.6rem}
+.firma blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.3rem,3.8vw,1.75rem);line-height:1.35;font-style:italic}
+.firma cite{display:block;font-family:var(--sans);font-style:normal;font-size:.9rem;color:var(--cu-hi);margin-top:.8rem;letter-spacing:.08em}
+
+/* para quien */
+.quien{display:grid;gap:16px;margin-top:2.2rem}
+@media(min-width:760px){.quien{grid-template-columns:1fr 1fr;gap:24px}}
+.quien > div{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.quien .si{border-top:2px solid var(--cu)}
+.quien .no{border-top:2px solid #6b6f78}
+.quien h3{margin-bottom:.8rem}
+.quien ul{list-style:none;padding:0;margin:0}
+.quien li{position:relative;padding-left:1.5rem;margin:.65rem 0;font-size:.97rem}
+.quien .si li::before{content:"";position:absolute;left:.1rem;top:.62em;width:.65rem;height:.35rem;border-left:2px solid var(--cu-hi);border-bottom:2px solid var(--cu-hi);transform:rotate(-45deg) translateY(-50%)}
+.quien .no li::before{content:"";position:absolute;left:0;top:.8em;width:.8rem;height:2px;background:#8a8e97}
+.quien .no li{color:#c4c0b5}
+
+/* precios */
+.planes{display:grid;gap:16px;margin-top:2.4rem}
+@media(min-width:760px){.planes{grid-template-columns:1fr 1fr;gap:24px}}
+.plan{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:1.8rem;display:flex;flex-direction:column;position:relative}
+.plan.hi{border-color:var(--cu);background:linear-gradient(180deg,#1d2028,var(--bg2))}
+.plan .badge{position:absolute;top:-12px;left:1.4rem;background:var(--cu);color:#12161c;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:99px}
+.plan h3{font-family:var(--sans);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu-hi);font-weight:600}
+.precio{font-family:var(--serif);font-size:3.2rem;line-height:1;margin:.3rem 0 .2rem;font-weight:600}
+.precio small{font-family:var(--sans);font-size:1rem;color:var(--muted);font-weight:400}
+.plan .eq{color:var(--muted);font-size:.92rem;min-height:1.5em;margin-bottom:1.1rem}
+.plan ul{padding:0;margin:0 0 1.5rem;list-style:none;flex:1}
+.plan li{padding-left:1.4rem;position:relative;margin:.5rem 0;font-size:.95rem}
+.plan li::before{content:"";position:absolute;left:.1rem;top:.6em;width:.6rem;height:.32rem;border-left:2px solid var(--cu-hi);border-bottom:2px solid var(--cu-hi);transform:rotate(-45deg) translateY(-50%)}
+.plan .btn{width:100%}
+.garantia{margin-top:1.8rem;display:flex;gap:1.1rem;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--cu);border-radius:var(--r);padding:1.2rem 1.3rem}
+.garantia svg{flex:none;width:44px;height:44px}
+.garantia h3{font-size:1.15rem;margin-bottom:.2rem}
+.garantia p{margin:0;font-size:.95rem;color:#c9c4b8}
+
+/* faq */
+.faq{margin-top:2rem;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:1.1rem 2.2rem 1.1rem 0;font-weight:600;font-size:1.02rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.3rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--cu-hi);font-weight:400;transition:transform .2s}
+details[open] summary::after{content:"\2212"}
+details > div{padding:0 0 1.2rem;color:#c9c4b8;font-size:.98rem;max-width:62ch}
+details > div p:last-child{margin-bottom:0}
+
+/* cta final */
+.final{text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(184,135,58,.16),transparent 60%),var(--bg)}
+.final h2{max-width:20ch;margin-left:auto;margin-right:auto}
+.final .lead{margin:0 auto 1.4rem}
+.final .cta-row{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:grid;gap:.6rem}
+footer b{font-family:var(--serif);color:var(--text);letter-spacing:.04em;font-size:1rem}
+
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn{transition:none}.btn:hover{transform:none}
+  summary::after{transition:none}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="MISTER ÉLITE, inicio">MISTER <b>ÉLITE</b></a>
+    <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Entrar</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="h-hero">
+  <svg class="hero-bg" viewBox="0 0 560 560" fill="none" stroke="#b8873a" stroke-width="1.2" aria-hidden="true" focusable="false">
+    <rect x="40" y="40" width="480" height="480" opacity=".35"/>
+    <line x1="40" y1="280" x2="520" y2="280" opacity=".35"/>
+    <circle cx="280" cy="280" r="84" opacity=".4"/>
+    <circle cx="280" cy="280" r="3" fill="#b8873a" opacity=".6"/>
+    <rect x="160" y="40" width="240" height="96" opacity=".3"/>
+    <rect x="160" y="424" width="240" height="96" opacity=".3"/>
+    <path d="M120 440 C160 340 220 360 260 300 S 360 200 440 120" stroke-dasharray="6 7" opacity=".7"/>
+    <circle cx="120" cy="440" r="7" fill="#12161c" opacity=".9"/><circle cx="260" cy="300" r="7" fill="#12161c" opacity=".9"/><circle cx="440" cy="120" r="7" fill="#12161c" opacity=".9"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">MISTER ÉLITE · Cuerpo Técnico Digital</p>
+    <h1 id="h-hero">Método de entrenador,<br><em>no un catálogo de ejercicios.</em></h1>
+    <p class="lead">Cada tarea que llevas al campo sale de un sistema, una fase de juego y un principio. Con provocaciones que se pueden medir y una progresión ya escrita. Es el cuerpo técnico que no puedes pagar, en formato digital y listo para el entrenamiento de mañana.</p>
+    <div class="cta-row">
+      <a class="btn big" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero el cuerpo técnico</a>
+      <a class="btn ghost big" href="#muestra">Ver una tarea real completa</a>
+    </div>
+    <p class="cta-note">Desde <span data-cfg="precioMensual">19 €</span>/mes · <span data-cfg="garantiaDias">14</span> días de devolución sin preguntas.</p>
+
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>10</b><span>cursos publicados: 5 sistemas y 5 temas de juego</span></div>
+      <div class="stat" role="listitem"><b>170+</b><span>tareas y sesiones de campo</span></div>
+      <div class="stat" role="listitem"><b>400+</b><span>gráficos SVG: una pizarra por tarea</span></div>
+      <div class="stat" role="listitem"><b>3</b><span>formatos: PDF, HTML sin internet y sitio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMA ============ -->
+<section aria-labelledby="h-problema">
+  <div class="wrap">
+    <p class="eyebrow rv">El problema</p>
+    <h2 id="h-problema" class="rv">El ejercicio suelto no te dice para qué sirve.</h2>
+    <p class="lead rv">Lo has visto cien veces: un vídeo con conos, un pase, una finalización. Se ve bien. Pero no sabes en qué sistema encaja, qué principio entrena, cómo medir si funciona ni qué hacer cuando tu equipo no lo saca. Sin método, la sesión es una colección de piezas sin tablero.</p>
+
+    <div class="cmp">
+      <div class="cmp-row rv">
+        <h3>¿Para qué fase de juego es?</h3>
+        <div class="cmp-cols">
+          <div class="no"><small>Ejercicio suelto</small>Un clip sin contexto de sistema ni de momento del partido.</div>
+          <div class="yes"><small>Tarea con método</small>Vive dentro de un sistema y una fase: salida, presión, transiciones o balón parado.</div>
+        </div>
+      </div>
+      <div class="cmp-row rv">
+        <h3>¿Qué principio entrena?</h3>
+        <div class="cmp-cols">
+          <div class="no"><small>Ejercicio suelto</small>Ves qué hacen los jugadores, no por qué lo hacen.</div>
+          <div class="yes"><small>Tarea con método</small>Un principio explícito. Ejemplo: el pivote recibe de perfil y orienta la salida hacia el lado libre.</div>
+        </div>
+      </div>
+      <div class="cmp-row rv">
+        <h3>¿Cómo sabes si ha funcionado?</h3>
+        <div class="cmp-cols">
+          <div class="no"><small>Ejercicio suelto</small>Sensación: «ha salido bien».</div>
+          <div class="yes"><small>Tarea con método</small>Provocaciones medibles: punto si el balón cruza el medio campo tras pasar por 3 jugadores distintos.</div>
+        </div>
+      </div>
+      <div class="cmp-row rv">
+        <h3>¿Y si es muy fácil o muy difícil?</h3>
+        <div class="cmp-cols">
+          <div class="no"><small>Ejercicio suelto</small>Improvisas sobre la marcha.</div>
+          <div class="yes"><small>Tarea con método</small>Variantes fácil, media y difícil ya escritas, con el cambio de regla que las provoca.</div>
+        </div>
+      </div>
+      <div class="cmp-row rv">
+        <h3>¿Cómo encaja en tu semana?</h3>
+        <div class="cmp-cols">
+          <div class="no"><small>Ejercicio suelto</small>Es una pieza aislada.</div>
+          <div class="yes"><small>Tarea con método</small>Cada curso trae microciclos de ejemplo ordenados de MD-4 a MD-1, con la carga de cada tarea indicada.</div>
+        </div>
+      </div>
+    </div>
+    <p class="quote rv">No decimos que el ejercicio de Instagram esté mal. Decimos que, sin método, no sabes qué estás entrenando.</p>
+  </div>
+</section>
+
+<!-- ============ METODO ============ -->
+<section id="metodo" aria-labelledby="h-metodo">
+  <div class="wrap">
+    <p class="eyebrow rv">El método</p>
+    <h2 id="h-metodo" class="rv">De la idea de juego a la tarea, en cinco pasos.</h2>
+    <p class="lead rv">Todos los cursos siguen el mismo recorrido. Aquí lo ves aplicado a la primera tarea del curso de 1-4-3-3.</p>
+
+    <figure class="metodo-fig rv">
+      <svg class="sv-m" viewBox="0 0 340 670" role="img" aria-label="Infografía del método en cinco pasos aplicado a la tarea T1 del curso 1-4-3-3: 1 Sistema 1-4-3-3; 2 Fase de juego, ofensiva, la salida; 3 Principio, superar la presión con estructura, el pivote recibe de perfil y orienta la salida al lado libre; 4 Tarea T1 rombo de salida 4v2, punto si el balón cruza el medio tras pasar por 3 jugadores; 5 Progresión fácil, media y difícil." focusable="false"><line class="sv-line" x1="26" y1="58" x2="26" y2="140"/><circle class="sv-circ" cx="26" cy="38" r="19"/><text class="sv-n" x="26" y="44">1</text><text class="sv-lab" x="62" y="24">SISTEMA</text><text class="sv-ti" x="62" y="50">1-4-3-3</text><text class="sv-tx" x="62" y="72">Línea de 4, medio de 3 y tridente</text><text class="sv-tx" x="62" y="91">con extremos reales.</text><line class="sv-line" x1="26" y1="190" x2="26" y2="272"/><circle class="sv-circ" cx="26" cy="170" r="19"/><text class="sv-n" x="26" y="176">2</text><text class="sv-lab" x="62" y="156">FASE DE JUEGO</text><text class="sv-ti" x="62" y="182">Ofensiva: la salida</text><text class="sv-tx" x="62" y="204">Construir desde el portero ante</text><text class="sv-tx" x="62" y="223">la primera presión.</text><line class="sv-line" x1="26" y1="322" x2="26" y2="404"/><circle class="sv-circ" cx="26" cy="302" r="19"/><text class="sv-n" x="26" y="308">3</text><text class="sv-lab" x="62" y="288">PRINCIPIO</text><text class="sv-ti" x="62" y="314">Superar la presión</text><text class="sv-ti" x="62" y="338">con estructura</text><text class="sv-tx" x="62" y="360">El pivote recibe de perfil y orienta</text><text class="sv-tx" x="62" y="379">la salida hacia el lado libre.</text><line class="sv-line" x1="26" y1="454" x2="26" y2="536"/><circle class="sv-circ" cx="26" cy="434" r="19"/><text class="sv-n" x="26" y="440">4</text><text class="sv-lab" x="62" y="420">TAREA</text><text class="sv-ti" x="62" y="446">T1 · Rombo de salida (4v2)</text><text class="sv-tx" x="62" y="468">Punto si el balón cruza el medio</text><text class="sv-tx" x="62" y="487">tras pasar por 3 jugadores distintos.</text><circle class="sv-circ" cx="26" cy="566" r="19"/><text class="sv-n" x="26" y="572">5</text><text class="sv-lab" x="62" y="552">PROGRESIÓN</text><text class="sv-ti" x="62" y="578">Fácil · media · difícil</text><text class="sv-tx" x="62" y="600">Presión pasiva al 70 %; el 6 no recibe</text><text class="sv-tx" x="62" y="619">de espaldas; 4v3 con mediapunta.</text></svg>
+      <svg class="sv-d" viewBox="0 0 1080 300" role="img" aria-label="Infografía del método en cinco pasos aplicado a la tarea T1 del curso 1-4-3-3: 1 Sistema 1-4-3-3; 2 Fase de juego, ofensiva, la salida; 3 Principio, superar la presión con estructura, el pivote recibe de perfil y orienta la salida al lado libre; 4 Tarea T1 rombo de salida 4v2, punto si el balón cruza el medio tras pasar por 3 jugadores; 5 Progresión fácil, media y difícil." focusable="false"><defs><marker id="mk-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b8873a"/></marker></defs><rect class="sv-card" x="20" y="64" width="196" height="220" rx="10"/><circle class="sv-circ" cx="48" cy="34" r="19"/><text class="sv-n" x="48" y="40">1</text><line class="sv-line" x1="72" y1="34" x2="235" y2="34" marker-end="url(#mk-d)"/><text class="sv-lab" x="36" y="94">SISTEMA</text><text class="sv-ti" style="font-size:18px" x="36" y="124">1-4-3-3</text><text class="sv-tx" x="36" y="178">Línea de 4, medio de 3</text><text class="sv-tx" x="36" y="198">y tridente con</text><text class="sv-tx" x="36" y="218">extremos reales.</text><rect class="sv-card" x="231" y="64" width="196" height="220" rx="10"/><circle class="sv-circ" cx="259" cy="34" r="19"/><text class="sv-n" x="259" y="40">2</text><line class="sv-line" x1="283" y1="34" x2="446" y2="34" marker-end="url(#mk-d)"/><text class="sv-lab" x="247" y="94">FASE DE JUEGO</text><text class="sv-ti" style="font-size:18px" x="247" y="124">Ofensiva:</text><text class="sv-ti" style="font-size:18px" x="247" y="148">la salida</text><text class="sv-tx" x="247" y="178">Construir desde el</text><text class="sv-tx" x="247" y="198">portero ante la</text><text class="sv-tx" x="247" y="218">primera presión.</text><rect class="sv-card" x="442" y="64" width="196" height="220" rx="10"/><circle class="sv-circ" cx="470" cy="34" r="19"/><text class="sv-n" x="470" y="40">3</text><line class="sv-line" x1="494" y1="34" x2="657" y2="34" marker-end="url(#mk-d)"/><text class="sv-lab" x="458" y="94">PRINCIPIO</text><text class="sv-ti" style="font-size:18px" x="458" y="124">Superar la presión</text><text class="sv-ti" style="font-size:18px" x="458" y="148">con estructura</text><text class="sv-tx" x="458" y="178">El pivote recibe de</text><text class="sv-tx" x="458" y="198">perfil y orienta la</text><text class="sv-tx" x="458" y="218">salida al lado libre.</text><rect class="sv-card" x="653" y="64" width="196" height="220" rx="10"/><circle class="sv-circ" cx="681" cy="34" r="19"/><text class="sv-n" x="681" y="40">4</text><line class="sv-line" x1="705" y1="34" x2="868" y2="34" marker-end="url(#mk-d)"/><text class="sv-lab" x="669" y="94">TAREA</text><text class="sv-ti" style="font-size:18px" x="669" y="124">T1 · Rombo de</text><text class="sv-ti" style="font-size:18px" x="669" y="148">salida (4v2)</text><text class="sv-tx" x="669" y="178">Punto si el balón cruza</text><text class="sv-tx" x="669" y="198">el medio tras pasar</text><text class="sv-tx" x="669" y="218">por 3 jugadores.</text><rect class="sv-card" x="864" y="64" width="196" height="220" rx="10"/><circle class="sv-circ" cx="892" cy="34" r="19"/><text class="sv-n" x="892" y="40">5</text><text class="sv-lab" x="880" y="94">PROGRESIÓN</text><text class="sv-ti" style="font-size:18px" x="880" y="124">Fácil · media ·</text><text class="sv-ti" style="font-size:18px" x="880" y="148">difícil</text><text class="sv-tx" x="880" y="178">Presión pasiva al 70 %</text><text class="sv-tx" x="880" y="198">6 no recibe de espaldas</text><text class="sv-tx" x="880" y="218">4v3 con mediapunta</text></svg>
+      <figcaption>El recorrido de la tarea T1 del curso 1-4-3-3, paso a paso.</figcaption>
+    </figure>
+
+    <ol class="pasos">
+      <li class="rv"><h3>Sistema</h3><p>Partes de una estructura concreta y de sus roles: 1-4-3-3, 1-4-4-2, 1-5-3-2, 1-3-4-3 o 1-4-2-3-1. Sin sistema no hay referencias de distancias ni de ocupación.</p></li>
+      <li class="rv"><h3>Fase de juego</h3><p>Ataque, defensa, transición o balón parado. Cada tarea declara en cuál de ellas trabaja, para que no mezcles objetivos en la misma sesión.</p></li>
+      <li class="rv"><h3>Principio</h3><p>Una sola idea de juego por tarea, escrita como objetivo. Es lo que vas a corregir con tu coaching mientras los jugadores compiten.</p></li>
+      <li class="rv"><h3>Tarea con provocaciones medibles</h3><p>Reglas que empujan al jugador hacia el principio y que puedes contar: zonas, toques, puntos, tiempos. Si no se puede contar, no se puede evaluar.</p></li>
+      <li class="rv"><h3>Progresión</h3><p>Variantes fácil, media y difícil, con duración y tipo de carga. Subes o bajas la exigencia sin inventar una tarea nueva.</p></li>
+    </ol>
+    <div class="cta-row rv"><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Acceder al método completo</a></div>
+  </div>
+</section>
+
+<!-- ============ MUESTRA REAL ============ -->
+<section id="muestra" class="muestra" aria-labelledby="h-muestra">
+  <div class="wrap">
+    <p class="eyebrow rv">Muestra real</p>
+    <h2 id="h-muestra" class="rv">Una tarea completa, tal como la recibes.</h2>
+    <p class="lead rv">Es la T1 del curso 1-4-3-3, sin retocar. Pizarra y ficha. Fíjate en cómo cada bloque responde a un paso del método.</p>
+
+    <div class="t1">
+      <figure class="pizarra rv">
+        <svg role="img" aria-label="Pizarra de la tarea 1 del curso 1-4-3-3: rombo de salida 4v2. Portero 1, centrales 4 y 5 y pivote 6 en su zona de conos frente a dos presionadores, con mini-porterías de progresión a la altura del medio campo." xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Tarea 1 — Rombo de salida: el pivote pivota</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >4v2 · POR + DFC 4/5 + pivote 6 superan a 2 presionadores</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Sistema 1-4-3-3</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><g><circle cx="340.0" cy="954.2" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="958.2" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">1</text></g><text x="340.0" y="935.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >POR</text><g><circle cx="201.8" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">5</text></g><text x="201.8" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><g><circle cx="478.2" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">4</text></g><text x="478.2" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><rect x="264.6" y="581.9" width="150.7" height="133.6" rx="6" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><text x="340.0" y="700.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >zona del 6</text><path d="M264.6,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M264.6,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><g><circle cx="340.0" cy="648.7" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="652.7" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">6</text></g><text x="340.0" y="629.7" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >pivote</text><g><circle cx="277.2" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="277.2" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="402.8" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="402.8" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><rect x="64.2" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="76.2" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><rect x="591.8" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="603.8" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><circle cx="340.0" cy="954.2" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,948.2 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="314.9" y1="925.6" x2="214.4" y2="830.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="264.6" y="872.8" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="220.7" y1="772.8" x2="321.2" y2="667.8" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="270.9" y="715.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="365.1" y1="629.6" x2="566.1" y2="515.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="465.6" y="567.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><circle cx="49" cy="1029.56" r="6" fill="#ffd54a"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">zona</text></g></svg>
+        <figcaption>Pizarra de la T1. Cada tarea del banco lleva la suya, con la marca al pie.</figcaption>
+      </figure>
+
+      <div class="ficha rv">
+        <h3>T1 · Rombo de salida: el pivote pivota</h3>
+        <p class="sub">Curso 1-4-3-3 · Bloque 1, salida con 2 centrales + pivote · Tipo: analítica + posicional (4v2)</p>
+        <dl>
+          <dt>Objetivo <span class="tag">paso 3 · principio</span></dt>
+          <dd>Construir el primer rombo de salida con el portero (1), los centrales 4 y 5 y el pivote 6. El 6 recibe de perfil entre los dos delanteros rivales y orienta la salida hacia el lado libre.</dd>
+
+          <dt>Organización <span class="tag">paso 1 y 2 · sistema y fase</span></dt>
+          <dd>Medio campo, de portería a línea de medios, 40×30 m. 1, 4, 5 y 6 contra 2 atacantes neutros con peto que presionan. Dos mini-porterías en banda a la altura del medio campo (representan al lado libre) y 4 conos que marcan la zona del pivote.</dd>
+
+          <dt>Provocaciones medibles <span class="tag">paso 4 · tarea</span></dt>
+          <dd>Salida superada = punto cuando el balón cruza la línea de medios controlado tras pasar por 3 jugadores distintos. El 6 solo recibe dentro de su zona de conos. Máximo 2 toques para los centrales. Si los dos delanteros roban, punto para ellos y reinicio.</dd>
+
+          <dt>Variantes <span class="tag">paso 5 · progresión</span></dt>
+          <dd><b>Fácil:</b> presionadores pasivos al 70 %.<br><b>Media:</b> el 6 no puede recibir de espaldas, así que obliga a perfil abierto.<br><b>Difícil:</b> 4v3 con un mediapunta que vigila al 6; obliga a salir en 3 por fuera con los centrales.</dd>
+
+          <dt>Coaching</dt>
+          <dd>Orientación corporal del 6 (recibir abierto y ver las dos bandas). Altura y separación de los centrales para abrir líneas de pase. Momento del apoyo del pivote tras el primer toque del portero.</dd>
+
+          <dt>Duración</dt>
+          <dd>4 series de 4 minutos, con 90 segundos de descanso. Carga F (fundamentación).</dd>
+        </dl>
+        <div class="cta-row"><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero las 26 tareas de este curso y los otros 9</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVIDENCIA ============ -->
+<section id="evidencia" aria-labelledby="h-evi">
+  <div class="wrap">
+    <p class="eyebrow rv">Rigor</p>
+    <h2 id="h-evi" class="rv">Honestos con la evidencia, también cuando duda.</h2>
+    <p class="lead rv">En el curso de Pretemporada citamos a los autores de referencia y decimos dónde la ciencia tiene dudas. Poca teoría, pero la que entra es la que se sostiene. Las cifras son orientativas, no dogma.</p>
+
+    <div class="autores">
+      <div class="autor rv"><b>Buchheit</b><span>Microciclo MD-x, test 30-15 IFT, HIIT</span></div>
+      <div class="autor rv"><b>Gabbett</b><span>ACWR y la paradoja entrenamiento-lesión</span></div>
+      <div class="autor rv"><b>Foster</b><span>sRPE, monotonía y strain</span></div>
+      <div class="autor rv"><b>Seirul·lo</b><span>Microciclo estructurado</span></div>
+      <div class="autor rv"><b>Frade</b><span>Periodización táctica y morfociclo</span></div>
+    </div>
+
+    <div class="duda" role="table" aria-label="Qué decimos y cuánto de firme es">
+      <div class="duda-row rv">
+        <div><span class="fl">Lo que decimos</span><h3>El ACWR sirve como semáforo: zona segura de 0,8 a 1,3 y riesgo por encima de 1,5.</h3></div>
+        <div><span class="fl">Lo que la ciencia discute</span><p>Tiene críticas serias (Impellizzeri, Lolli, Windt). No es una bola de cristal.</p></div>
+        <div><span class="fl">Cómo lo usamos</span><p>Como aviso de saltos bruscos de carga, combinado con el bienestar del jugador y el sentido común. Nunca como verdad absoluta.</p></div>
+      </div>
+      <div class="duda-row rv">
+        <div><span class="fl">Lo que decimos</span><h3>Sube la carga semanal unos 10 % como máximo.</h3></div>
+        <div><span class="fl">Lo que la ciencia discute</span><p>Es una orientación práctica. Lo importante es el principio, no la cifra exacta.</p></div>
+        <div><span class="fl">Cómo lo usamos</span><p>Progresión gradual y sin picos, sobre todo en pretemporada, cuando el jugador llega con poca carga acumulada.</p></div>
+      </div>
+      <div class="duda-row rv">
+        <div><span class="fl">Lo que decimos</span><h3>El Nordic hamstring reduce alrededor de un 51 % las lesiones de isquios.</h3></div>
+        <div><span class="fl">Lo que la ciencia discute</span><p>Hay matices metodológicos en los estudios que lo respaldan (van Dyk, Al Attar).</p></div>
+        <div><span class="fl">Cómo lo usamos</span><p>Sigue siendo la herramienta más recomendada. Lo progresamos hasta 3×3-10 repeticiones, 1-3 veces por semana.</p></div>
+      </div>
+    </div>
+    <p class="muted rv" style="margin-top:1.4rem;font-size:.92rem">Y sin tecnología cara: el control de carga se hace con papel y RPE (esfuerzo percibido por el jugador).</p>
+  </div>
+</section>
+
+<!-- ============ CUERPO TECNICO ============ -->
+<section id="cuerpo-tecnico" aria-labelledby="h-cuerpo">
+  <div class="wrap">
+    <p class="eyebrow rv">El cuerpo técnico digital</p>
+    <h2 id="h-cuerpo" class="rv">El staff que no puedes pagar, con un solo método.</h2>
+    <p class="lead rv">Un entrenador sin equipo de trabajo hace de todo y no profundiza en nada. Aquí cada rol del cuerpo técnico tiene su contenido real, y todos hablan el mismo idioma.</p>
+
+    <div class="roles">
+      <article class="rol rv">
+        <span class="fl">Analista táctico</span>
+        <h3>Cursos por sistema</h3>
+        <p>Cinco sistemas con su estructura, sus roles y las cuatro fases del juego.</p>
+        <ul><li>1-4-3-3, 1-4-4-2, 1-5-3-2, 1-3-4-3 y 1-4-2-3-1</li><li>Fase ofensiva, defensiva, transiciones y balón parado</li><li>Distancias de referencia y ocupación de carriles</li></ul>
+      </article>
+      <article class="rol rv">
+        <span class="fl">Preparador físico</span>
+        <h3>Curso de Pretemporada</h3>
+        <p>Física y táctica juntas, adaptada a cuántas sesiones por semana tienes de verdad.</p>
+        <ul><li>6 planes según sesiones por semana</li><li>Banco de 12 sesiones</li><li>Control de carga con RPE y ACWR, y plantillas</li></ul>
+      </article>
+      <article class="rol rv">
+        <span class="fl">Segundo entrenador</span>
+        <h3>Banco de tareas con pizarra</h3>
+        <p>Todo lo que un segundo prepararía antes de la sesión, ya hecho.</p>
+        <ul><li>Objetivo, organización, desarrollo y provocaciones medibles</li><li>Variantes fácil, media y difícil, coaching y duración</li><li>Planes de sesiones para ordenar la semana</li></ul>
+      </article>
+      <article class="rol rv">
+        <span class="fl">Especialista en ABP y posesión</span>
+        <h3>Posesión, rondos, ruedas y balón parado</h3>
+        <p>Los cursos temáticos para trabajar el detalle que decide partidos.</p>
+        <ul><li>Posesión y Rondos</li><li>Ruedas de pases</li><li>Balón parado defensivo: córners, faltas y saques de banda</li></ul>
+      </article>
+    </div>
+
+    <h3 class="rv" style="margin-top:3rem">Los 10 cursos que entran</h3>
+    <ul class="cursos">
+      <li class="rv"><b>Pretemporada</b>Física, táctica y estrategia</li>
+      <li class="rv"><b>Posesión</b>Juego de posición</li>
+      <li class="rv"><b>Rondos</b>El corazón del entrenamiento</li>
+      <li class="rv"><b>Ruedas de pases</b>Del patrón al partido</li>
+      <li class="rv"><b>Balón parado defensivo</b>Córners, faltas y saques de banda</li>
+      <li class="rv"><b>Sistema 1-4-3-3</b>Del concepto al campo</li>
+      <li class="rv"><b>Sistema 1-4-4-2</b>Del concepto al campo</li>
+      <li class="rv"><b>Sistema 1-5-3-2</b>Del concepto al campo</li>
+      <li class="rv"><b>Sistema 1-3-4-3</b>Del concepto al campo</li>
+      <li class="rv"><b>Sistema 1-4-2-3-1</b>Del concepto al campo</li>
+    </ul>
+    <div class="formatos rv" aria-label="Formatos de entrega"><span>PDF para imprimir</span><span>HTML único, funciona sin internet</span><span>Sitio navegable</span></div>
+
+    <!-- TODO-USER: Testimonios / prueba social. Moisés debe aportar testimonios reales (nombre, cargo o categoría del entrenador y permiso de uso), nº de miembros si quiere mostrarlo y, si procede, logos de clubes con autorización. No inventar nada. La página funciona sin este bloque: puedes borrarlo entero. -->
+    <aside class="todo rv" aria-label="Espacio reservado para testimonios">
+      <h3>Entrenadores que ya lo usan</h3>
+      <p>[Pendiente de Moisés: testimonios reales de entrenadores, con su permiso. Hasta entonces, la prueba es el producto: la tarea completa de arriba y el índice de cursos.]</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ QUIEN FIRMA ============ -->
+<section aria-labelledby="h-firma">
+  <div class="wrap narrow">
+    <p class="eyebrow rv">Quién firma el método</p>
+    <h2 id="h-firma" class="rv">Poca teoría, mucha aplicación.</h2>
+    <div class="firma">
+      <blockquote class="rv">«Un curso no se mide por lo que explica, sino por lo que puedes hacer con él en el campo el martes por la tarde.»</blockquote>
+      <p class="rv muted">Esa es la filosofía de Moisés Díaz y la regla de todos los cursos: módulos de teoría breves, que terminan con ideas clave y errores comunes, y un banco grande de tareas listas para entrenar. Marca de MISTER ÉLITE en la portada y al pie de cada pizarra.</p>
+    </div>
+    <!-- TODO-USER: Trayectoria de Moisés Díaz. Debe aportar su titulación (p. ej. nivel de entrenador), clubes/categorías donde ha entrenado, años de experiencia y una foto, SOLO si son reales y quiere mostrarlos. No se ha inventado nada. La página funciona sin este bloque. -->
+    <aside class="todo rv" aria-label="Espacio reservado para la trayectoria de Moisés">
+      <h3>Trayectoria</h3>
+      <p>[Pendiente de Moisés: titulación, experiencia y trayectoria como entrenador, si quiere mostrarlas.]</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ A QUIEN SI / NO ============ -->
+<section id="para-quien" aria-labelledby="h-quien">
+  <div class="wrap">
+    <p class="eyebrow rv">Para quién es</p>
+    <h2 id="h-quien" class="rv">A quién le sirve y a quién no.</h2>
+    <div class="quien">
+      <div class="si rv">
+        <h3>Sí te sirve si…</h3>
+        <ul>
+          <li>Entrenas en base, amateur o semiprofesional y no tienes cuerpo técnico.</li>
+          <li>Quieres saber por qué haces cada tarea, no solo copiarla.</li>
+          <li>Prefieres reglas que se pueden contar a opiniones.</li>
+          <li>Trabajas con un sistema concreto y quieres su estructura clara: roles, distancias, fases.</li>
+          <li>Necesitas organizar la pretemporada con las sesiones por semana que realmente tienes.</li>
+          <li>Quieres material que puedas imprimir y llevar al campo, sin depender de la cobertura.</li>
+        </ul>
+      </div>
+      <div class="no rv">
+        <h3>No te sirve si…</h3>
+        <ul>
+          <li>Buscas una fórmula mágica o un «sistema ganador» que funcione sin adaptarlo a tus jugadores.</li>
+          <li>Quieres teoría larga y académica. Aquí la teoría es corta y se aplica.</li>
+          <li>Esperas un servicio de asesoría individual. La membresía es contenido para llevar al campo.</li>
+          <li>Prefieres improvisar cada sesión y no quieres medir nada.</li>
+          <li>Necesitas tecnología (GPS, pulsómetros). El control de carga aquí va con papel y RPE.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRECIOS ============ -->
+<section id="precios" class="muestra" aria-labelledby="h-precios">
+  <div class="wrap">
+    <p class="eyebrow rv">Precio</p>
+    <h2 id="h-precios" class="rv">Un cuerpo técnico, dos formas de entrar.</h2>
+    <p class="lead rv">Mismo acceso y mismo método en los dos planes.</p>
+
+    <div class="planes">
+      <div class="plan rv">
+        <h3>Mensual</h3>
+        <div class="precio"><span data-cfg="precioMensual">19 €</span> <small>/mes</small></div>
+        <div class="eq">Facturación mensual.</div>
+        <ul>
+          <li>Los 10 cursos publicados</li>
+          <li>Más de 170 tareas y sesiones con su pizarra</li>
+          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>Plantillas y planes de sesiones</li>
+        </ul>
+        <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar mensual</a>
+      </div>
+      <div class="plan hi rv">
+        <span class="badge">Mejor precio</span>
+        <h3>Anual</h3>
+        <div class="precio"><span data-cfg="precioAnual">149 €</span> <small>/año</small></div>
+        <div class="eq">Equivale a unos <span data-cfg="anualPorMes">12,4 €</span>/mes. Ahorras <span data-cfg="ahorro">79 €</span> frente al mensual.</div>
+        <ul>
+          <li>Los 10 cursos publicados</li>
+          <li>Más de 170 tareas y sesiones con su pizarra</li>
+          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>Plantillas y planes de sesiones</li>
+        </ul>
+        <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar anual</a>
+      </div>
+    </div>
+
+    <div class="garantia rv">
+      <svg viewBox="0 0 48 48" fill="none" stroke="#d6a95e" stroke-width="2" aria-hidden="true" focusable="false"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 24l6 6 11-12"/></svg>
+      <div>
+        <h3><span data-cfg="garantiaDias">14</span> días de garantía, sin preguntas.</h3>
+        <p>Entra, abre la tarea que quieras y llévala al campo. Si no es lo que esperabas, te devolvemos el dinero dentro de los primeros <span data-cfg="garantiaDias">14</span> días. Sin formularios ni explicaciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" aria-labelledby="h-faq">
+  <div class="wrap narrow">
+    <p class="eyebrow rv">Preguntas</p>
+    <h2 id="h-faq" class="rv">Lo que suelen preguntar los entrenadores.</h2>
+    <div class="faq rv">
+      <details>
+        <summary>¿Necesito material especial o tecnología?</summary>
+        <div><p>No. Conos, petos, mini-porterías y balones. El control de carga se hace con papel y RPE, sin GPS ni pulsómetros.</p></div>
+      </details>
+      <details>
+        <summary>¿Hay mucha teoría?</summary>
+        <div><p>No. Cada curso tiene módulos breves que terminan con ideas clave y errores comunes. El grueso es el banco de tareas, cada una con su pizarra.</p></div>
+      </details>
+      <details>
+        <summary>¿En qué formato recibo los cursos?</summary>
+        <div><p>Cada curso se entrega en tres formatos: PDF para imprimir, un HTML único que se abre sin internet y un sitio navegable.</p></div>
+      </details>
+      <details>
+        <summary>¿Sirve para mi categoría?</summary>
+        <div><p>Está pensado para entrenadores de base, amateur y semiprofesional. Cada tarea indica su duración y su tipo de carga, y los planes se ajustan a tu categoría y a las sesiones que tengas por semana.</p></div>
+      </details>
+      <details>
+        <summary>¿Puedo ver una tarea antes de pagar?</summary>
+        <div><p>Sí: la T1 del curso de 1-4-3-3 está completa en esta misma página, con pizarra y ficha. Es exactamente lo que recibes en las demás.</p></div>
+      </details>
+      <details>
+        <summary>¿Y si no me convence?</summary>
+        <div><p>Tienes <span data-cfg="garantiaDias">14</span> días de garantía con devolución sin preguntas.</p></div>
+      </details>
+      <!-- TODO-USER: confirmar si los cursos nuevos y las actualizaciones de los existentes entran en la membresía sin coste extra. No se promete aquí nada que no esté confirmado. -->
+      <details>
+        <summary>¿Se añadirán más cursos o actualizaciones?</summary>
+        <div><p>Hoy la membresía incluye los 10 cursos publicados. Si quieres saber cómo se gestionarán las novedades, escríbenos a <a data-mail href="mailto:hola@TU-DOMINIO">hola@TU-DOMINIO</a> y te lo aclaramos antes de pagar.</p></div>
+      </details>
+      <!-- TODO-USER: indicar las condiciones reales de cancelación (cómo se cancela, cuándo se renueva el plan anual, etc.). -->
+      <details>
+        <summary>¿Cómo cancelo?</summary>
+        <div><p>Para cualquier duda sobre cancelación o renovación, escríbenos a <a data-mail href="mailto:hola@TU-DOMINIO">hola@TU-DOMINIO</a> antes de darte de alta y te respondemos con las condiciones exactas.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final" aria-labelledby="h-final">
+  <div class="wrap">
+    <p class="eyebrow rv" style="justify-content:center">Tu cuerpo técnico te espera</p>
+    <h2 id="h-final" class="rv">Deja de coleccionar ejercicios. Entrena con método.</h2>
+    <p class="lead rv">Diez cursos, más de 170 tareas con su pizarra y un solo criterio de principio a fin. Desde <span data-cfg="precioMensual">19 €</span>/mes, con <span data-cfg="garantiaDias">14</span> días de devolución sin preguntas.</p>
+    <div class="cta-row rv"><a class="btn big" href="https://TU-WORDPRESS/membresia" data-checkout>Entrar al cuerpo técnico</a></div>
+    <p class="cta-note rv">¿Dudas antes de entrar? <a data-mail href="mailto:hola@TU-DOMINIO">hola@TU-DOMINIO</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>MISTER ÉLITE — Moisés Díaz</b>
+    <span>Cuerpo Técnico Digital para entrenadores de fútbol. Poca teoría, mucha aplicación práctica.</span>
+    <span>© <span id="yr">2026</span> MISTER ÉLITE — Moisés Díaz. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ====== CONFIGURACIÓN: cambia aquí precios, garantía y enlaces ======
+  const CONFIG = {
+    precioMensual: 19,                           // € al mes
+    precioAnual: 149,                            // € al año
+    garantiaDias: 14,                            // días de devolución sin preguntas
+    checkoutUrl: 'https://TU-WORDPRESS/membresia', // TODO-USER: enlace real de alta/compra
+    contactoEmail: 'hola@TU-DOMINIO'             // TODO-USER: email real de contacto
+  };
+  // ====================================================================
+  const fmt = (n, d) => n.toLocaleString('es-ES', {minimumFractionDigits: d||0, maximumFractionDigits: d||0});
+  const vals = {
+    precioMensual: fmt(CONFIG.precioMensual) + ' €',
+    precioAnual: fmt(CONFIG.precioAnual) + ' €',
+    anualPorMes: fmt(CONFIG.precioAnual / 12, 1) + ' €',
+    ahorro: fmt(CONFIG.precioMensual * 12 - CONFIG.precioAnual) + ' €',
+    garantiaDias: String(CONFIG.garantiaDias)
+  };
+  document.querySelectorAll('[data-cfg]').forEach(function(el){
+    const v = vals[el.getAttribute('data-cfg')];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('a[data-checkout]').forEach(function(a){ a.href = CONFIG.checkoutUrl; });
+  document.querySelectorAll('a[data-mail]').forEach(function(a){
+    a.href = 'mailto:' + CONFIG.contactoEmail;
+    a.textContent = CONFIG.contactoEmail;
+  });
+  const yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
+
+  // Aparición suave al hacer scroll (desactivada con prefers-reduced-motion; sin JS todo es visible)
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin: '0px 0px -8% 0px', threshold: 0.05});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

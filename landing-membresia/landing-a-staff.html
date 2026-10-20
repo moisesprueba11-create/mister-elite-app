@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISTER ÉLITE · Cuerpo Técnico Digital</title>
+<meta name="description" content="El cuerpo técnico que no puedes pagar: analista táctico, preparador físico, segundo entrenador y especialista en balón parado para entrenadores de fútbol que lo hacen todo solos. Sesiones y pizarras listas para el campo.">
+<meta name="theme-color" content="#15202b">
+<style>
+:root{
+  --bg:#15202b; --bg2:#1a1a18; --card:#1c2a38; --card2:#22323f;
+  --line:#2f4254; --txt:#e8eef4; --mut:#a9bbcc;
+  --verde:#4cc26b; --verde-d:#0b1a10; --azul:#1d6fb8; --azul-l:#86c0f2;
+  --ambar:#ffd54a; --rojo:#ff8a80;
+  --r:12px; --max:1080px;
+  --sys:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sys);font-size:17px;line-height:1.6;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:36px 36px;padding-bottom:78px}
+img,svg{max-width:100%}
+a{color:var(--azul-l)}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(1.95rem,7.4vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.6rem,5.6vw,2.4rem);font-weight:800}
+h3{font-size:1.18rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 16px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2)}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde);margin-bottom:.9rem}
+.lead{font-size:1.1rem;color:var(--mut);max-width:62ch}
+.skip{position:absolute;left:-999px;top:0;background:var(--verde);color:var(--verde-d);padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--ambar);outline-offset:3px;border-radius:4px}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:12px 24px;border-radius:10px;font-weight:800;font-size:1.02rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .12s ease,background .12s ease}
+.btn-p{background:var(--verde);color:var(--verde-d)}
+.btn-p:hover{background:#6ad687;transform:translateY(-1px)}
+.btn-s{background:transparent;color:var(--txt);border-color:var(--line)}
+.btn-s:hover{border-color:var(--azul-l);color:var(--azul-l)}
+.btn-b{width:100%}
+.micro{font-size:.88rem;color:var(--mut);margin-top:.7rem}
+
+/* cabecera */
+header.top{position:sticky;top:0;z-index:30;background:rgba(21,32,43,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.brand{font-weight:800;letter-spacing:.04em;font-size:.95rem;text-decoration:none;color:var(--txt)}
+.brand b{color:var(--verde)}
+header.top .btn{min-height:40px;padding:8px 16px;font-size:.92rem}
+
+/* hero */
+.hero{padding:44px 0 56px;border-top:0}
+.hero .grid{display:grid;gap:34px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:1.4rem 0 0;padding:0;list-style:none}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:.88rem;color:var(--mut)}
+.chips b{color:var(--txt)}
+.cta-row{display:flex;flex-direction:column;gap:12px;margin-top:1.6rem}
+.board{background:var(--bg2);border:2px dashed var(--line);border-radius:var(--r);padding:20px 18px;font-size:.98rem}
+.board h2{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);margin:0 0 .9rem;font-weight:700}
+.board ul{list-style:none;margin:0;padding:0}
+.board li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.board li span:last-child{color:var(--rojo);font-weight:700;white-space:nowrap}
+.board li.yo{border-bottom:0;padding-top:12px;font-weight:800}
+.board li.yo span:last-child{color:var(--verde)}
+.board p{margin:.9rem 0 0;color:var(--mut);font-size:.9rem}
+
+/* problema */
+.prob-list{display:grid;gap:12px;margin:1.6rem 0;padding:0;list-style:none}
+.prob-list li{background:var(--card);border-left:4px solid var(--rojo);padding:14px 16px;border-radius:0 var(--r) var(--r) 0}
+.prob-list b{display:block;margin-bottom:2px}
+.quote{font-size:1.2rem;font-weight:700;border-left:4px solid var(--verde);padding-left:16px;margin:1.6rem 0 0}
+
+/* roles */
+.roles{display:grid;gap:16px;margin-top:2rem}
+.role{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px}
+.role .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;margin-bottom:.7rem}
+.role .club{font-size:.88rem;color:var(--mut);margin:-.2rem 0 .9rem}
+.role ul{margin:0 0 1rem;padding-left:1.15em}
+.role li{margin-bottom:.4em}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 9px;font-size:.8rem;color:var(--azul-l);margin:0}
+
+/* muestra */
+.sample{display:grid;gap:28px;margin-top:2rem}
+.pizarra{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:10px;max-width:380px;margin:0 auto;width:100%}
+.pizarra svg{display:block;width:100%;height:auto;border-radius:8px}
+.pizarra figcaption{font-size:.82rem;color:var(--mut);text-align:center;padding:8px 6px 2px}
+.ficha{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px}
+.ficha h3{margin-bottom:.2em}
+.ficha .sub{color:var(--mut);font-size:.92rem;margin-bottom:1.1rem}
+.ficha dl{margin:0}
+.ficha dt{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-top:1rem}
+.ficha dd{margin:.2rem 0 0}
+.var{display:grid;gap:8px;margin-top:.4rem}
+.var div{background:var(--bg);border-radius:8px;padding:8px 12px;font-size:.96rem}
+.var b{color:var(--ambar)}
+.nota{font-size:.9rem;color:var(--mut);margin-top:1.4rem}
+
+/* qué recibes */
+.steps{display:grid;gap:14px;margin:2rem 0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--verde);color:var(--verde-d);font-weight:800;display:grid;place-items:center}
+.steps b{display:block}
+.courses{display:grid;gap:10px;margin:1.2rem 0 0;padding:0;list-style:none}
+.courses li{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.96rem}
+.courses b{display:block}
+.courses span{color:var(--mut);font-size:.88rem}
+.courses em{font-style:normal;font-size:.74rem;font-weight:700;color:var(--verde);letter-spacing:.06em;text-transform:uppercase}
+.fmt{display:grid;gap:10px;margin-top:1.6rem}
+.fmt div{background:var(--card2);border-radius:10px;padding:12px 14px}
+
+/* comparación */
+.cmp{margin-top:2rem;display:grid;gap:14px}
+.cmp-row{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cmp-row h3{margin:0;padding:11px 16px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;background:var(--card2);color:var(--mut)}
+.cmp-row div{padding:12px 16px}
+.cmp-row .solo{border-bottom:1px solid var(--line);color:var(--mut)}
+.cmp-row .solo::before,.cmp-row .staff::before{display:block;font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.cmp-row .solo::before{content:"Tú solo";color:var(--rojo)}
+.cmp-row .staff::before{content:"Con tu cuerpo técnico";color:var(--verde)}
+
+/* precios */
+.plans{display:grid;gap:18px;margin-top:2rem}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;position:relative}
+.plan.best{border:2px solid var(--verde)}
+.plan .flag{position:absolute;top:-13px;left:20px;background:var(--verde);color:var(--verde-d);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:1rem;color:var(--mut);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+.price{font-size:2.8rem;font-weight:800;line-height:1}
+.price small{font-size:1rem;font-weight:600;color:var(--mut)}
+.plan .eq{color:var(--verde);font-weight:700;margin:.5rem 0 1rem}
+.plan ul{margin:0 0 1.4rem;padding:0;list-style:none}
+.plan li{padding:6px 0 6px 26px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:.95em;width:12px;height:7px;border-left:3px solid var(--verde);border-bottom:3px solid var(--verde);transform:rotate(-45deg)}
+.fine{font-size:.88rem;color:var(--mut);margin-top:1.4rem}
+
+/* garantía */
+.garantia{display:grid;gap:18px;align-items:center;background:var(--card);border:2px solid var(--verde);border-radius:var(--r);padding:26px 22px}
+.garantia .big{font-size:3.4rem;font-weight:800;line-height:1;color:var(--verde)}
+.garantia .big small{display:block;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+
+/* autor + prueba social */
+.autor{display:grid;gap:18px;margin-top:1.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px}
+.card.vacio{border-style:dashed;background:transparent}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px}
+summary{cursor:pointer;padding:16px 46px 16px 18px;font-weight:700;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--verde);font-weight:400}
+details[open] summary::after{content:"\2212"}
+details .a{padding:0 18px 16px;color:var(--mut)}
+details .a p:last-child{margin-bottom:0}
+
+/* cta final + pie */
+.final{text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.final .lead{margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--mut);font-size:.9rem;background:var(--bg2)}
+footer .wrap{display:grid;gap:8px}
+footer b{color:var(--txt)}
+
+/* barra CTA móvil */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(21,32,43,.97);border-top:1px solid var(--line);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .2s ease}
+.sticky.on{transform:none}
+.sticky span{font-size:.9rem;line-height:1.25}
+.sticky span b{display:block;color:var(--txt)}
+.sticky span i{font-style:normal;color:var(--mut);font-size:.82rem}
+.sticky .btn{min-height:44px;padding:8px 18px;white-space:nowrap}
+
+@media (min-width:720px){
+  body{font-size:18px;padding-bottom:0}
+  section{padding:84px 0}
+  .hero{padding:72px 0 84px}
+  .hero .grid{grid-template-columns:1.35fr 1fr;align-items:center;gap:48px}
+  .cta-row{flex-direction:row;flex-wrap:wrap}
+  .roles{grid-template-columns:1fr 1fr}
+  .sample{grid-template-columns:380px 1fr;align-items:start;gap:40px}
+  .pizarra{margin:0;position:sticky;top:76px}
+  .courses{grid-template-columns:1fr 1fr}
+  .fmt{grid-template-columns:repeat(3,1fr)}
+  .prob-list{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .steps li{padding:64px 18px 18px}
+  .cmp-row{display:grid;grid-template-columns:200px 1fr 1fr}
+  .cmp-row h3{display:flex;align-items:center;font-size:.9rem;padding:16px}
+  .cmp-row .solo{border-bottom:0;border-right:1px solid var(--line)}
+  .cmp-row div{padding:16px}
+  .plans{grid-template-columns:1fr 1fr;align-items:stretch}
+  .plan{display:flex;flex-direction:column}
+  .plan ul{flex:1}
+  .garantia{grid-template-columns:auto 1fr;gap:34px;padding:34px}
+  .autor{grid-template-columns:1fr 1fr}
+  .sticky{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+@media print{.sticky,header.top{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">MISTER <b>ÉLITE</b></a>
+    <a class="btn btn-p" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero mi staff</a>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio" aria-labelledby="h-hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Cuerpo Técnico Digital · para entrenadores que lo hacen todo solos</span>
+      <h1 id="h-hero">El cuerpo técnico que no puedes pagar, por menos de lo que cuesta un balón.</h1>
+      <p class="lead">Analista táctico, preparador físico, segundo entrenador y especialista en balón parado, en forma de sesiones, tareas y pizarras listas para llevar al campo. Poca teoría, mucha aplicación práctica. Se acabó preparar la sesión desde una hoja en blanco el domingo por la noche.</p>
+      <div class="cta-row">
+        <a class="btn btn-p" href="https://TU-WORDPRESS/membresia" data-checkout>Montar mi cuerpo técnico · <span data-cfg="precioMensual">19</span> €/mes</a>
+        <a class="btn btn-s" href="#muestra">Ver una tarea real con su pizarra</a>
+      </div>
+      <p class="micro">Garantía de <span data-cfg="garantiaDias">14</span> días con devolución sin preguntas.</p>
+      <ul class="chips" aria-label="Qué incluye, en cifras">
+        <li><b>10</b> cursos</li>
+        <li><b>+170</b> tareas y sesiones</li>
+        <li><b>+400</b> pizarras y gráficos</li>
+        <li>PDF · HTML offline · sitio web</li>
+      </ul>
+    </div>
+    <aside class="board" aria-label="Quién hace qué cuando entrenas solo">
+      <h2>Domingo · 23:40 · Sesión del martes</h2>
+      <ul>
+        <li><span>Analista táctico</span><span>vacante</span></li>
+        <li><span>Preparador físico</span><span>vacante</span></li>
+        <li><span>Segundo entrenador</span><span>vacante</span></li>
+        <li><span>Especialista ABP</span><span>vacante</span></li>
+        <li class="yo"><span>Tú</span><span>todo</span></li>
+      </ul>
+      <p>Esta página va de cubrir esas cuatro vacantes.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== PROBLEMA ===== -->
+<section class="alt" id="problema" aria-labelledby="h-prob">
+  <div class="wrap">
+    <span class="eyebrow">El problema</span>
+    <h2 id="h-prob">En un club grande lo hacen cuatro personas. A ti te toca hacerlo todo.</h2>
+    <p class="lead">Sabes de fútbol. Lo que no tienes es un staff. Y entre el trabajo, la familia y el entrenamiento de mañana, el domingo por la noche acabas improvisando.</p>
+    <ul class="prob-list">
+      <li><b>Sin analista</b>Sabes que algo falla en la salida de balón o en las transiciones, pero no tienes quien te lo ordene en tareas concretas.</li>
+      <li><b>Sin preparador físico</b>La pretemporada y el control de la carga se hacen "a ojo", y la carga mal puesta cuesta lesiones.</li>
+      <li><b>Sin segundo entrenador</b>Nadie te monta la tarea, dibuja la pizarra ni piensa contigo las variantes. Lo haces tú, tarde y con prisa.</li>
+      <li><b>Sin especialista de balón parado</b>Córners y faltas se quedan para "ya lo trabajaremos", y se acaba sin trabajar.</li>
+    </ul>
+    <p class="quote">No te falta ni ganas ni conocimiento. Te faltan manos. Aquí las tienes.</p>
+  </div>
+</section>
+
+<!-- ===== CUERPO TÉCNICO ===== -->
+<section id="staff" aria-labelledby="h-staff">
+  <div class="wrap">
+    <span class="eyebrow">Tu cuerpo técnico</span>
+    <h2 id="h-staff">Cuatro puestos cubiertos, con contenido real que ya existe.</h2>
+    <p class="lead">Cada rol del staff está respaldado por cursos publicados, con sus tareas y sus pizarras. Nada de promesas de "próximamente".</p>
+
+    <div class="roles">
+      <article class="role">
+        <span class="n" aria-hidden="true">1</span>
+        <h3>Analista táctico</h3>
+        <p class="club">En un club lo haría: el analista que prepara tu modelo de juego.</p>
+        <ul>
+          <li>Un curso completo por sistema, con la fase ofensiva, la fase defensiva, las transiciones y el balón parado.</li>
+          <li>Cada principio llega convertido en tareas de campo, no en teoría suelta.</li>
+          <li>Planes de sesiones que ordenan las tareas dentro de la semana.</li>
+        </ul>
+        <ul class="tags" aria-label="Cursos de este rol"><li>1-4-3-3</li><li>1-4-4-2</li><li>1-5-3-2</li><li>1-3-4-3</li><li>1-4-2-3-1</li></ul>
+      </article>
+
+      <article class="role">
+        <span class="n" aria-hidden="true">2</span>
+        <h3>Preparador físico</h3>
+        <p class="club">En un club lo haría: el preparador físico que reparte la carga.</p>
+        <ul>
+          <li>6 planes ya hechos según tus sesiones por semana: dobles, 6, 5, 4, 3 o 2.</li>
+          <li>Banco de 12 sesiones tipo, cada una con su pizarra, y programación completa de 6 semanas.</li>
+          <li>Control de carga sin tecnología cara: RPE, ACWR y papel. Con plantillas de sRPE, wellness y tests.</li>
+        </ul>
+        <ul class="tags" aria-label="Cursos de este rol"><li>Pretemporada</li></ul>
+      </article>
+
+      <article class="role">
+        <span class="n" aria-hidden="true">3</span>
+        <h3>Segundo entrenador</h3>
+        <p class="club">En un club lo haría: el ayudante que te monta la tarea.</p>
+        <ul>
+          <li>Cada tarea trae objetivo, organización, desarrollo, provocaciones medibles, variantes fácil/media/difícil, coaching y duración.</li>
+          <li>Todas con su pizarra, con medidas y dorsales.</li>
+          <li>Planes de sesiones con las tareas ya ordenadas en la semana (por ejemplo, en el 1-4-3-3: dos microciclos de MD-4 a MD-1).</li>
+        </ul>
+        <ul class="tags" aria-label="Cursos de este rol"><li>Banco de tareas de todos los cursos</li></ul>
+      </article>
+
+      <article class="role">
+        <span class="n" aria-hidden="true">4</span>
+        <h3>Especialista ABP y posesión</h3>
+        <p class="club">En un club lo haría: el especialista que te trabaja lo que decide partidos.</p>
+        <ul>
+          <li>Posesión: juego de posición con 30 tareas, de la superioridad al hombre libre.</li>
+          <li>50 rondos en 7 familias, con medidas exactas y provocaciones medibles, y 30 ruedas de pases en 6 familias.</li>
+          <li>Balón parado defensivo: córners, faltas y saques de banda, con roles claros y sistemas zonal, al hombre y mixto.</li>
+        </ul>
+        <ul class="tags" aria-label="Cursos de este rol"><li>Posesión</li><li>Rondos</li><li>Ruedas de pases</li><li>BP defensivo</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MUESTRA ===== -->
+<section class="alt" id="muestra" aria-labelledby="h-muestra">
+  <div class="wrap">
+    <span class="eyebrow">Prueba de producto</span>
+    <h2 id="h-muestra">Esto es lo que recibes: una tarea real, tal cual.</h2>
+    <p class="lead">Es la Tarea 1 del curso 1-4-3-3. Sin retoques para esta página. Así llega cada una de las más de 170 tareas y sesiones.</p>
+
+    <div class="sample">
+      <figure class="pizarra" style="margin-bottom:0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" role="img" aria-label="Pizarra de la tarea 1: rombo de salida 4v2. Portero 1 en el vértice bajo, centrales 4 y 5 abiertos, pivote 6 en su zona de conos entre dos presionadores rivales y dos mini-porterías de progresión en el medio campo." font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Tarea 1 — Rombo de salida: el pivote pivota</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >4v2 · POR + DFC 4/5 + pivote 6 superan a 2 presionadores</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Sistema 1-4-3-3</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><g><circle cx="340.0" cy="954.2" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="958.2" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">1</text></g><text x="340.0" y="935.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >POR</text><g><circle cx="201.8" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">5</text></g><text x="201.8" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><g><circle cx="478.2" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">4</text></g><text x="478.2" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><rect x="264.6" y="581.9" width="150.7" height="133.6" rx="6" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><text x="340.0" y="700.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >zona del 6</text><path d="M264.6,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M264.6,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><g><circle cx="340.0" cy="648.7" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="652.7" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">6</text></g><text x="340.0" y="629.7" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >pivote</text><g><circle cx="277.2" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="277.2" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="402.8" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="402.8" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><rect x="64.2" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="76.2" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><rect x="591.8" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="603.8" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><circle cx="340.0" cy="954.2" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,948.2 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="314.9" y1="925.6" x2="214.4" y2="830.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="264.6" y="872.8" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="220.7" y1="772.8" x2="321.2" y2="667.8" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="270.9" y="715.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="365.1" y1="629.6" x2="566.1" y2="515.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="465.6" y="567.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><circle cx="49" cy="1029.56" r="6" fill="#ffd54a"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">zona</text></g></svg>
+        <figcaption>Pizarra de la T1, incrustada tal cual. Cada tarea lleva la suya.</figcaption>
+      </figure>
+
+      <article class="ficha" aria-labelledby="t1">
+        <h3 id="t1">T1 · Rombo de salida: el pivote pivota</h3>
+        <p class="sub">Sistema 1-4-3-3 · Bloque 1: Salida con 2 centrales + pivote · Analítica + posicional (4v2)</p>
+        <dl>
+          <dt>Objetivo</dt>
+          <dd>Construir el primer rombo de salida con el portero (1), los centrales (4-5) y el pivote (6). El 6 recibe de perfil entre los dos delanteros rivales y orienta la salida hacia el lado libre.</dd>
+          <dt>Organización</dt>
+          <dd>Medio campo, de portería a línea de medios, 40×30 m. 4v2: el 1, el 4, el 5 y el 6 frente a 2 atacantes con peto que presionan. 2 mini-porterías en banda a la altura del medio campo y 4 conos para marcar la zona del pivote.</dd>
+          <dt>Desarrollo</dt>
+          <dd>El portero inicia. Los centrales abren al ancho del área y el 6 se ofrece en el eje. Circulación 1-4-5-6 para que el 6 reciba de cara o, si le marcan, libere al central del lado contrario y progrese hacia la mini-portería.</dd>
+          <dt>Provocaciones medibles</dt>
+          <dd>Punto si el balón cruza la línea de medios controlado tras pasar por <b>3 jugadores distintos</b>. El 6 solo recibe <b>dentro de su zona de conos</b>. Máximo 2 toques en los centrales. Si los 2 delanteros roban, +1 para ellos y se reinicia.</dd>
+          <dt>Variantes</dt>
+          <dd>
+            <div class="var">
+              <div><b>Fácil.</b> Presionadores pasivos al 70 %.</div>
+              <div><b>Media.</b> El 6 no puede recibir de espaldas: obliga a perfil abierto.</div>
+              <div><b>Difícil.</b> 4v3, con un mediapunta que vigila al 6: obliga a salir en 3 por fuera con los centrales.</div>
+            </div>
+          </dd>
+          <dt>Coaching</dt>
+          <dd>Orientación corporal del 6 (recibir abierto, ver las dos bandas), altura y separación de los centrales para abrir líneas de pase, y timing del apoyo del pivote tras el primer toque del portero.</dd>
+          <dt>Duración</dt>
+          <dd>4 series × 4 min, con 90 s de descanso.</dd>
+        </dl>
+        <p class="nota">Eso es todo lo que necesitas para dirigirla mañana: lo imprimes o lo abres en el móvil, plantas los conos y empiezas.</p>
+        <a class="btn btn-p btn-b" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero el resto de tareas</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CÓMO FUNCIONA / QUÉ RECIBES ===== -->
+<section id="como" aria-labelledby="h-como">
+  <div class="wrap">
+    <span class="eyebrow">Cómo funciona</span>
+    <h2 id="h-como">Del domingo por la noche al campo, en tres pasos.</h2>
+    <ol class="steps">
+      <li><b>Elige el puesto que te falta</b>¿Salida de balón? ¿Carga física? ¿Córners? Vas al curso de ese rol y abres el bloque que necesitas esta semana.</li>
+      <li><b>Abre la tarea</b>Objetivo, organización, pizarra, provocaciones medibles y variantes. Está montada: no empiezas de cero.</li>
+      <li><b>Llévala al campo</b>En PDF para imprimir, en HTML que funciona sin internet o en el sitio navegable desde el móvil.</li>
+    </ol>
+
+    <h3>Qué recibes: los 10 cursos</h3>
+    <ul class="courses">
+      <li><em>Analista</em><b>1-4-3-3</b><span>26 tareas con pizarra y 2 microciclos de ejemplo.</span></li>
+      <li><em>Analista</em><b>1-4-4-2</b><span>Curso completo por sistema, con pizarras.</span></li>
+      <li><em>Analista</em><b>1-5-3-2</b><span>Curso completo por sistema, con pizarras.</span></li>
+      <li><em>Analista</em><b>1-3-4-3</b><span>Curso completo por sistema, con pizarras.</span></li>
+      <li><em>Analista</em><b>1-4-2-3-1</b><span>Curso completo por sistema, con pizarras.</span></li>
+      <li><em>Preparador físico</em><b>Pretemporada perfecta</b><span>6 planes por frecuencia, 12 sesiones tipo, 6 semanas programadas y plantillas de control.</span></li>
+      <li><em>Especialista</em><b>Posesión: juego de posición</b><span>30 tareas para dominar con el balón.</span></li>
+      <li><em>Especialista</em><b>Rondos</b><span>50 rondos en 7 familias, con medidas y provocaciones.</span></li>
+      <li><em>Especialista</em><b>Ruedas de pases</b><span>30 ruedas en 6 familias, del patrón al partido.</span></li>
+      <li><em>Especialista ABP</em><b>Balón parado defensivo</b><span>Córners, faltas y saques de banda.</span></li>
+    </ul>
+
+    <div class="fmt" aria-label="Formatos de entrega">
+      <div><b>PDF</b><br><span style="color:var(--mut)">Para imprimir la sesión y llevarla en la mano.</span></div>
+      <div><b>HTML único</b><br><span style="color:var(--mut)">Un solo archivo que se abre sin internet, en el campo.</span></div>
+      <div><b>Sitio navegable</b><br><span style="color:var(--mut)">Para moverte por módulos y tareas desde el móvil.</span></div>
+    </div>
+    <!-- TODO-USER: Confirmar cómo se accede a la membresía (área de miembros de WordPress, descarga directa, etc.) y si las novedades/cursos nuevos se incluyen en la cuota. Mientras no se confirme, la página no promete cursos futuros ni calendario de actualizaciones. -->
+  </div>
+</section>
+
+<!-- ===== COMPARACIÓN ===== -->
+<section class="alt" id="comparacion" aria-labelledby="h-cmp">
+  <div class="wrap">
+    <span class="eyebrow">Entrenar solo o con staff</span>
+    <h2 id="h-cmp">La misma semana, vista desde los dos lados.</h2>
+    <div class="cmp">
+      <div class="cmp-row"><h3>Preparar la sesión</h3>
+        <div class="solo">Hoja en blanco el domingo por la noche, ideas sueltas, copiar lo de siempre.</div>
+        <div class="staff">Eliges una tarea del banco, con organización, medidas y desarrollo ya escritos.</div></div>
+      <div class="cmp-row"><h3>Pizarra</h3>
+        <div class="solo">Un garabato en la libreta que mañana ni tú entiendes.</div>
+        <div class="staff">Pizarra dibujada de cada tarea, con dorsales, zonas y flechas, lista para imprimir.</div></div>
+      <div class="cmp-row"><h3>Carga física</h3>
+        <div class="solo">"A ojo", y esperar que nadie se lesione.</div>
+        <div class="staff">Planes por sesiones semanales y control con RPE y papel, sin GPS ni tecnología cara.</div></div>
+      <div class="cmp-row"><h3>Dificultad de la tarea</h3>
+        <div class="solo">Si sale demasiado fácil o demasiado difícil, improvisas sobre la marcha.</div>
+        <div class="staff">Tres variantes de cada tarea (fácil, media, difícil) y provocaciones medibles para saber si funciona.</div></div>
+      <div class="cmp-row"><h3>Balón parado</h3>
+        <div class="solo">Se queda para "otro día".</div>
+        <div class="staff">Roles claros y pizarras de córners, faltas y saques de banda.</div></div>
+      <div class="cmp-row"><h3>Coste</h3>
+        <div class="solo">Un analista, un preparador y un ayudante no caben en tu presupuesto.</div>
+        <div class="staff">Desde <span data-cfg="precioAnualMes">12,4</span> €/mes con el plan anual. Menos que un balón.</div></div>
+    </div>
+    <p class="fine">Esto no sustituye a tu ojo ni a tu criterio. Tú sigues siendo el entrenador. Lo que cambia es que ya no haces solo el trabajo de cuatro personas.</p>
+  </div>
+</section>
+
+<!-- ===== PRECIOS ===== -->
+<section id="precios" aria-labelledby="h-precios">
+  <div class="wrap">
+    <span class="eyebrow">Precio</span>
+    <h2 id="h-precios">Un staff completo, sin nómina.</h2>
+    <p class="lead">Los dos planes dan acceso a lo mismo. La diferencia es cuánto pagas al año.</p>
+    <!-- TODO-USER: Confirmar que ambos planes dan acceso idéntico a los 10 cursos, si los precios incluyen IVA y cómo/cuándo se cancela (renovación automática, facturas). Ajustar la lista de "incluye" si algo cambia. -->
+
+    <div class="plans">
+      <article class="plan best">
+        <span class="flag">Mejor precio</span>
+        <h3>Anual</h3>
+        <div class="price"><span data-cfg="precioAnual">149</span> €<small> /año</small></div>
+        <p class="eq">≈ <span data-cfg="precioAnualMes">12,4</span> €/mes · ahorras <span data-cfg="ahorroAnual">79</span> € al año</p>
+        <ul>
+          <li>Los 10 cursos: analista, preparador, segundo entrenador y ABP</li>
+          <li>Más de 170 tareas y sesiones con pizarra</li>
+          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>Garantía de <span data-cfg="garantiaDias">14</span> días</li>
+        </ul>
+        <a class="btn btn-p btn-b" href="https://TU-WORDPRESS/membresia" data-checkout>Elegir plan anual</a>
+      </article>
+      <article class="plan">
+        <h3>Mensual</h3>
+        <div class="price"><span data-cfg="precioMensual">19</span> €<small> /mes</small></div>
+        <p class="eq" style="color:var(--mut)">Pagas mes a mes</p>
+        <ul>
+          <li>Los 10 cursos: analista, preparador, segundo entrenador y ABP</li>
+          <li>Más de 170 tareas y sesiones con pizarra</li>
+          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>Garantía de <span data-cfg="garantiaDias">14</span> días</li>
+        </ul>
+        <a class="btn btn-s btn-b" href="https://TU-WORDPRESS/membresia" data-checkout>Elegir plan mensual</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTÍA ===== -->
+<section class="alt" id="garantia" aria-labelledby="h-gar">
+  <div class="wrap">
+    <div class="garantia">
+      <div class="big"><span data-cfg="garantiaDias">14</span><small>días</small></div>
+      <div>
+        <h2 id="h-gar" style="font-size:clamp(1.4rem,4.6vw,1.9rem)">Pruébalo en tu próxima sesión. Si no te sirve, te devuelvo el dinero.</h2>
+        <p style="margin-bottom:.6em">Tienes <span data-cfg="garantiaDias">14</span> días para abrir las tareas, llevarlas al campo y decidir. Si no es lo que esperabas, escribes a <a href="mailto:hola@TU-DOMINIO" data-mail>hola@TU-DOMINIO</a> y te devuelvo el pago sin preguntas.</p>
+        <p class="micro" style="margin:0">El riesgo es mío, no tuyo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUTOR + PRUEBA SOCIAL ===== -->
+<section id="autor" aria-labelledby="h-autor">
+  <div class="wrap">
+    <span class="eyebrow">Quién lo hace</span>
+    <h2 id="h-autor">Hecho por un entrenador, para entrenadores.</h2>
+    <div class="autor">
+      <div class="card">
+        <h3>Moisés Díaz · MISTER ÉLITE</h3>
+        <p>Cada curso sigue la misma idea: <b>poca teoría, mucha aplicación práctica</b>. Lo justo para entender el porqué y todo lo demás en forma de tareas, planes y pizarras que se pueden llevar al campo tal cual.</p>
+        <p style="margin:0;color:var(--mut)">Y cada pizarra lleva la marca al pie: MISTER ÉLITE — Moisés Díaz.</p>
+        <!-- TODO-USER: Moisés, añade aquí tu presentación personal: foto, trayectoria, equipos/categorías en los que has entrenado y titulaciones que quieras mostrar. No se ha inventado nada: este bloque solo recoge la filosofía de los cursos. -->
+      </div>
+      <div class="card vacio" id="testimonios">
+        <h3>Lo que dicen otros entrenadores</h3>
+        <p style="color:var(--mut);margin:0">Todavía no hay testimonios publicados. Mientras tanto, la mejor prueba es la tarea real de arriba y la garantía de <span data-cfg="garantiaDias">14</span> días.</p>
+        <!-- TODO-USER: Cuando tengas testimonios reales (con permiso y nombre/club si quieres), pégalos aquí como citas cortas. También puedes añadir el número de miembros si es cierto y verificable. No publicar nada que no sea real. Si se queda vacío, el bloque sigue funcionando. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="alt" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <span class="eyebrow">Dudas</span>
+    <h2 id="h-faq">Las objeciones de siempre, sin rodeos.</h2>
+
+    <details>
+      <summary>¿Esto sustituye a un cuerpo técnico de verdad?</summary>
+      <div class="a"><p>No. Un buen staff humano ve a tus jugadores y te corrige en el campo. Esto te da el trabajo de gabinete ya hecho: tareas montadas, pizarras, planes de carga y balón parado. Es la forma de no hacerlo todo tú solo cuando no puedes pagar a nadie.</p></div>
+    </details>
+    <details>
+      <summary>¿Sirve para mi categoría?</summary>
+      <div class="a"><p>Está pensado para entrenadores de base, amateur y semiprofesional. Las tareas indican medidas, duración y variantes fácil/media/difícil para que las ajustes al nivel de tu grupo.</p></div>
+    </details>
+    <details>
+      <summary>No uso el 1-4-3-3. ¿Me vale?</summary>
+      <div class="a"><p>Hay cursos para cinco sistemas (1-4-3-3, 1-4-4-2, 1-5-3-2, 1-3-4-3 y 1-4-2-3-1). Además, Posesión, Rondos, Ruedas, Pretemporada y Balón parado defensivo no dependen de un sistema concreto.</p></div>
+    </details>
+    <details>
+      <summary>Es verdad que no tengo GPS ni tecnología. ¿Puedo seguir los planes de carga?</summary>
+      <div class="a"><p>Sí. El control de carga del curso de Pretemporada se hace con percepción de esfuerzo (RPE), papel y sentido común. Si tienes GPS, mejor; si no, también.</p></div>
+    </details>
+    <details>
+      <summary>¿Es mucha teoría?</summary>
+      <div class="a"><p>No. Cada curso tiene unos pocos módulos de teoría concisos, y el grueso son tareas, sesiones y pizarras listas para aplicar.</p></div>
+    </details>
+    <details>
+      <summary>¿Lo puedo usar en el campo sin cobertura?</summary>
+      <div class="a"><p>Sí. Cada curso incluye un HTML único autocontenido que se abre sin internet, y un PDF para imprimir.</p></div>
+    </details>
+    <details>
+      <summary>No tengo tiempo para estudiar nada nuevo.</summary>
+      <div class="a"><p>Justo por eso existe. No hay que estudiar: eliges la tarea, la lees y la montas. Los planes de sesiones ya ordenan las tareas dentro de la semana.</p></div>
+    </details>
+    <details>
+      <summary>¿Y si no me convence?</summary>
+      <div class="a"><p>Tienes <span data-cfg="garantiaDias">14</span> días de garantía: si no te sirve, escribes y te devuelvo el pago, sin preguntas.</p></div>
+    </details>
+    <details>
+      <summary>¿Cómo cancelo? ¿Se añaden cursos nuevos?</summary>
+      <div class="a"><p>Escríbeme a <a href="mailto:hola@TU-DOMINIO" data-mail>hola@TU-DOMINIO</a> y te lo confirmo con las condiciones vigentes en tu plan.</p></div>
+      <!-- TODO-USER: Sustituir por la respuesta real: proceso exacto de cancelación (¿desde el área de miembros?, ¿por email?) y política sobre cursos nuevos (si se incluyen en la cuota y con qué calendario). No prometer nada que no sea seguro. -->
+    </details>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="final" id="unete" aria-labelledby="h-final">
+  <div class="wrap">
+    <h2 id="h-final">El martes hay sesión. Que esta vez no la prepares solo.</h2>
+    <p class="lead">Monta tu cuerpo técnico por <span data-cfg="precioMensual">19</span> €/mes, o <span data-cfg="precioAnual">149</span> € al año. Con <span data-cfg="garantiaDias">14</span> días de garantía.</p>
+    <a class="btn btn-p" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero mi cuerpo técnico</a>
+    <p class="micro">¿Alguna duda antes? Escríbeme a <a href="mailto:hola@TU-DOMINIO" data-mail>hola@TU-DOMINIO</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>MISTER ÉLITE — Moisés Díaz</b> · Cuerpo Técnico Digital</div>
+    <div>Poca teoría, mucha aplicación práctica.</div>
+    <div>© <span id="anio">2026</span> MISTER ÉLITE. Todos los derechos reservados.</div>
+    <!-- TODO-USER: Añadir aquí los enlaces legales obligatorios (aviso legal, política de privacidad, condiciones de compra, cookies) cuando existan en la web. -->
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <span><b>Tu cuerpo técnico</b><i><span data-cfg="precioMensual">19</span> €/mes · <span data-cfg="garantiaDias">14</span> días de garantía</i></span>
+  <a class="btn btn-p" href="https://TU-WORDPRESS/membresia" data-checkout tabindex="-1">Entrar</a>
+</div>
+
+<script>
+/* ============ CONFIG: cambia aquí precios, garantía y enlaces ============ */
+const CONFIG = {
+  precioMensual: 19,                           // € al mes
+  precioAnual: 149,                            // € al año
+  garantiaDias: 14,                            // días de devolución
+  checkoutUrl: 'https://TU-WORDPRESS/membresia', // enlace de compra / alta
+  contactoEmail: 'hola@TU-DOMINIO'             // contacto
+};
+/* ========================================================================= */
+(function(){
+  var nf = new Intl.NumberFormat('es-ES',{maximumFractionDigits:1});
+  var vals = {
+    precioMensual: nf.format(CONFIG.precioMensual),
+    precioAnual: nf.format(CONFIG.precioAnual),
+    precioAnualMes: nf.format(CONFIG.precioAnual/12),
+    ahorroAnual: nf.format(Math.max(0, CONFIG.precioMensual*12 - CONFIG.precioAnual)),
+    garantiaDias: String(CONFIG.garantiaDias)
+  };
+  document.querySelectorAll('[data-cfg]').forEach(function(el){
+    var k = el.getAttribute('data-cfg'); if(k in vals) el.textContent = vals[k];
+  });
+  document.querySelectorAll('[data-checkout]').forEach(function(a){ a.setAttribute('href', CONFIG.checkoutUrl); });
+  document.querySelectorAll('[data-mail]').forEach(function(a){
+    a.setAttribute('href','mailto:'+CONFIG.contactoEmail+'?subject='+encodeURIComponent('Consulta sobre la membresía MISTER ÉLITE'));
+    a.textContent = CONFIG.contactoEmail;
+  });
+  var y = document.getElementById('anio'); if(y) y.textContent = new Date().getFullYear();
+
+  /* barra CTA móvil: visible tras el hero y oculta en precios/CTA final */
+  var bar = document.getElementById('sticky');
+  if(bar && 'IntersectionObserver' in window){
+    var hide = {hero:true, precios:false, unete:false};
+    function upd(){ var on = !hide.hero && !hide.precios && !hide.unete; bar.classList.toggle('on', on);
+      bar.setAttribute('aria-hidden', on?'false':'true');
+      bar.querySelector('a').tabIndex = on?0:-1; }
+    [['inicio','hero'],['precios','precios'],['unete','unete']].forEach(function(p){
+      var el = document.getElementById(p[0]); if(!el) return;
+      new IntersectionObserver(function(es){ hide[p[1]] = es[0].isIntersecting; upd(); },{threshold:0.15}).observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
