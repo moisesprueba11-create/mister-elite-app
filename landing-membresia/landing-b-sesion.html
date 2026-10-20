@@ -67,6 +67,15 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .nav a:hover{color:var(--accent-d);text-decoration:underline}
 .goprice{font:700 .86rem/1.2 var(--sans);color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:9px 14px;min-height:42px;display:inline-flex;align-items:center;background:var(--hl)}
 .top .btn{display:none}
+.brand{margin-right:auto}
+.toc>summary{list-style:none;cursor:pointer;font:700 .86rem/1.2 var(--sans);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:9px 14px;min-height:42px;display:inline-flex;align-items:center;gap:6px;background:var(--card)}
+.toc>summary::-webkit-details-marker{display:none}
+.toc>summary::after{content:"▾";font-size:.8rem}
+.toc[open]>summary::after{content:"▴"}
+.toc ol{position:fixed;top:62px;left:16px;right:16px;max-height:calc(100vh - 150px);overflow:auto;margin:0;padding:8px;list-style:none;background:var(--card);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--ink);counter-reset:t}
+.toc li a{display:flex;gap:10px;align-items:center;min-height:44px;padding:6px 10px;color:var(--ink);font-weight:600;text-decoration:none;border-radius:6px}
+.toc li a::before{counter-increment:t;content:counter(t);font:800 .74rem/1 var(--mono);color:var(--accent-d);min-width:1.4em}
+.toc li a:hover{background:var(--accent-soft)}
 
 /* barra CTA móvil: con JS aparece al pasar el hero */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;
@@ -137,6 +146,8 @@ details.more>.in{padding:0 14px 14px}
 .tabs button[aria-selected="true"],.filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .samples{display:grid;gap:22px;margin-top:22px}
 .sample[hidden],.perfil[hidden]{display:none}
+.lvl{margin:0;padding:8px 16px;background:var(--hl);border-bottom:2px solid var(--ink);font:800 .8rem/1.3 var(--mono);letter-spacing:.03em;color:var(--ink)}
+.lvl::before{content:"▲ "}
 .mini-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:8px 0}
 .mini-table th,.mini-table td{border:1px solid var(--line);padding:6px;text-align:left;vertical-align:top}
 .mini-table th{background:var(--accent-soft);font-weight:700}
@@ -245,6 +256,15 @@ details.more>.in{padding:0 14px 14px}
 .price li,.conds li{padding-left:26px;position:relative;margin-bottom:7px}
 .price li::before,.conds li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:900}
 .upsell{margin:18px 0 0;font-weight:700;background:var(--hl);border-radius:8px;padding:10px 14px;font-size:.96rem}
+.empieza{margin-top:22px;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:16px 16px 10px;scroll-margin-top:70px}
+.empieza h3{margin-bottom:4px;font-size:clamp(1.2rem,4vw,1.5rem)}
+.ep{list-style:none;margin:0;padding:0}
+.ep li{border-top:1px dashed var(--line);padding:9px 0;display:grid;gap:4px}
+.ep a{font-weight:800;color:var(--accent-d)}
+.ep a::after{content:" →"}
+.ep span{font-size:.88rem;line-height:1.45;color:var(--ink)}
+.ep i{font:800 .7rem/1 var(--mono);font-style:normal;background:var(--ink);color:#fff;border-radius:50%;display:inline-grid;place-items:center;width:18px;height:18px;margin:0 4px 0 2px;vertical-align:1px}
+.ep i:first-child{margin-left:0}
 .w4{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px;counter-reset:w}
 .w4 li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px 10px 54px;position:relative;font-size:.92rem;line-height:1.45}
 .w4 li::before{counter-increment:w;content:"S" counter(w);position:absolute;left:12px;top:10px;width:30px;height:30px;border-radius:8px;background:var(--hl);border:2px solid var(--ink);display:grid;place-items:center;font:800 .78rem/1 var(--mono)}
@@ -296,6 +316,8 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   .nav{display:flex}
   .top .btn{display:inline-flex}
   .goprice{display:none}
+  .toc{display:none}
+  .ep li{grid-template-columns:210px 1fr;align-items:baseline}
   .mbar{display:none}
   .proof{grid-template-columns:repeat(4,1fr)}
   .task-body{grid-template-columns:230px 1fr;align-items:start;padding:20px}
@@ -399,7 +421,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       <h1>Llega al campo con <em>la sesión hecha.</em></h1>
       <p class="lead">Si entrenas sin staff, la pizarra, las reglas, las variantes y el coaching los pones tú, a mano. Aquí ya vienen hechos: cada tarea trae su pizarra, su organización y sus provocaciones medibles. Poca teoría. Mucha práctica.</p>
       <div class="cta-row">
-        <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Entrar por <span data-cfg="precioMensual">19</span> €/mes</a>
+        <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a>
         <a class="btn ghost" href="#sesion">Ver una sesión completa</a>
       </div>
       <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año (<span data-cfg="ivaTxt">IVA incluido</span>).</p>
@@ -627,7 +649,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       </article>
     </div>
 
-    <div class="cta-band"><p>Son muestras. Dentro tienes los 10 cursos completos.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Entrar por <span data-cfg="precioMensual">19</span> €/mes</a></div>
+    <div class="cta-band"><p>Son muestras. Dentro tienes los 10 cursos completos.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a></div>
   </div>
 </section>
 
@@ -868,7 +890,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
             <li><b>Juego de posición</b> como idea de juego del club.</li>
             <li>Un curso de sistema para los equipos de fútbol 11.</li>
           </ol></div>
-          <div class="pcol warn"><h4>Aviso honesto</h4><p>Un acceso por persona. <span data-club-txt="Precio para clubes: {p}; el resto, por email.">Sin precio de club publicado: condiciones por email.</span> Ver <a href="#clubes">clubes</a>.</p></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>Plan individual: un acceso por persona. Plan club: <span data-cfg="precioClub">55 €/mes, hasta 10 equipos</span>. Ver <a href="#clubes">clubes</a>.</p></div>
         </div>
       </article>
 
@@ -1181,7 +1203,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <li><b>Devolución completa en <span data-cfg="garantiaDias">14</span> días</b> en los dos planes: respondes al email de compra y te devolvemos el dinero en <span data-cfg="plazoReembolso">5 días hábiles</span>.</li>
         <li data-show="anualNoProporcional"><b>Pasados los <span data-cfg="garantiaDias">14</span> días</b>, el anual no se reembolsa de forma proporcional: si cancelas, mantienes el acceso hasta el final del periodo pagado.</li>
         <li data-show="descargasTuyas"><b>Lo que descargas es tuyo</b> para uso personal y de tu propio equipo, también después de darte de baja. No se puede redistribuir ni revender.</li>
-        <li data-show="accesoPorPersona"><b>Un acceso por persona:</b> la cuenta no se comparte. Para varios entrenadores, condiciones de club.</li>
+        <li data-show="accesoPorPersona"><b>Un acceso por persona:</b> la cuenta no se comparte. Para varios equipos, el plan club (55 €/mes, hasta 10 equipos).</li>
         <li><b>Precios con <span data-cfg="ivaTxt">IVA incluido</span>.</b></li>
         <li><b>Qué incluye:</b> <span data-incluye>los 10 cursos publicados hoy.</span></li>
       </ul>
@@ -1197,11 +1219,11 @@ footer strong{color:var(--ink);letter-spacing:.04em}
 
     <!-- CLUBES -->
     <!-- TODO-USER: confirmar la política de clubes (un acceso por persona, condiciones por email, plazo de respuesta en CONFIG.plazoRespuestaClub). Si defines CONFIG.precioClub (p. ej. "desde X € por entrenador al año"), se pinta aquí y en el perfil de coordinador; vacío = condiciones por email. -->
-    <details class="more club" id="clubes"><summary>Clubes y coordinadores: condiciones por email</summary><div class="in">
+    <details class="more club" id="clubes"><summary>Clubes y coordinadores: plan club 55 €/mes, hasta 10 equipos</summary><div class="in">
       <ul>
         <li>Todos tus entrenadores con la misma ficha de tarea y el mismo calendario (MD-4 … MD).</li>
         <li>Base común: Rondos, Ruedas y Juego de posición, más un curso de sistema para fútbol 11.</li>
-        <li><b>Un acceso por persona</b>: cada entrenador con su cuenta. <span data-club-txt="Precio para clubes: {p}. Para darte de alta,">No publicamos precio de club:</span> nos escribes y te respondemos en <span data-cfg="plazoRespuestaClub">48 h</span>.</li>
+        <li><b>Plan club: <span data-cfg="precioClub">55 €/mes, hasta 10 equipos</span></b>. Plan individual: un acceso por persona, la cuenta no se comparte. Para dar de alta tu club, nos escribes y te respondemos en <span data-cfg="plazoRespuestaClub">48 h</span>.</li>
       </ul>
       <a class="btn" href="mailto:hola@TU-DOMINIO?subject=Condiciones%20para%20club&amp;body=Club%3A%20%0AN%C3%BAmero%20de%20entrenadores%3A%20%0ACategor%C3%ADas%3A%20" data-mail>Pedir condiciones para mi club</a>
       <p class="cta-note">Dinos cuántos entrenadores sois y qué categorías tenéis.</p>
@@ -1224,7 +1246,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       <details><summary>¿Necesito un nivel alto de táctica?</summary><p>No. Cada concepto teórico es breve y viene con su traducción práctica. Cada tarea está escrita para ejecutarse tal cual.</p></details>
       <details><summary>¿Sirve para fútbol base y amateur?</summary><p>Sí. En el 1-5-3-2 y el 1-4-4-2 cada tarea indica su nivel (F formativo sub-12 a sub-16, A amateur/juvenil, S sénior). Rondos, Ruedas, Pretemporada y Balón parado son transversales.</p></details>
       <details><summary>Entreno fútbol 7 o sala, o tengo 8-10 jugadores. ¿Me sirve?</summary><p>En parte. No hay cursos de fútbol 7 ni de sala. Rondos, Ruedas, varios juegos de posición y algunas tareas pequeñas sí se adaptan: lo tienes en el perfil <a href="#p-f7" data-goto-perfil="p-f7">Alevín · F7 · sala</a> y en la <a href="#pocos">tabla de 8-10 jugadores</a>.</p></details>
-      <details><summary>¿Puedo compartir la cuenta con otro entrenador?</summary><p>No: es un acceso por persona. Si sois varios en el club, pide condiciones de club por email y te respondemos en <span data-cfg="plazoRespuestaClub">48 h</span>.</p></details>
+      <details><summary>¿Puedo compartir la cuenta con otro entrenador?</summary><p>No: es un acceso por persona. Si sois varios en el club, tenéis el plan club (55 €/mes, hasta 10 equipos): escríbenos y te respondemos en <span data-cfg="plazoRespuestaClub">48 h</span>.</p></details>
       <details><summary>No entreno ninguno de los cinco sistemas. ¿Me sirve?</summary><p>Sí. Juego de posición, Rondos, Ruedas de pases, Pretemporada y Balón parado defensivo no dependen de un sistema concreto.</p></details>
       <details><summary>¿Hay vídeos?</summary><p>No. Cada tarea viene con su pizarra y su ficha escrita, pensadas para imprimirlas o abrirlas en el móvil en el campo.</p></details>
     </div>
@@ -1236,7 +1258,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   <div class="final">
     <h2>El próximo entrenamiento, ya preparado</h2>
     <p>Abre la tarea, saca la pizarra, mide el espacio y empieza. Tú te quedas con lo importante: entrenar.</p>
-    <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Entrar por <span data-cfg="precioMensual">19</span> €/mes</a>
+    <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a>
     <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes sin permanencia o <span data-cfg="precioAnual">149</span> €/año · <span data-cfg="ivaTxt">IVA incluido</span> · <span data-cfg="garantiaDias">14</span> días de devolución</p>
   </div>
 </div>
@@ -1277,7 +1299,7 @@ const CONFIG = {
   mensualHastaFinMes: true,     // PROPUESTA. TODO-USER: confirmar. Al cancelar el mensual, el acceso sigue hasta el final del mes pagado
   dondeCancelar: "desde tu cuenta, con el enlace que te llega en el email de acceso", // PROPUESTA. TODO-USER: confirmar según tu plugin de membresía
   politicaActualizaciones: "Criterio de actualización: si se detecta un error en una tarea o una pizarra, se corrige y el archivo corregido sustituye al anterior, con el mismo nombre.", // PROPUESTA. TODO-USER: confirmar. Vacío = la frase no se muestra
-  precioClub: "",               // OPCIONAL. TODO-USER: p. ej. "desde X € por entrenador al año". Vacío = condiciones de club por email
+  precioClub: "55 €/mes, hasta 10 equipos",  // Confirmado por Moisés. TODO-USER: aclarar si "equipos" = accesos de entrenador (uno por equipo)
   anualNoProporcional: true,    // TODO-USER: confirmar. Tras la garantía, el anual no se reembolsa de forma proporcional; se mantiene el acceso hasta el fin del periodo pagado
   descargasTuyas: true,         // TODO-USER: confirmar. Lo descargado se conserva para uso personal y del propio equipo tras la baja; no redistribuir
   accesoPorPersona: true,       // TODO-USER: confirmar. Un acceso por persona; la cuenta no se comparte
@@ -1299,6 +1321,7 @@ const CONFIG = {
     garantiaDias: f(CONFIG.garantiaDias),
     avisoRenovacionDias: f(CONFIG.avisoRenovacionDias),
     plazoRespuestaClub: CONFIG.plazoRespuestaClub,
+    precioClub: CONFIG.precioClub,
     plazoReembolso: CONFIG.plazoReembolso,
     dondeCancelar: CONFIG.dondeCancelar,
     ivaTxt: CONFIG.ivaIncluido ? "IVA incluido" : "+ IVA",
@@ -1406,6 +1429,9 @@ const CONFIG = {
     var t = document.getElementById(a.getAttribute("href").slice(1));
     if(t && t.tagName==="DETAILS") a.addEventListener("click", function(){ t.open = true; });
   });
+  // Índice plegable: se cierra al elegir una sección
+  var toc = document.querySelector(".toc");
+  if(toc) toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.open = false; }); });
   // Imprimir solo la sesión: abre sus pizarras antes de imprimir
   var pb = document.querySelector("[data-print]"), piz = document.querySelectorAll("#sesion details.piz");
   if(pb){ pb.hidden = false; pb.addEventListener("click", function(){ window.print(); }); }
