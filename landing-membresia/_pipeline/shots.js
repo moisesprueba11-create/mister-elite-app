@@ -8,6 +8,8 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
     const p = await c.newPage();
     await p.goto('file://' + require('path').resolve(html));
     await p.waitForTimeout(600);
+    // recorre la página para disparar los reveal por scroll (IntersectionObserver)
+    await p.evaluate(async()=>{const h=document.documentElement.scrollHeight;for(let y=0;y<h;y+=400){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,80));}window.scrollTo(0,0);await new Promise(r=>setTimeout(r,700));});
     const sw = await p.evaluate(() => document.documentElement.scrollWidth);
     console.log(n, 'scrollWidth', sw, 'viewport', w, sw>w?'<<< OVERFLOW HORIZONTAL':'ok');
     await p.screenshot({ path: `${out}-${n}.png`, fullPage:true });
