@@ -10,7 +10,7 @@
 <style>
 :root{
   --paper:#f5f4f0; --card:#fffefb; --ink:#1a1a18; --muted:#57564f; --line:#d8d5ca;
-  --accent:#1d6fb8; --accent-d:#14568f; --accent-soft:#e3eef8; --hl:#ffe98a; --ok:#2a7d36;
+  --accent:#1d6fb8; --accent-d:#14568f; --accent-soft:#e3eef8; --hl:#ffe98a; --ok:#2a7d36; --warn:#9a3412;
   --serif:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -18,8 +18,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);
-  background-image:linear-gradient(rgba(29,111,184,.06) 1px,transparent 1px);background-size:100% 28px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);overflow-wrap:break-word;
+  background-image:linear-gradient(rgba(29,111,184,.06) 1px,transparent 1px);background-size:100% 28px;padding-bottom:84px}
 img,svg{max-width:100%}
 a{color:var(--accent-d)}
 h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
@@ -28,36 +28,48 @@ h2{font-size:clamp(1.65rem,5.2vw,2.5rem);font-weight:800}
 h3{font-size:1.2rem;font-weight:700}
 p{margin:0 0 1em}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-section{padding:56px 0}
+section{padding:56px 0;scroll-margin-top:64px}
+.alt{background:rgba(255,254,251,.7);border-block:1px solid var(--line)}
 .eyebrow{font:700 .78rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-d);margin:0 0 14px;display:block}
-.lead{font-size:1.12rem;color:var(--muted);max-width:60ch}
+.lead{font-size:1.12rem;color:var(--muted);max-width:62ch}
+.small{font-size:.9rem;color:var(--muted)}
 mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;padding:0 .1em}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:6px;z-index:100}
 .skip:focus{left:8px}
 
 /* botones */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;text-align:center;
   background:var(--accent);color:#fff;font:700 1.02rem/1.2 var(--sans);text-decoration:none;border:2px solid var(--accent);
   box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
 .btn:hover{background:var(--accent-d);border-color:var(--accent-d);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
 .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink);box-shadow:none}
 .btn.ghost:hover{background:var(--ink);color:#fff;transform:none}
-.btn.small{min-height:40px;padding:8px 16px;font-size:.92rem;box-shadow:2px 2px 0 var(--ink)}
+.btn.sm{min-height:42px;padding:8px 16px;font-size:.92rem;box-shadow:2px 2px 0 var(--ink)}
 .btn.block{width:100%}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .cta-note{font-size:.92rem;color:var(--muted);margin:12px 0 0}
+.cta-band{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;padding:16px;border:2px dashed var(--accent);border-radius:var(--r);background:var(--card)}
+.cta-band p{margin:0;flex:1 1 240px;font-weight:600}
 
 /* cabecera */
-.top{position:sticky;top:0;z-index:50;background:rgba(245,244,240,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:50;background:rgba(245,244,240,.96);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
 .brand{font:800 .95rem/1.1 var(--sans);letter-spacing:.05em;text-decoration:none;color:var(--ink)}
 .brand span{color:var(--accent-d)}
 .brand small{display:block;font:600 .68rem/1.2 var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-top:2px}
-.nav{display:none;gap:20px;font-size:.92rem}
+.nav{display:none;gap:18px;font-size:.9rem}
 .nav a{color:var(--ink);text-decoration:none;font-weight:600}
 .nav a:hover{color:var(--accent-d);text-decoration:underline}
+.top .btn{display:none}
+
+/* barra CTA móvil */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ink);color:#fff;border-top:3px solid var(--hl)}
+.mbar p{margin:0;font:600 .84rem/1.3 var(--sans)}
+.mbar b{color:var(--hl);font-size:1rem}
+.mbar .btn{min-height:44px;padding:8px 16px;font-size:.95rem;box-shadow:2px 2px 0 var(--hl);flex:none}
 
 /* hero */
 .hero{padding:40px 0 48px}
@@ -66,8 +78,10 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .proof{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .proof li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;font-size:.88rem;line-height:1.3;color:var(--muted)}
 .proof b{display:block;font:800 1.5rem/1.1 var(--serif);color:var(--ink)}
+.trust{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.88rem;color:var(--ink)}
+.trust li::before{content:"✓ ";color:var(--ok);font-weight:800}
 
-/* tarjeta de tarea (maqueta) */
+/* tarjeta de tarea */
 .task{background:var(--card);border:2px solid var(--ink);border-radius:12px;box-shadow:6px 6px 0 rgba(26,26,24,.9);position:relative;overflow:hidden}
 .task-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--ink);color:#fff;font:600 .78rem/1.3 var(--mono);letter-spacing:.04em}
 .task-head b{color:var(--hl)}
@@ -76,12 +90,24 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
 .chips li{font:600 .76rem/1 var(--mono);background:var(--accent-soft);color:var(--accent-d);padding:6px 8px;border-radius:5px}
 .pizarra{margin:0 auto;width:min(100%,250px);border:3px solid var(--ink);border-radius:8px;overflow:hidden;background:#15202b;line-height:0}
+.pizarra.wide{width:100%;max-width:720px}
 .pizarra svg{width:100%;height:auto;display:block}
 .pizarra-cap{font:600 .72rem/1.3 var(--mono);color:var(--muted);text-align:center;margin-top:8px}
+figure{margin:0}
 .ficha dt{font:700 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin:12px 0 4px}
 .ficha dt:first-child{margin-top:0}
 .ficha dd{margin:0;font-size:.95rem;line-height:1.5}
+.ficha ul{margin:0;padding-left:1.1em}
 .task-foot{border-top:2px dashed var(--line);padding:10px 16px;font-size:.82rem;color:var(--muted);background:#faf9f5}
+.src{display:inline-block;font:700 .72rem/1.3 var(--mono);letter-spacing:.04em;color:var(--ink);background:var(--hl);padding:4px 7px;border-radius:4px}
+
+/* plegables */
+details.more{margin-top:12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+details.more>summary{cursor:pointer;padding:12px 40px 12px 14px;font-weight:700;font-size:.95rem;list-style:none;position:relative;min-height:44px;color:var(--accent-d)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";position:absolute;right:14px;top:9px;font:700 1.3rem/1 var(--mono)}
+details.more[open]>summary::after{content:"–"}
+details.more>.in{padding:0 14px 14px}
 
 /* ya viene hecho */
 .done-grid{display:grid;gap:12px;margin-top:24px}
@@ -90,12 +116,36 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .done b{display:block}
 .done span{color:var(--muted);font-size:.95rem}
 
+/* muestras */
+.samples{display:grid;gap:22px;margin-top:28px}
+.sample .task-body{grid-template-columns:1fr}
+.mini-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:8px 0}
+.mini-table th,.mini-table td{border:1px solid var(--line);padding:6px 6px;text-align:left}
+.mini-table th{background:var(--accent-soft);font-weight:700}
+.mini-table td.n{text-align:right;font-family:var(--mono)}
+.formula{font:700 .95rem/1.4 var(--mono);background:var(--paper);border-left:4px solid var(--accent);padding:8px 12px;margin:8px 0}
+
+/* sesión completa */
+.tl{display:flex;height:46px;border:2px solid var(--ink);border-radius:8px;overflow:hidden;margin:26px 0 8px}
+.tl span{display:flex;align-items:center;justify-content:center;font:700 .74rem/1 var(--mono);color:#fff;border-right:2px solid var(--ink);min-width:0;overflow:hidden}
+.tl span:last-child{border-right:0}
+.tl .c1{background:#2a7d36}.tl .c2{background:#1d6fb8}.tl .c3{background:#6b6a62}.tl .c4{background:#14568f}.tl .c5{background:#4a5d23}
+.tl-leg{display:flex;justify-content:space-between;font:600 .74rem/1 var(--mono);color:var(--muted)}
+.slots{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
+.slot{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:var(--r);padding:16px}
+.slot.k1{border-left-color:#2a7d36}.slot.k3{border-left-color:#6b6a62}.slot.k5{border-left-color:#4a5d23}
+.slot .time{font:800 .82rem/1 var(--mono);color:var(--accent-d);display:block;margin-bottom:6px}
+.slot h3{margin:0 0 6px;font-size:1.15rem}
+.slot p{margin:0 0 8px;font-size:.96rem}
+.slot .meta{font-size:.88rem;color:var(--muted);margin:0}
+.slot-grid{display:grid;gap:14px}
+
 /* semana */
-.week{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;counter-reset:d}
-.day{position:relative;padding:0 0 22px 52px;border-left:0}
+.week{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.day{position:relative;padding:0 0 22px 52px}
 .day::before{content:"";position:absolute;left:19px;top:34px;bottom:-4px;border-left:2px dashed var(--accent)}
 .day:last-child::before{display:none}
-.day .dot{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:800 .78rem/1 var(--mono);border:2px solid var(--ink)}
+.day .dot{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:800 .74rem/1 var(--mono);border:2px solid var(--ink);text-align:center}
 .day h3{margin:0 0 2px;font-size:1.15rem}
 .day .tag{font:600 .72rem/1 var(--mono);color:var(--accent-d);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
 .day p{margin:0;color:var(--muted);font-size:.97rem}
@@ -110,6 +160,54 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .anat .saves{margin:0;font-size:.93rem;color:var(--muted)}
 .anat .saves b{color:var(--ok)}
 
+/* ¿es para mí? */
+.ptabs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 18px}
+.ptabs button,.filters button{font:700 .86rem/1.15 var(--sans);padding:10px 14px;min-height:44px;border-radius:999px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.ptabs button[aria-selected="true"],.filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.perfiles{display:grid;gap:18px}
+.perfil{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:20px}
+.perfil[hidden]{display:none}
+.perfil>h3{font-size:1.35rem;margin-bottom:4px}
+.perfil .who{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.pcols{display:grid;gap:14px}
+.pcol h4{font:700 .74rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin:0 0 8px}
+.pcol ul,.pcol ol{margin:0;padding-left:1.15em;font-size:.95rem}
+.pcol li{margin-bottom:6px}
+.pcol.warn{background:#fdf1ea;border-left:4px solid var(--warn);padding:12px 14px;border-radius:6px}
+.pcol.warn h4{color:var(--warn)}
+.pcol.warn p{margin:0;font-size:.94rem}
+.w4{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;counter-reset:w}
+.w4 li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 16px 60px;position:relative;font-size:.95rem}
+.w4 li::before{counter-increment:w;content:"S" counter(w);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:8px;background:var(--hl);border:2px solid var(--ink);display:grid;place-items:center;font:800 .8rem/1 var(--mono)}
+.w4 b{display:block;margin-bottom:2px}
+.yesno{display:grid;gap:16px;margin-top:28px}
+.yn{background:var(--card);border-radius:12px;padding:18px;border:2px solid var(--ok)}
+.yn.no{border-color:var(--warn)}
+.yn h3{margin-bottom:10px}
+.yn ul{margin:0;padding-left:1.15em;font-size:.95rem}
+.yn li{margin-bottom:6px}
+
+/* rigor */
+.autores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.autor{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.autor b{font-family:var(--serif);font-size:1.05rem;display:block}
+.autor span{font-size:.84rem;color:var(--muted);line-height:1.35;display:block;margin-top:2px}
+.duda{display:grid;gap:12px;margin-top:22px}
+.duda-row{display:grid;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.duda-row .fl{font:700 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);display:block;margin-bottom:4px}
+.duda-row .fl.d{color:var(--warn)}.duda-row .fl.u{color:var(--ok)}
+.duda-row h3{font-size:1.02rem;margin:0}
+.duda-row p{margin:0;font-size:.93rem;color:var(--muted)}
+.vs{display:grid;gap:10px;margin-top:22px}
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.vs-row>b{grid-column:1/-1;font:700 .74rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:8px 12px}
+.vs-row>span{padding:10px 12px;font-size:.9rem;line-height:1.45}
+.vs-row>span:first-of-type{color:var(--muted);border-right:1px solid var(--line)}
+.vs-row>span:last-of-type{font-weight:600}
+.vs-head{display:grid;grid-template-columns:1fr 1fr;font:700 .78rem/1.2 var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.vs-head span{padding:0 12px}
+.vs-head span:last-child{color:var(--accent-d)}
+
 /* cuerpo técnico */
 .staff{display:grid;gap:12px;margin-top:24px}
 .role{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;border-top:4px solid var(--accent)}
@@ -119,32 +217,43 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 
 /* catálogo */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 18px}
-.filters button{font:700 .86rem/1 var(--sans);padding:10px 14px;min-height:44px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.cat{display:grid;gap:14px}
+.filters[hidden]{display:none}
+.cat{display:grid;gap:14px;margin-top:18px}
 .course{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}
 .course[hidden]{display:none}
-.course .kind{font:700 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d)}
+.course .kind{font:700 .7rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d)}
 .course h3{margin:0;font-size:1.3rem}
 .course .count{font:600 .85rem/1.35 var(--mono);color:var(--ink);background:var(--hl);display:inline-block;padding:4px 8px;border-radius:4px;align-self:flex-start}
+.course .fit{font-size:.84rem;font-weight:700;color:var(--ok);margin:0}
 .course ul{margin:4px 0 0;padding-left:1.1em;font-size:.95rem}
 .course li{margin-bottom:4px}
 .course .inc{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);font-size:.84rem;color:var(--muted)}
 .course .q{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 0 0}
 
-/* formatos */
+/* formatos y acceso */
 .formats{display:grid;gap:14px;margin-top:24px}
 .fmt{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:18px}
 .fmt .ico{font:800 1.1rem/1 var(--mono);background:var(--accent);color:#fff;display:inline-block;padding:7px 10px;border-radius:6px;margin-bottom:10px}
 .fmt h3{margin-bottom:4px}
 .fmt p{margin:0;font-size:.95rem;color:var(--muted)}
+.steps{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;counter-reset:s}
+.steps li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;font-size:.95rem}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 .85rem/1 var(--mono)}
 .kit{margin-top:22px;padding:16px;background:var(--accent-soft);border-radius:var(--r);font-size:.96rem}
 
-/* pendientes del dueño */
-.todo{border:2px dashed #8a6d00;background:#fff8d6;border-radius:var(--r);padding:16px;margin-top:20px;font-size:.93rem;color:#4d3d00}
-.todo b{display:block;font:800 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
-.about{display:grid;gap:18px;align-items:start}
-.sig{font:700 1.05rem var(--serif)}
+/* quién */
+.facts{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.facts li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;font-size:.95rem}
+.facts b{display:block}
+
+/* clubes */
+.club{background:var(--ink);color:#fff;border-radius:16px;padding:26px 20px}
+.club h2{color:#fff}
+.club .lead{color:#d6d4cb}
+.club ul{margin:16px 0 22px;padding-left:1.15em}
+.club li{margin-bottom:8px}
+.club .btn{box-shadow:3px 3px 0 var(--hl)}
+.club .cta-note{color:#d6d4cb}
 
 /* precios */
 .prices{display:grid;gap:18px;margin-top:28px}
@@ -155,11 +264,15 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 .amount{font:800 3rem/1 var(--serif);margin:6px 0 0}
 .amount small{font:600 1rem var(--sans);color:var(--muted)}
 .sub{color:var(--muted);font-size:.93rem;margin:4px 0 14px}
-.price ul{list-style:none;padding:0;margin:0 0 20px;font-size:.95rem}
-.price li{padding-left:26px;position:relative;margin-bottom:8px}
-.price li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
-.guar{margin-top:26px;display:flex;gap:16px;align-items:flex-start;background:var(--card);border:2px solid var(--ok);border-radius:14px;padding:20px}
-.guar .seal{flex:none;width:58px;height:58px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font:800 1.15rem/1 var(--serif);text-align:center}
+.price ul,.conds ul{list-style:none;padding:0;margin:0 0 20px;font-size:.95rem}
+.price li,.conds li{padding-left:26px;position:relative;margin-bottom:8px}
+.price li::before,.conds li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+.same{margin:18px 0 0;font-weight:700}
+.conds{margin-top:26px;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:20px}
+.conds h3{margin-bottom:12px}
+.conds ul{margin:0}
+.guar{margin-top:20px;display:flex;gap:16px;align-items:flex-start;background:var(--card);border:2px solid var(--ok);border-radius:14px;padding:20px}
+.guar .seal{flex:none;width:58px;height:58px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font:800 1.05rem/1 var(--serif);text-align:center}
 .guar h3{margin:0 0 4px}
 .guar p{margin:0;font-size:.97rem}
 
@@ -175,19 +288,24 @@ mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;pad
 /* cta final + pie */
 .final{background:var(--ink);color:#fff;border-radius:18px;padding:36px 22px;text-align:center;margin:0 0 56px}
 .final h2{color:#fff}
-.final p{color:#cfcdc4;max-width:52ch;margin:0 auto 22px}
+.final p{color:#d6d4cb;max-width:52ch;margin:0 auto 22px}
 .final .btn{box-shadow:3px 3px 0 var(--hl)}
-.final .cta-note{color:#cfcdc4}
+.final .cta-note{color:#d6d4cb}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;color:var(--muted)}
 footer strong{color:var(--ink);letter-spacing:.04em}
+.owner-note{display:block;margin:10px 0;padding:10px 12px;border:2px dashed #8a6d00;background:#fff8d6;color:#4d3d00;font-size:.85rem;border-radius:8px}
 
 /* anchos grandes */
 @media (min-width:720px){
-  body{font-size:18px}
+  body{font-size:18px;padding-bottom:0}
   section{padding:76px 0}
   .nav{display:flex}
+  .top .btn{display:inline-flex}
+  .mbar{display:none}
   .proof{grid-template-columns:repeat(4,1fr)}
   .task-body{grid-template-columns:240px 1fr;align-items:start;padding:20px}
+  .sample .task-body{grid-template-columns:240px 1fr}
+  .sample.wide .task-body{grid-template-columns:1fr}
   .done-grid{grid-template-columns:1fr 1fr}
   .staff{grid-template-columns:1fr 1fr}
   .cat{grid-template-columns:1fr 1fr}
@@ -196,24 +314,38 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   .anat li{grid-template-columns:200px 1fr;column-gap:20px}
   .anat li>h3{grid-column:1;grid-row:1/3;align-self:start}
   .anat blockquote,.anat .saves{grid-column:2}
-  .about{grid-template-columns:1fr 1fr}
+  .pcols{grid-template-columns:1fr 1fr}
+  .pcol.warn{grid-column:1/-1}
+  .w4{grid-template-columns:1fr 1fr}
+  .yesno{grid-template-columns:1fr 1fr}
+  .autores{grid-template-columns:repeat(5,1fr)}
+  .duda-row{grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .facts{grid-template-columns:1fr 1fr}
+  .club{padding:40px}
+  .slot-grid{grid-template-columns:1fr 220px;align-items:start}
 }
 @media (min-width:960px){
   .hero-grid{grid-template-columns:1.02fr 1fr;align-items:center;gap:48px}
-  .task{transform:rotate(1.2deg)}
+  .task.tilt{transform:rotate(1.2deg)}
   .week{grid-template-columns:repeat(5,1fr);gap:14px}
   .day{padding:56px 0 0}
   .day::before{left:40px;right:-14px;top:19px;bottom:auto;border-left:0;border-top:2px dashed var(--accent)}
   .day:last-child::before{display:none}
   .staff{grid-template-columns:repeat(4,1fr)}
+  .cat{grid-template-columns:repeat(3,1fr)}
+  .w4{grid-template-columns:repeat(4,1fr)}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .pcols{grid-template-columns:1fr 1fr 1fr}
+  .pcol.warn{grid-column:auto}
   .final{padding:56px 40px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
-  .task{transform:none}
+  .task.tilt{transform:none}
 }
-@media print{.top,.filters,.final .btn{display:none}}
+@media print{.top,.mbar,.filters,.ptabs,.final .btn{display:none}body{padding:0}}
 </style>
 </head>
 <body>
@@ -223,13 +355,14 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   <div class="wrap">
     <a class="brand" href="#inicio">MISTER <span>ÉLITE</span><small>Moisés Díaz</small></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#semana">Tu semana</a>
-      <a href="#tarea">Anatomía de una tarea</a>
+      <a href="#muestras">Muestras</a>
+      <a href="#sesion">Sesión de ejemplo</a>
+      <a href="#para-mi">¿Es para mí?</a>
       <a href="#cursos">Los 10 cursos</a>
       <a href="#precios">Precios</a>
       <a href="#faq">Dudas</a>
     </nav>
-    <a class="btn small" href="https://TU-WORDPRESS/membresia" data-checkout>Unirme</a>
+    <a class="btn sm" href="https://TU-WORDPRESS/membresia" data-checkout>Unirme</a>
   </div>
 </header>
 
@@ -244,9 +377,14 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       <p class="lead">Si entrenas sin staff, la pizarra, las reglas, las variantes y el coaching los pones tú, a mano. Aquí ya vienen hechos: cada tarea trae su pizarra, su organización y sus provocaciones medibles. Poca teoría. Mucha práctica.</p>
       <div class="cta-row">
         <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero mi cuerpo técnico</a>
-        <a class="btn ghost" href="#tarea">Ver cómo es una tarea</a>
+        <a class="btn ghost" href="#sesion">Ver una sesión completa</a>
       </div>
-      <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año · <span data-cfg="garantiaDias">14</span> días de garantía de devolución, sin preguntas.</p>
+      <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año (<span data-cfg="ivaTxt">IVA incluido</span>).</p>
+      <ul class="trust" aria-label="Condiciones">
+        <li>Sin permanencia</li>
+        <li>Cancelas en un clic</li>
+        <li><span data-cfg="garantiaDias">14</span> días de devolución</li>
+      </ul>
       <ul class="proof" aria-label="Lo que incluye, en cifras">
         <li><b>10</b>cursos publicados</li>
         <li><b>170+</b>tareas y sesiones de campo</li>
@@ -256,10 +394,10 @@ footer strong{color:var(--ink);letter-spacing:.04em}
     </div>
 
     <!-- Maqueta: tarea real T1 del curso 1-4-3-3 -->
-    <article class="task" aria-label="Ejemplo real: tarea 1 del curso 1-4-3-3">
+    <article class="task tilt" aria-label="Ejemplo real: tarea 1 del curso 1-4-3-3">
       <div class="task-head"><span><b>T1</b> · 1-4-3-3 · Bloque 1: Salida</span><span>Tarea real del curso</span></div>
       <div class="task-body">
-        <figure style="margin:0">
+        <figure>
           <div class="pizarra"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif" role="img" aria-label="Pizarra de la tarea 1: rombo de salida 4v2 con POR, centrales 4 y 5 y pivote 6 en su zona de conos"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Tarea 1 — Rombo de salida: el pivote pivota</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >4v2 · POR + DFC 4/5 + pivote 6 superan a 2 presionadores</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Sistema 1-4-3-3</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><g><circle cx="340.0" cy="954.2" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="958.2" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">1</text></g><text x="340.0" y="935.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >POR</text><g><circle cx="201.8" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">5</text></g><text x="201.8" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><g><circle cx="478.2" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">4</text></g><text x="478.2" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><rect x="264.6" y="581.9" width="150.7" height="133.6" rx="6" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><text x="340.0" y="700.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >zona del 6</text><path d="M264.6,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M264.6,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><g><circle cx="340.0" cy="648.7" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="652.7" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">6</text></g><text x="340.0" y="629.7" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >pivote</text><g><circle cx="277.2" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="277.2" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="402.8" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="402.8" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><rect x="64.2" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="76.2" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><rect x="591.8" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="603.8" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><circle cx="340.0" cy="954.2" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,948.2 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="314.9" y1="925.6" x2="214.4" y2="830.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="264.6" y="872.8" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="220.7" y1="772.8" x2="321.2" y2="667.8" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="270.9" y="715.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="365.1" y1="629.6" x2="566.1" y2="515.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="465.6" y="567.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><circle cx="49" cy="1029.56" r="6" fill="#ffd54a"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">zona</text></g></svg></div>
           <figcaption class="pizarra-cap">Pizarra de la T1, sin retocar</figcaption>
         </figure>
@@ -298,25 +436,8 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   </div>
 </section>
 
-<!-- SEMANA -->
-<section id="semana" aria-labelledby="h-semana">
-  <div class="wrap">
-    <span class="eyebrow">Flujo semanal</span>
-    <h2 id="h-semana">De lunes a domingo: qué haces con la membresía</h2>
-    <p class="lead">Una semana tipo si juegas el fin de semana. Los cursos por sistema traen un plan de sesiones con microciclos de ejemplo; tú solo ajustas los días a tu calendario.</p>
-    <ol class="week">
-      <li class="day"><span class="dot" aria-hidden="true">LUN</span><span class="tag">Elegir</span><h3>Eliges el foco</h3><p>Abres el plan de sesiones de tu curso y decides la semana: por ejemplo, "salida y presión del tridente" o "amplitud, llegada y finalización".</p></li>
-      <li class="day"><span class="dot" aria-hidden="true">MAR</span><span class="tag">MD-4 · fundamentar</span><h3>Aprendes el patrón</h3><p>Tareas de carga F: se entiende la idea. Abres la pizarra en el móvil o la llevas impresa en PDF.</p></li>
-      <li class="day"><span class="dot" aria-hidden="true">JUE</span><span class="tag">MD-3 / MD-2 · intensidad</span><h3>Subes la exigencia</h3><p>Tareas S (competitivas): duelos, presión orientada, salida contra oposición. Usas las variantes si se atasca.</p></li>
-      <li class="day"><span class="dot" aria-hidden="true">VIE</span><span class="tag">MD-1 · activación</span><h3>Bajas el volumen</h3><p>Tareas A, cortas: contrapresión corta, un rondo libre. Llegas fresco al partido con la idea fresca.</p></li>
-      <li class="day"><span class="dot" aria-hidden="true">SÁB<br>DOM</span><span class="tag">MD · partido y revisión</span><h3>Juegas y apuntas</h3><p>Compruebas qué comportamientos salieron. La carga se controla con papel y RPE, sin GPS ni apps de pago.</p></li>
-    </ol>
-    <p class="note">Base real: plan de sesiones del curso 1-4-3-3 (MD-4 a MD, cargas F fundamentación, A activación, S subprincipio competitivo). El de Pretemporada trae planes para dobles sesiones y para 6, 5, 4, 3 y 2 sesiones por semana.</p>
-  </div>
-</section>
-
 <!-- ANATOMÍA DE UNA TAREA -->
-<section id="tarea" aria-labelledby="h-anat" style="background:rgba(255,254,251,.7);border-block:1px solid var(--line)">
+<section id="tarea" class="alt" aria-labelledby="h-anat">
   <div class="wrap">
     <span class="eyebrow">Anatomía de una tarea</span>
     <h2 id="h-anat">Siete campos. Ninguna tarea se queda a medias.</h2>
@@ -348,8 +469,364 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   </div>
 </section>
 
+<!-- MUESTRAS REALES -->
+<section id="muestras" aria-labelledby="h-muestras">
+  <div class="wrap">
+    <span class="eyebrow">Prueba de producto</span>
+    <h2 id="h-muestras">Más muestras reales, copiadas de los cursos</h2>
+    <p class="lead">Ya has visto la T1 del 1-4-3-3. Aquí tienes dos piezas más, tal como vienen: un rondo que sirve en cualquier categoría y un extracto del plan de pretemporada para quien entrena 3 días.</p>
+
+    <div class="samples">
+      <!-- Muestra: Rondo 1 -->
+      <article class="task sample" aria-labelledby="h-r1">
+        <div class="task-head"><span><b>Rondo 1</b> · Familia 1: iniciación y mantenimiento</span><span>Curso Rondos</span></div>
+        <div class="task-body">
+          <figure>
+            <div class="pizarra"><svg role="img" aria-label="Pizarra del Rondo 1, el clásico abierto: 4 azules en las esquinas de un cuadrado de 6×6 m y 1 defensor rojo en el centro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="r1-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="r1-ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="r1-ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="r1-ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="r1-ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Rondo 1 — El clásico abierto</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >4 v 1 · cuadrado 6×6 m</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Rondos · MISTER ÉLITE</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#r1-ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><rect x="201.8" y="343.3" width="276.3" height="420.0" rx="6" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><text x="340.0" y="556.3" font-family="Segoe UI,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >6×6 m</text><path d="M177.0,781.0 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M177.0,315.0 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M501.0,781.0 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M501.0,315.0 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><g><circle cx="201.8" cy="343.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="347.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P1</text></g><g><circle cx="478.2" cy="343.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="347.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P2</text></g><g><circle cx="478.2" cy="763.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="767.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P3</text></g><g><circle cx="201.8" cy="763.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="767.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P4</text></g><g><circle cx="340.0" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="340.0" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">D</text></g><circle cx="201.8" cy="391.0" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M201.8,385.0 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="201.8" y1="343.3" x2="478.2" y2="343.3" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r1-ah_pass)"/><text x="340.0" y="338.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="478.2" y1="343.3" x2="478.2" y2="763.3" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r1-ah_pass)"/><text x="478.2" y="548.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="478.2" y1="763.3" x2="201.8" y2="763.3" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r1-ah_pass)"/><text x="340.0" y="758.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3</text><text x="340.0" y="295.5" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >rondan al defensor</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><rect x="43" y="1023.56" width="12" height="12" rx="2" fill="#ffd54a" fill-opacity="0.25" stroke="#ffd54a" stroke-width="1.5" stroke-dasharray="3 2"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">área del rondo</text></g></svg></div>
+            <figcaption class="pizarra-cap">Pizarra del Rondo 1, sin retocar</figcaption>
+          </figure>
+          <div>
+            <h3 id="h-r1">"El clásico abierto" (4v1)</h3>
+            <ul class="chips" aria-label="Datos clave">
+              <li>4v1</li><li>6×6 m</li><li>3 series × 3 min</li><li>45-60 s descanso</li>
+            </ul>
+            <dl class="ficha">
+              <dt>Objetivo</dt>
+              <dd>Precisión y peso del pase raso, control orientado del receptor y triángulo permanente. Escanear antes de recibir: ¿de qué lado viene la presión?</dd>
+              <dt>Organización</dt>
+              <dd>4 azules en las esquinas de un cuadrado de 6×6 m y 1 rojo dentro. Material: 1 balón, 4 conos, 4 petos azules, 1 rojo.</dd>
+              <dt>Provocaciones medibles</dt>
+              <dd>Toques libres la 1.ª serie, <b>máximo 2 toques</b> la 2.ª. <b>10 pases seguidos = 1 punto</b>; el defensor reinicia el contador al robar.</dd>
+            </dl>
+            <details class="more"><summary>Ver variantes y coaching</summary><div class="in">
+              <dl class="ficha">
+                <dt>Variantes (fácil → difícil)</dt>
+                <dd>Fácil: 7×7, toques libres, defensor pasivo (50 %). Medio: 6×6, máximo 2 toques. Difícil: a 1 toque y el cuadro baja a 5×5.</dd>
+                <dt>Coaching</dt>
+                <dd>"Recibe de perfil, nunca de frente al balón." "Fija al defensor con tu cuerpo antes de pasar." Pase al pie del lado contrario a la presión.</dd>
+              </dl>
+            </div></details>
+          </div>
+        </div>
+        <div class="task-foot">Uno de los 50 rondos del curso, repartidos en 7 familias. Sirve igual en un alevín que en un sénior: cambias medidas y toques.</div>
+      </article>
+
+      <!-- Muestra: Pretemporada 3 sesiones -->
+      <article class="task sample wide" aria-labelledby="h-m3">
+        <div class="task-head"><span><b>Plan · 3 sesiones</b> (amateur típico)</span><span>Curso Pretemporada</span></div>
+        <div class="task-body">
+          <figure>
+            <div class="pizarra wide"><svg role="img" aria-label="Microciclo tipo de 3 sesiones del curso de Pretemporada: martes carga media, jueves pico, sábado partido; lunes y miércoles trabajo autónomo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="m3-bg" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#0f2438"/><stop offset="1" stop-color="#0c1b2a"/></linearGradient></defs><rect width="720" height="470" fill="url(#m3-bg)"/><rect x="0" y="0" width="720" height="54" fill="#0c1b2a"/><rect x="0" y="0" width="6" height="54" fill="#f7c948"/><text x="20.0" y="26.0" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="800" fill="#eaf1f8" text-anchor="start" >Microciclo tipo · 3 SESIONES (amateur)</text><text x="20.0" y="44.0" font-family="Segoe UI,Arial,sans-serif" font-size="11.5" font-weight="500" fill="#9fb3c8" text-anchor="start" >prioridad a lo específico e integrado · la resistencia de base se externaliza</text><text x="708.0" y="462.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="462.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Pretemporada · MISTER ÉLITE</text><rect x="24.0" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="68.6" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >LUN</text><rect x="24.0" y="94.0" width="89.1" height="200.0" rx="8" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><rect x="24.0" y="94.0" width="5.0" height="200.0" rx="0" fill="#3fa34d" opacity="1"/><text x="34.0" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >AUTÓNOMO:</text><text x="34.0" y="123.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >rodaje</text><text x="34.0" y="136.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >aeróbico 30'</text><text x="105.1" y="286.0" font-family="Segoe UI,Arial,sans-serif" font-size="8.5" font-weight="800" fill="#3fa34d" text-anchor="end" >BAJA</text><rect x="121.1" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="165.7" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >MAR</text><rect x="121.1" y="94.0" width="89.1" height="200.0" rx="8" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><rect x="121.1" y="94.0" width="5.0" height="200.0" rx="0" fill="#f5a623" opacity="1"/><text x="131.1" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >Prevención</text><text x="131.1" y="123.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >corta +</text><text x="131.1" y="136.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >técnica +</text><text x="131.1" y="149.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >táctica</text><text x="202.3" y="286.0" font-family="Segoe UI,Arial,sans-serif" font-size="8.5" font-weight="800" fill="#f5a623" text-anchor="end" >MEDIA</text><rect x="218.3" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="262.9" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >MIÉ</text><rect x="218.3" y="94.0" width="89.1" height="200.0" rx="8" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><rect x="218.3" y="94.0" width="5.0" height="200.0" rx="0" fill="#3fa34d" opacity="1"/><text x="228.3" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >AUTÓNOMO:</text><text x="228.3" y="123.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >prevención +</text><text x="228.3" y="136.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >movilidad</text><text x="299.4" y="286.0" font-family="Segoe UI,Arial,sans-serif" font-size="8.5" font-weight="800" fill="#3fa34d" text-anchor="end" >BAJA</text><rect x="315.4" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="360.0" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >JUE</text><rect x="315.4" y="94.0" width="89.1" height="200.0" rx="8" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><rect x="315.4" y="94.0" width="5.0" height="200.0" rx="0" fill="#e8453c" opacity="1"/><text x="325.4" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >PICO:</text><text x="325.4" y="123.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >condicional</text><text x="325.4" y="136.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >con balón +</text><text x="325.4" y="149.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >fase de juego</text><text x="396.6" y="286.0" font-family="Segoe UI,Arial,sans-serif" font-size="8.5" font-weight="800" fill="#e8453c" text-anchor="end" >ALTA</text><rect x="412.6" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="457.1" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >VIE</text><rect x="412.6" y="94.0" width="89.1" height="200.0" rx="8" fill="#102234" opacity="1" stroke="#24435f" stroke-width="1" stroke-dasharray="4 4"/><text x="457.1" y="190.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="800" fill="#5a6b7b" text-anchor="middle" >DESCANSO</text><text x="457.1" y="207.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="500" fill="#9fb3c8" text-anchor="middle" >recuperar</text><rect x="509.7" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="554.3" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >SÁB</text><rect x="509.7" y="94.0" width="89.1" height="200.0" rx="8" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><rect x="509.7" y="94.0" width="5.0" height="200.0" rx="0" fill="#1d6fb8" opacity="1"/><text x="519.7" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >AMISTOSO /</text><text x="519.7" y="123.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.3" font-weight="600" fill="#eaf1f8" text-anchor="start" >partido</text><text x="590.9" y="286.0" font-family="Segoe UI,Arial,sans-serif" font-size="8.5" font-weight="800" fill="#1d6fb8" text-anchor="end" >PARTIDO</text><rect x="606.9" y="68.0" width="89.1" height="22.0" rx="6" fill="#13283d" opacity="1" stroke="#24435f" stroke-width="1"/><text x="651.4" y="83.0" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#f7c948" text-anchor="middle" >DOM</text><rect x="606.9" y="94.0" width="89.1" height="200.0" rx="8" fill="#102234" opacity="1" stroke="#24435f" stroke-width="1" stroke-dasharray="4 4"/><text x="651.4" y="190.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="800" fill="#5a6b7b" text-anchor="middle" >DESCANSO</text><text x="651.4" y="207.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="500" fill="#9fb3c8" text-anchor="middle" >recuperar</text><rect x="20.0" y="310.0" width="680.0" height="96.0" rx="8" fill="#0c1d2e" opacity="1" stroke="#24435f" stroke-width="1"/><text x="30.0" y="325.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#9fb3c8" text-anchor="start" >CARGA DEL DÍA (sRPE relativo)</text><rect x="43.3" y="374.8" width="50.5" height="19.2" rx="3" fill="#3fa34d" opacity="0.85"/><rect x="140.5" y="358.0" width="50.5" height="36.0" rx="3" fill="#f5a623" opacity="0.85"/><rect x="237.6" y="374.8" width="50.5" height="19.2" rx="3" fill="#3fa34d" opacity="0.85"/><rect x="334.7" y="340.0" width="50.5" height="54.0" rx="3" fill="#e8453c" opacity="0.85"/><rect x="431.9" y="388.6" width="50.5" height="5.4" rx="3" fill="#5a6b7b" opacity="0.85"/><rect x="529.0" y="343.6" width="50.5" height="50.4" rx="3" fill="#1d6fb8" opacity="0.85"/><rect x="626.2" y="388.6" width="50.5" height="5.4" rx="3" fill="#5a6b7b" opacity="0.85"/><path d="M68.6,374.8 C84.8,372.0 133.3,358.0 165.7,358.0 C198.1,358.0 230.5,377.8 262.9,374.8 C295.2,371.8 327.6,337.7 360.0,340.0 C392.4,342.3 424.8,388.0 457.1,388.6 C489.5,389.2 521.9,343.6 554.3,343.6 C586.7,343.6 635.2,381.1 651.4,388.6" fill="none" stroke="#f7c948" stroke-width="2.6" opacity="1"/><circle cx="68.6" cy="374.8" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="165.7" cy="358.0" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="262.9" cy="374.8" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="360.0" cy="340.0" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="457.1" cy="388.6" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="554.3" cy="343.6" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><circle cx="651.4" cy="388.6" r="3.2" fill="#0c1b2a" stroke="#f7c948" stroke-width="2"/><rect x="20.0" y="415.0" width="12.0" height="12.0" rx="3" fill="#e8453c" opacity="1"/><text x="37.0" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#9fb3c8" text-anchor="start" >alta</text><rect x="70.8" y="415.0" width="12.0" height="12.0" rx="3" fill="#f5a623" opacity="1"/><text x="87.8" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#9fb3c8" text-anchor="start" >media</text><rect x="128.8" y="415.0" width="12.0" height="12.0" rx="3" fill="#3fa34d" opacity="1"/><text x="145.8" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#9fb3c8" text-anchor="start" >baja</text><rect x="179.6" y="415.0" width="12.0" height="12.0" rx="3" fill="#5a6b7b" opacity="1"/><text x="196.6" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#9fb3c8" text-anchor="start" >reposo</text><rect x="244.8" y="415.0" width="12.0" height="12.0" rx="3" fill="#1d6fb8" opacity="1"/><text x="261.8" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#9fb3c8" text-anchor="start" >partido</text><text x="700.0" y="425.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#f7c948" text-anchor="end" >1 solo pico claro</text></svg></div>
+            <figcaption class="pizarra-cap">Microciclo tipo de 3 sesiones, tal cual viene en el curso</figcaption>
+          </figure>
+          <div>
+            <h3 id="h-m3">Un solo pico a mitad de semana</h3>
+            <dl class="ficha">
+              <dt>La semana</dt>
+              <dd><ul>
+                <li><b>Martes:</b> prevención corta + técnica + táctica (carga media).</li>
+                <li><b>Jueves, el pico:</b> condicional con balón (HIIT o juegos reducidos intensos) + fase de juego (carga alta).</li>
+                <li><b>Sábado:</b> amistoso o partido. Lunes y miércoles, trabajo autónomo del jugador (rodaje de 30' y prevención en casa).</li>
+              </ul></dd>
+              <dt>Por qué así</dt>
+              <dd>"Con 3 sesiones es imposible (y contraproducente) meter dos picos: no daría el descanso entre ellos." Los amistosos <b>sustituyen</b> una sesión de carga alta, no se suman.</dd>
+            </dl>
+            <details class="more"><summary>Ver la plantilla de control de carga (sRPE)</summary><div class="in">
+              <p class="formula">Carga de la sesión (UA) = RPE (0-10) × minutos</p>
+              <p class="small">Anotas los minutos y preguntas el RPE a cada jugador 30 min después de acabar. Ejemplo del curso:</p>
+              <table class="mini-table">
+                <thead><tr><th scope="col">Sesión</th><th scope="col">Min</th><th scope="col">RPE</th><th scope="col">Carga</th></tr></thead>
+                <tbody>
+                  <tr><td>Reactivación + fuerza</td><td class="n">60</td><td class="n">4</td><td class="n">240</td></tr>
+                  <tr><td>HIIT con balón</td><td class="n">75</td><td class="n">8</td><td class="n">600</td></tr>
+                  <tr><td>Velocidad + táctico</td><td class="n">80</td><td class="n">7</td><td class="n">560</td></tr>
+                  <tr><td>Táctico fino</td><td class="n">60</td><td class="n">4</td><td class="n">240</td></tr>
+                  <tr><td>Amistoso</td><td class="n">90</td><td class="n">8</td><td class="n">720</td></tr>
+                  <tr><th scope="row">Total semana</th><td></td><td></td><td class="n"><b>2360</b></td></tr>
+                </tbody>
+              </table>
+              <p class="small">Papel o libreta. Sin GPS ni apps de pago.</p>
+            </div></details>
+          </div>
+        </div>
+        <div class="task-foot">Hay 6 planes como este: dobles sesiones y 6, 5, 4, 3 o 2 sesiones por semana.</div>
+      </article>
+    </div>
+
+    <div class="cta-band"><p>Esto es una muestra. Dentro tienes los 10 cursos completos.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero acceso</a></div>
+  </div>
+</section>
+
+<!-- SESIÓN COMPLETA -->
+<section id="sesion" class="alt" aria-labelledby="h-sesion">
+  <div class="wrap">
+    <span class="eyebrow">Un martes cualquiera, 19:30</span>
+    <h2 id="h-sesion">Una sesión completa de ejemplo: 60 minutos</h2>
+    <p class="lead">Esta es la sesión <b>MD-4 del microciclo 1 del curso 1-4-3-3</b> (T1 + T6, carga F), con el calentamiento que el curso de Rondos propone para ese día. Todas las tareas son reales; al lado de cada una tienes de qué curso sale.</p>
+
+    <div class="tl" role="img" aria-label="Reparto de la sesión: 10 minutos de calentamiento, 21 de tarea 1, 3 de hidratación, 20 de tarea 6 y 6 de vuelta a la calma">
+      <span class="c1" style="flex:10">10'</span><span class="c2" style="flex:21">21'</span><span class="c3" style="flex:3">3'</span><span class="c4" style="flex:20">20'</span><span class="c5" style="flex:6">6'</span>
+    </div>
+    <div class="tl-leg" aria-hidden="true"><span>0'</span><span>30'</span><span>60'</span></div>
+
+    <ol class="slots">
+      <li class="slot k1"><div class="slot-grid"><div>
+        <span class="time">0' – 10' · Calentamiento</span>
+        <h3>Rondo 44 — "El manín / burro clásico"</h3>
+        <p>8v1 en un círculo de 8-9 m. Quien pierde el balón entra al medio; caño = entra y da una vuelta al círculo. Pase a ras de suelo obligatorio. Reto: récord de pases seguidos.</p>
+        <p class="meta"><span class="src">Curso Rondos · Familia 7</span> La ficha marca 8-10 min de activación: "ideal como primer ejercicio de la sesión".</p>
+      </div>
+      <details class="more"><summary>Ver pizarra</summary><div class="in"><div class="pizarra"><svg role="img" aria-label="Pizarra del Rondo 44, el manín: 8 jugadores en círculo de 8-9 m y 1 defensor en el medio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="r44-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="r44-ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="r44-ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="r44-ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="r44-ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Rondo 44 — El manín / burro</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >8v1 · círculo 8-9 m · quien pierde entra · caño = doble castigo</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Rondos · MISTER ÉLITE</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#r44-ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><path d="M509.6,546.3 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M486.8,436.5 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M424.8,356.1 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M340.0,326.7 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M255.2,356.1 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M193.2,436.5 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M170.4,546.3 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M193.2,656.1 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M255.2,736.4 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M340.0,765.8 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M424.8,736.4 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M486.8,656.1 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><ellipse cx="340.0" cy="553.3" rx="169.6" ry="219.5" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><g><circle cx="340.0" cy="352.8" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="356.8" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="451.0" cy="411.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="451.0" y="415.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="497.0" cy="553.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="497.0" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="451.0" cy="695.0" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="451.0" y="699.0" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="340.0" cy="753.7" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="757.7" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="229.0" cy="695.0" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="229.0" y="699.0" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="183.0" cy="553.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="183.0" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="229.0" cy="411.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="229.0" y="415.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="340.0" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="340.0" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">D</text></g><text x="340.0" y="534.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >el manín</text><circle cx="340.0" cy="352.8" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,346.8 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="340.0" y1="352.8" x2="451.0" y2="411.5" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r44-ah_pass)"/><text x="395.5" y="377.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="451.0" y1="411.5" x2="497.0" y2="553.3" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r44-ah_pass)"/><text x="474.0" y="477.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="497.0" y1="553.3" x2="229.0" y2="695.0" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#r44-ah_pass)"/><text x="363.0" y="619.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3 (cruza)</text><text x="340.0" y="916.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >Quien pierde el balón entra · caño = entra + vuelta al círculo · pase a ras de suelo</text><g><rect x="32" y="969.56" width="168" height="67" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="983.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><line x1="44" y1="1029.56" x2="70" y2="1029.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text></g></svg></div></div></details>
+      </div></li>
+
+      <li class="slot"><div class="slot-grid"><div>
+        <span class="time">10' – 31' · Parte principal 1</span>
+        <h3>T1 — Rombo de salida: el pivote pivota</h3>
+        <p>4v2 en 40×30 m: POR 1, centrales 4-5 y pivote 6 contra 2 presionadores. <b>4 series × 4 min con 90 s de descanso</b> (20,5 min). Punto si el balón cruza la línea de medios tras pasar por 3 jugadores distintos.</p>
+        <p class="meta"><span class="src">Curso 1-4-3-3 · Bloque 1 Salida</span> Es la tarea de arriba: ficha completa en "Anatomía de una tarea".</p>
+      </div>
+      <a class="btn ghost sm" href="#tarea">Ver la ficha</a>
+      </div></li>
+
+      <li class="slot k3">
+        <span class="time">31' – 34' · Pausa</span>
+        <h3>Hidratación y cambio de espacio</h3>
+        <p class="meta">Montas los 5 carriles con conos (36×24 m) mientras beben.</p>
+      </li>
+
+      <li class="slot"><div class="slot-grid"><div>
+        <span class="time">34' – 54' · Parte principal 2</span>
+        <h3>T6 — Rondo de los carriles: ocupar los 5 pasillos</h3>
+        <p>6v3 en 36×24 m dividido en 5 carriles. El 6 en el central, 8 y 10 en los interiores, 2 y 3 en los exteriores, y el 4 de apoyo. <b>5 series × 3 min</b> (15 min de juego más pausas entre series). Punto cada vez que el 8 o el 10 reciben en carril interior y giran de cara; dos poseedores en el mismo carril = pérdida.</p>
+        <p class="meta"><span class="src">Curso 1-4-3-3 · Bloque 2 Mediocampo</span> Carga F (fundamentación), como la T1.</p>
+      </div>
+      <details class="more"><summary>Ver pizarra</summary><div class="in"><div class="pizarra"><svg role="img" aria-label="Pizarra de la tarea 6 del 1-4-3-3: rondo 6v3 en 5 carriles verticales" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="t6-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="t6-ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="t6-ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="t6-ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="t6-ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Tarea 6 — Rondo de los 5 carriles</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >6v3 · 6 central · 8/10 semiespacios · 2/3 exteriores · recibir y girar</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Sistema 1-4-3-3</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#t6-ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><path d="M151.6,832.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M151.6,240.8 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M277.2,832.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M277.2,240.8 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M402.8,832.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M402.8,240.8 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M528.4,832.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M528.4,240.8 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><text x="88.8" y="209.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >EXT</text><text x="214.4" y="209.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >INT</text><text x="340.0" y="209.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >CEN</text><text x="465.6" y="209.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >INT</text><text x="591.2" y="209.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >EXT</text><g><circle cx="88.8" cy="553.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="88.8" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">3</text></g><text x="88.8" y="534.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >exterior</text><g><circle cx="591.2" cy="553.3" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="591.2" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">2</text></g><text x="591.2" y="534.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >exterior</text><g><circle cx="214.4" cy="476.9" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="214.4" y="480.9" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">10</text></g><text x="214.4" y="457.9" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >semiespacio</text><g><circle cx="465.6" cy="610.6" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="465.6" y="614.6" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">8</text></g><text x="465.6" y="591.6" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >semiespacio</text><g><circle cx="340.0" cy="686.9" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="690.9" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">6</text></g><text x="340.0" y="667.9" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >central</text><g><circle cx="340.0" cy="362.4" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="366.4" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">4</text></g><text x="340.0" y="343.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >apoyo</text><g><circle cx="289.8" cy="572.4" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="289.8" y="576.4" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">x</text></g><g><circle cx="415.4" cy="496.0" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="415.4" y="500.0" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">x</text></g><g><circle cx="390.2" cy="744.2" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="390.2" y="748.2" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">x</text></g><circle cx="340.0" cy="686.9" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,680.9 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="314.9" y1="667.8" x2="233.2" y2="505.6" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#t6-ah_pass)"/><text x="274.1" y="581.7" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >al interior</text><line x1="201.8" y1="448.3" x2="201.8" y2="352.8" stroke="#7ee0ff" stroke-width="2.8" marker-end="url(#t6-ah_drive)"/><text x="201.8" y="395.6" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#7ee0ff" text-anchor="middle" >gira</text><text x="465.6" y="419.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >+1 si gira de cara</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><line x1="44" y1="995.56" x2="70" y2="995.56" stroke="#7ee0ff" stroke-width="3"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">conducción</text><circle cx="49" cy="1012.56" r="6" fill="#1565c0"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1029.56" r="6" fill="#c62828"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text></g></svg></div></div></details>
+      </div></li>
+
+      <li class="slot k5">
+        <span class="time">54' – 60' · Vuelta a la calma</span>
+        <h3>Soltura, movilidad y registro de carga</h3>
+        <p>Soltura y movilidad, como cierran las sesiones de la programación de Pretemporada. Apuntas los 60 minutos y, 30 min después, el RPE de cada jugador: carga = RPE × minutos.</p>
+        <p class="meta"><span class="src">Curso Pretemporada · Herramientas</span> La vuelta a la calma no es una tarea con pizarra: es la pauta del curso.</p>
+      </li>
+    </ol>
+    <p class="note">La T1 se juega con 6 jugadores y la T6 con 9. Si tienes más, monta dos espacios en paralelo (esto es una propuesta de organización, no viene en la ficha). ¿No juegas 1-4-3-3? Cada curso de sistema trae su propio plan de sesiones con la misma estructura.</p>
+
+    <div class="cta-band"><p>Hay dos microciclos como este en cada curso de sistema.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero las sesiones</a></div>
+  </div>
+</section>
+
+<!-- SEMANA -->
+<section id="semana" aria-labelledby="h-semana">
+  <div class="wrap">
+    <span class="eyebrow">Flujo semanal</span>
+    <h2 id="h-semana">De lunes a domingo: qué haces con la membresía</h2>
+    <p class="lead">Una semana tipo si juegas el fin de semana. Los cursos por sistema traen un plan de sesiones con microciclos de ejemplo; tú solo ajustas los días a tu calendario.</p>
+    <ol class="week">
+      <li class="day"><span class="dot" aria-hidden="true">LUN</span><span class="tag">Elegir</span><h3>Eliges el foco</h3><p>Abres el plan de sesiones de tu curso y decides la semana: por ejemplo, "salida y presión del tridente" o "amplitud, llegada y finalización".</p></li>
+      <li class="day"><span class="dot" aria-hidden="true">MAR</span><span class="tag">MD-4 · fundamentar</span><h3>Aprendes el patrón</h3><p>Tareas de carga F: se entiende la idea. Abres la pizarra en el móvil o la llevas impresa en PDF.</p></li>
+      <li class="day"><span class="dot" aria-hidden="true">JUE</span><span class="tag">MD-3 / MD-2 · intensidad</span><h3>Subes la exigencia</h3><p>Tareas S (competitivas): duelos, presión orientada, salida contra oposición. Usas las variantes si se atasca.</p></li>
+      <li class="day"><span class="dot" aria-hidden="true">VIE</span><span class="tag">MD-1 · activación</span><h3>Bajas el volumen</h3><p>Tareas A, cortas: contrapresión corta, un rondo libre. Llegas fresco al partido con la idea fresca.</p></li>
+      <li class="day"><span class="dot" aria-hidden="true">SÁB<br>DOM</span><span class="tag">MD · partido y revisión</span><h3>Juegas y apuntas</h3><p>Compruebas qué comportamientos salieron. La carga se controla con papel y RPE, sin GPS ni apps de pago.</p></li>
+    </ol>
+    <p class="note">Base real: plan de sesiones del curso 1-4-3-3 (MD-4 a MD, cargas F fundamentación, A activación, S subprincipio competitivo). El de Pretemporada trae planes para dobles sesiones y para 6, 5, 4, 3 y 2 sesiones por semana.</p>
+  </div>
+</section>
+
+<!-- ¿ES PARA MÍ? -->
+<section id="para-mi" class="alt" aria-labelledby="h-parami">
+  <div class="wrap">
+    <span class="eyebrow">Ajuste a tu contexto</span>
+    <h2 id="h-parami">¿Es para mí? Elige tu caso</h2>
+    <p class="lead">Diez cursos abruman. Elige tu perfil y te decimos por qué te sirve, por dónde empezar y dónde no llega.</p>
+
+    <div class="ptabs" role="tablist" aria-label="Perfiles de entrenador" hidden></div>
+
+    <div class="perfiles">
+      <article class="perfil" id="p-novato" data-label="Primer año">
+        <h3>Primer año entrenando</h3>
+        <p class="who">Te estrenas, entrenas solo y no quieres quedar mal delante de los jugadores ni de los padres.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>Cada tarea se monta tal cual: medidas, material, reglas que se cuentan y qué corregir.</li>
+            <li>Si sale demasiado fácil o se atasca, tienes la variante fácil, media o difícil escrita.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li><b>Rondos</b>: familias 1 (iniciación) y 7 (calentamiento).</li>
+            <li><b>Ruedas de pases</b>: familia de básicas (cuadrado, rombo, triángulo).</li>
+            <li>El <b>curso de tu sistema</b>, cuando juegues a fútbol 11.</li>
+          </ol>
+          <p class="small" style="margin:8px 0 0"><b>Primera semana:</b> calentamiento con el Rondo 44, Rondo 1 (4v1) y la Rueda 01 "cuadrado base". Apunta minutos y RPE.</p></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>Es material para llevar al campo, con pizarra y texto; no hay vídeos ni nadie que te vea entrenar. No sustituye a un curso federativo.</p></div>
+        </div>
+      </article>
+
+      <article class="perfil" id="p-base" data-label="Base sub-12 a sub-16">
+        <h3>Fútbol base (sub-12 a sub-16)</h3>
+        <p class="who">Infantiles, cadetes o un alevín que empieza a crecer: quieres formar, no copiar al primer equipo.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>En el 1-5-3-2 y el 1-4-4-2 cada tarea indica su categoría: <b>F = formativo (sub-12 a sub-16)</b>, A = amateur/juvenil, S = sénior.</li>
+            <li>Rondos y ruedas valen para cualquier categoría: cambias medidas y toques.</li>
+            <li>Pretemporada trae un plan de 2 sesiones para base: técnica, táctica básica y disfrute.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li><b>Rondos</b> y <b>Ruedas de pases</b>, la base común.</li>
+            <li><b>Juego de posición</b>, si ya juegas a fútbol 11 (el curso lo recomienda desde formación avanzada).</li>
+            <li>Tu sistema, filtrando las tareas F. En el 1-5-3-2: "en formativo, prioriza T5, T6, T2, T19 y T21".</li>
+          </ol></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>No hay cursos específicos de fútbol 7 ni de fútbol sala: los cursos de sistema son de fútbol 11. Lo que sí se adapta: rondos, ruedas y los principios de posesión, ajustando medidas y número de jugadores.</p></div>
+        </div>
+      </article>
+
+      <article class="perfil" id="p-fem" data-label="Femenino y juvenil">
+        <h3>Femenino y juvenil</h3>
+        <p class="who">Preparas la sesión a las 23:00 y quieres que se note que alguien serio la ha pensado.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>El plan de sesiones de tu sistema te da la semana ordenada (MD-4 a MD-1): eliges y entrenas.</li>
+            <li>Pretemporada se adapta a las sesiones reales que tienes por semana.</li>
+            <li>En el 1-5-3-2 y el 1-4-4-2, la categoría A cubre juvenil y sénior aficionado.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li>El <b>curso de tu sistema</b> y su plan de sesiones.</li>
+            <li><b>Juego de posición</b> (vale para cualquier sistema).</li>
+            <li><b>Pretemporada</b>: el mapa de decisión y tu plan.</li>
+          </ol></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>No hay contenido específico de fútbol femenino. Las tareas son las mismas para cualquier equipo; el volumen y el espacio los ajustas tú a tu grupo.</p></div>
+        </div>
+      </article>
+
+      <article class="perfil" id="p-amateur" data-label="Adulto amateur">
+        <h3>Adulto amateur</h3>
+        <p class="who">Regional, 2-3 entrenamientos por semana, campo compartido y presupuesto justo.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>Pretemporada tiene un plan para "3 sesiones (amateur típico)" y otro para 2.</li>
+            <li>Control de carga con papel y RPE: sin GPS ni apps.</li>
+            <li>Balón parado defensivo: córner, faltas y saque de banda largo con roles claros.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li><b>Pretemporada</b>: mapa de decisión, plan de 3 sesiones y plantilla sRPE.</li>
+            <li>El <b>curso de tu sistema</b>.</li>
+            <li><b>Balón parado defensivo</b>.</li>
+          </ol></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>Con 3 sesiones, el plan cuenta con trabajo autónomo del jugador (rodajes y prevención en casa). El propio curso avisa: sin esos deberes, el equipo llega corto de base.</p></div>
+        </div>
+      </article>
+
+      <article class="perfil" id="p-coord" data-label="Coordinador de club">
+        <h3>Coordinador de club</h3>
+        <p class="who">Quieres que todos tus entrenadores hablen el mismo idioma.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>Misma ficha en todas las tareas: Objetivo · Organización · Desarrollo · Provocaciones · Variantes · Coaching · Duración/Categoría.</li>
+            <li>Misma notación de pizarra y mismo calendario (MD-4 … MD) en todos los cursos.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li><b>Rondos</b> y <b>Ruedas de pases</b> como base común para todas las categorías.</li>
+            <li><b>Juego de posición</b> como idea de juego del club.</li>
+            <li>Un curso de sistema para los equipos de fútbol 11.</li>
+          </ol></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>No hay precio de club publicado. Para varios entrenadores, pide condiciones por email (más abajo).</p></div>
+        </div>
+      </article>
+
+      <article class="perfil" id="p-fisico" data-label="Formación física">
+        <h3>Preparador físico / CCAFD</h3>
+        <p class="who">Lees evidencia y detectas una afirmación sin base a la primera.</p>
+        <div class="pcols">
+          <div class="pcol"><h4>Por qué te sirve</h4><ul>
+            <li>sRPE (Foster), ACWR con sus críticas (Impellizzeri, Lolli, Windt), monotonía y wellness.</li>
+            <li>Tests de campo sin GPS: 30-15 IFT o Yo-Yo IR1, sprint 10/30 m y CMJ.</li>
+            <li>Banco de 12 sesiones con parámetros: el físico dentro del balón.</li>
+          </ul></div>
+          <div class="pcol"><h4>Empieza por</h4><ol>
+            <li><b>Pretemporada</b>: módulos 2 (la carga) y 3 (cómo meter las cargas).</li>
+            <li>Sus <b>herramientas</b>: sRPE, ACWR, wellness y tests.</li>
+            <li><b>Rondos</b>: su plan reparte las familias por días de fuerza, duración y velocidad.</li>
+          </ol></div>
+          <div class="pcol warn"><h4>Aviso honesto</h4><p>No es una revisión científica: las cifras son orientativas y así lo dice el curso. No trae contenido específico para trabajar con GPS.</p></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 style="margin-top:44px;font-size:clamp(1.3rem,4vw,1.7rem)">Tus primeras 4 semanas, sea cual sea tu perfil</h3>
+    <ol class="w4">
+      <li><b>Prueba</b>Lee el README de tu curso (cinco minutos) y monta una sesión: calentamiento con el Rondo 44 y una tarea F. Apunta minutos y RPE.</li>
+      <li><b>Sigue un plan tal cual</b>El microciclo 1 de tu curso de sistema, o el microciclo A del curso de Rondos. Sin cambiar nada.</li>
+      <li><b>Ajusta con las variantes</b>Repite el microciclo subiendo o bajando con fácil, media y difícil. Los cursos recomiendan repetir cada microciclo 2-3 semanas.</li>
+      <li><b>Revisa</b>Pasa la checklist semanal de Pretemporada y, con 4 semanas de registros, mira tu ACWR. Luego eliges el siguiente foco.</li>
+    </ol>
+
+    <div class="yesno">
+      <div class="yn"><h3>Sí es para ti si…</h3><ul>
+        <li>Entrenas sin staff y preparas tú solo cada sesión.</li>
+        <li>Prefieres reglas que se cuentan a consignas que se opinan.</li>
+        <li>Quieres la semana ordenada respecto al partido, no tareas sueltas.</li>
+        <li>Vas a llevar la sesión impresa o en el móvil, con o sin cobertura.</li>
+      </ul></div>
+      <div class="yn no"><h3>No te sirve si…</h3><ul>
+        <li>Buscas un sistema ganador que funcione sin adaptarlo a tus jugadores.</li>
+        <li>Quieres teoría larga o vídeos: aquí hay pizarra y texto.</li>
+        <li>Entrenas fútbol 7 o sala y necesitas tareas pensadas para ese formato.</li>
+        <li>Esperas asesoría personal: es contenido para el campo, no un servicio individual.</li>
+      </ul></div>
+    </div>
+    <div class="cta-band"><p>¿Te has visto en alguno? Empieza este mes y prueba la primera semana.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar</a></div>
+  </div>
+</section>
+
+<!-- RIGOR -->
+<section id="rigor" aria-labelledby="h-rigor">
+  <div class="wrap">
+    <span class="eyebrow">Rigor sin rollo</span>
+    <h2 id="h-rigor">Honestos con la evidencia, también cuando duda</h2>
+    <p class="lead">Poca teoría, pero la que entra se sostiene. El curso de Pretemporada cita a sus autores y dice dónde la ciencia no está de acuerdo. Las cifras son orientativas: tú las adaptas a tu equipo.</p>
+
+    <div class="autores">
+      <div class="autor"><b>Buchheit</b><span>Microciclo MD-x: recuperar, adquirir, activar</span></div>
+      <div class="autor"><b>Gabbett</b><span>ACWR y la paradoja entrenamiento-lesión</span></div>
+      <div class="autor"><b>Foster</b><span>sRPE: carga con una pregunta y una libreta</span></div>
+      <div class="autor"><b>Seirul·lo</b><span>Microciclo estructurado</span></div>
+      <div class="autor"><b>Frade</b><span>Periodización táctica y morfociclo</span></div>
+    </div>
+
+    <div class="duda">
+      <div class="duda-row">
+        <div><span class="fl">Lo que decimos</span><h3>El ACWR es un semáforo: de 0,8 a 1,3, verde; por encima de 1,5, frena.</h3></div>
+        <div><span class="fl d">Lo que se discute</span><p>Tiene críticas serias (Impellizzeri, Lolli, Windt). No es una bola de cristal.</p></div>
+        <div><span class="fl u">Cómo lo usamos</span><p>Como aviso de saltos bruscos de carga, junto al wellness y el sentido común. Nunca como verdad absoluta.</p></div>
+      </div>
+      <div class="duda-row">
+        <div><span class="fl">Lo que decimos</span><h3>No subas la carga semanal más de un ~10 %.</h3></div>
+        <div><span class="fl d">Lo que se discute</span><p>Es una orientación, no un dogma. Lo que importa es el principio, no la cifra exacta.</p></div>
+        <div><span class="fl u">Cómo lo usamos</span><p>Progresión gradual y sin picos, sobre todo en pretemporada.</p></div>
+      </div>
+      <div class="duda-row">
+        <div><span class="fl">Lo que decimos</span><h3>Los programas con Nordic reducen ~51 % las lesiones de isquios.</h3></div>
+        <div><span class="fl d">Lo que se discute</span><p>Hay matices metodológicos en los estudios (van Dyk, Al Attar).</p></div>
+        <div><span class="fl u">Cómo lo usamos</span><p>Sigue siendo la herramienta más recomendada: hasta 3×3-10 repeticiones, 1-3 veces por semana.</p></div>
+      </div>
+    </div>
+    <details class="more"><summary>Ver el semáforo ACWR del curso</summary><div class="in"><div class="pizarra wide"><svg role="img" aria-label="Semáforo del ACWR del curso de Pretemporada: menos de 0,8 desentreno, 0,8 a 1,3 zona segura, más de 1,5 riesgo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="Segoe UI,Arial,sans-serif"><defs><linearGradient id="acwr-bg" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#0f2438"/><stop offset="1" stop-color="#0c1b2a"/></linearGradient></defs><rect width="760" height="380" fill="url(#acwr-bg)"/><rect x="0" y="0" width="760" height="54" fill="#0c1b2a"/><rect x="0" y="0" width="6" height="54" fill="#f7c948"/><text x="20.0" y="26.0" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="800" fill="#eaf1f8" text-anchor="start" >ACWR: el semáforo de la carga</text><text x="20.0" y="44.0" font-family="Segoe UI,Arial,sans-serif" font-size="11.5" font-weight="500" fill="#9fb3c8" text-anchor="start" >carga aguda (7 d) ÷ crónica (28 d) · mantenla en la zona verde, evita los picos</text><text x="748.0" y="372.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="372.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Pretemporada · MISTER ÉLITE</text><rect x="54.0" y="230.8" width="682.0" height="103.2" rx="0" fill="#5a6b7b" opacity="0.22"/><text x="730.0" y="243.8" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="800" fill="#5a6b7b" text-anchor="end" >&lt; 0,8 desentreno</text><rect x="54.0" y="166.3" width="682.0" height="64.5" rx="0" fill="#3fa34d" opacity="0.2"/><text x="730.0" y="179.3" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="800" fill="#3fa34d" text-anchor="end" >0,8 – 1,3 zona segura</text><rect x="54.0" y="76.0" width="682.0" height="64.5" rx="0" fill="#e8453c" opacity="0.2"/><text x="730.0" y="89.0" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="800" fill="#e8453c" text-anchor="end" >&gt; 1,5 riesgo de lesión</text><line x1="54.0" y1="76.0" x2="54.0" y2="334.0" stroke="#23415c" stroke-width="1.4" opacity="1"/><line x1="54.0" y1="334.0" x2="736.0" y2="334.0" stroke="#23415c" stroke-width="1.4" opacity="1"/><text x="16.0" y="205.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#9fb3c8" text-anchor="middle" transform="rotate(-90,16,205)">ACWR (×2)</text><text x="54.0" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem1</text><text x="190.4" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem2</text><text x="326.8" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem3</text><text x="463.2" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem4</text><text x="599.6" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem5</text><text x="736.0" y="350.0" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#9fb3c8" text-anchor="middle" >Sem6</text><path d="M54.0,205.0 C76.7,201.6 144.9,189.5 190.4,184.4 C235.9,179.2 281.3,172.8 326.8,174.0 C372.3,175.3 417.7,185.6 463.2,192.1 C508.7,198.6 554.1,210.6 599.6,212.7 C645.1,214.9 713.3,206.3 736.0,205.0" fill="none" stroke="#f7c948" stroke-width="3" opacity="1"/><circle cx="54.0" cy="205.0" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/><circle cx="190.4" cy="184.4" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/><circle cx="326.8" cy="174.0" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/><circle cx="463.2" cy="192.1" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/><circle cx="599.6" cy="212.7" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/><circle cx="736.0" cy="205.0" r="3.4" fill="#0c1b2a" stroke="#f7c948" stroke-width="2.2"/></svg></div></div></details>
+
+    <h3 style="margin-top:48px;font-size:clamp(1.3rem,4vw,1.7rem)">La diferencia con el ejercicio suelto de redes</h3>
+    <p class="lead" style="font-size:1rem">Un ejercicio bonito en el móvil no te dice cuándo usarlo ni cómo saber si salió. Cada tarea de aquí sale de un método y trae provocaciones que se miden.</p>
+    <div class="vs-head" aria-hidden="true"><span>Ejercicio suelto</span><span>Tarea MISTER ÉLITE</span></div>
+    <div class="vs">
+      <div class="vs-row"><b>De dónde sale</b><span>Un dibujo o un vídeo sin contexto.</span><span>Del plan de sesiones de su curso, con su día (MD-4 … MD-1).</span></div>
+      <div class="vs-row"><b>Cómo sabes si salió</b><span>A ojo.</span><span>Provocaciones medibles: "3 jugadores distintos", "10 pases = 1 punto".</span></div>
+      <div class="vs-row"><b>Si se atasca</b><span>Improvisas.</span><span>Variantes fácil, media y difícil escritas.</span></div>
+      <div class="vs-row"><b>Qué corriges</b><span>Lo que veas.</span><span>2-3 puntos de coaching concretos.</span></div>
+      <div class="vs-row"><b>Cuánto dura</b><span>Ni idea.</span><span>Series, minutos y descanso.</span></div>
+    </div>
+    <div class="cta-band"><p>Método, no ejercicios sueltos. Pruébalo <span data-cfg="garantiaDias">14</span> días con devolución completa.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero el método</a></div>
+  </div>
+</section>
+
 <!-- CUERPO TÉCNICO + CATÁLOGO -->
-<section id="cursos" aria-labelledby="h-cursos">
+<section id="cursos" class="alt" aria-labelledby="h-cursos">
   <div class="wrap">
     <span class="eyebrow">El staff que no puedes pagar</span>
     <h2 id="h-cursos">Tu cuerpo técnico digital: 4 roles, 10 cursos</h2>
@@ -358,11 +835,11 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       <div class="role"><h3>Analista táctico</h3><p>Los cursos por sistema: fase ofensiva, defensiva, transiciones y balón parado de <code>1-4-3-3</code>, <code>1-4-4-2</code>, <code>1-5-3-2</code>, <code>1-3-4-3</code> y <code>1-4-2-3-1</code>.</p></div>
       <div class="role"><h3>Preparador físico</h3><p>Pretemporada: física y táctica a la vez, 6 planes según tus sesiones por semana, banco de 12 sesiones y control de carga con RPE y ACWR en papel.</p></div>
       <div class="role"><h3>Segundo entrenador</h3><p>El banco de tareas con pizarra y los planes de sesiones: objetivo, organización, variantes, coaching y duración ya montados.</p></div>
-      <div class="role"><h3>Especialista ABP y posesión</h3><p>Posesión, Rondos, Ruedas de pases y Balón parado defensivo: lo que se entrena en cualquier sistema.</p></div>
+      <div class="role"><h3>Especialista ABP y posesión</h3><p>Juego de posición, Rondos, Ruedas de pases y Balón parado defensivo: lo que se entrena en cualquier sistema.</p></div>
     </div>
 
     <h2 style="margin-top:56px;font-size:clamp(1.4rem,4.4vw,2rem)">Los 10 cursos y qué resuelve cada uno</h2>
-    <div class="filters" role="group" aria-label="Filtrar cursos">
+    <div class="filters" role="group" aria-label="Filtrar cursos" hidden>
       <button type="button" data-f="all" aria-pressed="true">Todos (10)</button>
       <button type="button" data-f="sistema" aria-pressed="false">Por sistema (5)</button>
       <button type="button" data-f="metodo" aria-pressed="false">Metodología (3)</button>
@@ -375,6 +852,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Analista táctico · sistema</span>
         <h3>Sistema 1-4-3-3</h3>
         <span class="count">26 tareas · 4 módulos · 2 microciclos</span>
+        <p class="fit">Fútbol 11</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Salir jugando con rombo y salida en 3 ante 1 y 2 puntas.</li>
@@ -387,6 +865,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Analista táctico · sistema</span>
         <h3>Sistema 1-4-4-2</h3>
         <span class="count">27 tareas · 4 módulos · plan de sesiones</span>
+        <p class="fit">Fútbol 11 · tareas con categoría F / A / S</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Bloque, basculación y pressing con gatillos.</li>
@@ -399,6 +878,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Analista táctico · sistema</span>
         <h3>Sistema 1-5-3-2</h3>
         <span class="count">26 tareas · 4 módulos · plan de sesiones</span>
+        <p class="fit">Fútbol 11 · tareas con categoría F / A / S</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Línea de 5 sin balón: bajada de carrileros, coberturas, fuera de juego.</li>
@@ -411,6 +891,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Analista táctico · sistema</span>
         <h3>Sistema 1-3-4-3</h3>
         <span class="count">26 tareas · 4 módulos · 2 microciclos</span>
+        <p class="fit">Fútbol 11</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>La mutación: del 3-4-3 al 3-2-5 con balón; línea de 5 sin él.</li>
@@ -423,6 +904,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Analista táctico · sistema</span>
         <h3>Sistema 1-4-2-3-1</h3>
         <span class="count">26 tareas · 4 módulos · 2 microciclos</span>
+        <p class="fit">Fútbol 11</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Doble pivote: regla de oro y basculación.</li>
@@ -433,20 +915,22 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       </article>
       <article class="course" data-k="metodo">
         <span class="kind">Especialista en posesión · metodología</span>
-        <h3>Juego de posición</h3>
+        <h3>Juego de posición: dominar con el balón</h3>
         <span class="count">30 tareas · 6 familias · 4 módulos</span>
+        <p class="fit">Cualquier sistema · de formación avanzada a sénior</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Pasar de "tener" la posesión a usarla para progresar y finalizar.</li>
           <li>Superioridades, hombre libre y tercer hombre.</li>
           <li>La cadena rondo, juego de posición y partido.</li>
         </ul>
-        <p class="inc">Sirve para cualquier sistema. Incluye contrapresión tras pérdida y plan de sesiones.</p>
+        <p class="inc">Incluye contrapresión tras pérdida y plan de sesiones.</p>
       </article>
       <article class="course" data-k="metodo">
         <span class="kind">Especialista en posesión · metodología</span>
-        <h3>Rondos</h3>
+        <h3>Rondos: el corazón del entrenamiento</h3>
         <span class="count">50 rondos · 7 familias · 3 módulos</span>
+        <p class="fit">Cualquier categoría y sistema</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Diseñar tu propio rondo con 6 variables.</li>
@@ -457,8 +941,9 @@ footer strong{color:var(--ink);letter-spacing:.04em}
       </article>
       <article class="course" data-k="metodo">
         <span class="kind">Especialista en posesión · metodología</span>
-        <h3>Ruedas de pases</h3>
+        <h3>Ruedas de pases — del patrón al partido</h3>
         <span class="count">30 ruedas · 6 familias · 4 módulos</span>
+        <p class="fit">Cualquier categoría · medidas adaptables</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Que la rueda deje de ser una fila de jugadores pasando sin objetivo.</li>
@@ -471,6 +956,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Preparador físico</span>
         <h3>Pretemporada perfecta</h3>
         <span class="count">6 planes · 12 sesiones · 5 módulos</span>
+        <p class="fit">De 2 sesiones/semana a dobles sesiones</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Meter la carga física adaptada a tus sesiones por semana (dobles, 6, 5, 4, 3 o 2).</li>
@@ -483,6 +969,7 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="kind">Especialista en balón parado</span>
         <h3>Balón parado defensivo</h3>
         <span class="count">11 pizarras · córners, faltas, saques · 2 módulos</span>
+        <p class="fit">Cualquier sistema</p>
         <p class="q">Qué resuelve</p>
         <ul>
           <li>Córner zonal, al hombre o mixto, con roles memorizados.</li>
@@ -492,15 +979,21 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <p class="inc">Roles claros por jugador y principios de oro repetidos.</p>
       </article>
     </div>
+    <div class="cta-band"><p>Los 10 cursos entran en la misma membresía.</p><a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Ver precios y entrar</a></div>
   </div>
 </section>
 
-<!-- FORMATOS -->
-<section aria-labelledby="h-fmt" style="background:rgba(255,254,251,.7);border-block:1px solid var(--line)">
+<!-- FORMATOS Y ACCESO -->
+<section id="acceso" aria-labelledby="h-fmt">
   <div class="wrap">
     <span class="eyebrow">Para el campo, no para el escritorio</span>
-    <h2 id="h-fmt">Cada curso en 3 formatos</h2>
-    <p class="lead">Lo abres donde lo necesites: en el banquillo, en el vestuario o en casa.</p>
+    <h2 id="h-fmt">Cómo accedes y en qué formatos</h2>
+    <!-- TODO-USER: confirmar que el sistema de membresía de WordPress envía automáticamente el email de acceso tras el pago y que desde el área de miembros se descargan el PDF y el HTML de cada curso. -->
+    <ol class="steps">
+      <li><span><b>Pagas</b> el plan mensual o el anual.</span></li>
+      <li><span><b>Recibes un email</b> con tu acceso.</span></li>
+      <li><span><b>Entras al sitio</b> y descargas el PDF y el HTML de cada curso. Los dos funcionan sin internet.</span></li>
+    </ol>
     <div class="formats">
       <div class="fmt"><span class="ico">PDF</span><h3>Para imprimir</h3><p>Lleva la sesión en papel al campo, con la pizarra de cada tarea.</p></div>
       <div class="fmt"><span class="ico">HTML</span><h3>Un solo archivo, sin internet</h3><p>El curso completo en un único archivo que se abre sin conexión: ideal para campos sin cobertura.</p></div>
@@ -510,43 +1003,61 @@ footer strong{color:var(--ink);letter-spacing:.04em}
   </div>
 </section>
 
-<!-- PRUEBA SOCIAL / QUIÉN -->
-<section aria-labelledby="h-quien">
-  <div class="wrap about">
-    <div>
-      <span class="eyebrow">Quién está detrás</span>
-      <h2 id="h-quien">Hecho por un entrenador, para entrenadores</h2>
-      <p>Los cursos son de <strong>Moisés Díaz</strong> y llevan la marca MISTER ÉLITE. La idea es una: <mark>poca teoría, mucha aplicación práctica</mark>. Cada concepto se explica en lo justo y se baja al campo con una tarea y su pizarra.</p>
-      <!-- TODO-USER: Moisés, aquí va tu presentación real: trayectoria, categorías/equipos con los que has trabajado, titulaciones y una foto tuya si quieres. No inventamos nada: sin tus datos esta sección se queda solo con el párrafo de arriba y la página funciona igual. -->
-      <div class="todo" data-todo><b>Pendiente de Moisés</b>Presentación personal: trayectoria, titulaciones y foto. (Se oculta con <code>CONFIG.mostrarPendientes = false</code> o borrando este bloque.)</div>
-    </div>
-    <div>
-      <span class="eyebrow">Entrenadores que lo usan</span>
-      <h3>Mientras llegan las opiniones, mira el producto</h3>
-      <p>Esta página ya te enseña una tarea completa con su pizarra. Si quieres más antes de decidir, escríbeme y te cuento qué curso encaja con tu sistema.</p>
-      <a class="btn ghost" href="mailto:hola@TU-DOMINIO?subject=Quiero%20ver%20una%20muestra%20de%20los%20cursos" data-mail>Pedir una muestra</a>
-      <!-- TODO-USER: Aportar testimonios reales de entrenadores (nombre, categoría/club y permiso para publicarlos) y, solo si es cierto, el nº de miembros. Hasta entonces no se muestra nada inventado. Confirmar también qué muestra gratuita se envía al pulsar "Pedir una muestra" (p. ej. una tarea en PDF o un curso breve). -->
-      <div class="todo" data-todo><b>Pendiente de Moisés</b>Testimonios reales y, si procede, número de miembros. Confirmar qué muestra gratuita se envía desde este botón.</div>
+<!-- QUIÉN ESTÁ DETRÁS -->
+<section id="quien" class="alt" aria-labelledby="h-quien">
+  <div class="wrap">
+    <span class="eyebrow">Quién está detrás</span>
+    <h2 id="h-quien">Moisés Díaz · MISTER ÉLITE</h2>
+    <!-- TODO-USER: Moisés, aquí va tu foto y tu presentación real: titulación, trayectoria, categorías y equipos con los que has trabajado. No inventamos nada: sin esos datos la sección funciona solo con los hechos verificables de abajo. -->
+    <p class="lead">Los 10 cursos son de <strong>Moisés Díaz</strong> y llevan la marca MISTER ÉLITE. La idea es una: <mark>poca teoría, mucha aplicación práctica</mark>. Cada concepto se explica en lo justo y se baja al campo con una tarea y su pizarra.</p>
+    <ul class="facts">
+      <li><b>10 cursos, un mismo método</b>Cinco sistemas, tres de metodología, pretemporada y balón parado defensivo.</li>
+      <li><b>Ficha uniforme</b>Objetivo · Organización · Desarrollo · Provocaciones · Variantes · Coaching · Duración/Categoría.</li>
+      <li><b>Pizarra en cada tarea</b>Con una notación única y la marca "MISTER ÉLITE · Moisés Díaz" al pie.</li>
+      <li><b>Teoría corta</b>Módulos breves que acaban en tareas de campo.</li>
+      <li><b>Fuentes citadas</b>En Pretemporada, con autores y con lo que la ciencia aún discute.</li>
+      <li><b>Juzga por el producto</b>No verás opiniones ni cifras de miembros inventadas: tienes muestras y una sesión completa en esta página.</li>
+    </ul>
+    <!-- TODO-USER: aportar testimonios reales de entrenadores (nombre, categoría o club y permiso por escrito para publicarlos) y, solo si es cierto, el número de miembros. Hasta entonces no se muestra nada. -->
+  </div>
+</section>
+
+<!-- CLUBES -->
+<section id="clubes" aria-labelledby="h-club">
+  <div class="wrap">
+    <div class="club">
+      <span class="eyebrow" style="color:var(--hl)">Para clubes y coordinadores</span>
+      <h2 id="h-club">Todo el club con la misma ficha</h2>
+      <p class="lead">Cuando cada entrenador prepara a su manera, el club no tiene método. Con la membresía, todos trabajan con el mismo formato.</p>
+      <ul>
+        <li>La misma ficha de tarea para todos tus entrenadores: se leen las sesiones entre ellos sin explicaciones.</li>
+        <li>La misma notación de pizarra y el mismo calendario (MD-4 … MD) en todas las categorías.</li>
+        <li>Una base común transversal: Rondos, Ruedas de pases y Juego de posición, y un curso de sistema para los equipos de fútbol 11.</li>
+      </ul>
+      <!-- TODO-USER: definir las condiciones para clubes (número de entrenadores, precio, forma de alta). La página no publica precio ni descuento hasta que lo decidas. -->
+      <a class="btn" href="mailto:hola@TU-DOMINIO?subject=Condiciones%20para%20club&amp;body=Club%3A%20%0AN%C3%BAmero%20de%20entrenadores%3A%20%0ACategor%C3%ADas%3A%20" data-mail>Pedir condiciones para mi club</a>
+      <p class="cta-note">Cuéntanos cuántos entrenadores sois y qué categorías tenéis, y te respondemos con las condiciones.</p>
     </div>
   </div>
 </section>
 
 <!-- PRECIOS -->
-<section id="precios" aria-labelledby="h-precios" style="background:rgba(255,254,251,.7);border-block:1px solid var(--line)">
+<section id="precios" class="alt" aria-labelledby="h-precios">
   <div class="wrap">
     <span class="eyebrow">Precios</span>
     <h2 id="h-precios">Una membresía, los 10 cursos</h2>
-    <p class="lead">Una sola membresía, los 10 cursos, los 3 formatos. Eliges cómo pagarla.</p>
+    <p class="lead">Mismo acceso en los dos planes. Solo cambia cómo pagas.</p>
     <div class="prices">
       <div class="price">
         <h3>Mensual</h3>
         <p class="amount"><span data-cfg="precioMensual">19</span> € <small>/mes</small></p>
-        <p class="sub">Para empezar ya y ver si encaja.</p>
+        <p class="sub"><span data-cfg="ivaTxt">IVA incluido</span>. Para empezar ya y ver si encaja.</p>
         <ul>
           <li>Los 10 cursos publicados</li>
-          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>PDF, HTML sin internet y sitio navegable de cada curso</li>
           <li>Más de 170 tareas y sesiones con pizarra</li>
-          <li><span data-cfg="garantiaDias">14</span> días de garantía</li>
+          <li>Planes de sesiones y plantillas de control de carga</li>
+          <li>Sin permanencia: cancelas cuando quieras</li>
         </ul>
         <a class="btn ghost block" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar con el plan mensual</a>
       </div>
@@ -554,24 +1065,35 @@ footer strong{color:var(--ink);letter-spacing:.04em}
         <span class="badge">Mejor precio</span>
         <h3>Anual</h3>
         <p class="amount"><span data-cfg="precioAnual">149</span> € <small>/año</small></p>
-        <p class="sub">≈ <span data-cfg="precioAnualMes">12,4</span> € al mes. Ahorras <span data-cfg="ahorroAnual">79</span> € frente a pagar mes a mes.</p>
+        <p class="sub"><span data-cfg="ivaTxt">IVA incluido</span>. ≈ <span data-cfg="precioAnualMes">12,4</span> € al mes: ahorras <span data-cfg="ahorroAnual">79</span> € frente a pagar mes a mes.</p>
         <ul>
           <li>Los 10 cursos publicados</li>
-          <li>PDF, HTML sin internet y sitio navegable</li>
+          <li>PDF, HTML sin internet y sitio navegable de cada curso</li>
           <li>Más de 170 tareas y sesiones con pizarra</li>
-          <li><span data-cfg="garantiaDias">14</span> días de garantía</li>
+          <li>Planes de sesiones y plantillas de control de carga</li>
+          <li>Aviso por email <span data-cfg="avisoRenovacionDias">7</span> días antes de renovar</li>
         </ul>
         <a class="btn block" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar con el plan anual</a>
       </div>
     </div>
-    <!-- TODO-USER: Moisés, confirma las condiciones reales de la membresía: (1) si se puede cancelar en cualquier momento y cómo, (2) si incluye los cursos que publiques en el futuro y las actualizaciones de los actuales, (3) si el pago anual se renueva automáticamente, (4) aviso legal, privacidad y condiciones de compra (enlaces para el pie). La página NO promete nada de esto hasta que lo confirmes. -->
-    <div class="todo" data-todo><b>Pendiente de Moisés</b>Condiciones de cancelación y renovación, si se incluyen cursos futuros y enlaces legales (aviso legal, privacidad, condiciones).</div>
+
+    <!-- TODO-USER: confirmar todas estas condiciones (son una PROPUESTA editable en CONFIG) y configurarlas en WordPress: cancelación desde la cuenta, email de aviso antes de renovar el anual, IVA incluido en el precio y devolución por respuesta al email de compra. Añadir en el pie los enlaces a aviso legal, privacidad y condiciones de compra. -->
+    <div class="conds">
+      <h3>La letra pequeña, en grande</h3>
+      <ul>
+        <li><b>Sin permanencia.</b> Cancelas en un clic desde tu cuenta y no se te vuelve a cobrar.</li>
+        <li><b>El anual no se renueva por sorpresa.</b> Te avisamos por email <span data-cfg="avisoRenovacionDias">7</span> días antes.</li>
+        <li><b>Precios con IVA incluido.</b> Lo que ves es lo que pagas.</li>
+        <li><b>Devolución completa en <span data-cfg="garantiaDias">14</span> días.</b> Respondes al email de compra y listo.</li>
+        <li><b>Qué incluye:</b> <span data-nov="false">hoy accedes a los 10 cursos publicados.</span><span data-nov="true" hidden>los 10 cursos publicados y los que se publiquen mientras seas miembro.</span></li>
+      </ul>
+    </div>
 
     <div class="guar">
       <div class="seal" aria-hidden="true"><span data-cfg="garantiaDias">14</span><br>días</div>
       <div>
         <h3>Garantía de devolución, sin preguntas</h3>
-        <p>Entra, abre una tarea, llévala al campo. Si en <span data-cfg="garantiaDias">14</span> días no te convence, escríbenos a <a href="mailto:hola@TU-DOMINIO" data-mail data-mailtext>hola@TU-DOMINIO</a> y te devolvemos el dinero. No hace falta que expliques nada.</p>
+        <p>Entra, abre una tarea, llévala al campo. Si en <span data-cfg="garantiaDias">14</span> días no te convence, respondes al email de compra y te devolvemos el dinero completo. No hace falta que expliques nada.</p>
       </div>
     </div>
   </div>
@@ -583,14 +1105,20 @@ footer strong{color:var(--ink);letter-spacing:.04em}
     <span class="eyebrow">Dudas habituales</span>
     <h2 id="h-faq">Lo que se pregunta un entrenador antes de apuntarse</h2>
     <div class="faq">
+      <details><summary>¿Cómo cancelo? ¿Hay permanencia?</summary><p>No hay permanencia. Cancelas en un clic desde tu cuenta y no se te vuelve a cobrar.</p></details>
+      <details><summary>¿El plan anual se renueva solo?</summary><p>No sin avisarte: te enviamos un email <span data-cfg="avisoRenovacionDias">7</span> días antes de la renovación para que decidas.</p></details>
+      <details><summary>¿El precio lleva IVA?</summary><p><span data-cfg="ivaTxtLargo">Sí, los precios incluyen el IVA.</span> <span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año.</p></details>
+      <details><summary>¿Y si no me convence?</summary><p>Tienes <span data-cfg="garantiaDias">14</span> días para pedir la devolución completa: respondes al email de compra y te devolvemos el dinero, sin preguntas.</p></details>
+      <details><summary>¿Cómo accedo después de pagar?</summary><p>Pagas, recibes un email con tu acceso, entras al sitio y descargas el PDF y el HTML de cada curso. Los dos funcionan sin internet.</p></details>
+      <details><summary>¿Se añadirán cursos nuevos?</summary><p><span data-nov="false">Hoy accedes a los 10 cursos publicados. No te prometemos nada que no esté publicado.</span><span data-nov="true" hidden>Sí: mientras seas miembro, accedes a los cursos que se publiquen.</span></p></details>
+      <details><summary>¿Qué diferencia hay entre el plan mensual y el anual?</summary><p>Ninguna en contenido: el acceso es el mismo. El anual sale a ≈ <span data-cfg="precioAnualMes">12,4</span> €/mes.</p></details>
       <details><summary>¿Necesito un nivel alto de táctica?</summary><p>No. Cada concepto teórico es breve y viene con su traducción práctica inmediata. Cada tarea está escrita para ejecutarse tal cual, con sus reglas, variantes y puntos de coaching.</p></details>
-      <details><summary>¿Sirve para fútbol base y amateur?</summary><p>Sí. Los cursos están pensados para fútbol formativo, amateur y senior. Los de sistema asumen fútbol 11, y los de rondos, ruedas, posesión, pretemporada y balón parado son transversales.</p></details>
-      <details><summary>No entreno ninguno de los cinco sistemas. ¿Me sirve?</summary><p>Sí. Posesión, Rondos, Ruedas de pases, Pretemporada y Balón parado defensivo no dependen de un sistema concreto.</p></details>
+      <details><summary>¿Sirve para fútbol base y amateur?</summary><p>Sí. En el 1-5-3-2 y el 1-4-4-2 cada tarea indica su categoría (F formativo sub-12 a sub-16, A amateur/juvenil, S sénior). Rondos, Ruedas, Pretemporada y Balón parado son transversales.</p></details>
+      <details><summary>Entreno fútbol 7 o fútbol sala. ¿Me sirve?</summary><p>En parte. Hoy no hay cursos específicos de fútbol 7 ni de sala: los cursos de sistema son de fútbol 11. Rondos, Ruedas de pases y los principios de Juego de posición sí se usan ajustando medidas y número de jugadores.</p></details>
+      <details><summary>No entreno ninguno de los cinco sistemas. ¿Me sirve?</summary><p>Sí. Juego de posición, Rondos, Ruedas de pases, Pretemporada y Balón parado defensivo no dependen de un sistema concreto.</p></details>
+      <details><summary>¿Hay vídeos?</summary><p>No. Cada tarea viene con su pizarra y su ficha escrita, pensadas para imprimirlas o abrirlas en el móvil en el campo.</p></details>
       <details><summary>¿Qué material necesito?</summary><p>Conos, petos, mini-porterías y balones. Para el control de carga, papel y la escala RPE: sin GPS ni apps de pago (si tienes GPS, mejor, pero no hace falta).</p></details>
-      <details><summary>¿Puedo usarlo sin internet?</summary><p>Sí. Cada curso incluye un HTML único autocontenido que se abre sin conexión, y un PDF para imprimir.</p></details>
-      <details><summary>¿Cuántas tareas hay?</summary><p>Más de 170 tareas y sesiones de campo repartidas en 10 cursos, cada una con su pizarra, y más de 400 gráficos en total.</p></details>
-      <details><summary>¿Y si no me convence?</summary><p>Tienes <span data-cfg="garantiaDias">14</span> días de garantía de devolución, sin preguntas. Escribes y se te devuelve el dinero.</p></details>
-      <details><summary>¿Se añadirán más cursos?</summary><!-- TODO-USER: confirmar si la membresía incluye cursos futuros y con qué ritmo; no se afirma nada hasta entonces. --><p>Hoy la membresía incluye los 10 cursos publicados. Para saber qué viene después, escríbenos a <a href="mailto:hola@TU-DOMINIO" data-mail data-mailtext>hola@TU-DOMINIO</a>.</p></details>
+      <details><summary>Soy coordinador. ¿Hay condiciones para clubes?</summary><p>Sí, se piden por email desde el bloque "Para clubes y coordinadores": nos dices cuántos entrenadores sois y qué categorías tenéis.</p></details>
     </div>
   </div>
 </section>
@@ -601,11 +1129,17 @@ footer strong{color:var(--ink);letter-spacing:.04em}
     <h2>El próximo entrenamiento, ya preparado</h2>
     <p>Abre la tarea, saca la pizarra, mide el espacio y empieza. Tú te quedas con lo importante: entrenar.</p>
     <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Quiero mi cuerpo técnico</a>
-    <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año · <span data-cfg="garantiaDias">14</span> días de devolución sin preguntas</p>
+    <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año · <span data-cfg="ivaTxt">IVA incluido</span> · sin permanencia · <span data-cfg="garantiaDias">14</span> días de devolución</p>
   </div>
 </div>
 
 </main>
+
+<!-- Barra CTA fija (solo móvil) -->
+<div class="mbar" role="complementary" aria-label="Acceso rápido">
+  <p><b><span data-cfg="precioMensual">19</span> €/mes</b><br>sin permanencia</p>
+  <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout>Unirme</a>
+</div>
 
 <footer>
   <div class="wrap">
@@ -616,14 +1150,18 @@ footer strong{color:var(--ink);letter-spacing:.04em}
 </footer>
 
 <script>
-// ===== CONFIG: cambia aquí precios, garantía y enlaces =====
+// ===== CONFIG: cambia aquí precios, condiciones y enlaces (un único sitio) =====
+// Las condiciones son una PROPUESTA. TODO-USER: confirmar cada una antes de publicar.
 const CONFIG = {
   precioMensual: 19,
   precioAnual: 149,
-  garantiaDias: 14,
+  ivaIncluido: true,            // TODO-USER: confirmar (true = "IVA incluido"; false = "+ IVA")
+  garantiaDias: 14,             // devolución completa respondiendo al email de compra
+  avisoRenovacionDias: 7,       // TODO-USER: confirmar el aviso por email antes de renovar el anual
+  incluyeNovedades: false,      // TODO-USER: true solo si la membresía incluye los cursos futuros
   checkoutUrl: "https://TU-WORDPRESS/membresia",
   contactoEmail: "hola@TU-DOMINIO",
-  mostrarPendientes: true   // false = oculta los bloques "Pendiente de Moisés"
+  mostrarPendientes: false      // true = muestra al dueño las notas TODO-USER (nunca publicar en true)
 };
 (function(){
   var f = function(n){ return Number(n).toLocaleString("es-ES",{maximumFractionDigits:1}); };
@@ -632,7 +1170,10 @@ const CONFIG = {
     precioAnual: f(CONFIG.precioAnual),
     precioAnualMes: f(CONFIG.precioAnual/12),
     ahorroAnual: f(CONFIG.precioMensual*12 - CONFIG.precioAnual),
-    garantiaDias: f(CONFIG.garantiaDias)
+    garantiaDias: f(CONFIG.garantiaDias),
+    avisoRenovacionDias: f(CONFIG.avisoRenovacionDias),
+    ivaTxt: CONFIG.ivaIncluido ? "IVA incluido" : "+ IVA",
+    ivaTxtLargo: CONFIG.ivaIncluido ? "Sí, los precios incluyen el IVA." : "No, a estos precios se les suma el IVA."
   };
   document.querySelectorAll("[data-cfg]").forEach(function(el){
     var v = vals[el.getAttribute("data-cfg")]; if(v!==undefined) el.textContent = v;
@@ -642,19 +1183,53 @@ const CONFIG = {
     a.href = a.getAttribute("href").replace("hola@TU-DOMINIO", CONFIG.contactoEmail);
     if(a.hasAttribute("data-mailtext")) a.textContent = CONFIG.contactoEmail;
   });
-  if(!CONFIG.mostrarPendientes){
-    document.querySelectorAll("[data-todo]").forEach(function(el){ el.hidden = true; });
-  }
-  // filtro del catálogo
-  var btns = document.querySelectorAll(".filters button");
-  var cards = document.querySelectorAll(".course");
-  btns.forEach(function(b){
-    b.addEventListener("click", function(){
-      var k = b.getAttribute("data-f");
-      btns.forEach(function(x){ x.setAttribute("aria-pressed", x===b ? "true":"false"); });
-      cards.forEach(function(c){ c.hidden = !(k==="all" || c.getAttribute("data-k")===k); });
-    });
+  document.querySelectorAll("[data-nov]").forEach(function(el){
+    el.hidden = (el.getAttribute("data-nov") === "true") !== !!CONFIG.incluyeNovedades;
   });
+  // Notas internas: solo visibles para el dueño si activa mostrarPendientes
+  if(CONFIG.mostrarPendientes){
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT), n, list = [];
+    while((n = w.nextNode())){ if(n.nodeValue.indexOf("TODO-USER") > -1) list.push(n); }
+    list.forEach(function(c){
+      var s = document.createElement("span"); s.className = "owner-note";
+      s.textContent = c.nodeValue.trim(); c.parentNode.insertBefore(s, c.nextSibling);
+    });
+  }
+  // Filtro del catálogo (sin JS se ven los 10 cursos)
+  var fbox = document.querySelector(".filters");
+  if(fbox){
+    fbox.hidden = false;
+    var btns = fbox.querySelectorAll("button"), cards = document.querySelectorAll(".course");
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        var k = b.getAttribute("data-f");
+        btns.forEach(function(x){ x.setAttribute("aria-pressed", x===b ? "true":"false"); });
+        cards.forEach(function(c){ c.hidden = !(k==="all" || c.getAttribute("data-k")===k); });
+      });
+    });
+  }
+  // Selector de perfil (sin JS se ven todos los perfiles)
+  var tl = document.querySelector(".ptabs"), panels = document.querySelectorAll(".perfil");
+  if(tl && panels.length){
+    var tabs = [];
+    panels.forEach(function(p, i){
+      var b = document.createElement("button");
+      b.type = "button"; b.id = "tab-" + p.id; b.setAttribute("role","tab");
+      b.setAttribute("aria-controls", p.id); b.textContent = p.getAttribute("data-label");
+      p.setAttribute("role","tabpanel"); p.setAttribute("aria-labelledby", b.id); p.tabIndex = 0;
+      b.addEventListener("click", function(){ select(i, false); });
+      b.addEventListener("keydown", function(e){
+        var j = e.key==="ArrowRight" ? i+1 : e.key==="ArrowLeft" ? i-1 : e.key==="Home" ? 0 : e.key==="End" ? tabs.length-1 : null;
+        if(j===null) return; e.preventDefault(); select((j+tabs.length)%tabs.length, true);
+      });
+      tl.appendChild(b); tabs.push(b);
+    });
+    function select(i, focus){
+      tabs.forEach(function(t, k){ var on = k===i; t.setAttribute("aria-selected", on ? "true":"false"); t.tabIndex = on ? 0 : -1; panels[k].hidden = !on; });
+      if(focus) tabs[i].focus();
+    }
+    tl.hidden = false; select(0, false);
+  }
 })();
 </script>
 </body>
