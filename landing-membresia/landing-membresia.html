@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISTER ÉLITE · Llega al campo con la sesión hecha</title>
+<meta name="description" content="Membresía para entrenadores de fútbol sin cuerpo técnico: 10 cursos con 253 tareas y sesiones, cada una con su pizarra. PDF y HTML que funcionan sin internet. 19 €/mes o 149 €/año, sin permanencia y con 14 días de devolución.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4f0">
+<style>
+:root{
+  --paper:#f5f4f0; --card:#fffefb; --ink:#1a1a18; --muted:#57564f; --line:#d8d5ca;
+  --accent:#1d6fb8; --accent-d:#14568f; --accent-soft:#e3eef8; --hl:#ffe98a; --ok:#1e6b2b; --warn:#9a3412;
+  --serif:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 var(--sans);overflow-wrap:break-word;
+  background-image:linear-gradient(rgba(29,111,184,.06) 1px,transparent 1px);background-size:100% 28px}
+img,svg{max-width:100%}
+a{color:var(--accent-d)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .45em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,8vw,3.5rem);font-weight:800}
+h2{font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+section{padding:30px 0;scroll-margin-top:64px}
+.alt{background:rgba(255,254,251,.7);border-block:1px solid var(--line)}
+.eyebrow{font:700 .76rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-d);margin:0 0 10px;display:block}
+.lead{font-size:1.04rem;color:var(--muted);max-width:62ch;margin-bottom:14px}
+.small{font-size:.9rem;color:var(--muted)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+[hidden]{display:none!important}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 22px;border-radius:8px;text-align:center;
+  background:var(--accent);color:#fff;font:700 1.02rem/1.2 var(--sans);text-decoration:none;border:2px solid var(--accent);cursor:pointer;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
+.btn:hover{background:var(--accent-d);border-color:var(--accent-d);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--ink);box-shadow:none}
+.btn.ghost:hover{background:var(--ink);color:#fff;transform:none}
+.btn.sm{min-height:42px;padding:8px 14px;font-size:.92rem;box-shadow:2px 2px 0 var(--ink)}
+.btn.block{width:100%}
+.cta-note{font-size:.9rem;color:var(--muted);margin:10px 0 0}
+.go{display:inline-block;font-weight:700;color:var(--accent-d);font-size:.93rem;margin-top:10px}
+.go::after{content:" →"}
+
+/* cabecera mínima con CTA fijo */
+.top{position:sticky;top:0;z-index:50;background:rgba(245,244,240,.97);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px}
+.brand{font:800 .95rem/1.1 var(--sans);letter-spacing:.05em;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent-d)}
+.brand small{display:block;font:600 .68rem/1.2 var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+
+/* hero */
+.hero{padding:22px 0 30px}
+.hero-grid{display:grid;gap:18px;grid-template-areas:"txt" "card" "cta"}
+.h-txt{grid-area:txt}.h-card{grid-area:card}.h-cta{grid-area:cta}
+.hero h1{margin-bottom:.3em}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--hl) 62%)}
+.hero .lead{margin:0}
+.h-cta .btn{width:100%}
+
+/* tarjeta de tarea */
+.task{background:var(--card);border:2px solid var(--ink);border-radius:12px;box-shadow:5px 5px 0 rgba(26,26,24,.9);overflow:hidden}
+.task-head{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--ink);color:#fff;font:600 .74rem/1.3 var(--mono);letter-spacing:.04em}
+.task-head b{color:var(--hl)}
+.task-body{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:12px 14px 14px}
+.task-body .t-title{grid-column:1/-1}
+.task h3{font-size:1.15rem;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:0;padding:0;list-style:none}
+.chips li{font:600 .72rem/1 var(--mono);background:var(--accent-soft);color:var(--accent-d);padding:5px 7px;border-radius:5px}
+figure{margin:0}
+.pizarra{margin:0;border:3px solid var(--ink);border-radius:8px;overflow:hidden;background:#15202b;line-height:0}
+.pizarra svg{width:100%;height:auto;display:block}
+.ficha dt{font:700 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin:0 0 5px}
+.ficha dd{margin:0 0 10px;font-size:.88rem;line-height:1.45}
+.ficha dd:last-child{margin-bottom:0}
+.ficha{margin:0}
+.task-foot{border-top:2px dashed var(--line);padding:8px 14px;font-size:.8rem;color:var(--muted);background:#faf9f5}
+
+/* cuerpo técnico */
+.staff{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.staff li{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:var(--r);padding:9px 12px;font-size:.92rem;line-height:1.4}
+.staff b{display:block;font-family:var(--serif);font-size:1.02rem}
+
+/* sesión */
+.tl{display:flex;height:38px;border:2px solid var(--ink);border-radius:8px;overflow:hidden;margin:0 0 6px}
+.tl span{display:flex;align-items:center;justify-content:center;font:700 .74rem/1 var(--mono);color:#fff;border-right:2px solid var(--ink);min-width:0;overflow:hidden}
+.tl span:last-child{border-right:0}
+.tl .c1{background:#1e6b2b}.tl .c2{background:#1d6fb8}.tl .c3{background:#5f5e57}.tl .c4{background:#14568f}.tl .c5{background:#4a5d23}
+.tline{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.tline li{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:8px;padding:8px 12px;font-size:.88rem;line-height:1.4;color:var(--muted)}
+.tline li.k1{border-left-color:#1e6b2b}.tline li.k3{border-left-color:#5f5e57}.tline li.k4{border-left-color:#14568f}.tline li.k5{border-left-color:#4a5d23}
+.tline .time{font:800 .76rem/1 var(--mono);color:var(--accent-d);margin-right:6px}
+.tline b{color:var(--ink)}
+.src{display:inline-block;font:700 .68rem/1.3 var(--mono);letter-spacing:.03em;color:var(--ink);background:var(--hl);padding:2px 6px;border-radius:4px;margin-left:4px;white-space:nowrap}
+.dl{display:block;margin-top:14px;padding:12px 14px;border:2px dashed var(--accent);border-radius:var(--r);background:var(--card);text-decoration:none;color:var(--ink)}
+.dl b{color:var(--accent-d);font-size:1rem}
+.dl b::after{content:" →"}
+.dl span{display:block;font-size:.86rem;color:var(--muted);margin-top:2px}
+.nums{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.nums li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:9px 10px;font-size:.8rem;line-height:1.3;color:var(--muted)}
+.nums b{display:block;font:800 1.45rem/1.1 var(--serif);color:var(--ink);margin-bottom:2px}
+.nums b.sm{font-size:1.1rem;line-height:1.3}
+
+/* ¿es para mí? */
+.who{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.who a{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:9px 12px;text-decoration:none;color:var(--ink);font-size:.88rem;line-height:1.4}
+.who a:hover{border-color:var(--ink)}
+.who .pill{display:inline-block;font:700 .76rem/1.15 var(--sans);background:var(--ink);color:#fff;border-radius:999px;padding:4px 9px;margin-right:6px;white-space:nowrap}
+.who .vp{font-weight:700;color:var(--accent-d);font-size:.82rem;margin-left:6px;white-space:nowrap}
+.who .vp::after{content:" →"}
+.honest{margin:12px 0 0;background:#fdf1ea;border-left:4px solid var(--warn);border-radius:6px;padding:10px 14px;font-size:.92rem}
+.honest b{color:var(--warn)}
+.honest a{font-weight:700;white-space:nowrap}
+
+/* prueba social */
+.proofline{margin:0;padding:12px 14px;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);font-size:.95rem}
+.proofline a{font-weight:700}
+.bio{display:flex;gap:14px;align-items:flex-start;margin:0 0 12px}
+.bio img{width:84px;height:84px;object-fit:cover;border-radius:50%;border:2px solid var(--line);flex:none}
+.bio p{margin:0;min-width:0}
+.testis{display:grid;gap:10px}
+.testi{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.testi blockquote{margin:0 0 8px;font-family:var(--serif);font-size:1rem;line-height:1.5}
+.testi figcaption{font-size:.86rem;color:var(--muted)}
+.testi figcaption b{color:var(--ink)}
+.miembros{margin:10px 0 0;font-weight:700}
+
+/* precios */
+.prices{display:grid;gap:14px}
+.price{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:16px 16px 18px;position:relative}
+.price.best{box-shadow:5px 5px 0 var(--accent);border-color:var(--accent-d)}
+.badge{position:absolute;top:-12px;right:14px;background:var(--accent-d);color:#fff;font:800 .7rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:6px 9px;border-radius:5px}
+.price h3{margin:0}
+.amount{font:800 2.5rem/1 var(--serif);margin:6px 0 0}
+.amount small{font:600 1rem var(--sans);color:var(--muted)}
+.sub{color:var(--muted);font-size:.9rem;margin:6px 0 12px}
+.club{margin-top:14px;background:var(--ink);color:#e6e4dc;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.club p{margin:0;flex:1 1 240px;font-size:.92rem}
+.club b{color:#fff}
+.club .btn{box-shadow:2px 2px 0 var(--hl);flex:none}
+.club a.go{color:var(--hl);margin:0}
+.guar{margin-top:14px;display:flex;gap:12px;align-items:center;background:var(--card);border:2px solid var(--ok);border-radius:14px;padding:12px 14px}
+.seal{flex:none;width:58px;height:58px;border-radius:50%;background:var(--ok);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1}
+.seal b{font:800 1.35rem/1 var(--serif)}
+.seal small{font:700 .7rem/1 var(--sans);margin-top:2px}
+.guar h3{margin:0 0 2px;font-size:1.02rem}
+.guar p{margin:0;font-size:.9rem}
+.conds{margin-top:14px;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px 16px;scroll-margin-top:70px}
+.conds h3{margin-bottom:8px;font-size:1.05rem}
+.conds ul{list-style:none;padding:0;margin:0;font-size:.9rem}
+.conds li{padding-left:24px;position:relative;margin-bottom:6px;line-height:1.45}
+.conds li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:900}
+.conds .go{margin-top:4px}
+.access{margin:12px 0 0;font-size:.9rem;color:var(--ink);background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+.access i{font:800 .7rem/1 var(--mono);font-style:normal;background:var(--ink);color:#fff;border-radius:50%;display:inline-grid;place-items:center;width:19px;height:19px;margin:0 3px 0 1px;vertical-align:1px}
+
+/* faq */
+.faq{display:grid;gap:6px;max-width:820px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.faq summary{cursor:pointer;padding:12px 44px 12px 14px;font-weight:700;list-style:none;position:relative;min-height:46px;font-size:.96rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:14px;top:9px;font:700 1.4rem/1 var(--mono);color:var(--accent-d)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 14px 12px;margin:0;color:var(--muted);font-size:.94rem}
+
+/* cta final + pie */
+.final{background:var(--ink);color:#fff;border-radius:18px;padding:26px 18px;text-align:center;margin:30px 0}
+.final h2{color:#fff}
+.final p{color:#d6d4cb;max-width:52ch;margin:0 auto 16px}
+.final .btn{box-shadow:3px 3px 0 var(--hl)}
+.final .cta-note{color:#d6d4cb;margin:12px auto 0}
+.final .full{display:inline-block;margin-top:14px;color:var(--hl);font-weight:700}
+footer{border-top:1px solid var(--line);padding:20px 0 28px;font-size:.9rem;color:var(--muted)}
+footer strong{color:var(--ink);letter-spacing:.04em}
+footer p{margin:0 0 10px}
+.flinks{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;list-style:none}
+.flinks a{color:var(--ink);font-weight:600}
+.owner-note{display:block;margin:10px 0;padding:10px 12px;border:2px dashed #8a6d00;background:#fff8d6;color:#4d3d00;font-size:.85rem;border-radius:8px}
+
+@media (max-width:359px){
+  .task-body{grid-template-columns:1fr}
+  .task-body figure{max-width:180px}
+  .nums{grid-template-columns:1fr}
+}
+@media (min-width:560px){
+  .prices{grid-template-columns:1fr 1fr}
+  .staff{grid-template-columns:1fr 1fr}
+  .who{grid-template-columns:1fr 1fr}
+  .h-cta .btn{width:auto}
+}
+@media (min-width:720px){
+  body{font-size:18px}
+  section{padding:52px 0}
+  .task-body{grid-template-columns:190px 1fr;gap:16px;padding:16px 18px 18px}
+  .staff{grid-template-columns:repeat(4,1fr)}
+  .tline{grid-template-columns:repeat(5,1fr)}
+  .tline li{padding:10px 12px}
+  .testis{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:960px){
+  .hero{padding:44px 0 52px}
+  .hero-grid{grid-template-columns:1.05fr 1fr;grid-template-areas:"txt card" "cta card";gap:14px 48px;align-items:start}
+  .h-txt{align-self:end}
+  .who{grid-template-columns:repeat(3,1fr)}
+  .final{padding:44px 40px}
+  .pcols{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+  .pcols .conds{margin-top:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- 1 · CABECERA MÍNIMA (sticky: el CTA siempre a mano y no tapa contenido) -->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">MISTER <span>ÉLITE</span><small>Moisés Díaz</small></a>
+    <a class="btn sm" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- 2 · HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="h-txt">
+      <span class="eyebrow">Cuerpo técnico digital para entrenadores</span>
+      <h1>Llega al campo con <em>la sesión hecha.</em></h1>
+      <p class="lead">Cada tarea trae su pizarra, su organización y sus provocaciones medibles. Poca teoría, mucha práctica.</p>
+    </div>
+
+    <!-- Tarea real T1 del curso 1-4-3-3 (pizarra copiada de landing-b-sesion.html, sin retocar) -->
+    <article class="task h-card" aria-label="Ejemplo real: tarea 1 del curso 1-4-3-3">
+      <div class="task-head"><span><b>T1</b> · 1-4-3-3 · Bloque 1: Salida</span><span>Tarea real del curso</span></div>
+      <div class="task-body">
+        <div class="t-title">
+          <h3>Rombo de salida: el pivote pivota</h3>
+          <ul class="chips" aria-label="Datos clave"><li>4v2</li><li>40×30 m</li><li>4 series × 4 min</li><li>90 s descanso</li></ul>
+        </div>
+        <figure>
+          <div class="pizarra"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1081" font-family="Segoe UI,Arial,sans-serif" role="img" aria-label="Pizarra de la tarea 1: rombo de salida 4v2 con POR, centrales 4 y 5 y pivote 6 en su zona de conos"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8a3e"/><stop offset="1" stop-color="#2b8139"/></linearGradient><marker id="ah_pass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/></marker><marker id="ah_run" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker><marker id="ah_drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee0ff"/></marker><marker id="ah_white" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs><rect x="0.0" y="0.0" width="680.0" height="1080.6" fill="#15202b"/><rect x="26.0" y="76.0" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="171.5" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="266.9" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="362.4" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="457.8" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="553.3" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="648.7" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="744.2" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="839.6" width="628.0" height="96.0" fill="#2f8a3e"/><rect x="26.0" y="935.1" width="628.0" height="96.0" fill="#2a7d36"/><rect x="26.0" y="76.0" width="628.0" height="954.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><line x1="26.0" y1="553.3" x2="654.0" y2="553.3" stroke="#ffffff" stroke-width="2.4" opacity="1"/><circle cx="340.0" cy="553.3" r="57.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="553.3" r="2.4" fill="#ffffff"/><path d="M157.9,76.0 L157.9,233.5 L522.1,233.5 L522.1,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,76.0 L258.4,128.5 L421.6,128.5 L421.6,76.0" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="181.0" r="2.0" fill="#ffffff"/><rect x="311.7" y="72.0" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,233.5 A57.5,57.5 0 0 1 384.0,233.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M157.9,1030.6 L157.9,873.1 L522.1,873.1 L522.1,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><path d="M258.4,1030.6 L258.4,978.1 L421.6,978.1 L421.6,1030.6" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="340.0" cy="925.6" r="2.0" fill="#ffffff"/><rect x="311.7" y="1030.6" width="56.5" height="4" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M296.0,873.1 A57.5,57.5 0 0 0 384.0,873.1" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="0.0" y="0.0" width="680.0" height="50.0" fill="#15202b"/><text x="340.0" y="24.0" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" >Tarea 1 — Rombo de salida: el pivote pivota</text><text x="340.0" y="40.0" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="500" fill="#9fb3c8" text-anchor="middle" >4v2 · POR + DFC 4/5 + pivote 6 superan a 2 presionadores</text><rect x="0.0" y="1056.6" width="680.0" height="24.0" fill="#15202b"/><text x="668.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" fill="#8aa0b6" text-anchor="end" >MISTER ÉLITE · Moisés Díaz</text><text x="12.0" y="1072.6" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#7f93a8" text-anchor="start" >Sistema 1-4-3-3</text><g opacity="0.9"><line x1="628.9" y1="610.6" x2="628.9" y2="496.0" stroke="#ffffff" stroke-width="2.5" marker-end="url(#ah_white)"/><text x="622.9" y="553.3" font-family="Segoe UI,Arial" font-size="9" fill="#ffffff" text-anchor="end" transform="rotate(-90 622.9 553.3)">ATAQUE</text></g><g><circle cx="340.0" cy="954.2" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="958.2" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">1</text></g><text x="340.0" y="935.2" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >POR</text><g><circle cx="201.8" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="201.8" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">5</text></g><text x="201.8" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><g><circle cx="478.2" cy="801.5" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="478.2" y="805.5" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">4</text></g><text x="478.2" y="782.5" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >DFC</text><rect x="264.6" y="581.9" width="150.7" height="133.6" rx="6" fill="#ffd54a" fill-opacity="0.16" stroke="#ffd54a" stroke-width="2" stroke-dasharray="6 5"/><text x="340.0" y="700.0" font-family="Segoe UI,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >zona del 6</text><path d="M264.6,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,708.6 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M264.6,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><path d="M415.4,574.9 l5,11 l-10,0 z" fill="#ff9800" stroke="#7a4f00" stroke-width="1"/><g><circle cx="340.0" cy="648.7" r="15" fill="#1565c0" stroke="#0d3c75" stroke-width="2.5"/><text x="340.0" y="652.7" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">6</text></g><text x="340.0" y="629.7" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#fff5cc" text-anchor="middle" >pivote</text><g><circle cx="277.2" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="277.2" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><g><circle cx="402.8" cy="553.3" r="15" fill="#c62828" stroke="#7f1414" stroke-width="2.5"/><text x="402.8" y="557.3" font-family="Segoe UI,Arial" font-size="11.5" font-weight="800" fill="#fff" text-anchor="middle">P</text></g><rect x="64.2" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="76.2" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><rect x="591.8" y="493.0" width="24" height="6" fill="none" stroke="#fff" stroke-width="3"/><text x="603.8" y="438.7" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="600" fill="#fff5cc" text-anchor="middle" >progresión</text><circle cx="340.0" cy="954.2" r="6.0" fill="#fafafa" stroke="#222" stroke-width="1.4"/><path d="M340.0,948.2 l3.0,4.2 l-4.8,0 z" fill="#222"/><line x1="314.9" y1="925.6" x2="214.4" y2="830.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="264.6" y="872.8" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >1</text><line x1="220.7" y1="772.8" x2="321.2" y2="667.8" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="270.9" y="715.3" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >2</text><line x1="365.1" y1="629.6" x2="566.1" y2="515.1" stroke="#ffd54a" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#ah_pass)"/><text x="465.6" y="567.4" font-family="Segoe UI,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#ffd54a" text-anchor="middle" >3</text><g><rect x="32" y="952.56" width="168" height="84" rx="7" fill="#15202b" fill-opacity="0.82" stroke="#3a4a5a" stroke-width="1"/><text x="42" y="966.56" font-family="Segoe UI,Arial" font-size="10" font-weight="800" fill="#9fb3c8">LEYENDA</text><line x1="44" y1="978.56" x2="70" y2="978.56" stroke="#ffd54a" stroke-width="3" stroke-dasharray="6 4"/><text x="78" y="981.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">pase</text><circle cx="49" cy="995.56" r="6" fill="#1565c0"/><text x="78" y="998.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">propio</text><circle cx="49" cy="1012.56" r="6" fill="#c62828"/><text x="78" y="1015.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">rival</text><circle cx="49" cy="1029.56" r="6" fill="#ffd54a"/><text x="78" y="1032.56" font-family="Segoe UI,Arial" font-size="10.5" fill="#e6edf3">zona</text></g></svg></div>
+        </figure>
+        <dl class="ficha">
+          <dt>Objetivo</dt>
+          <dd>Construir el primer rombo de salida POR 1 + DFC 4-5 + pivote 6; que el 6 reciba de perfil entre los puntas rivales y oriente la salida hacia el lado libre.</dd>
+          <dt>Provocación medible</dt>
+          <dd>Punto si el balón cruza la línea de medios tras pasar por <b>3 jugadores distintos</b>.</dd>
+        </dl>
+      </div>
+      <div class="task-foot">Pizarra de la T1, sin retocar. <a href="landing-b-sesion.html#tarea">Ver los 7 campos de su ficha</a></div>
+    </article>
+
+    <div class="h-cta">
+      <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a>
+      <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes o <span data-cfg="precioAnual">149</span> €/año · sin permanencia · <span data-cfg="garantiaDias">14</span> días de devolución · <span data-cfg="ivaTxt">IVA incluido</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · TU CUERPO TÉCNICO -->
+<section id="staff" class="alt" aria-labelledby="h-staff">
+  <div class="wrap">
+    <h2 id="h-staff">Tu cuerpo técnico: 4 roles, 10 cursos</h2>
+    <ul class="staff">
+      <li><b>Analista táctico</b>5 cursos de sistema (1-4-3-3, 1-4-4-2, 1-5-3-2, 1-3-4-3, 1-4-2-3-1): ataque, defensa, transiciones y balón parado.</li>
+      <li><b>Preparador físico</b>Pretemporada: 6 planes, 12 sesiones y carga con RPE en papel.</li>
+      <li><b>Segundo entrenador</b>Banco de tareas con pizarra, variantes fácil, media y difícil, y planes de sesiones ya montados.</li>
+      <li><b>Especialista ABP y posesión</b>Juego de posición, Rondos, Ruedas y Balón parado defensivo.</li>
+    </ul>
+    <a class="go" href="landing-b-sesion.html#cursos">Ver los 10 cursos con su índice</a>
+  </div>
+</section>
+
+<!-- 4 · MIRA UNA SESIÓN REAL -->
+<section id="sesion" aria-labelledby="h-sesion">
+  <div class="wrap">
+    <span class="eyebrow">Un martes cualquiera, 19:30</span>
+    <h2 id="h-sesion">Mira una sesión real: 60 minutos</h2>
+    <p class="lead">Es la sesión MD-4 del microciclo 1 del curso 1-4-3-3 (T1 + T6), con el calentamiento que el curso de Rondos pone ese día.</p>
+    <div class="tl" role="img" aria-label="Reparto de la sesión: 10 minutos de calentamiento, 21 de tarea 1, 3 de hidratación, 20 de tarea 6 y 6 de vuelta a la calma">
+      <span class="c1" style="flex:10">10'</span><span class="c2" style="flex:21">21'</span><span class="c3" style="flex:3">3'</span><span class="c4" style="flex:20">20'</span><span class="c5" style="flex:6">6'</span>
+    </div>
+    <ol class="tline">
+      <li class="k1"><span class="time">0'–10'</span><b>Rondo 44 · "El manín"</b>: 8v1 en un círculo de 8-9 m. <span class="src">Rondos</span></li>
+      <li><span class="time">10'–31'</span><b>T1 · Rombo de salida</b>: 4v2 en 40×30 m, 4 series × 4 min. <span class="src">1-4-3-3</span></li>
+      <li class="k3"><span class="time">31'–34'</span><b>Hidratación</b>: montas los 5 carriles mientras beben.</li>
+      <li class="k4"><span class="time">34'–54'</span><b>T6 · Rondo de los carriles</b>: 6v3 en 36×24 m, 5 series × 3 min. <span class="src">1-4-3-3</span></li>
+      <li class="k5"><span class="time">54'–60'</span><b>Vuelta a la calma</b>: soltura, movilidad y carga = RPE × minutos. <span class="src">Pretemporada</span></li>
+    </ol>
+    <a class="dl" href="landing-b-sesion.html#sesion"><b>Ver y descargar la sesión completa e imprimible</b><span>Con sus pizarras, cómo organizarla con 12-16 jugadores, 3 pautas para explicarla y el resto de la semana. Gratis y sin registro.</span></a>
+    <ul class="nums" aria-label="Lo que incluye, en cifras">
+      <li><b>253</b>tareas y sesiones, cada una con su pizarra</li>
+      <li><b>10</b>cursos publicados</li>
+      <li><b class="sm">PDF + HTML</b>se abren sin internet, también en el móvil</li>
+    </ul>
+    <a class="go" href="landing-b-sesion.html#desglose">De dónde salen las 253 tareas, curso a curso</a>
+  </div>
+</section>
+
+<!-- 5 · ¿ES PARA MÍ? -->
+<section id="para-mi" class="alt" aria-labelledby="h-parami">
+  <div class="wrap">
+    <h2 id="h-parami">¿Es para mí?</h2>
+    <p class="lead">Toca tu caso: por qué te sirve, por dónde empezar y dónde no llega.</p>
+    <ul class="who">
+      <li><a href="landing-b-sesion.html#p-novato"><span class="pill">Primer año</span><span>Cada tarea se monta tal cual: medidas, material, reglas que se cuentan y qué corregir.</span><span class="vp">Ver perfil</span></a></li>
+      <li><a href="landing-b-sesion.html#p-base"><span class="pill">Base sub-12 a sub-16</span><span>Rondos y ruedas valen para cualquier categoría; en el 1-5-3-2 y el 1-4-4-2 cada tarea indica su nivel.</span><span class="vp">Ver perfil</span></a></li>
+      <li><a href="landing-b-sesion.html#p-fem"><span class="pill">Femenino y juvenil</span><span>El plan de sesiones de tu sistema te da la semana ordenada (MD-4 a MD-1): eliges y entrenas.</span><span class="vp">Ver perfil</span></a></li>
+      <li><a href="landing-b-sesion.html#p-amateur"><span class="pill">Adulto amateur</span><span>Pretemporada tiene un plan para 3 sesiones (amateur típico) y control de carga con papel y RPE.</span><span class="vp">Ver perfil</span></a></li>
+      <li><a href="landing-b-sesion.html#p-f7"><span class="pill">Alevín · F7 · sala</span><span>No hay cursos de F7 ni de sala: Rondos y Ruedas se adaptan con las pautas de los propios cursos.</span><span class="vp">Ver qué se adapta</span></a></li>
+      <li><a href="landing-b-sesion.html#p-coord"><span class="pill">Coordinador de club</span><span>Misma ficha de tarea y mismo calendario (MD-4 … MD) para todos tus entrenadores.</span><span class="vp">Ver perfil</span></a></li>
+      <li><a href="landing-b-sesion.html#p-fisico"><span class="pill">Formación física</span><span>sRPE, ACWR con sus críticas y tests de campo sin GPS; las cifras son orientativas y el curso lo dice.</span><span class="vp">Ver perfil</span></a></li>
+    </ul>
+    <p class="honest"><b>Sin humo:</b> no es una titulación, no hay vídeos, no hay cursos específicos de F7/sala. <a href="landing-b-sesion.html#diferencia">Qué es y qué no es →</a></p>
+  </div>
+</section>
+
+<!-- 6 · PRUEBA SOCIAL (slots vacíos = no se muestran; en su lugar, la línea de prueba de producto) -->
+<section id="quien" aria-label="Quién está detrás y opiniones">
+  <div class="wrap">
+    <!-- TODO-USER: Moisés, rellena CONFIG.bio (foto, titulación, trayectoria reales), CONFIG.testimonios (reales y con permiso por escrito) y CONFIG.numeroMiembros (solo si es cierto). Vacío = no se muestra nada. -->
+    <div class="bio" id="bio" hidden></div>
+    <div class="testis" id="testis" hidden aria-label="Opiniones de entrenadores"></div>
+    <p class="miembros" id="miembros" hidden></p>
+    <p class="proofline" data-sin-testi>Hecho por Moisés Díaz, MISTER ÉLITE. <b>Juzga por el producto:</b> tienes la sesión y 5 muestras (de formativo a competición, balón parado y 11v11) en la <a href="landing-b-sesion.html#muestras">versión completa →</a></p>
+  </div>
+</section>
+
+<!-- 7 · PRECIO -->
+<section id="precios" class="alt" aria-labelledby="h-precios">
+  <div class="wrap">
+    <span class="eyebrow">Precios</span>
+    <h2 id="h-precios">Una membresía, los 10 cursos</h2>
+    <p class="lead">Mismo acceso en los dos planes: 253 tareas y sesiones con pizarra, planes y plantillas de carga. Solo cambia cómo pagas.</p>
+    <div class="pcols">
+      <div>
+        <div class="prices">
+          <div class="price">
+            <h3>Mensual</h3>
+            <p class="amount"><span data-cfg="precioMensual">19</span> € <small>/mes</small></p>
+            <p class="sub"><span data-cfg="ivaTxt">IVA incluido</span>. Sin permanencia: cancelas cuando quieras.</p>
+            <a class="btn ghost block" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar con el mensual</a>
+          </div>
+          <div class="price best">
+            <span class="badge">Mejor precio</span>
+            <h3>Anual</h3>
+            <p class="amount"><span data-cfg="precioAnual">149</span> € <small>/año</small></p>
+            <p class="sub"><span data-cfg="ivaTxt">IVA incluido</span>. Un pago por 12 meses (≈ <span data-cfg="precioAnualMes">12,4</span> €/mes): ahorras <span data-cfg="ahorroAnual">79</span> €.</p>
+            <a class="btn block" href="https://TU-WORDPRESS/membresia" data-checkout>Empezar con el anual</a>
+          </div>
+        </div>
+        <!-- TODO-USER: confirmar la política de clubes (CONFIG.precioClub, CONFIG.plazoRespuestaClub). Si vacías CONFIG.precioClub, esta tira desaparece. -->
+        <div class="club" data-need="precioClub">
+          <p><b>Plan club: <span data-cfg="precioClub">55 €/mes, hasta 10 equipos</span>.</b> Todos tus entrenadores con la misma ficha y el mismo calendario. Te respondemos en <span data-cfg="plazoRespuestaClub">48 h</span>. <a class="go" href="landing-b-sesion.html#clubes">Detalle</a></p>
+          <a class="btn sm" href="mailto:hola@TU-DOMINIO?subject=Condiciones%20para%20club&amp;body=Club%3A%20%0AN%C3%BAmero%20de%20entrenadores%3A%20%0ACategor%C3%ADas%3A%20" data-mail>Pedir el plan club</a>
+        </div>
+        <div class="guar">
+          <div class="seal" aria-hidden="true"><b data-cfg="garantiaDias">14</b><small>días</small></div>
+          <div>
+            <h3>Garantía de devolución, sin preguntas</h3>
+            <p>Si en <span data-cfg="garantiaDias">14</span> días no te convence, respondes al email de compra y te devolvemos el dinero completo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- TODO-USER: confirmar TODAS estas condiciones (PROPUESTA editable en CONFIG, las mismas que en landing-b-sesion.html). -->
+        <div class="conds" id="condiciones">
+          <h3>La letra pequeña, en grande</h3>
+          <ul>
+            <li><b>Sin permanencia.</b> Cancelas <span data-cfg="dondeCancelar">desde tu cuenta, con el enlace que te llega en el email de acceso</span><span data-show="mensualHastaFinMes"> y mantienes el acceso hasta el final del mes pagado</span>.</li>
+            <li><b>Anual:</b> <span data-renov="low">se renueva solo cada 12 meses salvo que canceles; te avisamos 7 días antes.</span></li>
+            <li><b>Devolución en <span data-cfg="garantiaDias">14</span> días:</b> respondes al email de compra y te devolvemos el dinero en <span data-cfg="plazoReembolso">5 días hábiles</span>.</li>
+            <li data-show="descargasTuyas"><b>Lo que descargas es tuyo</b> para uso personal y de tu equipo, también tras la baja.</li>
+            <li data-show="accesoPorPersona"><b>Un acceso por persona:</b> la cuenta no se comparte.</li>
+          </ul>
+          <a class="go" href="landing-b-sesion.html#condiciones">Todas las condiciones</a>
+        </div>
+        <!-- TODO-USER: confirmar que WordPress envía el email de acceso tras el pago y que desde el área de miembros se descargan el PDF y el HTML de cada curso. -->
+        <p class="access"><b>Cómo entras:</b> <i>1</i>pagas <i>2</i>te llega un email con tu acceso <i>3</i>descargas el PDF y el HTML de cada curso. <a href="landing-b-sesion.html#acceso">Detalle</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · FAQ (misma redacción que landing-b-sesion.html) -->
+<section id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <h2 id="h-faq">Dudas rápidas</h2>
+    <div class="faq">
+      <details><summary>¿Necesito un nivel alto de táctica?</summary><p>No. Cada concepto teórico es breve y viene con su traducción práctica. Cada tarea está escrita para ejecutarse tal cual.</p></details>
+      <details><summary>¿Funciona sin internet?</summary><p>Sí. Descargas el PDF (entre 0,2 y 0,9 MB por curso) y el HTML único (entre 0,1 y 2,7 MB), y los dos se abren sin conexión, también en el móvil.</p></details>
+      <details><summary>¿Cómo cancelo? ¿Hay permanencia?</summary><p>El mensual no tiene permanencia: cancelas <span data-cfg="dondeCancelar">desde tu cuenta, con el enlace que te llega en el email de acceso</span>, y no se te vuelve a cobrar<span data-show="mensualHastaFinMes">; mantienes el acceso hasta el final del mes pagado</span>. Anual: <span data-renov="low">se renueva solo cada 12 meses salvo que canceles; te avisamos 7 días antes.</span> Puedes cancelar la renovación o pasar al mensual.</p></details>
+      <details><summary>¿Sirve para mi categoría?</summary><p>Sí. En el 1-5-3-2 y el 1-4-4-2 cada tarea indica su nivel (F formativo sub-12 a sub-16, A amateur/juvenil, S sénior). Rondos, Ruedas, Pretemporada y Balón parado son transversales. ¿Fútbol 7 o sala? En parte: no hay cursos de fútbol 7 ni de sala; Rondos, Ruedas, varios juegos de posición y algunas tareas pequeñas sí se adaptan (<a href="landing-b-sesion.html#p-f7">perfil Alevín · F7 · sala</a>).</p></details>
+      <details><summary>¿Y los cursos nuevos?</summary><p data-nov>Hoy accedes a los 10 cursos publicados. No te prometemos nada que no esté publicado.</p></details>
+    </div>
+    <a class="go" href="landing-b-sesion.html#faq">Todas las dudas</a>
+  </div>
+</section>
+
+<!-- 9 · CTA FINAL -->
+<div class="wrap">
+  <div class="final">
+    <h2>El próximo entrenamiento, ya preparado</h2>
+    <p>Abre la tarea, saca la pizarra, mide el espacio y empieza.</p>
+    <a class="btn" href="https://TU-WORDPRESS/membresia" data-checkout><span>Entrar por <span data-cfg="precioMensual">19</span> €/mes</span></a>
+    <p class="cta-note"><span data-cfg="precioMensual">19</span> €/mes sin permanencia o <span data-cfg="precioAnual">149</span> €/año · <span data-cfg="ivaTxt">IVA incluido</span> · <span data-cfg="garantiaDias">14</span> días de devolución</p>
+    <a class="full" href="landing-b-sesion.html">Ver la versión completa con muestras, índices y condiciones →</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>MISTER ÉLITE — Moisés Díaz</strong><br>Cuerpo técnico digital para entrenadores de fútbol. Poca teoría, mucha aplicación práctica.</p>
+    <!-- TODO-USER: rellenar CONFIG.contactoEmail con el email real y CONFIG.legalUrls con las URL de aviso legal, privacidad y cookies. Cada enlace legal solo aparece si su URL está definida. -->
+    <ul class="flinks">
+      <li><a href="landing-b-sesion.html#condiciones">Condiciones</a></li>
+      <li><a href="mailto:hola@TU-DOMINIO" data-mail>Escríbenos</a></li>
+      <li data-legal="avisoLegal" hidden><a href="#">Aviso legal</a></li>
+      <li data-legal="privacidad" hidden><a href="#">Privacidad</a></li>
+      <li data-legal="cookies" hidden><a href="#">Cookies</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// ===== CONFIG: cambia aquí precios, condiciones y enlaces (un único sitio) =====
+// Mismas claves y valores que landing-b-sesion.html: si cambias algo, cámbialo en las dos.
+// Las condiciones son una PROPUESTA. TODO-USER: confirmar cada una antes de publicar.
+const CONFIG = {
+  precioMensual: 19,
+  precioAnual: 149,
+  ivaIncluido: true,            // TODO-USER: confirmar (true = "IVA incluido"; false = "+ IVA")
+  garantiaDias: 14,             // devolución completa respondiendo al email de compra
+  avisoRenovacionDias: 7,       // TODO-USER: confirmar el aviso por email antes de renovar el anual
+  renovacionAutomatica: true,   // PROPUESTA. TODO-USER: confirmar. true = "se renueva solo cada 12 meses salvo que canceles"; false = "no se renueva solo"
+  plazoReembolso: "5 días hábiles", // PROPUESTA. TODO-USER: confirmar el plazo en que se devuelve el dinero
+  mensualHastaFinMes: true,     // PROPUESTA. TODO-USER: confirmar. Al cancelar el mensual, el acceso sigue hasta el final del mes pagado
+  dondeCancelar: "desde tu cuenta, con el enlace que te llega en el email de acceso", // PROPUESTA. TODO-USER: confirmar según tu plugin de membresía
+  politicaActualizaciones: "Criterio de actualización: si se detecta un error en una tarea o una pizarra, se corrige y el archivo corregido sustituye al anterior, con el mismo nombre.", // PROPUESTA. TODO-USER: confirmar. Vacío = la frase no se muestra
+  precioClub: "55 €/mes, hasta 10 equipos",  // Confirmado por Moisés. TODO-USER: aclarar si "equipos" = accesos de entrenador (uno por equipo)
+  anualNoProporcional: true,    // TODO-USER: confirmar. Tras la garantía, el anual no se reembolsa de forma proporcional; se mantiene el acceso hasta el fin del periodo pagado
+  descargasTuyas: true,         // TODO-USER: confirmar. Lo descargado se conserva para uso personal y del propio equipo tras la baja; no redistribuir
+  accesoPorPersona: true,       // TODO-USER: confirmar. Un acceso por persona; la cuenta no se comparte
+  plazoRespuestaClub: "48 h",   // TODO-USER: confirmar el plazo de respuesta a clubes
+  metodosPago: "",              // TODO-USER: p. ej. "tarjeta y PayPal". Vacío = la línea no existe en la página
+  incluyeNovedades: false,      // TODO-USER: true solo si la membresía incluye los cursos que se publiquen
+  checkoutUrl: "https://TU-WORDPRESS/membresia",   // TODO-USER
+  contactoEmail: "hola@TU-DOMINIO",                // TODO-USER: email real (nunca se pinta como texto)
+  legalUrls: { avisoLegal: "", privacidad: "", cookies: "" }, // TODO-USER: cada enlace aparece solo si tiene URL
+  bio: { foto: "", titulo: "", trayectoria: "" }, // TODO-USER: foto (ruta o data URI), titulación y trayectoria reales de Moisés. Vacío = no se muestra
+  testimonios: [],              // TODO-USER: [{ texto: "…", nombre: "…", detalle: "categoría o club" }] reales y con permiso. Vacío = no se muestra
+  numeroMiembros: "",           // TODO-USER: solo si es cierto, p. ej. "Más de 120 entrenadores". Vacío = no se muestra
+  mostrarPendientes: false      // true = muestra al dueño las notas TODO-USER (nunca publicar en true)
+};
+(function(){
+  var f = function(n){ return Number(n).toLocaleString("es-ES",{maximumFractionDigits:1}); };
+  var vals = {
+    precioMensual: f(CONFIG.precioMensual),
+    precioAnual: f(CONFIG.precioAnual),
+    precioAnualMes: f(CONFIG.precioAnual/12),
+    ahorroAnual: f(CONFIG.precioMensual*12 - CONFIG.precioAnual),
+    garantiaDias: f(CONFIG.garantiaDias),
+    avisoRenovacionDias: f(CONFIG.avisoRenovacionDias),
+    plazoRespuestaClub: CONFIG.plazoRespuestaClub,
+    precioClub: CONFIG.precioClub,
+    plazoReembolso: CONFIG.plazoReembolso,
+    dondeCancelar: CONFIG.dondeCancelar,
+    ivaTxt: CONFIG.ivaIncluido ? "IVA incluido" : "+ IVA",
+    ivaTxtLargo: CONFIG.ivaIncluido ? "Sí, los precios incluyen el IVA." : "No, a estos precios se les suma el IVA."
+  };
+  document.querySelectorAll("[data-cfg]").forEach(function(el){
+    var v = vals[el.getAttribute("data-cfg")]; if(v!==undefined && v!=="") el.textContent = v;
+  });
+  document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = CONFIG.checkoutUrl; });
+  document.querySelectorAll("[data-mail]").forEach(function(a){
+    a.href = a.getAttribute("href").replace(/^mailto:[^?]*/, "mailto:" + CONFIG.contactoEmail);
+  });
+  document.querySelectorAll("[data-show]").forEach(function(el){ el.hidden = !CONFIG[el.getAttribute("data-show")]; });
+  // Bloques que dependen de un valor de texto (p. ej. el plan club): vacío = no se muestran
+  document.querySelectorAll("[data-need]").forEach(function(el){ if(!CONFIG[el.getAttribute("data-need")]) el.hidden = true; });
+  // Renovación del anual: una sola frase, según CONFIG
+  var dA = vals.avisoRenovacionDias;
+  document.querySelectorAll("[data-renov]").forEach(function(el){
+    var t = CONFIG.renovacionAutomatica
+      ? "se renueva solo cada 12 meses salvo que canceles; te avisamos " + dA + " días antes."
+      : "no se renueva solo: " + dA + " días antes de que acabe te avisamos y decides si sigues.";
+    var m = el.getAttribute("data-renov");
+    if(m.indexOf("nodot") > -1) t = t.replace(/\.$/, "");
+    if(m.indexOf("cap") === 0) t = t.charAt(0).toUpperCase() + t.slice(1);
+    el.textContent = t;
+  });
+  // Formas de pago: la línea solo se crea si hay métodos definidos
+  var condUl = document.querySelector("#condiciones ul");
+  if(CONFIG.metodosPago && condUl){
+    var li = document.createElement("li"), b = document.createElement("b");
+    b.textContent = "Formas de pago:"; li.appendChild(b); li.appendChild(document.createTextNode(" " + CONFIG.metodosPago + "."));
+    condUl.appendChild(li);
+  }
+  document.querySelectorAll("[data-legal]").forEach(function(li){
+    var u = (CONFIG.legalUrls||{})[li.getAttribute("data-legal")];
+    if(u){ li.querySelector("a").href = u; li.hidden = false; }
+  });
+  if(CONFIG.incluyeNovedades){
+    var nov = document.querySelector("[data-nov]"); if(nov) nov.textContent = "Sí: mientras seas miembro, accedes a los cursos que se publiquen.";
+  }
+  // Presentación, testimonios y nº de miembros (solo si hay datos reales; todo con textContent)
+  (function(){
+    var b = CONFIG.bio || {}, box = document.getElementById("bio");
+    if(box && (b.trayectoria || b.titulo || b.foto)){
+      if(b.foto){ var im = document.createElement("img"); im.src = b.foto; im.alt = "Moisés Díaz"; im.width = 84; im.height = 84; box.appendChild(im); }
+      var bp = document.createElement("p");
+      if(b.titulo){ var st = document.createElement("strong"); st.textContent = b.titulo; bp.appendChild(st); bp.appendChild(document.createElement("br")); }
+      if(b.trayectoria) bp.appendChild(document.createTextNode(b.trayectoria));
+      box.appendChild(bp); box.hidden = false;
+    }
+    var m = document.getElementById("miembros");
+    if(m && CONFIG.numeroMiembros){ m.textContent = CONFIG.numeroMiembros; m.hidden = false; }
+    var t = CONFIG.testimonios || [], tb = document.getElementById("testis");
+    if(tb && t.length){
+      t.forEach(function(x){
+        if(!x || !x.texto) return;
+        var fg = document.createElement("figure"); fg.className = "testi";
+        var q = document.createElement("blockquote"); q.textContent = "“" + x.texto + "”"; fg.appendChild(q);
+        var c = document.createElement("figcaption"), n = document.createElement("b"); n.textContent = x.nombre || "";
+        c.appendChild(n); if(x.detalle) c.appendChild(document.createTextNode(" · " + x.detalle));
+        fg.appendChild(c); tb.appendChild(fg);
+      });
+      tb.hidden = !tb.children.length;
+      if(tb.children.length){ document.querySelectorAll("[data-sin-testi]").forEach(function(el){ el.remove(); }); }
+    }
+  })();
+  // Notas internas: solo visibles para el dueño si activa mostrarPendientes
+  if(CONFIG.mostrarPendientes){
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT), nd, list = [];
+    while((nd = w.nextNode())){ if(nd.nodeValue.indexOf("TODO-USER") > -1) list.push(nd); }
+    list.forEach(function(c){
+      var s = document.createElement("span"); s.className = "owner-note";
+      s.textContent = c.nodeValue.trim(); c.parentNode.insertBefore(s, c.nextSibling);
+    });
+  }
+})();
+</script>
+</body>
+</html>
