@@ -239,6 +239,16 @@ details.more>.in{padding:0 14px 14px}
 .steps li::before{counter-increment:s;content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 .85rem/1 var(--mono)}
 
 /* quién */
+.bio{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.bio img{width:96px;height:96px;object-fit:cover;border-radius:50%;border:2px solid var(--line);flex:none}
+.bio p{margin:0;min-width:0}
+.testis{display:grid;gap:12px;margin-top:20px}
+@media(min-width:760px){.testis{grid-template-columns:repeat(2,1fr)}}
+.testi{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.testi blockquote{margin:0 0 10px;font-family:var(--serif);font-size:1.02rem;line-height:1.5}
+.testi figcaption{font-size:.88rem;color:var(--muted)}
+.testi figcaption b{color:var(--ink)}
+.miembros{margin-top:16px;font-weight:700}
 .facts{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
 .facts li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:.93rem}
 .facts b{display:block}
@@ -1130,12 +1140,15 @@ footer strong{color:var(--ink);letter-spacing:.04em}
     <h2 id="h-quien">Moisés Díaz · MISTER ÉLITE</h2>
     <!-- TODO-USER: Moisés, aquí va tu foto y tu presentación real: titulación, trayectoria, categorías y equipos con los que has trabajado. No inventamos nada: sin esos datos la sección funciona solo con los hechos verificables de abajo. -->
     <p class="lead">Los 10 cursos son de <strong>Moisés Díaz</strong> y llevan la marca MISTER ÉLITE. La idea es una: <mark>poca teoría, mucha aplicación práctica</mark>.</p>
+    <div class="bio" id="bio" hidden></div>
     <ul class="facts">
       <li><b>10 cursos, un mismo método</b>Cinco sistemas, tres de metodología, pretemporada y balón parado defensivo.</li>
       <li><b>Pizarra en cada tarea</b>Con la marca "MISTER ÉLITE · Moisés Díaz" al pie.</li>
-      <li><b>Juzga por el producto</b>Sin opiniones ni cifras de miembros inventadas: tienes cinco muestras y una sesión imprimible.</li>
+      <li data-sin-testi><b>Juzga por el producto</b>Sin opiniones ni cifras de miembros inventadas: tienes cinco muestras y una sesión imprimible.</li>
     </ul>
-    <!-- TODO-USER: aportar testimonios reales de entrenadores (nombre, categoría o club y permiso por escrito para publicarlos) y, solo si es cierto, el número de miembros. Hasta entonces no se muestra nada. -->
+    <p class="miembros" id="miembros" hidden></p>
+    <div class="testis" id="testis" hidden aria-label="Opiniones de entrenadores"></div>
+    <!-- TODO-USER: rellena CONFIG.testimonios, CONFIG.bio y CONFIG.numeroMiembros en el script. Solo testimonios reales y con permiso por escrito. Vacío = no se muestra nada. -->
   </div>
 </section>
 
@@ -1309,6 +1322,9 @@ const CONFIG = {
   checkoutUrl: "https://TU-WORDPRESS/membresia",   // TODO-USER
   contactoEmail: "hola@TU-DOMINIO",                // TODO-USER: email real (nunca se pinta como texto)
   legalUrls: { avisoLegal: "", privacidad: "", cookies: "" }, // TODO-USER: cada enlace aparece solo si tiene URL
+  bio: { foto: "", titulo: "", trayectoria: "" }, // TODO-USER: foto (ruta o data URI), titulación y trayectoria reales de Moisés. Vacío = no se muestra
+  testimonios: [],              // TODO-USER: [{ texto: "…", nombre: "…", detalle: "categoría o club" }] reales y con permiso. Vacío = no se muestra
+  numeroMiembros: "",           // TODO-USER: solo si es cierto, p. ej. "Más de 120 entrenadores". Vacío = no se muestra
   mostrarPendientes: false      // true = muestra al dueño las notas TODO-USER (nunca publicar en true)
 };
 (function(){
@@ -1369,6 +1385,32 @@ const CONFIG = {
     var inc = document.querySelector("[data-incluye]"); if(inc) inc.textContent = "los 10 cursos publicados y los que se publiquen mientras seas miembro.";
     var nov = document.querySelector("[data-nov]"); if(nov) nov.textContent = "Sí: mientras seas miembro, accedes a los cursos que se publiquen.";
   }
+  // Presentación, testimonios y nº de miembros (solo si hay datos reales; todo con textContent)
+  (function(){
+    var b = CONFIG.bio || {}, box = document.getElementById("bio");
+    if(box && (b.trayectoria || b.titulo || b.foto)){
+      if(b.foto){ var im = document.createElement("img"); im.src = b.foto; im.alt = "Moisés Díaz"; im.width = 96; im.height = 96; box.appendChild(im); }
+      var bp = document.createElement("p");
+      if(b.titulo){ var st = document.createElement("strong"); st.textContent = b.titulo; bp.appendChild(st); bp.appendChild(document.createElement("br")); }
+      if(b.trayectoria) bp.appendChild(document.createTextNode(b.trayectoria));
+      box.appendChild(bp); box.hidden = false;
+    }
+    var m = document.getElementById("miembros");
+    if(m && CONFIG.numeroMiembros){ m.textContent = CONFIG.numeroMiembros; m.hidden = false; }
+    var t = CONFIG.testimonios || [], tb = document.getElementById("testis");
+    if(t.length){ document.querySelectorAll("[data-sin-testi]").forEach(function(el){ el.remove(); }); }
+    if(tb && t.length){
+      t.forEach(function(x){
+        if(!x || !x.texto) return;
+        var f = document.createElement("figure"); f.className = "testi";
+        var q = document.createElement("blockquote"); q.textContent = "\u201C" + x.texto + "\u201D"; f.appendChild(q);
+        var c = document.createElement("figcaption"), n = document.createElement("b"); n.textContent = x.nombre || "";
+        c.appendChild(n); if(x.detalle) c.appendChild(document.createTextNode(" · " + x.detalle));
+        f.appendChild(c); tb.appendChild(f);
+      });
+      tb.hidden = !tb.children.length;
+    }
+  })();
   // Notas internas: solo visibles para el dueño si activa mostrarPendientes
   if(CONFIG.mostrarPendientes){
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT), n, list = [];
